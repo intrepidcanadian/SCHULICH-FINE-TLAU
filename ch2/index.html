@@ -412,6 +412,21 @@
     .pipeline{grid-template-columns:repeat(2,1fr)}
     .grid-2-7-5,.grid-2-6-6,.grid-2-8-4{grid-template-columns:1fr}
   }
+  /* ============ Time-horizon override ============
+     Convert legacy scrub-fill (was a sweeping fake-video animation) into
+     a static elapsed-time bar showing 2024 → APR 2026 (~78% of window). */
+  [class$="-scrub-fill"]{
+    animation: none !important;
+    position: absolute !important;
+    inset: 0 auto 0 0 !important;
+    width: 78% !important;
+    transform: none !important;
+    background: linear-gradient(90deg, currentColor, currentColor) !important;
+    opacity: .28 !important;
+  }
+  /* Hide misleading recording-dot blink in the topbar; keep dot visible but static */
+  [class$="-rec"]{ animation: none !important; opacity: .85 !important; }
+
 </style>
 </head>
 <body>
@@ -918,7 +933,7 @@
 </section>
 
 <!-- ============================================================
-     SLIDE 11 · Hyperframe video · Agentic commerce 2025-26 (light)
+     SLIDE 11 · Data horizon view · Agentic commerce 2025-26 (light)
      ============================================================ -->
 <section class="slide light" data-screen-label="11 Hyperframe · Agentic Commerce 2025-26">
   <div class="chrome">
@@ -958,7 +973,7 @@
     .hf2v-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.10 &middot; Hyperframe video &middot; 2025&ndash;2026 update</div>
+    <div class="kicker">&sect;2.10 &middot; Data horizon view &middot; 2025&ndash;2026 update</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">Agent-to-agent commerce: a new platform side.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       Multi-sided platforms in finance just got a third side. Stripe, Visa, Mastercard, and Anthropic-powered tools opened payment rails to autonomous agents in 2024&ndash;25. The disruption vulnerability framework predicts which incumbents bundle won&rsquo;t survive.
@@ -966,8 +981,8 @@
 
     <div class="hf2v-frame" style="margin-top:1.6vh">
       <div class="hf2v-topbar">
-        <div><span class="hf2v-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V01</div>
-        <div class="hf2v-tc">00:00:11:02 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hf2v-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V01</div>
+        <div class="hf2v-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hf2v-stage">
         <div class="hf2v-card">
@@ -994,13 +1009,13 @@
       <div class="hf2v-bar-wrap">
         <div class="hf2v-bar-track"><div class="hf2v-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hf2v-scrub">
-        <div class="hf2v-scrub-icon">▶</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf2v-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf2v-scrub-bar"><div class="hf2v-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf2v-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hf2v-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1009,12 +1024,12 @@
   </div>
   <div class="foot">
     <div>Page 11 &middot; Hyperframe &middot; agent-to-agent commerce</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 12 · Hyperframe · Embedded Finance 2025 (dark · video composition)
+     SLIDE 12 · Hyperframe · Embedded Finance 2025 (dark · data horizon view)
      ============================================================ -->
 <section class="slide dark" data-screen-label="12 Hyperframe · Embedded Finance 2025">
   <div class="chrome">
@@ -1054,7 +1069,7 @@
     .hf2b-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.8 &middot; Hyperframe video &middot; embedded finance &amp; BaaS · 2025 update</div>
+    <div class="kicker">&sect;2.8 &middot; Data horizon view &middot; embedded finance &amp; BaaS · 2025 update</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">Embedded finance: from feature to business model.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       Christensen&rsquo;s &ldquo;jobs to be done&rdquo; framing sharpens in 2024&ndash;26: financial services are no longer destinations, they are SDK calls inside vertical SaaS, marketplaces, and AI agents. Stripe alone moved 1.3% of global GDP in 2024.
@@ -1062,8 +1077,8 @@
 
     <div class="hf2b-frame" style="margin-top:1.6vh">
       <div class="hf2b-topbar">
-        <div><span class="hf2b-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V02</div>
-        <div class="hf2b-tc">00:00:10:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hf2b-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V02</div>
+        <div class="hf2b-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hf2b-stage">
         <div class="hf2b-card">
@@ -1090,13 +1105,13 @@
       <div class="hf2b-bar-wrap">
         <div class="hf2b-bar-track"><div class="hf2b-bar" style="--w:82%"></div></div>
       </div>
-      <div class="hf2b-scrub">
-        <div class="hf2b-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf2b-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf2b-scrub-bar"><div class="hf2b-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf2b-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hf2b-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1105,7 +1120,7 @@
   </div>
   <div class="foot">
     <div>Page 12 &middot; Hyperframe &middot; embedded finance &amp; BaaS</div>
-    <div>2025–2026 &middot; video composition</div>
+    <div>2025–2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1152,7 +1167,7 @@
     .hf2p-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.11 &middot; Hyperframe video &middot; ten years after Philippon</div>
+    <div class="kicker">&sect;2.11 &middot; Data horizon view &middot; ten years after Philippon</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Has fintech finally cracked the 2% puzzle?</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 04 cited Philippon's 2015 finding: ~2% intermediation cost, unchanged for 130 years. New BIS, ECB, and FDIC analyses (2024&ndash;25) show <em>distributional</em> compression in some segments &mdash; remittance, FX, retail brokerage &mdash; but the aggregate cost still hovers near 1.6&ndash;1.9% as compute savings get captured by intermediaries, not consumers.
@@ -1160,8 +1175,8 @@
 
     <div class="hf2p-frame" style="margin-top:1.4vh">
       <div class="hf2p-topbar">
-        <div><span class="hf2p-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V03</div>
-        <div class="hf2p-tc">00:00:09:18 · 1080p · 30fps</div>
+        <div><span class="hf2p-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V03</div>
+        <div class="hf2p-tc">DATA AS OF · APR 2026</div>
       </div>
       <div class="hf2p-stage">
         <div class="hf2p-card">
@@ -1188,13 +1203,13 @@
       <div class="hf2p-bar-wrap">
         <div class="hf2p-bar-track"><div class="hf2p-bar" style="--w:71%"></div></div>
       </div>
-      <div class="hf2p-scrub">
-        <div class="hf2p-scrub-icon">▶</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf2p-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf2p-scrub-bar"><div class="hf2p-scrub-fill"></div></div>
-        <div>1.0×</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf2p-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hf2p-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row hf2p-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1203,7 +1218,7 @@
   </div>
   <div class="foot">
     <div>Page 13 &middot; Hyperframe &middot; 2% puzzle 2015 → 2025</div>
-    <div>2025–2026 &middot; video composition</div>
+    <div>2025–2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1250,7 +1265,7 @@
     .hf2n-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.12 &middot; Hyperframe video &middot; multi-sided platforms get a third side</div>
+    <div class="kicker">&sect;2.12 &middot; Data horizon view &middot; multi-sided platforms get a third side</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Two-sided MSPs &rarr; agent-sided commerce.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 08 framed Visa/PayPal as classic two-sided platforms (cardholders &harr; merchants). In Apr 2025 Visa launched <em>Intelligent Commerce</em> and Mastercard launched <em>Agent Pay</em> &mdash; opening their rails to a third side: autonomous AI agents acting on a consumer&rsquo;s behalf. By Dec 2025 hundreds of agent-initiated transactions had cleared in production; Visa now forecasts mainstream adoption by Q4 2026.
@@ -1258,8 +1273,8 @@
 
     <div class="hf2n-frame" style="margin-top:1.4vh">
       <div class="hf2n-topbar">
-        <div><span class="hf2n-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V04</div>
-        <div class="hf2n-tc">00:00:09:24 · 1080p · 30fps</div>
+        <div><span class="hf2n-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V04</div>
+        <div class="hf2n-tc">DATA AS OF · APR 2026</div>
       </div>
       <div class="hf2n-stage">
         <div class="hf2n-card">
@@ -1286,13 +1301,13 @@
       <div class="hf2n-bar-wrap">
         <div class="hf2n-bar-track"><div class="hf2n-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hf2n-scrub">
-        <div class="hf2n-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf2n-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf2n-scrub-bar"><div class="hf2n-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf2n-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hf2n-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hf2n-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1301,7 +1316,7 @@
   </div>
   <div class="foot">
     <div>Page 14 &middot; Hyperframe &middot; agent-sided commerce 2025 &rarr; 2026</div>
-    <div>2025–2026 &middot; video composition</div>
+    <div>2025–2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1357,7 +1372,7 @@
     .hfr-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.9 &middot; Hyperframe video &middot; agency&hArr;principal &middot; 2021 &rarr; 2025</div>
+    <div class="kicker">&sect;2.9 &middot; Data horizon view &middot; agency&hArr;principal &middot; 2021 &rarr; 2025</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Brokers crossed over: from PFOF to net interest income.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 08 cited Robinhood&rsquo;s 2021 PFOF figure ($810M from Citadel). Slide 09 split revenue into <em>agency</em> (fees) and <em>principal</em> (spread). Three years of Fed hikes inverted the mix &mdash; Robinhood, SoFi, Coinbase, Nubank now run principal-heavy P&amp;Ls. The agency-only fintech archetype is largely extinct.
@@ -1365,8 +1380,8 @@
 
     <div class="hfr-frame" style="margin-top:1.4vh">
       <div class="hfr-topbar">
-        <div><span class="hfr-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V04</div>
-        <div class="hfr-tc">00:00:09:08 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfr-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V04</div>
+        <div class="hfr-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfr-stage">
         <div>
@@ -1419,13 +1434,13 @@
       <div class="hfr-bar-wrap">
         <div class="hfr-bar-track"><div class="hfr-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hfr-scrub">
-        <div class="hfr-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfr-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfr-scrub-bar"><div class="hfr-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfr-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2025</div>
+      <div class="hfr-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfr-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1434,7 +1449,7 @@
   </div>
   <div class="foot">
     <div>Page 15 &middot; Hyperframe &middot; broker revenue mix &middot; 2021 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1491,7 +1506,7 @@
     .hfp-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.6b &middot; Hyperframe video &middot; same-side network effects in P2P</div>
+    <div class="kicker">&sect;2.6b &middot; Data horizon view &middot; same-side network effects in P2P</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Network effects, observed: P2P payments 2020 &rarr; 2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 08 used Venmo to illustrate same-side network effects ("payment utility rises with peer adoption"). Five years later, the bank-owned Zelle has decisively won the volume war &mdash; $1.2T in 2025, vs. $340B Venmo and ~$300B Cash App. Direct effects compound, but distribution (your bank vs. your peer group) shapes which loop wins.
@@ -1499,8 +1514,8 @@
 
     <div class="hfp-frame" style="margin-top:1.4vh">
       <div class="hfp-topbar">
-        <div><span class="hfp-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V06</div>
-        <div class="hfp-tc">00:00:09:09 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfp-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V06</div>
+        <div class="hfp-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfp-stage">
         <div>
@@ -1553,13 +1568,13 @@
       <div class="hfp-bar-wrap">
         <div class="hfp-bar-track"><div class="hfp-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hfp-scrub">
-        <div class="hfp-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfp-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfp-scrub-bar"><div class="hfp-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfp-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2025</div>
+      <div class="hfp-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfp-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1568,7 +1583,7 @@
   </div>
   <div class="foot">
     <div>Page 16 &middot; Hyperframe &middot; P2P payments 2020 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1629,7 +1644,7 @@
     .hfob-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.9b &middot; Hyperframe video &middot; data portability becomes law</div>
+    <div class="kicker">&sect;2.9b &middot; Data horizon view &middot; data portability becomes law</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Open Banking arrives in the US: CFPB Rule 1033, 2024&rarr;2026.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 03 framed data as one of the five fintech dimensions. On Oct 22, 2024 the CFPB finalized Rule 1033 (&ldquo;Personal Financial Data Rights&rdquo;), making consumer access to financial data &mdash; deposit, credit-card, payments &mdash; a federally enforceable right via authorised third-party APIs. Compliance phases in from Apr 2026 (largest banks) through 2030 (smallest). Litigation and a 2025 administration change have since reopened the rule for amendment, but the data-access architecture is now the regulatory baseline.
@@ -1637,8 +1652,8 @@
 
     <div class="hfob-frame" style="margin-top:1.4vh">
       <div class="hfob-topbar">
-        <div><span class="hfob-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V08</div>
-        <div class="hfob-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfob-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V08</div>
+        <div class="hfob-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfob-stage">
         <div class="hfob-cards">
@@ -1696,13 +1711,13 @@
       <div class="hfob-bar-wrap">
         <div class="hfob-bar-track"><div class="hfob-bar" style="--w:62%"></div></div>
       </div>
-      <div class="hfob-scrub">
-        <div class="hfob-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfob-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfob-scrub-bar"><div class="hfob-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfob-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2025</div>
+      <div class="hfob-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfob-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1711,7 +1726,7 @@
   </div>
   <div class="foot">
     <div>Page 17 &middot; Hyperframe &middot; CFPB 1033 (2024 &rarr; 2030)</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1772,7 +1787,7 @@
     .hfk-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.10b &middot; Hyperframe video &middot; AI agents hit the quality wall</div>
+    <div class="kicker">&sect;2.10b &middot; Data horizon view &middot; AI agents hit the quality wall</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Klarna&rsquo;s round trip: 700-FTE AI lift, then a hybrid retreat (2023-2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 10 framed AI agents as the next monetization layer; the Klarna case is the cleanest economic test in fintech. In Feb 2024 Klarna&rsquo;s OpenAI-built assistant handled 2.3M chats in one month &mdash; equivalent to 700 FTEs. Cost-per-transaction fell from $0.32 (Q1 2023) to $0.19 (Q1 2025). But by mid-2025 the CEO admitted full replacement had &ldquo;gone too far&rdquo;: customer satisfaction degraded on edge cases, escalations, and emotion. Klarna re-hired humans through 2025-26 and now runs a hybrid model. The unit economics are real; the quality ceiling is also real.
@@ -1780,8 +1795,8 @@
 
     <div class="hfk-frame" style="margin-top:1.4vh">
       <div class="hfk-topbar">
-        <div><span class="hfk-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V07</div>
-        <div class="hfk-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfk-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V07</div>
+        <div class="hfk-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfk-stage">
         <div class="hfk-cards">
@@ -1839,13 +1854,13 @@
       <div class="hfk-bar-wrap">
         <div class="hfk-bar-track"><div class="hfk-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hfk-scrub">
-        <div class="hfk-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfk-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfk-scrub-bar"><div class="hfk-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfk-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfk-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfk-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1854,12 +1869,12 @@
   </div>
   <div class="foot">
     <div>Page 18 &middot; Hyperframe &middot; Klarna AI hybrid 2023 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 19 · Hyperframe · Robo-Advisor 2.0 AI Wealth 2024-2026 (light · video composition)
+     SLIDE 19 · Hyperframe · Robo-Advisor 2.0 AI Wealth 2024-2026 (light · data horizon view)
      ============================================================ -->
 <section class="slide light" data-screen-label="19 Hyperframe · Robo Advisor 2.0 2024-2026">
   <div class="chrome">
@@ -1914,7 +1929,7 @@
     .hfra-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.9b &middot; Hyperframe video &middot; from automated allocation to AI-personalised wealth</div>
+    <div class="kicker">&sect;2.9b &middot; Data horizon view &middot; from automated allocation to AI-personalised wealth</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Robo-advisors 2.0: AUM, scale, and AI personalisation 2024 &rarr; 2026.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 06 cited Vanguard&rsquo;s 2015 robo-advisor &mdash; an incumbent counter-attack. A decade later the &ldquo;robo&rdquo; layer is no longer a low-fee allocator. Wealthfront crossed $90B AUM and filed for IPO under WLTH (Oct 2025). Betterment crossed $65B AUM and 1M customers, acquired Ellevest (Feb 2025) and Rowboat Advisors (May 2025) for direct indexing. The wedge is no longer 0.25% pricing &mdash; it is AI-driven tax-loss harvesting at the individual-stock level, goal-based personalisation, and CFP-on-demand.
@@ -1922,8 +1937,8 @@
 
     <div class="hfra-frame" style="margin-top:1.4vh">
       <div class="hfra-topbar">
-        <div><span class="hfra-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V09</div>
-        <div class="hfra-tc">00:00:08:21 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfra-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V09</div>
+        <div class="hfra-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfra-stage">
         <div class="hfra-cards">
@@ -1981,13 +1996,13 @@
       <div class="hfra-bar-wrap">
         <div class="hfra-bar-track"><div class="hfra-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hfra-scrub">
-        <div class="hfra-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfra-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfra-scrub-bar"><div class="hfra-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfra-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfra-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfra-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1996,12 +2011,12 @@
   </div>
   <div class="foot">
     <div>Page 19 &middot; Hyperframe &middot; Robo 2.0 &middot; 2024 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 20 · Hyperframe · Embedded finance YoY 2024 → 2026 (light · video composition)
+     SLIDE 20 · Hyperframe · Embedded finance YoY 2024 → 2026 (light · data horizon view)
      ============================================================ -->
 <section class="slide light" data-screen-label="20 Hyperframe · Embedded Finance YoY 2024-26">
   <div class="chrome">
@@ -2056,7 +2071,7 @@
     .hfe26-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;2.9b &middot; Hyperframe video &middot; embedded finance YoY trajectory</div>
+    <div class="kicker">&sect;2.9b &middot; Data horizon view &middot; embedded finance YoY trajectory</div>
     <h2 class="h-xl" style="font-size:3.7vw; margin-top:.4vh">Embedded finance, year-over-year: $109B (2024) &rarr; $148B (2025) &rarr; $173B (2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 12 framed embedded finance as a 2025 snapshot. Pull the camera back: 2024 baseline was $108.6B, 2025 closed at $148B, and 2026 trackers (Mordor / Marketintelo) put global revenue between $156B and $173B &mdash; a 26&ndash;31% YoY blended CAGR. The mix is shifting too: BaaS captured 34.2% of infrastructure spend in 2025, North America held 38.5% regional share, and merchants/SaaS platforms (not banks) are now the primary distribution layer.
@@ -2064,8 +2079,8 @@
 
     <div class="hfe26-frame" style="margin-top:1.4vh">
       <div class="hfe26-topbar">
-        <div><span class="hfe26-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH02-V09</div>
-        <div class="hfe26-tc">00:00:11:08 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfe26-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V09</div>
+        <div class="hfe26-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfe26-stage">
         <div class="hfe26-cards">
@@ -2123,13 +2138,13 @@
       <div class="hfe26-bar-wrap">
         <div class="hfe26-bar-track"><div class="hfe26-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hfe26-scrub">
-        <div class="hfe26-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfe26-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfe26-scrub-bar"><div class="hfe26-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfe26-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfe26-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfe26-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -2138,7 +2153,7 @@
   </div>
   <div class="foot">
     <div>Page 20 &middot; Hyperframe &middot; Embedded finance YoY 2024 &rarr; 2026</div>
-    <div>2024&ndash;2026 &middot; video composition</div>
+    <div>2024&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 

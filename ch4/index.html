@@ -162,6 +162,21 @@
     .pipeline{grid-template-columns:repeat(2,1fr)}
     .grid-2-7-5,.grid-2-6-6,.grid-2-8-4{grid-template-columns:1fr}
   }
+  /* ============ Time-horizon override ============
+     Convert legacy scrub-fill (was a sweeping fake-video animation) into
+     a static elapsed-time bar showing 2024 → APR 2026 (~78% of window). */
+  [class$="-scrub-fill"]{
+    animation: none !important;
+    position: absolute !important;
+    inset: 0 auto 0 0 !important;
+    width: 78% !important;
+    transform: none !important;
+    background: linear-gradient(90deg, currentColor, currentColor) !important;
+    opacity: .28 !important;
+  }
+  /* Hide misleading recording-dot blink in the topbar; keep dot visible but static */
+  [class$="-rec"]{ animation: none !important; opacity: .85 !important; }
+
 </style>
 </head>
 <body>
@@ -841,7 +856,7 @@
 </section>
 
 <!-- ============================================================
-     SLIDE 13 · Hyperframe video · Tokenized RWA valuation 2025-26 (dark)
+     SLIDE 13 · Data horizon view · Tokenized RWA valuation 2025-26 (dark)
      ============================================================ -->
 <section class="slide dark" data-screen-label="13 Hyperframe · Tokenized RWA 2025-26">
   <div class="chrome">
@@ -881,7 +896,7 @@
     .hf4v-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.10 &middot; Hyperframe video &middot; 2025&ndash;2026 update</div>
+    <div class="kicker">&sect;4.10 &middot; Data horizon view &middot; 2025&ndash;2026 update</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">Tokenized funds: a new comparable set.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       Tokenized real-world-asset funds are now liquid enough to anchor relative valuation. BlackRock BUIDL, Franklin BENJI, Ondo USDY, and Hashnote USYC trade on-chain with intraday secondary marks. P/AUM and yield-spread multiples become fintech-comparable inputs.
@@ -889,8 +904,8 @@
 
     <div class="hf4v-frame" style="margin-top:1.6vh">
       <div class="hf4v-topbar">
-        <div><span class="hf4v-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V01</div>
-        <div class="hf4v-tc">00:00:09:21 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hf4v-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V01</div>
+        <div class="hf4v-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hf4v-stage">
         <div class="hf4v-card">
@@ -917,13 +932,13 @@
       <div class="hf4v-bar-wrap">
         <div class="hf4v-bar-track"><div class="hf4v-bar" style="--w:71%"></div></div>
       </div>
-      <div class="hf4v-scrub">
-        <div class="hf4v-scrub-icon">▶</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf4v-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf4v-scrub-bar"><div class="hf4v-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf4v-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hf4v-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -932,12 +947,12 @@
   </div>
   <div class="foot">
     <div>Page 13 &middot; Hyperframe &middot; tokenized RWA valuation</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 14 · Hyperframe · Fintech Multiples Reset 2025 (light · video composition)
+     SLIDE 14 · Hyperframe · Fintech Multiples Reset 2025 (light · data horizon view)
      ============================================================ -->
 <section class="slide light" data-screen-label="14 Hyperframe · Fintech Multiples 2025">
   <div class="chrome">
@@ -977,7 +992,7 @@
     .hf4b-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.11 &middot; Hyperframe video &middot; fintech multiples reset 2025</div>
+    <div class="kicker">&sect;4.11 &middot; Data horizon view &middot; fintech multiples reset 2025</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">From 2021 mania to 2025 normalisation.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       The 2021 fintech multiple peak (Adyen 100&times; P/E, Block 200&times;) is gone. Late-2025 multiples reflect the new dual mandate: profitable growth, evident operating leverage. AI-native fintech still trades at premium &mdash; but only if Rule of 40 holds.
@@ -985,8 +1000,8 @@
 
     <div class="hf4b-frame" style="margin-top:1.6vh">
       <div class="hf4b-topbar">
-        <div><span class="hf4b-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V02</div>
-        <div class="hf4b-tc">00:00:10:08 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hf4b-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V02</div>
+        <div class="hf4b-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hf4b-stage">
         <div class="hf4b-card">
@@ -1013,13 +1028,13 @@
       <div class="hf4b-bar-wrap">
         <div class="hf4b-bar-track"><div class="hf4b-bar" style="--w:67%"></div></div>
       </div>
-      <div class="hf4b-scrub">
-        <div class="hf4b-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf4b-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf4b-scrub-bar"><div class="hf4b-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf4b-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hf4b-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1028,7 +1043,7 @@
   </div>
   <div class="foot">
     <div>Page 14 &middot; Hyperframe &middot; fintech multiples 2025</div>
-    <div>2025–2026 &middot; video composition</div>
+    <div>2025–2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1087,7 +1102,7 @@
     .hf4m-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.12 &middot; Hyperframe video &middot; Refinitiv Apr 2023 → Bloomberg Q4 2025</div>
+    <div class="kicker">&sect;4.12 &middot; Data horizon view &middot; Refinitiv Apr 2023 → Bloomberg Q4 2025</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Two and a half years later: P/E NTM, then and now.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Tab. 4.11 (slide 11) is anchored to Refinitiv Apr 2023. By Q4 2025, every multiple has moved &mdash; PayPal compressed despite buybacks, Wise re-rated on profitability, Robinhood went from negative-EPS to peer leader. The lesson: relative valuation snapshots decay fast, especially in a rate-cutting + AI-rerating cycle.
@@ -1095,8 +1110,8 @@
 
     <div class="hf4m-frame" style="margin-top:1.2vh">
       <div class="hf4m-topbar">
-        <div><span class="hf4m-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V03</div>
-        <div class="hf4m-tc">00:00:11:14 · 1080p · 30fps</div>
+        <div><span class="hf4m-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V03</div>
+        <div class="hf4m-tc">DATA AS OF · APR 2026</div>
       </div>
       <div class="hf4m-stage">
         <div>
@@ -1167,13 +1182,13 @@
       <div class="hf4m-bar-wrap">
         <div class="hf4m-bar-track"><div class="hf4m-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hf4m-scrub">
-        <div class="hf4m-scrub-icon">▶</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf4m-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf4m-scrub-bar"><div class="hf4m-scrub-fill"></div></div>
-        <div>1.0×</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf4m-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hf4m-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row hf4m-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1182,7 +1197,7 @@
   </div>
   <div class="foot">
     <div>Page 15 &middot; Hyperframe &middot; multiples Apr 2023 → Q4 2025</div>
-    <div>2025–2026 &middot; video composition</div>
+    <div>2025–2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1243,7 +1258,7 @@
     .hf4a-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.12 &middot; Hyperframe video &middot; multiples are forking</div>
+    <div class="kicker">&sect;4.12 &middot; Data horizon view &middot; multiples are forking</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">AI-native fintechs trade at a structural premium.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11&rsquo;s &ldquo;fintech multiples&rdquo; comp set already aged: 2025&ndash;26 marks the visible bifurcation. AI-native expense &amp; ops platforms (Ramp $32B at $1B run-rate &middot; Mercury &middot; Brex) are pricing on AI-attach gross margin and net retention, while traditional acquirers and lenders revert toward bank multiples. Klarna&rsquo;s Sep 2025 IPO at ~3.5&times; revenue and Stripe&rsquo;s $107B private mark anchor the new dispersion.
@@ -1251,8 +1266,8 @@
 
     <div class="hf4a-frame" style="margin-top:1.4vh">
       <div class="hf4a-topbar">
-        <div><span class="hf4a-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V04</div>
-        <div class="hf4a-tc">00:00:10:14 · 1080p · 30fps</div>
+        <div><span class="hf4a-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V04</div>
+        <div class="hf4a-tc">DATA AS OF · APR 2026</div>
       </div>
       <div class="hf4a-stage">
         <div class="hf4a-cards">
@@ -1303,13 +1318,13 @@
       <div class="hf4a-bar-wrap">
         <div class="hf4a-bar-track"><div class="hf4a-bar" style="--w:82%"></div></div>
       </div>
-      <div class="hf4a-scrub">
-        <div class="hf4a-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf4a-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf4a-scrub-bar"><div class="hf4a-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf4a-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hf4a-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hf4a-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1318,7 +1333,7 @@
   </div>
   <div class="foot">
     <div>Page 16 &middot; Hyperframe &middot; AI-native premium 2025 &rarr; 2026</div>
-    <div>2025–2026 &middot; video composition</div>
+    <div>2025–2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1377,7 +1392,7 @@
     .hf4s-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.13 &middot; Hyperframe video &middot; market-cap evolution &middot; 2021 &rarr; 2025</div>
+    <div class="kicker">&sect;4.13 &middot; Data horizon view &middot; market-cap evolution &middot; 2021 &rarr; 2025</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Public fintech reset by category &mdash; not all sectors recovered.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11&rsquo;s multiples table averaged across categories. The averaging hides everything: payment networks (V/MA) re-rated to all-time highs, neobanks (NU) compounded, BNPL (AFRM) round-tripped, while crypto (COIN) and lending (SOFI) followed cycles. The right reference set still depends on which kind of fintech you&rsquo;re valuing.
@@ -1385,8 +1400,8 @@
 
     <div class="hf4s-frame" style="margin-top:1.4vh">
       <div class="hf4s-topbar">
-        <div><span class="hf4s-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V05</div>
-        <div class="hf4s-tc">00:00:10:14 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hf4s-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V05</div>
+        <div class="hf4s-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hf4s-stage">
         <div>
@@ -1457,13 +1472,13 @@
       <div class="hf4s-bar-wrap">
         <div class="hf4s-bar-track"><div class="hf4s-bar" style="--w:80%"></div></div>
       </div>
-      <div class="hf4s-scrub">
-        <div class="hf4s-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf4s-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf4s-scrub-bar"><div class="hf4s-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf4s-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2025</div>
+      <div class="hf4s-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hf4s-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1472,7 +1487,7 @@
   </div>
   <div class="foot">
     <div>Page 17 &middot; Hyperframe &middot; sector reset 2021 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1533,7 +1548,7 @@
     .hft-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.7b &middot; Hyperframe video &middot; mNAV, BTC, &amp; the new asset on the balance sheet</div>
+    <div class="kicker">&sect;4.7b &middot; Data horizon view &middot; mNAV, BTC, &amp; the new asset on the balance sheet</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">A new valuation problem: corporate BTC treasuries, 2020 &rarr; 2026.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 13 introduced tokenized RWA. The mirror trade is "tokenized equity": MicroStrategy (now <em>Strategy</em>) buying $33B+ of bitcoin, financed mostly through ATM equity sales (~97%). Five years on, the valuation question for analysts is mNAV (market cap &divide; BTC NAV). It hovered ~3&times; through the 2024 ETF launch and has compressed to ~1&times; in late 2025 &mdash; making fresh ATM issuance dilutive.
@@ -1541,8 +1556,8 @@
 
     <div class="hft-frame" style="margin-top:1.4vh">
       <div class="hft-topbar">
-        <div><span class="hft-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V06</div>
-        <div class="hft-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hft-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V06</div>
+        <div class="hft-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hft-stage">
         <div class="hft-cards">
@@ -1600,13 +1615,13 @@
       <div class="hft-bar-wrap">
         <div class="hft-bar-track"><div class="hft-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hft-scrub">
-        <div class="hft-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hft-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hft-scrub-bar"><div class="hft-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hft-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hft-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hft-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1615,7 +1630,7 @@
   </div>
   <div class="foot">
     <div>Page 18 &middot; Hyperframe &middot; corporate BTC treasury 2020 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1676,7 +1691,7 @@
     .hfcr-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.7c &middot; Hyperframe video &middot; stablecoin issuer enters public markets</div>
+    <div class="kicker">&sect;4.7c &middot; Data horizon view &middot; stablecoin issuer enters public markets</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Circle IPO &middot; the first big stablecoin float, June 2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       The tokenized RWA slide (13) framed asset tokenization. The supply-side equivalent is the issuer balance sheet. On Jun 5, 2025 Circle Internet Group (NYSE: CRCL) priced at $31, raising ~$1.05B at a ~$6.9B fully-diluted valuation; the stock more than doubled on day 1 and traded above $200 within weeks, peaking at a ~$60B market cap. The model: USDC float earns short-rate yield; sharing economics with Coinbase + the GENIUS Act (US stablecoin law, signed Jul 18, 2025) reshape the multiple.
@@ -1684,8 +1699,8 @@
 
     <div class="hfcr-frame" style="margin-top:1.4vh">
       <div class="hfcr-topbar">
-        <div><span class="hfcr-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V07</div>
-        <div class="hfcr-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfcr-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V07</div>
+        <div class="hfcr-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfcr-stage">
         <div class="hfcr-cards">
@@ -1743,13 +1758,13 @@
       <div class="hfcr-bar-wrap">
         <div class="hfcr-bar-track"><div class="hfcr-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hfcr-scrub">
-        <div class="hfcr-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfcr-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfcr-scrub-bar"><div class="hfcr-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfcr-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2025</div>
+      <div class="hfcr-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfcr-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1758,7 +1773,7 @@
   </div>
   <div class="foot">
     <div>Page 19 &middot; Hyperframe &middot; Circle IPO &middot; June 2025</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1818,7 +1833,7 @@
     .hfnu-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.13 &middot; Hyperframe video &middot; bank vs digital-bank multiples</div>
+    <div class="kicker">&sect;4.13 &middot; Data horizon view &middot; bank vs digital-bank multiples</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Why a Brazilian neobank trades at 2&times; JPMorgan&rsquo;s P/E (May 2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 10 (Bank Valuation) anchored a regulated bank to P/E + P/Book on Apr 2023 data. Two years later the spread has widened decisively. JPMorgan trades at ~14.8&times; trailing / ~13.3&times; forward earnings (May 2026); Nu Holdings sits at ~24-31&times; trailing / ~20&times; forward, despite being a lower-cost, higher-ROE digital bank. The classic textbook answer &ldquo;banks deserve a discount&rdquo; is now reversed for neobanks: ROE 33% vs 17%, $0.80/customer/month operating cost, and double-digit deposit growth in LatAm push the multiple. The valuation toolkit didn&rsquo;t change &mdash; the underlying unit economics did.
@@ -1826,8 +1841,8 @@
 
     <div class="hfnu-frame" style="margin-top:1.4vh">
       <div class="hfnu-topbar">
-        <div><span class="hfnu-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V08</div>
-        <div class="hfnu-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfnu-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V08</div>
+        <div class="hfnu-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfnu-stage">
         <div class="hfnu-cards">
@@ -1885,13 +1900,13 @@
       <div class="hfnu-bar-wrap">
         <div class="hfnu-bar-track"><div class="hfnu-bar" style="--w:75%"></div></div>
       </div>
-      <div class="hfnu-scrub">
-        <div class="hfnu-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfnu-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfnu-scrub-bar"><div class="hfnu-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfnu-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfnu-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfnu-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1900,12 +1915,12 @@
   </div>
   <div class="foot">
     <div>Page 20 &middot; Hyperframe &middot; Bank vs neobank multiples 2023 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 21 · Hyperframe · Public Fintech Profitability Inflection Q1 2026 (dark · video composition)
+     SLIDE 21 · Hyperframe · Public Fintech Profitability Inflection Q1 2026 (dark · data horizon view)
      ============================================================ -->
 <section class="slide dark" data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026">
   <div class="chrome">
@@ -1960,7 +1975,7 @@
     .hfpr-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.10 &middot; Hyperframe video &middot; the profitability inflection</div>
+    <div class="kicker">&sect;4.10 &middot; Data horizon view &middot; the profitability inflection</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Q1 2026 earnings: the &ldquo;profitable fintech&rdquo; archetype is now real.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11 priced fintech multiples on the assumption that Rule-of-40 candidates are scarce. They are not anymore. SoFi posted its 10th consecutive profitable quarter in Q1 2026 (net income $167M, +134% YoY) on $1.1B revenue (+41%). Robinhood netted $346M with 15% revenue growth. Both are now S&amp;P-style operating-leverage stories, not narrative-only growth stocks. This re-rates the &ldquo;public fintech&rdquo; multiples lens: discount rate falls, terminal-value share rises, and the bank/neobank gap (slide 20) narrows from the neobank side.
@@ -1968,8 +1983,8 @@
 
     <div class="hfpr-frame" style="margin-top:1.4vh">
       <div class="hfpr-topbar">
-        <div><span class="hfpr-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V10</div>
-        <div class="hfpr-tc">00:00:10:08 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfpr-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V10</div>
+        <div class="hfpr-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfpr-stage">
         <div class="hfpr-cards">
@@ -2027,13 +2042,13 @@
       <div class="hfpr-bar-wrap">
         <div class="hfpr-bar-track"><div class="hfpr-bar" style="--w:80%"></div></div>
       </div>
-      <div class="hfpr-scrub">
-        <div class="hfpr-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfpr-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfpr-scrub-bar"><div class="hfpr-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfpr-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfpr-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfpr-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -2042,12 +2057,12 @@
   </div>
   <div class="foot">
     <div>Page 21 &middot; Hyperframe &middot; Public fintech profitability Q1 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 22 · Hyperframe · Q1 2026 fintech multiples by sub-sector (light · video composition)
+     SLIDE 22 · Hyperframe · Q1 2026 fintech multiples by sub-sector (light · data horizon view)
      ============================================================ -->
 <section class="slide light" data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector">
   <div class="chrome">
@@ -2104,7 +2119,7 @@
     .hfm26-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.11 &middot; Hyperframe video &middot; Finro Q1 2026 416-company dataset</div>
+    <div class="kicker">&sect;4.11 &middot; Data horizon view &middot; Finro Q1 2026 416-company dataset</div>
     <h2 class="h-xl" style="font-size:3.7vw; margin-top:.4vh">Q1 2026 fintech multiples: the average is 14.5&times;. The median is 7.6&times;. Dispersion is the story.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 14 set the 2025 baseline. Finro's Q1 2026 dataset (416 fintechs across 9 sub-sectors) shows the spread has widened, not converged: the 14.5&times; average masks a 7.6&times; median &mdash; meaning a handful of WealthTech and Blockchain platforms are dragging the headline up while Lending sits at 2.6&times;. For the discounted-cash-flow lens you applied in slide 8, this is the year you stop quoting &ldquo;fintech&rdquo; multiples in the aggregate. The right comp set lives at the sub-sector level &mdash; and AI-native &amp; vertical-SaaS economics pull comps closer to enterprise SaaS (~6&ndash;7&times;) than to legacy lending (~2.6&times;).
@@ -2112,8 +2127,8 @@
 
     <div class="hfm26-frame" style="margin-top:1.4vh">
       <div class="hfm26-topbar">
-        <div><span class="hfm26-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH04-V10</div>
-        <div class="hfm26-tc">00:00:11:24 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfm26-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V10</div>
+        <div class="hfm26-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfm26-stage">
         <div class="hfm26-cards">
@@ -2183,13 +2198,13 @@
       <div class="hfm26-bar-wrap">
         <div class="hfm26-bar-track"><div class="hfm26-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hfm26-scrub">
-        <div class="hfm26-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfm26-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfm26-scrub-bar"><div class="hfm26-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfm26-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfm26-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfm26-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -2198,7 +2213,7 @@
   </div>
   <div class="foot">
     <div>Page 22 &middot; Hyperframe &middot; Q1 2026 multiples by sub-sector</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 

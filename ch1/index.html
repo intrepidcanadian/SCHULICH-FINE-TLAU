@@ -412,6 +412,21 @@
     .pipeline{grid-template-columns:repeat(2,1fr)}
     .grid-2-7-5,.grid-2-6-6,.grid-2-8-4{grid-template-columns:1fr}
   }
+  /* ============ Time-horizon override ============
+     Convert legacy scrub-fill (was a sweeping fake-video animation) into
+     a static elapsed-time bar showing 2024 → APR 2026 (~78% of window). */
+  [class$="-scrub-fill"]{
+    animation: none !important;
+    position: absolute !important;
+    inset: 0 auto 0 0 !important;
+    width: 78% !important;
+    transform: none !important;
+    background: linear-gradient(90deg, currentColor, currentColor) !important;
+    opacity: .28 !important;
+  }
+  /* Hide misleading recording-dot blink in the topbar; keep dot visible but static */
+  [class$="-rec"]{ animation: none !important; opacity: .85 !important; }
+
 </style>
 </head>
 <body>
@@ -1011,7 +1026,7 @@
 </section>
 
 <!-- ============================================================
-     SLIDE 13 · Hyperframe video · Stablecoin & RWA reset 2025-26 (dark)
+     SLIDE 13 · Data horizon view · Stablecoin & RWA reset 2025-26 (dark)
      ============================================================ -->
 <section class="slide dark" data-screen-label="13 Hyperframe · Stablecoins 2025-26">
   <div class="chrome">
@@ -1051,7 +1066,7 @@
     .hfv-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.3 · Hyperframe video · 2025–2026 update</div>
+    <div class="kicker">§3.3 · Data horizon view · 2025–2026 update</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">Stablecoins, RWAs &amp; agent-driven rails.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       A second-by-second composition of the post-2024 fourth-wave fintech: dollar-stablecoin settlement scales beyond Visa, BlackRock-anchored RWAs cross $7B, and AI agents start moving money on their own rails.
@@ -1059,8 +1074,8 @@
 
     <div class="hfv-frame" style="margin-top:1.6vh">
       <div class="hfv-topbar">
-        <div><span class="hfv-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V01</div>
-        <div class="hfv-tc">00:00:08:14 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfv-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V01</div>
+        <div class="hfv-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfv-stage">
         <div class="hfv-card">
@@ -1087,13 +1102,13 @@
       <div class="hfv-bar-wrap">
         <div class="hfv-bar-track"><div class="hfv-bar" style="--w:88%"></div></div>
       </div>
-      <div class="hfv-scrub">
-        <div class="hfv-scrub-icon">▶</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfv-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfv-scrub-bar"><div class="hfv-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfv-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hfv-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1102,12 +1117,12 @@
   </div>
   <div class="foot">
     <div>Page 13 · Hyperframe · stablecoins, RWAs & agents</div>
-    <div>2025–2026 · video composition</div>
+    <div>2025–2026 · data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 14 · Hyperframe · 2025 Capital Rebound (light · video composition)
+     SLIDE 14 · Hyperframe · 2025 Capital Rebound (light · data horizon view)
      ============================================================ -->
 <section class="slide light" data-screen-label="14 Hyperframe · 2025 Capital Rebound">
   <div class="chrome">
@@ -1147,7 +1162,7 @@
     .hfb-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.4 · Hyperframe video · KPMG Pulse of Fintech H2 2025</div>
+    <div class="kicker">§3.4 · Data horizon view · KPMG Pulse of Fintech H2 2025</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2025 capital rebound &mdash; bigger checks, fewer deals.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       After the 2023 trough ($113B) and a flat 2024 ($95.5B), 2025 fintech investment rebounded to $116B as exit activity returned. Deal count fell to its lowest since 2017 &mdash; capital concentrated in fewer, larger AI-fintech and stablecoin platform rounds.
@@ -1155,8 +1170,8 @@
 
     <div class="hfb-frame" style="margin-top:1.6vh">
       <div class="hfb-topbar">
-        <div><span class="hfb-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V02</div>
-        <div class="hfb-tc">00:00:11:02 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfb-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V02</div>
+        <div class="hfb-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfb-stage">
         <div class="hfb-card">
@@ -1183,13 +1198,13 @@
       <div class="hfb-bar-wrap">
         <div class="hfb-bar-track"><div class="hfb-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hfb-scrub">
-        <div class="hfb-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfb-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfb-scrub-bar"><div class="hfb-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfb-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hfb-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1198,7 +1213,7 @@
   </div>
   <div class="foot">
     <div>Page 14 · Hyperframe · 2025 capital rebound</div>
-    <div>2025–2026 · video composition</div>
+    <div>2025–2026 · data horizon view</div>
   </div>
 </section>
 
@@ -1255,7 +1270,7 @@
     .hfh-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.5 · Hyperframe video · ecosystem evolution 2020 → 2025</div>
+    <div class="kicker">§3.5 · Data horizon view · ecosystem evolution 2020 → 2025</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Global fintech hubs: from Findexable 2020 to 2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11&rsquo;s 2020 Findexable rankings have aged. The Bay Area still leads, but New York climbed, London held against Brexit drag, and Asia&rsquo;s rise (Singapore, Bangalore) reshaped the top 10. Mind the Bridge&rsquo;s Tech Innovation Champions and Statista&rsquo;s 2024 fintech rankings now tell a more multipolar story.
@@ -1263,8 +1278,8 @@
 
     <div class="hfh-frame" style="margin-top:1.4vh">
       <div class="hfh-topbar">
-        <div><span class="hfh-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V03</div>
-        <div class="hfh-tc">00:00:08:21 · 1080p · 30fps</div>
+        <div><span class="hfh-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V03</div>
+        <div class="hfh-tc">DATA AS OF · APR 2026</div>
       </div>
       <div class="hfh-stage">
         <div>
@@ -1320,13 +1335,13 @@
       <div class="hfh-bar-wrap">
         <div class="hfh-bar-track"><div class="hfh-bar" style="--w:73%"></div></div>
       </div>
-      <div class="hfh-scrub">
-        <div class="hfh-scrub-icon">▶</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfh-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfh-scrub-bar"><div class="hfh-scrub-fill"></div></div>
-        <div>1.0×</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfh-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hfh-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row hfh-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1335,7 +1350,7 @@
   </div>
   <div class="foot">
     <div>Page 15 · Hyperframe · global fintech hubs · 2020 → 2025</div>
-    <div>2025–2026 · video composition</div>
+    <div>2025–2026 · data horizon view</div>
   </div>
 </section>
 
@@ -1394,7 +1409,7 @@
     .hf1s-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.6 · Hyperframe video · the rule-book arrives</div>
+    <div class="kicker">§3.6 · Data horizon view · the rule-book arrives</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Stablecoins moved from grey zone to regulated infrastructure.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 08 listed cryptocurrencies and stablecoins as a category &mdash; in 2020 there was no jurisdictional rule-book. Between Dec 2024 and Aug 2025, three of the world&rsquo;s largest financial centres turned stablecoins into licensed activity. Total stablecoin float crossed $320B by Apr 2026; USDT + USDC are >90% of supply, but the issuer perimeter has narrowed to banks &amp; chartered nonbanks.
@@ -1402,8 +1417,8 @@
 
     <div class="hf1s-frame" style="margin-top:1.4vh">
       <div class="hf1s-topbar">
-        <div><span class="hf1s-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V04</div>
-        <div class="hf1s-tc">00:00:09:24 · 1080p · 30fps</div>
+        <div><span class="hf1s-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V04</div>
+        <div class="hf1s-tc">DATA AS OF · APR 2026</div>
       </div>
       <div class="hf1s-stage">
         <div class="hf1s-cards">
@@ -1449,13 +1464,13 @@
       <div class="hf1s-bar-wrap">
         <div class="hf1s-bar-track"><div class="hf1s-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hf1s-scrub">
-        <div class="hf1s-scrub-icon">▶</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf1s-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf1s-scrub-bar"><div class="hf1s-scrub-fill"></div></div>
-        <div>1.0×</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf1s-watermark">HYPERFRAME · LIVE COMPOSITION · 2026</div>
+      <div class="hf1s-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row hf1s-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1464,7 +1479,7 @@
   </div>
   <div class="foot">
     <div>Page 16 · Hyperframe · stablecoin rules 2024 → 2026</div>
-    <div>2025–2026 · video composition</div>
+    <div>2025–2026 · data horizon view</div>
   </div>
 </section>
 
@@ -1519,7 +1534,7 @@
     .hfg-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7 · Hyperframe video · sustaining innovation 2023 → 2025</div>
+    <div class="kicker">§3.7 · Data horizon view · sustaining innovation 2023 → 2025</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Incumbents catch up: bank GenAI rollout, 2023&rarr;2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 05 framed traditional fintech as &ldquo;faster horses.&rdquo; Slide 12 quoted the IDC $85B GenAI banking forecast. Two years on, <em>sustaining</em> innovation has actually scaled: every G-SIB now runs production LLMs to tens of thousands of employees. The 2023 baseline is already obsolete.
@@ -1527,8 +1542,8 @@
 
     <div class="hfg-frame" style="margin-top:1.4vh">
       <div class="hfg-topbar">
-        <div><span class="hfg-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V05</div>
-        <div class="hfg-tc">00:00:09:11 · 1080p · 30fps</div>
+        <div><span class="hfg-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V05</div>
+        <div class="hfg-tc">DATA AS OF · APR 2026</div>
       </div>
       <div class="hfg-stage">
         <div>
@@ -1587,13 +1602,13 @@
       <div class="hfg-bar-wrap">
         <div class="hfg-bar-track"><div class="hfg-bar" style="--w:82%"></div></div>
       </div>
-      <div class="hfg-scrub">
-        <div class="hfg-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfg-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfg-scrub-bar"><div class="hfg-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfg-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hfg-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row hfg-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1602,7 +1617,7 @@
   </div>
   <div class="foot">
     <div>Page 17 · Hyperframe · bank GenAI · 2023 → 2025</div>
-    <div>2025–2026 · video composition</div>
+    <div>2025–2026 · data horizon view</div>
   </div>
 </section>
 
@@ -1663,7 +1678,7 @@
     .hfb-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7b · Hyperframe video · BNPL goes mainstream &amp; consolidates</div>
+    <div class="kicker">§3.7b · Data horizon view · BNPL goes mainstream &amp; consolidates</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">BNPL: from pandemic novelty to public-market category, 2020&rarr;2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 08 listed online lending alongside crowdfunding. Five years on, Buy-Now-Pay-Later is the breakout sub-category: 380M+ global users, $560B GMV in 2025, and the largest IPO of 2025. But the field also <em>narrowed</em>: Apple killed its in-house Pay Later, the CFPB&rsquo;s 2024 interpretive rule was withdrawn in Apr 2025, and Affirm became the de-facto default checkout install for Apple Pay.
@@ -1671,8 +1686,8 @@
 
     <div class="hfb-frame" style="margin-top:1.4vh">
       <div class="hfb-topbar">
-        <div><span class="hfb-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V06</div>
-        <div class="hfb-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfb-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V06</div>
+        <div class="hfb-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfb-stage">
         <div class="hfb-cards">
@@ -1730,13 +1745,13 @@
       <div class="hfb-bar-wrap">
         <div class="hfb-bar-track"><div class="hfb-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hfb-scrub">
-        <div class="hfb-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfb-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfb-scrub-bar"><div class="hfb-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfb-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2025</div>
+      <div class="hfb-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfb-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1745,7 +1760,7 @@
   </div>
   <div class="foot">
     <div>Page 18 &middot; Hyperframe &middot; BNPL 2020 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1805,7 +1820,7 @@
     .hff-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7c · Hyperframe video · instant payments go mainstream</div>
+    <div class="kicker">§3.7c · Data horizon view · instant payments go mainstream</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">From batch to instant: real-time rails became table-stakes, 2023&rarr;2026.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 10 listed instant settlement among the ten technologies. Three years on, every major payment market has a domestic real-time rail at scale. FedNow went from 35 launch banks (Jul 2023) to 1,400+ participants (Sep 2025); Brazil&rsquo;s Pix processed 64B+ transactions in 2024; India&rsquo;s UPI clears 17B+ transactions per month. Bank rails are no longer the bottleneck &mdash; the question is what gets built on top.
@@ -1813,8 +1828,8 @@
 
     <div class="hff-frame" style="margin-top:1.4vh">
       <div class="hff-topbar">
-        <div><span class="hff-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V07</div>
-        <div class="hff-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hff-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V07</div>
+        <div class="hff-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hff-stage">
         <div class="hff-cards">
@@ -1872,13 +1887,13 @@
       <div class="hff-bar-wrap">
         <div class="hff-bar-track"><div class="hff-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hff-scrub">
-        <div class="hff-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hff-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hff-scrub-bar"><div class="hff-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hff-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2025</div>
+      <div class="hff-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hff-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1887,7 +1902,7 @@
   </div>
   <div class="foot">
     <div>Page 19 &middot; Hyperframe &middot; Real-time rails 2023 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1947,7 +1962,7 @@
     .hfetf-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7d · Hyperframe video · the bitcoin wrapper goes mainstream</div>
+    <div class="kicker">§3.7d · Data horizon view · the bitcoin wrapper goes mainstream</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Spot crypto ETFs: from approval (Jan 2024) to $200B AUM (May 2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 10 listed digital assets among the ten technologies. Two years after SEC approval (Jan 10, 2024), the spot bitcoin ETF complex crossed ~$200B AUM &mdash; faster than any prior ETF category. BlackRock&rsquo;s IBIT alone holds ~810,000 BTC (~$66B). The wrapper, not the token, became the institutional access point: 401(k)s, pensions, and RIAs now buy bitcoin without custody. The Ether spot ETF (Jul 2024) followed; both reshape what &ldquo;crypto in the portfolio&rdquo; means for advisors.
@@ -1955,8 +1970,8 @@
 
     <div class="hfetf-frame" style="margin-top:1.4vh">
       <div class="hfetf-topbar">
-        <div><span class="hfetf-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V08</div>
-        <div class="hfetf-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfetf-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V08</div>
+        <div class="hfetf-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfetf-stage">
         <div class="hfetf-cards">
@@ -2014,13 +2029,13 @@
       <div class="hfetf-bar-wrap">
         <div class="hfetf-bar-track"><div class="hfetf-bar" style="--w:82%"></div></div>
       </div>
-      <div class="hfetf-scrub">
-        <div class="hfetf-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfetf-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfetf-scrub-bar"><div class="hfetf-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfetf-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfetf-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfetf-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -2029,12 +2044,12 @@
   </div>
   <div class="foot">
     <div>Page 20 &middot; Hyperframe &middot; Spot crypto ETFs 2024 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 21 · Hyperframe · Cross-Border B2B Stablecoins 2023-2026 (dark · video composition)
+     SLIDE 21 · Hyperframe · Cross-Border B2B Stablecoins 2023-2026 (dark · data horizon view)
      ============================================================ -->
 <section class="slide dark" data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026">
   <div class="chrome">
@@ -2089,7 +2104,7 @@
     .hfxb-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7e · Hyperframe video · cross-border B2B reset</div>
+    <div class="kicker">§3.7e · Data horizon view · cross-border B2B reset</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Stablecoins eat the SWIFT margin: B2B cross-border 2023 &rarr; 2026.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 12 cited real-time rails. Slide 13 noted stablecoins crossed Visa+Mastercard combined card volume. The next layer down is B2B settlement &mdash; where ~92% of the global flow still runs through SWIFT correspondent banking. Stablecoin B2B payments grew from &lt;$100M/month in early 2023 to &gt;$6B/month by mid-2025 (a 733% YoY surge). Real-payment stablecoin volume doubled to ~$400B in 2025, ~60% of which is B2B. The card networks responded: Visa reported $4.6B annualized stablecoin settlement on its own rail in Q1 2026, and Wise Platform plugged 60+ banks (Bank Mandiri, IndusInd, Monzo, Brex) into a 20-second-or-less corridor.
@@ -2097,8 +2112,8 @@
 
     <div class="hfxb-frame" style="margin-top:1.4vh">
       <div class="hfxb-topbar">
-        <div><span class="hfxb-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V09</div>
-        <div class="hfxb-tc">00:00:11:02 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfxb-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V09</div>
+        <div class="hfxb-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfxb-stage">
         <div class="hfxb-cards">
@@ -2156,13 +2171,13 @@
       <div class="hfxb-bar-wrap">
         <div class="hfxb-bar-track"><div class="hfxb-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hfxb-scrub">
-        <div class="hfxb-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfxb-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfxb-scrub-bar"><div class="hfxb-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfxb-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfxb-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfxb-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -2171,12 +2186,12 @@
   </div>
   <div class="foot">
     <div>Page 21 &middot; Hyperframe &middot; Cross-border B2B 2023 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 22 · Hyperframe · GENIUS Era stablecoin market 2025-26 (dark · video composition)
+     SLIDE 22 · Hyperframe · GENIUS Era stablecoin market 2025-26 (dark · data horizon view)
      ============================================================ -->
 <section class="slide dark" data-screen-label="22 Hyperframe · GENIUS Era 2025-26">
   <div class="chrome">
@@ -2231,7 +2246,7 @@
     .hfg-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7f · Hyperframe video · post-GENIUS stablecoin landscape</div>
+    <div class="kicker">§3.7f · Data horizon view · post-GENIUS stablecoin landscape</div>
     <h2 class="h-xl" style="font-size:3.7vw; margin-top:.4vh">The GENIUS Era: stablecoins move from gray zone to chartered rail (Jul 2025 &rarr; Q2 2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       President Trump signed the GENIUS Act into law on 18 July 2025 &mdash; the first U.S. federal stablecoin framework. Title II created a payment-stablecoin issuer charter (state OR federal trust); Title VII banned issuer-paid interest. Nine months in, the market has compounded, not shrunk: total supply broke $280B in early 2026, USDC outpaced USDT growth for a second straight year, and Visa/Mastercard re-anchored to compliant USD-tokens. The thesis from slide 12 (the &ldquo;fourth wave&rdquo;) is now codified.
@@ -2239,8 +2254,8 @@
 
     <div class="hfg-frame" style="margin-top:1.4vh">
       <div class="hfg-topbar">
-        <div><span class="hfg-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH01-V10</div>
-        <div class="hfg-tc">00:00:11:14 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfg-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V10</div>
+        <div class="hfg-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfg-stage">
         <div class="hfg-cards">
@@ -2298,13 +2313,13 @@
       <div class="hfg-bar-wrap">
         <div class="hfg-bar-track"><div class="hfg-bar" style="--w:82%"></div></div>
       </div>
-      <div class="hfg-scrub">
-        <div class="hfg-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfg-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfg-scrub-bar"><div class="hfg-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfg-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfg-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfg-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -2313,7 +2328,7 @@
   </div>
   <div class="foot">
     <div>Page 22 &middot; Hyperframe &middot; GENIUS Era stablecoin market</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 

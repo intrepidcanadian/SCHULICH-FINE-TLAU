@@ -372,6 +372,21 @@
     .pipeline{grid-template-columns:repeat(2,1fr)}
     .grid-2-7-5,.grid-2-6-6,.grid-2-8-4{grid-template-columns:1fr}
   }
+  /* ============ Time-horizon override ============
+     Convert legacy scrub-fill (was a sweeping fake-video animation) into
+     a static elapsed-time bar showing 2024 → APR 2026 (~78% of window). */
+  [class$="-scrub-fill"]{
+    animation: none !important;
+    position: absolute !important;
+    inset: 0 auto 0 0 !important;
+    width: 78% !important;
+    transform: none !important;
+    background: linear-gradient(90deg, currentColor, currentColor) !important;
+    opacity: .28 !important;
+  }
+  /* Hide misleading recording-dot blink in the topbar; keep dot visible but static */
+  [class$="-rec"]{ animation: none !important; opacity: .85 !important; }
+
 </style>
 </head>
 <body>
@@ -968,7 +983,7 @@
     .hf3v-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.10 &middot; Hyperframe video &middot; 2025&ndash;2026 update</div>
+    <div class="kicker">&sect;3.10 &middot; Data horizon view &middot; 2025&ndash;2026 update</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">Fintech IPO window reopens.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       After three years of frozen exits, the post-2024 cycle restarted with profitability-first listings. Discipline returned: clean cap tables, Rule-of-40 metrics, and AI-leverage stories. The cohort is small but defining.
@@ -976,8 +991,8 @@
 
     <div class="hf3v-frame" style="margin-top:1.6vh">
       <div class="hf3v-topbar">
-        <div><span class="hf3v-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V01</div>
-        <div class="hf3v-tc">00:00:14:09 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hf3v-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V01</div>
+        <div class="hf3v-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hf3v-stage">
         <div class="hf3v-card">
@@ -1004,13 +1019,13 @@
       <div class="hf3v-bar-wrap">
         <div class="hf3v-bar-track"><div class="hf3v-bar" style="--w:62%"></div></div>
       </div>
-      <div class="hf3v-scrub">
-        <div class="hf3v-scrub-icon">▶</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf3v-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf3v-scrub-bar"><div class="hf3v-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf3v-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hf3v-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1019,12 +1034,12 @@
   </div>
   <div class="foot">
     <div>Page 12 &middot; Hyperframe &middot; the IPO window reopens</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 13 · Hyperframe · 2025 IPO Resurgence (light · video composition)
+     SLIDE 13 · Hyperframe · 2025 IPO Resurgence (light · data horizon view)
      ============================================================ -->
 <section class="slide light" data-screen-label="13 Hyperframe · 2025 IPO Resurgence">
   <div class="chrome">
@@ -1064,7 +1079,7 @@
     .hf3b-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.6 &middot; Hyperframe video &middot; fintech IPO resurgence 2025</div>
+    <div class="kicker">&sect;3.6 &middot; Data horizon view &middot; fintech IPO resurgence 2025</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2025 IPO window: opened, then disciplined.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       After a three-year drought, fintech IPOs returned in 2025 &mdash; but at sober prices. Klarna re-listed at one-third of its 2021 peak; Chime priced below private-market last rounds. The lesson: down-round IPOs can still clear when listings reset expectations.
@@ -1072,8 +1087,8 @@
 
     <div class="hf3b-frame" style="margin-top:1.6vh">
       <div class="hf3b-topbar">
-        <div><span class="hf3b-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V02</div>
-        <div class="hf3b-tc">00:00:09:14 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hf3b-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V02</div>
+        <div class="hf3b-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hf3b-stage">
         <div class="hf3b-card">
@@ -1100,13 +1115,13 @@
       <div class="hf3b-bar-wrap">
         <div class="hf3b-bar-track"><div class="hf3b-bar" style="--w:69%"></div></div>
       </div>
-      <div class="hf3b-scrub">
-        <div class="hf3b-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf3b-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf3b-scrub-bar"><div class="hf3b-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf3b-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hf3b-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1115,7 +1130,7 @@
   </div>
   <div class="foot">
     <div>Page 13 &middot; Hyperframe &middot; 2025 IPO resurgence</div>
-    <div>2025–2026 &middot; video composition</div>
+    <div>2025–2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1162,7 +1177,7 @@
     .hf3y-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.11 &middot; Hyperframe video &middot; Y Combinator 2014 → 2025</div>
+    <div class="kicker">&sect;3.11 &middot; Data horizon view &middot; Y Combinator 2014 → 2025</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">From Wealthsimple to AI fintech-as-a-service.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slides 04&ndash;05 anchor the 2014 era: Wealthsimple seed-pitched to 14 angels; YC reported &ldquo;3,500+ companies funded.&rdquo; By the W25 + S25 batches, YC funds twice as many fintech-adjacent startups per year, half are AI-native, and median check-size has compressed back to seed levels even as outcomes are larger and faster.
@@ -1170,8 +1185,8 @@
 
     <div class="hf3y-frame" style="margin-top:1.4vh">
       <div class="hf3y-topbar">
-        <div><span class="hf3y-rec">●</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V03</div>
-        <div class="hf3y-tc">00:00:09:08 · 1080p · 30fps</div>
+        <div><span class="hf3y-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V03</div>
+        <div class="hf3y-tc">DATA AS OF · APR 2026</div>
       </div>
       <div class="hf3y-stage">
         <div class="hf3y-card">
@@ -1198,13 +1213,13 @@
       <div class="hf3y-bar-wrap">
         <div class="hf3y-bar-track"><div class="hf3y-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hf3y-scrub">
-        <div class="hf3y-scrub-icon">▶</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf3y-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf3y-scrub-bar"><div class="hf3y-scrub-fill"></div></div>
-        <div>1.0×</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf3y-watermark">HYPERFRAME · LIVE COMPOSITION · 2025</div>
+      <div class="hf3y-watermark">DATA HORIZON · 2024 → 2026</div>
     </div>
 
     <div class="meta-row hf3y-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1213,7 +1228,7 @@
   </div>
   <div class="foot">
     <div>Page 14 &middot; Hyperframe &middot; YC fintech 2014 → 2025</div>
-    <div>2025–2026 &middot; video composition</div>
+    <div>2025–2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1273,7 +1288,7 @@
     .hf3w-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.12 &middot; Hyperframe video &middot; the case study, ten years on</div>
+    <div class="kicker">&sect;3.12 &middot; Data horizon view &middot; the case study, ten years on</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Wealthsimple: $0 in 2014 &rarr; $100B in 2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 05&rsquo;s case anchored Wealthsimple at its 2014 angel round. By Oct 2025 the firm crossed C$100B in assets under administration &mdash; three years ahead of its own plan &mdash; and closed a C$750M Series F at a C$10B post-money valuation. AUA doubled in twelve months. Of the 14 angels who said &ldquo;yes&rdquo; in 2014, the early backers now hold positions worth orders of magnitude more than their cheques.
@@ -1281,8 +1296,8 @@
 
     <div class="hf3w-frame" style="margin-top:1.4vh">
       <div class="hf3w-topbar">
-        <div><span class="hf3w-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V04</div>
-        <div class="hf3w-tc">00:00:10:02 · 1080p · 30fps</div>
+        <div><span class="hf3w-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V04</div>
+        <div class="hf3w-tc">DATA AS OF · APR 2026</div>
       </div>
       <div class="hf3w-stage">
         <div class="hf3w-cards">
@@ -1333,13 +1348,13 @@
       <div class="hf3w-bar-wrap">
         <div class="hf3w-bar-track"><div class="hf3w-bar" style="--w:80%"></div></div>
       </div>
-      <div class="hf3w-scrub">
-        <div class="hf3w-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf3w-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf3w-scrub-bar"><div class="hf3w-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf3w-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hf3w-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hf3w-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1348,7 +1363,7 @@
   </div>
   <div class="foot">
     <div>Page 15 &middot; Hyperframe &middot; Wealthsimple 2014 &rarr; 2025</div>
-    <div>2025–2026 &middot; video composition</div>
+    <div>2025–2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1411,7 +1426,7 @@
     .hf3s-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.13 &middot; Hyperframe video &middot; the canonical fintech valuation arc</div>
+    <div class="kicker">&sect;3.13 &middot; Data horizon view &middot; the canonical fintech valuation arc</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Stripe: $1.75B (2014) &rarr; $91.5B (2025) &mdash; with a $45B detour.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       The closing slide cited Stripe at &ldquo;$95B&rdquo; &mdash; the 2021 mania peak. The company wrote that mark down 47% to $50B in 2023&rsquo;s tender, then climbed back to $91.5B by Feb 2025 on the back of stablecoin acquisitions (Bridge, $1.1B) and AI-merchant primitives. Same enterprise; private mark moved &plusmn;$45B in three years. The cycle inside Ch. 3&rsquo;s S-curve, made literal.
@@ -1419,8 +1434,8 @@
 
     <div class="hf3s-frame" style="margin-top:1.4vh">
       <div class="hf3s-topbar">
-        <div><span class="hf3s-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V05</div>
-        <div class="hf3s-tc">00:00:11:08 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hf3s-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V05</div>
+        <div class="hf3s-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hf3s-stage">
         <div class="hf3s-cards">
@@ -1481,13 +1496,13 @@
       <div class="hf3s-bar-wrap">
         <div class="hf3s-bar-track"><div class="hf3s-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hf3s-scrub">
-        <div class="hf3s-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hf3s-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hf3s-scrub-bar"><div class="hf3s-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hf3s-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2025</div>
+      <div class="hf3s-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hf3s-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
@@ -1496,7 +1511,7 @@
   </div>
   <div class="foot">
     <div>Page 16 &middot; Hyperframe &middot; Stripe valuation arc 2014 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1557,7 +1572,7 @@
     .hfa-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.7b &middot; Hyperframe video &middot; the AI-native funding bid</div>
+    <div class="kicker">&sect;3.7b &middot; Data horizon view &middot; the AI-native funding bid</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Capital concentrated into AI-native fintechs, 2023&rarr;2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11 framed the 2024-26 funding rebound. Inside that rebound, capital is concentrating: SMB-finance &amp; corporate-card platforms that wrap LLM agents around the workflow now command 2&minus;3&times; the multiples of vintage neobanks. Ramp went from $8.1B (Aug 2023) to $32B (Nov 2025) &mdash; a 4&times; private mark in 27 months &mdash; while Brex was acquired by Capital One.
@@ -1565,8 +1580,8 @@
 
     <div class="hfa-frame" style="margin-top:1.4vh">
       <div class="hfa-topbar">
-        <div><span class="hfa-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V05</div>
-        <div class="hfa-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfa-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V05</div>
+        <div class="hfa-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfa-stage">
         <div class="hfa-cards">
@@ -1624,13 +1639,13 @@
       <div class="hfa-bar-wrap">
         <div class="hfa-bar-track"><div class="hfa-bar" style="--w:78%"></div></div>
       </div>
-      <div class="hfa-scrub">
-        <div class="hfa-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfa-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfa-scrub-bar"><div class="hfa-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfa-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfa-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfa-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1639,7 +1654,7 @@
   </div>
   <div class="foot">
     <div>Page 17 &middot; Hyperframe &middot; AI-native fintech 2023 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1700,7 +1715,7 @@
     .hfnu-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.7c &middot; Hyperframe video &middot; emerging-market fintech compounding</div>
+    <div class="kicker">&sect;3.7c &middot; Data horizon view &middot; emerging-market fintech compounding</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Nubank: from credit-card-only neobank to ~120M Latam customers, 2014&rarr;2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       The Stripe and Wealthsimple arcs (slides 16, 17a) showed two North-American paths. Nubank is the largest fintech IPO of the post-2020 era and the clearest emerging-market test of the model. From 12M customers in 2019 it now serves ~120M across Brazil, Mexico, and Colombia &mdash; ~58% of Brazil&rsquo;s adult population &mdash; while compounding revenue at &gt;30% YoY and posting consistent GAAP profits. Market cap recovered from a ~$11B trough (mid-2022) to ~$70B+ by 2025.
@@ -1708,8 +1723,8 @@
 
     <div class="hfnu-frame" style="margin-top:1.4vh">
       <div class="hfnu-topbar">
-        <div><span class="hfnu-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V06</div>
-        <div class="hfnu-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfnu-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V06</div>
+        <div class="hfnu-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfnu-stage">
         <div class="hfnu-cards">
@@ -1767,13 +1782,13 @@
       <div class="hfnu-bar-wrap">
         <div class="hfnu-bar-track"><div class="hfnu-bar" style="--w:82%"></div></div>
       </div>
-      <div class="hfnu-scrub">
-        <div class="hfnu-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfnu-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfnu-scrub-bar"><div class="hfnu-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfnu-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2025</div>
+      <div class="hfnu-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfnu-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1782,7 +1797,7 @@
   </div>
   <div class="foot">
     <div>Page 18 &middot; Hyperframe &middot; Nubank arc 2014 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
@@ -1842,7 +1857,7 @@
     .hfsec-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.13 &middot; Hyperframe video &middot; the IPO substitute</div>
+    <div class="kicker">&sect;3.13 &middot; Data horizon view &middot; the IPO substitute</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Tender offers replaced the IPO as the liquidity venue (2024-2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slides 8 (IPO Performance) and 12 (IPO Window) framed the public exit. The bigger 2024-2026 story is companies staying private longer and using employer-led tender offers as a structured liquidity venue. Stripe alone re-rated from $50B (Mar 2023) to $159B (Feb 2026) entirely through tenders. Industry-wide secondary volume hit $240B in 2025, up from $162B in 2024 (Industry Ventures + Goldman Sachs estimates). The cap table arithmetic of slide 19 still holds &mdash; but the &ldquo;exit&rdquo; column now includes a private liquidity event that can recur every 6&ndash;12 months.
@@ -1850,8 +1865,8 @@
 
     <div class="hfsec-frame" style="margin-top:1.4vh">
       <div class="hfsec-topbar">
-        <div><span class="hfsec-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V08</div>
-        <div class="hfsec-tc">00:00:09:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfsec-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V08</div>
+        <div class="hfsec-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfsec-stage">
         <div class="hfsec-cards">
@@ -1909,13 +1924,13 @@
       <div class="hfsec-bar-wrap">
         <div class="hfsec-bar-track"><div class="hfsec-bar" style="--w:80%"></div></div>
       </div>
-      <div class="hfsec-scrub">
-        <div class="hfsec-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfsec-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfsec-scrub-bar"><div class="hfsec-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfsec-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfsec-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfsec-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -1924,12 +1939,12 @@
   </div>
   <div class="foot">
     <div>Page 19 &middot; Hyperframe &middot; Secondary tenders 2024 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 20 · Hyperframe · Plaid Down-Round to IPO 2021-2026 (light · video composition)
+     SLIDE 20 · Hyperframe · Plaid Down-Round to IPO 2021-2026 (light · data horizon view)
      ============================================================ -->
 <section class="slide light" data-screen-label="20 Hyperframe · Plaid Arc 2021-2026">
   <div class="chrome">
@@ -1984,7 +1999,7 @@
     .hfpl-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.10 &middot; Hyperframe video &middot; the late-stage reset</div>
+    <div class="kicker">&sect;3.10 &middot; Data horizon view &middot; the late-stage reset</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Plaid: $13.4B &rarr; $6.1B &rarr; ~$8&ndash;10B IPO. The whole 2021-2026 cycle in one company.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 04 named Plaid as a Visa acquisition target ($5.3B blocked Nov 2020). Slide 12 listed Klarna, Chime and Circle reopening the IPO window. Plaid is the missing link &mdash; it shows what happens to a private fintech that <em>doesn&rsquo;t</em> rush. April 2025: $575M secondary, valued at $6.1B (down 54% from the 2021 peak). FY2025 ARR: $546M, +40% YoY. Plaid told TechCrunch it would not IPO in 2025; analysts now project a 2026 listing at $8.5&ndash;10B. The arc is the cycle: 2021 mega-mark, 2022&ndash;2024 freeze, 2025 down round + profitability discipline, 2026 IPO at a re-earned mark.
@@ -1992,8 +2007,8 @@
 
     <div class="hfpl-frame" style="margin-top:1.4vh">
       <div class="hfpl-topbar">
-        <div><span class="hfpl-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V09</div>
-        <div class="hfpl-tc">00:00:09:14 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfpl-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V09</div>
+        <div class="hfpl-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfpl-stage">
         <div class="hfpl-cards">
@@ -2051,13 +2066,13 @@
       <div class="hfpl-bar-wrap">
         <div class="hfpl-bar-track"><div class="hfpl-bar" style="--w:62%"></div></div>
       </div>
-      <div class="hfpl-scrub">
-        <div class="hfpl-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfpl-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfpl-scrub-bar"><div class="hfpl-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfpl-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfpl-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfpl-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -2066,12 +2081,12 @@
   </div>
   <div class="foot">
     <div>Page 20 &middot; Hyperframe &middot; Plaid 2021 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 21 · Hyperframe · Class of 2025 IPOs Q1 2026 performance (light · video composition)
+     SLIDE 21 · Hyperframe · Class of 2025 IPOs Q1 2026 performance (light · data horizon view)
      ============================================================ -->
 <section class="slide light" data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026">
   <div class="chrome">
@@ -2126,7 +2141,7 @@
     .hfip26-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.7 &middot; Hyperframe video &middot; Class of 2025 &middot; Q1 2026 follow-through</div>
+    <div class="kicker">&sect;3.7 &middot; Data horizon view &middot; Class of 2025 &middot; Q1 2026 follow-through</div>
     <h2 class="h-xl" style="font-size:3.7vw; margin-top:.4vh">Class of 2025 IPOs: $3.2B raised, then the public-market reality test (Q1 2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 13 caught the IPO window opening. This is the second beat: how Chime, Klarna, Circle &amp; eToro have actually traded. Combined IPO proceeds were $3.2B (Invezz Dec 2025). Q1 2026 sorted them: Chime delivered its first profitable public quarter; Circle's USDC AUM compounded under GENIUS; Klarna ate margin from rising delinquencies; eToro held steady. The lesson Schulich students need: the IPO is the easy day &mdash; the next four earnings prints decide whether the multiple sticks.
@@ -2134,8 +2149,8 @@
 
     <div class="hfip26-frame" style="margin-top:1.4vh">
       <div class="hfip26-topbar">
-        <div><span class="hfip26-rec">&#9679;</span>&nbsp;&nbsp;HYPERFRAME / FINE6280-CH03-V10</div>
-        <div class="hfip26-tc">00:00:11:18 &middot; 1080p &middot; 30fps</div>
+        <div><span class="hfip26-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V10</div>
+        <div class="hfip26-tc">DATA AS OF &middot; APR 2026</div>
       </div>
       <div class="hfip26-stage">
         <div class="hfip26-cards">
@@ -2193,13 +2208,13 @@
       <div class="hfip26-bar-wrap">
         <div class="hfip26-bar-track"><div class="hfip26-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hfip26-scrub">
-        <div class="hfip26-scrub-icon">&#9654;</div>
-        <div>00:00 / 00:24</div>
+      <div class="hfip26-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
         <div class="hfip26-scrub-bar"><div class="hfip26-scrub-fill"></div></div>
-        <div>1.0&times;</div>
+        <div>2026 &middot; APR</div>
       </div>
-      <div class="hfip26-watermark">HYPERFRAME &middot; LIVE COMPOSITION &middot; 2026</div>
+      <div class="hfip26-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
     <div class="meta-row hfip26-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
@@ -2208,7 +2223,7 @@
   </div>
   <div class="foot">
     <div>Page 21 &middot; Hyperframe &middot; Class of 2025 IPOs &middot; Q1 2026</div>
-    <div>2025&ndash;2026 &middot; video composition</div>
+    <div>2025&ndash;2026 &middot; data horizon view</div>
   </div>
 </section>
 
