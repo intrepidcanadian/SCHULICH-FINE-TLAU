@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FINE 6280: Fintech &mdash; Schulich School of Business</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --ink:#1a1a2e;
+    --paper:#f4f1eb;
+    --accent:#4a6fa5;
+    --accent-light:#6b8fc5;
+  }
+  body{
+    font-family:'Inter','Helvetica Neue',Arial,sans-serif;
+    background:var(--ink);
+    color:var(--paper);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:6vh 4vw;
+  }
+  h1{
+    font-size:clamp(2rem,5vw,4rem);
+    font-weight:700;
+    letter-spacing:-.03em;
+    text-align:center;
+    line-height:1.15;
+  }
+  .subtitle{
+    font-size:clamp(.9rem,1.6vw,1.25rem);
+    opacity:.6;
+    margin-top:1rem;
+    text-align:center;
+    font-weight:400;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:2rem;
+    margin-top:4rem;
+    max-width:1100px;
+    width:100%;
+  }
+  .card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;
+    padding:2.5rem 2rem;
+    text-decoration:none;
+    color:var(--paper);
+    transition:all .25s ease;
+    display:flex;
+    flex-direction:column;
+    gap:.8rem;
+  }
+  .card:hover{
+    background:rgba(255,255,255,.12);
+    border-color:var(--accent-light);
+    transform:translateY(-4px);
+    box-shadow:0 12px 40px rgba(74,111,165,.2);
+  }
+  .card-num{
+    font-size:.85rem;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent-light);
+  }
+  .card-title{
+    font-size:1.4rem;
+    font-weight:700;
+    line-height:1.25;
+  }
+  .card-desc{
+    font-size:.9rem;
+    opacity:.55;
+    line-height:1.5;
+  }
+  .card-arrow{
+    margin-top:auto;
+    font-size:.85rem;
+    color:var(--accent-light);
+    opacity:.7;
+  }
+  .footer{
+    margin-top:5rem;
+    font-size:.8rem;
+    opacity:.35;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <h1>FINE 6280</h1>
+    <div class="subtitle">Fintech: Digital Transformation of Financial Services</div>
+    <div class="subtitle" style="opacity:.35; font-size:clamp(.75rem,1.2vw,1rem); margin-top:.5rem">Schulich School of Business &middot; York University</div>
+  </div>
+
+  <div class="cards">
+    <a href="ch1/" class="card">
+      <div class="card-num">Chapter 1</div>
+      <div class="card-title">Introduction to Fintech</div>
+      <div class="card-desc">Fintech 1.0&ndash;3.0, eight categories, four firm types, the fintech lens, and ten core technologies.</div>
+      <div class="card-arrow">&rarr; View slides</div>
+    </a>
+    <a href="ch2/" class="card">
+      <div class="card-num">Chapter 2</div>
+      <div class="card-title">Theories &amp; Business Models</div>
+      <div class="card-desc">Financial intermediation, disruptive innovation, Pisano&rsquo;s landscape, multi-sided platforms, and network effects.</div>
+      <div class="card-arrow">&rarr; View slides</div>
+    </a>
+    <a href="ch3/" class="card">
+      <div class="card-num">Chapter 3</div>
+      <div class="card-title">Funding Fintech Start-Ups</div>
+      <div class="card-desc">Growth stages, angel investing, venture capital, SAFEs &amp; convertible notes, IPOs, and the Wealthsimple case.</div>
+      <div class="card-arrow">&rarr; View slides</div>
+    </a>
+    <a href="ch4/" class="card">
+      <div class="card-num">Chapter 4</div>
+      <div class="card-title">Valuation of Fintech Companies</div>
+      <div class="card-desc">Angel valuation methods, VC method, market multiples, DCF, ARK Invest adjusted EBITDA, and bank valuation.</div>
+      <div class="card-arrow">&rarr; View slides</div>
+    </a>
+  </div>
+
+  <div class="footer">
+    FINE 6280 &middot; Schulich School of Business &middot; York University
+  </div>
+</body>
+</html>

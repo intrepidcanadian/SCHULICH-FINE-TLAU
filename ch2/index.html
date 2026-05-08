@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theories & Business Models · Chapter 02 · FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ============ 主题色(默认:🖋 墨水经典) ============
+       切换主题:从 references/themes.md 复制对应的 :root 块
+       整体替换这几行(--ink / --ink-rgb / --paper / --paper-rgb)
+       其他地方散落的 rgba() 都走 var(--ink-rgb) / var(--paper-rgb),无需逐处改 */
+    /* Indigo Porcelain (靛蓝瓷) — academic / methods-manual posture */
+    --ink:#0a1f3d;
+    --ink-rgb:10,31,61;
+    --paper:#f1f3f5;
+    --paper-rgb:241,243,245;
+    --paper-tint:#e4e8ec;
+    --ink-tint:#152a4a;
+
+    /* ============ 字体(跨主题固定) ============ */
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --serif-en:"Playfair Display","Source Serif 4",Georgia,serif;
+    --serif-body-en:"Source Serif 4",Georgia,serif;
+    --serif-zh:"Noto Serif SC",source-han-serif-sc,serif;
+    --sans-zh:"Noto Sans SC",source-han-sans-sc,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var(--paper);font-family:var(--sans-zh);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+  /* ============ WebGL 双背景 ============ */
+  canvas.bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;transition:opacity 1.2s ease}
+  canvas#bg-light{opacity:0}
+  canvas#bg-dark{opacity:1}
+  body.light-bg canvas#bg-light{opacity:1}
+  body.light-bg canvas#bg-dark{opacity:0}
+
+  /* ============ Deck 容器 + 翻页 ============ */
+  /* width: NSLIDES * 100vw，会在 JS 里动态矫正 */
+  #deck{position:fixed;inset:0;width:1000vw;height:100vh;display:flex;flex-wrap:nowrap;transition:transform .9s cubic-bezier(.77,0,.175,1);z-index:10;will-change:transform}
+  .slide{width:100vw;height:100vh;flex:0 0 100vw;position:relative;padding:6vh 6vw 10vh 6vw;display:flex;flex-direction:column;overflow:hidden}
+  .slide.light{color:var(--ink)}
+  .slide.dark{color:var(--paper)}
+
+  /* 默认页：遮罩较厚，保证文字可读 */
+  .slide::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;transition:background .7s ease}
+  .slide.light::before{background:rgba(var(--paper-rgb),.78);backdrop-filter:blur(3px)}
+  .slide.dark::before{background:rgba(var(--ink-rgb),.78);backdrop-filter:blur(3px)}
+  /* Hero 页：遮罩大幅降低，让 WebGL 背景明显透出 */
+  .slide.hero.light::before{background:rgba(var(--paper-rgb),.16);backdrop-filter:none}
+  .slide.hero.dark::before{background:rgba(var(--ink-rgb),.12);backdrop-filter:none}
+  /* Hero 页顶底微弱渐隐，保证 chrome/foot 区域可读 */
+  .slide.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}
+  .slide.hero.light::after{background:linear-gradient(180deg,rgba(var(--paper-rgb),.28) 0%,rgba(var(--paper-rgb),0) 14%,rgba(var(--paper-rgb),0) 86%,rgba(var(--paper-rgb),.28) 100%)}
+  .slide.hero.dark::after{background:linear-gradient(180deg,rgba(var(--ink-rgb),.32) 0%,rgba(var(--ink-rgb),0) 14%,rgba(var(--ink-rgb),0) 86%,rgba(var(--ink-rgb),.32) 100%)}
+
+  /* ============ Magazine chrome：顶部 meta + 底部 foot ============ */
+  .chrome{display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+  .chrome .left,.chrome .right{display:flex;gap:2.4em;align-items:center}
+  .chrome .sep{width:40px;height:1px;background:currentColor;opacity:.4}
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+  .foot .title{font-family:var(--serif-zh);font-weight:400;letter-spacing:.05em;text-transform:none;opacity:.75;font-size:13px}
+
+  .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:6px 14px;border:1px solid currentColor;opacity:.85}
+  .rule{width:100%;height:1px;background:currentColor;opacity:.25;margin:3vh 0}
+  .rule.v{width:1px;height:100%;margin:0}
+
+  /* ============ 字体规则 ============
+     · 衬线（Noto Serif SC / Playfair）：大标题、重点金句、数字
+     · 非衬线（Noto Sans SC）：正文描述、body、补充说明
+     · 等宽（IBM Plex Mono）：kicker、meta 小标签、foot 右侧
+  */
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:2.6vh}
+  .display{font-family:var(--serif-en);font-weight:700;font-size:11vw;line-height:.92;letter-spacing:-.025em}
+  .display-zh{font-family:var(--serif-zh);font-weight:700;font-size:7.8vw;line-height:1.04;letter-spacing:-.005em}
+  .h1-zh{font-family:var(--serif-zh);font-weight:700;font-size:4.6vw;line-height:1.12;letter-spacing:-.005em}
+  .h2-zh{font-family:var(--serif-zh);font-weight:600;font-size:3.2vw;line-height:1.2;letter-spacing:0}
+  .h3-zh{font-family:var(--serif-zh);font-weight:500;font-size:1.9vw;line-height:1.35}
+  .body-zh{font-family:var(--sans-zh);font-weight:400;font-size:max(15px,1.22vw);line-height:1.75;opacity:.82;letter-spacing:.01em}
+  .body-serif{font-family:var(--serif-zh);font-weight:400;font-size:max(15px,1.3vw);line-height:1.65;opacity:.88}
+  .lead{font-family:var(--serif-zh);font-weight:400;font-size:1.9vw;line-height:1.4;opacity:.85}
+  .meta{font-family:var(--mono);font-size:max(11px,.88vw);letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+  .big-num{font-family:var(--serif-en);font-weight:800;font-size:10vw;line-height:.85;letter-spacing:-.03em;font-feature-settings:"tnum"}
+  .mid-num{font-family:var(--serif-en);font-weight:700;font-size:5.5vw;line-height:.88;letter-spacing:-.02em;font-feature-settings:"tnum"}
+  .ghost{font-family:var(--serif-en);font-weight:900;font-size:34vw;line-height:.8;opacity:.06;letter-spacing:-.04em;position:absolute;font-feature-settings:"tnum"}
+  em{font-style:italic;font-family:var(--serif-en)}
+  .en{font-family:var(--serif-en);font-style:italic;font-weight:500}
+
+  /* ============ 布局工具 ============ */
+  .col{display:flex;flex-direction:column;gap:2.4vh}
+  .row{display:flex;align-items:center;gap:3vw}
+  .grid-6{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:4vw 6vw;flex:1;align-content:center;padding:2vh 0}
+  .grid-9{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:3vh 4vw;flex:1;align-content:center}
+  .grid-4{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:4vh 6vw;flex:1;align-content:center}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:4vw;flex:1;align-content:center}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:4vw;flex:1;align-items:center}
+  .split-55{display:grid;grid-template-columns:55fr 45fr;gap:5vw;flex:1;align-items:stretch}
+  .fill{flex:1}
+  .center{align-items:center;justify-content:center;text-align:center}
+  .bottom-left{position:absolute;left:6vw;bottom:9vh;max-width:50vw}
+  .bottom-right{position:absolute;right:6vw;bottom:9vh;max-width:50vw;text-align:right}
+  .top-right{position:absolute;right:6vw;top:6vh;text-align:right}
+
+  /* ============ Stat（数字矩阵） ============ */
+  .stat{display:flex;flex-direction:column;gap:1vh;align-items:flex-start}
+  .stat .n{font-family:var(--serif-en);font-weight:800;font-size:8vw;line-height:.88;letter-spacing:-.03em;font-feature-settings:"tnum"}
+  .stat .l{font-family:var(--sans-zh);font-size:max(13px,1.05vw);opacity:.7;margin-top:1vh;font-weight:400;line-height:1.5}
+  .stat .m{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.5;margin-bottom:.2vh}
+
+  /* ============ Callout（引用框） ============ */
+  .callout{padding:3vh 2.4vw;border-left:3px solid currentColor;position:relative;font-family:var(--serif-zh);font-size:max(15px,1.2vw);line-height:1.55;opacity:.92}
+  .slide.light .callout{background:rgba(var(--ink-rgb),.05)}
+  .slide.dark .callout{background:rgba(var(--paper-rgb),.06)}
+  .callout .cite{display:block;margin-top:1.6vh;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+  .callout .q-big{font-family:var(--serif-zh);font-weight:600;font-size:max(17px,1.6vw);line-height:1.42}
+
+  /* ============ Platform（平台卡） ============ */
+  .plat{display:flex;flex-direction:column;justify-content:flex-end;padding:2vh 0;border-top:1px solid currentColor;border-color:rgba(127,127,127,.35)}
+  .plat .name{font-family:var(--serif-zh);font-weight:700;font-size:1.8vw;margin-bottom:.6vh}
+  .plat .nb{font-family:var(--serif-en);font-weight:700;font-size:3.2vw;letter-spacing:-.02em;line-height:1;font-feature-settings:"tnum"}
+  .plat .sub{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.55;margin-top:.6vh}
+  .plat .fill{font-family:var(--sans-zh);font-weight:300;font-size:2.4vw;opacity:.28;letter-spacing:-.01em;line-height:1}
+
+  /* ============ Rowline（表格行） ============ */
+  .rowline{display:grid;grid-template-columns:1fr 2fr 1fr;gap:2vw;padding:2.2vh 0;border-top:1px solid currentColor;align-items:center;border-color:rgba(127,127,127,.25)}
+  .rowline:last-child{border-bottom:1px solid currentColor;border-color:rgba(127,127,127,.25)}
+  .rowline .k{font-family:var(--serif-zh);font-weight:700;font-size:1.7vw}
+  .rowline .v{font-family:var(--sans-zh);font-weight:400;font-size:max(14px,1.2vw);opacity:.85;line-height:1.55}
+  .rowline .m{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;justify-self:end}
+
+  /* ============ Pillar（支柱卡片） ============ */
+  .pillar{display:flex;flex-direction:column;gap:1.8vh}
+  .pillar .ic{font-family:var(--serif-en);font-style:italic;font-size:2.6vw;opacity:.45;font-weight:400}
+  .pillar .ic svg{width:2.8vw;height:2.8vw;stroke-width:1.2;opacity:.7}
+  .pillar .t{font-family:var(--serif-zh);font-weight:700;font-size:2.4vw;line-height:1.1}
+  .pillar .d{font-family:var(--sans-zh);font-weight:400;font-size:max(14px,1.1vw);opacity:.76;line-height:1.6}
+
+  /* ============ Signature / Highlight ============ */
+  .sign{font-family:var(--serif-en);font-style:italic;font-weight:500;font-size:2vw;opacity:.7}
+  .hi{position:relative;display:inline}
+  .slide.dark .hi::after{content:"";position:absolute;left:-.1em;right:-.1em;bottom:-.05em;height:.28em;background:rgba(var(--paper-rgb),.15);z-index:-1}
+  .slide.light .hi::after{content:"";position:absolute;left:-.1em;right:-.1em;bottom:-.05em;height:.28em;background:rgba(var(--ink-rgb),.08);z-index:-1}
+
+  /* ============ Icons（Lucide via CDN） ============ */
+  .ico{width:1em;height:1em;display:inline-block;vertical-align:-.12em;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .ico-lg,.ico-md,.ico-sm{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+  .ico-lg{width:2.6vw;height:2.6vw;stroke-width:1.2;display:inline-block}
+  .ico-md{width:1.8vw;height:1.8vw;stroke-width:1.3;display:inline-block;vertical-align:-.4em}
+  .ico-sm{width:1.1vw;height:1.1vw;stroke-width:1.4;display:inline-block;vertical-align:-.15em;opacity:.7}
+
+  /* ============ 图片占位（虚线框，提示设计师位置） ============ */
+  .img-slot{border:1.5px dashed rgba(127,127,127,.4);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1vh;padding:2vh 2vw;font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;opacity:.55;position:relative;aspect-ratio:16/9;width:100%;max-height:56vh;margin-inline:auto;box-sizing:border-box}
+  .img-slot::before{content:"";position:absolute;inset:8px;border:1px solid currentColor;opacity:.2}
+  .img-slot .plus{font-size:2vw;font-weight:300;opacity:.5;letter-spacing:0}
+  .img-slot .label{position:relative;z-index:2;text-align:center}
+  .img-slot.r-4x3{aspect-ratio:4/3}
+  .img-slot.r-3x2{aspect-ratio:3/2}
+  .img-slot.r-1x1{aspect-ratio:1/1}
+
+  /* ============ 图片实填框（关键：固定高度 + 只裁底部） ============
+     重要约束：高度用内联 height:Nvh 精确控制，不要用 aspect-ratio（会撑破布局）
+     object-position:top center 保证严禁裁剪顶部和左右，只裁剪底部
+  */
+  .frame-img{overflow:hidden;position:relative;background:rgba(0,0,0,.04);box-sizing:border-box;width:100%;border-radius:4px}
+  .slide.dark .frame-img{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+  .frame-img > img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .frame-img.contain > img{object-fit:contain;object-position:center center}
+  .frame-cap{display:flex;justify-content:space-between;align-items:baseline;gap:1vw;margin-top:.8vh;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.72}
+  .frame-cap .pf{font-family:var(--serif-zh);font-weight:600;font-size:max(13px,1vw);letter-spacing:.04em;text-transform:none;opacity:.94}
+  .frame-cap .nb{font-family:var(--serif-en);font-style:italic;font-size:max(15px,1.2vw);letter-spacing:.02em;text-transform:none;opacity:.88}
+  .frame-cap .idx{font-family:var(--mono);opacity:.5}
+  figure.tile{display:flex;flex-direction:column;margin:0;min-width:0}
+  figure.tile > .frame-img{flex:0 0 auto}
+
+  /* ============ 导航 ============ */
+  #nav{position:fixed;left:50%;bottom:2.6vh;transform:translateX(-50%);z-index:30;display:flex;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  #nav .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s ease;border:0;padding:0}
+  #nav .dot:hover{background:rgba(255,255,255,.5);transform:scale(1.15)}
+  #nav .dot.active{background:rgba(255,255,255,.95);width:22px;border-radius:999px}
+  body.light-bg #nav{background:rgba(255,255,255,.25)}
+  body.light-bg #nav .dot{background:rgba(var(--ink-rgb),.25)}
+  body.light-bg #nav .dot.active{background:rgba(var(--ink-rgb),.9)}
+  #hint{position:fixed;bottom:3vh;right:3vw;z-index:30;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;mix-blend-mode:difference;color:#aaa}
+
+  /* ============================================================
+     ============ LAYOUTS API · 面向 agent 的类（v2）============
+     所有 layouts.md 中的骨架都基于下面这套命名。
+     如果你在 layouts.md 里看到某个类，它必须在下面有定义。
+     ============================================================ */
+
+  /* ---------- .frame：每页主内容容器 ---------- */
+  .frame{flex:1;display:flex;flex-direction:column;min-height:0}
+  /* 当 .frame 同时加了 grid 类时，grid 的 display:grid 覆盖 flex */
+  .frame.grid-2-7-5,
+  .frame.grid-2-6-6,
+  .frame.grid-2-8-4,
+  .frame.grid-3-3,
+  .frame.grid-6{display:grid}
+
+  /* ---------- 标题层级（API 名称，衬线为主） ---------- */
+  .h-hero{
+    font-family:var(--serif-zh);
+    font-weight:900;
+    font-size:10vw;
+    line-height:.96;
+    letter-spacing:-.02em;
+  }
+  .h-xl{
+    font-family:var(--serif-zh);
+    font-weight:700;
+    font-size:6.2vw;
+    line-height:1.08;
+    letter-spacing:-.01em;
+  }
+  .h-sub{
+    font-family:var(--serif-zh);
+    font-weight:500;
+    font-size:3.1vw;
+    line-height:1.25;
+    letter-spacing:0;
+    opacity:.7;
+  }
+  .h-md{
+    font-family:var(--serif-zh);
+    font-weight:600;
+    font-size:2.3vw;
+    line-height:1.3;
+  }
+  /* 英文标题专用（Playfair 衬线） */
+  .h-hero-en,.h-xl-en{font-family:var(--serif-en);letter-spacing:-.025em}
+
+  /* ---------- lead 引语 ---------- */
+  .lead{
+    font-family:var(--serif-zh);
+    font-weight:400;
+    font-size:1.75vw;
+    line-height:1.5;
+    opacity:.86;
+  }
+
+  /* ---------- meta-row 底部元数据 ---------- */
+  .meta-row{
+    display:flex;
+    gap:1.2em;
+    align-items:baseline;
+    flex-wrap:wrap;
+    font-family:var(--mono);
+    font-size:max(12px,.92vw);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    opacity:.6;
+  }
+
+  /* ---------- stat-card（数据大字报用） ---------- */
+  .stat-card{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    align-items:flex-start;
+    padding-top:1.6vh;
+    border-top:1px solid currentColor;
+    border-color:rgba(127,127,127,.3);
+  }
+  .stat-card .stat-label{
+    font-family:var(--mono);
+    font-size:max(10px,.78vw);
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    opacity:.55;
+  }
+  .stat-card .stat-nb{
+    font-family:var(--serif-en);
+    font-weight:800;
+    font-size:5.8vw;
+    line-height:.9;
+    letter-spacing:-.03em;
+    font-feature-settings:"tnum";
+    margin-top:.4vh;
+  }
+  .stat-card .stat-nb .stat-unit{
+    font-family:var(--serif-zh);
+    font-weight:500;
+    font-size:.38em;
+    letter-spacing:0;
+    opacity:.72;
+    margin-left:.14em;
+  }
+  .stat-card .stat-note{
+    font-family:var(--sans-zh);
+    font-weight:400;
+    font-size:max(13px,1.05vw);
+    line-height:1.5;
+    opacity:.72;
+    margin-top:.6vh;
+  }
+  /* 当 stat-card 用于 grid-4（2x2），数字可以更大 */
+  .grid-4 .stat-card .stat-nb{font-size:7.5vw}
+  /* 当只有 3 个，字也可以稍大 */
+  .grid-3 .stat-card .stat-nb{font-size:6.8vw}
+
+  /* ---------- pipeline（流水线） ---------- */
+  .pipeline-section{
+    margin-top:4.4vh;
+    padding-top:2.8vh;
+    border-top:1px dashed rgba(127,127,127,.32);
+  }
+  .pipeline-section:first-of-type{
+    border-top:0;
+    padding-top:0;
+    margin-top:3vh;
+  }
+  .pipeline-label{
+    font-family:var(--mono);
+    font-size:max(11px,.85vw);
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    opacity:.62;
+    margin-bottom:2.2vh;
+  }
+  .pipeline{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:1.2vw;
+  }
+  .pipeline[data-cols="3"]{grid-template-columns:repeat(3,1fr)}
+  .pipeline[data-cols="4"]{grid-template-columns:repeat(4,1fr)}
+  .pipeline[data-cols="6"]{grid-template-columns:repeat(6,1fr)}
+  .step{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    padding-top:1.4vh;
+    border-top:1px solid currentColor;
+    border-color:rgba(127,127,127,.35);
+  }
+  .step-nb{
+    font-family:var(--serif-en);
+    font-style:italic;
+    font-weight:500;
+    font-size:1.15vw;
+    opacity:.45;
+  }
+  .step-title{
+    font-family:var(--sans-zh);
+    font-weight:700;
+    font-size:1.55vw;
+    letter-spacing:.01em;
+    line-height:1.2;
+  }
+  .step-desc{
+    font-family:var(--sans-zh);
+    font-weight:400;
+    font-size:max(12px,.95vw);
+    line-height:1.45;
+    opacity:.72;
+  }
+
+  /* ---------- 网格（layouts.md 所用） ---------- */
+  /* 这些类独立挂到任何容器上都能生效，不依赖 .frame 复合选择器 */
+  .grid-2-7-5{display:grid;grid-template-columns:7fr 5fr;gap:3vw 4vh;align-items:start}
+  .grid-2-6-6{display:grid;grid-template-columns:1fr 1fr;gap:3vw 4vh;align-items:start}
+  .grid-2-8-4{display:grid;grid-template-columns:8fr 4fr;gap:3vw 4vh;align-items:start}
+  .grid-3-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:minmax(0,1fr);
+    gap:2.4vh 2vw;
+  }
+  /* grid-6 已在旧样式里定义为 3x2，这里仅补 align */
+
+  /* ---------- 图片 frame-img（layouts.md 主命名） ---------- */
+  /* 在旧样式里已定义，这里补 img-cap 命名别名与增强 */
+  figure.frame-img{margin:0;display:flex;flex-direction:column;min-width:0}
+  .img-cap{
+    display:block;
+    margin-top:.8vh;
+    font-family:var(--mono);
+    font-size:max(10px,.8vw);
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    opacity:.6;
+  }
+  /* callout src 命名别名 */
+  .callout-src{
+    display:block;
+    margin-top:1.6vh;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    opacity:.6;
+  }
+
+  /* ---------- chrome & foot 补位（layouts.md 简单写法） ---------- */
+  .chrome{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.2em;text-transform:uppercase;opacity:.62}
+  .foot{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+
+  /* ---------- 响应式降级 ---------- */
+  @media (max-width:900px){
+    .display{font-size:16vw}
+    .display-zh{font-size:12vw}
+    .h1-zh{font-size:7vw}
+    .h-hero{font-size:14vw}
+    .h-xl{font-size:9vw}
+    .pipeline{grid-template-columns:repeat(2,1fr)}
+    .grid-2-7-5,.grid-2-6-6,.grid-2-8-4{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">&larr; &rarr; 翻页 &middot; ESC 索引</div>
+
+<div id="deck">
+
+<!-- ============================================================
+     SLIDE 01 · Cover (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="01 Cover">
+  <div class="chrome">
+    <div>FINE 6280 &middot; Fintech</div>
+    <div>Chapter 02 &middot; Lecture</div>
+  </div>
+  <div class="frame" style="display:grid; gap:4vh; align-content:center; min-height:80vh">
+    <div class="kicker">Chapter 02 &middot; Theoretical Foundations</div>
+    <h1 class="h-hero" style="font-size:8.4vw">Theories &amp; Business Models</h1>
+    <h2 class="h-sub" style="max-width:64vw">Financial intermediation theory, disruptive innovation frameworks, and the business-model architectures that determine which fintechs capture value &mdash; and which subsidise someone else&rsquo;s platform.</h2>
+    <div class="meta-row" style="margin-top:2vh">
+      <span>Department of Finance</span><span>&middot;</span><span>Graduate Seminar</span><span>&middot;</span><span>Lecture 02 of 14</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Reading &middot; Chapter 2 of <em>Fintech Explained</em></div>
+    <div>&mdash; &middot; &mdash;</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 02 · Multidisciplinary Approach (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="02 Multidisciplinary Approach">
+  <div class="chrome">
+    <div>&sect;2.1 &middot; A multidisciplinary approach</div>
+    <div>02 / 10</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Three analytical stops</div>
+    <h2 class="h-xl" style="font-size:6.2vw">A multidisciplinary lens.</h2>
+    <p class="lead" style="margin-top:2vh; max-width:62vw">
+      Understanding fintech requires three bodies of theory working in concert &mdash; financial intermediation, innovation strategy, and business-model design. Each supplies a distinct diagnostic question; together they form the analytical engine for every case we examine this term.
+    </p>
+
+    <div class="pipeline-section" style="margin-top:2.5vh">
+      <div class="pipeline" data-cols="3">
+        <div class="step">
+          <div class="step-nb">Stop 01 &middot; Finance</div>
+          <div class="step-title" style="font-size:1.9vw">Financial Intermediation</div>
+          <div class="step-desc" style="margin-top:.6vh">
+            Why do intermediaries exist? Five dimensions &mdash; information asymmetry, transaction costs, liquidity creation, risk sharing, and trust &mdash; explain the enduring ~2% cost of intermediation (Philippon 2015). Fintech attacks each dimension differently. The 2008 GFC eroded trust in incumbents, lowering barriers for new entrants.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-nb">Stop 02 &middot; Strategy</div>
+          <div class="step-title" style="font-size:1.9vw">Innovation Theory</div>
+          <div class="step-desc" style="margin-top:.6vh">
+            Christensen&rsquo;s disruptive innovation (1997) and Pisano&rsquo;s innovation landscape map (2015) answer <em>how</em> new entrants dislodge incumbents &mdash; and why most incumbents respond too late. Dell disrupted IBM&rsquo;s PC business (sold to Lenovo 2005); Netflix bankrupted Blockbuster over 13 years.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-nb">Stop 03 &middot; Economics</div>
+          <div class="step-title" style="font-size:1.9vw">Business Models</div>
+          <div class="step-desc" style="margin-top:.6vh">
+            One-sided vs. multi-sided platforms, network effects, subsidy-side / money-side dynamics (Rochet &amp; Tirole 2003), and the agency-vs.-principal revenue split. Most fintechs earn 90%+ from agency (fees); exceptions like SoFi and ZhongAn earn primarily from principal activities.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.5vh">
+      The multidisciplinary approach is essential because fintech sits at the intersection of finance, technology, and strategy. No single discipline is sufficient.
+      <div class="callout-src">&mdash; Arner, Barberis &amp; Buckley (2017)</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 &middot; Three theoretical pillars</div>
+    <div>FINE 6280 &middot; Ch. 02</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 03 · Five Dimensions + Fig 2.1 (light · 2-col)
+     ============================================================ -->
+<section class="slide light" data-screen-label="03 Five Dimensions">
+  <div class="chrome">
+    <div>&sect;2.2 &middot; Financial intermediation</div>
+    <div>03 / 10</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:3vh">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2vh">
+      <div>
+        <div class="kicker">Why intermediaries persist</div>
+        <h2 class="h-xl" style="font-size:5.4vw">Five dimensions.</h2>
+        <p class="lead" style="margin-top:2vh; max-width:40vw; font-size:1.55vw">
+          Financial intermediaries exist because of five persistent frictions. Fintech does not eliminate these frictions &mdash; it re-prices them.
+        </p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.2vh; padding-top:1vh">
+        <div class="stat-card">
+          <div class="stat-label">i. Information asymmetry</div>
+          <div class="step-desc">Adverse selection and moral hazard (Akerlof 1970, Stiglitz &amp; Weiss 1981). Alt-data scoring reduces but does not eliminate information gaps.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">ii. Transaction costs</div>
+          <div class="step-desc">Search, bargaining, and enforcement costs (Coase 1937). APIs and smart contracts compress but never reach zero.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">iii. Liquidity creation</div>
+          <div class="step-desc">Maturity transformation (Diamond &amp; Dybvig 1983). Neobanks still need deposit insurance and wholesale funding.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">iv. Risk sharing</div>
+          <div class="step-desc">Diversification and hedging across agents (Allen &amp; Gale 1997). Parametric insurance and DeFi pools are new mechanisms, same function.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">v. Trust</div>
+          <div class="step-desc">Institutional trust vs. algorithmic trust. Blockchain substitutes cryptographic verification for reputational capital &mdash; partially.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center">
+      <div class="frame-img contain" style="height:54vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch2/fig2.1-five-dimensions-intermediation.jpg" alt="Figure 2.1 - Five Dimensions of Financial Intermediation">
+      </div>
+      <div class="frame-cap"><span>Fig. 2.1 &middot; Five Dimensions of Financial Intermediation</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; Financial intermediation theory</div>
+    <div>Akerlof / Coase / Diamond &amp; Dybvig</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04 · Big Stat: ~2% (hero dark center)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="04 Cost of Intermediation">
+  <div class="chrome">
+    <div>&sect;2.2 &middot; The persistence puzzle</div>
+    <div>04 / 10</div>
+  </div>
+  <div class="frame" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:3vh; min-height:78vh">
+    <div class="kicker">Philippon (2015) &middot; a puzzling constant</div>
+    <div class="stat-nb" style="font-size:18vw; line-height:.82; letter-spacing:-.04em">~2<span class="stat-unit" style="font-size:.25em">%</span></div>
+    <p class="lead" style="max-width:54vw; font-size:1.8vw; margin-top:1vh">
+      The unit cost of financial intermediation in the United States has remained roughly constant at ~2% of assets intermediated for over 130 years &mdash; despite ATMs, electronic trading, and the internet.
+    </p>
+    <div class="callout" style="max-width:52vw; text-align:left; margin-top:1vh">
+      Technology has improved the quality of financial services, but has not reduced the unit cost. The finance industry has become more efficient at extracting rents, not at lowering them.
+      <div class="callout-src">&mdash; Thomas Philippon, <em>Quarterly Journal of Economics</em> (2015)</div>
+    </div>
+    <div class="meta-row" style="margin-top:1vh">
+      <span>Discussion</span><span>&middot;</span><span>If 130 years of technology haven&rsquo;t lowered the cost, what makes this time different?</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; The 2% puzzle</div>
+    <div>Philippon (2015)</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · Disruptive Innovation (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 Disruptive Innovation">
+  <div class="chrome">
+    <div>&sect;2.3 &middot; Disruptive innovation</div>
+    <div>05 / 10</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Christensen (1997) &middot; applied to financial services</div>
+    <h2 class="h-xl" style="font-size:5.8vw">Disruptive innovation.</h2>
+    <p class="lead" style="margin-top:1.6vh; max-width:62vw; opacity:.78">
+      Christensen&rsquo;s four-step process explains how inferior products in overlooked market segments eventually overtake incumbents. The pattern recurs across fintech verticals.
+    </p>
+
+    <div class="pipeline-section" style="margin-top:2.5vh">
+      <div class="pipeline-label">The four-step disruption process</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step">
+          <div class="step-nb">Step 01</div>
+          <div class="step-title" style="font-size:1.6vw">Incumbents overshoot</div>
+          <div class="step-desc">Incumbent products exceed what mainstream customers need. JPMorgan&rsquo;s $15.3B tech spend (2023) optimises for institutional clients, not the underbanked.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">Step 02</div>
+          <div class="step-title" style="font-size:1.6vw">Entrant targets low-end</div>
+          <div class="step-desc">New entrants serve over-served or non-consumers with simpler, cheaper products. M-Pesa (2007): SMS-based payments for the unbanked in Kenya.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">Step 03</div>
+          <div class="step-title" style="font-size:1.6vw">Entrant improves upward</div>
+          <div class="step-desc">Product quality improves until it meets mainstream needs. Robinhood: zero-commission trades attracted 23M+ accounts by 2023, then added options, crypto, retirement.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">Step 04</div>
+          <div class="step-title" style="font-size:1.6vw">Incumbent displaced</div>
+          <div class="step-desc">Incumbents retreat to shrinking premium segments. Netflix vs. Blockbuster (2010 bankruptcy). In finance: neobanks eroding high-street branch economics.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:1.5vh">
+      <div class="callout">
+        <div class="q-big">Sustaining innovation</div>
+        Improves existing products along dimensions incumbents already value. Goldman Sachs Marcus: a better savings account from a bulge-bracket bank. Uber is sustaining, not disruptive &mdash; it targeted existing taxi customers with more convenience, not underserved non-consumers.
+      </div>
+      <div class="callout">
+        <div class="q-big">Disruptive innovation</div>
+        Redefines the performance axis. Stripe (2010): developer-first payments API. Not a better POS terminal &mdash; a different product for a different buyer. Christensen&rsquo;s advice to incumbents: don&rsquo;t panic, monitor, and if necessary respond with a separate disruptive unit (e.g. Vanguard launched a robo-advisor in 2015 and captured 50%+ of AUM within two years).
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Christensen&rsquo;s disruption model</div>
+    <div>Sustaining / Disruptive</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · Pisano's Innovation Landscape + Fig 2.2 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="06 Pisano Innovation Landscape">
+  <div class="chrome">
+    <div>&sect;2.4 &middot; Digital innovation strategy</div>
+    <div>06 / 10</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:3vh">
+    <div style="display:flex; flex-direction:column; gap:2.4vh">
+      <div>
+        <div class="kicker">Pisano (2015) &middot; two axes of innovation</div>
+        <h2 class="h-xl" style="font-size:5.2vw">The innovation landscape.</h2>
+        <p class="lead" style="margin-top:2vh; max-width:40vw; font-size:1.5vw">
+          Pisano&rsquo;s 2&times;2 maps innovation along two dimensions: the degree to which it leverages <em>existing</em> technical competencies and the degree to which it leverages <em>existing</em> business models.
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2vw 2vw">
+        <div class="stat-card">
+          <div class="stat-label">Routine</div>
+          <div class="step-desc">Existing tech + existing model. Incremental bank digitisation. Low strategic risk, low return.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Disruptive</div>
+          <div class="step-desc">Existing tech + new model. Lending Club used existing credit-scoring tech but created a peer-to-peer marketplace model.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Radical</div>
+          <div class="step-desc">New tech + existing model. Blockchain-based settlement: novel infrastructure, same clearing function.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Architectural</div>
+          <div class="step-desc">New tech + new model. The most challenging quadrant. DeFi protocols (Uniswap, Aave): novel smart-contract tech combined with autonomous intermediation. Most fintechs start routine/radical, then must pivot to disruptive/architectural to survive.</div>
+        </div>
+      </div>
+
+      <div class="frame-img contain" style="height:32vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch2/fig2.3-fintech-explained-lens.jpg" alt="Figure 2.3 - The Fintech Explained Lens">
+      </div>
+      <div class="frame-cap"><span>Fig. 2.3 &middot; The Fintech Explained Lens</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center">
+      <div class="frame-img contain" style="height:56vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch2/fig2.2-pisano-innovation-landscape.jpg" alt="Figure 2.2 - Pisano's Innovation Landscape Map">
+      </div>
+      <div class="frame-cap"><span>Fig. 2.2 &middot; Pisano&rsquo;s Innovation Landscape Map</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Innovation landscape map</div>
+    <div>Routine / Disruptive / Radical / Architectural</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · Business Models (hero light)
+     ============================================================ -->
+<section class="slide hero light" data-screen-label="07 Business Models">
+  <div class="chrome">
+    <div>&sect;2.5 &middot; Business models</div>
+    <div>07 / 10</div>
+  </div>
+  <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; align-content:center; min-height:78vh">
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:2.4vh">
+      <div class="kicker">One-sided vs. multi-sided platforms</div>
+      <h1 class="h-hero" style="font-size:7vw">Business models.</h1>
+      <p class="lead" style="max-width:40vw; font-size:1.6vw">
+        The fundamental architectural choice: serve one customer group (product model) or orchestrate two or more groups on a platform (market model). Most transformational fintechs are multi-sided.
+      </p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.6vw; margin-top:1vh">
+        <div class="stat-card">
+          <div class="stat-label">One-sided</div>
+          <div class="step-desc">Traditional bank, insurer, or asset manager. Revenue from spread, premium, or AUM fee. Value chain is linear: originate &rarr; hold &rarr; service. Economies of scale drive consolidation into financial conglomerates (personal + commercial + investment banking).</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Multi-sided</div>
+          <div class="step-desc">Platform connects 2+ distinct user groups whose interactions create value. Borrowell: free credit scores for consumers (subsidy-side), commissions from banks selling products on the marketplace (money-side). Physical predecessors: newspapers, stock exchanges, shopping malls.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:2vh">
+      <div class="frame-img contain" style="height:28vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch2/fig2.4-one-sided-business-models.jpg" alt="Figure 2.4 - One-Sided Business Models in Finance">
+      </div>
+      <div class="frame-cap"><span>Fig. 2.4 &middot; One-Sided Business Models</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+
+      <div class="frame-img contain" style="height:28vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch2/fig2.5-multi-sided-business-model.jpg" alt="Figure 2.5 - A Multi-sided Business Model">
+      </div>
+      <div class="frame-cap"><span>Fig. 2.5 &middot; A Multi-sided Business Model</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; Business model architecture</div>
+    <div>One-sided / Multi-sided</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · Network Effects + Subsidy/Money Side (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="08 Network Effects">
+  <div class="chrome">
+    <div>&sect;2.6 &middot; Network effects &amp; platform strategy</div>
+    <div>08 / 10</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Rochet &amp; Tirole (2003) &middot; platform economics</div>
+    <h2 class="h-xl" style="font-size:5.6vw">Network effects &amp; platform pricing.</h2>
+    <p class="lead" style="margin-top:1.4vh; max-width:62vw; opacity:.78; font-size:1.5vw">
+      Multi-sided platforms must solve the chicken-and-egg problem. The subsidy side is attracted at or below cost; the money side pays. Getting the price structure right is the defining strategic challenge.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:3vh">
+      <div style="display:flex; flex-direction:column; gap:2.4vh">
+        <div class="pillar">
+          <div class="step-nb">Concept 01</div>
+          <div class="t" style="font-size:2.2vw">Same-side (direct) effects</div>
+          <div class="d">Each additional user on one side increases value for other users on the <em>same</em> side. Venmo: payment utility rises with peer adoption. Metcalfe&rsquo;s law applies &mdash; value scales as n&sup2;.</div>
+        </div>
+        <div class="pillar">
+          <div class="step-nb">Concept 02</div>
+          <div class="t" style="font-size:2.2vw">Cross-side (indirect) effects</div>
+          <div class="d">More users on side A increase value for side B. More Visa cardholders make the network more valuable to merchants, which attracts more cardholders. The classic two-sided feedback loop.</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:2.4vh">
+        <div class="pillar">
+          <div class="step-nb">Strategy 01</div>
+          <div class="t" style="font-size:2.2vw">Subsidy side</div>
+          <div class="d">The price-sensitive or hard-to-attract side is subsidised. Robinhood: zero-commission trades for retail investors. Google: free search for consumers. The subsidy is an <em>investment</em> in cross-side pull.</div>
+        </div>
+        <div class="pillar">
+          <div class="step-nb">Strategy 02</div>
+          <div class="t" style="font-size:2.2vw">Money side</div>
+          <div class="d">The side with higher willingness-to-pay is monetised. Robinhood: PFOF from Citadel ($810M in 2021). Three key findings: (1) subsidise <em>marquee users</em> (e.g. YouTube influencers), (2) limit access to reduce on-platform competition, (3) combat <em>multihoming</em> &mdash; often by acquiring competitors.</div>
+        </div>
+        <div class="callout" style="margin-top:0">
+          The price <em>level</em> matters less than the price <em>structure</em>. A platform can raise total fees and lose volume, or cut one side&rsquo;s price and grow both.
+          <div class="callout-src">&mdash; Rochet &amp; Tirole, <em>RAND J. Economics</em> (2003)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; Network effects &amp; pricing</div>
+    <div>Subsidy-side / Money-side</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · Monetization: Agency vs Principal + Tab 2.1 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="09 Monetization">
+  <div class="chrome">
+    <div>&sect;2.7 &middot; Monetization</div>
+    <div>09 / 10</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:3vh">
+    <div style="display:flex; flex-direction:column; gap:2.4vh">
+      <div>
+        <div class="kicker">Revenue architecture</div>
+        <h2 class="h-xl" style="font-size:5.2vw">Agency vs. principal.</h2>
+        <p class="lead" style="margin-top:2vh; max-width:40vw; font-size:1.5vw">
+          How a fintech earns revenue determines its risk profile, capital requirements, and regulatory obligations. The fundamental split: fee-based (agency) vs. balance-sheet (principal).
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2vw">
+        <div class="stat-card">
+          <div class="stat-label">Agency revenues</div>
+          <div class="step-title" style="font-size:1.5vw; margin-top:.4vh">Fee &amp; commission</div>
+          <div class="step-desc">Transaction fees, interchange, advisory fees, PFOF, subscription. Capital-light, scalable, but vulnerable to price competition. Stripe: 2.9% + $0.30 per transaction.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Principal revenues</div>
+          <div class="step-title" style="font-size:1.5vw; margin-top:.4vh">Spread &amp; gain</div>
+          <div class="step-desc">Net interest income, trading gains, underwriting profit. Requires balance-sheet capacity and regulatory capital. SoFi: NIM of 5.9% (Q4 2023) after bank charter acquisition.</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:1vh">
+        Incumbent banks derive ~60% of revenue from principal activities (NII). Fintechs historically skew toward agency (fees), but the most ambitious &mdash; SoFi, Revolut, Nubank &mdash; are migrating toward principal revenue via bank charters and direct lending.
+        <div class="callout-src">&mdash; <em>Fintech Explained</em>, Ch. 2</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center">
+      <div class="frame-img contain" style="height:56vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch2/tab2.1-revenue-breakdown.png" alt="Table 2.1 - Revenue Breakdown Incumbents vs Fintechs">
+      </div>
+      <div class="frame-cap"><span>Tab. 2.1 &middot; Revenue Breakdown: Incumbents vs. Fintechs</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; Agency vs. principal revenue</div>
+    <div>Fee-based / Balance-sheet</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · Closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="10 Closing">
+  <div class="chrome">
+    <div>&sect;2.8 &middot; Disruption vulnerability</div>
+    <div>10 / 10</div>
+  </div>
+  <div class="frame" style="display:grid; gap:2.4vh; align-content:center; min-height:76vh">
+    <div class="kicker">Synthesis &middot; who is vulnerable?</div>
+    <h1 class="h-hero" style="font-size:7vw">Disruption vulnerability.</h1>
+    <p class="lead" style="max-width:60vw; font-size:1.45vw">
+      McKinsey identifies four vulnerability signs: (1) some customers cross-subsidise others, (2) customers must buy the whole bundle to get what they want, (3) delivery doesn&rsquo;t match when/where customers want it, (4) customer experience lags global best practice. Example: credit cards &mdash; an oligopoly (Visa, Mastercard, Amex) ripe for unbundling. Revolut entered with no annual fee, customisable features, and budgeting tools.
+    </p>
+    <div style="display:flex; gap:4vw; margin-top:1vh">
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">130<span class="stat-unit">yr</span></div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Of ~2% intermediation cost</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">4</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Steps in Christensen&rsquo;s model</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">2</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Sides to every platform</div>
+      </div>
+    </div>
+    <div class="callout" style="max-width:56vw; margin-top:1vh">
+      The theories in this chapter provide the diagnostic toolkit. In subsequent chapters we apply them: funding (Ch. 3), payments (Ch. 4), lending (Ch. 5), and wealth management (Ch. 6). For every vertical, ask: which dimension of intermediation is under attack, and what business model is the attacker using?
+      <div class="callout-src">&mdash; Course roadmap</div>
+    </div>
+    <div class="meta-row" style="margin-top:1vh">
+      <span>End of Chapter 02</span><span>&middot;</span><span>FINE 6280</span><span>&middot;</span><span>Next &middot; Ch. 03 &middot; Funding Fintech Start-Ups</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Closing &middot; End of Chapter 02 &middot; FINE 6280</div>
+    <div>Next &middot; Ch. 03 &middot; Funding Start-Ups</div>
+  </div>
+</section>
+
+</div>
+
+<div id="nav"></div>
+
+<script>
+/* =============== WebGL 双背景 ===============
+   深色页：Holographic Dispersion（全息色散 · 钛金暗流）—— 彩虹微扰、鼠标径向涟漪
+   浅色页：Spiral Vortex（旋转涡流 · 银色珍珠）—— domain-warp 流动、无中心
+   修改风格请参考 references/webgl-backgrounds.md
+*/
+const VS = `attribute vec2 position;void main(){gl_Position=vec4(position,0.0,1.0);}`;
+
+const FS_DARK = `precision highp float;
+uniform vec2 u_resolution;uniform float u_time;uniform vec2 u_mouse;
+vec3 palette(float t,vec3 a,vec3 b,vec3 c,vec3 d){return a+b*cos(6.28318*(c*t+d));}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+  vec2 p=uv*2.0-1.0;p.x*=u_resolution.x/u_resolution.y;
+  vec2 m=u_mouse*2.0-1.0;m.x*=u_resolution.x/u_resolution.y;
+  float md=length(p-m);
+  float mr=sin(md*15.0-u_time*4.0)*exp(-md*3.0);p+=mr*0.08;
+  vec2 p0=p;
+  for(float i=1.0;i<4.0;i++){
+    p.x+=0.1/i*sin(i*3.0*p.y+u_time*0.4)+0.05;
+    p.y+=0.1/i*cos(i*2.0*p.x+u_time*0.3)-0.05;
+  }
+  float r=length(p);float ang=atan(p.y,p.x);
+  vec3 a=vec3(0.12,0.12,0.13);
+  vec3 b=vec3(0.03,0.04,0.05);
+  vec3 c=vec3(1.0,1.0,1.0);
+  vec3 d=vec3(0.1,0.2,0.4);
+  vec3 col=palette(r*1.5+p0.x*0.5+u_time*0.1,a,b,c,d);
+  float disp=sin(r*25.0-u_time*1.5+ang*2.0)*0.5+0.5;
+  col+=vec3(disp*0.015,disp*0.01,disp*0.02);
+  float hi=pow(sin(p.x*4.0+p.y*3.0+u_time)*0.5+0.5,8.0);
+  col+=hi*0.08;
+  vec3 base=vec3(0.05,0.05,0.06);
+  col=mix(base,col,0.85);
+  gl_FragColor=vec4(col,1.0);
+}`;
+
+const FS_LIGHT = `precision highp float;
+uniform vec2 u_resolution;uniform float u_time;uniform vec2 u_mouse;
+float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float noise(vec2 p){
+  vec2 i=floor(p),f=fract(p);
+  float a=hash(i),b=hash(i+vec2(1,0));
+  float c=hash(i+vec2(0,1)),d=hash(i+vec2(1,1));
+  vec2 u=f*f*(3.0-2.0*f);
+  return mix(a,b,u.x)+(c-a)*u.y*(1.0-u.x)+(d-b)*u.x*u.y;
+}
+float fbm(vec2 p){
+  float v=0.0,a=0.5;
+  mat2 m=mat2(0.80,0.60,-0.60,0.80);
+  for(int i=0;i<5;i++){v+=a*noise(p);p=m*p*2.02;a*=0.5;}
+  return v;
+}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+  vec2 p=uv;p.x*=u_resolution.x/u_resolution.y;
+  vec2 m=u_mouse;m.x*=u_resolution.x/u_resolution.y;
+  vec2 md=p-m;float dl=length(md);
+  p+=normalize(md+vec2(0.0001))*exp(-dl*5.0)*0.03;
+  vec2 q=vec2(fbm(p*1.8+u_time*0.07),fbm(p*1.8+vec2(5.2,1.3)+u_time*0.06));
+  vec2 r=vec2(fbm(p*2.0+q*1.3+vec2(1.7,9.2)+u_time*0.05),
+              fbm(p*2.0+q*1.3+vec2(8.3,2.8)+u_time*0.04));
+  float f=fbm(p*2.2+r*1.5);
+  vec3 silverDark=vec3(0.86,0.85,0.84);
+  vec3 paper=vec3(0.955,0.945,0.925);
+  vec3 col=mix(silverDark,paper,f);
+  float ph=r.x*2.2+u_time*0.35;
+  col+=vec3(0.78,0.62,0.92)*sin(ph)*0.055;
+  col+=vec3(0.55,0.72,0.95)*sin(ph*0.8+2.0)*0.05;
+  float hl=smoothstep(0.48,0.92,f);
+  col+=hl*0.06;
+  gl_FragColor=vec4(col,1.0);
+}`;
+
+const mouse={x:0.5,y:0.5};
+addEventListener('mousemove',e=>{mouse.x=e.clientX/innerWidth;mouse.y=e.clientY/innerHeight});
+
+function bootGL(canvasId, fsSrc){
+  const canvas=document.getElementById(canvasId);
+  const gl=canvas.getContext('webgl',{alpha:false,antialias:true});
+  if(!gl) return ()=>false;
+  const mk=(t,s)=>{const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh};
+  const prog=gl.createProgram();
+  gl.attachShader(prog,mk(gl.VERTEX_SHADER,VS));
+  gl.attachShader(prog,mk(gl.FRAGMENT_SHADER,fsSrc));
+  gl.linkProgram(prog);gl.useProgram(prog);
+  const buf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+  const pos=gl.getAttribLocation(prog,'position');
+  gl.enableVertexAttribArray(pos);gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+  const lRes=gl.getUniformLocation(prog,'u_resolution');
+  const lT=gl.getUniformLocation(prog,'u_time');
+  const lM=gl.getUniformLocation(prog,'u_mouse');
+  const resize=()=>{
+    const d=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=innerWidth*d;canvas.height=innerHeight*d;
+    gl.viewport(0,0,canvas.width,canvas.height);
+  };
+  addEventListener('resize',resize);resize();
+  return (tSec)=>{
+    gl.uniform2f(lRes,canvas.width,canvas.height);
+    gl.uniform1f(lT,tSec);
+    gl.uniform2f(lM,mouse.x,1-mouse.y);
+    gl.drawArrays(gl.TRIANGLES,0,6);
+    return true;
+  };
+}
+const drawDark=bootGL('bg-dark',FS_DARK);
+const drawLight=bootGL('bg-light',FS_LIGHT);
+const t0=Date.now();
+(function loop(){
+  const t=(Date.now()-t0)/1000;
+  drawDark(t);drawLight(t);
+  requestAnimationFrame(loop);
+})();
+
+// =============== 导航（翻页 / 圆点 / 键盘 / 滚轮 / 触屏） ===============
+const deck=document.getElementById('deck');
+const slides=deck.querySelectorAll('.slide');
+const nav=document.getElementById('nav');
+let idx=0,total=slides.length,lock=false;
+
+// 关键：矫正 deck 宽度为 total * 100vw，否则翻页会错位
+deck.style.width=(total*100)+'vw';
+
+slides.forEach((s,i)=>{
+  const b=document.createElement('button');
+  b.className='dot';b.dataset.i=i;b.setAttribute('aria-label','Page '+(i+1));
+  b.onclick=()=>go(i);
+  nav.appendChild(b);
+});
+
+function go(n){
+  if(lock)return;
+  idx=Math.max(0,Math.min(total-1,n));
+  deck.style.transform=`translateX(${-idx*100}vw)`;
+  /* load-bearing: .slide.active is read by Open Design's host bridge
+     (src/runtime/srcdoc.ts findActiveByClass) to drive the slide counter.
+     No CSS targets it — do not remove. */
+  slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+  nav.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+  /* 主题切换：优先读 data-theme，其次从 class（light/dark）推断 */
+  const el=slides[idx];
+  const th=el.dataset.theme || (el.classList.contains('light')?'light':(el.classList.contains('dark')?'dark':'dark'));
+  document.body.classList.toggle('light-bg',th==='light');
+  lock=true;setTimeout(()=>lock=false,700);
+}
+
+/* =============== ESC 索引视图 =============== */
+let overviewOn=false;
+const ov=document.createElement('div');
+ov.id='overview';
+ov.style.cssText='position:fixed;inset:0;z-index:100;background:rgba(var(--ink-rgb),.92);backdrop-filter:blur(12px);display:none;overflow-y:auto;padding:4vh 4vw';
+document.body.appendChild(ov);
+
+function buildOverview(){
+  ov.innerHTML='';
+  const grid=document.createElement('div');
+  grid.style.cssText='display:grid;grid-template-columns:repeat(4,1fr);gap:2vh 1.6vw;max-width:90vw;margin:0 auto';
+  slides.forEach((s,i)=>{
+    const card=document.createElement('div');
+    card.style.cssText='cursor:pointer;border-radius:6px;overflow:hidden;border:2px solid '+(i===idx?'rgba(var(--paper-rgb),.8)':'rgba(var(--paper-rgb),.15)')+';transition:border-color .2s';
+    card.onmouseenter=()=>card.style.borderColor='rgba(var(--paper-rgb),.6)';
+    card.onmouseleave=()=>card.style.borderColor=i===idx?'rgba(var(--paper-rgb),.8)':'rgba(var(--paper-rgb),.15)';
+    const wrap=document.createElement('div');
+    wrap.style.cssText='width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;pointer-events:none;background:'+(s.classList.contains('light')?'var(--paper)':'var(--ink)');
+    const clone=s.cloneNode(true);
+    clone.style.cssText='width:100vw;height:100vh;transform:scale('+(1/4.5)+');transform-origin:top left;position:absolute;top:0;left:0;pointer-events:none';
+    wrap.appendChild(clone);
+    const label=document.createElement('div');
+    label.style.cssText='padding:6px 10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);opacity:.7';
+    label.textContent=(i+1)+' / '+total;
+    card.appendChild(wrap);
+    card.appendChild(label);
+    card.onclick=()=>{toggleOverview();go(i)};
+    grid.appendChild(card);
+  });
+  ov.appendChild(grid);
+}
+
+function toggleOverview(){
+  overviewOn=!overviewOn;
+  if(overviewOn){buildOverview();ov.style.display='block';}
+  else{ov.style.display='none';}
+}
+
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){e.preventDefault();toggleOverview();return;}
+  if(overviewOn)return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key==='ArrowDown')go(idx+1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='ArrowUp')go(idx-1);
+  if(e.key==='Home')go(0);
+  if(e.key==='End')go(total-1);
+});
+
+let wheelTO=null,wheelAcc=0;
+addEventListener('wheel',e=>{
+  wheelAcc+=e.deltaY+e.deltaX;
+  if(Math.abs(wheelAcc)>50){go(idx+(wheelAcc>0?1:-1));wheelAcc=0;}
+  clearTimeout(wheelTO);wheelTO=setTimeout(()=>wheelAcc=0,150);
+},{passive:true});
+
+let tx=0,ty=0;
+addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchend',e=>{
+  const dx=(e.changedTouches[0].clientX-tx);
+  const dy=(e.changedTouches[0].clientY-ty);
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(idx+(dx<0?1:-1));
+},{passive:true});
+
+go(0);
+</script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

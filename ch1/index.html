@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fintech Defined · Chapter 01 · FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ============ 主题色(默认:🖋 墨水经典) ============
+       切换主题:从 references/themes.md 复制对应的 :root 块
+       整体替换这几行(--ink / --ink-rgb / --paper / --paper-rgb)
+       其他地方散落的 rgba() 都走 var(--ink-rgb) / var(--paper-rgb),无需逐处改 */
+    /* Indigo Porcelain (靛蓝瓷) — academic / methods-manual posture */
+    --ink:#0a1f3d;
+    --ink-rgb:10,31,61;
+    --paper:#f1f3f5;
+    --paper-rgb:241,243,245;
+    --paper-tint:#e4e8ec;
+    --ink-tint:#152a4a;
+
+    /* ============ 字体(跨主题固定) ============ */
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --serif-en:"Playfair Display","Source Serif 4",Georgia,serif;
+    --serif-body-en:"Source Serif 4",Georgia,serif;
+    --serif-zh:"Noto Serif SC",source-han-serif-sc,serif;
+    --sans-zh:"Noto Sans SC",source-han-sans-sc,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var(--paper);font-family:var(--sans-zh);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+  /* ============ WebGL 双背景 ============ */
+  canvas.bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;transition:opacity 1.2s ease}
+  canvas#bg-light{opacity:0}
+  canvas#bg-dark{opacity:1}
+  body.light-bg canvas#bg-light{opacity:1}
+  body.light-bg canvas#bg-dark{opacity:0}
+
+  /* ============ Deck 容器 + 翻页 ============ */
+  /* width: NSLIDES * 100vw，会在 JS 里动态矫正 */
+  #deck{position:fixed;inset:0;width:1200vw;height:100vh;display:flex;flex-wrap:nowrap;transition:transform .9s cubic-bezier(.77,0,.175,1);z-index:10;will-change:transform}
+  .slide{width:100vw;height:100vh;flex:0 0 100vw;position:relative;padding:6vh 6vw 10vh 6vw;display:flex;flex-direction:column;overflow:hidden}
+  .slide.light{color:var(--ink)}
+  .slide.dark{color:var(--paper)}
+
+  /* 默认页：遮罩较厚，保证文字可读 */
+  .slide::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;transition:background .7s ease}
+  .slide.light::before{background:rgba(var(--paper-rgb),.78);backdrop-filter:blur(3px)}
+  .slide.dark::before{background:rgba(var(--ink-rgb),.78);backdrop-filter:blur(3px)}
+  /* Hero 页：遮罩大幅降低，让 WebGL 背景明显透出 */
+  .slide.hero.light::before{background:rgba(var(--paper-rgb),.16);backdrop-filter:none}
+  .slide.hero.dark::before{background:rgba(var(--ink-rgb),.12);backdrop-filter:none}
+  /* Hero 页顶底微弱渐隐，保证 chrome/foot 区域可读 */
+  .slide.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}
+  .slide.hero.light::after{background:linear-gradient(180deg,rgba(var(--paper-rgb),.28) 0%,rgba(var(--paper-rgb),0) 14%,rgba(var(--paper-rgb),0) 86%,rgba(var(--paper-rgb),.28) 100%)}
+  .slide.hero.dark::after{background:linear-gradient(180deg,rgba(var(--ink-rgb),.32) 0%,rgba(var(--ink-rgb),0) 14%,rgba(var(--ink-rgb),0) 86%,rgba(var(--ink-rgb),.32) 100%)}
+
+  /* ============ Magazine chrome：顶部 meta + 底部 foot ============ */
+  .chrome{display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+  .chrome .left,.chrome .right{display:flex;gap:2.4em;align-items:center}
+  .chrome .sep{width:40px;height:1px;background:currentColor;opacity:.4}
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+  .foot .title{font-family:var(--serif-zh);font-weight:400;letter-spacing:.05em;text-transform:none;opacity:.75;font-size:13px}
+
+  .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:6px 14px;border:1px solid currentColor;opacity:.85}
+  .rule{width:100%;height:1px;background:currentColor;opacity:.25;margin:3vh 0}
+  .rule.v{width:1px;height:100%;margin:0}
+
+  /* ============ 字体规则 ============
+     · 衬线（Noto Serif SC / Playfair）：大标题、重点金句、数字
+     · 非衬线（Noto Sans SC）：正文描述、body、补充说明
+     · 等宽（IBM Plex Mono）：kicker、meta 小标签、foot 右侧
+  */
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:2.6vh}
+  .display{font-family:var(--serif-en);font-weight:700;font-size:11vw;line-height:.92;letter-spacing:-.025em}
+  .display-zh{font-family:var(--serif-zh);font-weight:700;font-size:7.8vw;line-height:1.04;letter-spacing:-.005em}
+  .h1-zh{font-family:var(--serif-zh);font-weight:700;font-size:4.6vw;line-height:1.12;letter-spacing:-.005em}
+  .h2-zh{font-family:var(--serif-zh);font-weight:600;font-size:3.2vw;line-height:1.2;letter-spacing:0}
+  .h3-zh{font-family:var(--serif-zh);font-weight:500;font-size:1.9vw;line-height:1.35}
+  .body-zh{font-family:var(--sans-zh);font-weight:400;font-size:max(15px,1.22vw);line-height:1.75;opacity:.82;letter-spacing:.01em}
+  .body-serif{font-family:var(--serif-zh);font-weight:400;font-size:max(15px,1.3vw);line-height:1.65;opacity:.88}
+  .lead{font-family:var(--serif-zh);font-weight:400;font-size:1.9vw;line-height:1.4;opacity:.85}
+  .meta{font-family:var(--mono);font-size:max(11px,.88vw);letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+  .big-num{font-family:var(--serif-en);font-weight:800;font-size:10vw;line-height:.85;letter-spacing:-.03em;font-feature-settings:"tnum"}
+  .mid-num{font-family:var(--serif-en);font-weight:700;font-size:5.5vw;line-height:.88;letter-spacing:-.02em;font-feature-settings:"tnum"}
+  .ghost{font-family:var(--serif-en);font-weight:900;font-size:34vw;line-height:.8;opacity:.06;letter-spacing:-.04em;position:absolute;font-feature-settings:"tnum"}
+  em{font-style:italic;font-family:var(--serif-en)}
+  .en{font-family:var(--serif-en);font-style:italic;font-weight:500}
+
+  /* ============ 布局工具 ============ */
+  .col{display:flex;flex-direction:column;gap:2.4vh}
+  .row{display:flex;align-items:center;gap:3vw}
+  .grid-6{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:4vw 6vw;flex:1;align-content:center;padding:2vh 0}
+  .grid-9{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:3vh 4vw;flex:1;align-content:center}
+  .grid-4{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:4vh 6vw;flex:1;align-content:center}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:4vw;flex:1;align-content:center}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:4vw;flex:1;align-items:center}
+  .split-55{display:grid;grid-template-columns:55fr 45fr;gap:5vw;flex:1;align-items:stretch}
+  .fill{flex:1}
+  .center{align-items:center;justify-content:center;text-align:center}
+  .bottom-left{position:absolute;left:6vw;bottom:9vh;max-width:50vw}
+  .bottom-right{position:absolute;right:6vw;bottom:9vh;max-width:50vw;text-align:right}
+  .top-right{position:absolute;right:6vw;top:6vh;text-align:right}
+
+  /* ============ Stat（数字矩阵） ============ */
+  .stat{display:flex;flex-direction:column;gap:1vh;align-items:flex-start}
+  .stat .n{font-family:var(--serif-en);font-weight:800;font-size:8vw;line-height:.88;letter-spacing:-.03em;font-feature-settings:"tnum"}
+  .stat .l{font-family:var(--sans-zh);font-size:max(13px,1.05vw);opacity:.7;margin-top:1vh;font-weight:400;line-height:1.5}
+  .stat .m{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.5;margin-bottom:.2vh}
+
+  /* ============ Callout（引用框） ============ */
+  .callout{padding:3vh 2.4vw;border-left:3px solid currentColor;position:relative;font-family:var(--serif-zh);font-size:max(15px,1.2vw);line-height:1.55;opacity:.92}
+  .slide.light .callout{background:rgba(var(--ink-rgb),.05)}
+  .slide.dark .callout{background:rgba(var(--paper-rgb),.06)}
+  .callout .cite{display:block;margin-top:1.6vh;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+  .callout .q-big{font-family:var(--serif-zh);font-weight:600;font-size:max(17px,1.6vw);line-height:1.42}
+
+  /* ============ Platform（平台卡） ============ */
+  .plat{display:flex;flex-direction:column;justify-content:flex-end;padding:2vh 0;border-top:1px solid currentColor;border-color:rgba(127,127,127,.35)}
+  .plat .name{font-family:var(--serif-zh);font-weight:700;font-size:1.8vw;margin-bottom:.6vh}
+  .plat .nb{font-family:var(--serif-en);font-weight:700;font-size:3.2vw;letter-spacing:-.02em;line-height:1;font-feature-settings:"tnum"}
+  .plat .sub{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.55;margin-top:.6vh}
+  .plat .fill{font-family:var(--sans-zh);font-weight:300;font-size:2.4vw;opacity:.28;letter-spacing:-.01em;line-height:1}
+
+  /* ============ Rowline（表格行） ============ */
+  .rowline{display:grid;grid-template-columns:1fr 2fr 1fr;gap:2vw;padding:2.2vh 0;border-top:1px solid currentColor;align-items:center;border-color:rgba(127,127,127,.25)}
+  .rowline:last-child{border-bottom:1px solid currentColor;border-color:rgba(127,127,127,.25)}
+  .rowline .k{font-family:var(--serif-zh);font-weight:700;font-size:1.7vw}
+  .rowline .v{font-family:var(--sans-zh);font-weight:400;font-size:max(14px,1.2vw);opacity:.85;line-height:1.55}
+  .rowline .m{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;justify-self:end}
+
+  /* ============ Pillar（支柱卡片） ============ */
+  .pillar{display:flex;flex-direction:column;gap:1.8vh}
+  .pillar .ic{font-family:var(--serif-en);font-style:italic;font-size:2.6vw;opacity:.45;font-weight:400}
+  .pillar .ic svg{width:2.8vw;height:2.8vw;stroke-width:1.2;opacity:.7}
+  .pillar .t{font-family:var(--serif-zh);font-weight:700;font-size:2.4vw;line-height:1.1}
+  .pillar .d{font-family:var(--sans-zh);font-weight:400;font-size:max(14px,1.1vw);opacity:.76;line-height:1.6}
+
+  /* ============ Signature / Highlight ============ */
+  .sign{font-family:var(--serif-en);font-style:italic;font-weight:500;font-size:2vw;opacity:.7}
+  .hi{position:relative;display:inline}
+  .slide.dark .hi::after{content:"";position:absolute;left:-.1em;right:-.1em;bottom:-.05em;height:.28em;background:rgba(var(--paper-rgb),.15);z-index:-1}
+  .slide.light .hi::after{content:"";position:absolute;left:-.1em;right:-.1em;bottom:-.05em;height:.28em;background:rgba(var(--ink-rgb),.08);z-index:-1}
+
+  /* ============ Icons（Lucide via CDN） ============ */
+  .ico{width:1em;height:1em;display:inline-block;vertical-align:-.12em;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .ico-lg,.ico-md,.ico-sm{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+  .ico-lg{width:2.6vw;height:2.6vw;stroke-width:1.2;display:inline-block}
+  .ico-md{width:1.8vw;height:1.8vw;stroke-width:1.3;display:inline-block;vertical-align:-.4em}
+  .ico-sm{width:1.1vw;height:1.1vw;stroke-width:1.4;display:inline-block;vertical-align:-.15em;opacity:.7}
+
+  /* ============ 图片占位（虚线框，提示设计师位置） ============ */
+  .img-slot{border:1.5px dashed rgba(127,127,127,.4);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1vh;padding:2vh 2vw;font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;opacity:.55;position:relative;aspect-ratio:16/9;width:100%;max-height:56vh;margin-inline:auto;box-sizing:border-box}
+  .img-slot::before{content:"";position:absolute;inset:8px;border:1px solid currentColor;opacity:.2}
+  .img-slot .plus{font-size:2vw;font-weight:300;opacity:.5;letter-spacing:0}
+  .img-slot .label{position:relative;z-index:2;text-align:center}
+  .img-slot.r-4x3{aspect-ratio:4/3}
+  .img-slot.r-3x2{aspect-ratio:3/2}
+  .img-slot.r-1x1{aspect-ratio:1/1}
+
+  /* ============ 图片实填框（关键：固定高度 + 只裁底部） ============
+     重要约束：高度用内联 height:Nvh 精确控制，不要用 aspect-ratio（会撑破布局）
+     object-position:top center 保证严禁裁剪顶部和左右，只裁剪底部
+  */
+  .frame-img{overflow:hidden;position:relative;background:rgba(0,0,0,.04);box-sizing:border-box;width:100%;border-radius:4px}
+  .slide.dark .frame-img{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+  .frame-img > img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .frame-img.contain > img{object-fit:contain;object-position:center center}
+  .frame-cap{display:flex;justify-content:space-between;align-items:baseline;gap:1vw;margin-top:.8vh;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.72}
+  .frame-cap .pf{font-family:var(--serif-zh);font-weight:600;font-size:max(13px,1vw);letter-spacing:.04em;text-transform:none;opacity:.94}
+  .frame-cap .nb{font-family:var(--serif-en);font-style:italic;font-size:max(15px,1.2vw);letter-spacing:.02em;text-transform:none;opacity:.88}
+  .frame-cap .idx{font-family:var(--mono);opacity:.5}
+  figure.tile{display:flex;flex-direction:column;margin:0;min-width:0}
+  figure.tile > .frame-img{flex:0 0 auto}
+
+  /* ============ 导航 ============ */
+  #nav{position:fixed;left:50%;bottom:2.6vh;transform:translateX(-50%);z-index:30;display:flex;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  #nav .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s ease;border:0;padding:0}
+  #nav .dot:hover{background:rgba(255,255,255,.5);transform:scale(1.15)}
+  #nav .dot.active{background:rgba(255,255,255,.95);width:22px;border-radius:999px}
+  body.light-bg #nav{background:rgba(255,255,255,.25)}
+  body.light-bg #nav .dot{background:rgba(var(--ink-rgb),.25)}
+  body.light-bg #nav .dot.active{background:rgba(var(--ink-rgb),.9)}
+  #hint{position:fixed;bottom:3vh;right:3vw;z-index:30;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;mix-blend-mode:difference;color:#aaa}
+
+  /* ============================================================
+     ============ LAYOUTS API · 面向 agent 的类（v2）============
+     所有 layouts.md 中的骨架都基于下面这套命名。
+     如果你在 layouts.md 里看到某个类，它必须在下面有定义。
+     ============================================================ */
+
+  /* ---------- .frame：每页主内容容器 ---------- */
+  .frame{flex:1;display:flex;flex-direction:column;min-height:0}
+  /* 当 .frame 同时加了 grid 类时，grid 的 display:grid 覆盖 flex */
+  .frame.grid-2-7-5,
+  .frame.grid-2-6-6,
+  .frame.grid-2-8-4,
+  .frame.grid-3-3,
+  .frame.grid-6{display:grid}
+
+  /* ---------- 标题层级（API 名称，衬线为主） ---------- */
+  .h-hero{
+    font-family:var(--serif-zh);
+    font-weight:900;
+    font-size:10vw;
+    line-height:.96;
+    letter-spacing:-.02em;
+  }
+  .h-xl{
+    font-family:var(--serif-zh);
+    font-weight:700;
+    font-size:6.2vw;
+    line-height:1.08;
+    letter-spacing:-.01em;
+  }
+  .h-sub{
+    font-family:var(--serif-zh);
+    font-weight:500;
+    font-size:3.1vw;
+    line-height:1.25;
+    letter-spacing:0;
+    opacity:.7;
+  }
+  .h-md{
+    font-family:var(--serif-zh);
+    font-weight:600;
+    font-size:2.3vw;
+    line-height:1.3;
+  }
+  /* 英文标题专用（Playfair 衬线） */
+  .h-hero-en,.h-xl-en{font-family:var(--serif-en);letter-spacing:-.025em}
+
+  /* ---------- lead 引语 ---------- */
+  .lead{
+    font-family:var(--serif-zh);
+    font-weight:400;
+    font-size:1.75vw;
+    line-height:1.5;
+    opacity:.86;
+  }
+
+  /* ---------- meta-row 底部元数据 ---------- */
+  .meta-row{
+    display:flex;
+    gap:1.2em;
+    align-items:baseline;
+    flex-wrap:wrap;
+    font-family:var(--mono);
+    font-size:max(12px,.92vw);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    opacity:.6;
+  }
+
+  /* ---------- stat-card（数据大字报用） ---------- */
+  .stat-card{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    align-items:flex-start;
+    padding-top:1.6vh;
+    border-top:1px solid currentColor;
+    border-color:rgba(127,127,127,.3);
+  }
+  .stat-card .stat-label{
+    font-family:var(--mono);
+    font-size:max(10px,.78vw);
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    opacity:.55;
+  }
+  .stat-card .stat-nb{
+    font-family:var(--serif-en);
+    font-weight:800;
+    font-size:5.8vw;
+    line-height:.9;
+    letter-spacing:-.03em;
+    font-feature-settings:"tnum";
+    margin-top:.4vh;
+  }
+  .stat-card .stat-nb .stat-unit{
+    font-family:var(--serif-zh);
+    font-weight:500;
+    font-size:.38em;
+    letter-spacing:0;
+    opacity:.72;
+    margin-left:.14em;
+  }
+  .stat-card .stat-note{
+    font-family:var(--sans-zh);
+    font-weight:400;
+    font-size:max(13px,1.05vw);
+    line-height:1.5;
+    opacity:.72;
+    margin-top:.6vh;
+  }
+  /* 当 stat-card 用于 grid-4（2x2），数字可以更大 */
+  .grid-4 .stat-card .stat-nb{font-size:7.5vw}
+  /* 当只有 3 个，字也可以稍大 */
+  .grid-3 .stat-card .stat-nb{font-size:6.8vw}
+
+  /* ---------- pipeline（流水线） ---------- */
+  .pipeline-section{
+    margin-top:4.4vh;
+    padding-top:2.8vh;
+    border-top:1px dashed rgba(127,127,127,.32);
+  }
+  .pipeline-section:first-of-type{
+    border-top:0;
+    padding-top:0;
+    margin-top:3vh;
+  }
+  .pipeline-label{
+    font-family:var(--mono);
+    font-size:max(11px,.85vw);
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    opacity:.62;
+    margin-bottom:2.2vh;
+  }
+  .pipeline{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:1.2vw;
+  }
+  .pipeline[data-cols="3"]{grid-template-columns:repeat(3,1fr)}
+  .pipeline[data-cols="4"]{grid-template-columns:repeat(4,1fr)}
+  .pipeline[data-cols="6"]{grid-template-columns:repeat(6,1fr)}
+  .step{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    padding-top:1.4vh;
+    border-top:1px solid currentColor;
+    border-color:rgba(127,127,127,.35);
+  }
+  .step-nb{
+    font-family:var(--serif-en);
+    font-style:italic;
+    font-weight:500;
+    font-size:1.15vw;
+    opacity:.45;
+  }
+  .step-title{
+    font-family:var(--sans-zh);
+    font-weight:700;
+    font-size:1.55vw;
+    letter-spacing:.01em;
+    line-height:1.2;
+  }
+  .step-desc{
+    font-family:var(--sans-zh);
+    font-weight:400;
+    font-size:max(12px,.95vw);
+    line-height:1.45;
+    opacity:.72;
+  }
+
+  /* ---------- 网格（layouts.md 所用） ---------- */
+  /* 这些类独立挂到任何容器上都能生效，不依赖 .frame 复合选择器 */
+  .grid-2-7-5{display:grid;grid-template-columns:7fr 5fr;gap:3vw 4vh;align-items:start}
+  .grid-2-6-6{display:grid;grid-template-columns:1fr 1fr;gap:3vw 4vh;align-items:start}
+  .grid-2-8-4{display:grid;grid-template-columns:8fr 4fr;gap:3vw 4vh;align-items:start}
+  .grid-3-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:minmax(0,1fr);
+    gap:2.4vh 2vw;
+  }
+  /* grid-6 已在旧样式里定义为 3x2，这里仅补 align */
+
+  /* ---------- 图片 frame-img（layouts.md 主命名） ---------- */
+  /* 在旧样式里已定义，这里补 img-cap 命名别名与增强 */
+  figure.frame-img{margin:0;display:flex;flex-direction:column;min-width:0}
+  .img-cap{
+    display:block;
+    margin-top:.8vh;
+    font-family:var(--mono);
+    font-size:max(10px,.8vw);
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    opacity:.6;
+  }
+  /* callout src 命名别名 */
+  .callout-src{
+    display:block;
+    margin-top:1.6vh;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    opacity:.6;
+  }
+
+  /* ---------- chrome & foot 补位（layouts.md 简单写法） ---------- */
+  .chrome{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.2em;text-transform:uppercase;opacity:.62}
+  .foot{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+
+  /* ---------- 响应式降级 ---------- */
+  @media (max-width:900px){
+    .display{font-size:16vw}
+    .display-zh{font-size:12vw}
+    .h1-zh{font-size:7vw}
+    .h-hero{font-size:14vw}
+    .h-xl{font-size:9vw}
+    .pipeline{grid-template-columns:repeat(2,1fr)}
+    .grid-2-7-5,.grid-2-6-6,.grid-2-8-4{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">← → 翻页 · ESC 索引</div>
+
+<div id="deck">
+
+<!-- ============================================================
+     SLIDES 插入区 · 在此处填充所有 <section class="slide ..."> 页面
+     每页模板参考 references/page-patterns.md
+     页面组件参考 references/components.md
+     ============================================================ -->
+
+<!-- ============================================================
+     SLIDE 01 · Title (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="01 Title">
+  <div class="chrome">
+    <div>FINE 6280 · Fintech Explained</div>
+    <div>Chapter 01 · Lecture</div>
+  </div>
+  <div class="frame" style="display:grid; gap:4vh; align-content:center; min-height:80vh">
+    <div class="kicker">Chapter 01 · Introduction</div>
+    <h1 class="h-hero" style="font-size:9vw">Fintech Defined</h1>
+    <h2 class="h-sub" style="max-width:64vw">A graduate-level analytical framework for financial technology &mdash; definitional boundaries, periodisation, and the four-part lens we&rsquo;ll apply to every firm and market this term.</h2>
+    <div class="meta-row" style="margin-top:2vh">
+      <span>Department of Finance</span><span>·</span><span>Graduate Seminar</span><span>·</span><span>Lecture 01 of 14</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Reading · Chapter 1 of <em>Fintech Explained</em></div>
+    <div>— · —</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 02 · What is Fintech (light · definition + value)
+     ============================================================ -->
+<section class="slide light" data-screen-label="02 What is Fintech">
+  <div class="chrome">
+    <div>§1.1 · Definition</div>
+    <div>02 / 12</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:3vh">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:3vh">
+      <div>
+        <div class="kicker">Definitional boundaries</div>
+        <h2 class="h-xl" style="font-size:6.6vw">What is fintech?</h2>
+        <p class="lead" style="margin-top:3vh; max-width:42vw">
+          The application of digital technology to deliver, augment, or fundamentally redesign financial services &mdash; spanning payments, credit intermediation, asset management, risk transfer, and the market infrastructure beneath them.
+        </p>
+      </div>
+      <div class="callout">
+        Fintech is not a sector &mdash; it is a <em>method</em>. The definitional challenge (Arner, Barberis &amp; Buckley 2015) is that &ldquo;fintech&rdquo; conflates an industry label with a process of institutional change.
+        <div class="callout-src">— Arner et al., <em>J. Fin. Perspectives</em> (2015)</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:2.4vh; padding-top:1vh">
+      <div class="kicker" style="opacity:.7">The value proposition</div>
+      <div class="stat-card">
+        <div class="stat-label">i. Speed</div>
+        <div class="step-title" style="font-size:1.6vw; margin-top:.4vh">Settlement latency compression</div>
+        <div class="step-desc">T+2 → T+0 (SEC, 2024). FedNow enables real-time gross settlement. Speed restructures counterparty risk.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">ii. Access</div>
+        <div class="step-title" style="font-size:1.6vw; margin-top:.4vh">Financial inclusion at scale</div>
+        <div class="step-desc">M-Pesa: 51M active users (2023). Alt-data scoring extends credit to thin-file populations excluded by FICO.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">iii. Cost</div>
+        <div class="step-title" style="font-size:1.6vw; margin-top:.4vh">Disintermediation rents</div>
+        <div class="step-desc">Wise cut FX spreads from ~3% to 0.4–0.7%. Software marginal cost replaces balance-sheet intermediation.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 · Definition &amp; value proposition</div>
+    <div>FINE 6280 · Ch. 01</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 03 · Growth — $1.2T / 38K (light · big numbers)
+     ============================================================ -->
+<section class="slide light" data-screen-label="03 Growth">
+  <div class="chrome">
+    <div>§1.2 · Scale of the field</div>
+    <div>03 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:4vh">
+    <div class="kicker">Capital formation · private markets</div>
+    <h2 class="h-xl" style="font-size:5.6vw">A trillion-dollar reorganisation of finance.</h2>
+    <p class="lead" style="margin-top:1.6vh; max-width:62vw; opacity:.8">
+      $1.2T cumulative private capital across 38,000+ deals. Note the cyclicality: 2021 peak (~$240B, ~7,300 deals) vs. 2023 trough ($39B, CB Insights).
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:3vh; align-items:start">
+      <div>
+        <div class="frame-img contain" style="height:36vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch1/fig1.1-global-investment-fintech.jpg" alt="Figure 1.1 - Global Investment in Fintech Companies">
+        </div>
+        <div class="frame-cap"><span>Fig. 1.1 · Global Investment in Fintech</span><span class="idx">Source: KPMG</span></div>
+      </div>
+      <div>
+        <div class="frame-img contain" style="height:36vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch1/fig1.2-fintech-media-mentions.jpg" alt="Figure 1.2 - Count of Fintech in Digital and Print Media">
+        </div>
+        <div class="frame-cap"><span>Fig. 1.2 · &ldquo;Fintech&rdquo; in Media, 2000–2018</span><span class="idx">Source: Factiva</span></div>
+      </div>
+    </div>
+
+    <div class="meta-row" style="margin-top:2vh; opacity:.5">
+      <span>Discussion · what does the 2022–23 drawdown tell us about market maturity?</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 03 · Scale</div>
+    <div>$1.2T · 38K deals</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04 · Three eras (dark · pipeline 3-col)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="04 Three Eras">
+  <div class="chrome">
+    <div>§1.3 · Historical periodisation</div>
+    <div>04 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:5vh">
+    <div class="kicker">Periodisation · Arner, Barberis &amp; Buckley (2015)</div>
+    <h2 class="h-xl" style="font-size:6.2vw">Three eras of fintech.</h2>
+    <p class="lead" style="margin-top:2.4vh; max-width:62vw; opacity:.78">
+      The canonical periodisation (Arner et al. 2015, updated 2020) frames fintech as three overlapping waves &mdash; each defined by who controlled the technology and what regulatory bargain prevailed.
+    </p>
+
+    <div class="pipeline-section" style="margin-top:6vh">
+      <div class="pipeline" data-cols="3">
+        <div class="step">
+          <div class="step-nb">Era 01 · 1858 — 1967</div>
+          <div class="step-title" style="font-size:1.9vw">Fintech 1.0 · Infrastructure</div>
+          <div class="step-desc" style="margin-top:.6vh">
+            Analog-to-electronic wiring: transatlantic cable (1858), electronic ticker tape (1867), Fedwire (1918), telex networks. Technology built <strong>by</strong> and <strong>for</strong> incumbents. The plumbing era &mdash; no disintermediation threat.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-nb">Era 02 · 1967 — 2008</div>
+          <div class="step-title" style="font-size:1.9vw">Fintech 2.0 · Digitisation</div>
+          <div class="step-desc" style="margin-top:.6vh">
+            Barclays ATM (1967), NASDAQ electronic exchange (1971), SWIFT (1973), Bloomberg Terminal (1981), online banking (mid-1990s). Bank-led digitisation; customers migrate to screens but the value chain stays vertically integrated.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-nb">Era 03 · 2006 — present</div>
+          <div class="step-title" style="font-size:1.9vw">Fintech 3.0 · Democratisation</div>
+          <div class="step-desc" style="margin-top:.6vh">
+            P2P lending launches (LendingClub &amp; Zopa, 2006), AWS cloud (2006), iPhone (2007), GFC trust deficit (2007&ndash;08). New entrants push services <em>outside</em> the regulated perimeter. Arner et al. note a &ldquo;Fintech 3.5&rdquo; variant in developing economies where mobile leapfrogging precedes formal banking.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 · Periodisation · Arner et&nbsp;al. framework</div>
+    <div>1.0 → 2.0 → 3.0</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · Two paradigms (light · compare)
+     ============================================================ -->
+<section class="slide light" data-screen-label="05 Two Paradigms">
+  <div class="chrome">
+    <div>§1.4 · Paradigms</div>
+    <div>05 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Christensen meets financial intermediation</div>
+    <h2 class="h-xl" style="font-size:5.6vw; margin-bottom:2vh">Traditional fintech vs. transformational fintech.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:1vh">
+      <div style="padding:2.4vh 2vw; border-left:3px solid currentColor; opacity:.62">
+        <div class="kicker" style="opacity:.95">i. Traditional (sustaining)</div>
+        <h3 class="h-md" style="margin-top:1vh; font-size:2.2vw">Faster horses.</h3>
+        <p style="font-family:var(--sans-zh); font-size:max(13px,1vw); line-height:1.55; opacity:.85; margin-top:1.2vh; max-width:32vw">
+          Incumbents optimise existing value chains &mdash; JPMorgan $15.3B tech spend (2023), Goldman&rsquo;s Marcus, DBS digibank. Same activity, lower unit cost.
+        </p>
+      </div>
+      <div style="padding:2.4vh 2vw; border-left:3px solid currentColor">
+        <div class="kicker" style="opacity:.95">ii. Transformational (disruptive)</div>
+        <h3 class="h-md" style="margin-top:1vh; font-size:2.2vw">A different car.</h3>
+        <p style="font-family:var(--sans-zh); font-size:max(13px,1vw); line-height:1.55; opacity:.92; margin-top:1.2vh; max-width:32vw">
+          Stripe unbundled merchant acquiring; Ant Group re-bundled payments + credit + wealth (Yu&rsquo;e Bao: $268B AUM peak). New cost structures create new defaults.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:2.4vh">
+      <div class="frame-img contain" style="height:36vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch1/tab1.1-two-paradigms.png" alt="Table 1.1 - Two Paradigms of Fintech">
+      </div>
+      <div class="frame-cap"><span>Table 1.1 · Two Paradigms of Fintech</span><span class="idx">Source: <em>Fintech Explained</em>, Ch. 1</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 · Paradigms</div>
+    <div>Traditional / Transformational</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · The Lens intro (hero light · act divider)
+     ============================================================ -->
+<section class="slide hero light" data-screen-label="06 The Lens">
+  <div class="chrome">
+    <div>Part II · The Fintech Explained Lens</div>
+    <div>06 / 12</div>
+  </div>
+  <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
+      <div class="kicker">An analytical framework</div>
+      <h1 class="h-hero" style="font-size:8vw">The Lens.</h1>
+      <p class="lead" style="max-width:40vw; font-size:1.7vw">
+        Four analytical moves that map to strategy, regulation, technology, and competitive dynamics. The rest of the course is built on these.
+      </p>
+      <div class="meta-row" style="margin-top:1vh">
+        <span>Who</span><span>·</span><span>What</span><span>·</span><span>Why</span><span>·</span><span>How</span>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center">
+      <div class="frame-img contain" style="height:48vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch1/fig1.3-fintech-explained-lens.jpg" alt="Figure 1.3 - The Fintech Explained Lens">
+      </div>
+      <div class="frame-cap"><span>Fig. 1.3 · The Fintech Explained Lens</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 · The Lens · introduction</div>
+    <div>— · —</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · Four questions (dark · pillar 2x2)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="07 Four Questions">
+  <div class="chrome">
+    <div>§2.1 · The four questions</div>
+    <div>07 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Step 1 of the lens · analytical scaffolding</div>
+    <h2 class="h-xl" style="font-size:5.6vw">Four questions.</h2>
+    <p class="lead" style="margin-top:1.4vh; max-width:60vw; opacity:.78">
+      Apply these to any fintech firm <em>before</em> reading their S-1 or pitch deck.
+    </p>
+
+    <div class="grid-4" style="margin-top:3vh; gap:3.6vh 4vw">
+      <div class="pillar">
+        <div class="step-nb">Question · 01</div>
+        <div class="t" style="font-size:2.4vw">Who? &mdash; Customer</div>
+        <div class="d">
+          Who is the fintech&rsquo;s customer? Identify the target segment: B2C (individuals, SMEs), B2B (banks, insurers), B2B2C (via intermediaries like Borrowell), or C2C/P2P (crypto exchanges). Product-market fit starts here.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="step-nb">Question · 02</div>
+        <div class="t" style="font-size:2.4vw">What? &mdash; Pain Point</div>
+        <div class="d">
+          What customer pain point is the fintech solving? Cost (high interchange), speed (T+2 settlement), access (thin-file exclusion), convenience (driving to a branch). The pain point is the market opportunity.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="step-nb">Question · 03</div>
+        <div class="t" style="font-size:2.4vw">Why? &mdash; Value Proposition</div>
+        <div class="d">
+          Why will customers pay? The fintech value proposition: <em>cheaper</em> (commission-free), <em>easier</em> (simple online process), <em>faster</em> (send cash in seconds), and <em>more convenient</em> (one app, all things money).
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="step-nb">Question · 04</div>
+        <div class="t" style="font-size:2.4vw">How? &mdash; Monetization</div>
+        <div class="d">
+          How does the fintech make money? Fees, commissions, subscriptions (SaaS), advertising, data sales, risk-taking spread. Also: PaaS, IaaS, BaaS models. Stripe = take-rate; Nubank = deposit spread.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 · Four questions</div>
+    <div>Who / What / Why / How</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · Eight categories (light · 4x2 grid)
+     ============================================================ -->
+<section class="slide light" data-screen-label="08 Eight Categories">
+  <div class="chrome">
+    <div>§2.2 · Categories of activity</div>
+    <div>08 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Step 2 of the lens · activity-based taxonomy</div>
+    <h2 class="h-xl" style="font-size:5.6vw">Eight categories of fintech.</h2>
+    <p class="lead" style="margin-top:1vh; max-width:62vw; opacity:.78; font-size:1.5vw">
+      Taxonomy aligned with FSB (2017) activity classification. Most firms span 2–3; identify which is load-bearing for unit economics.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(2,auto); gap:1.6vh 2vw; margin-top:2vh">
+      <div class="stat-card">
+        <div class="stat-label">01</div>
+        <div class="step-title" style="font-size:1.7vw; margin-top:.4vh">Cryptocurrencies</div>
+        <div class="step-desc">Electronic money and tokens on blockchain ledgers secured by cryptography. Bitcoin (2009), Ethereum, stablecoins (USDC, PYUSD).</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">02</div>
+        <div class="step-title" style="font-size:1.7vw; margin-top:.4vh">DeFi</div>
+        <div class="step-desc">An &ldquo;internet of money&rdquo; built on blockchain using smart contracts and dapps for secure P2P transactions without human intervention.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">03</div>
+        <div class="step-title" style="font-size:1.7vw; margin-top:.4vh">Online Lending</div>
+        <div class="step-desc">Digital platforms (SoFi, Funding Circle, Upstart) allowing individuals and businesses to borrow from other individuals, banks, and institutional investors. Also called debt crowdfunding.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">04</div>
+        <div class="step-title" style="font-size:1.7vw; margin-top:.4vh">Crowdfunding</div>
+        <div class="step-desc">Platforms (Kickstarter, Indiegogo) allowing individuals, businesses, and social causes to raise capital via equity, donations, and rewards.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">05</div>
+        <div class="step-title" style="font-size:1.7vw; margin-top:.4vh">Digital Banking</div>
+        <div class="step-desc">Nubank (100M+ customers), Chime, Starling. Fintechs providing day-to-day banking and personal finance management digitally.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">06</div>
+        <div class="step-title" style="font-size:1.7vw; margin-top:.4vh">Digital Wealth Mgmt</div>
+        <div class="step-desc">Betterment, Wealthsimple, Robinhood. Robo-advisory, automated portfolio management, fractional shares, zero-commission brokerage.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">07</div>
+        <div class="step-title" style="font-size:1.7vw; margin-top:.4vh">Payments</div>
+        <div class="step-desc">Stripe ($95B val.), Adyen, Wise. Digital payments, money transfers, international remittances, and payments processing software.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">08</div>
+        <div class="step-title" style="font-size:1.7vw; margin-top:.4vh">InsurTech</div>
+        <div class="step-desc">Lemonade, Root, Zhong An. Digital insurance distribution, AI underwriting, parametric products, data analytics for insurers.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 · Categories · illustrative working list</div>
+    <div>Read alongside Ch. 1 §2</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · Four firm types (dark · pillar 2x2)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="09 Four Types">
+  <div class="chrome">
+    <div>§2.3 · Firm types</div>
+    <div>09 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Step 3 of the lens · competitive topology</div>
+    <h2 class="h-xl" style="font-size:5.4vw">Four kinds of firm.</h2>
+    <p class="lead" style="margin-top:1vh; max-width:60vw; opacity:.78; font-size:1.5vw">
+      The textbook identifies four types of fintech companies, each with different strengths in innovation culture, technical expertise, customer base, data, scale, capital, and brand.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.6vw; margin-top:1.4vh">
+      <div class="pillar">
+        <div class="step-nb">Type · 01</div>
+        <div class="t" style="font-size:1.8vw">Entrepreneurial Start-Up</div>
+        <div class="d" style="font-size:max(12px,.95vw)">
+          Low revenues, &lt;10 employees, owned by founders and early-stage investors. Innovation culture and technical expertise, but limited capital, scale, and brand.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="step-nb">Type · 02</div>
+        <div class="t" style="font-size:1.8vw">Mature Company</div>
+        <div class="d" style="font-size:max(12px,.95vw)">
+          Thousands of employees, high revenues, stock exchange listing. PayPal, Square. Strong across innovation, tech, customers, data, scale, capital, and brand.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="step-nb">Type · 03</div>
+        <div class="t" style="font-size:1.8vw">Digital-Only Bank</div>
+        <div class="d" style="font-size:max(12px,.95vw)">
+          Chime, Nubank (100M+ customers). Incumbent-launched or born-digital. Strong on customer base and data; may lack innovation culture.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="step-nb">Type · 04</div>
+        <div class="t" style="font-size:1.8vw">Global Tech Platform</div>
+        <div class="d" style="font-size:max(12px,.95vw)">
+          Apple Pay, Google Wallet, Amazon Lending, Ant Group. Bundle financial and non-financial services. Unmatched scale, data, and brand. Also called bigtech or techfin.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2vh">
+      <div class="frame-img contain" style="height:28vh; border:1px solid rgba(255,255,255,.1)">
+        <img src="../images/ch1/tab1.2-firm-type-strengths.png" alt="Table 1.2 - Strengths of Different Types of Fintechs">
+      </div>
+      <div class="frame-cap"><span>Table 1.2 · Strengths of Different Types of Fintechs</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 · Firm types</div>
+    <div>Start-Up / Mature / Digital Bank / BigTech</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · Ten technologies (hero dark · closing list)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="10 Ten Technologies">
+  <div class="chrome">
+    <div>§2.4 · Ten technologies</div>
+    <div>10 / 12</div>
+  </div>
+  <div class="frame" style="display:flex; flex-direction:column; gap:2vh; padding-top:3vh">
+    <div>
+      <div class="kicker">Step 4 of the lens · the technology stack</div>
+      <h2 class="h-xl" style="font-size:5.6vw">Ten technologies.</h2>
+      <p class="lead" style="margin-top:1vh; max-width:60vw; opacity:.85; font-size:1.5vw">
+        Every fintech firm is built from a subset. For each firm we ask: <em>which of the ten, in what combination, and which is the defensibility bottleneck?</em>
+      </p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); grid-template-rows:repeat(2,auto); gap:2vh 1.8vw; margin-top:0">
+      <div class="stat-card">
+        <div class="stat-label">01</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">APIs</div>
+        <div class="step-desc">Messenger between computers. Open APIs drive PSD2 / Open Banking (EU 2016, UK 2016), letting licensed fintechs access customer data.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">02</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">AI &amp; ML</div>
+        <div class="step-desc">Machines mimicking human intelligence. Three learning modes: supervised, unsupervised, and reinforcement learning.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">03</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">Big Data</div>
+        <div class="step-desc">&ldquo;Data is the new oil&rdquo; (Clive Humby, 2006). 90% of world&rsquo;s data created in two years (Forbes, 2018). Critical input to AI/ML.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">04</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">Blockchain &amp; DLT</div>
+        <div class="step-desc">Distributed ledger from Bitcoin (Nakamoto, 2008). SHA-256 hash secures 1 MB blocks. DLT synchronises copies across nodes.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">05</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">Cloud Computing</div>
+        <div class="step-desc">Pioneered by AWS (2006). Enables SaaS, PaaS, IaaS, and BaaS (Banking-as-a-Service) for fintechs to embed banking via APIs.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">06</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">Cryptography</div>
+        <div class="step-desc">Secures digital currencies via irreversible hash algorithms (SHA-256). Makes encryption inexpensive and widely available.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">07</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">Ethereum</div>
+        <div class="step-desc">Programmable blockchain by Vitalik Buterin (2013). Platform for dapps and smart contracts, powered by ether (ETH) gas fees.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">08</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">Multi-Sided Platform</div>
+        <div class="step-desc">Digital business connecting two+ user groups to transact online. Model used by Google, Amazon, and Tencent.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">09</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">P2P Network</div>
+        <div class="step-desc">Decentralised network where computers have equal access. Crypto and DeFi run on distributed networks with no supernode.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">10</div>
+        <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">Smart Contract</div>
+        <div class="step-desc">Self-executing code on blockchain: &ldquo;if A happens, then B follows.&rdquo; Developed for Ethereum, encrypted to prevent alteration.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 10 · Technologies</div>
+    <div>The ten-technology stack</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 · Fintech Ecosystem (light · new)
+     ============================================================ -->
+<section class="slide light" data-screen-label="11 Ecosystem">
+  <div class="chrome">
+    <div>§3.1 · The fintech ecosystem</div>
+    <div>11 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Ecosystem · actors, institutions, infrastructure</div>
+    <h2 class="h-xl" style="font-size:5.6vw">The fintech ecosystem.</h2>
+    <p class="lead" style="margin-top:1vh; max-width:62vw; opacity:.78; font-size:1.5vw">
+      Fintechs do not emerge in isolation. They depend on a diverse ecosystem of innovation labs, accelerators (Y Combinator, Level39), technology hubs, investors, regulators, and universities.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:2vh">
+        <div class="stat-card">
+          <div class="stat-label">Key actors</div>
+          <div class="step-desc" style="margin-top:.6vh"><strong>Fintech companies</strong> &mdash; start-ups to decacorns. <strong>Investors</strong> &mdash; angels, VCs, PE, strategic (incumbents). <strong>Regulators</strong> &mdash; sandboxes (UK FCA 2016, MAS, HKMA). <strong>Accelerators</strong> &mdash; Y Combinator, Techstars, Plug and Play.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Ecosystem competition</div>
+          <div class="step-desc" style="margin-top:.6vh">Cities and countries compete to attract fintech talent and capital. Regulatory clarity, tax incentives, and talent pools are the key differentiators. Silicon Valley, London, and Singapore lead; Hong Kong and Dubai are rising challengers.</div>
+        </div>
+      </div>
+      <div>
+        <div class="frame-img contain" style="height:36vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch1/tab1.3-ecosystem-rankings.png" alt="Table 1.3 - 2020 Rankings of Fintech Ecosystems">
+        </div>
+        <div class="frame-cap"><span>Table 1.3 · 2020 Rankings of Fintech Ecosystems</span><span class="idx">Source: Findexable, Accenture</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 11 · Ecosystem</div>
+    <div>Actors / Hubs / Rankings</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 · Financial Inclusion + Closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="12 Inclusion & Closing">
+  <div class="chrome">
+    <div>§3.2 · Financial inclusion · Closing</div>
+    <div>12 / 12</div>
+  </div>
+  <div class="frame" style="display:grid; gap:2.4vh; align-content:center; min-height:76vh">
+    <div class="kicker">The societal dimension</div>
+    <h1 class="h-hero" style="font-size:7vw">Financial inclusion.</h1>
+    <p class="lead" style="max-width:60vw; font-size:1.65vw">
+      1.7 billion adults remain unbanked (World Bank) &mdash; but two-thirds own a mobile phone. Over the last decade, 1.2 billion gained access primarily via mobile money. M-Pesa, GCash, and bKash demonstrate fintech as infrastructure for economic development.
+    </p>
+    <div style="display:flex; gap:4vw; margin-top:0">
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">1.7<span class="stat-unit">B</span></div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Unbanked adults globally</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">1.2<span class="stat-unit">B</span></div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Gained access, 2011–2021</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">67<span class="stat-unit">%</span></div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Of unbanked own a mobile phone</div>
+      </div>
+    </div>
+    <div class="meta-row" style="margin-top:1vh">
+      <span>End of Chapter 01</span><span>·</span><span>FINE 6280</span><span>·</span><span>Next · Ch. 02 · Theories &amp; Business Models</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Closing · End of Chapter 01 · FINE 6280</div>
+    <div>Next · Ch. 02 · Theories &amp; Business Models</div>
+  </div>
+</section>
+
+</div>
+
+<div id="nav"></div>
+
+<script>
+/* =============== WebGL 双背景 ===============
+   深色页：Holographic Dispersion（全息色散 · 钛金暗流）—— 彩虹微扰、鼠标径向涟漪
+   浅色页：Spiral Vortex（旋转涡流 · 银色珍珠）—— domain-warp 流动、无中心
+   修改风格请参考 references/webgl-backgrounds.md
+*/
+const VS = `attribute vec2 position;void main(){gl_Position=vec4(position,0.0,1.0);}`;
+
+const FS_DARK = `precision highp float;
+uniform vec2 u_resolution;uniform float u_time;uniform vec2 u_mouse;
+vec3 palette(float t,vec3 a,vec3 b,vec3 c,vec3 d){return a+b*cos(6.28318*(c*t+d));}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+  vec2 p=uv*2.0-1.0;p.x*=u_resolution.x/u_resolution.y;
+  vec2 m=u_mouse*2.0-1.0;m.x*=u_resolution.x/u_resolution.y;
+  float md=length(p-m);
+  float mr=sin(md*15.0-u_time*4.0)*exp(-md*3.0);p+=mr*0.08;
+  vec2 p0=p;
+  for(float i=1.0;i<4.0;i++){
+    p.x+=0.1/i*sin(i*3.0*p.y+u_time*0.4)+0.05;
+    p.y+=0.1/i*cos(i*2.0*p.x+u_time*0.3)-0.05;
+  }
+  float r=length(p);float ang=atan(p.y,p.x);
+  vec3 a=vec3(0.12,0.12,0.13);
+  vec3 b=vec3(0.03,0.04,0.05);
+  vec3 c=vec3(1.0,1.0,1.0);
+  vec3 d=vec3(0.1,0.2,0.4);
+  vec3 col=palette(r*1.5+p0.x*0.5+u_time*0.1,a,b,c,d);
+  float disp=sin(r*25.0-u_time*1.5+ang*2.0)*0.5+0.5;
+  col+=vec3(disp*0.015,disp*0.01,disp*0.02);
+  float hi=pow(sin(p.x*4.0+p.y*3.0+u_time)*0.5+0.5,8.0);
+  col+=hi*0.08;
+  vec3 base=vec3(0.05,0.05,0.06);
+  col=mix(base,col,0.85);
+  gl_FragColor=vec4(col,1.0);
+}`;
+
+const FS_LIGHT = `precision highp float;
+uniform vec2 u_resolution;uniform float u_time;uniform vec2 u_mouse;
+float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float noise(vec2 p){
+  vec2 i=floor(p),f=fract(p);
+  float a=hash(i),b=hash(i+vec2(1,0));
+  float c=hash(i+vec2(0,1)),d=hash(i+vec2(1,1));
+  vec2 u=f*f*(3.0-2.0*f);
+  return mix(a,b,u.x)+(c-a)*u.y*(1.0-u.x)+(d-b)*u.x*u.y;
+}
+float fbm(vec2 p){
+  float v=0.0,a=0.5;
+  mat2 m=mat2(0.80,0.60,-0.60,0.80);
+  for(int i=0;i<5;i++){v+=a*noise(p);p=m*p*2.02;a*=0.5;}
+  return v;
+}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+  vec2 p=uv;p.x*=u_resolution.x/u_resolution.y;
+  vec2 m=u_mouse;m.x*=u_resolution.x/u_resolution.y;
+  vec2 md=p-m;float dl=length(md);
+  p+=normalize(md+vec2(0.0001))*exp(-dl*5.0)*0.03;
+  vec2 q=vec2(fbm(p*1.8+u_time*0.07),fbm(p*1.8+vec2(5.2,1.3)+u_time*0.06));
+  vec2 r=vec2(fbm(p*2.0+q*1.3+vec2(1.7,9.2)+u_time*0.05),
+              fbm(p*2.0+q*1.3+vec2(8.3,2.8)+u_time*0.04));
+  float f=fbm(p*2.2+r*1.5);
+  vec3 silverDark=vec3(0.86,0.85,0.84);
+  vec3 paper=vec3(0.955,0.945,0.925);
+  vec3 col=mix(silverDark,paper,f);
+  float ph=r.x*2.2+u_time*0.35;
+  col+=vec3(0.78,0.62,0.92)*sin(ph)*0.055;
+  col+=vec3(0.55,0.72,0.95)*sin(ph*0.8+2.0)*0.05;
+  float hl=smoothstep(0.48,0.92,f);
+  col+=hl*0.06;
+  gl_FragColor=vec4(col,1.0);
+}`;
+
+const mouse={x:0.5,y:0.5};
+addEventListener('mousemove',e=>{mouse.x=e.clientX/innerWidth;mouse.y=e.clientY/innerHeight});
+
+function bootGL(canvasId, fsSrc){
+  const canvas=document.getElementById(canvasId);
+  const gl=canvas.getContext('webgl',{alpha:false,antialias:true});
+  if(!gl) return ()=>false;
+  const mk=(t,s)=>{const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh};
+  const prog=gl.createProgram();
+  gl.attachShader(prog,mk(gl.VERTEX_SHADER,VS));
+  gl.attachShader(prog,mk(gl.FRAGMENT_SHADER,fsSrc));
+  gl.linkProgram(prog);gl.useProgram(prog);
+  const buf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+  const pos=gl.getAttribLocation(prog,'position');
+  gl.enableVertexAttribArray(pos);gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+  const lRes=gl.getUniformLocation(prog,'u_resolution');
+  const lT=gl.getUniformLocation(prog,'u_time');
+  const lM=gl.getUniformLocation(prog,'u_mouse');
+  const resize=()=>{
+    const d=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=innerWidth*d;canvas.height=innerHeight*d;
+    gl.viewport(0,0,canvas.width,canvas.height);
+  };
+  addEventListener('resize',resize);resize();
+  return (tSec)=>{
+    gl.uniform2f(lRes,canvas.width,canvas.height);
+    gl.uniform1f(lT,tSec);
+    gl.uniform2f(lM,mouse.x,1-mouse.y);
+    gl.drawArrays(gl.TRIANGLES,0,6);
+    return true;
+  };
+}
+const drawDark=bootGL('bg-dark',FS_DARK);
+const drawLight=bootGL('bg-light',FS_LIGHT);
+const t0=Date.now();
+(function loop(){
+  const t=(Date.now()-t0)/1000;
+  drawDark(t);drawLight(t);
+  requestAnimationFrame(loop);
+})();
+
+// =============== 导航（翻页 / 圆点 / 键盘 / 滚轮 / 触屏） ===============
+const deck=document.getElementById('deck');
+const slides=deck.querySelectorAll('.slide');
+const nav=document.getElementById('nav');
+let idx=0,total=slides.length,lock=false;
+
+// 关键：矫正 deck 宽度为 total * 100vw，否则翻页会错位
+deck.style.width=(total*100)+'vw';
+
+slides.forEach((s,i)=>{
+  const b=document.createElement('button');
+  b.className='dot';b.dataset.i=i;b.setAttribute('aria-label','Page '+(i+1));
+  b.onclick=()=>go(i);
+  nav.appendChild(b);
+});
+
+function go(n){
+  if(lock)return;
+  idx=Math.max(0,Math.min(total-1,n));
+  deck.style.transform=`translateX(${-idx*100}vw)`;
+  /* load-bearing: .slide.active is read by Open Design's host bridge
+     (src/runtime/srcdoc.ts findActiveByClass) to drive the slide counter.
+     No CSS targets it — do not remove. */
+  slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+  nav.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+  /* 主题切换：优先读 data-theme，其次从 class（light/dark）推断 */
+  const el=slides[idx];
+  const th=el.dataset.theme || (el.classList.contains('light')?'light':(el.classList.contains('dark')?'dark':'dark'));
+  document.body.classList.toggle('light-bg',th==='light');
+  lock=true;setTimeout(()=>lock=false,700);
+}
+
+/* =============== ESC 索引视图 =============== */
+let overviewOn=false;
+const ov=document.createElement('div');
+ov.id='overview';
+ov.style.cssText='position:fixed;inset:0;z-index:100;background:rgba(var(--ink-rgb),.92);backdrop-filter:blur(12px);display:none;overflow-y:auto;padding:4vh 4vw';
+document.body.appendChild(ov);
+
+function buildOverview(){
+  ov.innerHTML='';
+  const grid=document.createElement('div');
+  grid.style.cssText='display:grid;grid-template-columns:repeat(4,1fr);gap:2vh 1.6vw;max-width:90vw;margin:0 auto';
+  slides.forEach((s,i)=>{
+    const card=document.createElement('div');
+    card.style.cssText='cursor:pointer;border-radius:6px;overflow:hidden;border:2px solid '+(i===idx?'rgba(var(--paper-rgb),.8)':'rgba(var(--paper-rgb),.15)')+';transition:border-color .2s';
+    card.onmouseenter=()=>card.style.borderColor='rgba(var(--paper-rgb),.6)';
+    card.onmouseleave=()=>card.style.borderColor=i===idx?'rgba(var(--paper-rgb),.8)':'rgba(var(--paper-rgb),.15)';
+    const wrap=document.createElement('div');
+    wrap.style.cssText='width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;pointer-events:none;background:'+(s.classList.contains('light')?'var(--paper)':'var(--ink)');
+    const clone=s.cloneNode(true);
+    clone.style.cssText='width:100vw;height:100vh;transform:scale('+(1/4.5)+');transform-origin:top left;position:absolute;top:0;left:0;pointer-events:none';
+    wrap.appendChild(clone);
+    const label=document.createElement('div');
+    label.style.cssText='padding:6px 10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);opacity:.7';
+    label.textContent=(i+1)+' / '+total;
+    card.appendChild(wrap);
+    card.appendChild(label);
+    card.onclick=()=>{toggleOverview();go(i)};
+    grid.appendChild(card);
+  });
+  ov.appendChild(grid);
+}
+
+function toggleOverview(){
+  overviewOn=!overviewOn;
+  if(overviewOn){buildOverview();ov.style.display='block';}
+  else{ov.style.display='none';}
+}
+
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){e.preventDefault();toggleOverview();return;}
+  if(overviewOn)return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key==='ArrowDown')go(idx+1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='ArrowUp')go(idx-1);
+  if(e.key==='Home')go(0);
+  if(e.key==='End')go(total-1);
+});
+
+let wheelTO=null,wheelAcc=0;
+addEventListener('wheel',e=>{
+  wheelAcc+=e.deltaY+e.deltaX;
+  if(Math.abs(wheelAcc)>50){go(idx+(wheelAcc>0?1:-1));wheelAcc=0;}
+  clearTimeout(wheelTO);wheelTO=setTimeout(()=>wheelAcc=0,150);
+},{passive:true});
+
+let tx=0,ty=0;
+addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchend',e=>{
+  const dx=(e.changedTouches[0].clientX-tx);
+  const dy=(e.changedTouches[0].clientY-ty);
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(idx+(dx<0?1:-1));
+},{passive:true});
+
+go(0);
+</script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

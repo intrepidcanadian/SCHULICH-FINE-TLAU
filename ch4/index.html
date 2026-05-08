@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valuation of Fintech Companies · Chapter 04 · FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a1f3d;
+    --ink-rgb:10,31,61;
+    --paper:#f1f3f5;
+    --paper-rgb:241,243,245;
+    --paper-tint:#e4e8ec;
+    --ink-tint:#152a4a;
+
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --serif-en:"Playfair Display","Source Serif 4",Georgia,serif;
+    --serif-body-en:"Source Serif 4",Georgia,serif;
+    --serif-zh:"Noto Serif SC",source-han-serif-sc,serif;
+    --sans-zh:"Noto Sans SC",source-han-sans-sc,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var(--paper);font-family:var(--sans-zh);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+  canvas.bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;transition:opacity 1.2s ease}
+  canvas#bg-light{opacity:0}
+  canvas#bg-dark{opacity:1}
+  body.light-bg canvas#bg-light{opacity:1}
+  body.light-bg canvas#bg-dark{opacity:0}
+
+  #deck{position:fixed;inset:0;width:1200vw;height:100vh;display:flex;flex-wrap:nowrap;transition:transform .9s cubic-bezier(.77,0,.175,1);z-index:10;will-change:transform}
+  .slide{width:100vw;height:100vh;flex:0 0 100vw;position:relative;padding:6vh 6vw 10vh 6vw;display:flex;flex-direction:column;overflow:hidden}
+  .slide.light{color:var(--ink)}
+  .slide.dark{color:var(--paper)}
+
+  .slide::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;transition:background .7s ease}
+  .slide.light::before{background:rgba(var(--paper-rgb),.78);backdrop-filter:blur(3px)}
+  .slide.dark::before{background:rgba(var(--ink-rgb),.78);backdrop-filter:blur(3px)}
+  .slide.hero.light::before{background:rgba(var(--paper-rgb),.16);backdrop-filter:none}
+  .slide.hero.dark::before{background:rgba(var(--ink-rgb),.12);backdrop-filter:none}
+  .slide.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}
+  .slide.hero.light::after{background:linear-gradient(180deg,rgba(var(--paper-rgb),.28) 0%,rgba(var(--paper-rgb),0) 14%,rgba(var(--paper-rgb),0) 86%,rgba(var(--paper-rgb),.28) 100%)}
+  .slide.hero.dark::after{background:linear-gradient(180deg,rgba(var(--ink-rgb),.32) 0%,rgba(var(--ink-rgb),0) 14%,rgba(var(--ink-rgb),0) 86%,rgba(var(--ink-rgb),.32) 100%)}
+
+  .chrome{display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.2em;text-transform:uppercase;opacity:.62}
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+
+  .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:6px 14px;border:1px solid currentColor;opacity:.85}
+  .rule{width:100%;height:1px;background:currentColor;opacity:.25;margin:3vh 0}
+
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:2.6vh}
+  .display{font-family:var(--serif-en);font-weight:700;font-size:11vw;line-height:.92;letter-spacing:-.025em}
+  .h1-zh{font-family:var(--serif-zh);font-weight:700;font-size:4.6vw;line-height:1.12;letter-spacing:-.005em}
+  .h2-zh{font-family:var(--serif-zh);font-weight:600;font-size:3.2vw;line-height:1.2;letter-spacing:0}
+  .body-zh{font-family:var(--sans-zh);font-weight:400;font-size:max(15px,1.22vw);line-height:1.75;opacity:.82;letter-spacing:.01em}
+  .lead{font-family:var(--serif-zh);font-weight:400;font-size:1.75vw;line-height:1.5;opacity:.86}
+  .meta{font-family:var(--mono);font-size:max(11px,.88vw);letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+  .big-num{font-family:var(--serif-en);font-weight:800;font-size:10vw;line-height:.85;letter-spacing:-.03em;font-feature-settings:"tnum"}
+  .ghost{font-family:var(--serif-en);font-weight:900;font-size:34vw;line-height:.8;opacity:.06;letter-spacing:-.04em;position:absolute;font-feature-settings:"tnum"}
+  em{font-style:italic;font-family:var(--serif-en)}
+
+  .col{display:flex;flex-direction:column;gap:2.4vh}
+  .row{display:flex;align-items:center;gap:3vw}
+  .grid-6{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:4vw 6vw;flex:1;align-content:center;padding:2vh 0}
+  .grid-4{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:4vh 6vw;flex:1;align-content:center}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:4vw;flex:1;align-content:center}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:4vw;flex:1;align-items:center}
+  .fill{flex:1}
+  .center{align-items:center;justify-content:center;text-align:center}
+
+  .stat{display:flex;flex-direction:column;gap:1vh;align-items:flex-start}
+  .stat .n{font-family:var(--serif-en);font-weight:800;font-size:8vw;line-height:.88;letter-spacing:-.03em;font-feature-settings:"tnum"}
+  .stat .l{font-family:var(--sans-zh);font-size:max(13px,1.05vw);opacity:.7;margin-top:1vh;font-weight:400;line-height:1.5}
+  .stat .m{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.5;margin-bottom:.2vh}
+
+  .callout{padding:3vh 2.4vw;border-left:3px solid currentColor;position:relative;font-family:var(--serif-zh);font-size:max(15px,1.2vw);line-height:1.55;opacity:.92}
+  .slide.light .callout{background:rgba(var(--ink-rgb),.05)}
+  .slide.dark .callout{background:rgba(var(--paper-rgb),.06)}
+  .callout .cite{display:block;margin-top:1.6vh;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+  .callout .q-big{font-family:var(--serif-zh);font-weight:600;font-size:max(17px,1.6vw);line-height:1.42}
+  .callout-src{display:block;margin-top:1.6vh;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+
+  .pillar{display:flex;flex-direction:column;gap:1.8vh}
+  .pillar .ic{font-family:var(--serif-en);font-style:italic;font-size:2.6vw;opacity:.45;font-weight:400}
+  .pillar .t{font-family:var(--serif-zh);font-weight:700;font-size:2.4vw;line-height:1.1}
+  .pillar .d{font-family:var(--sans-zh);font-weight:400;font-size:max(14px,1.1vw);opacity:.76;line-height:1.6}
+
+  .hi{position:relative;display:inline}
+  .slide.dark .hi::after{content:"";position:absolute;left:-.1em;right:-.1em;bottom:-.05em;height:.28em;background:rgba(var(--paper-rgb),.15);z-index:-1}
+  .slide.light .hi::after{content:"";position:absolute;left:-.1em;right:-.1em;bottom:-.05em;height:.28em;background:rgba(var(--ink-rgb),.08);z-index:-1}
+
+  .frame-img{overflow:hidden;position:relative;background:rgba(0,0,0,.04);box-sizing:border-box;width:100%;border-radius:4px}
+  .slide.dark .frame-img{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+  .frame-img > img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .frame-img.contain > img{object-fit:contain;object-position:center center}
+  .frame-cap{display:flex;justify-content:space-between;align-items:baseline;gap:1vw;margin-top:.8vh;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.72}
+  .frame-cap .idx{font-family:var(--mono);opacity:.5}
+  figure.tile{display:flex;flex-direction:column;margin:0;min-width:0}
+  figure.tile > .frame-img{flex:0 0 auto}
+
+  .h-hero{font-family:var(--serif-zh);font-weight:900;font-size:10vw;line-height:.96;letter-spacing:-.02em}
+  .h-xl{font-family:var(--serif-zh);font-weight:700;font-size:6.2vw;line-height:1.08;letter-spacing:-.01em}
+  .h-sub{font-family:var(--serif-zh);font-weight:500;font-size:3.1vw;line-height:1.25;letter-spacing:0;opacity:.7}
+  .h-md{font-family:var(--serif-zh);font-weight:600;font-size:2.3vw;line-height:1.3}
+  .h-hero-en,.h-xl-en{font-family:var(--serif-en);letter-spacing:-.025em}
+
+  .meta-row{display:flex;gap:1.2em;align-items:baseline;flex-wrap:wrap;font-family:var(--mono);font-size:max(12px,.92vw);letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+
+  .stat-card{display:flex;flex-direction:column;gap:.8vh;align-items:flex-start;padding-top:1.6vh;border-top:1px solid currentColor;border-color:rgba(127,127,127,.3)}
+  .stat-card .stat-label{font-family:var(--mono);font-size:max(10px,.78vw);letter-spacing:.24em;text-transform:uppercase;opacity:.55}
+  .stat-card .stat-nb{font-family:var(--serif-en);font-weight:800;font-size:5.8vw;line-height:.9;letter-spacing:-.03em;font-feature-settings:"tnum";margin-top:.4vh}
+  .stat-card .stat-nb .stat-unit{font-family:var(--serif-zh);font-weight:500;font-size:.38em;letter-spacing:0;opacity:.72;margin-left:.14em}
+  .stat-card .stat-note{font-family:var(--sans-zh);font-weight:400;font-size:max(13px,1.05vw);line-height:1.5;opacity:.72;margin-top:.6vh}
+  .grid-4 .stat-card .stat-nb{font-size:7.5vw}
+  .grid-3 .stat-card .stat-nb{font-size:6.8vw}
+
+  .pipeline-section{margin-top:4.4vh;padding-top:2.8vh;border-top:1px dashed rgba(127,127,127,.32)}
+  .pipeline-section:first-of-type{border-top:0;padding-top:0;margin-top:3vh}
+  .pipeline-label{font-family:var(--mono);font-size:max(11px,.85vw);letter-spacing:.24em;text-transform:uppercase;opacity:.62;margin-bottom:2.2vh}
+  .pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2vw}
+  .pipeline[data-cols="3"]{grid-template-columns:repeat(3,1fr)}
+  .pipeline[data-cols="4"]{grid-template-columns:repeat(4,1fr)}
+  .step{display:flex;flex-direction:column;gap:.8vh;padding-top:1.4vh;border-top:1px solid currentColor;border-color:rgba(127,127,127,.35)}
+  .step-nb{font-family:var(--serif-en);font-style:italic;font-weight:500;font-size:1.15vw;opacity:.45}
+  .step-title{font-family:var(--sans-zh);font-weight:700;font-size:1.55vw;letter-spacing:.01em;line-height:1.2}
+  .step-desc{font-family:var(--sans-zh);font-weight:400;font-size:max(12px,.95vw);line-height:1.45;opacity:.72}
+
+  .grid-2-7-5{display:grid;grid-template-columns:7fr 5fr;gap:3vw 4vh;align-items:start}
+  .grid-2-6-6{display:grid;grid-template-columns:1fr 1fr;gap:3vw 4vh;align-items:start}
+  .grid-2-8-4{display:grid;grid-template-columns:8fr 4fr;gap:3vw 4vh;align-items:start}
+
+  figure.frame-img{margin:0;display:flex;flex-direction:column;min-width:0}
+  .img-cap{display:block;margin-top:.8vh;font-family:var(--mono);font-size:max(10px,.8vw);letter-spacing:.22em;text-transform:uppercase;opacity:.6}
+
+  .frame{flex:1;display:flex;flex-direction:column;min-height:0}
+
+  #nav{position:fixed;left:50%;bottom:2.6vh;transform:translateX(-50%);z-index:30;display:flex;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  #nav .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s ease;border:0;padding:0}
+  #nav .dot:hover{background:rgba(255,255,255,.5);transform:scale(1.15)}
+  #nav .dot.active{background:rgba(255,255,255,.95);width:22px;border-radius:999px}
+  body.light-bg #nav{background:rgba(255,255,255,.25)}
+  body.light-bg #nav .dot{background:rgba(var(--ink-rgb),.25)}
+  body.light-bg #nav .dot.active{background:rgba(var(--ink-rgb),.9)}
+  #hint{position:fixed;bottom:3vh;right:3vw;z-index:30;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;mix-blend-mode:difference;color:#aaa}
+
+  @media (max-width:900px){
+    .display{font-size:16vw}
+    .h-hero{font-size:14vw}
+    .h-xl{font-size:9vw}
+    .pipeline{grid-template-columns:repeat(2,1fr)}
+    .grid-2-7-5,.grid-2-6-6,.grid-2-8-4{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">&larr; &rarr; &middot; ESC</div>
+
+<div id="deck">
+
+<!-- ============================================================
+     SLIDE 01 · Cover (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="01 Cover">
+  <div class="chrome">
+    <div>FINE 6280 &middot; Fintech</div>
+    <div>Chapter 04 &middot; Lecture</div>
+  </div>
+  <div class="frame" style="display:grid; gap:4vh; align-content:center; min-height:80vh">
+    <div class="kicker">Chapter 04 &middot; Valuation</div>
+    <h1 class="h-hero" style="font-size:7.8vw">Valuation of Fintech Companies</h1>
+    <h2 class="h-sub" style="max-width:64vw">From angel scorecards and VC discount rates to market multiples, DCF models, and adjusted EBITDA &mdash; the art and science of pricing fintech companies at every stage of their lifecycle.</h2>
+    <div class="meta-row" style="margin-top:2vh">
+      <span>Department of Finance</span><span>&middot;</span><span>Graduate Seminar</span><span>&middot;</span><span>Lecture 04 of 14</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Reading &middot; Chapter 4 of <em>Fintech Explained</em></div>
+    <div>&mdash; &middot; &mdash;</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 02 · Art of Valuation / ZOPA (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="02 Art of Valuation">
+  <div class="chrome">
+    <div>&sect;4.1 &middot; The art of valuation</div>
+    <div>02 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Negotiation &middot; value is subjective</div>
+    <h2 class="h-xl" style="font-size:5.8vw">Valuation is an art, not a science.</h2>
+    <p class="lead" style="margin-top:1.6vh; max-width:62vw; opacity:.78">
+      Value is what someone will pay. The party in the stronger bargaining position steers the price. For early-stage companies with no revenue history, qualitative factors &mdash; team, idea, market size &mdash; dominate. Traditional models simply do not work.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; margin-top:3vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:2vh">
+        <div class="callout">
+          <div class="q-big">The gap between the buyer&rsquo;s offer price and the seller&rsquo;s asking price creates the zone of possible agreement (ZOPA). This is where bargaining takes place.</div>
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Founder trade-off</div>
+          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Ownership vs. Growth Capital</div>
+          <div class="step-desc">Founders must give up equity to raise capital for growth. Understanding the other party&rsquo;s incentives and interests is the secret to bargaining. Not everyone is rational &mdash; behavioral biases shape negotiations.</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:2vh">
+        <div class="stat-card">
+          <div class="stat-label">Fundamental (intrinsic) value</div>
+          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Bottom-Up Models</div>
+          <div class="step-desc">Spreadsheets filled with assumptions about sales, margins, and earnings. Any analyst can manipulate inputs to justify their desired price. Models are negotiating tools, not reality.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Relative value</div>
+          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Market Multiples of Comparables</div>
+          <div class="step-desc">Standardized metrics (P/E, EV/Sales, EV/EBITDA) based on similar companies. Change the choice of comparables or the ratio, and you can justify any price. Another negotiating tactic.</div>
+        </div>
+        <div class="callout" style="margin-top:1vh">
+          At the end of the day, both fundamental and relative valuation models are negotiating tools &mdash; used to justify a lower price for a buyer or a higher price for a seller. That&rsquo;s it.
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 &middot; The art of valuation</div>
+    <div>ZOPA &middot; Fundamental vs. Relative</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 03 · Four Steps in Valuation + Fig 4.1 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="03 Four Steps">
+  <div class="chrome">
+    <div>&sect;4.2 &middot; Four steps in valuation</div>
+    <div>03 / 12</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:3vh">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2vh">
+      <div>
+        <div class="kicker">Framework &middot; universal method</div>
+        <h2 class="h-xl" style="font-size:5.4vw">Four steps.</h2>
+        <p class="lead" style="margin-top:1vh; max-width:42vw">
+          Most valuation methodologies boil down to four steps: identify value drivers, forecast the future, discount to present value, and divide the pie.
+        </p>
+      </div>
+      <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+        <div class="pipeline" data-cols="4">
+          <div class="step">
+            <div class="step-nb">01</div>
+            <div class="step-title" style="font-size:1.3vw">Identify</div>
+            <div class="step-desc">Find value drivers: top-down (TAM, macro) and bottom-up (firm-specific: leadership, brand, unit economics). GIGO principle applies.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">02</div>
+            <div class="step-title" style="font-size:1.3vw">Forecast</div>
+            <div class="step-desc">Project future sales and margins using scenario analysis: base, bull, and bear cases with probability weights. Private data is scarce.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">03</div>
+            <div class="step-title" style="font-size:1.3vw">Discount</div>
+            <div class="step-desc">PV = FV / (1+r%)^n. Discount each future cash flow using the IRR. $100 at 10% for 7 years = $51.32 today. Compounding works exponentially.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">04</div>
+            <div class="step-title" style="font-size:1.3vw">Divide</div>
+            <div class="step-desc">EV = Net Debt + Equity. Creditors get repaid first; shareholders own the residual. Use as-converted basis for SAFEs and convertible notes.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:1vh">
+        Enterprise Value (EV) = Total Debt &minus; Cash + Preferred + Common + NCI. A going-concern assumption means assets generate cash flows into the future &mdash; always higher than liquidation value.
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.4vh; padding-top:1vh">
+      <div class="frame-img contain" style="height:36vh; border:1px solid rgba(255,255,255,.1)">
+        <img src="../images/ch4/fig4.1.jpg" alt="Figure 4.1 - The Four Steps in Valuation">
+      </div>
+      <div class="frame-cap"><span>Fig. 4.1 &middot; The Four Steps in Valuation</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+
+      <div class="frame-img contain" style="height:34vh; border:1px solid rgba(255,255,255,.1); margin-top:1vh">
+        <img src="../images/ch4/tab4.1.png" alt="Table 4.1 - Pre-Money and Post-Money Price Per Share">
+      </div>
+      <div class="frame-cap"><span>Tab. 4.1 &middot; Pre-Money &amp; Post-Money Price Per Share</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; Identify &middot; Forecast &middot; Discount &middot; Divide</div>
+    <div>FINE 6280 &middot; Ch. 04</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04 · Angel: Payne Scorecard (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04 Payne Scorecard">
+  <div class="chrome">
+    <div>&sect;4.3 &middot; Angel valuation &middot; Payne Scorecard</div>
+    <div>04 / 12</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:3vh">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2vh">
+      <div>
+        <div class="kicker">Angel investors &middot; scorecards</div>
+        <h2 class="h-xl" style="font-size:5.2vw">Bill Payne Scorecard.</h2>
+        <p class="lead" style="margin-top:1vh; max-width:42vw">
+          A relative valuation method that starts from an average pre-money valuation of $2M for recent angel-funded deals in the region, then adjusts up or down across seven dimensions based on due diligence and expert judgment.
+        </p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.6vh">
+        <div class="stat-card">
+          <div class="stat-label">Seven dimensions</div>
+          <div class="step-desc" style="margin-top:.6vh; line-height:1.65">
+            <strong>1.</strong> Strength of entrepreneur &amp; team (30%) &middot;
+            <strong>2.</strong> Size of opportunity (25%) &middot;
+            <strong>3.</strong> Product / technology (15%) &middot;
+            <strong>4.</strong> Competitive environment (10%) &middot;
+            <strong>5.</strong> Marketing &amp; sales channels (10%) &middot;
+            <strong>6.</strong> Need for additional investment (5%) &middot;
+            <strong>7.</strong> Other factors (5%)
+          </div>
+        </div>
+        <div class="callout" style="margin-top:.4vh">
+          In the textbook example, adjustments sum to 115.5% of the $2M base, yielding a pre-money valuation of <strong>$2.31M</strong>. The scorecard is subjective &mdash; two angels may reach different conclusions from the same data.
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+        </div>
+        <div class="meta-row" style="margin-top:1vh">
+          <span>10% of angel investments = 90% of total returns</span><span>&middot;</span><span>Portfolio avg: 2.6&times; over 3.5 yr (~27% IRR)</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.4vh; padding-top:1vh">
+      <div class="frame-img contain" style="height:56vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch4/tab4.2.png" alt="Table 4.2 - Bill Payne Scorecard Valuation">
+      </div>
+      <div class="frame-cap"><span>Tab. 4.2 &middot; Bill Payne Scorecard Valuation</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; Bill Payne Scorecard method</div>
+    <div>Base $2M &middot; 7 dimensions</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · Angel: Berkus + Risk Factor Summation (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 Berkus & RFS">
+  <div class="chrome">
+    <div>&sect;4.3 &middot; Berkus &amp; Risk Factor Summation</div>
+    <div>05 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Angel valuation &middot; two more methods</div>
+    <h2 class="h-xl" style="font-size:5.2vw">Berkus &amp; Risk Factor Summation.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1.4vh">
+        <div class="stat-card">
+          <div class="stat-label">Dave Berkus Method</div>
+          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Max Pre-Money: $2.5M</div>
+          <div class="step-desc">Base $500K for a sound idea + up to $500K each for four risk categories: (1) working prototype (technology risk), (2) quality team (execution risk), (3) product rollout/sales (production risk), (4) strategic relationships (market risk). First published 1996, updated 2016. Berkus has invested in 100+ start-ups.</div>
+        </div>
+        <div class="frame-img contain" style="height:34vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch4/tab4.3.png" alt="Table 4.3 - Dave Berkus Method">
+        </div>
+        <div class="frame-cap"><span>Tab. 4.3 &middot; Berkus Method Example = $1.9M</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.4vh">
+        <div class="stat-card">
+          <div class="stat-label">Risk Factor Summation</div>
+          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Ohio TechAngels &middot; 12 Risk Categories</div>
+          <div class="step-desc">Starts from average regional valuation (e.g. $2M). Adjust &minus;2 to +2 for each of 12 risks: management, stage, legislation, manufacturing, sales/marketing, funding, competition, technology, litigation, international, reputation, and exit potential. Each unit = &plusmn;$250K. Example yields $2.25M.</div>
+        </div>
+        <div class="frame-img contain" style="height:34vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch4/tab4.4.png" alt="Table 4.4 - Risk Factor Summation Method">
+        </div>
+        <div class="frame-cap"><span>Tab. 4.4 &middot; Risk Factor Summation = $2.25M</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:2vh">
+      All three angel methods are subjective and rely on expert judgment. Payne and RFS start from regional comparables (relative valuation); Berkus builds from a fixed base. Early-stage valuation remains an art.
+      <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Berkus &amp; Risk Factor Summation</div>
+    <div>Angel methods &middot; Pre-revenue</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · VC Valuation Method (hero light)
+     ============================================================ -->
+<section class="slide hero light" data-screen-label="06 VC Valuation">
+  <div class="chrome">
+    <div>&sect;4.4 &middot; VC valuation method</div>
+    <div>06 / 12</div>
+  </div>
+  <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
+      <div class="kicker">Growth-stage valuation</div>
+      <h1 class="h-hero" style="font-size:7vw">The VC Method.</h1>
+      <p class="lead" style="max-width:40vw; font-size:1.55vw">
+        VCs target an IRR of 25&ndash;35% over 6&ndash;10 years. They work backward from the terminal value (TV) at exit, adjust the discount rate for bankruptcy risk, and back out their investment today.
+      </p>
+      <div class="meta-row" style="margin-top:1vh">
+        <span>TV = Net Income &times; Exit Multiple</span><span>&middot;</span><span>Discount Rate = [(1 + IRR) / P(survival)] &minus; 1</span>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:2vh">
+      <div class="stat-card">
+        <div class="stat-label">Worked Example &mdash; Series A</div>
+        <div class="step-desc" style="margin-top:.8vh; line-height:1.65; font-size:max(13px,1.05vw)">
+          <strong>Assumptions:</strong> 1M pre-money shares (founders + angels), $2M profit in yr 5, 20&times; P/E exit multiple, 25% target IRR, 20% annual survival probability, $2.5M VC investment, net debt = $0.
+        </div>
+      </div>
+      <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+        <div class="pipeline" data-cols="3">
+          <div class="step">
+            <div class="step-nb">Step 1&ndash;2</div>
+            <div class="step-title" style="font-size:1.2vw">TV &amp; Discount Rate</div>
+            <div class="step-desc">TV = $2M &times; 20 = $40M. Discount rate = (1.25/0.20)&minus;1 = 56.25% p.a.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">Step 3&ndash;4</div>
+            <div class="step-title" style="font-size:1.2vw">Post- &amp; Pre-Money</div>
+            <div class="step-desc">PV = $40M/(1.5625)^5 = $4.3M post-money. Pre-money = $4.3M &minus; $2.5M = $1.8M.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">Step 5&ndash;7</div>
+            <div class="step-title" style="font-size:1.2vw">Ownership &amp; Price</div>
+            <div class="step-desc">VC owns 58.2%. Post-money shares = 1M/0.418 = 2.39M. Price = $4.3M/2.39M = $1.79/share.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:1vh">
+        The VC discount rate of 56.25% accounts for 80% annual failure probability. In practice, multiple funding rounds (Series A&ndash;F) and an ESOP pool make cap-table calculations far more complex.
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; VC valuation method</div>
+    <div>IRR 25&ndash;35% &middot; Exit multiples</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · Market Multiples + Tab 4.5, Tab 4.6 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="07 Market Multiples">
+  <div class="chrome">
+    <div>&sect;4.5 &middot; Relative valuation</div>
+    <div>07 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Mature companies &middot; comparable analysis</div>
+    <h2 class="h-xl" style="font-size:5.2vw">Market multiples &amp; precedent transactions.</h2>
+    <p class="lead" style="margin-top:1vh; max-width:62vw; opacity:.78; font-size:1.4vw">
+      Relative valuation standardizes company value using equity multiples (P/E) and enterprise multiples (EV/Sales, EV/EBITDA). Use 3&ndash;5 comparable companies; calculate average and median, dropping outliers. Precedent transactions add a control premium from completed acquisitions.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1.4vh">
+        <div class="frame-img contain" style="height:22vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch4/tab4.5.png" alt="Table 4.5 - Common Market Multiples">
+        </div>
+        <div class="frame-cap"><span>Tab. 4.5 &middot; Common Market Multiples</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+
+        <div class="stat-card" style="margin-top:1vh">
+          <div class="stat-label">Three steps to relative valuation</div>
+          <div class="step-desc" style="margin-top:.6vh; line-height:1.65">
+            <strong>1.</strong> Identify comparable companies or transactions (same industry, geography, size) &middot;
+            <strong>2.</strong> Choose valuation multiples (LTM and NTM, equity and enterprise) &middot;
+            <strong>3.</strong> Generate implied value for target (e.g. 15&times; P/E &times; $10M earnings = $150M)
+          </div>
+        </div>
+        <div class="callout" style="margin-top:1vh">
+          Precedent example: acquisitions at 3&times;, 2&times;, 4&times;, 5&times;, 8&times; EV/Sales. Average = 4.4&times;; target with $50M sales = $220M implied value. Dropping the 8&times; outlier: 3.5&times; = $175M &mdash; 20% lower.
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.4vh">
+        <div class="frame-img contain" style="height:42vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch4/tab4.6.png" alt="Table 4.6 - Market Multiples for Adyen">
+        </div>
+        <div class="frame-cap"><span>Tab. 4.6 &middot; Adyen vs. Comparable Companies</span><span class="idx">Source: Refinitiv, Dec 2022</span></div>
+        <div class="stat-card" style="margin-top:1vh">
+          <div class="stat-label">Adyen (ADYEN) &middot; Dutch payments fintech</div>
+          <div class="step-desc" style="margin-top:.4vh">$44B market cap. P/E of 75.5&times; (LTM) vs. peer average 39.4&times;. EBITDA margin 10% vs. Visa 71% and MasterCard 61%. Adyen trades at a premium P/E but lower EBITDA margin &mdash; reflecting growth expectations over current profitability.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; Market multiples &amp; Adyen example</div>
+    <div>P/E &middot; EV/Sales &middot; EV/EBITDA</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · DCF Model (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="08 DCF Model">
+  <div class="chrome">
+    <div>&sect;4.6 &middot; Discounted Cash Flow</div>
+    <div>08 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Fundamental valuation &middot; intrinsic value</div>
+    <h2 class="h-xl" style="font-size:5.4vw">The DCF model.</h2>
+    <p class="lead" style="margin-top:1vh; max-width:62vw; opacity:.78; font-size:1.5vw">
+      Forecast free cash flows (FCFF) over 5&ndash;10 years, discount at WACC (~10% for mature firms), then add a terminal value. Cannot be used for banks or financial intermediaries.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; margin-top:2.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:2vh">
+        <div class="stat-card">
+          <div class="stat-label">FCFF Formula (Eq. 6)</div>
+          <div class="step-title" style="font-size:1.3vw; margin-top:.4vh; font-family:var(--mono); font-weight:500; letter-spacing:.04em">FCFF = EBIT(1&minus;t) + D&amp;A &minus; CAPEX &minus; &Delta;NWC</div>
+          <div class="step-desc">EBIT (not EBITDA) is the starting point. Tax uses marginal rate, not actual. D&amp;A is non-cash so added back. CAPEX and working capital changes represent cash reinvested in the business.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Enterprise Value (Eq. 10)</div>
+          <div class="step-title" style="font-size:1.3vw; margin-top:.4vh; font-family:var(--mono); font-weight:500; letter-spacing:.04em">EV = &Sigma; FCFF<sub>t</sub>/(1+WACC)<sup>t</sup> + TV/(1+WACC)<sup>n</sup></div>
+          <div class="step-desc">TV typically 70&ndash;80% of EV. Price per share = (EV &minus; Net Debt &minus; Preferred &minus; NCI) / Fully diluted shares.</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:2vh">
+        <div class="stat-card">
+          <div class="stat-label">Terminal Value &mdash; Two Approaches</div>
+          <div class="step-title" style="font-size:1.3vw; margin-top:.4vh">Perpetuity Growth vs. Exit Multiple</div>
+          <div class="step-desc" style="line-height:1.65">
+            <strong>Perpetuity growth (Eq. 8):</strong> TV = FCFF<sub>t+1</sub> / (WACC &minus; g%). Use g% = 2&ndash;4% (long-term GDP growth). Example: $10M FCFF, 7% WACC, 3% growth = $257.5M.<br>
+            <strong>Exit multiple (Eq. 9):</strong> TV = EBITDA<sub>t</sub> &times; EV/EBITDA. Example: $20M EBITDA &times; 12&times; = $240M. Both methods should produce similar TV.
+          </div>
+        </div>
+        <div class="callout">
+          Net Working Capital = (Current Assets &minus; Cash) &minus; (Current Liabilities &minus; Short-term Debt). The change in NWC captures additional cash needed to support sales growth each year.
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 4 (Eq. 7)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; DCF model &amp; terminal value</div>
+    <div>FCFF &middot; WACC &middot; Perpetuity</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · ARK Invest / Adjusted EBITDA (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="09 ARK Invest">
+  <div class="chrome">
+    <div>&sect;4.7 &middot; ARK Invest &amp; adjusted EBITDA</div>
+    <div>09 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Disruptive valuation &middot; Cathie Wood</div>
+    <h2 class="h-xl" style="font-size:5vw">ARK Invest &amp; adjusted EBITDA.</h2>
+    <p class="lead" style="margin-top:.8vh; max-width:62vw; opacity:.78; font-size:1.4vw">
+      ARK Invest argues GAAP metrics penalize disruptive companies investing heavily to scale. Wood proposes five adjustments to EBITDA. ARK rose to $50B AUM by Feb 2021, then collapsed ~70% to $16B by mid-2022.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:1vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1.2vh">
+        <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+          <div class="pipeline-label">Five GAAP Adjustments</div>
+          <div class="pipeline" data-cols="3" style="gap:1vw">
+            <div class="step">
+              <div class="step-nb">01</div>
+              <div class="step-title" style="font-size:1.15vw">R&amp;D Expense</div>
+              <div class="step-desc">Add back. ARK median 28.5% vs. Nasdaq 100 median 12%. IFRS allows capitalization; GAAP expenses it all.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">02</div>
+              <div class="step-title" style="font-size:1.15vw">Sales &amp; Marketing</div>
+              <div class="step-desc">Add back incremental portion. ARK median 33.2% vs. Nasdaq 17.2%. Customer acquisition cost for scaling.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">03</div>
+              <div class="step-title" style="font-size:1.15vw">Stock-Based Comp.</div>
+              <div class="step-desc">Add back as non-cash. ARK median 22.6% vs. Nasdaq 3.2% (7&times; higher). Like D&amp;A treatment.</div>
+            </div>
+          </div>
+          <div class="pipeline" data-cols="3" style="gap:1vw; margin-top:0.6vh">
+            <div class="step">
+              <div class="step-nb">04</div>
+              <div class="step-title" style="font-size:1.15vw">Deferred Revenue</div>
+              <div class="step-desc">Count when cash is received. Multi-year prepaid contracts signal validation, not a liability.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">05</div>
+              <div class="step-title" style="font-size:1.15vw">Asset Impairment</div>
+              <div class="step-desc">Add back one-time goodwill write-downs from market declines. Non-cash and non-recurring.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb" style="opacity:.3">&bull;</div>
+              <div class="step-title" style="font-size:1.15vw; opacity:.7">Skepticism Check</div>
+              <div class="step-desc">Wood&rsquo;s incentive is to increase ARK ETF values. Market multiples can be manipulated &mdash; always verify how metrics are calculated.</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-img contain" style="height:26vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch4/fig4.2.jpg" alt="Figure 4.2 - ARKF vs. S&P500">
+        </div>
+        <div class="frame-cap"><span>Fig. 4.2 &middot; ARKF vs. S&amp;P500 (indexed to 100)</span><span class="idx">Source: Refinitiv Eikon</span></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.4vh">
+        <div class="frame-img contain" style="height:44vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch4/tab4.7.png" alt="Table 4.7 - ARK Fintech Innovation ETF Holdings">
+        </div>
+        <div class="frame-cap"><span>Tab. 4.7 &middot; ARKF Holdings &amp; Market Multiples</span><span class="idx">Source: ARK / Refinitiv, Dec 2022</span></div>
+        <div class="callout" style="margin-top:1vh">
+          8 of 10 ARKF companies are EV/EBITDA outliers (above 20&times; or negative). Robinhood has negative EV &mdash; its market cap is below its cash holdings. P/E multiples are inflated by near-zero or negative EPS. EV/Sales (2&times;&ndash;10&times;) is the most stable metric.
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; ARK Invest &amp; GAAP adjustments</div>
+    <div>ARKF &middot; Adjusted EBITDA</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · Bank Valuation: JPMorgan (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="10 Bank Valuation">
+  <div class="chrome">
+    <div>&sect;4.8 &middot; Bank valuation</div>
+    <div>10 / 12</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Financial intermediaries &middot; no DCF possible</div>
+    <h2 class="h-xl" style="font-size:5vw">Valuing banks: JPMorgan.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:62vw; opacity:.78; font-size:1.35vw">
+      Banks lack sales and EBITDA, so enterprise multiples and DCF cannot be used. Analysts rely on equity multiples (P/E, P/Book) and financial ratios (NIM, efficiency ratio, ROA, ROE).
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1.2vh">
+        <div class="frame-img contain" style="height:28vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch4/tab4.8.png" alt="Table 4.8 - JPMorgan Balance Sheet">
+        </div>
+        <div class="frame-cap"><span>Tab. 4.8 &middot; JPMorgan Balance Sheet 2020&ndash;2022</span><span class="idx">Source: JPMorgan Annual Reports</span></div>
+        <div class="frame-img contain" style="height:28vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch4/tab4.9.png" alt="Table 4.9 - JPMorgan Income Statement">
+        </div>
+        <div class="frame-cap"><span>Tab. 4.9 &middot; JPMorgan Income Statement</span><span class="idx">Source: JPMorgan Annual Reports</span></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.4vh">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.4vw">
+          <div class="stat-card">
+            <div class="stat-label">NIM (2022)</div>
+            <div class="stat-nb" style="font-size:4vw">2.5%</div>
+            <div class="stat-note">Net interest income / avg interest-earning assets. Range: 1&ndash;3% for NA banks.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Efficiency Ratio</div>
+            <div class="stat-nb" style="font-size:4vw">59%</div>
+            <div class="stat-note">Noninterest expense / total revenues. Lower = better cost control.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">ROE (2022)</div>
+            <div class="stat-nb" style="font-size:4vw">15.2%</div>
+            <div class="stat-note">ROE = ROA &times; leverage. JPM: 0.6% &times; 12.5&times; = 7.5% (approximation; actual reflects mix).</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Revenue Split</div>
+            <div class="stat-nb" style="font-size:4vw">52/48</div>
+            <div class="stat-note">Net interest income (52%) vs. noninterest income (48%) in 2022. $129B total revenue.</div>
+          </div>
+        </div>
+        <div class="frame-img contain" style="height:24vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch4/tab4.10.png" alt="Table 4.10 - JPMorgan vs. Comparable US Banks">
+        </div>
+        <div class="frame-cap"><span>Tab. 4.10 &middot; JPMorgan vs. Peer Banks</span><span class="idx">Source: Refinitiv, Apr 2023</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 10 &middot; Bank valuation &amp; JPMorgan</div>
+    <div>NIM &middot; ROE &middot; P/E &middot; P/Book</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 · Fintech Multiples Comparison (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="11 Fintech Multiples">
+  <div class="chrome">
+    <div>&sect;4.9 &middot; Fintech multiples comparison</div>
+    <div>11 / 12</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:3vh">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2vh">
+      <div>
+        <div class="kicker">Cross-sector comparison</div>
+        <h2 class="h-xl" style="font-size:5vw">Fintech multiples: a wide spectrum.</h2>
+        <p class="lead" style="margin-top:1vh; max-width:42vw">
+          Table 4.11 shows NTM multiples and financial ratios for seven listed fintechs. Extreme variation highlights why relative valuation is unreliable for younger fintech companies.
+        </p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.6vh">
+        <div class="stat-card">
+          <div class="stat-label">PayPal &mdash; most attractively valued?</div>
+          <div class="step-desc" style="margin-top:.6vh; line-height:1.65">
+            Highest ROE (11.5%), highest ROA (3.1%), lowest P/E NTM (14.9&times;), lowest EV/EBITDA NTM (11.0&times;). But median P/E of 14.9&times; vs. average 29.5&times; shows extreme outlier distortion from negative-earnings fintechs.
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Wise Plc &mdash; highest leverage</div>
+          <div class="step-desc" style="margin-top:.6vh">
+            Assets/Equity = 18.5&times; (vs. median 3.4&times;). ROE of 14.4% but ROA only 0.6%. P/Book NTM of 11.0&times; &mdash; highest in the group. Wise operates more like a bank with customer deposits.
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Negative earners</div>
+          <div class="step-desc" style="margin-top:.6vh">
+            Square, Robinhood, SoFi, and Paytm all have negative ROE. P/E is meaningless when earnings are negative. This is why ARK&rsquo;s adjusted EBITDA argument resonates &mdash; GAAP makes growth-stage companies look unprofitable.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.4vh; padding-top:1vh">
+      <div class="frame-img contain" style="height:56vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch4/tab4.11.png" alt="Table 4.11 - Valuation Multiples for Select Fintech Companies">
+      </div>
+      <div class="frame-cap"><span>Tab. 4.11 &middot; Fintech Multiples &amp; Financial Ratios</span><span class="idx">Source: Refinitiv, Apr 2023</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 11 &middot; Fintech multiples comparison</div>
+    <div>PayPal &middot; Wise &middot; Square &middot; Robinhood</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 · Closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="12 Closing">
+  <div class="chrome">
+    <div>Chapter 04 &middot; Closing</div>
+    <div>12 / 12</div>
+  </div>
+  <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:76vh">
+    <div class="kicker">The valuation toolkit</div>
+    <h1 class="h-hero" style="font-size:7.4vw">Price is what you pay. Value is what you get.</h1>
+    <p class="lead" style="max-width:60vw; font-size:1.55vw">
+      Early-stage: angel scorecards (Payne $2M base, Berkus max $2.5M, RFS &plusmn;$250K per risk). Growth-stage: VC method works backward from terminal value at 25&ndash;35% target IRR, adjusted for bankruptcy probability. Mature: market multiples of 3&ndash;5 comparables (P/E, EV/Sales, EV/EBITDA) or DCF with WACC ~10% and TV = 70&ndash;80% of EV. Banks: P/E and P/Book only (no DCF). Disruptive fintechs: GAAP metrics may penalize growth investing &mdash; adjusted EBITDA is one lens but always verify.
+    </p>
+    <div style="display:flex; gap:4vw; margin-top:1vh">
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">$2M</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Payne Scorecard starting valuation</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">56.25%</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">VC discount rate at 20% survival</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">70&ndash;80%</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">TV share of DCF enterprise value</div>
+      </div>
+    </div>
+    <div class="meta-row" style="margin-top:2vh">
+      <span>End of Chapter 04</span><span>&middot;</span><span>FINE 6280</span><span>&middot;</span><span>Next &middot; Ch. 05 &middot; Payments &amp; Settlement Infrastructure</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Closing &middot; End of Chapter 04 &middot; FINE 6280</div>
+    <div>Next &middot; Ch. 05 &middot; Payments</div>
+  </div>
+</section>
+
+</div>
+
+<div id="nav"></div>
+
+<script>
+const VS = `attribute vec2 position;void main(){gl_Position=vec4(position,0.0,1.0);}`;
+
+const FS_DARK = `precision highp float;
+uniform vec2 u_resolution;uniform float u_time;uniform vec2 u_mouse;
+vec3 palette(float t,vec3 a,vec3 b,vec3 c,vec3 d){return a+b*cos(6.28318*(c*t+d));}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+  vec2 p=uv*2.0-1.0;p.x*=u_resolution.x/u_resolution.y;
+  vec2 m=u_mouse*2.0-1.0;m.x*=u_resolution.x/u_resolution.y;
+  float md=length(p-m);
+  float mr=sin(md*15.0-u_time*4.0)*exp(-md*3.0);p+=mr*0.08;
+  vec2 p0=p;
+  for(float i=1.0;i<4.0;i++){
+    p.x+=0.1/i*sin(i*3.0*p.y+u_time*0.4)+0.05;
+    p.y+=0.1/i*cos(i*2.0*p.x+u_time*0.3)-0.05;
+  }
+  float r=length(p);float ang=atan(p.y,p.x);
+  vec3 a=vec3(0.12,0.12,0.13);
+  vec3 b=vec3(0.03,0.04,0.05);
+  vec3 c=vec3(1.0,1.0,1.0);
+  vec3 d=vec3(0.1,0.2,0.4);
+  vec3 col=palette(r*1.5+p0.x*0.5+u_time*0.1,a,b,c,d);
+  float disp=sin(r*25.0-u_time*1.5+ang*2.0)*0.5+0.5;
+  col+=vec3(disp*0.015,disp*0.01,disp*0.02);
+  float hi=pow(sin(p.x*4.0+p.y*3.0+u_time)*0.5+0.5,8.0);
+  col+=hi*0.08;
+  vec3 base=vec3(0.05,0.05,0.06);
+  col=mix(base,col,0.85);
+  gl_FragColor=vec4(col,1.0);
+}`;
+
+const FS_LIGHT = `precision highp float;
+uniform vec2 u_resolution;uniform float u_time;uniform vec2 u_mouse;
+float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float noise(vec2 p){
+  vec2 i=floor(p),f=fract(p);
+  float a=hash(i),b=hash(i+vec2(1,0));
+  float c=hash(i+vec2(0,1)),d=hash(i+vec2(1,1));
+  vec2 u=f*f*(3.0-2.0*f);
+  return mix(a,b,u.x)+(c-a)*u.y*(1.0-u.x)+(d-b)*u.x*u.y;
+}
+float fbm(vec2 p){
+  float v=0.0,a=0.5;
+  mat2 m=mat2(0.80,0.60,-0.60,0.80);
+  for(int i=0;i<5;i++){v+=a*noise(p);p=m*p*2.02;a*=0.5;}
+  return v;
+}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+  vec2 p=uv;p.x*=u_resolution.x/u_resolution.y;
+  vec2 m=u_mouse;m.x*=u_resolution.x/u_resolution.y;
+  vec2 md=p-m;float dl=length(md);
+  p+=normalize(md+vec2(0.0001))*exp(-dl*5.0)*0.03;
+  vec2 q=vec2(fbm(p*1.8+u_time*0.07),fbm(p*1.8+vec2(5.2,1.3)+u_time*0.06));
+  vec2 r=vec2(fbm(p*2.0+q*1.3+vec2(1.7,9.2)+u_time*0.05),
+              fbm(p*2.0+q*1.3+vec2(8.3,2.8)+u_time*0.04));
+  float f=fbm(p*2.2+r*1.5);
+  vec3 silverDark=vec3(0.86,0.85,0.84);
+  vec3 paper=vec3(0.955,0.945,0.925);
+  vec3 col=mix(silverDark,paper,f);
+  float ph=r.x*2.2+u_time*0.35;
+  col+=vec3(0.78,0.62,0.92)*sin(ph)*0.055;
+  col+=vec3(0.55,0.72,0.95)*sin(ph*0.8+2.0)*0.05;
+  float hl=smoothstep(0.48,0.92,f);
+  col+=hl*0.06;
+  gl_FragColor=vec4(col,1.0);
+}`;
+
+const mouse={x:0.5,y:0.5};
+addEventListener('mousemove',e=>{mouse.x=e.clientX/innerWidth;mouse.y=e.clientY/innerHeight});
+
+function bootGL(canvasId, fsSrc){
+  const canvas=document.getElementById(canvasId);
+  const gl=canvas.getContext('webgl',{alpha:false,antialias:true});
+  if(!gl) return ()=>false;
+  const mk=(t,s)=>{const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh};
+  const prog=gl.createProgram();
+  gl.attachShader(prog,mk(gl.VERTEX_SHADER,VS));
+  gl.attachShader(prog,mk(gl.FRAGMENT_SHADER,fsSrc));
+  gl.linkProgram(prog);gl.useProgram(prog);
+  const buf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+  const pos=gl.getAttribLocation(prog,'position');
+  gl.enableVertexAttribArray(pos);gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+  const lRes=gl.getUniformLocation(prog,'u_resolution');
+  const lT=gl.getUniformLocation(prog,'u_time');
+  const lM=gl.getUniformLocation(prog,'u_mouse');
+  const resize=()=>{
+    const d=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=innerWidth*d;canvas.height=innerHeight*d;
+    gl.viewport(0,0,canvas.width,canvas.height);
+  };
+  addEventListener('resize',resize);resize();
+  return (tSec)=>{
+    gl.uniform2f(lRes,canvas.width,canvas.height);
+    gl.uniform1f(lT,tSec);
+    gl.uniform2f(lM,mouse.x,1-mouse.y);
+    gl.drawArrays(gl.TRIANGLES,0,6);
+    return true;
+  };
+}
+const drawDark=bootGL('bg-dark',FS_DARK);
+const drawLight=bootGL('bg-light',FS_LIGHT);
+const t0=Date.now();
+(function loop(){
+  const t=(Date.now()-t0)/1000;
+  drawDark(t);drawLight(t);
+  requestAnimationFrame(loop);
+})();
+
+const deck=document.getElementById('deck');
+const slides=deck.querySelectorAll('.slide');
+const nav=document.getElementById('nav');
+let idx=0,total=slides.length,lock=false;
+
+deck.style.width=(total*100)+'vw';
+
+slides.forEach((s,i)=>{
+  const b=document.createElement('button');
+  b.className='dot';b.dataset.i=i;b.setAttribute('aria-label','Page '+(i+1));
+  b.onclick=()=>go(i);
+  nav.appendChild(b);
+});
+
+function go(n){
+  if(lock)return;
+  idx=Math.max(0,Math.min(total-1,n));
+  deck.style.transform=`translateX(${-idx*100}vw)`;
+  slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+  nav.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+  const el=slides[idx];
+  const th=el.dataset.theme || (el.classList.contains('light')?'light':(el.classList.contains('dark')?'dark':'dark'));
+  document.body.classList.toggle('light-bg',th==='light');
+  lock=true;setTimeout(()=>lock=false,700);
+}
+
+let overviewOn=false;
+const ov=document.createElement('div');
+ov.id='overview';
+ov.style.cssText='position:fixed;inset:0;z-index:100;background:rgba(var(--ink-rgb),.92);backdrop-filter:blur(12px);display:none;overflow-y:auto;padding:4vh 4vw';
+document.body.appendChild(ov);
+
+function buildOverview(){
+  ov.innerHTML='';
+  const grid=document.createElement('div');
+  grid.style.cssText='display:grid;grid-template-columns:repeat(4,1fr);gap:2vh 1.6vw;max-width:90vw;margin:0 auto';
+  slides.forEach((s,i)=>{
+    const card=document.createElement('div');
+    card.style.cssText='cursor:pointer;border-radius:6px;overflow:hidden;border:2px solid '+(i===idx?'rgba(var(--paper-rgb),.8)':'rgba(var(--paper-rgb),.15)')+';transition:border-color .2s';
+    card.onmouseenter=()=>card.style.borderColor='rgba(var(--paper-rgb),.6)';
+    card.onmouseleave=()=>card.style.borderColor=i===idx?'rgba(var(--paper-rgb),.8)':'rgba(var(--paper-rgb),.15)';
+    const wrap=document.createElement('div');
+    wrap.style.cssText='width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;pointer-events:none;background:'+(s.classList.contains('light')?'var(--paper)':'var(--ink)');
+    const clone=s.cloneNode(true);
+    clone.style.cssText='width:100vw;height:100vh;transform:scale('+(1/4.5)+');transform-origin:top left;position:absolute;top:0;left:0;pointer-events:none';
+    wrap.appendChild(clone);
+    const label=document.createElement('div');
+    label.style.cssText='padding:6px 10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);opacity:.7';
+    label.textContent=(i+1)+' / '+total;
+    card.appendChild(wrap);
+    card.appendChild(label);
+    card.onclick=()=>{toggleOverview();go(i)};
+    grid.appendChild(card);
+  });
+  ov.appendChild(grid);
+}
+
+function toggleOverview(){
+  overviewOn=!overviewOn;
+  if(overviewOn){buildOverview();ov.style.display='block';}
+  else{ov.style.display='none';}
+}
+
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){e.preventDefault();toggleOverview();return;}
+  if(overviewOn)return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key==='ArrowDown')go(idx+1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='ArrowUp')go(idx-1);
+  if(e.key==='Home')go(0);
+  if(e.key==='End')go(total-1);
+});
+
+let wheelTO=null,wheelAcc=0;
+addEventListener('wheel',e=>{
+  wheelAcc+=e.deltaY+e.deltaX;
+  if(Math.abs(wheelAcc)>50){go(idx+(wheelAcc>0?1:-1));wheelAcc=0;}
+  clearTimeout(wheelTO);wheelTO=setTimeout(()=>wheelAcc=0,150);
+},{passive:true});
+
+let tx=0,ty=0;
+addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchend',e=>{
+  const dx=(e.changedTouches[0].clientX-tx);
+  const dy=(e.changedTouches[0].clientY-ty);
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(idx+(dx<0?1:-1));
+},{passive:true});
+
+go(0);
+</script>
+</body>
+</html>

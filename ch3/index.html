@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funding Fintech Start-Ups · Chapter 03 · FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a1f3d;
+    --ink-rgb:10,31,61;
+    --paper:#f1f3f5;
+    --paper-rgb:241,243,245;
+    --paper-tint:#e4e8ec;
+    --ink-tint:#152a4a;
+
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --serif-en:"Playfair Display","Source Serif 4",Georgia,serif;
+    --serif-body-en:"Source Serif 4",Georgia,serif;
+    --serif-zh:"Noto Serif SC",source-han-serif-sc,serif;
+    --sans-zh:"Noto Sans SC",source-han-sans-sc,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var(--paper);font-family:var(--sans-zh);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+  /* ============ WebGL ============ */
+  canvas.bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;transition:opacity 1.2s ease}
+  canvas#bg-light{opacity:0}
+  canvas#bg-dark{opacity:1}
+  body.light-bg canvas#bg-light{opacity:1}
+  body.light-bg canvas#bg-dark{opacity:0}
+
+  /* ============ Deck ============ */
+  #deck{position:fixed;inset:0;width:1000vw;height:100vh;display:flex;flex-wrap:nowrap;transition:transform .9s cubic-bezier(.77,0,.175,1);z-index:10;will-change:transform}
+  .slide{width:100vw;height:100vh;flex:0 0 100vw;position:relative;padding:6vh 6vw 10vh 6vw;display:flex;flex-direction:column;overflow:hidden}
+  .slide.light{color:var(--ink)}
+  .slide.dark{color:var(--paper)}
+
+  .slide::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;transition:background .7s ease}
+  .slide.light::before{background:rgba(var(--paper-rgb),.78);backdrop-filter:blur(3px)}
+  .slide.dark::before{background:rgba(var(--ink-rgb),.78);backdrop-filter:blur(3px)}
+  .slide.hero.light::before{background:rgba(var(--paper-rgb),.16);backdrop-filter:none}
+  .slide.hero.dark::before{background:rgba(var(--ink-rgb),.12);backdrop-filter:none}
+  .slide.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}
+  .slide.hero.light::after{background:linear-gradient(180deg,rgba(var(--paper-rgb),.28) 0%,rgba(var(--paper-rgb),0) 14%,rgba(var(--paper-rgb),0) 86%,rgba(var(--paper-rgb),.28) 100%)}
+  .slide.hero.dark::after{background:linear-gradient(180deg,rgba(var(--ink-rgb),.32) 0%,rgba(var(--ink-rgb),0) 14%,rgba(var(--ink-rgb),0) 86%,rgba(var(--ink-rgb),.32) 100%)}
+
+  /* ============ Chrome & Foot ============ */
+  .chrome{display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+  .chrome .left,.chrome .right{display:flex;gap:2.4em;align-items:center}
+  .chrome .sep{width:40px;height:1px;background:currentColor;opacity:.4}
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+  .foot .title{font-family:var(--serif-zh);font-weight:400;letter-spacing:.05em;text-transform:none;opacity:.75;font-size:13px}
+
+  .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:6px 14px;border:1px solid currentColor;opacity:.85}
+  .rule{width:100%;height:1px;background:currentColor;opacity:.25;margin:3vh 0}
+  .rule.v{width:1px;height:100%;margin:0}
+
+  /* ============ Typography ============ */
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:2.6vh}
+  .display{font-family:var(--serif-en);font-weight:700;font-size:11vw;line-height:.92;letter-spacing:-.025em}
+  .display-zh{font-family:var(--serif-zh);font-weight:700;font-size:7.8vw;line-height:1.04;letter-spacing:-.005em}
+  .h1-zh{font-family:var(--serif-zh);font-weight:700;font-size:4.6vw;line-height:1.12;letter-spacing:-.005em}
+  .h2-zh{font-family:var(--serif-zh);font-weight:600;font-size:3.2vw;line-height:1.2;letter-spacing:0}
+  .h3-zh{font-family:var(--serif-zh);font-weight:500;font-size:1.9vw;line-height:1.35}
+  .body-zh{font-family:var(--sans-zh);font-weight:400;font-size:max(15px,1.22vw);line-height:1.75;opacity:.82;letter-spacing:.01em}
+  .body-serif{font-family:var(--serif-zh);font-weight:400;font-size:max(15px,1.3vw);line-height:1.65;opacity:.88}
+  .lead{font-family:var(--serif-zh);font-weight:400;font-size:1.9vw;line-height:1.4;opacity:.85}
+  .meta{font-family:var(--mono);font-size:max(11px,.88vw);letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+  .big-num{font-family:var(--serif-en);font-weight:800;font-size:10vw;line-height:.85;letter-spacing:-.03em;font-feature-settings:"tnum"}
+  .mid-num{font-family:var(--serif-en);font-weight:700;font-size:5.5vw;line-height:.88;letter-spacing:-.02em;font-feature-settings:"tnum"}
+  .ghost{font-family:var(--serif-en);font-weight:900;font-size:34vw;line-height:.8;opacity:.06;letter-spacing:-.04em;position:absolute;font-feature-settings:"tnum"}
+  em{font-style:italic;font-family:var(--serif-en)}
+  .en{font-family:var(--serif-en);font-style:italic;font-weight:500}
+
+  /* ============ Layout ============ */
+  .col{display:flex;flex-direction:column;gap:2.4vh}
+  .row{display:flex;align-items:center;gap:3vw}
+  .grid-6{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:4vw 6vw;flex:1;align-content:center;padding:2vh 0}
+  .grid-9{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:3vh 4vw;flex:1;align-content:center}
+  .grid-4{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:4vh 6vw;flex:1;align-content:center}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:4vw;flex:1;align-content:center}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:4vw;flex:1;align-items:center}
+  .split-55{display:grid;grid-template-columns:55fr 45fr;gap:5vw;flex:1;align-items:stretch}
+  .fill{flex:1}
+  .center{align-items:center;justify-content:center;text-align:center}
+  .bottom-left{position:absolute;left:6vw;bottom:9vh;max-width:50vw}
+  .bottom-right{position:absolute;right:6vw;bottom:9vh;max-width:50vw;text-align:right}
+  .top-right{position:absolute;right:6vw;top:6vh;text-align:right}
+
+  /* ============ Stat ============ */
+  .stat{display:flex;flex-direction:column;gap:1vh;align-items:flex-start}
+  .stat .n{font-family:var(--serif-en);font-weight:800;font-size:8vw;line-height:.88;letter-spacing:-.03em;font-feature-settings:"tnum"}
+  .stat .l{font-family:var(--sans-zh);font-size:max(13px,1.05vw);opacity:.7;margin-top:1vh;font-weight:400;line-height:1.5}
+  .stat .m{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.5;margin-bottom:.2vh}
+
+  /* ============ Callout ============ */
+  .callout{padding:3vh 2.4vw;border-left:3px solid currentColor;position:relative;font-family:var(--serif-zh);font-size:max(15px,1.2vw);line-height:1.55;opacity:.92}
+  .slide.light .callout{background:rgba(var(--ink-rgb),.05)}
+  .slide.dark .callout{background:rgba(var(--paper-rgb),.06)}
+  .callout .cite{display:block;margin-top:1.6vh;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+  .callout .q-big{font-family:var(--serif-zh);font-weight:600;font-size:max(17px,1.6vw);line-height:1.42}
+
+  /* ============ Platform ============ */
+  .plat{display:flex;flex-direction:column;justify-content:flex-end;padding:2vh 0;border-top:1px solid currentColor;border-color:rgba(127,127,127,.35)}
+  .plat .name{font-family:var(--serif-zh);font-weight:700;font-size:1.8vw;margin-bottom:.6vh}
+  .plat .nb{font-family:var(--serif-en);font-weight:700;font-size:3.2vw;letter-spacing:-.02em;line-height:1;font-feature-settings:"tnum"}
+  .plat .sub{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.55;margin-top:.6vh}
+  .plat .fill{font-family:var(--sans-zh);font-weight:300;font-size:2.4vw;opacity:.28;letter-spacing:-.01em;line-height:1}
+
+  /* ============ Rowline ============ */
+  .rowline{display:grid;grid-template-columns:1fr 2fr 1fr;gap:2vw;padding:2.2vh 0;border-top:1px solid currentColor;align-items:center;border-color:rgba(127,127,127,.25)}
+  .rowline:last-child{border-bottom:1px solid currentColor;border-color:rgba(127,127,127,.25)}
+  .rowline .k{font-family:var(--serif-zh);font-weight:700;font-size:1.7vw}
+  .rowline .v{font-family:var(--sans-zh);font-weight:400;font-size:max(14px,1.2vw);opacity:.85;line-height:1.55}
+  .rowline .m{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;justify-self:end}
+
+  /* ============ Pillar ============ */
+  .pillar{display:flex;flex-direction:column;gap:1.8vh}
+  .pillar .ic{font-family:var(--serif-en);font-style:italic;font-size:2.6vw;opacity:.45;font-weight:400}
+  .pillar .ic svg{width:2.8vw;height:2.8vw;stroke-width:1.2;opacity:.7}
+  .pillar .t{font-family:var(--serif-zh);font-weight:700;font-size:2.4vw;line-height:1.1}
+  .pillar .d{font-family:var(--sans-zh);font-weight:400;font-size:max(14px,1.1vw);opacity:.76;line-height:1.6}
+
+  /* ============ Signature / Highlight ============ */
+  .sign{font-family:var(--serif-en);font-style:italic;font-weight:500;font-size:2vw;opacity:.7}
+  .hi{position:relative;display:inline}
+  .slide.dark .hi::after{content:"";position:absolute;left:-.1em;right:-.1em;bottom:-.05em;height:.28em;background:rgba(var(--paper-rgb),.15);z-index:-1}
+  .slide.light .hi::after{content:"";position:absolute;left:-.1em;right:-.1em;bottom:-.05em;height:.28em;background:rgba(var(--ink-rgb),.08);z-index:-1}
+
+  /* ============ Icons ============ */
+  .ico{width:1em;height:1em;display:inline-block;vertical-align:-.12em;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .ico-lg,.ico-md,.ico-sm{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+  .ico-lg{width:2.6vw;height:2.6vw;stroke-width:1.2;display:inline-block}
+  .ico-md{width:1.8vw;height:1.8vw;stroke-width:1.3;display:inline-block;vertical-align:-.4em}
+  .ico-sm{width:1.1vw;height:1.1vw;stroke-width:1.4;display:inline-block;vertical-align:-.15em;opacity:.7}
+
+  /* ============ Image slots ============ */
+  .img-slot{border:1.5px dashed rgba(127,127,127,.4);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1vh;padding:2vh 2vw;font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;opacity:.55;position:relative;aspect-ratio:16/9;width:100%;max-height:56vh;margin-inline:auto;box-sizing:border-box}
+  .img-slot::before{content:"";position:absolute;inset:8px;border:1px solid currentColor;opacity:.2}
+  .img-slot .plus{font-size:2vw;font-weight:300;opacity:.5;letter-spacing:0}
+  .img-slot .label{position:relative;z-index:2;text-align:center}
+  .img-slot.r-4x3{aspect-ratio:4/3}
+  .img-slot.r-3x2{aspect-ratio:3/2}
+  .img-slot.r-1x1{aspect-ratio:1/1}
+
+  /* ============ Frame-img ============ */
+  .frame-img{overflow:hidden;position:relative;background:rgba(0,0,0,.04);box-sizing:border-box;width:100%;border-radius:4px}
+  .slide.dark .frame-img{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+  .frame-img > img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .frame-img.contain > img{object-fit:contain;object-position:center center}
+  .frame-cap{display:flex;justify-content:space-between;align-items:baseline;gap:1vw;margin-top:.8vh;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.72}
+  .frame-cap .pf{font-family:var(--serif-zh);font-weight:600;font-size:max(13px,1vw);letter-spacing:.04em;text-transform:none;opacity:.94}
+  .frame-cap .nb{font-family:var(--serif-en);font-style:italic;font-size:max(15px,1.2vw);letter-spacing:.02em;text-transform:none;opacity:.88}
+  .frame-cap .idx{font-family:var(--mono);opacity:.5}
+  figure.tile{display:flex;flex-direction:column;margin:0;min-width:0}
+  figure.tile > .frame-img{flex:0 0 auto}
+
+  /* ============ Nav ============ */
+  #nav{position:fixed;left:50%;bottom:2.6vh;transform:translateX(-50%);z-index:30;display:flex;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  #nav .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s ease;border:0;padding:0}
+  #nav .dot:hover{background:rgba(255,255,255,.5);transform:scale(1.15)}
+  #nav .dot.active{background:rgba(255,255,255,.95);width:22px;border-radius:999px}
+  body.light-bg #nav{background:rgba(255,255,255,.25)}
+  body.light-bg #nav .dot{background:rgba(var(--ink-rgb),.25)}
+  body.light-bg #nav .dot.active{background:rgba(var(--ink-rgb),.9)}
+  #hint{position:fixed;bottom:3vh;right:3vw;z-index:30;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;mix-blend-mode:difference;color:#aaa}
+
+  /* ============ LAYOUTS API ============ */
+  .frame{flex:1;display:flex;flex-direction:column;min-height:0}
+  .frame.grid-2-7-5,
+  .frame.grid-2-6-6,
+  .frame.grid-2-8-4,
+  .frame.grid-3-3,
+  .frame.grid-6{display:grid}
+
+  .h-hero{
+    font-family:var(--serif-zh);
+    font-weight:900;
+    font-size:10vw;
+    line-height:.96;
+    letter-spacing:-.02em;
+  }
+  .h-xl{
+    font-family:var(--serif-zh);
+    font-weight:700;
+    font-size:6.2vw;
+    line-height:1.08;
+    letter-spacing:-.01em;
+  }
+  .h-sub{
+    font-family:var(--serif-zh);
+    font-weight:500;
+    font-size:3.1vw;
+    line-height:1.25;
+    letter-spacing:0;
+    opacity:.7;
+  }
+  .h-md{
+    font-family:var(--serif-zh);
+    font-weight:600;
+    font-size:2.3vw;
+    line-height:1.3;
+  }
+  .h-hero-en,.h-xl-en{font-family:var(--serif-en);letter-spacing:-.025em}
+
+  .lead{
+    font-family:var(--serif-zh);
+    font-weight:400;
+    font-size:1.75vw;
+    line-height:1.5;
+    opacity:.86;
+  }
+
+  .meta-row{
+    display:flex;
+    gap:1.2em;
+    align-items:baseline;
+    flex-wrap:wrap;
+    font-family:var(--mono);
+    font-size:max(12px,.92vw);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    opacity:.6;
+  }
+
+  .stat-card{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    align-items:flex-start;
+    padding-top:1.6vh;
+    border-top:1px solid currentColor;
+    border-color:rgba(127,127,127,.3);
+  }
+  .stat-card .stat-label{
+    font-family:var(--mono);
+    font-size:max(10px,.78vw);
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    opacity:.55;
+  }
+  .stat-card .stat-nb{
+    font-family:var(--serif-en);
+    font-weight:800;
+    font-size:5.8vw;
+    line-height:.9;
+    letter-spacing:-.03em;
+    font-feature-settings:"tnum";
+    margin-top:.4vh;
+  }
+  .stat-card .stat-nb .stat-unit{
+    font-family:var(--serif-zh);
+    font-weight:500;
+    font-size:.38em;
+    letter-spacing:0;
+    opacity:.72;
+    margin-left:.14em;
+  }
+  .stat-card .stat-note{
+    font-family:var(--sans-zh);
+    font-weight:400;
+    font-size:max(13px,1.05vw);
+    line-height:1.5;
+    opacity:.72;
+    margin-top:.6vh;
+  }
+  .grid-4 .stat-card .stat-nb{font-size:7.5vw}
+  .grid-3 .stat-card .stat-nb{font-size:6.8vw}
+
+  .pipeline-section{
+    margin-top:4.4vh;
+    padding-top:2.8vh;
+    border-top:1px dashed rgba(127,127,127,.32);
+  }
+  .pipeline-section:first-of-type{
+    border-top:0;
+    padding-top:0;
+    margin-top:3vh;
+  }
+  .pipeline-label{
+    font-family:var(--mono);
+    font-size:max(11px,.85vw);
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    opacity:.62;
+    margin-bottom:2.2vh;
+  }
+  .pipeline{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:1.2vw;
+  }
+  .pipeline[data-cols="3"]{grid-template-columns:repeat(3,1fr)}
+  .pipeline[data-cols="4"]{grid-template-columns:repeat(4,1fr)}
+  .pipeline[data-cols="6"]{grid-template-columns:repeat(6,1fr)}
+  .step{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    padding-top:1.4vh;
+    border-top:1px solid currentColor;
+    border-color:rgba(127,127,127,.35);
+  }
+  .step-nb{
+    font-family:var(--serif-en);
+    font-style:italic;
+    font-weight:500;
+    font-size:1.15vw;
+    opacity:.45;
+  }
+  .step-title{
+    font-family:var(--sans-zh);
+    font-weight:700;
+    font-size:1.55vw;
+    letter-spacing:.01em;
+    line-height:1.2;
+  }
+  .step-desc{
+    font-family:var(--sans-zh);
+    font-weight:400;
+    font-size:max(12px,.95vw);
+    line-height:1.45;
+    opacity:.72;
+  }
+
+  .grid-2-7-5{display:grid;grid-template-columns:7fr 5fr;gap:3vw 4vh;align-items:start}
+  .grid-2-6-6{display:grid;grid-template-columns:1fr 1fr;gap:3vw 4vh;align-items:start}
+  .grid-2-8-4{display:grid;grid-template-columns:8fr 4fr;gap:3vw 4vh;align-items:start}
+  .grid-3-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:minmax(0,1fr);
+    gap:2.4vh 2vw;
+  }
+
+  figure.frame-img{margin:0;display:flex;flex-direction:column;min-width:0}
+  .img-cap{
+    display:block;
+    margin-top:.8vh;
+    font-family:var(--mono);
+    font-size:max(10px,.8vw);
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    opacity:.6;
+  }
+  .callout-src{
+    display:block;
+    margin-top:1.6vh;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    opacity:.6;
+  }
+
+  .chrome{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.2em;text-transform:uppercase;opacity:.62}
+  .foot{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+
+  @media (max-width:900px){
+    .display{font-size:16vw}
+    .display-zh{font-size:12vw}
+    .h1-zh{font-size:7vw}
+    .h-hero{font-size:14vw}
+    .h-xl{font-size:9vw}
+    .pipeline{grid-template-columns:repeat(2,1fr)}
+    .grid-2-7-5,.grid-2-6-6,.grid-2-8-4{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">&larr; &rarr; &middot; ESC</div>
+
+<div id="deck">
+
+<!-- ============================================================
+     SLIDE 01 · Cover (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="01 Cover">
+  <div class="chrome">
+    <div>FINE 6280 &middot; Fintech</div>
+    <div>Chapter 03 &middot; Lecture</div>
+  </div>
+  <div class="frame" style="display:grid; gap:4vh; align-content:center; min-height:80vh">
+    <div class="kicker">Chapter 03 &middot; Venture Finance</div>
+    <h1 class="h-hero" style="font-size:8.4vw">Funding Fintech Start-Ups</h1>
+    <h2 class="h-sub" style="max-width:64vw">From bootstrapping through the Valley of Death to IPO &mdash; the capital lifecycle, financial securities, and dilution mechanics that determine which fintech firms survive and at what cost to founders.</h2>
+    <div class="meta-row" style="margin-top:2vh">
+      <span>Department of Finance</span><span>&middot;</span><span>Graduate Seminar</span><span>&middot;</span><span>Lecture 03 of 14</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Reading &middot; Chapter 3 of <em>Fintech Explained</em></div>
+    <div>&mdash; &middot; &mdash;</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 02 · Growth Stages (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="02 Growth Stages">
+  <div class="chrome">
+    <div>&sect;3.1 &middot; Growth stages</div>
+    <div>02 / 10</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:3vh">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2vh">
+      <div>
+        <div class="kicker">Capital lifecycle</div>
+        <h2 class="h-xl" style="font-size:5.8vw">Three stages of growth.</h2>
+        <p class="lead" style="margin-top:1vh; max-width:42vw">
+          Every fintech traverses a predictable capital arc: early-stage survival funding, growth-stage scaling capital, and late-stage liquidity events. Each stage carries distinct risk profiles, investor types, and governance trade-offs.
+        </p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.8vh">
+        <div class="stat-card">
+          <div class="stat-label">Early Stage</div>
+          <div class="step-title" style="font-size:1.5vw; margin-top:.4vh">Pre-Seed &rarr; Seed &rarr; Series A</div>
+          <div class="step-desc">Bootstrapping, FFF (friends, family, fools), angels. Proving product-market fit while managing burn rate through the Valley of Death.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Growth Stage</div>
+          <div class="step-title" style="font-size:1.5vw; margin-top:.4vh">Series B &rarr; Series F</div>
+          <div class="step-desc">Venture capital firms deploy $10M&ndash;$500M+ rounds. Focus shifts from viability to market dominance and unit-economics proof.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Late Stage</div>
+          <div class="step-title" style="font-size:1.5vw; margin-top:.4vh">Pre-IPO &rarr; IPO / Acquisition</div>
+          <div class="step-desc">Liquidity events for early investors. IPO (Coinbase, Robinhood) or acquisition (Plaid by Visa, blocked at $5.3B). Secondary markets emerge.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.4vh; padding-top:1vh">
+      <div class="frame-img contain" style="height:42vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch3/fig3.1-growth-stages.jpg" alt="Figure 3.1 - Growth Stages of a Fintech Start-Up">
+      </div>
+      <div class="frame-cap"><span>Fig. 3.1 &middot; Growth Stages of a Fintech Start-Up</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 &middot; Growth stages overview</div>
+    <div>FINE 6280 &middot; Ch. 03</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 03 · Valley of Death (hero dark center)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="03 Valley of Death">
+  <div class="chrome">
+    <div>&sect;3.2 &middot; Pre-seed &amp; seed</div>
+    <div>03 / 10</div>
+  </div>
+  <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:76vh; text-align:center">
+    <div class="kicker" style="text-align:center">Burn rate &middot; the Valley of Death</div>
+    <div class="stat-card" style="border:none; align-items:center; padding:0">
+      <div class="stat-nb" style="font-size:14vw">$15K</div>
+      <div class="stat-note" style="font-size:max(16px,1.6vw); opacity:.85; max-width:54vw; margin:2vh auto 0">
+        Average monthly burn rate per employee at a seed-stage fintech. A team of four burns $60K/month &mdash; 18 months of runway requires ~$1M before a single dollar of revenue.
+      </div>
+    </div>
+    <p class="lead" style="max-width:56vw; margin:0 auto; font-size:1.6vw; opacity:.72">
+      The Valley of Death is the 12&ndash;18 month period between initial funding and sustainable revenue. Seed rounds typically raise $500K&ndash;$2M, selling 10&ndash;20% of the company. An MVP (minimum viable product) is the bridge &mdash; the cheapest version of the product that can attract paying users or the next round of capital.
+    </p>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; Pre-seed &amp; seed funding</div>
+    <div>Burn rate &middot; MVP &middot; Survival</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04 · Angel Investors (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04 Angel Investors">
+  <div class="chrome">
+    <div>&sect;3.3 &middot; Angel investors</div>
+    <div>04 / 10</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Early capital &middot; the elevator pitch</div>
+    <h2 class="h-xl" style="font-size:5.6vw">Angel investors.</h2>
+    <p class="lead" style="margin-top:1.4vh; max-width:62vw; opacity:.78">
+      High-net-worth individuals who invest $25K&ndash;$500K at the earliest stage. The average US angel is 57 years old, male (78%), with prior founding/CEO experience. They restrict investments to ~10% of net worth, averaging 11 investments of ~$25K each. 9 out of 10 investments either return the original amount or fail completely.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:1.5vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1.2vh">
+        <div class="kicker" style="margin-bottom:0; opacity:.7">The Elevator Pitch &mdash; Four Questions (The Lens)</div>
+        <div class="stat-card">
+          <div class="stat-label">01 &middot; Problem</div>
+          <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">What pain point exists?</div>
+          <div class="step-desc">Identify the specific market failure &mdash; cost, latency, exclusion, or opacity &mdash; that incumbent solutions leave unresolved.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">02 &middot; Solution</div>
+          <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">Why is your approach 10&times; better?</div>
+          <div class="step-desc">Not incrementally better &mdash; transformationally different. Stripe reduced merchant onboarding from weeks to seven lines of code.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">03 &middot; Market</div>
+          <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">How large is the addressable opportunity?</div>
+          <div class="step-desc">TAM/SAM/SOM framework. Investors seek markets large enough to support a $1B+ outcome even at modest penetration.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">04 &middot; Team</div>
+          <div class="step-title" style="font-size:1.55vw; margin-top:.4vh">Why can this team win?</div>
+          <div class="step-desc">Domain expertise, technical depth, and prior founder experience. At pre-seed, the team <em>is</em> the product.</div>
+        </div>
+      </div>
+      <div>
+        <div class="callout">
+          <div class="q-big">The average angel targets a 9&ndash;10&times; money-on-money return over an eight-year horizon (~33% IRR). Fewer than 10% of investments generate a positive return, so one big winner must cover losses on the rest.</div>
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 3</div>
+        </div>
+        <div style="display:flex; gap:3vw; margin-top:1.5vh">
+          <div class="stat">
+            <div class="m">Average cheque</div>
+            <div class="n" style="font-size:4.5vw">$25K</div>
+            <div class="l">Per investment (~$250K total portfolio)</div>
+          </div>
+          <div class="stat">
+            <div class="m">Target return</div>
+            <div class="n" style="font-size:4.5vw">9&ndash;10&times;</div>
+            <div class="l">Over 8-year horizon</div>
+          </div>
+          <div class="stat">
+            <div class="m">Other seed sources</div>
+            <div class="n" style="font-size:4.5vw">3,500+</div>
+            <div class="l">Y Combinator companies funded</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; Angel investors &amp; the elevator pitch</div>
+    <div>$25K&ndash;$500K &middot; 10&ndash;25% equity</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · Case Study: Wealthsimple (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 Wealthsimple">
+  <div class="chrome">
+    <div>&sect;3.4 &middot; Case study</div>
+    <div>05 / 10</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Case study &middot; Wealthsimple</div>
+    <h2 class="h-xl" style="font-size:5.2vw">From $2M seed to Canada&rsquo;s largest robo-advisor.</h2>
+    <p class="lead" style="margin-top:1vh; max-width:62vw; opacity:.78; font-size:1.5vw">
+      Mike Katchen pitched a simpler wealth management platform for millennials. He raised $2M in a seed round from 14 angel investors in 2014. By 2021, Wealthsimple managed $15B+ AUM and raised at a $5B valuation.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2vh; align-items:start">
+      <div>
+        <div class="frame-img contain" style="height:30vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch3/slide-wealthsimple-transformations.png" alt="Wealthsimple - Industry Transformations by Decade">
+        </div>
+        <div class="frame-cap"><span>Pitch slide &middot; Industry transformations by decade</span><span class="idx">Wealthsimple seed deck</span></div>
+      </div>
+      <div>
+        <div class="frame-img contain" style="height:30vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch3/slide-wealthsimple-comparison.png" alt="Wealthsimple - Competitive Comparison">
+        </div>
+        <div class="frame-cap"><span>Pitch slide &middot; Competitive comparison</span><span class="idx">Wealthsimple seed deck</span></div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:2vw; margin-top:2.4vh">
+      <div class="stat-card" style="flex:1">
+        <div class="stat-label">Seed round</div>
+        <div class="stat-nb" style="font-size:3.8vw">$2M</div>
+        <div class="stat-note">14 angel investors, 2014</div>
+      </div>
+      <div class="stat-card" style="flex:1">
+        <div class="stat-label">Series B</div>
+        <div class="stat-nb" style="font-size:3.8vw">$100M</div>
+        <div class="stat-note">Power Financial + Allianz X, 2020</div>
+      </div>
+      <div class="stat-card" style="flex:1">
+        <div class="stat-label">Peak valuation</div>
+        <div class="stat-nb" style="font-size:3.8vw">$5B</div>
+        <div class="stat-note">2021 funding round</div>
+      </div>
+      <div class="stat-card" style="flex:1">
+        <div class="stat-label">AUM</div>
+        <div class="stat-nb" style="font-size:3.8vw">$15B+</div>
+        <div class="stat-note">Assets under management</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Case study &middot; Wealthsimple</div>
+    <div>Seed &rarr; $5B valuation</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · Growth Stage: Series A-F (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="06 Growth Stage">
+  <div class="chrome">
+    <div>&sect;3.5 &middot; Growth stage</div>
+    <div>06 / 10</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:3vh">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2vh">
+      <div>
+        <div class="kicker">Venture capital &middot; Series A through F</div>
+        <h2 class="h-xl" style="font-size:5.4vw">Growth-stage capital.</h2>
+        <p class="lead" style="margin-top:1.6vh; max-width:42vw">
+          Venture capital firms deploy institutional capital across lettered rounds. Each round typically doubles the prior valuation &mdash; provided the firm hits milestones on revenue, retention, and market expansion.
+        </p>
+      </div>
+      <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+        <div class="pipeline" data-cols="3">
+          <div class="step">
+            <div class="step-nb">Series A</div>
+            <div class="step-title" style="font-size:1.4vw">$2.5M&ndash;$5M</div>
+            <div class="step-desc">First priced round with explicit valuation. Product-market fit proven. Lead VC takes a board seat.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">Series B&ndash;C</div>
+            <div class="step-title" style="font-size:1.4vw">$20M&ndash;$200M</div>
+            <div class="step-desc">Unit economics validated. Geographic or vertical expansion. Sequoia, a16z, Accel compete for allocation.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">Series D&ndash;F</div>
+            <div class="step-title" style="font-size:1.4vw">$200M&ndash;$1B+</div>
+            <div class="step-desc">Pre-IPO mega-rounds. Crossover funds (Tiger Global, Coatue) enter. Stripe raised $2.235B total through Series H at $95B (2021).</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:1vh">
+        A typical VC portfolio: 50% fail, 20% break even, 20% earn 2&ndash;4&times;, and 10% earn supernormal returns (50&ndash;60&times;) &mdash; targeting a portfolio IRR of 20&ndash;30%. VC funds are limited partnerships with a 10-year life. Sequoia Capital ($85B AUM, founded 1972) has backed Klarna, Nubank, PayPal, Robinhood, Square, and Stripe.
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 3</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.4vh; padding-top:1vh">
+      <div class="frame-img contain" style="height:44vh; border:1px solid rgba(127,127,127,.15)">
+        <img src="../images/ch3/fig3.2-stripe-funding-rounds.jpg" alt="Figure 3.2 - Stripe Funding Rounds and Post-Money Valuation">
+      </div>
+      <div class="frame-cap"><span>Fig. 3.2 &middot; Stripe Funding Rounds &amp; Valuation</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Growth-stage capital &amp; Stripe</div>
+    <div>Series A&ndash;F &middot; VC mechanics</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · VCs + TAM/SAM/SOM (hero light)
+     ============================================================ -->
+<section class="slide hero light" data-screen-label="07 VC Framework">
+  <div class="chrome">
+    <div>&sect;3.6 &middot; VC decision framework</div>
+    <div>07 / 10</div>
+  </div>
+  <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
+      <div class="kicker">Market sizing &middot; the VC lens</div>
+      <h1 class="h-hero" style="font-size:7.4vw">TAM / SAM / SOM.</h1>
+      <p class="lead" style="max-width:40vw; font-size:1.65vw">
+        VCs size every opportunity through three concentric circles using top-down (industry research), bottom-up (customers &times; revenue), or theoretical (willingness-to-pay) approaches.
+      </p>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:2.4vh">
+      <div class="pillar">
+        <div class="step-nb">Circle 01</div>
+        <div class="t" style="font-size:2.6vw">TAM &mdash; Total Addressable Market</div>
+        <div class="d">The entire revenue opportunity if you captured 100% of the global market. Wise example: cross-border payments = $20T (2021).</div>
+      </div>
+      <div class="pillar">
+        <div class="step-nb">Circle 02</div>
+        <div class="t" style="font-size:2.6vw">SAM &mdash; Serviceable Available Market</div>
+        <div class="d">The subset reachable with your current product, geography, and channel. Wise: individual cross-border transfers for digital nomads = $80B of the $2T individual segment.</div>
+      </div>
+      <div class="pillar">
+        <div class="step-nb">Circle 03</div>
+        <div class="t" style="font-size:2.6vw">SOM &mdash; Serviceable Obtainable Market</div>
+        <div class="d">Realistic capture in 3&ndash;5 years. Wise: 50% of $80B SAM at 0.5% fee = $200M revenue. The number VCs actually underwrite to determine if a fund-returning outcome is possible.</div>
+      </div>
+      <div class="meta-row" style="margin-top:1vh">
+        <span>Power law</span><span>&middot;</span><span>A $200M fund needs one $2B+ exit to return 10&times;</span>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; Market sizing framework</div>
+    <div>TAM / SAM / SOM</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · IPO Performance (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="08 IPO Performance">
+  <div class="chrome">
+    <div>&sect;3.7 &middot; Late stage &amp; exit</div>
+    <div>08 / 10</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">IPO performance &middot; the disappointing track record</div>
+    <h2 class="h-xl" style="font-size:5.2vw">Most fintech IPOs disappoint.</h2>
+    <p class="lead" style="margin-top:1vh; max-width:62vw; opacity:.78; font-size:1.5vw">
+      IPOs are expensive: underwriters charge ~7% of proceeds, plus legal, accounting, and road-show costs. Insiders face a 6&ndash;9 month lock-up period. The alternative exit &mdash; acquisition &mdash; is faster and cleaner (e.g. JPMorgan acquired Nutmeg; Visa acquired Tink). Among 13 fintech IPOs studied, the average stock was flat after 1 month, down 29% after 6 months, and down 48% after 1 year.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2vh; align-items:start">
+      <div>
+        <div class="frame-img contain" style="height:32vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch3/tab3.1-fintech-ipos.png" alt="Table 3.1 - Fintech IPOs and Performance">
+        </div>
+        <div class="frame-cap"><span>Tab. 3.1 &middot; Fintech IPOs &amp; Performance</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+      </div>
+      <div>
+        <div class="frame-img contain" style="height:32vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch3/fig3.3-ipo-performance.jpg" alt="Figure 3.3 - Fintech IPO Performance over First Year">
+        </div>
+        <div class="frame-cap"><span>Fig. 3.3 &middot; IPO Performance over First Year</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:3vw; margin-top:1.4vh">
+      <div class="stat-card" style="flex:1">
+        <div class="stat-label">Average (13 fintechs)</div>
+        <div class="stat-nb" style="font-size:3.6vw">&minus;48%</div>
+        <div class="stat-note">Average 1-year post-IPO return</div>
+      </div>
+      <div class="stat-card" style="flex:1">
+        <div class="stat-label">Robinhood</div>
+        <div class="stat-nb" style="font-size:3.6vw">&minus;74%</div>
+        <div class="stat-note">2021 IPO &mdash; 1-year return</div>
+      </div>
+      <div class="stat-card" style="flex:1">
+        <div class="stat-label">Adyen</div>
+        <div class="stat-nb" style="font-size:3.6vw">+56%</div>
+        <div class="stat-note">Only positive 1-year performer (2018 IPO)</div>
+      </div>
+      <div class="stat-card" style="flex:1">
+        <div class="stat-label">Wise</div>
+        <div class="stat-nb" style="font-size:3.6vw">&minus;64%</div>
+        <div class="stat-note">2021 direct listing, London</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; IPO performance</div>
+    <div>Venture hype vs. public-market discipline</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · Financial Securities + Cap Table (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="09 Securities & Cap Table">
+  <div class="chrome">
+    <div>&sect;3.8 &middot; Financial securities</div>
+    <div>09 / 10</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Securities across rounds &middot; capitalization</div>
+    <h2 class="h-xl" style="font-size:4.8vw">Financial securities &amp; the cap table.</h2>
+    <p class="lead" style="margin-top:.8vh; max-width:62vw; opacity:.78; font-size:1.4vw">
+      Different funding stages use different instruments: convertible notes and SAFEs at seed, preferred shares in Series A+, common shares at IPO. Each instrument carries distinct rights &mdash; liquidation preferences, anti-dilution, and conversion mechanics.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="frame-img contain" style="height:28vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch3/tab3.2-securities-by-stage.png" alt="Table 3.2 - Growth Stages and Financial Securities">
+        </div>
+        <div class="frame-cap"><span>Tab. 3.2 &middot; Growth Stages &amp; Securities</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+
+        <div class="frame-img contain" style="height:28vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch3/tab3.3-cap-table.png" alt="Table 3.3 - A Hypothetical Capitalization Table">
+        </div>
+        <div class="frame-cap"><span>Tab. 3.3 &middot; Hypothetical Cap Table</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.4vw">
+          <div class="stat-card">
+            <div class="stat-label">SAFE</div>
+            <div class="step-title" style="font-size:1.3vw; margin-top:.3vh">Simple Agreement for Future Equity</div>
+            <div class="step-desc">No interest, no maturity date. Converts at next priced round. Key provisions: valuation cap, 15&ndash;25% conversion discount, liquidation preference, MFN clause, and pro-rata rights. Y Combinator standard since 2013.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Convertible Note</div>
+            <div class="step-title" style="font-size:1.3vw; margin-top:.3vh">Debt that becomes equity</div>
+            <div class="step-desc">~10% interest (accrued, not paid), ~2-year maturity. Converts at the <em>lower of</em> the conversion discount or valuation cap price. Higher claim than equity in bankruptcy but no voting rights.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Preferred Shares</div>
+            <div class="step-title" style="font-size:1.3vw; margin-top:.3vh">VC standard instrument</div>
+            <div class="step-desc">Liquidation preference (1&times;&ndash;2&times;), anti-dilution protection, conversion rights to common, redemption rights. Preferred claim on dividends and bankruptcy. Series A onward.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Common Shares + Venture Debt</div>
+            <div class="step-title" style="font-size:1.3vw; margin-top:.3vh">Residual claim &amp; secured lending</div>
+            <div class="step-desc">Common: lowest claim, voting rights, pro-rata and tag-along/drag-along rights. Venture debt: 12&ndash;24 month secured loan at 15&ndash;25% p.a., may include warrants. Non-dilutive but expensive.</div>
+          </div>
+        </div>
+        <div class="frame-img contain" style="height:28vh; border:1px solid rgba(127,127,127,.15)">
+          <img src="../images/ch3/fig3.4-equity-stakes-funding.jpg" alt="Figure 3.4 - Value of Equity Stakes through Funding Rounds">
+        </div>
+        <div class="frame-cap"><span>Fig. 3.4 &middot; Equity Stakes through Rounds</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; Securities &amp; cap table mechanics</div>
+    <div>SAFE / Convertible / Preferred / Common</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · Closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="10 Closing">
+  <div class="chrome">
+    <div>Chapter 03 &middot; Closing</div>
+    <div>10 / 10</div>
+  </div>
+  <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:76vh">
+    <div class="kicker">The dilution paradox</div>
+    <h1 class="h-hero" style="font-size:7.6vw">Ownership shrinks. Value grows.</h1>
+    <p class="lead" style="max-width:60vw; font-size:1.65vw">
+      A founder who owns 100% of a $0 company has nothing. A founder who owns 8% of a $10B company has $800M. In the textbook example, founders dilute from 50% (seed) to 7.4% (IPO) &mdash; but their stake grows from $0.5M to $2.9M (5.94&times;). Dilution formula: post-money % = pre-money % &times; (1 &minus; new investor %).
+    </p>
+    <div style="display:flex; gap:4vw; margin-top:1vh">
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">100%</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Founder ownership at incorporation</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">~8%</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Median founder stake at IPO</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:4.2vw">$95B</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Stripe valuation &mdash; Collisons own ~12%</div>
+      </div>
+    </div>
+    <div class="meta-row" style="margin-top:2vh">
+      <span>End of Chapter 03</span><span>&middot;</span><span>FINE 6280</span><span>&middot;</span><span>Next &middot; Ch. 04 &middot; Valuation of Fintech Companies</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Closing &middot; End of Chapter 03 &middot; FINE 6280</div>
+    <div>Next &middot; Ch. 04 &middot; Valuation</div>
+  </div>
+</section>
+
+</div>
+
+<div id="nav"></div>
+
+<script>
+/* =============== WebGL =============== */
+const VS = `attribute vec2 position;void main(){gl_Position=vec4(position,0.0,1.0);}`;
+
+const FS_DARK = `precision highp float;
+uniform vec2 u_resolution;uniform float u_time;uniform vec2 u_mouse;
+vec3 palette(float t,vec3 a,vec3 b,vec3 c,vec3 d){return a+b*cos(6.28318*(c*t+d));}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+  vec2 p=uv*2.0-1.0;p.x*=u_resolution.x/u_resolution.y;
+  vec2 m=u_mouse*2.0-1.0;m.x*=u_resolution.x/u_resolution.y;
+  float md=length(p-m);
+  float mr=sin(md*15.0-u_time*4.0)*exp(-md*3.0);p+=mr*0.08;
+  vec2 p0=p;
+  for(float i=1.0;i<4.0;i++){
+    p.x+=0.1/i*sin(i*3.0*p.y+u_time*0.4)+0.05;
+    p.y+=0.1/i*cos(i*2.0*p.x+u_time*0.3)-0.05;
+  }
+  float r=length(p);float ang=atan(p.y,p.x);
+  vec3 a=vec3(0.12,0.12,0.13);
+  vec3 b=vec3(0.03,0.04,0.05);
+  vec3 c=vec3(1.0,1.0,1.0);
+  vec3 d=vec3(0.1,0.2,0.4);
+  vec3 col=palette(r*1.5+p0.x*0.5+u_time*0.1,a,b,c,d);
+  float disp=sin(r*25.0-u_time*1.5+ang*2.0)*0.5+0.5;
+  col+=vec3(disp*0.015,disp*0.01,disp*0.02);
+  float hi=pow(sin(p.x*4.0+p.y*3.0+u_time)*0.5+0.5,8.0);
+  col+=hi*0.08;
+  vec3 base=vec3(0.05,0.05,0.06);
+  col=mix(base,col,0.85);
+  gl_FragColor=vec4(col,1.0);
+}`;
+
+const FS_LIGHT = `precision highp float;
+uniform vec2 u_resolution;uniform float u_time;uniform vec2 u_mouse;
+float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float noise(vec2 p){
+  vec2 i=floor(p),f=fract(p);
+  float a=hash(i),b=hash(i+vec2(1,0));
+  float c=hash(i+vec2(0,1)),d=hash(i+vec2(1,1));
+  vec2 u=f*f*(3.0-2.0*f);
+  return mix(a,b,u.x)+(c-a)*u.y*(1.0-u.x)+(d-b)*u.x*u.y;
+}
+float fbm(vec2 p){
+  float v=0.0,a=0.5;
+  mat2 m=mat2(0.80,0.60,-0.60,0.80);
+  for(int i=0;i<5;i++){v+=a*noise(p);p=m*p*2.02;a*=0.5;}
+  return v;
+}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_resolution.xy;
+  vec2 p=uv;p.x*=u_resolution.x/u_resolution.y;
+  vec2 m=u_mouse;m.x*=u_resolution.x/u_resolution.y;
+  vec2 md=p-m;float dl=length(md);
+  p+=normalize(md+vec2(0.0001))*exp(-dl*5.0)*0.03;
+  vec2 q=vec2(fbm(p*1.8+u_time*0.07),fbm(p*1.8+vec2(5.2,1.3)+u_time*0.06));
+  vec2 r=vec2(fbm(p*2.0+q*1.3+vec2(1.7,9.2)+u_time*0.05),
+              fbm(p*2.0+q*1.3+vec2(8.3,2.8)+u_time*0.04));
+  float f=fbm(p*2.2+r*1.5);
+  vec3 silverDark=vec3(0.86,0.85,0.84);
+  vec3 paper=vec3(0.955,0.945,0.925);
+  vec3 col=mix(silverDark,paper,f);
+  float ph=r.x*2.2+u_time*0.35;
+  col+=vec3(0.78,0.62,0.92)*sin(ph)*0.055;
+  col+=vec3(0.55,0.72,0.95)*sin(ph*0.8+2.0)*0.05;
+  float hl=smoothstep(0.48,0.92,f);
+  col+=hl*0.06;
+  gl_FragColor=vec4(col,1.0);
+}`;
+
+const mouse={x:0.5,y:0.5};
+addEventListener('mousemove',e=>{mouse.x=e.clientX/innerWidth;mouse.y=e.clientY/innerHeight});
+
+function bootGL(canvasId, fsSrc){
+  const canvas=document.getElementById(canvasId);
+  const gl=canvas.getContext('webgl',{alpha:false,antialias:true});
+  if(!gl) return ()=>false;
+  const mk=(t,s)=>{const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh};
+  const prog=gl.createProgram();
+  gl.attachShader(prog,mk(gl.VERTEX_SHADER,VS));
+  gl.attachShader(prog,mk(gl.FRAGMENT_SHADER,fsSrc));
+  gl.linkProgram(prog);gl.useProgram(prog);
+  const buf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+  const pos=gl.getAttribLocation(prog,'position');
+  gl.enableVertexAttribArray(pos);gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+  const lRes=gl.getUniformLocation(prog,'u_resolution');
+  const lT=gl.getUniformLocation(prog,'u_time');
+  const lM=gl.getUniformLocation(prog,'u_mouse');
+  const resize=()=>{
+    const d=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=innerWidth*d;canvas.height=innerHeight*d;
+    gl.viewport(0,0,canvas.width,canvas.height);
+  };
+  addEventListener('resize',resize);resize();
+  return (tSec)=>{
+    gl.uniform2f(lRes,canvas.width,canvas.height);
+    gl.uniform1f(lT,tSec);
+    gl.uniform2f(lM,mouse.x,1-mouse.y);
+    gl.drawArrays(gl.TRIANGLES,0,6);
+    return true;
+  };
+}
+const drawDark=bootGL('bg-dark',FS_DARK);
+const drawLight=bootGL('bg-light',FS_LIGHT);
+const t0=Date.now();
+(function loop(){
+  const t=(Date.now()-t0)/1000;
+  drawDark(t);drawLight(t);
+  requestAnimationFrame(loop);
+})();
+
+// =============== Navigation ===============
+const deck=document.getElementById('deck');
+const slides=deck.querySelectorAll('.slide');
+const nav=document.getElementById('nav');
+let idx=0,total=slides.length,lock=false;
+
+deck.style.width=(total*100)+'vw';
+
+slides.forEach((s,i)=>{
+  const b=document.createElement('button');
+  b.className='dot';b.dataset.i=i;b.setAttribute('aria-label','Page '+(i+1));
+  b.onclick=()=>go(i);
+  nav.appendChild(b);
+});
+
+function go(n){
+  if(lock)return;
+  idx=Math.max(0,Math.min(total-1,n));
+  deck.style.transform=`translateX(${-idx*100}vw)`;
+  slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+  nav.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+  const el=slides[idx];
+  const th=el.dataset.theme || (el.classList.contains('light')?'light':(el.classList.contains('dark')?'dark':'dark'));
+  document.body.classList.toggle('light-bg',th==='light');
+  lock=true;setTimeout(()=>lock=false,700);
+}
+
+/* =============== ESC Overview =============== */
+let overviewOn=false;
+const ov=document.createElement('div');
+ov.id='overview';
+ov.style.cssText='position:fixed;inset:0;z-index:100;background:rgba(var(--ink-rgb),.92);backdrop-filter:blur(12px);display:none;overflow-y:auto;padding:4vh 4vw';
+document.body.appendChild(ov);
+
+function buildOverview(){
+  ov.innerHTML='';
+  const grid=document.createElement('div');
+  grid.style.cssText='display:grid;grid-template-columns:repeat(4,1fr);gap:2vh 1.6vw;max-width:90vw;margin:0 auto';
+  slides.forEach((s,i)=>{
+    const card=document.createElement('div');
+    card.style.cssText='cursor:pointer;border-radius:6px;overflow:hidden;border:2px solid '+(i===idx?'rgba(var(--paper-rgb),.8)':'rgba(var(--paper-rgb),.15)')+';transition:border-color .2s';
+    card.onmouseenter=()=>card.style.borderColor='rgba(var(--paper-rgb),.6)';
+    card.onmouseleave=()=>card.style.borderColor=i===idx?'rgba(var(--paper-rgb),.8)':'rgba(var(--paper-rgb),.15)';
+    const wrap=document.createElement('div');
+    wrap.style.cssText='width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;pointer-events:none;background:'+(s.classList.contains('light')?'var(--paper)':'var(--ink)');
+    const clone=s.cloneNode(true);
+    clone.style.cssText='width:100vw;height:100vh;transform:scale('+(1/4.5)+');transform-origin:top left;position:absolute;top:0;left:0;pointer-events:none';
+    wrap.appendChild(clone);
+    const label=document.createElement('div');
+    label.style.cssText='padding:6px 10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);opacity:.7';
+    label.textContent=(i+1)+' / '+total;
+    card.appendChild(wrap);
+    card.appendChild(label);
+    card.onclick=()=>{toggleOverview();go(i)};
+    grid.appendChild(card);
+  });
+  ov.appendChild(grid);
+}
+
+function toggleOverview(){
+  overviewOn=!overviewOn;
+  if(overviewOn){buildOverview();ov.style.display='block';}
+  else{ov.style.display='none';}
+}
+
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){e.preventDefault();toggleOverview();return;}
+  if(overviewOn)return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key==='ArrowDown')go(idx+1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='ArrowUp')go(idx-1);
+  if(e.key==='Home')go(0);
+  if(e.key==='End')go(total-1);
+});
+
+let wheelTO=null,wheelAcc=0;
+addEventListener('wheel',e=>{
+  wheelAcc+=e.deltaY+e.deltaX;
+  if(Math.abs(wheelAcc)>50){go(idx+(wheelAcc>0?1:-1));wheelAcc=0;}
+  clearTimeout(wheelTO);wheelTO=setTimeout(()=>wheelAcc=0,150);
+},{passive:true});
+
+let tx=0,ty=0;
+addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchend',e=>{
+  const dx=(e.changedTouches[0].clientX-tx);
+  const dy=(e.changedTouches[0].clientY-ty);
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(idx+(dx<0?1:-1));
+},{passive:true});
+
+go(0);
+</script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
