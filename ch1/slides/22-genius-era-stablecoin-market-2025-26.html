@@ -7,51 +7,51 @@
     <div>22 / 23</div>
   </div>
   <style>
-    @keyframes hfg-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
-    @keyframes hfg-bar { 0%{width:0} 100%{width:var(--w)} }
-    @keyframes hfg-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
-    @keyframes hfg-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card { animation: hfg-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row { animation: hfg-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row:nth-child(2) { animation-delay:.85s }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row:nth-child(3) { animation-delay:1.0s }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row:nth-child(4) { animation-delay:1.15s }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row:nth-child(5) { animation-delay:1.3s }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-bar { animation: hfg-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-rec { animation: hfg-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-scrub-fill { animation: hfg-scrub 9s linear infinite }
-    .hfg-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
-    .hfg-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
-    .hfg-rec { color:#7ec0ff; letter-spacing:.3em }
-    .hfg-tc { font-feature-settings:"tnum"; opacity:.6 }
-    .hfg-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
-    .hfg-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
-    .hfg-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(126,192,255,.55); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
-    .hfg-card .hfg-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
-    .hfg-card .hfg-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
-    .hfg-card .hfg-num .hfg-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
-    .hfg-card .hfg-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
-    .hfg-rows { display:flex; flex-direction:column }
-    .hfg-row { display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
-    .hfg-row:first-child { border-top:0 }
-    .hfg-row .hfg-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
-    .hfg-row .hfg-pre { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
-    .hfg-row .hfg-post { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
-    .hfg-row .hfg-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#7ec0ff }
-    .hfg-bar-wrap { padding:0 1.4vw 1vh }
-    .hfg-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
-    .hfg-bar { height:100%; background:linear-gradient(90deg, rgba(126,192,255,.65), rgba(255,255,255,.92)); border-radius:99px }
-    .hfg-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
-    .hfg-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
-    .hfg-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
-    .hfg-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
-    .hfg-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
-    .hfg-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
-    .hfg-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+    @keyframes hfgen-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfgen-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfgen-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfgen-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-card { animation: hfgen-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-row { animation: hfgen-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-row:nth-child(2) { animation-delay:.85s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-row:nth-child(3) { animation-delay:1.0s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-row:nth-child(4) { animation-delay:1.15s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-row:nth-child(5) { animation-delay:1.3s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-bar { animation: hfgen-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-rec { animation: hfgen-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfgen-scrub-fill { animation: hfgen-scrub 9s linear infinite }
+    .hfgen-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hfgen-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfgen-rec { color:#7ec0ff; letter-spacing:.3em }
+    .hfgen-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfgen-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfgen-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfgen-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(126,192,255,.55); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hfgen-card .hfgen-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfgen-card .hfgen-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfgen-card .hfgen-num .hfgen-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfgen-card .hfgen-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfgen-rows { display:flex; flex-direction:column }
+    .hfgen-row { display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hfgen-row:first-child { border-top:0 }
+    .hfgen-row .hfgen-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfgen-row .hfgen-pre { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfgen-row .hfgen-post { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfgen-row .hfgen-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#7ec0ff }
+    .hfgen-bar-wrap { padding:0 1.4vw 1vh }
+    .hfgen-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hfgen-bar { height:100%; background:linear-gradient(90deg, rgba(126,192,255,.65), rgba(255,255,255,.92)); border-radius:99px }
+    .hfgen-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfgen-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfgen-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hfgen-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hfgen-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfgen-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfgen-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">§3.7f · post-GENIUS stablecoin landscape</div>
@@ -60,77 +60,77 @@
       President Trump signed the GENIUS Act into law on 18 July 2025 &mdash; the first U.S. federal stablecoin framework. Title II created a payment-stablecoin issuer charter (state OR federal trust); Title VII banned issuer-paid interest. Nine months in, the market has compounded, not shrunk: total supply broke $280B in early 2026, USDC outpaced USDT growth for a second straight year, and Visa/Mastercard re-anchored to compliant USD-tokens. The thesis from slide 12 (the &ldquo;fourth wave&rdquo;) is now codified.
     </p>
 
-    <div class="hfg-frame" style="margin-top:1.4vh">
-      <div class="hfg-topbar">
-        <div><span class="hfg-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V10</div>
-        <div class="hfg-tc">DATA AS OF &middot; APR 2026</div>
+    <div class="hfgen-frame" style="margin-top:1.4vh">
+      <div class="hfgen-topbar">
+        <div><span class="hfgen-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V10</div>
+        <div class="hfgen-tc">DATA AS OF &middot; APR 2026</div>
       </div>
-      <div class="hfg-stage">
-        <div class="hfg-cards">
-          <div class="hfg-card">
-            <div class="hfg-tag">Total stablecoin supply &middot; Apr 2026</div>
-            <div class="hfg-num">~$280<span class="hfg-unit">B</span></div>
-            <div class="hfg-desc">DefiLlama aggregate. Up from ~$165B at GENIUS signing (Jul 2025) and ~$130B at start of 2024 &mdash; the chartered-rail era is additive, not contractive.</div>
+      <div class="hfgen-stage">
+        <div class="hfgen-cards">
+          <div class="hfgen-card">
+            <div class="hfgen-tag">Total stablecoin supply &middot; Apr 2026</div>
+            <div class="hfgen-num">~$280<span class="hfgen-unit">B</span></div>
+            <div class="hfgen-desc">DefiLlama aggregate. Up from ~$165B at GENIUS signing (Jul 2025) and ~$130B at start of 2024 &mdash; the chartered-rail era is additive, not contractive.</div>
           </div>
-          <div class="hfg-card">
-            <div class="hfg-tag">Tether USDT &middot; Apr 2026</div>
-            <div class="hfg-num">$187<span class="hfg-unit">B</span></div>
-            <div class="hfg-desc">Still #1 by cap. Tether burned 6.5B USDT across Jan&ndash;Feb 2026 (cap dipped from $186.8B to $183.6B) as U.S.-onshore liquidity rotated to GENIUS-compliant issuers.</div>
+          <div class="hfgen-card">
+            <div class="hfgen-tag">Tether USDT &middot; Apr 2026</div>
+            <div class="hfgen-num">$187<span class="hfgen-unit">B</span></div>
+            <div class="hfgen-desc">Still #1 by cap. Tether burned 6.5B USDT across Jan&ndash;Feb 2026 (cap dipped from $186.8B to $183.6B) as U.S.-onshore liquidity rotated to GENIUS-compliant issuers.</div>
           </div>
-          <div class="hfg-card">
-            <div class="hfg-tag">Circle USDC &middot; Apr 2026</div>
-            <div class="hfg-num">$77<span class="hfg-unit">B</span></div>
-            <div class="hfg-desc">Up from ~$60B at GENIUS signing &mdash; +28% in 9 months. Outpaced USDT growth for a second straight year (CoinDesk Jan 2026). Circle (NYSE: CRCL) IPO'd Jun 2025, +168% day-one.</div>
+          <div class="hfgen-card">
+            <div class="hfgen-tag">Circle USDC &middot; Apr 2026</div>
+            <div class="hfgen-num">$77<span class="hfgen-unit">B</span></div>
+            <div class="hfgen-desc">Up from ~$60B at GENIUS signing &mdash; +28% in 9 months. Outpaced USDT growth for a second straight year (CoinDesk Jan 2026). Circle (NYSE: CRCL) IPO'd Jun 2025, +168% day-one.</div>
           </div>
-          <div class="hfg-card">
-            <div class="hfg-tag">Yield prohibition &middot; bank deposit relief</div>
-            <div class="hfg-num">~$6.6<span class="hfg-unit">T</span></div>
-            <div class="hfg-desc">CEA white paper Apr 2026: GENIUS Title VII (no issuer-paid yield) is projected to keep ~$6.6T of bank deposits from migrating &mdash; a quiet win for incumbent net interest margin.</div>
+          <div class="hfgen-card">
+            <div class="hfgen-tag">Yield prohibition &middot; bank deposit relief</div>
+            <div class="hfgen-num">~$6.6<span class="hfgen-unit">T</span></div>
+            <div class="hfgen-desc">CEA white paper Apr 2026: GENIUS Title VII (no issuer-paid yield) is projected to keep ~$6.6T of bank deposits from migrating &mdash; a quiet win for incumbent net interest margin.</div>
           </div>
         </div>
-        <div class="hfg-rows">
-          <div class="hfg-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+        <div class="hfgen-rows">
+          <div class="hfgen-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
             <div>Issuer / lane</div><div>Pre-GENIUS &middot; Jul 2025</div><div>Post-GENIUS &middot; Q2 2026</div><div style="text-align:right">&Delta;</div>
           </div>
-          <div class="hfg-row">
-            <div class="hfg-firm">Circle (USDC)</div>
-            <div class="hfg-pre">~$60B cap; pre-IPO; offshore reserve disclosure</div>
-            <div class="hfg-post">$77B cap; NYSE-listed; Title II chartered issuer; Visa &amp; Stripe primary settlement asset</div>
-            <div class="hfg-delta">+28%</div>
+          <div class="hfgen-row">
+            <div class="hfgen-firm">Circle (USDC)</div>
+            <div class="hfgen-pre">~$60B cap; pre-IPO; offshore reserve disclosure</div>
+            <div class="hfgen-post">$77B cap; NYSE-listed; Title II chartered issuer; Visa &amp; Stripe primary settlement asset</div>
+            <div class="hfgen-delta">+28%</div>
           </div>
-          <div class="hfg-row">
-            <div class="hfg-firm">Tether (USDT)</div>
-            <div class="hfg-pre">~$160B cap; offshore (BVI/El Salvador); not GENIUS-compliant</div>
-            <div class="hfg-post">$187B cap; ring-fenced U.S. lane (USAT, 2026) for onshore distribution; ~$130B Treasuries reserve</div>
-            <div class="hfg-delta">+17%</div>
+          <div class="hfgen-row">
+            <div class="hfgen-firm">Tether (USDT)</div>
+            <div class="hfgen-pre">~$160B cap; offshore (BVI/El Salvador); not GENIUS-compliant</div>
+            <div class="hfgen-post">$187B cap; ring-fenced U.S. lane (USAT, 2026) for onshore distribution; ~$130B Treasuries reserve</div>
+            <div class="hfgen-delta">+17%</div>
           </div>
-          <div class="hfg-row">
-            <div class="hfg-firm">Bank-issued (BNY, Citi, JPMD pilots)</div>
-            <div class="hfg-pre">No live retail product; tokenized-deposit pilots only</div>
-            <div class="hfg-post">OCC trust charters under Title II; PYUSD on Stripe; JPMD on Base; bank-issued payment stablecoin RFCs in flight</div>
-            <div class="hfg-delta">New rail</div>
+          <div class="hfgen-row">
+            <div class="hfgen-firm">Bank-issued (BNY, Citi, JPMD pilots)</div>
+            <div class="hfgen-pre">No live retail product; tokenized-deposit pilots only</div>
+            <div class="hfgen-post">OCC trust charters under Title II; PYUSD on Stripe; JPMD on Base; bank-issued payment stablecoin RFCs in flight</div>
+            <div class="hfgen-delta">New rail</div>
           </div>
-          <div class="hfg-row">
-            <div class="hfg-firm">Networks (Visa, Mastercard)</div>
-            <div class="hfg-pre">Pilot programs; ~$200M annualised stablecoin settlement</div>
-            <div class="hfg-post">Visa $4.6B annualised stablecoin settlement (Q1 2026); MA Multi-Token Network live; both quote stablecoin acquiring as a flywheel, not a defence</div>
-            <div class="hfg-delta">+22&times;</div>
+          <div class="hfgen-row">
+            <div class="hfgen-firm">Networks (Visa, Mastercard)</div>
+            <div class="hfgen-pre">Pilot programs; ~$200M annualised stablecoin settlement</div>
+            <div class="hfgen-post">Visa $4.6B annualised stablecoin settlement (Q1 2026); MA Multi-Token Network live; both quote stablecoin acquiring as a flywheel, not a defence</div>
+            <div class="hfgen-delta">+22&times;</div>
           </div>
         </div>
       </div>
-      <div class="hfg-bar-wrap">
-        <div class="hfg-bar-track"><div class="hfg-bar" style="--w:82%"></div></div>
+      <div class="hfgen-bar-wrap">
+        <div class="hfgen-bar-track"><div class="hfgen-bar" style="--w:82%"></div></div>
       </div>
-      <div class="hfg-scrub" style="justify-content:space-between">
+      <div class="hfgen-scrub" style="justify-content:space-between">
         <div>2024</div>
         <div>2025</div>
-        <div class="hfg-scrub-bar"><div class="hfg-scrub-fill"></div></div>
+        <div class="hfgen-scrub-bar"><div class="hfgen-scrub-fill"></div></div>
         <div>2026 &middot; APR</div>
       </div>
-      <div class="hfg-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+      <div class="hfgen-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
-    <div class="meta-row hfg-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+    <div class="meta-row hfgen-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
       <span>Sources &middot; <a href="https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-signs-genius-act-into-law/" target="_blank" rel="noopener">White House &middot; GENIUS Act fact sheet (Jul 2025)</a></span><span>&middot;</span><span><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1582/text" target="_blank" rel="noopener">S.1582 (119th Congress) full text</a></span><span>&middot;</span><span><a href="https://defillama.com/stablecoins" target="_blank" rel="noopener">DefiLlama stablecoin tracker</a></span><span>&middot;</span><span><a href="https://www.coindesk.com/markets/2026/01/06/circle-s-usdc-outpaces-growth-of-tether-s-usdt-for-second-year-running" target="_blank" rel="noopener">CoinDesk &middot; USDC outpaces USDT (Jan 2026)</a></span><span>&middot;</span><span><a href="https://www.whitehouse.gov/research/2026/04/effects-of-stablecoin-yield-prohibition-on-bank-lending/" target="_blank" rel="noopener">CEA Apr 2026 &middot; Yield prohibition study</a></span>
     </div>
   </div>

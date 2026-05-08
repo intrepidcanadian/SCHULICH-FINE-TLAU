@@ -7,52 +7,52 @@
     <div>18 / 23</div>
   </div>
   <style>
-    @keyframes hfb-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
-    @keyframes hfb-bar { 0%{width:0} 100%{width:var(--w)} }
-    @keyframes hfb-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
-    @keyframes hfb-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card { animation: hfb-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row { animation: hfb-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-bar { animation: hfb-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-rec { animation: hfb-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-scrub-fill { animation: hfb-scrub 9s linear infinite }
-    .hfb-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
-    .hfb-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
-    .hfb-topbar .hfb-rec { color:#c33b2a; letter-spacing:.3em }
-    .hfb-topbar .hfb-tc { font-feature-settings:"tnum"; opacity:.6 }
-    .hfb-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
-    .hfb-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
-    .hfb-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(10,31,61,.4); background:rgba(10,31,61,.025); border-radius:0 4px 4px 0 }
-    .hfb-card .hfb-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.62 }
-    .hfb-card .hfb-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
-    .hfb-card .hfb-num .hfb-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
-    .hfb-card .hfb-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
-    .hfb-rows { display:flex; flex-direction:column }
-    .hfb-row { display:grid; grid-template-columns:1.2fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(10,31,61,.08); font-family:var(--sans-zh) }
-    .hfb-row:first-child { border-top:0 }
-    .hfb-row .hfb-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
-    .hfb-row .hfb-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
-    .hfb-row .hfb-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
-    .hfb-row .hfb-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#3b8a4f }
-    .hfb-row .hfb-delta.down { color:#c33b2a }
-    .hfb-bar-wrap { padding:0 1.4vw 1vh }
-    .hfb-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
-    .hfb-bar { height:100%; background:linear-gradient(90deg, rgba(10,31,61,.55), rgba(10,31,61,.95)); border-radius:99px }
-    .hfb-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
-    .hfb-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
-    .hfb-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
-    .hfb-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.5), transparent) }
-    .hfb-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
-    .hfb-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
-    .hfb-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+    @keyframes hfbn-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfbn-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfbn-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfbn-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-card { animation: hfbn-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-row { animation: hfbn-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-bar { animation: hfbn-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-rec { animation: hfbn-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfbn-scrub-fill { animation: hfbn-scrub 9s linear infinite }
+    .hfbn-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hfbn-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
+    .hfbn-topbar .hfbn-rec { color:#c33b2a; letter-spacing:.3em }
+    .hfbn-topbar .hfbn-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfbn-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfbn-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfbn-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(10,31,61,.4); background:rgba(10,31,61,.025); border-radius:0 4px 4px 0 }
+    .hfbn-card .hfbn-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.62 }
+    .hfbn-card .hfbn-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfbn-card .hfbn-num .hfbn-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfbn-card .hfbn-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfbn-rows { display:flex; flex-direction:column }
+    .hfbn-row { display:grid; grid-template-columns:1.2fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(10,31,61,.08); font-family:var(--sans-zh) }
+    .hfbn-row:first-child { border-top:0 }
+    .hfbn-row .hfbn-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfbn-row .hfbn-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfbn-row .hfbn-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfbn-row .hfbn-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#3b8a4f }
+    .hfbn-row .hfbn-delta.down { color:#c33b2a }
+    .hfbn-bar-wrap { padding:0 1.4vw 1vh }
+    .hfbn-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hfbn-bar { height:100%; background:linear-gradient(90deg, rgba(10,31,61,.55), rgba(10,31,61,.95)); border-radius:99px }
+    .hfbn-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfbn-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfbn-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hfbn-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.5), transparent) }
+    .hfbn-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfbn-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfbn-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">§3.7b · BNPL goes mainstream &amp; consolidates</div>
@@ -61,77 +61,77 @@
       Slide 08 listed online lending alongside crowdfunding. Five years on, Buy-Now-Pay-Later is the breakout sub-category: 380M+ global users, $560B GMV in 2025, and the largest IPO of 2025. But the field also <em>narrowed</em>: Apple killed its in-house Pay Later, the CFPB&rsquo;s 2024 interpretive rule was withdrawn in Apr 2025, and Affirm became the de-facto default checkout install for Apple Pay.
     </p>
 
-    <div class="hfb-frame" style="margin-top:1.4vh">
-      <div class="hfb-topbar">
-        <div><span class="hfb-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V06</div>
-        <div class="hfb-tc">DATA AS OF &middot; APR 2026</div>
+    <div class="hfbn-frame" style="margin-top:1.4vh">
+      <div class="hfbn-topbar">
+        <div><span class="hfbn-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V06</div>
+        <div class="hfbn-tc">DATA AS OF &middot; APR 2026</div>
       </div>
-      <div class="hfb-stage">
-        <div class="hfb-cards">
-          <div class="hfb-card">
-            <div class="hfb-tag">Global BNPL GMV &middot; 2025</div>
-            <div class="hfb-num">$560<span class="hfb-unit">B</span></div>
-            <div class="hfb-desc">Capital One Shopping (2025): $560B global GMV, +13.7% YoY. Up from ~$120B in 2020 (CB Insights estimate).</div>
+      <div class="hfbn-stage">
+        <div class="hfbn-cards">
+          <div class="hfbn-card">
+            <div class="hfbn-tag">Global BNPL GMV &middot; 2025</div>
+            <div class="hfbn-num">$560<span class="hfbn-unit">B</span></div>
+            <div class="hfbn-desc">Capital One Shopping (2025): $560B global GMV, +13.7% YoY. Up from ~$120B in 2020 (CB Insights estimate).</div>
           </div>
-          <div class="hfb-card">
-            <div class="hfb-tag">Active BNPL users &middot; 2024</div>
-            <div class="hfb-num">380<span class="hfb-unit">M</span></div>
-            <div class="hfb-desc">Statista (2024). Forecast to reach ~670M by 2028. Largest concentrations: US (29% of market) and EU.</div>
+          <div class="hfbn-card">
+            <div class="hfbn-tag">Active BNPL users &middot; 2024</div>
+            <div class="hfbn-num">380<span class="hfbn-unit">M</span></div>
+            <div class="hfbn-desc">Statista (2024). Forecast to reach ~670M by 2028. Largest concentrations: US (29% of market) and EU.</div>
           </div>
-          <div class="hfb-card">
-            <div class="hfb-tag">Klarna IPO valuation &middot; Sep 2025</div>
-            <div class="hfb-num">$15<span class="hfb-unit">B</span></div>
-            <div class="hfb-desc">NYSE: KLAR debut at $40, jumped 15% on day 1 (CNBC, Sep 10 2025). Largest IPO of 2025; down from $46B private peak (2021).</div>
+          <div class="hfbn-card">
+            <div class="hfbn-tag">Klarna IPO valuation &middot; Sep 2025</div>
+            <div class="hfbn-num">$15<span class="hfbn-unit">B</span></div>
+            <div class="hfbn-desc">NYSE: KLAR debut at $40, jumped 15% on day 1 (CNBC, Sep 10 2025). Largest IPO of 2025; down from $46B private peak (2021).</div>
           </div>
-          <div class="hfb-card">
-            <div class="hfb-tag">Affirm FY25 GMV (Jun 2025)</div>
-            <div class="hfb-num">$36.7<span class="hfb-unit">B</span></div>
-            <div class="hfb-desc">Affirm FY25 shareholder letter (+38% YoY). FY26 guide: $46B+. Affirm Card GMV alone +132%.</div>
+          <div class="hfbn-card">
+            <div class="hfbn-tag">Affirm FY25 GMV (Jun 2025)</div>
+            <div class="hfbn-num">$36.7<span class="hfbn-unit">B</span></div>
+            <div class="hfbn-desc">Affirm FY25 shareholder letter (+38% YoY). FY26 guide: $46B+. Affirm Card GMV alone +132%.</div>
           </div>
         </div>
-        <div class="hfb-rows">
-          <div class="hfb-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+        <div class="hfbn-rows">
+          <div class="hfbn-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
             <div>Player</div><div>Status &middot; 2020</div><div>Status &middot; 2025</div><div style="text-align:right">&Delta;</div>
           </div>
-          <div class="hfb-row">
-            <div class="hfb-firm">Klarna</div>
-            <div class="hfb-2020">Private; ~$10.6B (Sep 2020 round)</div>
-            <div class="hfb-2025">NYSE: KLAR (Sep 2025); 111M users; AI-first restructuring</div>
-            <div class="hfb-delta">$15B IPO</div>
+          <div class="hfbn-row">
+            <div class="hfbn-firm">Klarna</div>
+            <div class="hfbn-2020">Private; ~$10.6B (Sep 2020 round)</div>
+            <div class="hfbn-2025">NYSE: KLAR (Sep 2025); 111M users; AI-first restructuring</div>
+            <div class="hfbn-delta">$15B IPO</div>
           </div>
-          <div class="hfb-row">
-            <div class="hfb-firm">Affirm</div>
-            <div class="hfb-2020">Pre-IPO; $4.4B 2019 round</div>
-            <div class="hfb-2025">NASDAQ: AFRM, 23M users, $36.7B GMV; Apple Pay default install</div>
-            <div class="hfb-delta">FY25 OP+</div>
+          <div class="hfbn-row">
+            <div class="hfbn-firm">Affirm</div>
+            <div class="hfbn-2020">Pre-IPO; $4.4B 2019 round</div>
+            <div class="hfbn-2025">NASDAQ: AFRM, 23M users, $36.7B GMV; Apple Pay default install</div>
+            <div class="hfbn-delta">FY25 OP+</div>
           </div>
-          <div class="hfb-row">
-            <div class="hfb-firm">Afterpay / Block</div>
-            <div class="hfb-2020">Independent ASX; ~A$30B mkt cap</div>
-            <div class="hfb-2025">Inside Block since Jan 2022 ($29B all-stock); embedded in Cash App</div>
-            <div class="hfb-delta">M&amp;A absorb</div>
+          <div class="hfbn-row">
+            <div class="hfbn-firm">Afterpay / Block</div>
+            <div class="hfbn-2020">Independent ASX; ~A$30B mkt cap</div>
+            <div class="hfbn-2025">Inside Block since Jan 2022 ($29B all-stock); embedded in Cash App</div>
+            <div class="hfbn-delta">M&amp;A absorb</div>
           </div>
-          <div class="hfb-row">
-            <div class="hfb-firm">Apple Pay Later</div>
-            <div class="hfb-2020">Did not exist</div>
-            <div class="hfb-2025">Discontinued Jun 2024 after 9 months; Apple now routes to Affirm</div>
-            <div class="hfb-delta down">Shut down</div>
+          <div class="hfbn-row">
+            <div class="hfbn-firm">Apple Pay Later</div>
+            <div class="hfbn-2020">Did not exist</div>
+            <div class="hfbn-2025">Discontinued Jun 2024 after 9 months; Apple now routes to Affirm</div>
+            <div class="hfbn-delta down">Shut down</div>
           </div>
         </div>
       </div>
-      <div class="hfb-bar-wrap">
-        <div class="hfb-bar-track"><div class="hfb-bar" style="--w:74%"></div></div>
+      <div class="hfbn-bar-wrap">
+        <div class="hfbn-bar-track"><div class="hfbn-bar" style="--w:74%"></div></div>
       </div>
-      <div class="hfb-scrub" style="justify-content:space-between">
+      <div class="hfbn-scrub" style="justify-content:space-between">
         <div>2024</div>
         <div>2025</div>
-        <div class="hfb-scrub-bar"><div class="hfb-scrub-fill"></div></div>
+        <div class="hfbn-scrub-bar"><div class="hfbn-scrub-fill"></div></div>
         <div>2026 &middot; APR</div>
       </div>
-      <div class="hfb-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+      <div class="hfbn-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
     </div>
 
-    <div class="meta-row hfb-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+    <div class="meta-row hfbn-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
       <span>Sources &middot; <a href="https://www.cnbc.com/2025/09/10/klarna-klar-stock-soars-after-us-ipo.html" target="_blank" rel="noopener">CNBC: Klarna NYSE debut (Sep 2025)</a></span><span>&middot;</span><span><a href="https://investors.affirm.com/static-files/0e3b017b-6c82-4b15-bf15-01f5a66b564b" target="_blank" rel="noopener">Affirm FY Q4 2025 supplement</a></span><span>&middot;</span><span><a href="https://www.bloomberg.com/news/articles/2024-06-17/apple-shutting-down-pay-later-its-affirm-rival-after-one-year" target="_blank" rel="noopener">Bloomberg: Apple Pay Later shutdown</a></span><span>&middot;</span><span><a href="https://www.consumerfinance.gov/rules-policy/final-rules/use-of-digital-user-accounts-to-access-buy-now-pay-later-loans/" target="_blank" rel="noopener">CFPB BNPL interpretive rule (2024)</a></span><span>&middot;</span><span><a href="https://capitaloneshopping.com/research/buy-now-pay-later-statistics/" target="_blank" rel="noopener">Capital One Shopping BNPL stats (2025)</a></span><span>&middot;</span><span><a href="https://www.statista.com/statistics/1311122/global-bnpl-market-value-forecast/" target="_blank" rel="noopener">Statista global BNPL forecast</a></span>
     </div>
   </div>
