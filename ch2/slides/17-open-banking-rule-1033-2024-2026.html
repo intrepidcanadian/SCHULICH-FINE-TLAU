@@ -1,0 +1,142 @@
+<!-- ============================================================
+     SLIDE 17 · Open Banking Rule 1033 2024→2026 (light · new)
+     ============================================================ -->
+<section class="slide light" data-screen-label="17 Open Banking 1033 2024-2026">
+  <div class="chrome">
+    <div>&sect;2.9b &middot; CFPB Rule 1033</div>
+    <div>17 / 21</div>
+  </div>
+  <style>
+    @keyframes hfob-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfob-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfob-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfob-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-card { animation: hfob-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-row { animation: hfob-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-bar { animation: hfob-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-rec { animation: hfob-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="17 Open Banking 1033 2024-2026"].active .hfob-scrub-fill { animation: hfob-scrub 9s linear infinite }
+    .hfob-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hfob-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
+    .hfob-topbar .hfob-rec { color:#c33b2a; letter-spacing:.3em }
+    .hfob-topbar .hfob-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfob-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfob-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfob-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(10,31,61,.4); background:rgba(10,31,61,.025); border-radius:0 4px 4px 0 }
+    .hfob-card .hfob-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.62 }
+    .hfob-card .hfob-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfob-card .hfob-num .hfob-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfob-card .hfob-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfob-rows { display:flex; flex-direction:column }
+    .hfob-row { display:grid; grid-template-columns:1.05fr 1fr 1.1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(10,31,61,.08); font-family:var(--sans-zh) }
+    .hfob-row:first-child { border-top:0 }
+    .hfob-row .hfob-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfob-row .hfob-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfob-row .hfob-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfob-row .hfob-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#3b8a4f }
+    .hfob-row .hfob-delta.warn { color:#c33b2a }
+    .hfob-bar-wrap { padding:0 1.4vw 1vh }
+    .hfob-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hfob-bar { height:100%; background:linear-gradient(90deg, rgba(10,31,61,.55), rgba(10,31,61,.95)); border-radius:99px }
+    .hfob-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfob-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfob-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hfob-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.5), transparent) }
+    .hfob-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfob-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfob-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;2.9b &middot; data portability becomes law</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Open Banking arrives in the US: CFPB Rule 1033, 2024&rarr;2026.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 03 framed data as one of the five fintech dimensions. On Oct 22, 2024 the CFPB finalized Rule 1033 (&ldquo;Personal Financial Data Rights&rdquo;), making consumer access to financial data &mdash; deposit, credit-card, payments &mdash; a federally enforceable right via authorised third-party APIs. Compliance phases in from Apr 2026 (largest banks) through 2030 (smallest). Litigation and a 2025 administration change have since reopened the rule for amendment, but the data-access architecture is now the regulatory baseline.
+    </p>
+
+    <div class="hfob-frame" style="margin-top:1.4vh">
+      <div class="hfob-topbar">
+        <div><span class="hfob-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V08</div>
+        <div class="hfob-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfob-stage">
+        <div class="hfob-cards">
+          <div class="hfob-card">
+            <div class="hfob-tag">Final rule &middot; Oct 22, 2024</div>
+            <div class="hfob-num">12 CFR<span class="hfob-unit"> Part 1033</span></div>
+            <div class="hfob-desc">CFPB &ldquo;Personal Financial Data Rights&rdquo; final rule. 594 pages; effective 60 days after Federal Register publication.</div>
+          </div>
+          <div class="hfob-card">
+            <div class="hfob-tag">First compliance wave</div>
+            <div class="hfob-num">Apr 2026</div>
+            <div class="hfob-desc">Banks &amp; credit unions &gt;$250B in assets &mdash; ~the top 14 institutions &mdash; must expose required data via developer interfaces.</div>
+          </div>
+          <div class="hfob-card">
+            <div class="hfob-tag">Final compliance wave</div>
+            <div class="hfob-num">Apr 2030</div>
+            <div class="hfob-desc">Community banks &lt;$1.5B and small CUs &lt;$850M get the longest runway. Five tiered deadlines in total.</div>
+          </div>
+          <div class="hfob-card">
+            <div class="hfob-tag">Active US data-aggregator users</div>
+            <div class="hfob-num">100<span class="hfob-unit">M+</span></div>
+            <div class="hfob-desc">Plaid + MX + Finicity reach today (industry estimates, 2024). Rule 1033 forces a migration from screen-scraping to permissioned APIs.</div>
+          </div>
+        </div>
+        <div class="hfob-rows">
+          <div class="hfob-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Stakeholder</div><div>Pre-1033 (2024)</div><div>Post-1033 (2026&minus;2030)</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfob-row">
+            <div class="hfob-firm">Banks (data holders)</div>
+            <div class="hfob-2020">Voluntary APIs; screen-scraping tolerated; data-sharing fees common</div>
+            <div class="hfob-2025">Mandated developer interfaces; no fees for required data; SLA + revocation duties</div>
+            <div class="hfob-delta warn">New duty</div>
+          </div>
+          <div class="hfob-row">
+            <div class="hfob-firm">Aggregators (Plaid, MX)</div>
+            <div class="hfob-2020">Bilateral data-sharing deals; 100M+ end-users; partial API coverage</div>
+            <div class="hfob-2025">Standards-body authorised &ldquo;representatives&rdquo; with statutory access rights</div>
+            <div class="hfob-delta">Codified</div>
+          </div>
+          <div class="hfob-row">
+            <div class="hfob-firm">Fintechs (data users)</div>
+            <div class="hfob-2020">Onboarding friction; reliability tied to bank cooperation</div>
+            <div class="hfob-2025">Right of access; data-use limits (no secondary marketing); revocability</div>
+            <div class="hfob-delta">Lower CAC</div>
+          </div>
+          <div class="hfob-row">
+            <div class="hfob-firm">Litigation status</div>
+            <div class="hfob-2020">N/A &mdash; rule not yet final</div>
+            <div class="hfob-2025">Bank Policy Inst. + Forcht Bank suit (KY); CFPB filed 2025 status reports proposing amendment</div>
+            <div class="hfob-delta warn">In flux</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfob-bar-wrap">
+        <div class="hfob-bar-track"><div class="hfob-bar" style="--w:62%"></div></div>
+      </div>
+      <div class="hfob-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfob-scrub-bar"><div class="hfob-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfob-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfob-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://www.consumerfinance.gov/about-us/newsroom/cfpb-finalizes-personal-financial-data-rights-rule-to-boost-competition-protect-privacy-and-give-families-more-choice-in-financial-services/" target="_blank" rel="noopener">CFPB · Final rule announcement (Oct 22, 2024)</a></span><span>&middot;</span><span><a href="https://www.consumerfinance.gov/rules-policy/final-rules/required-rulemaking-on-personal-financial-data-rights/" target="_blank" rel="noopener">CFPB · 12 CFR Part 1033 text</a></span><span>&middot;</span><span><a href="https://bpi.com/wp-content/uploads/2024/10/BPI-Forcht-1033-Complaint.pdf" target="_blank" rel="noopener">BPI v. CFPB · 1033 complaint (KY E.D., Oct 2024)</a></span><span>&middot;</span><span><a href="https://plaid.com/blog/cfpb-finalizes-1033/" target="_blank" rel="noopener">Plaid · Industry analysis of 1033</a></span><span>&middot;</span><span><a href="https://www.fdx.org/" target="_blank" rel="noopener">Financial Data Exchange (FDX) · Standards body</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 17 &middot; CFPB 1033 (2024 &rarr; 2030)</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>

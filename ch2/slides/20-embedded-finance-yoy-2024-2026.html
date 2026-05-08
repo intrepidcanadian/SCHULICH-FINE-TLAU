@@ -1,0 +1,140 @@
+<!-- ============================================================
+     SLIDE 20 · Embedded finance YoY 2024 → 2026 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="20 Embedded Finance YoY 2024-26">
+  <div class="chrome">
+    <div>&sect;2.9b &middot; embedded finance YoY trajectory</div>
+    <div>20 / 21</div>
+  </div>
+  <style>
+    @keyframes hfe26-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfe26-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfe26-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfe26-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-card { animation: hfe26-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-row { animation: hfe26-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-row:nth-child(2) { animation-delay:.85s }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-row:nth-child(3) { animation-delay:1.0s }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-row:nth-child(4) { animation-delay:1.15s }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-row:nth-child(5) { animation-delay:1.3s }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-bar { animation: hfe26-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-rec { animation: hfe26-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="20 Embedded Finance YoY 2024-26"].active .hfe26-scrub-fill { animation: hfe26-scrub 9s linear infinite }
+    .hfe26-frame { border:1px solid rgba(0,0,0,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(0,0,0,.025), rgba(0,0,0,.005)); position:relative }
+    .hfe26-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(0,0,0,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
+    .hfe26-rec { color:#1f7a4a; letter-spacing:.3em }
+    .hfe26-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfe26-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfe26-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfe26-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(31,122,74,.65); background:rgba(0,0,0,.02); border-radius:0 4px 4px 0 }
+    .hfe26-card .hfe26-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfe26-card .hfe26-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfe26-card .hfe26-num .hfe26-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfe26-card .hfe26-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.82 }
+    .hfe26-rows { display:flex; flex-direction:column }
+    .hfe26-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(0,0,0,.08); font-family:var(--sans-zh) }
+    .hfe26-row:first-child { border-top:0 }
+    .hfe26-row .hfe26-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfe26-row .hfe26-pre { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfe26-row .hfe26-post { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfe26-row .hfe26-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#1f7a4a }
+    .hfe26-bar-wrap { padding:0 1.4vw 1vh }
+    .hfe26-bar-track { height:3px; background:rgba(0,0,0,.1); border-radius:99px; overflow:hidden }
+    .hfe26-bar { height:100%; background:linear-gradient(90deg, rgba(31,122,74,.65), rgba(0,0,0,.7)); border-radius:99px }
+    .hfe26-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(0,0,0,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfe26-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfe26-scrub-bar { flex:1; height:2px; background:rgba(0,0,0,.14); position:relative; overflow:hidden }
+    .hfe26-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(0,0,0,.55), transparent) }
+    .hfe26-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfe26-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfe26-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <h2 class="h-xl" style="font-size:3.7vw; margin-top:.4vh">Embedded finance, year-over-year: $109B (2024) &rarr; $148B (2025) &rarr; $173B (2026).</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 12 framed embedded finance as a 2025 snapshot. Pull the camera back: 2024 baseline was $108.6B, 2025 closed at $148B, and 2026 trackers (Mordor / Marketintelo) put global revenue between $156B and $173B &mdash; a 26&ndash;31% YoY blended CAGR. The mix is shifting too: BaaS captured 34.2% of infrastructure spend in 2025, North America held 38.5% regional share, and merchants/SaaS platforms (not banks) are now the primary distribution layer.
+    </p>
+
+    <div class="hfe26-frame" style="margin-top:1.4vh">
+      <div class="hfe26-topbar">
+        <div><span class="hfe26-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V09</div>
+        <div class="hfe26-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfe26-stage">
+        <div class="hfe26-cards">
+          <div class="hfe26-card">
+            <div class="hfe26-tag">2024 baseline &middot; global revenue</div>
+            <div class="hfe26-num">$109<span class="hfe26-unit">B</span></div>
+            <div class="hfe26-desc">CoinLaw / Bain &times; Adyen 2024 estimate. ~6&times; the value of pure card-payments &mdash; the gravity that's pulling SaaS &amp; marketplace platforms into financial services.</div>
+          </div>
+          <div class="hfe26-card">
+            <div class="hfe26-tag">2025 actual &middot; global revenue</div>
+            <div class="hfe26-num">$148<span class="hfe26-unit">B</span></div>
+            <div class="hfe26-desc">+36% YoY (CoinLaw / Mordor mid-range). BaaS dominant infra layer at 34.2% share; embedded payments still the largest revenue line, but lending &amp; insurance accelerating fastest.</div>
+          </div>
+          <div class="hfe26-card">
+            <div class="hfe26-tag">2026 forecast &middot; global revenue</div>
+            <div class="hfe26-num">$173<span class="hfe26-unit">B</span></div>
+            <div class="hfe26-desc">Marketintelo Feb 2026; Mordor 2026 mid-point ~$156B. Trajectory to $454B by 2031 implies 23.8% sustained CAGR &mdash; faster than every other fintech sub-sector.</div>
+          </div>
+          <div class="hfe26-card">
+            <div class="hfe26-tag">BaaS sub-segment &middot; 2026 &rarr; 2030</div>
+            <div class="hfe26-num">17.8<span class="hfe26-unit">% CAGR</span></div>
+            <div class="hfe26-desc">Embedded banking services projected $25B (2025) &rarr; $79B (2030) per Research &amp; Markets. Pure-play infra (Stripe, Adyen, Rapyd, Unit, Modern Treasury) capture the disproportionate share.</div>
+          </div>
+        </div>
+        <div class="hfe26-rows">
+          <div class="hfe26-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Layer</div><div>2024</div><div>2026</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfe26-row">
+            <div class="hfe26-firm">Embedded payments (cards + ACH + wallets)</div>
+            <div class="hfe26-pre">~$58B revenue; Stripe TPV $1.4T; ~1.3% of global GDP</div>
+            <div class="hfe26-post">~$92B revenue; Stripe TPV ~$2.0T; ~1.7% of global GDP run-rate; agent-initiated commerce live</div>
+            <div class="hfe26-delta">+59%</div>
+          </div>
+          <div class="hfe26-row">
+            <div class="hfe26-firm">Embedded lending (SaaS &times; capital markets)</div>
+            <div class="hfe26-pre">~$22B revenue; mostly BNPL &amp; merchant-cash-advance; 2.6x revenue multiples</div>
+            <div class="hfe26-post">~$36B revenue; AI underwriting standard; lending-as-a-service for vertical SaaS (Toast Capital, Shopify Capital expand)</div>
+            <div class="hfe26-delta">+64%</div>
+          </div>
+          <div class="hfe26-row">
+            <div class="hfe26-firm">BaaS / embedded banking infra</div>
+            <div class="hfe26-pre">~$22B revenue; 34.2% infra share; consent-fragmented in U.S.</div>
+            <div class="hfe26-post">~$30B revenue; CFPB 1033 open-banking rule live (Q4 2025); Plaid / Stripe / Modern Treasury anchor the rail</div>
+            <div class="hfe26-delta">+36%</div>
+          </div>
+          <div class="hfe26-row">
+            <div class="hfe26-firm">Embedded insurance + wealth</div>
+            <div class="hfe26-pre">~$8B revenue; mostly auto/travel attach; nascent platform play</div>
+            <div class="hfe26-post">~$15B revenue; embedded robo-advice via AI agents (Wealthsimple Co-Pilot, Schwab GPT pilot); AI-coded insurance flows</div>
+            <div class="hfe26-delta">+88%</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfe26-bar-wrap">
+        <div class="hfe26-bar-track"><div class="hfe26-bar" style="--w:78%"></div></div>
+      </div>
+      <div class="hfe26-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfe26-scrub-bar"><div class="hfe26-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfe26-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfe26-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://www.mordorintelligence.com/industry-reports/embedded-finance-market" target="_blank" rel="noopener">Mordor Intelligence &middot; Embedded Finance 2025&ndash;2031</a></span><span>&middot;</span><span><a href="https://www.globenewswire.com/news-release/2026/02/09/3234764/0/en/Embedded-Finance-Market-to-Surpass-USD-454-Bn-by-2031-Growing-at-23-84-CAGR-as-Retail-E-commerce-Capture-the-Largest-Share-in-2025-Reports-Mordor-Intelligence.html" target="_blank" rel="noopener">Mordor &middot; $454B by 2031 (Feb 2026)</a></span><span>&middot;</span><span><a href="https://www.bain.com/insights/embedded-finance/" target="_blank" rel="noopener">Bain &times; Adyen &middot; Embedded Finance value chain</a></span><span>&middot;</span><span><a href="https://natlawreview.com/press-releases/embedded-banking-services-market-cagr-be-178-2026-2030-79-billion-industry" target="_blank" rel="noopener">Research &amp; Markets &middot; BaaS to $79B by 2030</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 20 &middot; Embedded finance YoY 2024 &rarr; 2026</div>
+    <div>2024&ndash;2026</div>
+  </div>
+</section>

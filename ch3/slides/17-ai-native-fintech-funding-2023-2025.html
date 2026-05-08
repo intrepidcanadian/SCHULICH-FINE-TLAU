@@ -1,0 +1,142 @@
+<!-- ============================================================
+     SLIDE 17 · AI-native fintech funding 2023→2025 (dark · new)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="17 AI-Native Fintech 2023-2025">
+  <div class="chrome">
+    <div>&sect;3.7b &middot; AI-native fintech VC</div>
+    <div>17 / 22</div>
+  </div>
+  <style>
+    @keyframes hfa-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfa-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfa-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfa-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card { animation: hfa-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row { animation: hfa-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-bar { animation: hfa-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-rec { animation: hfa-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-scrub-fill { animation: hfa-scrub 9s linear infinite }
+    .hfa-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hfa-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfa-rec { color:#ff7458; letter-spacing:.3em }
+    .hfa-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfa-stage { padding:1.6vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfa-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfa-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(255,255,255,.28); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hfa-card .hfa-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfa-card .hfa-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfa-card .hfa-num .hfa-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfa-card .hfa-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfa-rows { display:flex; flex-direction:column }
+    .hfa-row { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hfa-row:first-child { border-top:0 }
+    .hfa-row .hfa-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw }
+    .hfa-row .hfa-2023 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfa-row .hfa-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfa-row .hfa-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#5fc77f }
+    .hfa-row .hfa-delta.exit { color:#a3b8d8 }
+    .hfa-bar-wrap { padding:0 1.4vw 1vh }
+    .hfa-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hfa-bar { height:100%; background:linear-gradient(90deg, rgba(255,116,88,.55), rgba(255,255,255,.92)); border-radius:99px }
+    .hfa-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfa-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfa-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hfa-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hfa-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfa-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfa-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.7b &middot; the AI-native funding bid</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Capital concentrated into AI-native fintechs, 2023&rarr;2025.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 11 framed the 2024-26 funding rebound. Inside that rebound, capital is concentrating: SMB-finance &amp; corporate-card platforms that wrap LLM agents around the workflow now command 2&minus;3&times; the multiples of vintage neobanks. Ramp went from $8.1B (Aug 2023) to $32B (Nov 2025) &mdash; a 4&times; private mark in 27 months &mdash; while Brex was acquired by Capital One.
+    </p>
+
+    <div class="hfa-frame" style="margin-top:1.4vh">
+      <div class="hfa-topbar">
+        <div><span class="hfa-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V05</div>
+        <div class="hfa-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfa-stage">
+        <div class="hfa-cards">
+          <div class="hfa-card">
+            <div class="hfa-tag">Ramp valuation &middot; Nov 2025</div>
+            <div class="hfa-num">$32<span class="hfa-unit">B</span></div>
+            <div class="hfa-desc">$300M Series F-2 led by Lightspeed (TechStartups, Nov 2025). +42% from Jul 2025 ($22.5B); +295% from Aug 2023 ($8.1B). $1B+ ARR run-rate.</div>
+          </div>
+          <div class="hfa-card">
+            <div class="hfa-tag">Mercury &middot; reported 2026 round</div>
+            <div class="hfa-num">$5<span class="hfa-unit">B</span></div>
+            <div class="hfa-desc">Reuters/Crowdfund Insider (Apr 2026). Up from $3.5B (Sequoia-led Series C, Mar 2025). ~$650M annualised revenue; 3 yrs GAAP profitable.</div>
+          </div>
+          <div class="hfa-card">
+            <div class="hfa-tag">Brex Capital One acquisition</div>
+            <div class="hfa-num">$5.2<span class="hfa-unit">B</span></div>
+            <div class="hfa-desc">All-cash deal closed 2025 (Sacra). Down from $12.3B private peak (Jan 2022). Pivot to enterprise; Capital One absorbs SMB book.</div>
+          </div>
+          <div class="hfa-card">
+            <div class="hfa-tag">"Autonomous finance" thesis</div>
+            <div class="hfa-num">2&ndash;3<span class="hfa-unit">&times;</span></div>
+            <div class="hfa-desc">Revenue-multiple premium for AI-agent-led platforms vs. vintage neobanks (Founders Fund / Lightspeed memos cited Fortune Sep 2025).</div>
+          </div>
+        </div>
+        <div class="hfa-rows">
+          <div class="hfa-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Firm</div><div>Aug 2023</div><div>Nov 2025 / 2026</div><div style="text-align:right">Mark</div>
+          </div>
+          <div class="hfa-row">
+            <div class="hfa-firm">Ramp</div>
+            <div class="hfa-2023">$5.8B (Aug 2023)</div>
+            <div class="hfa-2025">$32B (Nov 2025); $1B+ ARR; AI-agent core</div>
+            <div class="hfa-delta">5.5&times;</div>
+          </div>
+          <div class="hfa-row">
+            <div class="hfa-firm">Mercury</div>
+            <div class="hfa-2023">$1.6B (post 2021); flat 2022-23</div>
+            <div class="hfa-2025">$3.5B (Mar 2025) &rarr; reported $5B+ (Apr 2026)</div>
+            <div class="hfa-delta">3.1&times;</div>
+          </div>
+          <div class="hfa-row">
+            <div class="hfa-firm">Brex</div>
+            <div class="hfa-2023">$12.3B private peak (Jan 2022)</div>
+            <div class="hfa-2025">Acquired by Capital One for $5.2B (2025)</div>
+            <div class="hfa-delta exit">Exit</div>
+          </div>
+          <div class="hfa-row">
+            <div class="hfa-firm">Stripe</div>
+            <div class="hfa-2023">$50B (Mar 2023 down-round)</div>
+            <div class="hfa-2025">$91.5B (Feb 2025 tender)</div>
+            <div class="hfa-delta">1.83&times;</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfa-bar-wrap">
+        <div class="hfa-bar-track"><div class="hfa-bar" style="--w:78%"></div></div>
+      </div>
+      <div class="hfa-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfa-scrub-bar"><div class="hfa-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfa-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfa-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://techstartups.com/2025/11/17/ramp-hits-32b-valuation-with-new-300m-funding-round-as-investors-double-down-on-autonomous-finance/" target="_blank" rel="noopener">TechStartups: Ramp $32B (Nov 2025)</a></span><span>&middot;</span><span><a href="https://techcrunch.com/2025/03/26/fintech-mercury-lands-300m-in-sequoia-led-series-c-doubles-valuation-to-3-5b/" target="_blank" rel="noopener">TechCrunch: Mercury $3.5B (Mar 2025)</a></span><span>&middot;</span><span><a href="https://www.crowdfundinsider.com/2026/04/271581-fintech-firm-mercury-reportedly-targets-5-billion-valuation/" target="_blank" rel="noopener">Crowdfund Insider: Mercury $5B target</a></span><span>&middot;</span><span><a href="https://sacra.com/c/brex/" target="_blank" rel="noopener">Sacra: Brex revenue/funding profile</a></span><span>&middot;</span><span><a href="https://fortune.com/2025/09/09/ramp-valuation-founders-fund-thrive-keith-rabois-brex-fintech/" target="_blank" rel="noopener">Fortune: Ramp $22.5B (Sep 2025)</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 17 &middot; AI-native fintech 2023 &rarr; 2025</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>

@@ -1,0 +1,140 @@
+<!-- ============================================================
+     SLIDE 21 · Public Fintech Profitability Inflection Q1 2026 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="21 Public Fintech Profit Q1 2026">
+  <div class="chrome">
+    <div>&sect;4.10 &middot; the profitability inflection</div>
+    <div>21 / 23</div>
+  </div>
+  <style>
+    @keyframes hfpr-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfpr-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfpr-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfpr-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card { animation: hfpr-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row { animation: hfpr-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-bar { animation: hfpr-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-rec { animation: hfpr-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-scrub-fill { animation: hfpr-scrub 9s linear infinite }
+    .hfpr-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hfpr-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfpr-rec { color:#7ec4ff; letter-spacing:.3em }
+    .hfpr-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfpr-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfpr-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfpr-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(126,196,255,.55); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hfpr-card .hfpr-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfpr-card .hfpr-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfpr-card .hfpr-num .hfpr-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfpr-card .hfpr-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfpr-rows { display:flex; flex-direction:column }
+    .hfpr-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hfpr-row:first-child { border-top:0 }
+    .hfpr-row .hfpr-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfpr-row .hfpr-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfpr-row .hfpr-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfpr-row .hfpr-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#7ec4ff }
+    .hfpr-bar-wrap { padding:0 1.4vw 1vh }
+    .hfpr-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hfpr-bar { height:100%; background:linear-gradient(90deg, rgba(126,196,255,.65), rgba(255,255,255,.92)); border-radius:99px }
+    .hfpr-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfpr-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfpr-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hfpr-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hfpr-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfpr-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfpr-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Q1 2026 earnings: the &ldquo;profitable fintech&rdquo; archetype is now real.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 11 priced fintech multiples on the assumption that Rule-of-40 candidates are scarce. They are not anymore. SoFi posted its 10th consecutive profitable quarter in Q1 2026 (net income $167M, +134% YoY) on $1.1B revenue (+41%). Robinhood netted $346M with 15% revenue growth. Both are now S&amp;P-style operating-leverage stories, not narrative-only growth stocks. This re-rates the &ldquo;public fintech&rdquo; multiples lens: discount rate falls, terminal-value share rises, and the bank/neobank gap (slide 20) narrows from the neobank side.
+    </p>
+
+    <div class="hfpr-frame" style="margin-top:1.4vh">
+      <div class="hfpr-topbar">
+        <div><span class="hfpr-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V10</div>
+        <div class="hfpr-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfpr-stage">
+        <div class="hfpr-cards">
+          <div class="hfpr-card">
+            <div class="hfpr-tag">SoFi net income &middot; Q1 2026</div>
+            <div class="hfpr-num">$167<span class="hfpr-unit">M</span></div>
+            <div class="hfpr-desc">+134% YoY. 10th consecutive profitable quarter. Revenue $1.1B (+41%). Adj EBITDA $340M (+62%). Rule-of-40 score 72%; 18 consecutive quarters above R40.</div>
+          </div>
+          <div class="hfpr-card">
+            <div class="hfpr-tag">Robinhood net income &middot; Q1 2026</div>
+            <div class="hfpr-num">$346<span class="hfpr-unit">M</span></div>
+            <div class="hfpr-desc">Revenue $1.07B (+15% YoY). Equities revenue +46%, event contracts +320%. Crypto -47% (cycle hangover). Diluted EPS $0.38. Quarterly profit despite headline miss.</div>
+          </div>
+          <div class="hfpr-card">
+            <div class="hfpr-tag">SoFi diluted EPS &middot; Q1 2026</div>
+            <div class="hfpr-num">$0.12</div>
+            <div class="hfpr-desc">Doubled from $0.06 in Q1 2025. The &ldquo;quality of earnings&rdquo; question for fintechs is now interest income on $30B+ deposits, not adjusted-anything.</div>
+          </div>
+          <div class="hfpr-card">
+            <div class="hfpr-tag">SoFi Adj EBITDA margin &middot; Q1 2026</div>
+            <div class="hfpr-num">31<span class="hfpr-unit">%</span></div>
+            <div class="hfpr-desc">Up from ~25% Q1 2025. Operating leverage finally visible &mdash; loan + deposit + tech-platform revenue mix matures the P&amp;L; the bank-charter dream pays off.</div>
+          </div>
+        </div>
+        <div class="hfpr-rows">
+          <div class="hfpr-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Issuer</div><div>Bottom line &middot; Q1 2024</div><div>Bottom line &middot; Q1 2026</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfpr-row">
+            <div class="hfpr-firm">SoFi (SOFI)</div>
+            <div class="hfpr-2020">$88M net income (Q1 2024); barely-profitable; rate-cycle skepticism on cap markets</div>
+            <div class="hfpr-2025">$167M net income (Q1 2026); 10th profitable quarter; revenue $1.1B (+41%); Rule-of-40 = 72%</div>
+            <div class="hfpr-delta">+90%</div>
+          </div>
+          <div class="hfpr-row">
+            <div class="hfpr-firm">Robinhood (HOOD)</div>
+            <div class="hfpr-2020">$157M net income (Q1 2024); first profitable quarter under PFOF + interest income; PCAOB scrutiny</div>
+            <div class="hfpr-2025">$346M net income (Q1 2026); revenue $1.07B (+15%); equities +46%; S&amp;P 500 inclusion (Sep 2025)</div>
+            <div class="hfpr-delta">+120%</div>
+          </div>
+          <div class="hfpr-row">
+            <div class="hfpr-firm">Block (XYZ)</div>
+            <div class="hfpr-2020">$472M net income FY 2023; mixed Cash App / Square / Bitcoin signals</div>
+            <div class="hfpr-2025">FY 2025 net income &gt;$1.5B; S&amp;P 500 inclusion (Jul 2024); Cash App profitability inflection clearer</div>
+            <div class="hfpr-delta">~3&times;</div>
+          </div>
+          <div class="hfpr-row">
+            <div class="hfpr-firm">Affirm (AFRM)</div>
+            <div class="hfpr-2020">($133M) net loss (FQ3 2024); BNPL credit cycle still doubted</div>
+            <div class="hfpr-2025">FY 2025 GAAP-profitable for the first time; FQ1 2026 GMV $10B+; loan-loss reserve discipline finally credited</div>
+            <div class="hfpr-delta">Inflected</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfpr-bar-wrap">
+        <div class="hfpr-bar-track"><div class="hfpr-bar" style="--w:80%"></div></div>
+      </div>
+      <div class="hfpr-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfpr-scrub-bar"><div class="hfpr-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfpr-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfpr-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://s27.q4cdn.com/749715820/files/doc_financials/2026/q1/2026-Q1-Earnings-Release_FINAL.pdf" target="_blank" rel="noopener">SoFi Q1 2026 earnings release</a></span><span>&middot;</span><span><a href="https://investors.robinhood.com/news-releases/news-release-details/robinhood-reports-first-quarter-2026-results" target="_blank" rel="noopener">Robinhood Q1 2026 results</a></span><span>&middot;</span><span><a href="https://investors.robinhood.com/financials/quarterly-results" target="_blank" rel="noopener">Robinhood quarterly results</a></span><span>&middot;</span><span><a href="https://investor.afterpaytouch.com/" target="_blank" rel="noopener">Affirm investor relations</a></span><span>&middot;</span><span><a href="https://investors.block.xyz/financials/sec-filings" target="_blank" rel="noopener">Block SEC filings</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 21 &middot; Public fintech profitability Q1 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>

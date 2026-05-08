@@ -1,0 +1,75 @@
+<!-- ============================================================
+     SLIDE 11 · Funding climate 2024-2026 (hyperframe · animated)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="11 Funding 2024-2026">
+  <div class="chrome">
+    <div>&sect;3.10 &middot; Funding climate 2024&ndash;2026</div>
+    <div>11 / 22</div>
+  </div>
+  <style>
+    @keyframes hf3-fade-up { from {opacity:0; transform:translateY(14px)} to {opacity:1; transform:translateY(0)} }
+    @keyframes hf3-bar-fill { from {height:0} to {height:var(--h)} }
+    @keyframes hf3-pulse { 0%,100%{opacity:.55} 50%{opacity:1} }
+    .slide[data-screen-label="11 Funding 2024-2026"].active .hf3-card { animation: hf3-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="11 Funding 2024-2026"].active .hf3-card:nth-child(1) { animation-delay: .15s }
+    .slide[data-screen-label="11 Funding 2024-2026"].active .hf3-card:nth-child(2) { animation-delay: .35s }
+    .slide[data-screen-label="11 Funding 2024-2026"].active .hf3-card:nth-child(3) { animation-delay: .55s }
+    .slide[data-screen-label="11 Funding 2024-2026"].active .hf3-bar { animation: hf3-bar-fill 1.2s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: 1s; height:0 }
+    .slide[data-screen-label="11 Funding 2024-2026"].active .hf3-live { animation: hf3-pulse 1.6s ease-in-out infinite }
+    .hf3-card { padding:1.6vh 1.4vw; border:1px solid rgba(255,255,255,.14); border-radius:6px; background:rgba(255,255,255,.03); display:flex; flex-direction:column; gap:.8vh; min-height:0 }
+    .hf3-card .hf3-tag { font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.6 }
+    .hf3-card .hf3-num { font-family:var(--serif-en); font-weight:800; font-size:3vw; line-height:.95; letter-spacing:-.025em; font-feature-settings:"tnum" }
+    .hf3-card .hf3-num .hf3-unit { font-family:var(--serif-zh); font-weight:500; font-size:.4em; opacity:.72; margin-left:.14em }
+    .hf3-card .hf3-desc { font-family:var(--sans-zh); font-size:max(11px,.82vw); line-height:1.45; opacity:.78 }
+    .hf3-cycle { display:flex; gap:.9vw; align-items:flex-end; height:14vh; padding-top:1.4vh }
+    .hf3-cycle .hf3-bar-col { flex:1; display:flex; flex-direction:column; align-items:center; gap:.6vh }
+    .hf3-cycle .hf3-bar { width:100%; background:linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255,.85)); border-radius:3px 3px 0 0 }
+    .hf3-cycle .hf3-yr { font-family:var(--mono); font-size:max(10px,.7vw); letter-spacing:.18em; text-transform:uppercase; opacity:.62 }
+    .hf3-cycle .hf3-val { font-family:var(--serif-en); font-weight:700; font-size:max(11px,.88vw); opacity:.92; font-feature-settings:"tnum" }
+    .hf3-live-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#5fc77f; margin-right:.6em; vertical-align:middle }
+  </style>
+  <div class="frame" style="padding-top:2.4vh">
+    <div class="kicker"><span class="hf3-live"><span class="hf3-live-dot"></span>2024 → 2026 indicators</span></div>
+    <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2024&ndash;2026 funding reset.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.15vw">
+      Global fintech funding bottomed in 2023 and stabilized through 2024 at roughly one-fifth of the 2021 peak. AI-native fintechs now command a disproportionate share of capital while pure neobanks and BNPL startups face a colder market.
+    </p>
+
+    <div style="display:grid; grid-template-columns:8fr 4fr; gap:2vw; margin-top:1.6vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1.2vh">
+        <div class="kicker" style="opacity:.72; margin-bottom:.4vh">Global fintech VC funding &middot; 2021&ndash;2025E (CB Insights / KPMG Pulse of Fintech)</div>
+        <div class="hf3-cycle">
+          <div class="hf3-bar-col"><div class="hf3-val">$140B</div><div class="hf3-bar" style="--h:100%; height:0"></div><div class="hf3-yr">2021</div></div>
+          <div class="hf3-bar-col"><div class="hf3-val">$78B</div><div class="hf3-bar" style="--h:56%; height:0"></div><div class="hf3-yr">2022</div></div>
+          <div class="hf3-bar-col"><div class="hf3-val">$39B</div><div class="hf3-bar" style="--h:28%; height:0"></div><div class="hf3-yr">2023</div></div>
+          <div class="hf3-bar-col"><div class="hf3-val">$43B</div><div class="hf3-bar" style="--h:31%; height:0"></div><div class="hf3-yr">2024</div></div>
+          <div class="hf3-bar-col"><div class="hf3-val">~$55B</div><div class="hf3-bar" style="--h:39%; height:0"></div><div class="hf3-yr">2025E</div></div>
+        </div>
+        <div class="meta-row" style="margin-top:.4vh; font-size:max(10px,.78vw)">
+          <span>Source &middot; CB Insights State of Fintech Q4 2024</span><span>&middot;</span><span>KPMG Pulse of Fintech H2 2024</span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="hf3-card">
+          <div class="hf3-tag">AI-native fintech share</div>
+          <div class="hf3-num">38<span class="hf3-unit">%</span></div>
+          <div class="hf3-desc">Of fintech mega-rounds in 2024 went to AI-native firms (Brex, Ramp, Mercury, Anthropic-adjacent finance plays).</div>
+        </div>
+        <div class="hf3-card">
+          <div class="hf3-tag">Down-rounds</div>
+          <div class="hf3-num">~30<span class="hf3-unit">%</span></div>
+          <div class="hf3-desc">Of late-stage 2024 rounds priced below prior valuation. Klarna, Stripe (recovered), Brex, Plaid all repriced.</div>
+        </div>
+        <div class="hf3-card">
+          <div class="hf3-tag">IPO window reopens</div>
+          <div class="hf3-num">2025</div>
+          <div class="hf3-desc">Klarna files (Mar 2025), Chime files. Plaid prepares S-1 for late 2025. Pent-up listings target $90B+ combined cap.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 11 &middot; Funding climate 2024&ndash;2026</div>
+    <div>Reset &middot; AI premium</div>
+  </div>
+</section>

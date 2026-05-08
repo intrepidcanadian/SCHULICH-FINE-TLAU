@@ -1,0 +1,141 @@
+<!-- ============================================================
+     SLIDE 19 · Robo-Advisor 2.0 AI Wealth 2024-2026 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="19 Robo Advisor 2.0 2024-2026">
+  <div class="chrome">
+    <div>&sect;2.9b &middot; AI-personalised wealth</div>
+    <div>19 / 21</div>
+  </div>
+  <style>
+    @keyframes hfra-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfra-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfra-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfra-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-card { animation: hfra-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-row { animation: hfra-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-bar { animation: hfra-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-rec { animation: hfra-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="19 Robo Advisor 2.0 2024-2026"].active .hfra-scrub-fill { animation: hfra-scrub 9s linear infinite }
+    .hfra-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hfra-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfra-rec { color:#c14a4a; letter-spacing:.3em }
+    .hfra-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfra-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfra-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfra-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(193,74,74,.55); background:rgba(10,31,61,.025); border-radius:0 4px 4px 0 }
+    .hfra-card .hfra-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfra-card .hfra-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfra-card .hfra-num .hfra-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfra-card .hfra-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfra-rows { display:flex; flex-direction:column }
+    .hfra-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(10,31,61,.08); font-family:var(--sans-zh) }
+    .hfra-row:first-child { border-top:0 }
+    .hfra-row .hfra-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfra-row .hfra-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfra-row .hfra-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfra-row .hfra-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#c14a4a }
+    .hfra-bar-wrap { padding:0 1.4vw 1vh }
+    .hfra-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hfra-bar { height:100%; background:linear-gradient(90deg, rgba(193,74,74,.65), rgba(10,31,61,.92)); border-radius:99px }
+    .hfra-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfra-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfra-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hfra-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.55), transparent) }
+    .hfra-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfra-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfra-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;2.9b &middot; from automated allocation to AI-personalised wealth</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Robo-advisors 2.0: AUM, scale, and AI personalisation 2024 &rarr; 2026.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 06 cited Vanguard&rsquo;s 2015 robo-advisor &mdash; an incumbent counter-attack. A decade later the &ldquo;robo&rdquo; layer is no longer a low-fee allocator. Wealthfront crossed $90B AUM and filed for IPO under WLTH (Oct 2025). Betterment crossed $65B AUM and 1M customers, acquired Ellevest (Feb 2025) and Rowboat Advisors (May 2025) for direct indexing. The wedge is no longer 0.25% pricing &mdash; it is AI-driven tax-loss harvesting at the individual-stock level, goal-based personalisation, and CFP-on-demand.
+    </p>
+
+    <div class="hfra-frame" style="margin-top:1.4vh">
+      <div class="hfra-topbar">
+        <div><span class="hfra-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V09</div>
+        <div class="hfra-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfra-stage">
+        <div class="hfra-cards">
+          <div class="hfra-card">
+            <div class="hfra-tag">Wealthfront AUM &middot; Oct 2025</div>
+            <div class="hfra-num">$90<span class="hfra-unit">B+</span></div>
+            <div class="hfra-desc">Filed S-1 (ticker WLTH). Direct-indexing &amp; AI tax-loss harvesting at the individual-stock level for accounts &gt;$100K &mdash; turning the &ldquo;robo&rdquo; into a tax-alpha engine.</div>
+          </div>
+          <div class="hfra-card">
+            <div class="hfra-tag">Betterment AUM &middot; Nov 2025</div>
+            <div class="hfra-num">$65<span class="hfra-unit">B+</span></div>
+            <div class="hfra-desc">1M+ customers. Acquired Ellevest&rsquo;s automated business (Feb 2025, ~$1.1B AUM, 70K clients) and Rowboat Advisors (May 2025) for direct-indexing tech.</div>
+          </div>
+          <div class="hfra-card">
+            <div class="hfra-tag">Headline price &middot; both</div>
+            <div class="hfra-num">0.25<span class="hfra-unit">%</span></div>
+            <div class="hfra-desc">Digital tier flat for 10+ years. Premium Betterment 0.40% adds unlimited CFP. Margin compression forced both to monetise via cash sweep and lending.</div>
+          </div>
+          <div class="hfra-card">
+            <div class="hfra-tag">Direct-indexing minimum</div>
+            <div class="hfra-num">$100<span class="hfra-unit">K</span></div>
+            <div class="hfra-desc">Wealthfront live now; Betterment preview in 2026. Replaces an S&amp;P 500 ETF with the 500 underlying stocks &mdash; vastly more tax-loss harvesting opportunities.</div>
+          </div>
+        </div>
+        <div class="hfra-rows">
+          <div class="hfra-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Platform</div><div>State &middot; 2018</div><div>State &middot; 2026</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfra-row">
+            <div class="hfra-firm">Wealthfront</div>
+            <div class="hfra-2020">~$11B AUM; UBS deal cancelled (Sep 2022); pure 0.25% allocator</div>
+            <div class="hfra-2025">$90B+ AUM; S-1 filed (Oct 2025) under WLTH; AI tax-loss harvesting + direct indexing as core wedge</div>
+            <div class="hfra-delta">~8&times;</div>
+          </div>
+          <div class="hfra-row">
+            <div class="hfra-firm">Betterment</div>
+            <div class="hfra-2020">~$22B AUM; consumer-only; advisor channel small</div>
+            <div class="hfra-2025">$65B+ AUM; 1M+ customers; M&amp;A-driven (Ellevest + Rowboat); Betterment Advisor Solutions scaling RIA channel</div>
+            <div class="hfra-delta">~3&times;</div>
+          </div>
+          <div class="hfra-row">
+            <div class="hfra-firm">Wealthsimple (Canada)</div>
+            <div class="hfra-2020">~C$10B AUA; pure robo</div>
+            <div class="hfra-2025">~C$80B+ AUA (2025); full-stack: trading, crypto, tax, mortgages &mdash; the &ldquo;super-app&rdquo; pivot beat the pure-robo path</div>
+            <div class="hfra-delta">Super-app</div>
+          </div>
+          <div class="hfra-row">
+            <div class="hfra-firm">Schwab Intelligent / Vanguard PAS</div>
+            <div class="hfra-2020">Schwab IP ~$60B; Vanguard PAS ~$230B (2019)</div>
+            <div class="hfra-2025">Vanguard PAS &gt;$300B; Schwab Intelligent &gt;$80B &mdash; the incumbent counter still owns the largest pools, but the marginal customer is going to AI-personalised challengers</div>
+            <div class="hfra-delta">Stable</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfra-bar-wrap">
+        <div class="hfra-bar-track"><div class="hfra-bar" style="--w:74%"></div></div>
+      </div>
+      <div class="hfra-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfra-scrub-bar"><div class="hfra-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfra-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfra-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://investingintheweb.com/brokers/wealthfront-statistics/" target="_blank" rel="noopener">Wealthfront statistics 2026</a></span><span>&middot;</span><span><a href="https://sacra.com/c/wealthfront/" target="_blank" rel="noopener">Sacra &middot; Wealthfront</a></span><span>&middot;</span><span><a href="https://sacra.com/c/betterment/" target="_blank" rel="noopener">Sacra &middot; Betterment</a></span><span>&middot;</span><span><a href="https://www.nerdwallet.com/investing/learn/betterment-vs-wealthfront" target="_blank" rel="noopener">NerdWallet &middot; Betterment vs Wealthfront 2026</a></span><span>&middot;</span><span><a href="https://capital.com/en-int/learn/ipo/wealthfront-ipo" target="_blank" rel="noopener">Wealthfront IPO (WLTH)</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 19 &middot; Robo 2.0 &middot; 2024 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>

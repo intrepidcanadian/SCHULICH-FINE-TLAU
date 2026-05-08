@@ -1,0 +1,155 @@
+<!-- ============================================================
+     SLIDE 22 · Q1 2026 fintech multiples by sub-sector (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="22 Multiples Q1 2026 by Sub-sector">
+  <div class="chrome">
+    <div>&sect;4.11 &middot; Q1 2026 multiples dispersion</div>
+    <div>22 / 23</div>
+  </div>
+  <style>
+    @keyframes hfm26-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfm26-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfm26-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfm26-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card { animation: hfm26-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row { animation: hfm26-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(2) { animation-delay:.85s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(3) { animation-delay:.95s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(4) { animation-delay:1.05s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(5) { animation-delay:1.15s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(6) { animation-delay:1.25s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(7) { animation-delay:1.35s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-bar { animation: hfm26-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-rec { animation: hfm26-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-scrub-fill { animation: hfm26-scrub 9s linear infinite }
+    .hfm26-frame { border:1px solid rgba(0,0,0,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(0,0,0,.025), rgba(0,0,0,.005)); position:relative }
+    .hfm26-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(0,0,0,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
+    .hfm26-rec { color:#1f4a8a; letter-spacing:.3em }
+    .hfm26-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfm26-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfm26-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfm26-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(31,74,138,.55); background:rgba(0,0,0,.02); border-radius:0 4px 4px 0 }
+    .hfm26-card .hfm26-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfm26-card .hfm26-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfm26-card .hfm26-num .hfm26-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfm26-card .hfm26-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.82 }
+    .hfm26-rows { display:flex; flex-direction:column }
+    .hfm26-row { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.7vh 1vw; border-top:1px solid rgba(0,0,0,.08); font-family:var(--sans-zh) }
+    .hfm26-row:first-child { border-top:0 }
+    .hfm26-row .hfm26-firm { font-family:var(--serif-zh); font-weight:700; font-size:.92vw; line-height:1.2 }
+    .hfm26-row .hfm26-pre { font-family:var(--serif-en); font-weight:700; font-size:.85vw; opacity:.78; line-height:1.3; font-feature-settings:"tnum" }
+    .hfm26-row .hfm26-post { font-family:var(--serif-en); font-weight:700; font-size:.85vw; line-height:1.3; font-feature-settings:"tnum" }
+    .hfm26-row .hfm26-delta { font-family:var(--sans-zh); font-weight:600; font-size:max(10px,.74vw); text-align:right; color:#1f4a8a; line-height:1.3 }
+    .hfm26-bar-wrap { padding:0 1.4vw 1vh }
+    .hfm26-bar-track { height:3px; background:rgba(0,0,0,.1); border-radius:99px; overflow:hidden }
+    .hfm26-bar { height:100%; background:linear-gradient(90deg, rgba(31,74,138,.65), rgba(0,0,0,.7)); border-radius:99px }
+    .hfm26-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(0,0,0,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfm26-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfm26-scrub-bar { flex:1; height:2px; background:rgba(0,0,0,.14); position:relative; overflow:hidden }
+    .hfm26-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(0,0,0,.55), transparent) }
+    .hfm26-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfm26-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfm26-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;4.11 &middot; Finro Q1 2026 416-company dataset</div>
+    <h2 class="h-xl" style="font-size:3.7vw; margin-top:.4vh">Q1 2026 fintech multiples: the average is 14.5&times;. The median is 7.6&times;. Dispersion is the story.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 14 set the 2025 baseline. Finro's Q1 2026 dataset (416 fintechs across 9 sub-sectors) shows the spread has widened, not converged: the 14.5&times; average masks a 7.6&times; median &mdash; meaning a handful of WealthTech and Blockchain platforms are dragging the headline up while Lending sits at 2.6&times;. For the discounted-cash-flow lens you applied in slide 8, this is the year you stop quoting &ldquo;fintech&rdquo; multiples in the aggregate. The right comp set lives at the sub-sector level &mdash; and AI-native &amp; vertical-SaaS economics pull comps closer to enterprise SaaS (~6&ndash;7&times;) than to legacy lending (~2.6&times;).
+    </p>
+
+    <div class="hfm26-frame" style="margin-top:1.4vh">
+      <div class="hfm26-topbar">
+        <div><span class="hfm26-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V10</div>
+        <div class="hfm26-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfm26-stage">
+        <div class="hfm26-cards">
+          <div class="hfm26-card">
+            <div class="hfm26-tag">Fintech aggregate &middot; Q1 2026</div>
+            <div class="hfm26-num">14.5<span class="hfm26-unit">&times;</span></div>
+            <div class="hfm26-desc">Average EV / Revenue across 416 fintechs (Finro Q1 2026). Median 7.6&times; &mdash; a 1.9&times; mean/median ratio. The aggregate hides everything; only the sub-sector splits are usable.</div>
+          </div>
+          <div class="hfm26-card">
+            <div class="hfm26-tag">Public SaaS comparable</div>
+            <div class="hfm26-num">~6.5<span class="hfm26-unit">&times;</span></div>
+            <div class="hfm26-desc">SaaS index late-2025 baseline (Aventis Advisors). Top-quartile SaaS deals &gt;8.1&times;; median exit ~4.5&times; ARR. Fintech sub-sectors with software-like economics now rerate against this anchor.</div>
+          </div>
+          <div class="hfm26-card">
+            <div class="hfm26-tag">M&amp;A volume H1 2025</div>
+            <div class="hfm26-num">$44.7<span class="hfm26-unit">B</span></div>
+            <div class="hfm26-desc">Down from $54.2B (H2 2024) on 2,216 deals; payments 40% of fintech M&amp;A. Premium B2B-payments &amp; vertical-SaaS assets fetching ~2&times; the multiple of legacy peers.</div>
+          </div>
+          <div class="hfm26-card">
+            <div class="hfm26-tag">Blockchain infra subsector</div>
+            <div class="hfm26-num">17.3<span class="hfm26-unit">&times;</span></div>
+            <div class="hfm26-desc">Highest-multiple lane in Finro's dataset; full Blockchain category at 26.6&times; mean / 14.2&times; median. Stablecoin-issuer rerating (Circle CRCL +168% IPO debut) anchors the band.</div>
+          </div>
+        </div>
+        <div class="hfm26-rows">
+          <div class="hfm26-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Sub-sector</div><div>Average</div><div>Median</div><div style="text-align:right">Read</div>
+          </div>
+          <div class="hfm26-row">
+            <div class="hfm26-firm">Blockchain &amp; crypto infra</div>
+            <div class="hfm26-pre">26.6&times;</div>
+            <div class="hfm26-post">14.2&times;</div>
+            <div class="hfm26-delta">Top of stack &middot; GENIUS rerate</div>
+          </div>
+          <div class="hfm26-row">
+            <div class="hfm26-firm">WealthTech</div>
+            <div class="hfm26-pre">25.0&times;</div>
+            <div class="hfm26-post">16.2&times;</div>
+            <div class="hfm26-delta">Premium &middot; AI advice ramp</div>
+          </div>
+          <div class="hfm26-row">
+            <div class="hfm26-firm">SMB &amp; Enterprise fintech</div>
+            <div class="hfm26-pre">17.1&times;</div>
+            <div class="hfm26-post">10.1&times;</div>
+            <div class="hfm26-delta">Software-like rerate</div>
+          </div>
+          <div class="hfm26-row">
+            <div class="hfm26-firm">RegTech</div>
+            <div class="hfm26-pre">~9.0&times;</div>
+            <div class="hfm26-post">~7.0&times;</div>
+            <div class="hfm26-delta">Defensive &middot; 6&ndash;12&times; range</div>
+          </div>
+          <div class="hfm26-row">
+            <div class="hfm26-firm">Payments</div>
+            <div class="hfm26-pre">7.7&times;</div>
+            <div class="hfm26-post">3.6&times;</div>
+            <div class="hfm26-delta">Bifurcated &middot; Stripe vs. legacy</div>
+          </div>
+          <div class="hfm26-row">
+            <div class="hfm26-firm">Lending platforms</div>
+            <div class="hfm26-pre">3.5&times;</div>
+            <div class="hfm26-post">2.6&times;</div>
+            <div class="hfm26-delta">Bottom of stack &middot; rate / NPL drag</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfm26-bar-wrap">
+        <div class="hfm26-bar-track"><div class="hfm26-bar" style="--w:78%"></div></div>
+      </div>
+      <div class="hfm26-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfm26-scrub-bar"><div class="hfm26-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfm26-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfm26-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://www.finrofca.com/research/fintech-multiples-q1-2026" target="_blank" rel="noopener">Finro &middot; Q1 2026 multiples (416-company dataset)</a></span><span>&middot;</span><span><a href="https://www.finrofca.com/news/fintech-valuation-multiples-q1-2026" target="_blank" rel="noopener">Finro &middot; What the averages are hiding</a></span><span>&middot;</span><span><a href="https://aventis-advisors.com/saas-valuation-multiples/" target="_blank" rel="noopener">Aventis Advisors &middot; SaaS multiples 2015&ndash;2026</a></span><span>&middot;</span><span><a href="https://windsordrake.com/fintech-ma-report-q1-2026-3/" target="_blank" rel="noopener">Windsor Drake &middot; Fintech M&amp;A Q1 2026</a></span><span>&middot;</span><span><a href="https://www.feinternational.com/blog/how-to-value-a-fintech-business" target="_blank" rel="noopener">FE International &middot; How to value a fintech 2026</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 22 &middot; Q1 2026 multiples by sub-sector</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>

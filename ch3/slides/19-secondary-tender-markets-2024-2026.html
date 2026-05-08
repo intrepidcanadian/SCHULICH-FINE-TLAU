@@ -1,0 +1,141 @@
+<!-- ============================================================
+     SLIDE 19 · Secondary Tender Markets 2024-2026 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="19 Secondary Tenders 2024-2026">
+  <div class="chrome">
+    <div>&sect;3.13 &middot; staying private, getting liquid</div>
+    <div>19 / 22</div>
+  </div>
+  <style>
+    @keyframes hfsec-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfsec-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfsec-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfsec-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card { animation: hfsec-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row { animation: hfsec-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-bar { animation: hfsec-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-rec { animation: hfsec-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-scrub-fill { animation: hfsec-scrub 9s linear infinite }
+    .hfsec-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hfsec-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfsec-rec { color:#7fd3ff; letter-spacing:.3em }
+    .hfsec-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfsec-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfsec-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfsec-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(127,211,255,.55); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hfsec-card .hfsec-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfsec-card .hfsec-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfsec-card .hfsec-num .hfsec-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfsec-card .hfsec-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfsec-rows { display:flex; flex-direction:column }
+    .hfsec-row { display:grid; grid-template-columns:1fr 1.05fr 1.1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hfsec-row:first-child { border-top:0 }
+    .hfsec-row .hfsec-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfsec-row .hfsec-y0 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfsec-row .hfsec-y1 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfsec-row .hfsec-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#7fd3ff }
+    .hfsec-bar-wrap { padding:0 1.4vw 1vh }
+    .hfsec-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hfsec-bar { height:100%; background:linear-gradient(90deg, rgba(127,211,255,.55), rgba(255,255,255,.92)); border-radius:99px }
+    .hfsec-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfsec-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfsec-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hfsec-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hfsec-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfsec-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfsec-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.13 &middot; the IPO substitute</div>
+    <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Tender offers replaced the IPO as the liquidity venue (2024-2026).</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slides 8 (IPO Performance) and 12 (IPO Window) framed the public exit. The bigger 2024-2026 story is companies staying private longer and using employer-led tender offers as a structured liquidity venue. Stripe alone re-rated from $50B (Mar 2023) to $159B (Feb 2026) entirely through tenders. Industry-wide secondary volume hit $240B in 2025, up from $162B in 2024 (Industry Ventures + Goldman Sachs estimates). The cap table arithmetic of slide 19 still holds &mdash; but the &ldquo;exit&rdquo; column now includes a private liquidity event that can recur every 6&ndash;12 months.
+    </p>
+
+    <div class="hfsec-frame" style="margin-top:1.4vh">
+      <div class="hfsec-topbar">
+        <div><span class="hfsec-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V08</div>
+        <div class="hfsec-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfsec-stage">
+        <div class="hfsec-cards">
+          <div class="hfsec-card">
+            <div class="hfsec-tag">Secondary volume &middot; 2025</div>
+            <div class="hfsec-num">~$240<span class="hfsec-unit">B</span></div>
+            <div class="hfsec-desc">Up from ~$162B in 2024 (Industry Ventures + Goldman Sachs Capital Solutions tracking). LP-led plus direct secondaries; private equity adjacent.</div>
+          </div>
+          <div class="hfsec-card">
+            <div class="hfsec-tag">Stripe tender &middot; Feb 2026</div>
+            <div class="hfsec-num">$159<span class="hfsec-unit">B</span></div>
+            <div class="hfsec-desc">+74% YoY. $1.9T 2025 total payment volume (+34%). Latest in a sequence of tenders that re-priced Stripe from $50B (2023) to above its 2021 peak.</div>
+          </div>
+          <div class="hfsec-card">
+            <div class="hfsec-tag">OpenAI secondary &middot; 2024-2026</div>
+            <div class="hfsec-num">$500<span class="hfsec-unit">B+</span></div>
+            <div class="hfsec-desc">Oct 2024 $6.6B tender at $500B; subsequent rounds priced employees / early holders at $850-900B+. Frontier-AI capital trains the secondary plumbing.</div>
+          </div>
+          <div class="hfsec-card">
+            <div class="hfsec-tag">Databricks &middot; 2024 round</div>
+            <div class="hfsec-num">$62<span class="hfsec-unit">B</span></div>
+            <div class="hfsec-desc">$10B raise mixing primary + secondary so employees and former staff can sell &mdash; standard 2024-26 structure for late-stage AI and AI-adjacent firms.</div>
+          </div>
+        </div>
+        <div class="hfsec-rows">
+          <div class="hfsec-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Issuer</div><div>Pre-2024 marker</div><div>2025-2026 marker</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfsec-row">
+            <div class="hfsec-firm">Stripe</div>
+            <div class="hfsec-y0">$50B (Mar 2023, primary)</div>
+            <div class="hfsec-y1">$91.5B (Feb 2025) &rarr; $106.7B (Sep 2025) &rarr; $159B (Feb 2026, all tenders)</div>
+            <div class="hfsec-delta">+218%</div>
+          </div>
+          <div class="hfsec-row">
+            <div class="hfsec-firm">OpenAI</div>
+            <div class="hfsec-y0">$157B (Oct 2024)</div>
+            <div class="hfsec-y1">$500B tender (late 2024) &rarr; subsequent rounds reportedly $850-900B+</div>
+            <div class="hfsec-delta">+218%+</div>
+          </div>
+          <div class="hfsec-row">
+            <div class="hfsec-firm">SpaceX</div>
+            <div class="hfsec-y0">$180B (mid-2023 tender)</div>
+            <div class="hfsec-y1">~$350B+ via semiannual employee tenders by late 2025</div>
+            <div class="hfsec-delta">+94%+</div>
+          </div>
+          <div class="hfsec-row">
+            <div class="hfsec-firm">Databricks</div>
+            <div class="hfsec-y0">$43B (Sep 2023)</div>
+            <div class="hfsec-y1">$62B (Dec 2024 raise + secondary); $5B follow-on, $2B debt facility (Feb 2025)</div>
+            <div class="hfsec-delta">+44%</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfsec-bar-wrap">
+        <div class="hfsec-bar-track"><div class="hfsec-bar" style="--w:80%"></div></div>
+      </div>
+      <div class="hfsec-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfsec-scrub-bar"><div class="hfsec-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfsec-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfsec-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://news.crunchbase.com/fintech/unicorn-stripe-secondary-sale-valuation/" target="_blank" rel="noopener">Crunchbase &middot; Stripe $159B tender (Feb 2026)</a></span><span>&middot;</span><span><a href="https://news.crunchbase.com/ai/openai-valuation-secondary-share-sale-biggest-unicorn-spacex/" target="_blank" rel="noopener">Crunchbase &middot; OpenAI $500B secondary</a></span><span>&middot;</span><span><a href="https://sfstandard.com/2025/04/25/secondary-sales-housing-market-stripe-openai-databricks/" target="_blank" rel="noopener">SF Standard &middot; secondaries replace IPO (Apr 2025)</a></span><span>&middot;</span><span><a href="https://www.benzinga.com/markets/private-markets/26/05/52397464/stripe-spacex-databricks-and-the-end-of-a-traditional-ipo" target="_blank" rel="noopener">Benzinga / JPMorgan &middot; end of the traditional IPO (May 2026)</a></span><span>&middot;</span><span><a href="https://www.industryventures.com/insights/secondary-market-2025/" target="_blank" rel="noopener">Industry Ventures &middot; private secondary tracker</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 19 &middot; Secondary tenders 2024 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>

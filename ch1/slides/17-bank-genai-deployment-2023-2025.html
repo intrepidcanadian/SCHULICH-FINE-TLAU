@@ -1,0 +1,137 @@
+<!-- ============================================================
+     SLIDE 17 · Bank GenAI Deployment 2023→2025 (light · evolution)
+     ============================================================ -->
+<section class="slide light" data-screen-label="17 Bank GenAI 2023-2025">
+  <div class="chrome">
+    <div>§3.7 · sustaining innovation · GenAI rollout</div>
+    <div>17 / 23</div>
+  </div>
+  <style>
+    @keyframes hfg-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfg-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfg-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfg-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row { animation: hfg-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(5) { animation-delay:.75s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-card { animation: hfg-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:.9s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-rec { animation: hfg-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-bar { animation: hfg-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-scrub-fill { animation: hfg-scrub 9s linear infinite }
+    .hfg-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hfg-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
+    .hfg-topbar .hfg-rec { color:#c33b2a; letter-spacing:.3em }
+    .hfg-topbar .hfg-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfg-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:7fr 5fr; gap:1.6vw; align-items:start }
+    .hfg-row { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:.9vw; align-items:center; padding:.7vh 1.2vw; border-top:1px solid rgba(10,31,61,.08); font-family:var(--sans-zh) }
+    .hfg-row:first-child { border-top:0 }
+    .hfg-row .hfg-bank { font-family:var(--serif-zh); font-weight:700; font-size:.95vw }
+    .hfg-row .hfg-2023 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfg-row .hfg-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfg-row .hfg-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#3b8a4f }
+    .hfg-card { padding:1.2vh 1.2vw; border:1px solid rgba(10,31,61,.1); border-radius:6px; background:rgba(10,31,61,.02); display:flex; flex-direction:column; gap:.5vh }
+    .hfg-card .hfg-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.62 }
+    .hfg-card .hfg-stat { font-family:var(--serif-en); font-weight:800; font-size:2vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfg-card .hfg-stat .hfg-unit { font-family:var(--serif-zh); font-weight:500; font-size:.4em; opacity:.72; margin-left:.14em }
+    .hfg-card .hfg-desc { font-family:var(--sans-zh); font-size:max(11px,.8vw); line-height:1.4; opacity:.78 }
+    .hfg-bar-wrap { padding:0 1.4vw 1.2vh }
+    .hfg-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hfg-bar { height:100%; background:linear-gradient(90deg, rgba(10,31,61,.55), rgba(10,31,61,.95)); border-radius:99px }
+    .hfg-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfg-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfg-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hfg-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.5), transparent) }
+    .hfg-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfg-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfg-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">§3.7 · sustaining innovation 2023 → 2025</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Incumbents catch up: bank GenAI rollout, 2023&rarr;2025.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 05 framed traditional fintech as &ldquo;faster horses.&rdquo; Slide 12 quoted the IDC $85B GenAI banking forecast. Two years on, <em>sustaining</em> innovation has actually scaled: every G-SIB now runs production LLMs to tens of thousands of employees. The 2023 baseline is already obsolete.
+    </p>
+
+    <div class="hfg-frame" style="margin-top:1.4vh">
+      <div class="hfg-topbar">
+        <div><span class="hfg-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V05</div>
+        <div class="hfg-tc">DATA AS OF · APR 2026</div>
+      </div>
+      <div class="hfg-stage">
+        <div>
+          <div class="hfg-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Bank</div><div>Status · 2023</div><div>Status · 2025</div><div style="text-align:right">Reach</div>
+          </div>
+          <div class="hfg-row">
+            <div class="hfg-bank">JPMorgan Chase</div>
+            <div class="hfg-2023">Internal pilots; tech spend $15.3B</div>
+            <div class="hfg-2025">LLM Suite + IndexGPT; tech spend ~$17B</div>
+            <div class="hfg-delta">200K+ users</div>
+          </div>
+          <div class="hfg-row">
+            <div class="hfg-bank">Morgan Stanley</div>
+            <div class="hfg-2023">GPT-4 Advisor pilot launched (Sep 2023)</div>
+            <div class="hfg-2025">AI @ Morgan Stanley + Debrief firm-wide</div>
+            <div class="hfg-delta">All 16K FAs</div>
+          </div>
+          <div class="hfg-row">
+            <div class="hfg-bank">Goldman Sachs</div>
+            <div class="hfg-2023">Coding-assistant pilot (Devin, internal)</div>
+            <div class="hfg-2025">GS AI Assistant rolled out firm-wide (Q3 2025)</div>
+            <div class="hfg-delta">~46K employees</div>
+          </div>
+          <div class="hfg-row">
+            <div class="hfg-bank">Bank of America</div>
+            <div class="hfg-2023">Erica virtual assistant (consumer)</div>
+            <div class="hfg-2025">Erica 2.5B+ interactions + Ask BofA staff tool</div>
+            <div class="hfg-delta">213K employees</div>
+          </div>
+          <div class="hfg-row">
+            <div class="hfg-bank">Citigroup</div>
+            <div class="hfg-2023">Limited GenAI pilots; cost-cut focus</div>
+            <div class="hfg-2025">Citi Stylus + Citi Assist on Vertex AI (Aug 2025)</div>
+            <div class="hfg-delta">175K employees</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:1vh">
+          <div class="hfg-card">
+            <div class="hfg-tag">Global bank GenAI spend &middot; 2027E</div>
+            <div class="hfg-stat">$84.99<span class="hfg-unit">B</span></div>
+            <div class="hfg-desc">IDC Worldwide AI &amp; Generative AI Spending Guide (Aug 2024). Banking is the second-largest enterprise AI vertical after software/IT.</div>
+          </div>
+          <div class="hfg-card">
+            <div class="hfg-tag">Tier-1 banks in production &middot; 2025</div>
+            <div class="hfg-stat">100<span class="hfg-unit">%</span></div>
+            <div class="hfg-desc">Every G-SIB has at least one production GenAI deployment by mid-2025 (Evident AI Index Q3 2025). 2023 baseline: ~30%.</div>
+          </div>
+          <div class="hfg-card">
+            <div class="hfg-tag">JPM patents filed &middot; AI/ML 2024</div>
+            <div class="hfg-stat">450<span class="hfg-unit">+</span></div>
+            <div class="hfg-desc">JPMorgan Chase 2024 annual report. Largest AI patent portfolio of any global bank, ahead of Capital One and Bank of America.</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfg-bar-wrap">
+        <div class="hfg-bar-track"><div class="hfg-bar" style="--w:82%"></div></div>
+      </div>
+      <div class="hfg-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfg-scrub-bar"><div class="hfg-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfg-watermark">DATA HORIZON · 2024 → 2026</div>
+    </div>
+
+    <div class="meta-row hfg-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
+      <span>Sources · <a href="https://www.jpmorganchase.com/ir/annual-report" target="_blank" rel="noopener">JPMorgan Chase 2024 Annual Report</a></span><span>·</span><span><a href="https://www.morganstanley.com/press-releases" target="_blank" rel="noopener">Morgan Stanley Press 2024-25</a></span><span>·</span><span><a href="https://www.goldmansachs.com/insights/articles" target="_blank" rel="noopener">Goldman Sachs GS AI 2025</a></span><span>·</span><span><a href="https://newsroom.bankofamerica.com/" target="_blank" rel="noopener">BofA Erica Newsroom</a></span><span>·</span><span><a href="https://www.idc.com/getdoc.jsp?containerId=prUS52530724" target="_blank" rel="noopener">IDC AI Spending Guide 2024</a></span><span>·</span><span><a href="https://evidentinsights.com/ai-index/" target="_blank" rel="noopener">Evident AI Index</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 17 · bank GenAI · 2023 → 2025</div>
+    <div>2025–2026</div>
+  </div>
+</section>

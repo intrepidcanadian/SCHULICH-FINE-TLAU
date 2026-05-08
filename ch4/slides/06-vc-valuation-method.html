@@ -1,0 +1,56 @@
+<!-- ============================================================
+     SLIDE 06 · VC Valuation Method (hero light)
+     ============================================================ -->
+<section class="slide hero light" data-screen-label="06 VC Valuation">
+  <div class="chrome">
+    <div>&sect;4.4 &middot; VC valuation method</div>
+    <div>06 / 23</div>
+  </div>
+  <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
+      <div class="kicker">Growth-stage valuation</div>
+      <h1 class="h-hero" style="font-size:7vw">The VC Method.</h1>
+      <p class="lead" style="max-width:40vw; font-size:1.55vw">
+        VCs target an IRR of 25&ndash;35% over 6&ndash;10 years. They work backward from the terminal value (TV) at exit, adjust the discount rate for bankruptcy risk, and back out their investment today.
+      </p>
+      <div class="meta-row" style="margin-top:1vh">
+        <span>TV = Net Income &times; Exit Multiple</span><span>&middot;</span><span>Discount Rate = [(1 + IRR) / P(survival)] &minus; 1</span>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:2vh">
+      <div class="stat-card">
+        <div class="stat-label">Worked Example &mdash; Series A</div>
+        <div class="step-desc" style="margin-top:.8vh; line-height:1.65; font-size:max(13px,1.05vw)">
+          <strong>Assumptions:</strong> 1M pre-money shares (founders + angels), $2M profit in yr 5, 20&times; P/E exit multiple, 25% target IRR, 20% annual survival probability, $2.5M VC investment, net debt = $0.
+        </div>
+      </div>
+      <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+        <div class="pipeline" data-cols="3">
+          <div class="step">
+            <div class="step-nb">Step 1&ndash;2</div>
+            <div class="step-title" style="font-size:1.2vw">TV &amp; Discount Rate</div>
+            <div class="step-desc">TV = $2M &times; 20 = $40M. Discount rate = (1.25/0.20)&minus;1 = 56.25% p.a.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">Step 3&ndash;4</div>
+            <div class="step-title" style="font-size:1.2vw">Post- &amp; Pre-Money</div>
+            <div class="step-desc">PV = $40M/(1.5625)^5 = $4.3M post-money. Pre-money = $4.3M &minus; $2.5M = $1.8M.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">Step 5&ndash;7</div>
+            <div class="step-title" style="font-size:1.2vw">Ownership &amp; Price</div>
+            <div class="step-desc">VC owns 58.2%. Post-money shares = 1M/0.418 = 2.39M. Price = $4.3M/2.39M = $1.79/share.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:1vh">
+        The VC discount rate of 56.25% accounts for 80% annual failure probability. In practice, multiple funding rounds (Series A&ndash;F) and an ESOP pool make cap-table calculations far more complex.
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; VC valuation method</div>
+    <div>IRR 25&ndash;35% &middot; Exit multiples</div>
+  </div>
+</section>

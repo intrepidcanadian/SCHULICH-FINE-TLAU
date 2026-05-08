@@ -1,0 +1,49 @@
+<!-- ============================================================
+     SLIDE 08 · DCF Model (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="08 DCF Model">
+  <div class="chrome">
+    <div>&sect;4.6 &middot; Discounted Cash Flow</div>
+    <div>08 / 23</div>
+  </div>
+  <div class="frame" style="padding-top:3vh">
+    <div class="kicker">Fundamental valuation &middot; intrinsic value</div>
+    <h2 class="h-xl" style="font-size:5.4vw">The DCF model.</h2>
+    <p class="lead" style="margin-top:1vh; max-width:62vw; opacity:.78; font-size:1.5vw">
+      Forecast free cash flows (FCFF) over 5&ndash;10 years, discount at WACC (~10% for mature firms), then add a terminal value. Cannot be used for banks or financial intermediaries.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; margin-top:2.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:2vh">
+        <div class="stat-card">
+          <div class="stat-label">FCFF Formula (Eq. 6)</div>
+          <div class="step-title" style="font-size:1.3vw; margin-top:.4vh; font-family:var(--mono); font-weight:500; letter-spacing:.04em">FCFF = EBIT(1&minus;t) + D&amp;A &minus; CAPEX &minus; &Delta;NWC</div>
+          <div class="step-desc">EBIT (not EBITDA) is the starting point. Tax uses marginal rate, not actual. D&amp;A is non-cash so added back. CAPEX and working capital changes represent cash reinvested in the business.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Enterprise Value (Eq. 10)</div>
+          <div class="step-title" style="font-size:1.3vw; margin-top:.4vh; font-family:var(--mono); font-weight:500; letter-spacing:.04em">EV = &Sigma; FCFF<sub>t</sub>/(1+WACC)<sup>t</sup> + TV/(1+WACC)<sup>n</sup></div>
+          <div class="step-desc">TV typically 70&ndash;80% of EV. Price per share = (EV &minus; Net Debt &minus; Preferred &minus; NCI) / Fully diluted shares.</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:2vh">
+        <div class="stat-card">
+          <div class="stat-label">Terminal Value &mdash; Two Approaches</div>
+          <div class="step-title" style="font-size:1.3vw; margin-top:.4vh">Perpetuity Growth vs. Exit Multiple</div>
+          <div class="step-desc" style="line-height:1.65">
+            <strong>Perpetuity growth (Eq. 8):</strong> TV = FCFF<sub>t+1</sub> / (WACC &minus; g%). Use g% = 2&ndash;4% (long-term GDP growth). Example: $10M FCFF, 7% WACC, 3% growth = $257.5M.<br>
+            <strong>Exit multiple (Eq. 9):</strong> TV = EBITDA<sub>t</sub> &times; EV/EBITDA. Example: $20M EBITDA &times; 12&times; = $240M. Both methods should produce similar TV.
+          </div>
+        </div>
+        <div class="callout">
+          Net Working Capital = (Current Assets &minus; Cash) &minus; (Current Liabilities &minus; Short-term Debt). The change in NWC captures additional cash needed to support sales growth each year.
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 4 (Eq. 7)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; DCF model &amp; terminal value</div>
+    <div>FCFF &middot; WACC &middot; Perpetuity</div>
+  </div>
+</section>

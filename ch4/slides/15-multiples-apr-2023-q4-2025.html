@@ -1,0 +1,153 @@
+<!-- ============================================================
+     SLIDE 15 · Multiples Apr 2023→Q4 2025 (light · evolution)
+     ============================================================ -->
+<section class="slide light" data-screen-label="15 Multiples 2023 to 2025">
+  <div class="chrome">
+    <div>&sect;4.12 &middot; multiples reset</div>
+    <div>15 / 23</div>
+  </div>
+  <style>
+    @keyframes hf4m-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hf4m-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hf4m-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hf4m-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row { animation: hf4m-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(5) { animation-delay:.75s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(6) { animation-delay:.9s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-card { animation: hf4m-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:1.05s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-bar { animation: hf4m-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-rec { animation: hf4m-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-scrub-fill { animation: hf4m-scrub 9s linear infinite }
+    .hf4m-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hf4m-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
+    .hf4m-topbar .hf4m-rec { color:#c33b2a; letter-spacing:.3em }
+    .hf4m-topbar .hf4m-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hf4m-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:7fr 5fr; gap:1.6vw; align-items:start }
+    .hf4m-row { display:grid; grid-template-columns:auto auto auto auto auto; gap:.8vw; align-items:center; padding:.85vh 1vw; border-top:1px solid rgba(10,31,61,.08); font-family:var(--sans-zh) }
+    .hf4m-row.head { font-family:var(--mono); font-size:max(9px,.72vw); letter-spacing:.2em; text-transform:uppercase; opacity:.55; padding:.5vh 1vw; border-top:0 }
+    .hf4m-row.head > div:nth-child(2),.hf4m-row.head > div:nth-child(3),.hf4m-row.head > div:nth-child(4),.hf4m-row.head > div:nth-child(5) { text-align:right }
+    .hf4m-row .hf4m-firm { font-family:var(--serif-zh); font-weight:700; font-size:1.1vw; min-width:5vw }
+    .hf4m-row .hf4m-2023 { font-family:var(--serif-en); font-size:max(11px,.95vw); opacity:.55; font-feature-settings:"tnum"; text-align:right }
+    .hf4m-row .hf4m-2025 { font-family:var(--serif-en); font-weight:800; font-size:1.15vw; font-feature-settings:"tnum"; text-align:right }
+    .hf4m-row .hf4m-delta { font-family:var(--serif-en); font-weight:700; font-size:max(11px,.85vw); font-feature-settings:"tnum"; text-align:right }
+    .hf4m-row .hf4m-note { font-family:var(--sans-zh); font-size:max(10px,.72vw); opacity:.7; line-height:1.3; text-align:right }
+    .hf4m-up { color:#3b8a4f } .hf4m-down { color:#b54a3e } .hf4m-flat { opacity:.5 }
+    .hf4m-card { padding:1.2vh 1.2vw; border:1px solid rgba(10,31,61,.1); border-radius:6px; background:rgba(10,31,61,.02); display:flex; flex-direction:column; gap:.5vh; margin-bottom:.8vh }
+    .hf4m-card .hf4m-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.62 }
+    .hf4m-card .hf4m-stat { font-family:var(--serif-en); font-weight:800; font-size:1.8vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hf4m-card .hf4m-stat .hf4m-unit { font-family:var(--serif-zh); font-weight:500; font-size:.4em; opacity:.72; margin-left:.14em }
+    .hf4m-card .hf4m-desc { font-family:var(--sans-zh); font-size:max(10.5px,.78vw); line-height:1.4; opacity:.78 }
+    .hf4m-bar-wrap { padding:0 1.4vw 1.2vh }
+    .hf4m-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hf4m-bar { height:100%; background:linear-gradient(90deg, rgba(10,31,61,.55), rgba(10,31,61,.95)); border-radius:99px }
+    .hf4m-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hf4m-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hf4m-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hf4m-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.5), transparent) }
+    .hf4m-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hf4m-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hf4m-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;4.12 &middot; Refinitiv Apr 2023 → Bloomberg Q4 2025</div>
+    <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Two and a half years later: P/E NTM, then and now.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Tab. 4.11 (slide 11) is anchored to Refinitiv Apr 2023. By Q4 2025, every multiple has moved &mdash; PayPal compressed despite buybacks, Wise re-rated on profitability, Robinhood went from negative-EPS to peer leader. The lesson: relative valuation snapshots decay fast, especially in a rate-cutting + AI-rerating cycle.
+    </p>
+
+    <div class="hf4m-frame" style="margin-top:1.2vh">
+      <div class="hf4m-topbar">
+        <div><span class="hf4m-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH04-V03</div>
+        <div class="hf4m-tc">DATA AS OF · APR 2026</div>
+      </div>
+      <div class="hf4m-stage">
+        <div>
+          <div class="hf4m-row head">
+            <div>Firm</div><div>P/E NTM Apr&#39;23</div><div>P/E NTM Q4&#39;25</div><div>&Delta;</div><div>Note</div>
+          </div>
+          <div class="hf4m-row">
+            <div class="hf4m-firm">PayPal</div>
+            <div class="hf4m-2023">14.9&times;</div>
+            <div class="hf4m-2025">~12.5&times;</div>
+            <div class="hf4m-delta hf4m-down">-16%</div>
+            <div class="hf4m-note">Buybacks lifted EPS; growth flat</div>
+          </div>
+          <div class="hf4m-row">
+            <div class="hf4m-firm">Wise</div>
+            <div class="hf4m-2023">29.5&times;</div>
+            <div class="hf4m-2025">~22&times;</div>
+            <div class="hf4m-delta hf4m-down">-25%</div>
+            <div class="hf4m-note">Profit beat; FX margin held</div>
+          </div>
+          <div class="hf4m-row">
+            <div class="hf4m-firm">Square (Block)</div>
+            <div class="hf4m-2023">35&times;</div>
+            <div class="hf4m-2025">~25&times;</div>
+            <div class="hf4m-delta hf4m-down">-29%</div>
+            <div class="hf4m-note">Profitable; BTC drag still</div>
+          </div>
+          <div class="hf4m-row">
+            <div class="hf4m-firm">Robinhood</div>
+            <div class="hf4m-2023">n/m (neg.)</div>
+            <div class="hf4m-2025">~38&times;</div>
+            <div class="hf4m-delta hf4m-up">positive</div>
+            <div class="hf4m-note">Profitable since Q2 2024</div>
+          </div>
+          <div class="hf4m-row">
+            <div class="hf4m-firm">SoFi</div>
+            <div class="hf4m-2023">n/m (neg.)</div>
+            <div class="hf4m-2025">~28&times;</div>
+            <div class="hf4m-delta hf4m-up">positive</div>
+            <div class="hf4m-note">GAAP-positive FY24</div>
+          </div>
+          <div class="hf4m-row">
+            <div class="hf4m-firm">Paytm</div>
+            <div class="hf4m-2023">n/m (neg.)</div>
+            <div class="hf4m-2025">~45&times;</div>
+            <div class="hf4m-delta hf4m-up">positive</div>
+            <div class="hf4m-note">Recovered post-RBI restrictions</div>
+          </div>
+        </div>
+        <div>
+          <div class="hf4m-card">
+            <div class="hf4m-tag">Median fintech P/E NTM</div>
+            <div class="hf4m-stat">~24<span class="hf4m-unit">&times;</span></div>
+            <div class="hf4m-desc">Bloomberg consensus FY26 (Q4 2025) for the public-listed fintech basket — vs. ~14.9× median in Apr 2023. Profitable cohort, expanded valuation.</div>
+          </div>
+          <div class="hf4m-card">
+            <div class="hf4m-tag">10-yr U.S. Treasury yield</div>
+            <div class="hf4m-stat">~4.1<span class="hf4m-unit">%</span></div>
+            <div class="hf4m-desc">Down ~50bps from Apr 2023 (~4.6%). Fed cut 100bps from peak; risk-asset multiples re-rated up. Full source: U.S. Treasury daily yield curve.</div>
+          </div>
+          <div class="hf4m-card">
+            <div class="hf4m-tag">AI-fintech EV/Sales premium</div>
+            <div class="hf4m-stat">+38<span class="hf4m-unit">%</span></div>
+            <div class="hf4m-desc">CB Insights 2024–25 financings — applies to listed comparables when AI revenue share &gt;15%. Compresses to +12% if Rule of 40 missed.</div>
+          </div>
+        </div>
+      </div>
+      <div class="hf4m-bar-wrap">
+        <div class="hf4m-bar-track"><div class="hf4m-bar" style="--w:78%"></div></div>
+      </div>
+      <div class="hf4m-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hf4m-scrub-bar"><div class="hf4m-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hf4m-watermark">DATA HORIZON · 2024 → 2026</div>
+    </div>
+
+    <div class="meta-row hf4m-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources · <a href="https://www.bloomberg.com/markets/stocks" target="_blank" rel="noopener">Bloomberg Markets consensus FY26 (Q4 2025)</a></span><span>&middot;</span><span><a href="https://www.sec.gov/edgar/searchedgar/companysearch.html" target="_blank" rel="noopener">SEC EDGAR 10-Q filings 2025</a></span><span>&middot;</span><span><a href="https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics" target="_blank" rel="noopener">U.S. Treasury daily yield curve</a></span><span>&middot;</span><span><a href="https://www.cbinsights.com/research/" target="_blank" rel="noopener">CB Insights State of Fintech 2025</a></span><span>&middot;</span><span><a href="https://www.lseg.com/en/data-analytics" target="_blank" rel="noopener">LSEG (Refinitiv) Workspace Apr 2023 baseline</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 15 &middot; multiples Apr 2023 → Q4 2025</div>
+    <div>2025–2026</div>
+  </div>
+</section>

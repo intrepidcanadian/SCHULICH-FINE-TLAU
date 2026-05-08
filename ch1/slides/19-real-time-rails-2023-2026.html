@@ -1,0 +1,141 @@
+<!-- ============================================================
+     SLIDE 19 · Real-Time Rails 2023→2026 (dark · new)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="19 Real-Time Rails 2023-2026">
+  <div class="chrome">
+    <div>§3.7c · instant-payment rails</div>
+    <div>19 / 23</div>
+  </div>
+  <style>
+    @keyframes hff-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hff-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hff-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hff-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card { animation: hff-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row { animation: hff-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-bar { animation: hff-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-rec { animation: hff-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-scrub-fill { animation: hff-scrub 9s linear infinite }
+    .hff-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hff-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hff-rec { color:#ff7458; letter-spacing:.3em }
+    .hff-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hff-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hff-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hff-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(255,255,255,.28); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hff-card .hff-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hff-card .hff-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hff-card .hff-num .hff-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hff-card .hff-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hff-rows { display:flex; flex-direction:column }
+    .hff-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hff-row:first-child { border-top:0 }
+    .hff-row .hff-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hff-row .hff-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hff-row .hff-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hff-row .hff-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#5fc77f }
+    .hff-bar-wrap { padding:0 1.4vw 1vh }
+    .hff-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hff-bar { height:100%; background:linear-gradient(90deg, rgba(255,116,88,.55), rgba(255,255,255,.92)); border-radius:99px }
+    .hff-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hff-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hff-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hff-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hff-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hff-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hff-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">§3.7c · instant payments go mainstream</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">From batch to instant: real-time rails became table-stakes, 2023&rarr;2026.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 10 listed instant settlement among the ten technologies. Three years on, every major payment market has a domestic real-time rail at scale. FedNow went from 35 launch banks (Jul 2023) to 1,400+ participants (Sep 2025); Brazil&rsquo;s Pix processed 64B+ transactions in 2024; India&rsquo;s UPI clears 17B+ transactions per month. Bank rails are no longer the bottleneck &mdash; the question is what gets built on top.
+    </p>
+
+    <div class="hff-frame" style="margin-top:1.4vh">
+      <div class="hff-topbar">
+        <div><span class="hff-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V07</div>
+        <div class="hff-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hff-stage">
+        <div class="hff-cards">
+          <div class="hff-card">
+            <div class="hff-tag">FedNow participants &middot; Sep 2025</div>
+            <div class="hff-num">1,400<span class="hff-unit">+</span></div>
+            <div class="hff-desc">Federal Reserve FedNow service stats: from 35 launch banks (Jul 2023) to 1,400+ participating institutions across all 50 states by Sep 2025.</div>
+          </div>
+          <div class="hff-card">
+            <div class="hff-tag">TCH RTP volume &middot; 2024</div>
+            <div class="hff-num">$246<span class="hff-unit">B</span></div>
+            <div class="hff-desc">The Clearing House RTP Network: $246B cleared 2024 (+38% YoY), 343M+ transactions; $1M+ payments enabled after Feb 2025 limit lift.</div>
+          </div>
+          <div class="hff-card">
+            <div class="hff-tag">Brazil Pix &middot; 2024 volume</div>
+            <div class="hff-num">$5.4<span class="hff-unit">T</span></div>
+            <div class="hff-desc">Banco Central do Brasil: 64B+ Pix transactions in 2024, ~$5.4T value; 168M+ active users (~80% of adult population).</div>
+          </div>
+          <div class="hff-card">
+            <div class="hff-tag">India UPI &middot; monthly run-rate</div>
+            <div class="hff-num">17<span class="hff-unit">B</span></div>
+            <div class="hff-desc">NPCI (Apr 2025): 17.9B UPI transactions/month, ~$300B/month value. 2024 annual: ~$3T cleared, ~50% of global real-time payments by volume.</div>
+          </div>
+        </div>
+        <div class="hff-rows">
+          <div class="hff-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Rail</div><div>Status &middot; 2020</div><div>Status &middot; 2025</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hff-row">
+            <div class="hff-firm">FedNow (US)</div>
+            <div class="hff-2020">Did not exist</div>
+            <div class="hff-2025">1,400+ banks; settled at the Fed; instant; $1M limit (Feb 2025)</div>
+            <div class="hff-delta">Launched</div>
+          </div>
+          <div class="hff-row">
+            <div class="hff-firm">TCH RTP (US)</div>
+            <div class="hff-2020">~280 banks; ~$87B 2020 vol</div>
+            <div class="hff-2025">~750+ banks; $246B 2024 vol; $10M+ payments enabled (Feb 2025)</div>
+            <div class="hff-delta">+183%</div>
+          </div>
+          <div class="hff-row">
+            <div class="hff-firm">Pix (Brazil)</div>
+            <div class="hff-2020">Launched Nov 2020</div>
+            <div class="hff-2025">~80% of adults; 64B txns 2024; in-person + e-com default</div>
+            <div class="hff-delta">Default rail</div>
+          </div>
+          <div class="hff-row">
+            <div class="hff-firm">UPI (India)</div>
+            <div class="hff-2020">~2.2B txns/month (Dec 2020)</div>
+            <div class="hff-2025">17.9B txns/month (Apr 2025); ~$3T 2024 value; cross-border live</div>
+            <div class="hff-delta">+700%</div>
+          </div>
+        </div>
+      </div>
+      <div class="hff-bar-wrap">
+        <div class="hff-bar-track"><div class="hff-bar" style="--w:78%"></div></div>
+      </div>
+      <div class="hff-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hff-scrub-bar"><div class="hff-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hff-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hff-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://www.frbservices.org/financial-services/fednow" target="_blank" rel="noopener">Federal Reserve · FedNow Service</a></span><span>&middot;</span><span><a href="https://www.theclearinghouse.org/payment-systems/rtp" target="_blank" rel="noopener">The Clearing House · RTP Network</a></span><span>&middot;</span><span><a href="https://www.bcb.gov.br/en/financialstability/pixstatistics" target="_blank" rel="noopener">Banco Central do Brasil · Pix statistics</a></span><span>&middot;</span><span><a href="https://www.npci.org.in/what-we-do/upi/product-statistics" target="_blank" rel="noopener">NPCI · UPI product statistics</a></span><span>&middot;</span><span><a href="https://www.aciworldwide.com/real-time-payments-report" target="_blank" rel="noopener">ACI Worldwide · Prime Time for Real-Time 2025</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 19 &middot; Real-time rails 2023 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>

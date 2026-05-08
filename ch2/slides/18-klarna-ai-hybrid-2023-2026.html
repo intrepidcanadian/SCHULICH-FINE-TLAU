@@ -1,0 +1,142 @@
+<!-- ============================================================
+     SLIDE 18 · Klarna AI Hybrid 2023-2026 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="18 Klarna AI Hybrid 2023-2026">
+  <div class="chrome">
+    <div>&sect;2.10b &middot; AI labor economics</div>
+    <div>18 / 21</div>
+  </div>
+  <style>
+    @keyframes hfk-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfk-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfk-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfk-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-card { animation: hfk-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-row { animation: hfk-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-bar { animation: hfk-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-rec { animation: hfk-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="18 Klarna AI Hybrid 2023-2026"].active .hfk-scrub-fill { animation: hfk-scrub 9s linear infinite }
+    .hfk-frame { border:1px solid rgba(var(--ink-rgb),.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(var(--ink-rgb),.04), rgba(var(--ink-rgb),.01)); position:relative }
+    .hfk-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(var(--ink-rgb),.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfk-rec { color:#d24a4a; letter-spacing:.3em }
+    .hfk-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfk-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfk-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfk-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(210,74,74,.55); background:rgba(var(--ink-rgb),.03); border-radius:0 4px 4px 0 }
+    .hfk-card .hfk-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfk-card .hfk-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfk-card .hfk-num .hfk-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfk-card .hfk-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfk-rows { display:flex; flex-direction:column }
+    .hfk-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(var(--ink-rgb),.08); font-family:var(--sans-zh) }
+    .hfk-row:first-child { border-top:0 }
+    .hfk-row .hfk-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfk-row .hfk-y0 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfk-row .hfk-y1 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfk-row .hfk-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#1f7a3a }
+    .hfk-row .hfk-delta.warn { color:#d24a4a }
+    .hfk-bar-wrap { padding:0 1.4vw 1vh }
+    .hfk-bar-track { height:3px; background:rgba(var(--ink-rgb),.1); border-radius:99px; overflow:hidden }
+    .hfk-bar { height:100%; background:linear-gradient(90deg, rgba(210,74,74,.55), rgba(var(--ink-rgb),.92)); border-radius:99px }
+    .hfk-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(var(--ink-rgb),.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfk-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfk-scrub-bar { flex:1; height:2px; background:rgba(var(--ink-rgb),.14); position:relative; overflow:hidden }
+    .hfk-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(var(--ink-rgb),.55), transparent) }
+    .hfk-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfk-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfk-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;2.10b &middot; AI agents hit the quality wall</div>
+    <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Klarna&rsquo;s round trip: 700-FTE AI lift, then a hybrid retreat (2023-2026).</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 10 framed AI agents as the next monetization layer; the Klarna case is the cleanest economic test in fintech. In Feb 2024 Klarna&rsquo;s OpenAI-built assistant handled 2.3M chats in one month &mdash; equivalent to 700 FTEs. Cost-per-transaction fell from $0.32 (Q1 2023) to $0.19 (Q1 2025). But by mid-2025 the CEO admitted full replacement had &ldquo;gone too far&rdquo;: customer satisfaction degraded on edge cases, escalations, and emotion. Klarna re-hired humans through 2025-26 and now runs a hybrid model. The unit economics are real; the quality ceiling is also real.
+    </p>
+
+    <div class="hfk-frame" style="margin-top:1.4vh">
+      <div class="hfk-topbar">
+        <div><span class="hfk-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V07</div>
+        <div class="hfk-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfk-stage">
+        <div class="hfk-cards">
+          <div class="hfk-card">
+            <div class="hfk-tag">Cost-per-transaction &middot; Q1 2023 &rarr; Q1 2025</div>
+            <div class="hfk-num">$0.32&rarr;$0.19</div>
+            <div class="hfk-desc">Klarna disclosed a 40% reduction over two years, attributed to AI-led service automation. Total CS cost fell faster than headcount because AI absorbed peak load.</div>
+          </div>
+          <div class="hfk-card">
+            <div class="hfk-tag">FTE-equivalent work absorbed</div>
+            <div class="hfk-num">~700<span class="hfk-unit"> FTE</span></div>
+            <div class="hfk-desc">Feb 2024 Klarna press release: AI assistant handled 2.3M conversations (~2/3 of all CS) in its first month, matching the workload of 700 full-time agents.</div>
+          </div>
+          <div class="hfk-card">
+            <div class="hfk-tag">Workforce reduction &middot; 2022-2025</div>
+            <div class="hfk-num">~40<span class="hfk-unit">%</span></div>
+            <div class="hfk-desc">May 2025: CEO Sebastian Siemiatkowski says natural attrition + automation shrank the company from ~5,500 to ~3,400 staff. AI is &ldquo;a major contributor.&rdquo;</div>
+          </div>
+          <div class="hfk-card">
+            <div class="hfk-tag">Strategy reversal &middot; mid-2025</div>
+            <div class="hfk-num">Hybrid</div>
+            <div class="hfk-desc">May 2025 (Bloomberg/CNBC): Klarna re-hires human agents. Quality degraded on complex / emotional cases; AI now handles triage, humans take escalations.</div>
+          </div>
+        </div>
+        <div class="hfk-rows">
+          <div class="hfk-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Lens</div><div>Phase 1 &middot; 2023-2024</div><div>Phase 2 &middot; 2025-2026</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfk-row">
+            <div class="hfk-firm">Stance</div>
+            <div class="hfk-y0">&ldquo;AI replaces customer service&rdquo;</div>
+            <div class="hfk-y1">&ldquo;AI for triage, humans for nuance&rdquo;</div>
+            <div class="hfk-delta warn">Re-thought</div>
+          </div>
+          <div class="hfk-row">
+            <div class="hfk-firm">Volume mix</div>
+            <div class="hfk-y0">~2/3 of chats handled by AI in month 1</div>
+            <div class="hfk-y1">Still ~2/3 AI on volume; humans now own the long tail (~1/3) by design</div>
+            <div class="hfk-delta">Stable</div>
+          </div>
+          <div class="hfk-row">
+            <div class="hfk-firm">Quality lens</div>
+            <div class="hfk-y0">Resolution time -82%; reissues -25% (Klarna)</div>
+            <div class="hfk-y1">CSAT degraded on emotional / multi-step cases &rarr; auto-escalation when confidence drops or sentiment turns negative</div>
+            <div class="hfk-delta warn">Quality first</div>
+          </div>
+          <div class="hfk-row">
+            <div class="hfk-firm">Headcount</div>
+            <div class="hfk-y0">Hiring freeze (2023); ~5,500 staff peak</div>
+            <div class="hfk-y1">~3,400 staff (May 2025); selectively rehiring CS specialists into 2026</div>
+            <div class="hfk-delta">Re-hiring</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfk-bar-wrap">
+        <div class="hfk-bar-track"><div class="hfk-bar" style="--w:74%"></div></div>
+      </div>
+      <div class="hfk-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfk-scrub-bar"><div class="hfk-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfk-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfk-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/" target="_blank" rel="noopener">Klarna press &middot; AI assistant 1-month results (Feb 2024)</a></span><span>&middot;</span><span><a href="https://openai.com/index/klarna/" target="_blank" rel="noopener">OpenAI &middot; Klarna case study</a></span><span>&middot;</span><span><a href="https://www.cnbc.com/2025/05/14/klarna-ceo-says-ai-helped-company-shrink-workforce-by-40percent.html" target="_blank" rel="noopener">CNBC &middot; Klarna -40% workforce (May 2025)</a></span><span>&middot;</span><span><a href="https://www.bloomberg.com/news/articles/2025-05-08/klarna-turns-from-ai-to-real-person-customer-service" target="_blank" rel="noopener">Bloomberg &middot; Klarna returns to human CS (May 2025)</a></span><span>&middot;</span><span><a href="https://www.customerexperiencedive.com/news/klarna-ai-slash-customer-service-costs/748647/" target="_blank" rel="noopener">CX Dive &middot; CS cost-per-txn $0.32&rarr;$0.19</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 18 &middot; Klarna AI hybrid 2023 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>

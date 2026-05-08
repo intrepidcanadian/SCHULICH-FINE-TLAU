@@ -1,0 +1,97 @@
+<!-- ============================================================
+     SLIDE 13 · 2% Puzzle 2015→2025 (light · evolution)
+     ============================================================ -->
+<section class="slide light" data-screen-label="13 2% Puzzle 2015 to 2025">
+  <div class="chrome">
+    <div>&sect;2.11 &middot; the 2% puzzle revisited</div>
+    <div>13 / 21</div>
+  </div>
+  <style>
+    @keyframes hf2p-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hf2p-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hf2p-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hf2p-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="13 2% Puzzle 2015 to 2025"].active .hf2p-card { animation: hf2p-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="13 2% Puzzle 2015 to 2025"].active .hf2p-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="13 2% Puzzle 2015 to 2025"].active .hf2p-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="13 2% Puzzle 2015 to 2025"].active .hf2p-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="13 2% Puzzle 2015 to 2025"].active .hf2p-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="13 2% Puzzle 2015 to 2025"].active .hf2p-bar { animation: hf2p-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="13 2% Puzzle 2015 to 2025"].active .hf2p-rec { animation: hf2p-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="13 2% Puzzle 2015 to 2025"].active .hf2p-scrub-fill { animation: hf2p-scrub 9s linear infinite }
+    .hf2p-frame { border:1px solid rgba(0,0,0,.14); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(0,0,0,.025), rgba(0,0,0,.005)); position:relative }
+    .hf2p-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(0,0,0,.08); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
+    .hf2p-rec { color:#c0473b; letter-spacing:.3em }
+    .hf2p-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hf2p-stage { padding:2vh 1.6vw; display:grid; grid-template-columns:repeat(4,1fr); gap:1.2vw }
+    .hf2p-card { display:flex; flex-direction:column; gap:.6vh; padding:1vh 1vw; border-left:2px solid rgba(0,0,0,.16) }
+    .hf2p-card .hf2p-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.6 }
+    .hf2p-card .hf2p-num { font-family:var(--serif-en); font-weight:800; font-size:2.6vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hf2p-card .hf2p-num .hf2p-unit { font-family:var(--serif-zh); font-weight:500; font-size:.4em; opacity:.72; margin-left:.14em }
+    .hf2p-card .hf2p-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.4; opacity:.72 }
+    .hf2p-bar-wrap { padding:0 1.6vw 1.4vh }
+    .hf2p-bar-track { height:3px; background:rgba(0,0,0,.08); border-radius:99px; overflow:hidden }
+    .hf2p-bar { height:100%; background:linear-gradient(90deg, rgba(0,0,0,.4), rgba(0,0,0,.85)); border-radius:99px }
+    .hf2p-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(0,0,0,.08); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hf2p-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hf2p-scrub-bar { flex:1; height:2px; background:rgba(0,0,0,.1); position:relative; overflow:hidden }
+    .hf2p-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(0,0,0,.6), transparent) }
+    .hf2p-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hf2p-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hf2p-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;2.11 &middot; ten years after Philippon</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Has fintech finally cracked the 2% puzzle?</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 04 cited Philippon's 2015 finding: ~2% intermediation cost, unchanged for 130 years. New BIS, ECB, and FDIC analyses (2024&ndash;25) show <em>distributional</em> compression in some segments &mdash; remittance, FX, retail brokerage &mdash; but the aggregate cost still hovers near 1.6&ndash;1.9% as compute savings get captured by intermediaries, not consumers.
+    </p>
+
+    <div class="hf2p-frame" style="margin-top:1.4vh">
+      <div class="hf2p-topbar">
+        <div><span class="hf2p-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH02-V03</div>
+        <div class="hf2p-tc">DATA AS OF · APR 2026</div>
+      </div>
+      <div class="hf2p-stage">
+        <div class="hf2p-card">
+          <div class="hf2p-tag">U.S. unit cost (Philippon update)</div>
+          <div class="hf2p-num">~1.7<span class="hf2p-unit">%</span></div>
+          <div class="hf2p-desc">2024 estimate (NYU Stern updated series). Down marginally from the 2015 ~2% — fintech competition compressed retail brokerage and FX, but custody, asset mgmt, and core payments held.</div>
+        </div>
+        <div class="hf2p-card">
+          <div class="hf2p-tag">Avg global remittance fee</div>
+          <div class="hf2p-num">6.4<span class="hf2p-unit">%</span></div>
+          <div class="hf2p-desc">Q4 2024 World Bank Remittance Prices Worldwide — down from 7.5% in 2015. Mobile-money corridors (Wise, Remitly) average 3.4%; SDG target of 3% still unmet.</div>
+        </div>
+        <div class="hf2p-card">
+          <div class="hf2p-tag">EU retail FX spread (avg)</div>
+          <div class="hf2p-num">0.6<span class="hf2p-unit">%</span></div>
+          <div class="hf2p-desc">Wise &amp; Revolut median 2024 spread — 80% lower than the ~3% bank wire spread Philippon documented. Fintech-driven compression is real, just narrow.</div>
+        </div>
+        <div class="hf2p-card">
+          <div class="hf2p-tag">Stablecoin transfer cost (median)</div>
+          <div class="hf2p-num">$0.04</div>
+          <div class="hf2p-desc">Layer-2 USDC settlement (2025, Base/Arbitrum). On-chain marginal cost approaches zero — the wedge accrues to wallets &amp; ramps, not yet to end-users.</div>
+        </div>
+      </div>
+      <div class="hf2p-bar-wrap">
+        <div class="hf2p-bar-track"><div class="hf2p-bar" style="--w:71%"></div></div>
+      </div>
+      <div class="hf2p-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hf2p-scrub-bar"><div class="hf2p-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hf2p-watermark">DATA HORIZON · 2024 → 2026</div>
+    </div>
+
+    <div class="meta-row hf2p-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
+      <span>Sources · <a href="https://pages.stern.nyu.edu/~tphilipp/" target="_blank" rel="noopener">Philippon NYU Stern updated series</a></span><span>&middot;</span><span><a href="https://remittanceprices.worldbank.org/" target="_blank" rel="noopener">World Bank Remittance Prices Worldwide Q4 2024</a></span><span>&middot;</span><span><a href="https://www.bis.org/publ/work/index.htm" target="_blank" rel="noopener">BIS Working Papers 2024</a></span><span>&middot;</span><span><a href="https://www.ecb.europa.eu/pub/economic-research/working-papers/html/index.en.html" target="_blank" rel="noopener">ECB Working Paper Series</a></span><span>&middot;</span><span><a href="https://www.coinbase.com/onchain" target="_blank" rel="noopener">Coinbase L2 settlement data 2025</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 13 &middot; 2% puzzle 2015 → 2025</div>
+    <div>2025–2026</div>
+  </div>
+</section>

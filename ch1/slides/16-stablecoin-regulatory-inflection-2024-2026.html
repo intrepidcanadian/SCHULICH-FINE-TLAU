@@ -1,0 +1,128 @@
+<!-- ============================================================
+     SLIDE 16 · Stablecoin Regulatory Inflection 2024-2026 (dark · evolution)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="16 Stablecoin Rules 2024-26">
+  <div class="chrome">
+    <div>§3.6 · regulatory inflection</div>
+    <div>16 / 23</div>
+  </div>
+  <style>
+    @keyframes hf1s-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hf1s-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hf1s-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hf1s-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card { animation: hf1s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-row { animation: hf1s-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-bar { animation: hf1s-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-rec { animation: hf1s-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-scrub-fill { animation: hf1s-scrub 9s linear infinite }
+    .hf1s-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hf1s-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hf1s-rec { color:#ff7458; letter-spacing:.3em }
+    .hf1s-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hf1s-stage { padding:1.6vh 1.4vw; display:grid; grid-template-columns:7fr 5fr; gap:1.4vw; align-items:start }
+    .hf1s-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hf1s-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(255,255,255,.28); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hf1s-card .hf1s-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hf1s-card .hf1s-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hf1s-card .hf1s-num .hf1s-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hf1s-card .hf1s-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hf1s-rows { display:flex; flex-direction:column }
+    .hf1s-row { display:grid; grid-template-columns:auto 1fr auto; gap:.8vw; align-items:start; padding:.9vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hf1s-row:first-child { border-top:0 }
+    .hf1s-row .hf1s-date { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.18em; text-transform:uppercase; opacity:.65; min-width:5.5vw }
+    .hf1s-row .hf1s-name { font-family:var(--serif-zh); font-weight:700; font-size:1vw; line-height:1.2 }
+    .hf1s-row .hf1s-name span { display:block; font-family:var(--sans-zh); font-weight:400; font-size:.78vw; opacity:.7; margin-top:.3vh }
+    .hf1s-row .hf1s-flag { font-family:var(--mono); font-size:max(10px,.72vw); letter-spacing:.18em; opacity:.55 }
+    .hf1s-bar-wrap { padding:0 1.4vw 1vh }
+    .hf1s-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hf1s-bar { height:100%; background:linear-gradient(90deg, rgba(255,116,88,.55), rgba(255,255,255,.92)); border-radius:99px }
+    .hf1s-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hf1s-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hf1s-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hf1s-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hf1s-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hf1s-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hf1s-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">§3.6 · the rule-book arrives</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Stablecoins moved from grey zone to regulated infrastructure.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 08 listed cryptocurrencies and stablecoins as a category &mdash; in 2020 there was no jurisdictional rule-book. Between Dec 2024 and Aug 2025, three of the world&rsquo;s largest financial centres turned stablecoins into licensed activity. Total stablecoin float crossed $320B by Apr 2026; USDT + USDC are >90% of supply, but the issuer perimeter has narrowed to banks &amp; chartered nonbanks.
+    </p>
+
+    <div class="hf1s-frame" style="margin-top:1.4vh">
+      <div class="hf1s-topbar">
+        <div><span class="hf1s-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V04</div>
+        <div class="hf1s-tc">DATA AS OF · APR 2026</div>
+      </div>
+      <div class="hf1s-stage">
+        <div class="hf1s-cards">
+          <div class="hf1s-card">
+            <div class="hf1s-tag">Total stablecoin float · Apr 2026</div>
+            <div class="hf1s-num">$320<span class="hf1s-unit">B</span></div>
+            <div class="hf1s-desc">All-time high (DefiLlama, Apr 2026). USDT $185B (58%), USDC $78B (24%). Up ~110% since the 2023 trough.</div>
+          </div>
+          <div class="hf1s-card">
+            <div class="hf1s-tag">Q1 2026 trading volume share</div>
+            <div class="hf1s-num">75<span class="hf1s-unit">%</span></div>
+            <div class="hf1s-desc">Stablecoin share of total crypto trading volume in Q1 2026 — the highest on record. The asset class is functionally a settlement rail, not a speculative wrapper.</div>
+          </div>
+          <div class="hf1s-card">
+            <div class="hf1s-tag">USDC growth since late 2023</div>
+            <div class="hf1s-num">+220<span class="hf1s-unit">%</span></div>
+            <div class="hf1s-desc">Driven by Visa/Stripe B2B settlement integrations and corporate treasury usage. Closing the gap with USDT faster than expected.</div>
+          </div>
+          <div class="hf1s-card">
+            <div class="hf1s-tag">GENIUS Act issuer perimeter</div>
+            <div class="hf1s-num">100<span class="hf1s-unit">%</span></div>
+            <div class="hf1s-desc">Reserve backing required (US Treasuries / cash), monthly public attestation. Limits issuance to insured banks &amp; Fed-approved nonbanks.</div>
+          </div>
+        </div>
+        <div class="hf1s-rows">
+          <div class="hf1s-row">
+            <div class="hf1s-date">Dec 2024</div>
+            <div class="hf1s-name">EU MiCA fully in force<span>Asset-referenced &amp; e-money tokens · MiCAR Title III/IV applied</span></div>
+            <div class="hf1s-flag">EU</div>
+          </div>
+          <div class="hf1s-row">
+            <div class="hf1s-date">Jul 18 2025</div>
+            <div class="hf1s-name">GENIUS Act signed<span>Senate 68–30 · House 308–122 · first US crypto law</span></div>
+            <div class="hf1s-flag">US</div>
+          </div>
+          <div class="hf1s-row">
+            <div class="hf1s-date">Aug 1 2025</div>
+            <div class="hf1s-name">HK Stablecoins Ordinance live<span>HKMA license required · HSBC + Anchorpoint (StanChart/HKT/Animoca) granted Q1 2026</span></div>
+            <div class="hf1s-flag">HK</div>
+          </div>
+        </div>
+      </div>
+      <div class="hf1s-bar-wrap">
+        <div class="hf1s-bar-track"><div class="hf1s-bar" style="--w:78%"></div></div>
+      </div>
+      <div class="hf1s-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hf1s-scrub-bar"><div class="hf1s-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hf1s-watermark">DATA HORIZON · 2024 → 2026</div>
+    </div>
+
+    <div class="meta-row hf1s-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
+      <span>Sources · <a href="https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-signs-genius-act-into-law/" target="_blank" rel="noopener">White House GENIUS Act fact sheet (Jul 2025)</a></span><span>·</span><span><a href="https://www.hkma.gov.hk/eng/key-functions/international-financial-centre/stablecoin-issuers/" target="_blank" rel="noopener">HKMA Stablecoin Issuer regime</a></span><span>·</span><span><a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica" target="_blank" rel="noopener">ESMA MiCA</a></span><span>·</span><span><a href="https://defillama.com/stablecoins" target="_blank" rel="noopener">DefiLlama Stablecoins (Apr 2026)</a></span><span>·</span><span><a href="https://info.arkm.com/research/how-stablecoins-reached-a-300-billion-market-cap-in-2025" target="_blank" rel="noopener">Arkham Research 2025</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 16 · stablecoin rules 2024 → 2026</div>
+    <div>2025–2026</div>
+  </div>
+</section>

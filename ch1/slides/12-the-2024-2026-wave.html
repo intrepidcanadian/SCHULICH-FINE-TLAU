@@ -1,0 +1,64 @@
+<!-- ============================================================
+     SLIDE 12 · The 2024-2026 Wave (hyperframe · animated data card)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="12 The 2024-2026 Wave">
+  <div class="chrome">
+    <div>§2.5 · Fintech in 2024–2026</div>
+    <div>12 / 23</div>
+  </div>
+  <style>
+    @keyframes hf-fade-up { from {opacity:0; transform:translateY(14px)} to {opacity:1; transform:translateY(0)} }
+    @keyframes hf-bar-fill { from {width:0} to {width:var(--w)} }
+    @keyframes hf-pulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+    .slide[data-screen-label="12 The 2024-2026 Wave"].active .hf-card { animation: hf-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="12 The 2024-2026 Wave"].active .hf-card:nth-child(1) { animation-delay: .15s }
+    .slide[data-screen-label="12 The 2024-2026 Wave"].active .hf-card:nth-child(2) { animation-delay: .35s }
+    .slide[data-screen-label="12 The 2024-2026 Wave"].active .hf-card:nth-child(3) { animation-delay: .55s }
+    .slide[data-screen-label="12 The 2024-2026 Wave"].active .hf-bar { animation: hf-bar-fill 1.4s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: 1s; width:0 }
+    .slide[data-screen-label="12 The 2024-2026 Wave"].active .hf-live { animation: hf-pulse 1.6s ease-in-out infinite }
+    .hf-card { padding:2vh 1.6vw; border:1px solid rgba(255,255,255,.14); border-radius:6px; background:rgba(255,255,255,.03); display:flex; flex-direction:column; gap:1vh; min-height:0 }
+    .hf-card .hf-tag { font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.6 }
+    .hf-card .hf-num { font-family:var(--serif-en); font-weight:800; font-size:3.6vw; line-height:.95; letter-spacing:-.025em; font-feature-settings:"tnum" }
+    .hf-card .hf-num .hf-unit { font-family:var(--serif-zh); font-weight:500; font-size:.36em; opacity:.72; margin-left:.14em }
+    .hf-card .hf-desc { font-family:var(--sans-zh); font-size:max(11px,.82vw); line-height:1.45; opacity:.78 }
+    .hf-bar-track { height:4px; background:rgba(255,255,255,.08); border-radius:99px; overflow:hidden; margin-top:.4vh }
+    .hf-bar { height:100%; background:linear-gradient(90deg, rgba(255,255,255,.5), rgba(255,255,255,.95)); border-radius:99px }
+    .hf-live-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#5fc77f; margin-right:.6em; vertical-align:middle }
+  </style>
+  <div class="frame" style="padding-top:2.6vh">
+    <div class="kicker"><span class="hf-live"><span class="hf-live-dot"></span>fourth-wave indicators</span></div>
+    <h2 class="h-xl" style="font-size:4.4vw; margin-top:.6vh">The 2024–2026 wave: AI, tokenization, real-time rails.</h2>
+    <p class="lead" style="margin-top:.8vh; max-width:64vw; opacity:.78; font-size:1.2vw">
+      Fintech 3.0 is being eclipsed by a fourth wave defined by generative AI in the back office, on-chain settlement of regulated assets, and the universal arrival of instant payments.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.6vw; margin-top:1.8vh">
+      <div class="hf-card">
+        <div class="hf-tag">01 · GenAI in Banking</div>
+        <div class="hf-num">$85<span class="hf-unit">B</span></div>
+        <div class="hf-desc">Forecast global bank GenAI spend by 2025 (IDC). JPMorgan deployed LLM Suite to 60K employees in 2024; Morgan Stanley rolled out GPT-4 advisor copilot to all FAs.</div>
+        <div class="hf-bar-track"><div class="hf-bar" style="--w:78%"></div></div>
+      </div>
+      <div class="hf-card">
+        <div class="hf-tag">02 · Tokenization</div>
+        <div class="hf-num">$2.4<span class="hf-unit">B</span></div>
+        <div class="hf-desc">BlackRock BUIDL tokenized treasury fund AUM (Q1 2025), launched March 2024 on Ethereum. Larry Fink: "the next generation for markets is tokenization of every asset."</div>
+        <div class="hf-bar-track"><div class="hf-bar" style="--w:62%"></div></div>
+      </div>
+      <div class="hf-card">
+        <div class="hf-tag">03 · Real-Time Rails</div>
+        <div class="hf-num">1<span class="hf-unit">B+ txns</span></div>
+        <div class="hf-desc">FedNow cumulative transactions by 2025 (Federal Reserve); 1,400+ banks live. UK FPS, India UPI ($25T/yr), Brazil Pix all crossed local card volumes.</div>
+        <div class="hf-bar-track"><div class="hf-bar" style="--w:88%"></div></div>
+      </div>
+    </div>
+
+    <div class="meta-row" style="margin-top:2.4vh; font-size:max(11px,.82vw)">
+      <span>Sources · IDC 2024</span><span>·</span><span>BlackRock BUIDL on-chain (rwa.xyz)</span><span>·</span><span>Federal Reserve FedNow Service</span><span>·</span><span>JPMorgan 2024 annual report</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 12 · The fourth wave · 2024–2026</div>
+    <div>AI · Tokenization · Real-Time</div>
+  </div>
+</section>

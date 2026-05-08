@@ -1,0 +1,141 @@
+<!-- ============================================================
+     SLIDE 20 · Spot Crypto ETFs 2024-2026 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="20 Spot Crypto ETFs 2024-2026">
+  <div class="chrome">
+    <div>§3.7d · institutional crypto wrappers</div>
+    <div>20 / 23</div>
+  </div>
+  <style>
+    @keyframes hfetf-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfetf-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfetf-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfetf-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card { animation: hfetf-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row { animation: hfetf-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-bar { animation: hfetf-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-rec { animation: hfetf-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-scrub-fill { animation: hfetf-scrub 9s linear infinite }
+    .hfetf-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hfetf-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfetf-rec { color:#f4b13a; letter-spacing:.3em }
+    .hfetf-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfetf-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfetf-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfetf-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(244,177,58,.55); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hfetf-card .hfetf-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfetf-card .hfetf-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfetf-card .hfetf-num .hfetf-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfetf-card .hfetf-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfetf-rows { display:flex; flex-direction:column }
+    .hfetf-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hfetf-row:first-child { border-top:0 }
+    .hfetf-row .hfetf-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfetf-row .hfetf-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfetf-row .hfetf-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfetf-row .hfetf-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#f4b13a }
+    .hfetf-bar-wrap { padding:0 1.4vw 1vh }
+    .hfetf-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hfetf-bar { height:100%; background:linear-gradient(90deg, rgba(244,177,58,.65), rgba(255,255,255,.92)); border-radius:99px }
+    .hfetf-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfetf-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfetf-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hfetf-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hfetf-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfetf-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfetf-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">§3.7d · the bitcoin wrapper goes mainstream</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Spot crypto ETFs: from approval (Jan 2024) to $200B AUM (May 2026).</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 10 listed digital assets among the ten technologies. Two years after SEC approval (Jan 10, 2024), the spot bitcoin ETF complex crossed ~$200B AUM &mdash; faster than any prior ETF category. BlackRock&rsquo;s IBIT alone holds ~810,000 BTC (~$66B). The wrapper, not the token, became the institutional access point: 401(k)s, pensions, and RIAs now buy bitcoin without custody. The Ether spot ETF (Jul 2024) followed; both reshape what &ldquo;crypto in the portfolio&rdquo; means for advisors.
+    </p>
+
+    <div class="hfetf-frame" style="margin-top:1.4vh">
+      <div class="hfetf-topbar">
+        <div><span class="hfetf-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH01-V08</div>
+        <div class="hfetf-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfetf-stage">
+        <div class="hfetf-cards">
+          <div class="hfetf-card">
+            <div class="hfetf-tag">Spot BTC ETF complex AUM &middot; May 2026</div>
+            <div class="hfetf-num">~$200<span class="hfetf-unit">B</span></div>
+            <div class="hfetf-desc">All 11 US spot bitcoin ETFs combined. Cumulative net inflows since Jan 2024 launch &gt;$60B; April 2026 finished +$1.97B, the strongest month of the year.</div>
+          </div>
+          <div class="hfetf-card">
+            <div class="hfetf-tag">BlackRock IBIT &middot; May 2026</div>
+            <div class="hfetf-num">$63.5<span class="hfetf-unit">B</span></div>
+            <div class="hfetf-desc">~810,000 BTC held; the fastest ETF in history to reach $50B AUM (~7 months). Single-fund dominance: ~32% share of the spot BTC ETF complex.</div>
+          </div>
+          <div class="hfetf-card">
+            <div class="hfetf-tag">Spot ETH ETF &middot; launch</div>
+            <div class="hfetf-num">Jul 23<span class="hfetf-unit"> 2024</span></div>
+            <div class="hfetf-desc">9 issuers approved; staking rewards excluded at launch. By 2026 the ETH complex sits ~$15B AUM &mdash; a smaller, more institutional pool than BTC.</div>
+          </div>
+          <div class="hfetf-card">
+            <div class="hfetf-tag">9-day inflow streak &middot; May 2026</div>
+            <div class="hfetf-num">+$2.7<span class="hfetf-unit">B</span></div>
+            <div class="hfetf-desc">Nine consecutive days of net inflows into spot BTC ETFs to early May; $629M day-1 (May 1, 2026). IBIT +$335M and FBTC +$185M led the May 4 print.</div>
+          </div>
+        </div>
+        <div class="hfetf-rows">
+          <div class="hfetf-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Wrapper</div><div>Status &middot; 2023</div><div>Status &middot; 2026</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfetf-row">
+            <div class="hfetf-firm">Spot BTC ETF (US)</div>
+            <div class="hfetf-2020">Repeatedly denied by SEC since 2013</div>
+            <div class="hfetf-2025">11 funds; ~$200B AUM; ~$60B+ cumulative net inflows since Jan 2024</div>
+            <div class="hfetf-delta">Approved</div>
+          </div>
+          <div class="hfetf-row">
+            <div class="hfetf-firm">Spot ETH ETF (US)</div>
+            <div class="hfetf-2020">Did not exist</div>
+            <div class="hfetf-2025">9 funds; ~$15B AUM; staking still excluded at the wrapper level</div>
+            <div class="hfetf-delta">Launched</div>
+          </div>
+          <div class="hfetf-row">
+            <div class="hfetf-firm">Custody / TER</div>
+            <div class="hfetf-2020">Direct custody only; ~1.5%+ trust premiums (GBTC)</div>
+            <div class="hfetf-2025">Coinbase Custody for most issuers; TERs 0.19&ndash;0.25% (IBIT, FBTC); fee war drove costs down</div>
+            <div class="hfetf-delta">-90%</div>
+          </div>
+          <div class="hfetf-row">
+            <div class="hfetf-firm">Distribution</div>
+            <div class="hfetf-2020">Retail-only via exchanges</div>
+            <div class="hfetf-2025">Major wirehouses (Morgan Stanley, Wells Fargo) cleared advisors to recommend; entering 401(k) menus 2025-26</div>
+            <div class="hfetf-delta">Wirehouse</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfetf-bar-wrap">
+        <div class="hfetf-bar-track"><div class="hfetf-bar" style="--w:82%"></div></div>
+      </div>
+      <div class="hfetf-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfetf-scrub-bar"><div class="hfetf-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfetf-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfetf-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://www.theblock.co/data/etfs/bitcoin-etf/spot-bitcoin-etf-assets" target="_blank" rel="noopener">The Block &middot; Spot BTC ETF Assets</a></span><span>&middot;</span><span><a href="https://www.coinglass.com/etf/bitcoin" target="_blank" rel="noopener">CoinGlass &middot; BTC ETF flows</a></span><span>&middot;</span><span><a href="https://www.ishares.com/us/products/333011/ishares-bitcoin-trust" target="_blank" rel="noopener">iShares &middot; IBIT product page</a></span><span>&middot;</span><span><a href="https://www.sec.gov/news/statement/gensler-statement-spot-bitcoin-011023" target="_blank" rel="noopener">SEC &middot; Spot BTC ETF approval (Jan 10, 2024)</a></span><span>&middot;</span><span><a href="https://www.sec.gov/files/rules/sro/nysearca/2024/34-100224.pdf" target="_blank" rel="noopener">SEC &middot; Spot ETH ETF rule order (May 23, 2024)</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 20 &middot; Spot crypto ETFs 2024 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>
