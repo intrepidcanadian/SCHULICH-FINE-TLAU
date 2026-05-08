@@ -386,6 +386,21 @@
   }
   /* Hide misleading recording-dot blink in the topbar; keep dot visible but static */
   [class$="-rec"]{ animation: none !important; opacity: .85 !important; }
+  /* Hide watermark — redundant with box label and bottom time axis */
+  [class$="-watermark"]{ display: none !important; }
+  /* Compact the data-view box so dense card+row layouts fit in the slide frame */
+  [class$="-frame"][class*="hf"] [class$="-stage"]{ padding: 1vh 1.2vw !important; gap: 1.1vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-card"]{ padding: .8vh .9vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-card"] [class$="-num"]{ font-size: 1.6vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-card"] [class$="-desc"]{ font-size: max(10px,.72vw) !important; line-height: 1.36 !important; }
+  [class$="-frame"][class*="hf"] [class$="-row"]{ padding: .5vh 1vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-row"] [class$="-firm"]{ font-size: .85vw !important; line-height: 1.2 !important; }
+  [class$="-frame"][class*="hf"] [class$="-row"] [class$="-pre"],
+  [class$="-frame"][class*="hf"] [class$="-row"] [class$="-post"]{ font-size: .72vw !important; line-height: 1.3 !important; }
+  /* On any slide whose body contains a data-view box, dial down headline + lead so the box gets vertical room */
+  .slide:has([class$="-frame"][class*="hf"]) h2.h-xl{ font-size: 3vw !important; line-height: 1.05 !important; margin-top: .2vh !important; }
+  .slide:has([class$="-frame"][class*="hf"]) p.lead{ font-size: .92vw !important; line-height: 1.38 !important; margin-top: .4vh !important; max-width: 70vw !important; }
+  .slide:has([class$="-frame"][class*="hf"]) .kicker{ margin-bottom: .2vh !important; }
 
 </style>
 </head>
@@ -897,7 +912,7 @@
     .hf3-live-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#5fc77f; margin-right:.6em; vertical-align:middle }
   </style>
   <div class="frame" style="padding-top:2.4vh">
-    <div class="kicker"><span class="hf3-live"><span class="hf3-live-dot"></span>Hyperframe &middot; live composition</span></div>
+    <div class="kicker"><span class="hf3-live"><span class="hf3-live-dot"></span>2024 → 2026 indicators</span></div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2024&ndash;2026 funding reset.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.15vw">
       Global fintech funding bottomed in 2023 and stabilized through 2024 at roughly one-fifth of the 2021 peak. AI-native fintechs now command a disproportionate share of capital while pure neobanks and BNPL startups face a colder market.
@@ -945,9 +960,9 @@
 <!-- ============================================================
      SLIDE 12 · Closing (hero dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="12 Hyperframe · IPO Window 2025-26">
+<section class="slide dark" data-screen-label="12 IPO Window 2025-26">
   <div class="chrome">
-    <div>&sect;3.10 &middot; Hyperframe &middot; the IPO window reopens</div>
+    <div>&sect;3.10 &middot; the IPO window reopens</div>
     <div>12 / 20</div>
   </div>
   <style>
@@ -955,14 +970,14 @@
     @keyframes hf3v-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf3v-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf3v-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="12 Hyperframe · IPO Window 2025-26"].active .hf3v-card { animation: hf3v-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="12 Hyperframe · IPO Window 2025-26"].active .hf3v-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="12 Hyperframe · IPO Window 2025-26"].active .hf3v-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="12 Hyperframe · IPO Window 2025-26"].active .hf3v-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="12 Hyperframe · IPO Window 2025-26"].active .hf3v-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="12 Hyperframe · IPO Window 2025-26"].active .hf3v-bar { animation: hf3v-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="12 Hyperframe · IPO Window 2025-26"].active .hf3v-rec { animation: hf3v-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="12 Hyperframe · IPO Window 2025-26"].active .hf3v-scrub-fill { animation: hf3v-scrub 9s linear infinite }
+    .slide[data-screen-label="12 IPO Window 2025-26"].active .hf3v-card { animation: hf3v-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="12 IPO Window 2025-26"].active .hf3v-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="12 IPO Window 2025-26"].active .hf3v-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="12 IPO Window 2025-26"].active .hf3v-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="12 IPO Window 2025-26"].active .hf3v-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="12 IPO Window 2025-26"].active .hf3v-bar { animation: hf3v-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="12 IPO Window 2025-26"].active .hf3v-rec { animation: hf3v-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="12 IPO Window 2025-26"].active .hf3v-scrub-fill { animation: hf3v-scrub 9s linear infinite }
     .hf3v-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hf3v-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
     .hf3v-rec { color:#e85d4f; letter-spacing:.3em }
@@ -983,7 +998,7 @@
     .hf3v-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.10 &middot; Data horizon view &middot; 2025&ndash;2026 update</div>
+    <div class="kicker">&sect;3.10 &middot; 2025&ndash;2026 update</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">Fintech IPO window reopens.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       After three years of frozen exits, the post-2024 cycle restarted with profitability-first listings. Discipline returned: clean cap tables, Rule-of-40 metrics, and AI-leverage stories. The cohort is small but defining.
@@ -1033,17 +1048,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 12 &middot; Hyperframe &middot; the IPO window reopens</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 12 &middot; the IPO window reopens</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 13 · Hyperframe · 2025 IPO Resurgence (light · data horizon view)
+     SLIDE 13 · 2025 IPO Resurgence (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="13 Hyperframe · 2025 IPO Resurgence">
+<section class="slide light" data-screen-label="13 2025 IPO Resurgence">
   <div class="chrome">
-    <div>&sect;3.6 &middot; Hyperframe &middot; fintech IPO resurgence</div>
+    <div>&sect;3.6 &middot; fintech IPO resurgence</div>
     <div>13 / 20</div>
   </div>
   <style>
@@ -1051,14 +1066,14 @@
     @keyframes hf3b-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf3b-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf3b-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="13 Hyperframe · 2025 IPO Resurgence"].active .hf3b-card { animation: hf3b-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="13 Hyperframe · 2025 IPO Resurgence"].active .hf3b-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="13 Hyperframe · 2025 IPO Resurgence"].active .hf3b-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="13 Hyperframe · 2025 IPO Resurgence"].active .hf3b-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="13 Hyperframe · 2025 IPO Resurgence"].active .hf3b-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="13 Hyperframe · 2025 IPO Resurgence"].active .hf3b-bar { animation: hf3b-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="13 Hyperframe · 2025 IPO Resurgence"].active .hf3b-rec { animation: hf3b-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="13 Hyperframe · 2025 IPO Resurgence"].active .hf3b-scrub-fill { animation: hf3b-scrub 9s linear infinite }
+    .slide[data-screen-label="13 2025 IPO Resurgence"].active .hf3b-card { animation: hf3b-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="13 2025 IPO Resurgence"].active .hf3b-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="13 2025 IPO Resurgence"].active .hf3b-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="13 2025 IPO Resurgence"].active .hf3b-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="13 2025 IPO Resurgence"].active .hf3b-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="13 2025 IPO Resurgence"].active .hf3b-bar { animation: hf3b-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="13 2025 IPO Resurgence"].active .hf3b-rec { animation: hf3b-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="13 2025 IPO Resurgence"].active .hf3b-scrub-fill { animation: hf3b-scrub 9s linear infinite }
     .hf3b-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hf3b-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hf3b-topbar .hf3b-rec { color:#c33b2a; letter-spacing:.3em }
@@ -1079,7 +1094,7 @@
     .hf3b-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.6 &middot; Data horizon view &middot; fintech IPO resurgence 2025</div>
+    <div class="kicker">&sect;3.6 &middot; fintech IPO resurgence 2025</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2025 IPO window: opened, then disciplined.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       After a three-year drought, fintech IPOs returned in 2025 &mdash; but at sober prices. Klarna re-listed at one-third of its 2021 peak; Chime priced below private-market last rounds. The lesson: down-round IPOs can still clear when listings reset expectations.
@@ -1129,17 +1144,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 13 &middot; Hyperframe &middot; 2025 IPO resurgence</div>
-    <div>2025–2026 &middot; data horizon view</div>
+    <div>Page 13 &middot; 2025 IPO resurgence</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 14 · Hyperframe · YC Fintech 2014→2025 (light · evolution)
+     SLIDE 14 · YC Fintech 2014→2025 (light · evolution)
      ============================================================ -->
-<section class="slide light" data-screen-label="14 Hyperframe · YC Fintech 2014 to 2025">
+<section class="slide light" data-screen-label="14 YC Fintech 2014 to 2025">
   <div class="chrome">
-    <div>&sect;3.11 &middot; Hyperframe &middot; accelerator evolution</div>
+    <div>&sect;3.11 &middot; accelerator evolution</div>
     <div>14 / 20</div>
   </div>
   <style>
@@ -1147,14 +1162,14 @@
     @keyframes hf3y-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf3y-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf3y-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="14 Hyperframe · YC Fintech 2014 to 2025"].active .hf3y-card { animation: hf3y-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="14 Hyperframe · YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="14 Hyperframe · YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="14 Hyperframe · YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="14 Hyperframe · YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="14 Hyperframe · YC Fintech 2014 to 2025"].active .hf3y-bar { animation: hf3y-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="14 Hyperframe · YC Fintech 2014 to 2025"].active .hf3y-rec { animation: hf3y-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="14 Hyperframe · YC Fintech 2014 to 2025"].active .hf3y-scrub-fill { animation: hf3y-scrub 9s linear infinite }
+    .slide[data-screen-label="14 YC Fintech 2014 to 2025"].active .hf3y-card { animation: hf3y-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="14 YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="14 YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="14 YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="14 YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="14 YC Fintech 2014 to 2025"].active .hf3y-bar { animation: hf3y-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="14 YC Fintech 2014 to 2025"].active .hf3y-rec { animation: hf3y-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="14 YC Fintech 2014 to 2025"].active .hf3y-scrub-fill { animation: hf3y-scrub 9s linear infinite }
     .hf3y-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hf3y-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hf3y-topbar .hf3y-rec { color:#c33b2a; letter-spacing:.3em }
@@ -1177,7 +1192,7 @@
     .hf3y-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.11 &middot; Data horizon view &middot; Y Combinator 2014 → 2025</div>
+    <div class="kicker">&sect;3.11 &middot; Y Combinator 2014 → 2025</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">From Wealthsimple to AI fintech-as-a-service.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slides 04&ndash;05 anchor the 2014 era: Wealthsimple seed-pitched to 14 angels; YC reported &ldquo;3,500+ companies funded.&rdquo; By the W25 + S25 batches, YC funds twice as many fintech-adjacent startups per year, half are AI-native, and median check-size has compressed back to seed levels even as outcomes are larger and faster.
@@ -1227,17 +1242,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 14 &middot; Hyperframe &middot; YC fintech 2014 → 2025</div>
-    <div>2025–2026 &middot; data horizon view</div>
+    <div>Page 14 &middot; YC fintech 2014 → 2025</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 15 · Hyperframe · Wealthsimple Arc 2014→2025 (dark · evolution)
+     SLIDE 15 · Wealthsimple Arc 2014→2025 (dark · evolution)
      ============================================================ -->
-<section class="slide dark" data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025">
+<section class="slide dark" data-screen-label="15 Wealthsimple Arc 2014-2025">
   <div class="chrome">
-    <div>&sect;3.12 &middot; Hyperframe &middot; case study update</div>
+    <div>&sect;3.12 &middot; case study update</div>
     <div>15 / 20</div>
   </div>
   <style>
@@ -1245,19 +1260,19 @@
     @keyframes hf3w-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf3w-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf3w-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-card { animation: hf3w-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-row { animation: hf3w-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(1) { animation-delay:1.1s }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(2) { animation-delay:1.25s }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(3) { animation-delay:1.4s }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(4) { animation-delay:1.55s }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-bar { animation: hf3w-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-rec { animation: hf3w-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="15 Hyperframe · Wealthsimple Arc 2014-2025"].active .hf3w-scrub-fill { animation: hf3w-scrub 9s linear infinite }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-card { animation: hf3w-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-row { animation: hf3w-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(1) { animation-delay:1.1s }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(2) { animation-delay:1.25s }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(3) { animation-delay:1.4s }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(4) { animation-delay:1.55s }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-bar { animation: hf3w-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-rec { animation: hf3w-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="15 Wealthsimple Arc 2014-2025"].active .hf3w-scrub-fill { animation: hf3w-scrub 9s linear infinite }
     .hf3w-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hf3w-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hf3w-rec { color:#ff7458; letter-spacing:.3em }
@@ -1288,7 +1303,7 @@
     .hf3w-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.12 &middot; Data horizon view &middot; the case study, ten years on</div>
+    <div class="kicker">&sect;3.12 &middot; the case study, ten years on</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Wealthsimple: $0 in 2014 &rarr; $100B in 2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 05&rsquo;s case anchored Wealthsimple at its 2014 angel round. By Oct 2025 the firm crossed C$100B in assets under administration &mdash; three years ahead of its own plan &mdash; and closed a C$750M Series F at a C$10B post-money valuation. AUA doubled in twelve months. Of the 14 angels who said &ldquo;yes&rdquo; in 2014, the early backers now hold positions worth orders of magnitude more than their cheques.
@@ -1362,17 +1377,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 15 &middot; Hyperframe &middot; Wealthsimple 2014 &rarr; 2025</div>
-    <div>2025–2026 &middot; data horizon view</div>
+    <div>Page 15 &middot; Wealthsimple 2014 &rarr; 2025</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 16 · Hyperframe · Stripe Valuation Arc 2014→2025 (light · evolution)
+     SLIDE 16 · Stripe Valuation Arc 2014→2025 (light · evolution)
      ============================================================ -->
-<section class="slide light" data-screen-label="16 Hyperframe · Stripe Arc 2014-2025">
+<section class="slide light" data-screen-label="16 Stripe Arc 2014-2025">
   <div class="chrome">
-    <div>&sect;3.13 &middot; Hyperframe &middot; private valuation arc</div>
+    <div>&sect;3.13 &middot; private valuation arc</div>
     <div>16 / 20</div>
   </div>
   <style>
@@ -1380,21 +1395,21 @@
     @keyframes hf3s-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf3s-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf3s-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-card { animation: hf3s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-row { animation: hf3s-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-row:nth-child(1) { animation-delay:1.0s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-row:nth-child(2) { animation-delay:1.15s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-row:nth-child(3) { animation-delay:1.30s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-row:nth-child(4) { animation-delay:1.45s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-row:nth-child(5) { animation-delay:1.60s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-row:nth-child(6) { animation-delay:1.75s }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-bar { animation: hf3s-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.5s; width:0 }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-rec { animation: hf3s-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="16 Hyperframe · Stripe Arc 2014-2025"].active .hf3s-scrub-fill { animation: hf3s-scrub 9s linear infinite }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-card { animation: hf3s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-row { animation: hf3s-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(1) { animation-delay:1.0s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(2) { animation-delay:1.15s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(3) { animation-delay:1.30s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(4) { animation-delay:1.45s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(5) { animation-delay:1.60s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(6) { animation-delay:1.75s }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-bar { animation: hf3s-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.5s; width:0 }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-rec { animation: hf3s-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="16 Stripe Arc 2014-2025"].active .hf3s-scrub-fill { animation: hf3s-scrub 9s linear infinite }
     .hf3s-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hf3s-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hf3s-rec { color:#c33b2a; letter-spacing:.3em }
@@ -1426,7 +1441,7 @@
     .hf3s-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.13 &middot; Data horizon view &middot; the canonical fintech valuation arc</div>
+    <div class="kicker">&sect;3.13 &middot; the canonical fintech valuation arc</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Stripe: $1.75B (2014) &rarr; $91.5B (2025) &mdash; with a $45B detour.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       The closing slide cited Stripe at &ldquo;$95B&rdquo; &mdash; the 2021 mania peak. The company wrote that mark down 47% to $50B in 2023&rsquo;s tender, then climbed back to $91.5B by Feb 2025 on the back of stablecoin acquisitions (Bridge, $1.1B) and AI-merchant primitives. Same enterprise; private mark moved &plusmn;$45B in three years. The cycle inside Ch. 3&rsquo;s S-curve, made literal.
@@ -1510,17 +1525,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 16 &middot; Hyperframe &middot; Stripe valuation arc 2014 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 16 &middot; Stripe valuation arc 2014 &rarr; 2025</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 17 · Hyperframe · AI-native fintech funding 2023→2025 (dark · new)
+     SLIDE 17 · AI-native fintech funding 2023→2025 (dark · new)
      ============================================================ -->
-<section class="slide dark" data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025">
+<section class="slide dark" data-screen-label="17 AI-Native Fintech 2023-2025">
   <div class="chrome">
-    <div>&sect;3.7b &middot; Hyperframe &middot; AI-native fintech VC</div>
+    <div>&sect;3.7b &middot; AI-native fintech VC</div>
     <div>17 / 20</div>
   </div>
   <style>
@@ -1528,19 +1543,19 @@
     @keyframes hfa-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfa-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfa-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-card { animation: hfa-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-row { animation: hfa-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-bar { animation: hfa-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-rec { animation: hfa-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="17 Hyperframe · AI-Native Fintech 2023-2025"].active .hfa-scrub-fill { animation: hfa-scrub 9s linear infinite }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card { animation: hfa-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row { animation: hfa-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-bar { animation: hfa-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-rec { animation: hfa-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="17 AI-Native Fintech 2023-2025"].active .hfa-scrub-fill { animation: hfa-scrub 9s linear infinite }
     .hfa-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hfa-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hfa-rec { color:#ff7458; letter-spacing:.3em }
@@ -1572,7 +1587,7 @@
     .hfa-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.7b &middot; Data horizon view &middot; the AI-native funding bid</div>
+    <div class="kicker">&sect;3.7b &middot; the AI-native funding bid</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Capital concentrated into AI-native fintechs, 2023&rarr;2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11 framed the 2024-26 funding rebound. Inside that rebound, capital is concentrating: SMB-finance &amp; corporate-card platforms that wrap LLM agents around the workflow now command 2&minus;3&times; the multiples of vintage neobanks. Ramp went from $8.1B (Aug 2023) to $32B (Nov 2025) &mdash; a 4&times; private mark in 27 months &mdash; while Brex was acquired by Capital One.
@@ -1653,17 +1668,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 17 &middot; Hyperframe &middot; AI-native fintech 2023 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 17 &middot; AI-native fintech 2023 &rarr; 2025</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 18 · Hyperframe · Nubank Arc 2014→2025 (light · new)
+     SLIDE 18 · Nubank Arc 2014→2025 (light · new)
      ============================================================ -->
-<section class="slide light" data-screen-label="18 Hyperframe · Nubank Arc 2014-2025">
+<section class="slide light" data-screen-label="18 Nubank Arc 2014-2025">
   <div class="chrome">
-    <div>&sect;3.7c &middot; Hyperframe &middot; Latam fintech compounding</div>
+    <div>&sect;3.7c &middot; Latam fintech compounding</div>
     <div>18 / 20</div>
   </div>
   <style>
@@ -1671,19 +1686,19 @@
     @keyframes hfnu-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfnu-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfnu-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-card { animation: hfnu-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-row { animation: hfnu-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-bar { animation: hfnu-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-rec { animation: hfnu-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="18 Hyperframe · Nubank Arc 2014-2025"].active .hfnu-scrub-fill { animation: hfnu-scrub 9s linear infinite }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-card { animation: hfnu-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-row { animation: hfnu-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-bar { animation: hfnu-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-rec { animation: hfnu-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="18 Nubank Arc 2014-2025"].active .hfnu-scrub-fill { animation: hfnu-scrub 9s linear infinite }
     .hfnu-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hfnu-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hfnu-topbar .hfnu-rec { color:#820ad1; letter-spacing:.3em }
@@ -1715,7 +1730,7 @@
     .hfnu-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.7c &middot; Data horizon view &middot; emerging-market fintech compounding</div>
+    <div class="kicker">&sect;3.7c &middot; emerging-market fintech compounding</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Nubank: from credit-card-only neobank to ~120M Latam customers, 2014&rarr;2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       The Stripe and Wealthsimple arcs (slides 16, 17a) showed two North-American paths. Nubank is the largest fintech IPO of the post-2020 era and the clearest emerging-market test of the model. From 12M customers in 2019 it now serves ~120M across Brazil, Mexico, and Colombia &mdash; ~58% of Brazil&rsquo;s adult population &mdash; while compounding revenue at &gt;30% YoY and posting consistent GAAP profits. Market cap recovered from a ~$11B trough (mid-2022) to ~$70B+ by 2025.
@@ -1796,17 +1811,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 18 &middot; Hyperframe &middot; Nubank arc 2014 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 18 &middot; Nubank arc 2014 &rarr; 2025</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 19 · Hyperframe · Secondary Tender Markets 2024-2026 (dark)
+     SLIDE 19 · Secondary Tender Markets 2024-2026 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026">
+<section class="slide dark" data-screen-label="19 Secondary Tenders 2024-2026">
   <div class="chrome">
-    <div>&sect;3.13 &middot; Hyperframe &middot; staying private, getting liquid</div>
+    <div>&sect;3.13 &middot; staying private, getting liquid</div>
     <div>19 / 20</div>
   </div>
   <style>
@@ -1814,19 +1829,19 @@
     @keyframes hfsec-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfsec-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfsec-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-card { animation: hfsec-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-row { animation: hfsec-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-bar { animation: hfsec-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-rec { animation: hfsec-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="19 Hyperframe · Secondary Tenders 2024-2026"].active .hfsec-scrub-fill { animation: hfsec-scrub 9s linear infinite }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card { animation: hfsec-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row { animation: hfsec-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-bar { animation: hfsec-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-rec { animation: hfsec-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="19 Secondary Tenders 2024-2026"].active .hfsec-scrub-fill { animation: hfsec-scrub 9s linear infinite }
     .hfsec-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hfsec-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hfsec-rec { color:#7fd3ff; letter-spacing:.3em }
@@ -1857,7 +1872,7 @@
     .hfsec-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.13 &middot; Data horizon view &middot; the IPO substitute</div>
+    <div class="kicker">&sect;3.13 &middot; the IPO substitute</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Tender offers replaced the IPO as the liquidity venue (2024-2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slides 8 (IPO Performance) and 12 (IPO Window) framed the public exit. The bigger 2024-2026 story is companies staying private longer and using employer-led tender offers as a structured liquidity venue. Stripe alone re-rated from $50B (Mar 2023) to $159B (Feb 2026) entirely through tenders. Industry-wide secondary volume hit $240B in 2025, up from $162B in 2024 (Industry Ventures + Goldman Sachs estimates). The cap table arithmetic of slide 19 still holds &mdash; but the &ldquo;exit&rdquo; column now includes a private liquidity event that can recur every 6&ndash;12 months.
@@ -1938,17 +1953,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 19 &middot; Hyperframe &middot; Secondary tenders 2024 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 19 &middot; Secondary tenders 2024 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 20 · Hyperframe · Plaid Down-Round to IPO 2021-2026 (light · data horizon view)
+     SLIDE 20 · Plaid Down-Round to IPO 2021-2026 (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="20 Hyperframe · Plaid Arc 2021-2026">
+<section class="slide light" data-screen-label="20 Plaid Arc 2021-2026">
   <div class="chrome">
-    <div>&sect;3.10 &middot; Hyperframe &middot; the late-stage reset</div>
+    <div>&sect;3.10 &middot; the late-stage reset</div>
     <div>20 / 21</div>
   </div>
   <style>
@@ -1956,19 +1971,19 @@
     @keyframes hfpl-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfpl-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfpl-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-card { animation: hfpl-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-row { animation: hfpl-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-bar { animation: hfpl-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-rec { animation: hfpl-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="20 Hyperframe · Plaid Arc 2021-2026"].active .hfpl-scrub-fill { animation: hfpl-scrub 9s linear infinite }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-card { animation: hfpl-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-row { animation: hfpl-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-bar { animation: hfpl-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-rec { animation: hfpl-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="20 Plaid Arc 2021-2026"].active .hfpl-scrub-fill { animation: hfpl-scrub 9s linear infinite }
     .hfpl-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hfpl-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hfpl-rec { color:#c14a4a; letter-spacing:.3em }
@@ -1999,7 +2014,7 @@
     .hfpl-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.10 &middot; Data horizon view &middot; the late-stage reset</div>
+    <div class="kicker">&sect;3.10 &middot; the late-stage reset</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Plaid: $13.4B &rarr; $6.1B &rarr; ~$8&ndash;10B IPO. The whole 2021-2026 cycle in one company.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 04 named Plaid as a Visa acquisition target ($5.3B blocked Nov 2020). Slide 12 listed Klarna, Chime and Circle reopening the IPO window. Plaid is the missing link &mdash; it shows what happens to a private fintech that <em>doesn&rsquo;t</em> rush. April 2025: $575M secondary, valued at $6.1B (down 54% from the 2021 peak). FY2025 ARR: $546M, +40% YoY. Plaid told TechCrunch it would not IPO in 2025; analysts now project a 2026 listing at $8.5&ndash;10B. The arc is the cycle: 2021 mega-mark, 2022&ndash;2024 freeze, 2025 down round + profitability discipline, 2026 IPO at a re-earned mark.
@@ -2080,17 +2095,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 20 &middot; Hyperframe &middot; Plaid 2021 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 20 &middot; Plaid 2021 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 21 · Hyperframe · Class of 2025 IPOs Q1 2026 performance (light · data horizon view)
+     SLIDE 21 · Class of 2025 IPOs Q1 2026 performance (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026">
+<section class="slide light" data-screen-label="21 Class of 2025 IPOs Q1 2026">
   <div class="chrome">
-    <div>&sect;3.7 &middot; Hyperframe &middot; Class of 2025 IPO performance</div>
+    <div>&sect;3.7 &middot; Class of 2025 IPO performance</div>
     <div>21 / 22</div>
   </div>
   <style>
@@ -2098,19 +2113,19 @@
     @keyframes hfip26-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfip26-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfip26-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-card { animation: hfip26-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-row { animation: hfip26-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(2) { animation-delay:.85s }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(3) { animation-delay:1.0s }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(4) { animation-delay:1.15s }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(5) { animation-delay:1.3s }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-bar { animation: hfip26-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-rec { animation: hfip26-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="21 Hyperframe · Class of 2025 IPOs Q1 2026"].active .hfip26-scrub-fill { animation: hfip26-scrub 9s linear infinite }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-card { animation: hfip26-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-row { animation: hfip26-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(2) { animation-delay:.85s }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(3) { animation-delay:1.0s }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(4) { animation-delay:1.15s }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(5) { animation-delay:1.3s }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-bar { animation: hfip26-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-rec { animation: hfip26-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="21 Class of 2025 IPOs Q1 2026"].active .hfip26-scrub-fill { animation: hfip26-scrub 9s linear infinite }
     .hfip26-frame { border:1px solid rgba(0,0,0,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(0,0,0,.025), rgba(0,0,0,.005)); position:relative }
     .hfip26-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(0,0,0,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
     .hfip26-rec { color:#a23a2a; letter-spacing:.3em }
@@ -2141,7 +2156,7 @@
     .hfip26-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.7 &middot; Data horizon view &middot; Class of 2025 &middot; Q1 2026 follow-through</div>
+    <div class="kicker">&sect;3.7 &middot; Class of 2025 &middot; Q1 2026 follow-through</div>
     <h2 class="h-xl" style="font-size:3.7vw; margin-top:.4vh">Class of 2025 IPOs: $3.2B raised, then the public-market reality test (Q1 2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 13 caught the IPO window opening. This is the second beat: how Chime, Klarna, Circle &amp; eToro have actually traded. Combined IPO proceeds were $3.2B (Invezz Dec 2025). Q1 2026 sorted them: Chime delivered its first profitable public quarter; Circle's USDC AUM compounded under GENIUS; Klarna ate margin from rising delinquencies; eToro held steady. The lesson Schulich students need: the IPO is the easy day &mdash; the next four earnings prints decide whether the multiple sticks.
@@ -2222,8 +2237,8 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 21 &middot; Hyperframe &middot; Class of 2025 IPOs &middot; Q1 2026</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 21 &middot; Class of 2025 IPOs &middot; Q1 2026</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 

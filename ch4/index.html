@@ -176,6 +176,21 @@
   }
   /* Hide misleading recording-dot blink in the topbar; keep dot visible but static */
   [class$="-rec"]{ animation: none !important; opacity: .85 !important; }
+  /* Hide watermark — redundant with box label and bottom time axis */
+  [class$="-watermark"]{ display: none !important; }
+  /* Compact the data-view box so dense card+row layouts fit in the slide frame */
+  [class$="-frame"][class*="hf"] [class$="-stage"]{ padding: 1vh 1.2vw !important; gap: 1.1vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-card"]{ padding: .8vh .9vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-card"] [class$="-num"]{ font-size: 1.6vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-card"] [class$="-desc"]{ font-size: max(10px,.72vw) !important; line-height: 1.36 !important; }
+  [class$="-frame"][class*="hf"] [class$="-row"]{ padding: .5vh 1vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-row"] [class$="-firm"]{ font-size: .85vw !important; line-height: 1.2 !important; }
+  [class$="-frame"][class*="hf"] [class$="-row"] [class$="-pre"],
+  [class$="-frame"][class*="hf"] [class$="-row"] [class$="-post"]{ font-size: .72vw !important; line-height: 1.3 !important; }
+  /* On any slide whose body contains a data-view box, dial down headline + lead so the box gets vertical room */
+  .slide:has([class$="-frame"][class*="hf"]) h2.h-xl{ font-size: 3vw !important; line-height: 1.05 !important; margin-top: .2vh !important; }
+  .slide:has([class$="-frame"][class*="hf"]) p.lead{ font-size: .92vw !important; line-height: 1.38 !important; margin-top: .4vh !important; max-width: 70vw !important; }
+  .slide:has([class$="-frame"][class*="hf"]) .kicker{ margin-bottom: .2vh !important; }
 
 </style>
 </head>
@@ -791,7 +806,7 @@
     .hf4-live-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#3b8a4f; margin-right:.6em; vertical-align:middle }
   </style>
   <div class="frame" style="padding-top:2.4vh">
-    <div class="kicker"><span class="hf4-live"><span class="hf4-live-dot"></span>Hyperframe &middot; live composition</span></div>
+    <div class="kicker"><span class="hf4-live"><span class="hf4-live-dot"></span>2024 → 2026 indicators</span></div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2024&ndash;2026 valuation reset.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.15vw">
       Private fintech valuations have largely re-rated from the 2021 peak. Stripe and Klarna have begun recovering through tender offers and IPO filings; pure neobanks remain depressed. Public-market multiples have compressed to ~6&times; EV/Sales for growth and 12&ndash;15&times; P/E for profitable mature fintechs.
@@ -856,11 +871,11 @@
 </section>
 
 <!-- ============================================================
-     SLIDE 13 · Data horizon view · Tokenized RWA valuation 2025-26 (dark)
+     SLIDE 13 · Tokenized RWA valuation 2025-26 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="13 Hyperframe · Tokenized RWA 2025-26">
+<section class="slide dark" data-screen-label="13 Tokenized RWA 2025-26">
   <div class="chrome">
-    <div>&sect;4.10 &middot; Hyperframe &middot; tokenized RWA valuation</div>
+    <div>&sect;4.10 &middot; tokenized RWA valuation</div>
     <div>13 / 21</div>
   </div>
   <style>
@@ -868,14 +883,14 @@
     @keyframes hf4v-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf4v-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf4v-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="13 Hyperframe · Tokenized RWA 2025-26"].active .hf4v-card { animation: hf4v-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="13 Hyperframe · Tokenized RWA 2025-26"].active .hf4v-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="13 Hyperframe · Tokenized RWA 2025-26"].active .hf4v-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="13 Hyperframe · Tokenized RWA 2025-26"].active .hf4v-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="13 Hyperframe · Tokenized RWA 2025-26"].active .hf4v-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="13 Hyperframe · Tokenized RWA 2025-26"].active .hf4v-bar { animation: hf4v-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="13 Hyperframe · Tokenized RWA 2025-26"].active .hf4v-rec { animation: hf4v-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="13 Hyperframe · Tokenized RWA 2025-26"].active .hf4v-scrub-fill { animation: hf4v-scrub 9s linear infinite }
+    .slide[data-screen-label="13 Tokenized RWA 2025-26"].active .hf4v-card { animation: hf4v-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="13 Tokenized RWA 2025-26"].active .hf4v-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="13 Tokenized RWA 2025-26"].active .hf4v-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="13 Tokenized RWA 2025-26"].active .hf4v-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="13 Tokenized RWA 2025-26"].active .hf4v-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="13 Tokenized RWA 2025-26"].active .hf4v-bar { animation: hf4v-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="13 Tokenized RWA 2025-26"].active .hf4v-rec { animation: hf4v-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="13 Tokenized RWA 2025-26"].active .hf4v-scrub-fill { animation: hf4v-scrub 9s linear infinite }
     .hf4v-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hf4v-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
     .hf4v-rec { color:#e85d4f; letter-spacing:.3em }
@@ -896,7 +911,7 @@
     .hf4v-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.10 &middot; Data horizon view &middot; 2025&ndash;2026 update</div>
+    <div class="kicker">&sect;4.10 &middot; 2025&ndash;2026 update</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">Tokenized funds: a new comparable set.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       Tokenized real-world-asset funds are now liquid enough to anchor relative valuation. BlackRock BUIDL, Franklin BENJI, Ondo USDY, and Hashnote USYC trade on-chain with intraday secondary marks. P/AUM and yield-spread multiples become fintech-comparable inputs.
@@ -946,17 +961,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 13 &middot; Hyperframe &middot; tokenized RWA valuation</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 13 &middot; tokenized RWA valuation</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 14 · Hyperframe · Fintech Multiples Reset 2025 (light · data horizon view)
+     SLIDE 14 · Fintech Multiples Reset 2025 (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="14 Hyperframe · Fintech Multiples 2025">
+<section class="slide light" data-screen-label="14 Fintech Multiples 2025">
   <div class="chrome">
-    <div>&sect;4.11 &middot; Hyperframe &middot; fintech multiples 2025</div>
+    <div>&sect;4.11 &middot; fintech multiples 2025</div>
     <div>14 / 21</div>
   </div>
   <style>
@@ -964,14 +979,14 @@
     @keyframes hf4b-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf4b-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf4b-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="14 Hyperframe · Fintech Multiples 2025"].active .hf4b-card { animation: hf4b-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="14 Hyperframe · Fintech Multiples 2025"].active .hf4b-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="14 Hyperframe · Fintech Multiples 2025"].active .hf4b-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="14 Hyperframe · Fintech Multiples 2025"].active .hf4b-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="14 Hyperframe · Fintech Multiples 2025"].active .hf4b-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="14 Hyperframe · Fintech Multiples 2025"].active .hf4b-bar { animation: hf4b-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="14 Hyperframe · Fintech Multiples 2025"].active .hf4b-rec { animation: hf4b-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="14 Hyperframe · Fintech Multiples 2025"].active .hf4b-scrub-fill { animation: hf4b-scrub 9s linear infinite }
+    .slide[data-screen-label="14 Fintech Multiples 2025"].active .hf4b-card { animation: hf4b-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="14 Fintech Multiples 2025"].active .hf4b-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="14 Fintech Multiples 2025"].active .hf4b-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="14 Fintech Multiples 2025"].active .hf4b-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="14 Fintech Multiples 2025"].active .hf4b-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="14 Fintech Multiples 2025"].active .hf4b-bar { animation: hf4b-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="14 Fintech Multiples 2025"].active .hf4b-rec { animation: hf4b-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="14 Fintech Multiples 2025"].active .hf4b-scrub-fill { animation: hf4b-scrub 9s linear infinite }
     .hf4b-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hf4b-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hf4b-topbar .hf4b-rec { color:#c33b2a; letter-spacing:.3em }
@@ -992,7 +1007,7 @@
     .hf4b-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.11 &middot; Data horizon view &middot; fintech multiples reset 2025</div>
+    <div class="kicker">&sect;4.11 &middot; fintech multiples reset 2025</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">From 2021 mania to 2025 normalisation.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       The 2021 fintech multiple peak (Adyen 100&times; P/E, Block 200&times;) is gone. Late-2025 multiples reflect the new dual mandate: profitable growth, evident operating leverage. AI-native fintech still trades at premium &mdash; but only if Rule of 40 holds.
@@ -1042,17 +1057,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 14 &middot; Hyperframe &middot; fintech multiples 2025</div>
-    <div>2025–2026 &middot; data horizon view</div>
+    <div>Page 14 &middot; fintech multiples 2025</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 15 · Hyperframe · Multiples Apr 2023→Q4 2025 (light · evolution)
+     SLIDE 15 · Multiples Apr 2023→Q4 2025 (light · evolution)
      ============================================================ -->
-<section class="slide light" data-screen-label="15 Hyperframe · Multiples 2023 to 2025">
+<section class="slide light" data-screen-label="15 Multiples 2023 to 2025">
   <div class="chrome">
-    <div>&sect;4.12 &middot; Hyperframe &middot; multiples reset</div>
+    <div>&sect;4.12 &middot; multiples reset</div>
     <div>15 / 21</div>
   </div>
   <style>
@@ -1060,17 +1075,17 @@
     @keyframes hf4m-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf4m-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf4m-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-row { animation: hf4m-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-row:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-row:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-row:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-row:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-row:nth-child(5) { animation-delay:.75s }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-row:nth-child(6) { animation-delay:.9s }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-card { animation: hf4m-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:1.05s }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-bar { animation: hf4m-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-rec { animation: hf4m-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="15 Hyperframe · Multiples 2023 to 2025"].active .hf4m-scrub-fill { animation: hf4m-scrub 9s linear infinite }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row { animation: hf4m-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(5) { animation-delay:.75s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-row:nth-child(6) { animation-delay:.9s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-card { animation: hf4m-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:1.05s }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-bar { animation: hf4m-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-rec { animation: hf4m-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="15 Multiples 2023 to 2025"].active .hf4m-scrub-fill { animation: hf4m-scrub 9s linear infinite }
     .hf4m-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hf4m-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hf4m-topbar .hf4m-rec { color:#c33b2a; letter-spacing:.3em }
@@ -1102,7 +1117,7 @@
     .hf4m-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.12 &middot; Data horizon view &middot; Refinitiv Apr 2023 → Bloomberg Q4 2025</div>
+    <div class="kicker">&sect;4.12 &middot; Refinitiv Apr 2023 → Bloomberg Q4 2025</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Two and a half years later: P/E NTM, then and now.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Tab. 4.11 (slide 11) is anchored to Refinitiv Apr 2023. By Q4 2025, every multiple has moved &mdash; PayPal compressed despite buybacks, Wise re-rated on profitability, Robinhood went from negative-EPS to peer leader. The lesson: relative valuation snapshots decay fast, especially in a rate-cutting + AI-rerating cycle.
@@ -1196,17 +1211,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 15 &middot; Hyperframe &middot; multiples Apr 2023 → Q4 2025</div>
-    <div>2025–2026 &middot; data horizon view</div>
+    <div>Page 15 &middot; multiples Apr 2023 → Q4 2025</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 16 · Hyperframe · AI-Native Premium 2025-26 (dark · evolution)
+     SLIDE 16 · AI-Native Premium 2025-26 (dark · evolution)
      ============================================================ -->
-<section class="slide dark" data-screen-label="16 Hyperframe · AI-Native Premium 2025-26">
+<section class="slide dark" data-screen-label="16 AI-Native Premium 2025-26">
   <div class="chrome">
-    <div>&sect;4.12 &middot; Hyperframe &middot; AI-native premium</div>
+    <div>&sect;4.12 &middot; AI-native premium</div>
     <div>16 / 21</div>
   </div>
   <style>
@@ -1214,19 +1229,19 @@
     @keyframes hf4a-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf4a-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf4a-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-card { animation: hf4a-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-row { animation: hf4a-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-row:nth-child(1) { animation-delay:1.1s }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-row:nth-child(2) { animation-delay:1.25s }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-row:nth-child(3) { animation-delay:1.4s }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-row:nth-child(4) { animation-delay:1.55s }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-bar { animation: hf4a-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-rec { animation: hf4a-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="16 Hyperframe · AI-Native Premium 2025-26"].active .hf4a-scrub-fill { animation: hf4a-scrub 9s linear infinite }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-card { animation: hf4a-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-row { animation: hf4a-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-row:nth-child(1) { animation-delay:1.1s }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-row:nth-child(2) { animation-delay:1.25s }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-row:nth-child(3) { animation-delay:1.4s }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-row:nth-child(4) { animation-delay:1.55s }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-bar { animation: hf4a-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-rec { animation: hf4a-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="16 AI-Native Premium 2025-26"].active .hf4a-scrub-fill { animation: hf4a-scrub 9s linear infinite }
     .hf4a-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hf4a-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hf4a-rec { color:#ff7458; letter-spacing:.3em }
@@ -1258,7 +1273,7 @@
     .hf4a-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.12 &middot; Data horizon view &middot; multiples are forking</div>
+    <div class="kicker">&sect;4.12 &middot; multiples are forking</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">AI-native fintechs trade at a structural premium.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11&rsquo;s &ldquo;fintech multiples&rdquo; comp set already aged: 2025&ndash;26 marks the visible bifurcation. AI-native expense &amp; ops platforms (Ramp $32B at $1B run-rate &middot; Mercury &middot; Brex) are pricing on AI-attach gross margin and net retention, while traditional acquirers and lenders revert toward bank multiples. Klarna&rsquo;s Sep 2025 IPO at ~3.5&times; revenue and Stripe&rsquo;s $107B private mark anchor the new dispersion.
@@ -1332,17 +1347,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 16 &middot; Hyperframe &middot; AI-native premium 2025 &rarr; 2026</div>
-    <div>2025–2026 &middot; data horizon view</div>
+    <div>Page 16 &middot; AI-native premium 2025 &rarr; 2026</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 17 · Hyperframe · Public Fintech Reset by Category 2021→2025 (light · evolution)
+     SLIDE 17 · Public Fintech Reset by Category 2021→2025 (light · evolution)
      ============================================================ -->
-<section class="slide light" data-screen-label="17 Hyperframe · Sector Reset 2021-2025">
+<section class="slide light" data-screen-label="17 Sector Reset 2021-2025">
   <div class="chrome">
-    <div>&sect;4.13 &middot; Hyperframe &middot; sector reset by category</div>
+    <div>&sect;4.13 &middot; sector reset by category</div>
     <div>17 / 21</div>
   </div>
   <style>
@@ -1350,17 +1365,17 @@
     @keyframes hf4s-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf4s-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf4s-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-row { animation: hf4s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-row:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-row:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-row:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-row:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-row:nth-child(5) { animation-delay:.75s }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-row:nth-child(6) { animation-delay:.9s }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-card { animation: hf4s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:1.05s }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-rec { animation: hf4s-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-bar { animation: hf4s-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
-    .slide[data-screen-label="17 Hyperframe · Sector Reset 2021-2025"].active .hf4s-scrub-fill { animation: hf4s-scrub 9s linear infinite }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-row { animation: hf4s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-row:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-row:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-row:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-row:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-row:nth-child(5) { animation-delay:.75s }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-row:nth-child(6) { animation-delay:.9s }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-card { animation: hf4s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:1.05s }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-rec { animation: hf4s-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-bar { animation: hf4s-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
+    .slide[data-screen-label="17 Sector Reset 2021-2025"].active .hf4s-scrub-fill { animation: hf4s-scrub 9s linear infinite }
     .hf4s-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hf4s-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hf4s-topbar .hf4s-rec { color:#c33b2a; letter-spacing:.3em }
@@ -1392,7 +1407,7 @@
     .hf4s-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.13 &middot; Data horizon view &middot; market-cap evolution &middot; 2021 &rarr; 2025</div>
+    <div class="kicker">&sect;4.13 &middot; market-cap evolution &middot; 2021 &rarr; 2025</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Public fintech reset by category &mdash; not all sectors recovered.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11&rsquo;s multiples table averaged across categories. The averaging hides everything: payment networks (V/MA) re-rated to all-time highs, neobanks (NU) compounded, BNPL (AFRM) round-tripped, while crypto (COIN) and lending (SOFI) followed cycles. The right reference set still depends on which kind of fintech you&rsquo;re valuing.
@@ -1486,17 +1501,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 17 &middot; Hyperframe &middot; sector reset 2021 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 17 &middot; sector reset 2021 &rarr; 2025</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 18 · Hyperframe · BTC corporate treasury 2020→2026 (dark · new)
+     SLIDE 18 · BTC corporate treasury 2020→2026 (dark · new)
      ============================================================ -->
-<section class="slide dark" data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026">
+<section class="slide dark" data-screen-label="18 Corporate BTC Treasuries 2020-2026">
   <div class="chrome">
-    <div>&sect;4.7b &middot; Hyperframe &middot; corporate BTC treasury</div>
+    <div>&sect;4.7b &middot; corporate BTC treasury</div>
     <div>18 / 21</div>
   </div>
   <style>
@@ -1504,19 +1519,19 @@
     @keyframes hft-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hft-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hft-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-card { animation: hft-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-row { animation: hft-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-bar { animation: hft-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-rec { animation: hft-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="18 Hyperframe · Corporate BTC Treasuries 2020-2026"].active .hft-scrub-fill { animation: hft-scrub 9s linear infinite }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-card { animation: hft-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-row { animation: hft-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-bar { animation: hft-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-rec { animation: hft-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="18 Corporate BTC Treasuries 2020-2026"].active .hft-scrub-fill { animation: hft-scrub 9s linear infinite }
     .hft-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hft-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hft-rec { color:#ff7458; letter-spacing:.3em }
@@ -1548,7 +1563,7 @@
     .hft-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.7b &middot; Data horizon view &middot; mNAV, BTC, &amp; the new asset on the balance sheet</div>
+    <div class="kicker">&sect;4.7b &middot; mNAV, BTC, &amp; the new asset on the balance sheet</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">A new valuation problem: corporate BTC treasuries, 2020 &rarr; 2026.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 13 introduced tokenized RWA. The mirror trade is "tokenized equity": MicroStrategy (now <em>Strategy</em>) buying $33B+ of bitcoin, financed mostly through ATM equity sales (~97%). Five years on, the valuation question for analysts is mNAV (market cap &divide; BTC NAV). It hovered ~3&times; through the 2024 ETF launch and has compressed to ~1&times; in late 2025 &mdash; making fresh ATM issuance dilutive.
@@ -1629,17 +1644,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 18 &middot; Hyperframe &middot; corporate BTC treasury 2020 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 18 &middot; corporate BTC treasury 2020 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 19 · Hyperframe · Circle IPO 2025 (dark · new)
+     SLIDE 19 · Circle IPO 2025 (dark · new)
      ============================================================ -->
-<section class="slide dark" data-screen-label="19 Hyperframe · Circle IPO 2025">
+<section class="slide dark" data-screen-label="19 Circle IPO 2025">
   <div class="chrome">
-    <div>&sect;4.7c &middot; Hyperframe &middot; stablecoin issuer goes public</div>
+    <div>&sect;4.7c &middot; stablecoin issuer goes public</div>
     <div>19 / 21</div>
   </div>
   <style>
@@ -1647,19 +1662,19 @@
     @keyframes hfcr-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfcr-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfcr-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-card { animation: hfcr-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-row { animation: hfcr-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-bar { animation: hfcr-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-rec { animation: hfcr-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="19 Hyperframe · Circle IPO 2025"].active .hfcr-scrub-fill { animation: hfcr-scrub 9s linear infinite }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-card { animation: hfcr-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-row { animation: hfcr-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-bar { animation: hfcr-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-rec { animation: hfcr-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="19 Circle IPO 2025"].active .hfcr-scrub-fill { animation: hfcr-scrub 9s linear infinite }
     .hfcr-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hfcr-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hfcr-rec { color:#5fc77f; letter-spacing:.3em }
@@ -1691,7 +1706,7 @@
     .hfcr-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.7c &middot; Data horizon view &middot; stablecoin issuer enters public markets</div>
+    <div class="kicker">&sect;4.7c &middot; stablecoin issuer enters public markets</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Circle IPO &middot; the first big stablecoin float, June 2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       The tokenized RWA slide (13) framed asset tokenization. The supply-side equivalent is the issuer balance sheet. On Jun 5, 2025 Circle Internet Group (NYSE: CRCL) priced at $31, raising ~$1.05B at a ~$6.9B fully-diluted valuation; the stock more than doubled on day 1 and traded above $200 within weeks, peaking at a ~$60B market cap. The model: USDC float earns short-rate yield; sharing economics with Coinbase + the GENIUS Act (US stablecoin law, signed Jul 18, 2025) reshape the multiple.
@@ -1772,17 +1787,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 19 &middot; Hyperframe &middot; Circle IPO &middot; June 2025</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 19 &middot; Circle IPO &middot; June 2025</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 20 · Hyperframe · Bank vs Neobank Multiples 2023-2026 (light)
+     SLIDE 20 · Bank vs Neobank Multiples 2023-2026 (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026">
+<section class="slide light" data-screen-label="20 Bank vs Neobank Multiples 2023-2026">
   <div class="chrome">
-    <div>&sect;4.13 &middot; Hyperframe &middot; bank P/E vs digital-bank P/E</div>
+    <div>&sect;4.13 &middot; bank P/E vs digital-bank P/E</div>
     <div>20 / 21</div>
   </div>
   <style>
@@ -1790,19 +1805,19 @@
     @keyframes hfnu-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfnu-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfnu-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-card { animation: hfnu-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-row { animation: hfnu-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-bar { animation: hfnu-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-rec { animation: hfnu-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="20 Hyperframe · Bank vs Neobank Multiples 2023-2026"].active .hfnu-scrub-fill { animation: hfnu-scrub 9s linear infinite }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-card { animation: hfnu-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-row { animation: hfnu-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-bar { animation: hfnu-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-rec { animation: hfnu-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="20 Bank vs Neobank Multiples 2023-2026"].active .hfnu-scrub-fill { animation: hfnu-scrub 9s linear infinite }
     .hfnu-frame { border:1px solid rgba(var(--ink-rgb),.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(var(--ink-rgb),.04), rgba(var(--ink-rgb),.01)); position:relative }
     .hfnu-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(var(--ink-rgb),.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hfnu-rec { color:#9b3aa6; letter-spacing:.3em }
@@ -1833,7 +1848,7 @@
     .hfnu-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.13 &middot; Data horizon view &middot; bank vs digital-bank multiples</div>
+    <div class="kicker">&sect;4.13 &middot; bank vs digital-bank multiples</div>
     <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Why a Brazilian neobank trades at 2&times; JPMorgan&rsquo;s P/E (May 2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 10 (Bank Valuation) anchored a regulated bank to P/E + P/Book on Apr 2023 data. Two years later the spread has widened decisively. JPMorgan trades at ~14.8&times; trailing / ~13.3&times; forward earnings (May 2026); Nu Holdings sits at ~24-31&times; trailing / ~20&times; forward, despite being a lower-cost, higher-ROE digital bank. The classic textbook answer &ldquo;banks deserve a discount&rdquo; is now reversed for neobanks: ROE 33% vs 17%, $0.80/customer/month operating cost, and double-digit deposit growth in LatAm push the multiple. The valuation toolkit didn&rsquo;t change &mdash; the underlying unit economics did.
@@ -1914,17 +1929,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 20 &middot; Hyperframe &middot; Bank vs neobank multiples 2023 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 20 &middot; Bank vs neobank multiples 2023 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 21 · Hyperframe · Public Fintech Profitability Inflection Q1 2026 (dark · data horizon view)
+     SLIDE 21 · Public Fintech Profitability Inflection Q1 2026 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026">
+<section class="slide dark" data-screen-label="21 Public Fintech Profit Q1 2026">
   <div class="chrome">
-    <div>&sect;4.10 &middot; Hyperframe &middot; the profitability inflection</div>
+    <div>&sect;4.10 &middot; the profitability inflection</div>
     <div>21 / 22</div>
   </div>
   <style>
@@ -1932,19 +1947,19 @@
     @keyframes hfpr-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfpr-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfpr-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-card { animation: hfpr-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-row { animation: hfpr-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-bar { animation: hfpr-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-rec { animation: hfpr-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="21 Hyperframe · Public Fintech Profit Q1 2026"].active .hfpr-scrub-fill { animation: hfpr-scrub 9s linear infinite }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card { animation: hfpr-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row { animation: hfpr-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-bar { animation: hfpr-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-rec { animation: hfpr-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="21 Public Fintech Profit Q1 2026"].active .hfpr-scrub-fill { animation: hfpr-scrub 9s linear infinite }
     .hfpr-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hfpr-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hfpr-rec { color:#7ec4ff; letter-spacing:.3em }
@@ -1975,7 +1990,7 @@
     .hfpr-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.10 &middot; Data horizon view &middot; the profitability inflection</div>
+    <div class="kicker">&sect;4.10 &middot; the profitability inflection</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Q1 2026 earnings: the &ldquo;profitable fintech&rdquo; archetype is now real.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11 priced fintech multiples on the assumption that Rule-of-40 candidates are scarce. They are not anymore. SoFi posted its 10th consecutive profitable quarter in Q1 2026 (net income $167M, +134% YoY) on $1.1B revenue (+41%). Robinhood netted $346M with 15% revenue growth. Both are now S&amp;P-style operating-leverage stories, not narrative-only growth stocks. This re-rates the &ldquo;public fintech&rdquo; multiples lens: discount rate falls, terminal-value share rises, and the bank/neobank gap (slide 20) narrows from the neobank side.
@@ -2056,17 +2071,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 21 &middot; Hyperframe &middot; Public fintech profitability Q1 2026</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 21 &middot; Public fintech profitability Q1 2026</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 22 · Hyperframe · Q1 2026 fintech multiples by sub-sector (light · data horizon view)
+     SLIDE 22 · Q1 2026 fintech multiples by sub-sector (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector">
+<section class="slide light" data-screen-label="22 Multiples Q1 2026 by Sub-sector">
   <div class="chrome">
-    <div>&sect;4.11 &middot; Hyperframe &middot; Q1 2026 multiples dispersion</div>
+    <div>&sect;4.11 &middot; Q1 2026 multiples dispersion</div>
     <div>22 / 23</div>
   </div>
   <style>
@@ -2074,21 +2089,21 @@
     @keyframes hfm26-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfm26-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfm26-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-card { animation: hfm26-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-row { animation: hfm26-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(2) { animation-delay:.85s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(3) { animation-delay:.95s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(4) { animation-delay:1.05s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(5) { animation-delay:1.15s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(6) { animation-delay:1.25s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(7) { animation-delay:1.35s }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-bar { animation: hfm26-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-rec { animation: hfm26-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="22 Hyperframe · Multiples Q1 2026 by Sub-sector"].active .hfm26-scrub-fill { animation: hfm26-scrub 9s linear infinite }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card { animation: hfm26-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row { animation: hfm26-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(2) { animation-delay:.85s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(3) { animation-delay:.95s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(4) { animation-delay:1.05s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(5) { animation-delay:1.15s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(6) { animation-delay:1.25s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-row:nth-child(7) { animation-delay:1.35s }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-bar { animation: hfm26-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-rec { animation: hfm26-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="22 Multiples Q1 2026 by Sub-sector"].active .hfm26-scrub-fill { animation: hfm26-scrub 9s linear infinite }
     .hfm26-frame { border:1px solid rgba(0,0,0,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(0,0,0,.025), rgba(0,0,0,.005)); position:relative }
     .hfm26-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(0,0,0,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
     .hfm26-rec { color:#1f4a8a; letter-spacing:.3em }
@@ -2119,7 +2134,7 @@
     .hfm26-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.11 &middot; Data horizon view &middot; Finro Q1 2026 416-company dataset</div>
+    <div class="kicker">&sect;4.11 &middot; Finro Q1 2026 416-company dataset</div>
     <h2 class="h-xl" style="font-size:3.7vw; margin-top:.4vh">Q1 2026 fintech multiples: the average is 14.5&times;. The median is 7.6&times;. Dispersion is the story.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 14 set the 2025 baseline. Finro's Q1 2026 dataset (416 fintechs across 9 sub-sectors) shows the spread has widened, not converged: the 14.5&times; average masks a 7.6&times; median &mdash; meaning a handful of WealthTech and Blockchain platforms are dragging the headline up while Lending sits at 2.6&times;. For the discounted-cash-flow lens you applied in slide 8, this is the year you stop quoting &ldquo;fintech&rdquo; multiples in the aggregate. The right comp set lives at the sub-sector level &mdash; and AI-native &amp; vertical-SaaS economics pull comps closer to enterprise SaaS (~6&ndash;7&times;) than to legacy lending (~2.6&times;).
@@ -2212,8 +2227,8 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 22 &middot; Hyperframe &middot; Q1 2026 multiples by sub-sector</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 22 &middot; Q1 2026 multiples by sub-sector</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 

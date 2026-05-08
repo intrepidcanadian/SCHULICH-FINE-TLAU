@@ -426,6 +426,21 @@
   }
   /* Hide misleading recording-dot blink in the topbar; keep dot visible but static */
   [class$="-rec"]{ animation: none !important; opacity: .85 !important; }
+  /* Hide watermark — redundant with box label and bottom time axis */
+  [class$="-watermark"]{ display: none !important; }
+  /* Compact the data-view box so dense card+row layouts fit in the slide frame */
+  [class$="-frame"][class*="hf"] [class$="-stage"]{ padding: 1vh 1.2vw !important; gap: 1.1vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-card"]{ padding: .8vh .9vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-card"] [class$="-num"]{ font-size: 1.6vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-card"] [class$="-desc"]{ font-size: max(10px,.72vw) !important; line-height: 1.36 !important; }
+  [class$="-frame"][class*="hf"] [class$="-row"]{ padding: .5vh 1vw !important; }
+  [class$="-frame"][class*="hf"] [class$="-row"] [class$="-firm"]{ font-size: .85vw !important; line-height: 1.2 !important; }
+  [class$="-frame"][class*="hf"] [class$="-row"] [class$="-pre"],
+  [class$="-frame"][class*="hf"] [class$="-row"] [class$="-post"]{ font-size: .72vw !important; line-height: 1.3 !important; }
+  /* On any slide whose body contains a data-view box, dial down headline + lead so the box gets vertical room */
+  .slide:has([class$="-frame"][class*="hf"]) h2.h-xl{ font-size: 3vw !important; line-height: 1.05 !important; margin-top: .2vh !important; }
+  .slide:has([class$="-frame"][class*="hf"]) p.lead{ font-size: .92vw !important; line-height: 1.38 !important; margin-top: .4vh !important; max-width: 70vw !important; }
+  .slide:has([class$="-frame"][class*="hf"]) .kicker{ margin-bottom: .2vh !important; }
 
 </style>
 </head>
@@ -988,7 +1003,7 @@
     .hf-live-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#5fc77f; margin-right:.6em; vertical-align:middle }
   </style>
   <div class="frame" style="padding-top:2.6vh">
-    <div class="kicker"><span class="hf-live"><span class="hf-live-dot"></span>Hyperframe · live data composition</span></div>
+    <div class="kicker"><span class="hf-live"><span class="hf-live-dot"></span>fourth-wave indicators</span></div>
     <h2 class="h-xl" style="font-size:4.4vw; margin-top:.6vh">The 2024–2026 wave: AI, tokenization, real-time rails.</h2>
     <p class="lead" style="margin-top:.8vh; max-width:64vw; opacity:.78; font-size:1.2vw">
       Fintech 3.0 is being eclipsed by a fourth wave defined by generative AI in the back office, on-chain settlement of regulated assets, and the universal arrival of instant payments.
@@ -1026,11 +1041,11 @@
 </section>
 
 <!-- ============================================================
-     SLIDE 13 · Data horizon view · Stablecoin & RWA reset 2025-26 (dark)
+     SLIDE 13 · Stablecoin & RWA reset 2025-26 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="13 Hyperframe · Stablecoins 2025-26">
+<section class="slide dark" data-screen-label="13 Stablecoins 2025-26">
   <div class="chrome">
-    <div>§3.3 · Hyperframe · stablecoin & RWA reset</div>
+    <div>§3.3 · stablecoin & RWA reset</div>
     <div>13 / 21</div>
   </div>
   <style>
@@ -1038,14 +1053,14 @@
     @keyframes hf-bar-1 { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf-fade-up-1 { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
     @keyframes hf-blink-1 { 0%,100%{opacity:1} 50%{opacity:.35} }
-    .slide[data-screen-label="13 Hyperframe · Stablecoins 2025-26"].active .hfv-card { animation: hf-fade-up-1 .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="13 Hyperframe · Stablecoins 2025-26"].active .hfv-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="13 Hyperframe · Stablecoins 2025-26"].active .hfv-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="13 Hyperframe · Stablecoins 2025-26"].active .hfv-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="13 Hyperframe · Stablecoins 2025-26"].active .hfv-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="13 Hyperframe · Stablecoins 2025-26"].active .hfv-bar { animation: hf-bar-1 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="13 Hyperframe · Stablecoins 2025-26"].active .hfv-scrub-fill { animation: hf-scrub-1 9s linear infinite }
-    .slide[data-screen-label="13 Hyperframe · Stablecoins 2025-26"].active .hfv-rec { animation: hf-blink-1 1.4s ease-in-out infinite }
+    .slide[data-screen-label="13 Stablecoins 2025-26"].active .hfv-card { animation: hf-fade-up-1 .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="13 Stablecoins 2025-26"].active .hfv-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="13 Stablecoins 2025-26"].active .hfv-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="13 Stablecoins 2025-26"].active .hfv-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="13 Stablecoins 2025-26"].active .hfv-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="13 Stablecoins 2025-26"].active .hfv-bar { animation: hf-bar-1 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="13 Stablecoins 2025-26"].active .hfv-scrub-fill { animation: hf-scrub-1 9s linear infinite }
+    .slide[data-screen-label="13 Stablecoins 2025-26"].active .hfv-rec { animation: hf-blink-1 1.4s ease-in-out infinite }
     .hfv-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hfv-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
     .hfv-topbar .hfv-rec { color:#e85d4f; letter-spacing:.3em }
@@ -1066,7 +1081,7 @@
     .hfv-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.3 · Data horizon view · 2025–2026 update</div>
+    <div class="kicker">§3.3 · 2025–2026 update</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">Stablecoins, RWAs &amp; agent-driven rails.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       A second-by-second composition of the post-2024 fourth-wave fintech: dollar-stablecoin settlement scales beyond Visa, BlackRock-anchored RWAs cross $7B, and AI agents start moving money on their own rails.
@@ -1116,17 +1131,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 13 · Hyperframe · stablecoins, RWAs & agents</div>
-    <div>2025–2026 · data horizon view</div>
+    <div>Page 13 · stablecoins, RWAs & agents</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 14 · Hyperframe · 2025 Capital Rebound (light · data horizon view)
+     SLIDE 14 · 2025 Capital Rebound (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="14 Hyperframe · 2025 Capital Rebound">
+<section class="slide light" data-screen-label="14 2025 Capital Rebound">
   <div class="chrome">
-    <div>§3.4 · Hyperframe · 2025 capital rebound</div>
+    <div>§3.4 · 2025 capital rebound</div>
     <div>14 / 21</div>
   </div>
   <style>
@@ -1134,14 +1149,14 @@
     @keyframes hfb-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfb-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfb-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="14 Hyperframe · 2025 Capital Rebound"].active .hfb-card { animation: hfb-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="14 Hyperframe · 2025 Capital Rebound"].active .hfb-card:nth-child(1) { animation-delay:.2s }
-    .slide[data-screen-label="14 Hyperframe · 2025 Capital Rebound"].active .hfb-card:nth-child(2) { animation-delay:.45s }
-    .slide[data-screen-label="14 Hyperframe · 2025 Capital Rebound"].active .hfb-card:nth-child(3) { animation-delay:.7s }
-    .slide[data-screen-label="14 Hyperframe · 2025 Capital Rebound"].active .hfb-card:nth-child(4) { animation-delay:.95s }
-    .slide[data-screen-label="14 Hyperframe · 2025 Capital Rebound"].active .hfb-bar { animation: hfb-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="14 Hyperframe · 2025 Capital Rebound"].active .hfb-rec { animation: hfb-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="14 Hyperframe · 2025 Capital Rebound"].active .hfb-scrub-fill { animation: hfb-scrub 9s linear infinite }
+    .slide[data-screen-label="14 2025 Capital Rebound"].active .hfb-card { animation: hfb-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="14 2025 Capital Rebound"].active .hfb-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="14 2025 Capital Rebound"].active .hfb-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="14 2025 Capital Rebound"].active .hfb-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="14 2025 Capital Rebound"].active .hfb-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="14 2025 Capital Rebound"].active .hfb-bar { animation: hfb-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="14 2025 Capital Rebound"].active .hfb-rec { animation: hfb-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="14 2025 Capital Rebound"].active .hfb-scrub-fill { animation: hfb-scrub 9s linear infinite }
     .hfb-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hfb-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hfb-topbar .hfb-rec { color:#c33b2a; letter-spacing:.3em }
@@ -1162,7 +1177,7 @@
     .hfb-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.4 · Data horizon view · KPMG Pulse of Fintech H2 2025</div>
+    <div class="kicker">§3.4 · KPMG Pulse of Fintech H2 2025</div>
     <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2025 capital rebound &mdash; bigger checks, fewer deals.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
       After the 2023 trough ($113B) and a flat 2024 ($95.5B), 2025 fintech investment rebounded to $116B as exit activity returned. Deal count fell to its lowest since 2017 &mdash; capital concentrated in fewer, larger AI-fintech and stablecoin platform rounds.
@@ -1212,17 +1227,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 14 · Hyperframe · 2025 capital rebound</div>
-    <div>2025–2026 · data horizon view</div>
+    <div>Page 14 · 2025 capital rebound</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 15 · Hyperframe · Global Fintech Hubs 2020→2025 (light · evolution)
+     SLIDE 15 · Global Fintech Hubs 2020→2025 (light · evolution)
      ============================================================ -->
-<section class="slide light" data-screen-label="15 Hyperframe · Hubs 2020 to 2025">
+<section class="slide light" data-screen-label="15 Hubs 2020 to 2025">
   <div class="chrome">
-    <div>§3.5 · Hyperframe · ecosystem evolution</div>
+    <div>§3.5 · ecosystem evolution</div>
     <div>15 / 21</div>
   </div>
   <style>
@@ -1230,16 +1245,16 @@
     @keyframes hfh-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfh-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfh-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-row { animation: hfh-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-row:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-row:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-row:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-row:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-row:nth-child(5) { animation-delay:.75s }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-card { animation: hfh-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:.9s }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-rec { animation: hfh-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-bar { animation: hfh-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="15 Hyperframe · Hubs 2020 to 2025"].active .hfh-scrub-fill { animation: hfh-scrub 9s linear infinite }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-row { animation: hfh-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-row:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-row:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-row:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-row:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-row:nth-child(5) { animation-delay:.75s }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-card { animation: hfh-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:.9s }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-rec { animation: hfh-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-bar { animation: hfh-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="15 Hubs 2020 to 2025"].active .hfh-scrub-fill { animation: hfh-scrub 9s linear infinite }
     .hfh-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hfh-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hfh-topbar .hfh-rec { color:#c33b2a; letter-spacing:.3em }
@@ -1270,7 +1285,7 @@
     .hfh-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.5 · Data horizon view · ecosystem evolution 2020 → 2025</div>
+    <div class="kicker">§3.5 · ecosystem evolution 2020 → 2025</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Global fintech hubs: from Findexable 2020 to 2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11&rsquo;s 2020 Findexable rankings have aged. The Bay Area still leads, but New York climbed, London held against Brexit drag, and Asia&rsquo;s rise (Singapore, Bangalore) reshaped the top 10. Mind the Bridge&rsquo;s Tech Innovation Champions and Statista&rsquo;s 2024 fintech rankings now tell a more multipolar story.
@@ -1349,17 +1364,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 15 · Hyperframe · global fintech hubs · 2020 → 2025</div>
-    <div>2025–2026 · data horizon view</div>
+    <div>Page 15 · global fintech hubs · 2020 → 2025</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 16 · Hyperframe · Stablecoin Regulatory Inflection 2024-2026 (dark · evolution)
+     SLIDE 16 · Stablecoin Regulatory Inflection 2024-2026 (dark · evolution)
      ============================================================ -->
-<section class="slide dark" data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26">
+<section class="slide dark" data-screen-label="16 Stablecoin Rules 2024-26">
   <div class="chrome">
-    <div>§3.6 · Hyperframe · regulatory inflection</div>
+    <div>§3.6 · regulatory inflection</div>
     <div>16 / 21</div>
   </div>
   <style>
@@ -1367,18 +1382,18 @@
     @keyframes hf1s-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hf1s-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hf1s-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-card { animation: hf1s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-row { animation: hf1s-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-bar { animation: hf1s-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-rec { animation: hf1s-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="16 Hyperframe · Stablecoin Rules 2024-26"].active .hf1s-scrub-fill { animation: hf1s-scrub 9s linear infinite }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card { animation: hf1s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-row { animation: hf1s-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-bar { animation: hf1s-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-rec { animation: hf1s-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="16 Stablecoin Rules 2024-26"].active .hf1s-scrub-fill { animation: hf1s-scrub 9s linear infinite }
     .hf1s-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hf1s-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hf1s-rec { color:#ff7458; letter-spacing:.3em }
@@ -1409,7 +1424,7 @@
     .hf1s-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.6 · Data horizon view · the rule-book arrives</div>
+    <div class="kicker">§3.6 · the rule-book arrives</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Stablecoins moved from grey zone to regulated infrastructure.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 08 listed cryptocurrencies and stablecoins as a category &mdash; in 2020 there was no jurisdictional rule-book. Between Dec 2024 and Aug 2025, three of the world&rsquo;s largest financial centres turned stablecoins into licensed activity. Total stablecoin float crossed $320B by Apr 2026; USDT + USDC are >90% of supply, but the issuer perimeter has narrowed to banks &amp; chartered nonbanks.
@@ -1478,17 +1493,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 16 · Hyperframe · stablecoin rules 2024 → 2026</div>
-    <div>2025–2026 · data horizon view</div>
+    <div>Page 16 · stablecoin rules 2024 → 2026</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 17 · Hyperframe · Bank GenAI Deployment 2023→2025 (light · evolution)
+     SLIDE 17 · Bank GenAI Deployment 2023→2025 (light · evolution)
      ============================================================ -->
-<section class="slide light" data-screen-label="17 Hyperframe · Bank GenAI 2023-2025">
+<section class="slide light" data-screen-label="17 Bank GenAI 2023-2025">
   <div class="chrome">
-    <div>§3.7 · Hyperframe · sustaining innovation · GenAI rollout</div>
+    <div>§3.7 · sustaining innovation · GenAI rollout</div>
     <div>17 / 21</div>
   </div>
   <style>
@@ -1496,16 +1511,16 @@
     @keyframes hfg-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfg-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfg-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-row { animation: hfg-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-row:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-row:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-row:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-row:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-row:nth-child(5) { animation-delay:.75s }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-card { animation: hfg-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:.9s }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-rec { animation: hfg-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-bar { animation: hfg-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
-    .slide[data-screen-label="17 Hyperframe · Bank GenAI 2023-2025"].active .hfg-scrub-fill { animation: hfg-scrub 9s linear infinite }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row { animation: hfg-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-row:nth-child(5) { animation-delay:.75s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-card { animation: hfg-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay:.9s }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-rec { animation: hfg-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-bar { animation: hfg-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="17 Bank GenAI 2023-2025"].active .hfg-scrub-fill { animation: hfg-scrub 9s linear infinite }
     .hfg-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hfg-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hfg-topbar .hfg-rec { color:#c33b2a; letter-spacing:.3em }
@@ -1534,7 +1549,7 @@
     .hfg-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7 · Data horizon view · sustaining innovation 2023 → 2025</div>
+    <div class="kicker">§3.7 · sustaining innovation 2023 → 2025</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Incumbents catch up: bank GenAI rollout, 2023&rarr;2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 05 framed traditional fintech as &ldquo;faster horses.&rdquo; Slide 12 quoted the IDC $85B GenAI banking forecast. Two years on, <em>sustaining</em> innovation has actually scaled: every G-SIB now runs production LLMs to tens of thousands of employees. The 2023 baseline is already obsolete.
@@ -1616,17 +1631,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 17 · Hyperframe · bank GenAI · 2023 → 2025</div>
-    <div>2025–2026 · data horizon view</div>
+    <div>Page 17 · bank GenAI · 2023 → 2025</div>
+    <div>2025–2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 18 · Hyperframe · BNPL 2020→2025 evolution (light · new)
+     SLIDE 18 · BNPL 2020→2025 evolution (light · new)
      ============================================================ -->
-<section class="slide light" data-screen-label="18 Hyperframe · BNPL 2020-2025">
+<section class="slide light" data-screen-label="18 BNPL 2020-2025">
   <div class="chrome">
-    <div>§3.7b · Hyperframe · BNPL evolution</div>
+    <div>§3.7b · BNPL evolution</div>
     <div>18 / 21</div>
   </div>
   <style>
@@ -1634,19 +1649,19 @@
     @keyframes hfb-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfb-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfb-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-card { animation: hfb-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-row { animation: hfb-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-bar { animation: hfb-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-rec { animation: hfb-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="18 Hyperframe · BNPL 2020-2025"].active .hfb-scrub-fill { animation: hfb-scrub 9s linear infinite }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card { animation: hfb-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row { animation: hfb-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-bar { animation: hfb-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-rec { animation: hfb-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="18 BNPL 2020-2025"].active .hfb-scrub-fill { animation: hfb-scrub 9s linear infinite }
     .hfb-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
     .hfb-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
     .hfb-topbar .hfb-rec { color:#c33b2a; letter-spacing:.3em }
@@ -1678,7 +1693,7 @@
     .hfb-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7b · Data horizon view · BNPL goes mainstream &amp; consolidates</div>
+    <div class="kicker">§3.7b · BNPL goes mainstream &amp; consolidates</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">BNPL: from pandemic novelty to public-market category, 2020&rarr;2025.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 08 listed online lending alongside crowdfunding. Five years on, Buy-Now-Pay-Later is the breakout sub-category: 380M+ global users, $560B GMV in 2025, and the largest IPO of 2025. But the field also <em>narrowed</em>: Apple killed its in-house Pay Later, the CFPB&rsquo;s 2024 interpretive rule was withdrawn in Apr 2025, and Affirm became the de-facto default checkout install for Apple Pay.
@@ -1759,17 +1774,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 18 &middot; Hyperframe &middot; BNPL 2020 &rarr; 2025</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 18 &middot; BNPL 2020 &rarr; 2025</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 19 · Hyperframe · Real-Time Rails 2023→2026 (dark · new)
+     SLIDE 19 · Real-Time Rails 2023→2026 (dark · new)
      ============================================================ -->
-<section class="slide dark" data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026">
+<section class="slide dark" data-screen-label="19 Real-Time Rails 2023-2026">
   <div class="chrome">
-    <div>§3.7c · Hyperframe · instant-payment rails</div>
+    <div>§3.7c · instant-payment rails</div>
     <div>19 / 21</div>
   </div>
   <style>
@@ -1777,19 +1792,19 @@
     @keyframes hff-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hff-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hff-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-card { animation: hff-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-row { animation: hff-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-bar { animation: hff-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-rec { animation: hff-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="19 Hyperframe · Real-Time Rails 2023-2026"].active .hff-scrub-fill { animation: hff-scrub 9s linear infinite }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card { animation: hff-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row { animation: hff-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-bar { animation: hff-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-rec { animation: hff-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="19 Real-Time Rails 2023-2026"].active .hff-scrub-fill { animation: hff-scrub 9s linear infinite }
     .hff-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hff-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hff-rec { color:#ff7458; letter-spacing:.3em }
@@ -1820,7 +1835,7 @@
     .hff-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7c · Data horizon view · instant payments go mainstream</div>
+    <div class="kicker">§3.7c · instant payments go mainstream</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">From batch to instant: real-time rails became table-stakes, 2023&rarr;2026.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 10 listed instant settlement among the ten technologies. Three years on, every major payment market has a domestic real-time rail at scale. FedNow went from 35 launch banks (Jul 2023) to 1,400+ participants (Sep 2025); Brazil&rsquo;s Pix processed 64B+ transactions in 2024; India&rsquo;s UPI clears 17B+ transactions per month. Bank rails are no longer the bottleneck &mdash; the question is what gets built on top.
@@ -1901,17 +1916,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 19 &middot; Hyperframe &middot; Real-time rails 2023 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 19 &middot; Real-time rails 2023 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 20 · Hyperframe · Spot Crypto ETFs 2024-2026 (dark)
+     SLIDE 20 · Spot Crypto ETFs 2024-2026 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026">
+<section class="slide dark" data-screen-label="20 Spot Crypto ETFs 2024-2026">
   <div class="chrome">
-    <div>§3.7d · Hyperframe · institutional crypto wrappers</div>
+    <div>§3.7d · institutional crypto wrappers</div>
     <div>20 / 21</div>
   </div>
   <style>
@@ -1919,19 +1934,19 @@
     @keyframes hfetf-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfetf-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfetf-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-card { animation: hfetf-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-row { animation: hfetf-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-bar { animation: hfetf-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-rec { animation: hfetf-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="20 Hyperframe · Spot Crypto ETFs 2024-2026"].active .hfetf-scrub-fill { animation: hfetf-scrub 9s linear infinite }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card { animation: hfetf-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row { animation: hfetf-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-bar { animation: hfetf-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-rec { animation: hfetf-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="20 Spot Crypto ETFs 2024-2026"].active .hfetf-scrub-fill { animation: hfetf-scrub 9s linear infinite }
     .hfetf-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hfetf-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hfetf-rec { color:#f4b13a; letter-spacing:.3em }
@@ -1962,7 +1977,7 @@
     .hfetf-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7d · Data horizon view · the bitcoin wrapper goes mainstream</div>
+    <div class="kicker">§3.7d · the bitcoin wrapper goes mainstream</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Spot crypto ETFs: from approval (Jan 2024) to $200B AUM (May 2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 10 listed digital assets among the ten technologies. Two years after SEC approval (Jan 10, 2024), the spot bitcoin ETF complex crossed ~$200B AUM &mdash; faster than any prior ETF category. BlackRock&rsquo;s IBIT alone holds ~810,000 BTC (~$66B). The wrapper, not the token, became the institutional access point: 401(k)s, pensions, and RIAs now buy bitcoin without custody. The Ether spot ETF (Jul 2024) followed; both reshape what &ldquo;crypto in the portfolio&rdquo; means for advisors.
@@ -2043,17 +2058,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 20 &middot; Hyperframe &middot; Spot crypto ETFs 2024 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 20 &middot; Spot crypto ETFs 2024 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 21 · Hyperframe · Cross-Border B2B Stablecoins 2023-2026 (dark · data horizon view)
+     SLIDE 21 · Cross-Border B2B Stablecoins 2023-2026 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026">
+<section class="slide dark" data-screen-label="21 X-Border B2B Stables 2023-2026">
   <div class="chrome">
-    <div>§3.7e · Hyperframe · cross-border B2B reset</div>
+    <div>§3.7e · cross-border B2B reset</div>
     <div>21 / 22</div>
   </div>
   <style>
@@ -2061,19 +2076,19 @@
     @keyframes hfxb-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfxb-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfxb-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-card { animation: hfxb-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-row { animation: hfxb-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-row:nth-child(1) { animation-delay:.85s }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-row:nth-child(2) { animation-delay:1.0s }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-row:nth-child(3) { animation-delay:1.15s }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-row:nth-child(4) { animation-delay:1.3s }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-bar { animation: hfxb-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-rec { animation: hfxb-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="21 Hyperframe · X-Border B2B Stables 2023-2026"].active .hfxb-scrub-fill { animation: hfxb-scrub 9s linear infinite }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-card { animation: hfxb-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-row { animation: hfxb-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-bar { animation: hfxb-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-rec { animation: hfxb-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"].active .hfxb-scrub-fill { animation: hfxb-scrub 9s linear infinite }
     .hfxb-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hfxb-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hfxb-rec { color:#5dd3a8; letter-spacing:.3em }
@@ -2104,7 +2119,7 @@
     .hfxb-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7e · Data horizon view · cross-border B2B reset</div>
+    <div class="kicker">§3.7e · cross-border B2B reset</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Stablecoins eat the SWIFT margin: B2B cross-border 2023 &rarr; 2026.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 12 cited real-time rails. Slide 13 noted stablecoins crossed Visa+Mastercard combined card volume. The next layer down is B2B settlement &mdash; where ~92% of the global flow still runs through SWIFT correspondent banking. Stablecoin B2B payments grew from &lt;$100M/month in early 2023 to &gt;$6B/month by mid-2025 (a 733% YoY surge). Real-payment stablecoin volume doubled to ~$400B in 2025, ~60% of which is B2B. The card networks responded: Visa reported $4.6B annualized stablecoin settlement on its own rail in Q1 2026, and Wise Platform plugged 60+ banks (Bank Mandiri, IndusInd, Monzo, Brex) into a 20-second-or-less corridor.
@@ -2185,17 +2200,17 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 21 &middot; Hyperframe &middot; Cross-border B2B 2023 &rarr; 2026</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 21 &middot; Cross-border B2B 2023 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 22 · Hyperframe · GENIUS Era stablecoin market 2025-26 (dark · data horizon view)
+     SLIDE 22 · GENIUS Era stablecoin market 2025-26 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="22 Hyperframe · GENIUS Era 2025-26">
+<section class="slide dark" data-screen-label="22 GENIUS Era 2025-26">
   <div class="chrome">
-    <div>§3.7f · Hyperframe · post-GENIUS stablecoin market</div>
+    <div>§3.7f · post-GENIUS stablecoin market</div>
     <div>22 / 23</div>
   </div>
   <style>
@@ -2203,19 +2218,19 @@
     @keyframes hfg-bar { 0%{width:0} 100%{width:var(--w)} }
     @keyframes hfg-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
     @keyframes hfg-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-card { animation: hfg-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-card:nth-child(1) { animation-delay:.15s }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-card:nth-child(2) { animation-delay:.3s }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-card:nth-child(3) { animation-delay:.45s }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-card:nth-child(4) { animation-delay:.6s }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-row { animation: hfg-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-row:nth-child(2) { animation-delay:.85s }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-row:nth-child(3) { animation-delay:1.0s }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-row:nth-child(4) { animation-delay:1.15s }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-row:nth-child(5) { animation-delay:1.3s }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-bar { animation: hfg-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-rec { animation: hfg-blink 1.4s ease-in-out infinite }
-    .slide[data-screen-label="22 Hyperframe · GENIUS Era 2025-26"].active .hfg-scrub-fill { animation: hfg-scrub 9s linear infinite }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card { animation: hfg-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row { animation: hfg-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row:nth-child(2) { animation-delay:.85s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row:nth-child(3) { animation-delay:1.0s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row:nth-child(4) { animation-delay:1.15s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-row:nth-child(5) { animation-delay:1.3s }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-bar { animation: hfg-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-rec { animation: hfg-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="22 GENIUS Era 2025-26"].active .hfg-scrub-fill { animation: hfg-scrub 9s linear infinite }
     .hfg-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
     .hfg-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
     .hfg-rec { color:#7ec0ff; letter-spacing:.3em }
@@ -2246,7 +2261,7 @@
     .hfg-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7f · Data horizon view · post-GENIUS stablecoin landscape</div>
+    <div class="kicker">§3.7f · post-GENIUS stablecoin landscape</div>
     <h2 class="h-xl" style="font-size:3.7vw; margin-top:.4vh">The GENIUS Era: stablecoins move from gray zone to chartered rail (Jul 2025 &rarr; Q2 2026).</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       President Trump signed the GENIUS Act into law on 18 July 2025 &mdash; the first U.S. federal stablecoin framework. Title II created a payment-stablecoin issuer charter (state OR federal trust); Title VII banned issuer-paid interest. Nine months in, the market has compounded, not shrunk: total supply broke $280B in early 2026, USDC outpaced USDT growth for a second straight year, and Visa/Mastercard re-anchored to compliant USD-tokens. The thesis from slide 12 (the &ldquo;fourth wave&rdquo;) is now codified.
@@ -2327,8 +2342,8 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 22 &middot; Hyperframe &middot; GENIUS Era stablecoin market</div>
-    <div>2025&ndash;2026 &middot; data horizon view</div>
+    <div>Page 22 &middot; GENIUS Era stablecoin market</div>
+    <div>2025&ndash;2026</div>
   </div>
 </section>
 
