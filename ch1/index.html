@@ -61,7 +61,11 @@
   .chrome{display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
   .chrome .left,.chrome .right{display:flex;gap:2.4em;align-items:center}
   .chrome .sep{width:40px;height:1px;background:currentColor;opacity:.4}
-  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+  .foot{position:absolute;bottom:0;left:0;right:0;padding:1.8vh 6vw 2vh;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;z-index:2}
+  .slide.dark .foot{background:linear-gradient(0deg,rgba(var(--ink-rgb),1) 0%,rgba(var(--ink-rgb),.95) 50%,rgba(var(--ink-rgb),0) 100%)}
+  .slide.light .foot{background:linear-gradient(0deg,rgba(var(--paper-rgb),1) 0%,rgba(var(--paper-rgb),.95) 50%,rgba(var(--paper-rgb),0) 100%)}
+  .slide.hero.dark .foot{background:linear-gradient(0deg,rgba(var(--ink-rgb),.7) 0%,rgba(var(--ink-rgb),.4) 50%,transparent 100%)}
+  .slide.hero.light .foot{background:linear-gradient(0deg,rgba(var(--paper-rgb),.7) 0%,rgba(var(--paper-rgb),.4) 50%,transparent 100%)}
   .foot .title{font-family:var(--serif-zh);font-weight:400;letter-spacing:.05em;text-transform:none;opacity:.75;font-size:13px}
 
   .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:6px 14px;border:1px solid currentColor;opacity:.85}
@@ -192,7 +196,7 @@
      ============================================================ */
 
   /* ---------- .frame：每页主内容容器 ---------- */
-  .frame{flex:1;display:flex;flex-direction:column;min-height:0}
+  .frame{flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
   /* 当 .frame 同时加了 grid 类时，grid 的 display:grid 覆盖 flex */
   .frame.grid-2-7-5,
   .frame.grid-2-6-6,
@@ -396,7 +400,7 @@
 
   /* ---------- chrome & foot 补位（layouts.md 简单写法） ---------- */
   .chrome{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.2em;text-transform:uppercase;opacity:.62}
-  .foot{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+  .foot{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5;position:absolute;bottom:0;left:0;right:0;padding:1.8vh 6vw 2vh;z-index:2}
 
   /* ---------- 响应式降级 ---------- */
   @media (max-width:900px){

@@ -46,7 +46,11 @@
   .slide.hero.dark::after{background:linear-gradient(180deg,rgba(var(--ink-rgb),.32) 0%,rgba(var(--ink-rgb),0) 14%,rgba(var(--ink-rgb),0) 86%,rgba(var(--ink-rgb),.32) 100%)}
 
   .chrome{display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.2em;text-transform:uppercase;opacity:.62}
-  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+  .foot{position:absolute;bottom:0;left:0;right:0;padding:1.8vh 6vw 2vh;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5;z-index:2}
+  .slide.dark .foot{background:linear-gradient(0deg,rgba(var(--ink-rgb),1) 0%,rgba(var(--ink-rgb),.95) 50%,rgba(var(--ink-rgb),0) 100%)}
+  .slide.light .foot{background:linear-gradient(0deg,rgba(var(--paper-rgb),1) 0%,rgba(var(--paper-rgb),.95) 50%,rgba(var(--paper-rgb),0) 100%)}
+  .slide.hero.dark .foot{background:linear-gradient(0deg,rgba(var(--ink-rgb),.7) 0%,rgba(var(--ink-rgb),.4) 50%,transparent 100%)}
+  .slide.hero.light .foot{background:linear-gradient(0deg,rgba(var(--paper-rgb),.7) 0%,rgba(var(--paper-rgb),.4) 50%,transparent 100%)}
 
   .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:6px 14px;border:1px solid currentColor;opacity:.85}
   .rule{width:100%;height:1px;background:currentColor;opacity:.25;margin:3vh 0}
@@ -135,7 +139,7 @@
   figure.frame-img{margin:0;display:flex;flex-direction:column;min-width:0}
   .img-cap{display:block;margin-top:.8vh;font-family:var(--mono);font-size:max(10px,.8vw);letter-spacing:.22em;text-transform:uppercase;opacity:.6}
 
-  .frame{flex:1;display:flex;flex-direction:column;min-height:0}
+  .frame{flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
 
   #nav{position:fixed;left:50%;bottom:2.6vh;transform:translateX(-50%);z-index:30;display:flex;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
   #nav .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s ease;border:0;padding:0}

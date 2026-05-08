@@ -51,7 +51,11 @@
   .chrome{display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
   .chrome .left,.chrome .right{display:flex;gap:2.4em;align-items:center}
   .chrome .sep{width:40px;height:1px;background:currentColor;opacity:.4}
-  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+  .foot{position:absolute;bottom:0;left:0;right:0;padding:1.8vh 6vw 2vh;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;z-index:2}
+  .slide.dark .foot{background:linear-gradient(0deg,rgba(var(--ink-rgb),1) 0%,rgba(var(--ink-rgb),.95) 50%,rgba(var(--ink-rgb),0) 100%)}
+  .slide.light .foot{background:linear-gradient(0deg,rgba(var(--paper-rgb),1) 0%,rgba(var(--paper-rgb),.95) 50%,rgba(var(--paper-rgb),0) 100%)}
+  .slide.hero.dark .foot{background:linear-gradient(0deg,rgba(var(--ink-rgb),.7) 0%,rgba(var(--ink-rgb),.4) 50%,transparent 100%)}
+  .slide.hero.light .foot{background:linear-gradient(0deg,rgba(var(--paper-rgb),.7) 0%,rgba(var(--paper-rgb),.4) 50%,transparent 100%)}
   .foot .title{font-family:var(--serif-zh);font-weight:400;letter-spacing:.05em;text-transform:none;opacity:.75;font-size:13px}
 
   .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:6px 14px;border:1px solid currentColor;opacity:.85}
@@ -169,7 +173,7 @@
   #hint{position:fixed;bottom:3vh;right:3vw;z-index:30;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;mix-blend-mode:difference;color:#aaa}
 
   /* ============ LAYOUTS API ============ */
-  .frame{flex:1;display:flex;flex-direction:column;min-height:0}
+  .frame{flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
   .frame.grid-2-7-5,
   .frame.grid-2-6-6,
   .frame.grid-2-8-4,
@@ -357,7 +361,7 @@
   }
 
   .chrome{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.2em;text-transform:uppercase;opacity:.62}
-  .foot{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+  .foot{font-family:var(--mono);font-size:max(11px,.78vw);letter-spacing:.18em;text-transform:uppercase;opacity:.5;position:absolute;bottom:0;left:0;right:0;padding:1.8vh 6vw 2vh;z-index:2}
 
   @media (max-width:900px){
     .display{font-size:16vw}
