@@ -8,6 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
+  @font-face{
+    font-family:'PunctFix';
+    src:local('Source Serif 4'),local('Source Serif Pro'),local('Times New Roman'),local('Georgia');
+    unicode-range:U+0027,U+0022,U+2018-201F,U+2032-2033;
+  }
   :root{
     --ink:#0a1f3d;
     --ink-rgb:10,31,61;
@@ -19,8 +24,8 @@
     --mono:"IBM Plex Mono",ui-monospace,monospace;
     --serif-en:"Playfair Display","Source Serif 4",Georgia,serif;
     --serif-body-en:"Source Serif 4",Georgia,serif;
-    --serif-zh:"Noto Serif SC",source-han-serif-sc,serif;
-    --sans-zh:"Noto Sans SC",source-han-sans-sc,sans-serif;
+    --serif-zh:"PunctFix","Noto Serif SC",source-han-serif-sc,serif;
+    --sans-zh:"PunctFix","Noto Sans SC",source-han-sans-sc,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var(--paper);font-family:var(--sans-zh);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -440,7 +445,7 @@
 <section class="slide light" data-screen-label="02 Growth Stages">
   <div class="chrome">
     <div>&sect;3.1 &middot; Growth stages</div>
-    <div>02 / 20</div>
+    <div>02 / 22</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.4vh">
@@ -488,7 +493,7 @@
 <section class="slide hero dark" data-screen-label="03 Valley of Death">
   <div class="chrome">
     <div>&sect;3.2 &middot; Pre-seed &amp; seed</div>
-    <div>03 / 20</div>
+    <div>03 / 22</div>
   </div>
   <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:76vh; text-align:center">
     <div class="kicker" style="text-align:center">Burn rate &middot; the Valley of Death</div>
@@ -514,7 +519,7 @@
 <section class="slide light" data-screen-label="04 Angel Investors">
   <div class="chrome">
     <div>&sect;3.3 &middot; Angel investors</div>
-    <div>04 / 20</div>
+    <div>04 / 22</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Early capital &middot; the elevator pitch</div>
@@ -584,7 +589,7 @@
 <section class="slide dark" data-screen-label="05 Wealthsimple">
   <div class="chrome">
     <div>&sect;3.4 &middot; Case study</div>
-    <div>05 / 20</div>
+    <div>05 / 22</div>
   </div>
   <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Case study &middot; Wealthsimple</div>
@@ -643,7 +648,7 @@
 <section class="slide light" data-screen-label="06 Growth Stage">
   <div class="chrome">
     <div>&sect;3.5 &middot; Growth stage</div>
-    <div>06 / 20</div>
+    <div>06 / 22</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.4vh">
@@ -697,7 +702,7 @@
 <section class="slide hero light" data-screen-label="07 VC Framework">
   <div class="chrome">
     <div>&sect;3.6 &middot; VC decision framework</div>
-    <div>07 / 20</div>
+    <div>07 / 22</div>
   </div>
   <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:70vh">
     <div style="display:flex; flex-direction:column; justify-content:center; gap:2.4vh">
@@ -740,7 +745,7 @@
 <section class="slide dark" data-screen-label="08 IPO Performance">
   <div class="chrome">
     <div>&sect;3.7 &middot; Late stage &amp; exit</div>
-    <div>08 / 20</div>
+    <div>08 / 22</div>
   </div>
   <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">IPO performance &middot; the disappointing track record</div>
@@ -799,7 +804,7 @@
 <section class="slide light" data-screen-label="09 Securities">
   <div class="chrome">
     <div>&sect;3.8 &middot; Financial securities</div>
-    <div>09 / 20</div>
+    <div>09 / 22</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Securities across rounds</div>
@@ -851,7 +856,7 @@
 <section class="slide light" data-screen-label="10 Cap Table">
   <div class="chrome">
     <div>&sect;3.9 &middot; Capitalization</div>
-    <div>10 / 20</div>
+    <div>10 / 22</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Dilution &middot; the founder&rsquo;s arithmetic</div>
@@ -887,7 +892,7 @@
 <section class="slide dark" data-screen-label="11 Funding 2024-2026">
   <div class="chrome">
     <div>&sect;3.10 &middot; Funding climate 2024&ndash;2026</div>
-    <div>11 / 20</div>
+    <div>11 / 22</div>
   </div>
   <style>
     @keyframes hf3-fade-up { from {opacity:0; transform:translateY(14px)} to {opacity:1; transform:translateY(0)} }
@@ -963,7 +968,7 @@
 <section class="slide dark" data-screen-label="12 IPO Window 2025-26">
   <div class="chrome">
     <div>&sect;3.10 &middot; the IPO window reopens</div>
-    <div>12 / 20</div>
+    <div>12 / 22</div>
   </div>
   <style>
     @keyframes hf3v-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1059,7 +1064,7 @@
 <section class="slide light" data-screen-label="13 2025 IPO Resurgence">
   <div class="chrome">
     <div>&sect;3.6 &middot; fintech IPO resurgence</div>
-    <div>13 / 20</div>
+    <div>13 / 22</div>
   </div>
   <style>
     @keyframes hf3b-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1155,7 +1160,7 @@
 <section class="slide light" data-screen-label="14 YC Fintech 2014 to 2025">
   <div class="chrome">
     <div>&sect;3.11 &middot; accelerator evolution</div>
-    <div>14 / 20</div>
+    <div>14 / 22</div>
   </div>
   <style>
     @keyframes hf3y-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1253,7 +1258,7 @@
 <section class="slide dark" data-screen-label="15 Wealthsimple Arc 2014-2025">
   <div class="chrome">
     <div>&sect;3.12 &middot; case study update</div>
-    <div>15 / 20</div>
+    <div>15 / 22</div>
   </div>
   <style>
     @keyframes hf3w-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1388,7 +1393,7 @@
 <section class="slide light" data-screen-label="16 Stripe Arc 2014-2025">
   <div class="chrome">
     <div>&sect;3.13 &middot; private valuation arc</div>
-    <div>16 / 20</div>
+    <div>16 / 22</div>
   </div>
   <style>
     @keyframes hf3s-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1536,7 +1541,7 @@
 <section class="slide dark" data-screen-label="17 AI-Native Fintech 2023-2025">
   <div class="chrome">
     <div>&sect;3.7b &middot; AI-native fintech VC</div>
-    <div>17 / 20</div>
+    <div>17 / 22</div>
   </div>
   <style>
     @keyframes hfa-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1679,7 +1684,7 @@
 <section class="slide light" data-screen-label="18 Nubank Arc 2014-2025">
   <div class="chrome">
     <div>&sect;3.7c &middot; Latam fintech compounding</div>
-    <div>18 / 20</div>
+    <div>18 / 22</div>
   </div>
   <style>
     @keyframes hfnu-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1822,7 +1827,7 @@
 <section class="slide dark" data-screen-label="19 Secondary Tenders 2024-2026">
   <div class="chrome">
     <div>&sect;3.13 &middot; staying private, getting liquid</div>
-    <div>19 / 20</div>
+    <div>19 / 22</div>
   </div>
   <style>
     @keyframes hfsec-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1964,7 +1969,7 @@
 <section class="slide light" data-screen-label="20 Plaid Arc 2021-2026">
   <div class="chrome">
     <div>&sect;3.10 &middot; the late-stage reset</div>
-    <div>20 / 21</div>
+    <div>20 / 22</div>
   </div>
   <style>
     @keyframes hfpl-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -2014,7 +2019,6 @@
     .hfpl-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;3.10 &middot; the late-stage reset</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Plaid: $13.4B &rarr; $6.1B &rarr; ~$8&ndash;10B IPO. The whole 2021-2026 cycle in one company.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 04 named Plaid as a Visa acquisition target ($5.3B blocked Nov 2020). Slide 12 listed Klarna, Chime and Circle reopening the IPO window. Plaid is the missing link &mdash; it shows what happens to a private fintech that <em>doesn&rsquo;t</em> rush. April 2025: $575M secondary, valued at $6.1B (down 54% from the 2021 peak). FY2025 ARR: $546M, +40% YoY. Plaid told TechCrunch it would not IPO in 2025; analysts now project a 2026 listing at $8.5&ndash;10B. The arc is the cycle: 2021 mega-mark, 2022&ndash;2024 freeze, 2025 down round + profitability discipline, 2026 IPO at a re-earned mark.

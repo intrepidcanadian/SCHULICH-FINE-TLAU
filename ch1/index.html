@@ -8,6 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
+  @font-face{
+    font-family:'PunctFix';
+    src:local('Source Serif 4'),local('Source Serif Pro'),local('Times New Roman'),local('Georgia');
+    unicode-range:U+0027,U+0022,U+2018-201F,U+2032-2033;
+  }
   :root{
     /* ============ 主题色(默认:🖋 墨水经典) ============
        切换主题:从 references/themes.md 复制对应的 :root 块
@@ -25,8 +30,8 @@
     --mono:"IBM Plex Mono",ui-monospace,monospace;
     --serif-en:"Playfair Display","Source Serif 4",Georgia,serif;
     --serif-body-en:"Source Serif 4",Georgia,serif;
-    --serif-zh:"Noto Serif SC",source-han-serif-sc,serif;
-    --sans-zh:"Noto Sans SC",source-han-sans-sc,sans-serif;
+    --serif-zh:"PunctFix","Noto Serif SC",source-han-serif-sc,serif;
+    --sans-zh:"PunctFix","Noto Sans SC",source-han-sans-sc,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var(--paper);font-family:var(--sans-zh);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -486,7 +491,7 @@
 <section class="slide light" data-screen-label="02 What is Fintech">
   <div class="chrome">
     <div>§1.1 · Definition</div>
-    <div>02 / 21</div>
+    <div>02 / 23</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:3vh">
     <div style="display:flex; flex-direction:column; justify-content:space-between; gap:3vh">
@@ -533,7 +538,7 @@
 <section class="slide light" data-screen-label="03 Growth">
   <div class="chrome">
     <div>§1.2 · Scale of the field</div>
-    <div>03 / 21</div>
+    <div>03 / 23</div>
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker">Capital formation · private markets</div>
@@ -569,7 +574,7 @@
 <section class="slide dark" data-screen-label="04 Three Eras">
   <div class="chrome">
     <div>§1.3 · Historical periodisation</div>
-    <div>04 / 21</div>
+    <div>04 / 23</div>
   </div>
   <div class="frame" style="padding-top:5vh">
     <div class="kicker">Periodisation · Arner, Barberis &amp; Buckley (2015)</div>
@@ -616,7 +621,7 @@
 <section class="slide light" data-screen-label="05 Two Paradigms">
   <div class="chrome">
     <div>§1.4 · Paradigms</div>
-    <div>05 / 21</div>
+    <div>05 / 23</div>
   </div>
   <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Christensen meets financial intermediation</div>
@@ -658,7 +663,7 @@
 <section class="slide hero light" data-screen-label="06 The Lens">
   <div class="chrome">
     <div>Part II · The Fintech Explained Lens</div>
-    <div>06 / 21</div>
+    <div>06 / 23</div>
   </div>
   <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
     <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
@@ -690,7 +695,7 @@
 <section class="slide dark" data-screen-label="07 Four Questions">
   <div class="chrome">
     <div>§2.1 · The four questions</div>
-    <div>07 / 21</div>
+    <div>07 / 23</div>
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker">Step 1 of the lens · analytical scaffolding</div>
@@ -742,7 +747,7 @@
 <section class="slide light" data-screen-label="08 Eight Categories">
   <div class="chrome">
     <div>§2.2 · Categories of activity</div>
-    <div>08 / 21</div>
+    <div>08 / 23</div>
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker">Step 2 of the lens · activity-based taxonomy</div>
@@ -806,7 +811,7 @@
 <section class="slide dark" data-screen-label="09 Four Types">
   <div class="chrome">
     <div>§2.3 · Firm types</div>
-    <div>09 / 21</div>
+    <div>09 / 23</div>
   </div>
   <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Step 3 of the lens · competitive topology</div>
@@ -865,7 +870,7 @@
 <section class="slide hero dark" data-screen-label="10 Ten Technologies">
   <div class="chrome">
     <div>§2.4 · Ten technologies</div>
-    <div>10 / 21</div>
+    <div>10 / 23</div>
   </div>
   <div class="frame" style="display:flex; flex-direction:column; gap:2vh; padding-top:3vh">
     <div>
@@ -941,7 +946,7 @@
 <section class="slide light" data-screen-label="11 Ecosystem">
   <div class="chrome">
     <div>§3.1 · The fintech ecosystem</div>
-    <div>11 / 21</div>
+    <div>11 / 23</div>
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker">Ecosystem · actors, institutions, infrastructure</div>
@@ -981,7 +986,7 @@
 <section class="slide dark" data-screen-label="12 The 2024-2026 Wave">
   <div class="chrome">
     <div>§2.5 · Fintech in 2024–2026</div>
-    <div>12 / 21</div>
+    <div>12 / 23</div>
   </div>
   <style>
     @keyframes hf-fade-up { from {opacity:0; transform:translateY(14px)} to {opacity:1; transform:translateY(0)} }
@@ -1046,7 +1051,7 @@
 <section class="slide dark" data-screen-label="13 Stablecoins 2025-26">
   <div class="chrome">
     <div>§3.3 · stablecoin & RWA reset</div>
-    <div>13 / 21</div>
+    <div>13 / 23</div>
   </div>
   <style>
     @keyframes hf-scrub-1 { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
@@ -1142,7 +1147,7 @@
 <section class="slide light" data-screen-label="14 2025 Capital Rebound">
   <div class="chrome">
     <div>§3.4 · 2025 capital rebound</div>
-    <div>14 / 21</div>
+    <div>14 / 23</div>
   </div>
   <style>
     @keyframes hfb-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1238,7 +1243,7 @@
 <section class="slide light" data-screen-label="15 Hubs 2020 to 2025">
   <div class="chrome">
     <div>§3.5 · ecosystem evolution</div>
-    <div>15 / 21</div>
+    <div>15 / 23</div>
   </div>
   <style>
     @keyframes hfh-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1375,7 +1380,7 @@
 <section class="slide dark" data-screen-label="16 Stablecoin Rules 2024-26">
   <div class="chrome">
     <div>§3.6 · regulatory inflection</div>
-    <div>16 / 21</div>
+    <div>16 / 23</div>
   </div>
   <style>
     @keyframes hf1s-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1504,7 +1509,7 @@
 <section class="slide light" data-screen-label="17 Bank GenAI 2023-2025">
   <div class="chrome">
     <div>§3.7 · sustaining innovation · GenAI rollout</div>
-    <div>17 / 21</div>
+    <div>17 / 23</div>
   </div>
   <style>
     @keyframes hfg-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1642,7 +1647,7 @@
 <section class="slide light" data-screen-label="18 BNPL 2020-2025">
   <div class="chrome">
     <div>§3.7b · BNPL evolution</div>
-    <div>18 / 21</div>
+    <div>18 / 23</div>
   </div>
   <style>
     @keyframes hfb-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1785,7 +1790,7 @@
 <section class="slide dark" data-screen-label="19 Real-Time Rails 2023-2026">
   <div class="chrome">
     <div>§3.7c · instant-payment rails</div>
-    <div>19 / 21</div>
+    <div>19 / 23</div>
   </div>
   <style>
     @keyframes hff-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1927,7 +1932,7 @@
 <section class="slide dark" data-screen-label="20 Spot Crypto ETFs 2024-2026">
   <div class="chrome">
     <div>§3.7d · institutional crypto wrappers</div>
-    <div>20 / 21</div>
+    <div>20 / 23</div>
   </div>
   <style>
     @keyframes hfetf-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -2069,7 +2074,7 @@
 <section class="slide dark" data-screen-label="21 X-Border B2B Stables 2023-2026">
   <div class="chrome">
     <div>§3.7e · cross-border B2B reset</div>
-    <div>21 / 22</div>
+    <div>21 / 23</div>
   </div>
   <style>
     @keyframes hfxb-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -2119,7 +2124,6 @@
     .hfxb-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">§3.7e · cross-border B2B reset</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Stablecoins eat the SWIFT margin: B2B cross-border 2023 &rarr; 2026.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 12 cited real-time rails. Slide 13 noted stablecoins crossed Visa+Mastercard combined card volume. The next layer down is B2B settlement &mdash; where ~92% of the global flow still runs through SWIFT correspondent banking. Stablecoin B2B payments grew from &lt;$100M/month in early 2023 to &gt;$6B/month by mid-2025 (a 733% YoY surge). Real-payment stablecoin volume doubled to ~$400B in 2025, ~60% of which is B2B. The card networks responded: Visa reported $4.6B annualized stablecoin settlement on its own rail in Q1 2026, and Wise Platform plugged 60+ banks (Bank Mandiri, IndusInd, Monzo, Brex) into a 20-second-or-less corridor.

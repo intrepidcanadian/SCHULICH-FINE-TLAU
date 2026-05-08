@@ -8,6 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
+  @font-face{
+    font-family:'PunctFix';
+    src:local('Source Serif 4'),local('Source Serif Pro'),local('Times New Roman'),local('Georgia');
+    unicode-range:U+0027,U+0022,U+2018-201F,U+2032-2033;
+  }
   :root{
     --ink:#0a1f3d;
     --ink-rgb:10,31,61;
@@ -19,8 +24,8 @@
     --mono:"IBM Plex Mono",ui-monospace,monospace;
     --serif-en:"Playfair Display","Source Serif 4",Georgia,serif;
     --serif-body-en:"Source Serif 4",Georgia,serif;
-    --serif-zh:"Noto Serif SC",source-han-serif-sc,serif;
-    --sans-zh:"Noto Sans SC",source-han-sans-sc,sans-serif;
+    --serif-zh:"PunctFix","Noto Serif SC",source-han-serif-sc,serif;
+    --sans-zh:"PunctFix","Noto Sans SC",source-han-sans-sc,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var(--paper);font-family:var(--sans-zh);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -230,7 +235,7 @@
 <section class="slide light" data-screen-label="02 Art of Valuation">
   <div class="chrome">
     <div>&sect;4.1 &middot; The art of valuation</div>
-    <div>02 / 21</div>
+    <div>02 / 23</div>
   </div>
   <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Negotiation &middot; value is subjective</div>
@@ -277,7 +282,7 @@
 <section class="slide dark" data-screen-label="03 Four Steps">
   <div class="chrome">
     <div>&sect;4.2 &middot; Four steps in valuation</div>
-    <div>03 / 21</div>
+    <div>03 / 23</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.4vh">
@@ -337,7 +342,7 @@
 <section class="slide light" data-screen-label="04 Payne Scorecard">
   <div class="chrome">
     <div>&sect;4.3 &middot; Angel valuation &middot; Payne Scorecard</div>
-    <div>04 / 21</div>
+    <div>04 / 23</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -389,7 +394,7 @@
 <section class="slide dark" data-screen-label="05 Berkus & RFS">
   <div class="chrome">
     <div>&sect;4.3 &middot; Berkus &amp; Risk Factor Summation</div>
-    <div>05 / 21</div>
+    <div>05 / 23</div>
   </div>
   <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Angel valuation &middot; two more methods</div>
@@ -432,7 +437,7 @@
 <section class="slide hero light" data-screen-label="06 VC Valuation">
   <div class="chrome">
     <div>&sect;4.4 &middot; VC valuation method</div>
-    <div>06 / 21</div>
+    <div>06 / 23</div>
   </div>
   <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
     <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
@@ -489,7 +494,7 @@
 <section class="slide light" data-screen-label="07 Market Multiples">
   <div class="chrome">
     <div>&sect;4.5 &middot; Relative valuation</div>
-    <div>07 / 21</div>
+    <div>07 / 23</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Mature companies &middot; comparable analysis</div>
@@ -542,7 +547,7 @@
 <section class="slide dark" data-screen-label="08 DCF Model">
   <div class="chrome">
     <div>&sect;4.6 &middot; Discounted Cash Flow</div>
-    <div>08 / 21</div>
+    <div>08 / 23</div>
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker">Fundamental valuation &middot; intrinsic value</div>
@@ -592,7 +597,7 @@
 <section class="slide light" data-screen-label="09 ARK Invest">
   <div class="chrome">
     <div>&sect;4.7 &middot; ARK Invest &amp; adjusted EBITDA</div>
-    <div>09 / 21</div>
+    <div>09 / 23</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Disruptive valuation &middot; Cathie Wood</div>
@@ -663,7 +668,7 @@
 <section class="slide dark" data-screen-label="10 Bank Valuation">
   <div class="chrome">
     <div>&sect;4.8 &middot; Bank valuation</div>
-    <div>10 / 21</div>
+    <div>10 / 23</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Financial intermediaries &middot; no DCF possible</div>
@@ -725,7 +730,7 @@
 <section class="slide light" data-screen-label="11 Fintech Multiples">
   <div class="chrome">
     <div>&sect;4.9 &middot; Fintech multiples comparison</div>
-    <div>11 / 21</div>
+    <div>11 / 23</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -776,7 +781,7 @@
 <section class="slide light" data-screen-label="12 Valuation 2024-2026">
   <div class="chrome">
     <div>&sect;4.10 &middot; Valuation reset 2024&ndash;2026</div>
-    <div>12 / 21</div>
+    <div>12 / 23</div>
   </div>
   <style>
     @keyframes hf4-fade-up { from {opacity:0; transform:translateY(14px)} to {opacity:1; transform:translateY(0)} }
@@ -876,7 +881,7 @@
 <section class="slide dark" data-screen-label="13 Tokenized RWA 2025-26">
   <div class="chrome">
     <div>&sect;4.10 &middot; tokenized RWA valuation</div>
-    <div>13 / 21</div>
+    <div>13 / 23</div>
   </div>
   <style>
     @keyframes hf4v-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -972,7 +977,7 @@
 <section class="slide light" data-screen-label="14 Fintech Multiples 2025">
   <div class="chrome">
     <div>&sect;4.11 &middot; fintech multiples 2025</div>
-    <div>14 / 21</div>
+    <div>14 / 23</div>
   </div>
   <style>
     @keyframes hf4b-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1068,7 +1073,7 @@
 <section class="slide light" data-screen-label="15 Multiples 2023 to 2025">
   <div class="chrome">
     <div>&sect;4.12 &middot; multiples reset</div>
-    <div>15 / 21</div>
+    <div>15 / 23</div>
   </div>
   <style>
     @keyframes hf4m-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1222,7 +1227,7 @@
 <section class="slide dark" data-screen-label="16 AI-Native Premium 2025-26">
   <div class="chrome">
     <div>&sect;4.12 &middot; AI-native premium</div>
-    <div>16 / 21</div>
+    <div>16 / 23</div>
   </div>
   <style>
     @keyframes hf4a-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1358,7 +1363,7 @@
 <section class="slide light" data-screen-label="17 Sector Reset 2021-2025">
   <div class="chrome">
     <div>&sect;4.13 &middot; sector reset by category</div>
-    <div>17 / 21</div>
+    <div>17 / 23</div>
   </div>
   <style>
     @keyframes hf4s-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1512,7 +1517,7 @@
 <section class="slide dark" data-screen-label="18 Corporate BTC Treasuries 2020-2026">
   <div class="chrome">
     <div>&sect;4.7b &middot; corporate BTC treasury</div>
-    <div>18 / 21</div>
+    <div>18 / 23</div>
   </div>
   <style>
     @keyframes hft-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1655,7 +1660,7 @@
 <section class="slide dark" data-screen-label="19 Circle IPO 2025">
   <div class="chrome">
     <div>&sect;4.7c &middot; stablecoin issuer goes public</div>
-    <div>19 / 21</div>
+    <div>19 / 23</div>
   </div>
   <style>
     @keyframes hfcr-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1798,7 +1803,7 @@
 <section class="slide light" data-screen-label="20 Bank vs Neobank Multiples 2023-2026">
   <div class="chrome">
     <div>&sect;4.13 &middot; bank P/E vs digital-bank P/E</div>
-    <div>20 / 21</div>
+    <div>20 / 23</div>
   </div>
   <style>
     @keyframes hfnu-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1940,7 +1945,7 @@
 <section class="slide dark" data-screen-label="21 Public Fintech Profit Q1 2026">
   <div class="chrome">
     <div>&sect;4.10 &middot; the profitability inflection</div>
-    <div>21 / 22</div>
+    <div>21 / 23</div>
   </div>
   <style>
     @keyframes hfpr-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
@@ -1990,7 +1995,6 @@
     .hfpr-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
   </style>
   <div class="frame" style="padding-top:2vh">
-    <div class="kicker">&sect;4.10 &middot; the profitability inflection</div>
     <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Q1 2026 earnings: the &ldquo;profitable fintech&rdquo; archetype is now real.</h2>
     <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
       Slide 11 priced fintech multiples on the assumption that Rule-of-40 candidates are scarce. They are not anymore. SoFi posted its 10th consecutive profitable quarter in Q1 2026 (net income $167M, +134% YoY) on $1.1B revenue (+41%). Robinhood netted $346M with 15% revenue growth. Both are now S&amp;P-style operating-leverage stories, not narrative-only growth stocks. This re-rates the &ldquo;public fintech&rdquo; multiples lens: discount rate falls, terminal-value share rises, and the bank/neobank gap (slide 20) narrows from the neobank side.
