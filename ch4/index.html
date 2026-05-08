@@ -140,6 +140,11 @@
   .img-cap{display:block;margin-top:.8vh;font-family:var(--mono);font-size:max(10px,.8vw);letter-spacing:.22em;text-transform:uppercase;opacity:.6}
 
   .frame{flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+  .frame.grid-2-7-5,
+  .frame.grid-2-6-6,
+  .frame.grid-2-8-4,
+  .frame.grid-3-3,
+  .frame.grid-6{display:grid}
 
   #nav{position:fixed;left:50%;bottom:2.6vh;transform:translateX(-50%);z-index:30;display:flex;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
   #nav .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s ease;border:0;padding:0}
@@ -195,41 +200,37 @@
 <section class="slide light" data-screen-label="02 Art of Valuation">
   <div class="chrome">
     <div>&sect;4.1 &middot; The art of valuation</div>
-    <div>02 / 12</div>
+    <div>02 / 13</div>
   </div>
-  <div class="frame" style="padding-top:3vh">
+  <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Negotiation &middot; value is subjective</div>
-    <h2 class="h-xl" style="font-size:5.8vw">Valuation is an art, not a science.</h2>
-    <p class="lead" style="margin-top:1.6vh; max-width:62vw; opacity:.78">
-      Value is what someone will pay. The party in the stronger bargaining position steers the price. For early-stage companies with no revenue history, qualitative factors &mdash; team, idea, market size &mdash; dominate. Traditional models simply do not work.
+    <h2 class="h-xl" style="font-size:4.4vw">Valuation is an art, not a science.</h2>
+    <p class="lead" style="margin-top:.8vh; max-width:62vw; opacity:.78; font-size:1.2vw">
+      Value is what someone will pay. The party in the stronger bargaining position steers the price. For early-stage companies with no revenue history, qualitative factors &mdash; team, idea, market &mdash; dominate. Traditional models do not work.
     </p>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; margin-top:3vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:2vh">
-        <div class="callout">
-          <div class="q-big">The gap between the buyer&rsquo;s offer price and the seller&rsquo;s asking price creates the zone of possible agreement (ZOPA). This is where bargaining takes place.</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1.2vh">
+        <div class="callout" style="padding:1.2vh 1.6vw; font-size:max(13px,1vw); line-height:1.5">
+          <div class="q-big" style="font-size:max(15px,1.2vw)">The gap between the buyer&rsquo;s offer and the seller&rsquo;s ask creates the zone of possible agreement (ZOPA). This is where bargaining takes place.</div>
           <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" style="padding-top:1vh">
           <div class="stat-label">Founder trade-off</div>
-          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Ownership vs. Growth Capital</div>
-          <div class="step-desc">Founders must give up equity to raise capital for growth. Understanding the other party&rsquo;s incentives and interests is the secret to bargaining. Not everyone is rational &mdash; behavioral biases shape negotiations.</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Ownership vs. Growth Capital</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Founders give up equity to raise capital. Understanding the other party&rsquo;s incentives is the secret to bargaining. Behavioral biases shape negotiations.</div>
         </div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:2vh">
-        <div class="stat-card">
+      <div style="display:flex; flex-direction:column; gap:1.2vh">
+        <div class="stat-card" style="padding-top:1vh">
           <div class="stat-label">Fundamental (intrinsic) value</div>
-          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Bottom-Up Models</div>
-          <div class="step-desc">Spreadsheets filled with assumptions about sales, margins, and earnings. Any analyst can manipulate inputs to justify their desired price. Models are negotiating tools, not reality.</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Bottom-Up Models</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Spreadsheets of assumptions about sales, margins, earnings. Analysts can tune inputs to justify any price. Models are negotiating tools.</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" style="padding-top:1vh">
           <div class="stat-label">Relative value</div>
-          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Market Multiples of Comparables</div>
-          <div class="step-desc">Standardized metrics (P/E, EV/Sales, EV/EBITDA) based on similar companies. Change the choice of comparables or the ratio, and you can justify any price. Another negotiating tactic.</div>
-        </div>
-        <div class="callout" style="margin-top:1vh">
-          At the end of the day, both fundamental and relative valuation models are negotiating tools &mdash; used to justify a lower price for a buyer or a higher price for a seller. That&rsquo;s it.
-          <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Market Multiples of Comparables</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">P/E, EV/Sales, EV/EBITDA based on comps. Changing comparables or ratio changes the answer.</div>
         </div>
       </div>
     </div>
@@ -246,53 +247,49 @@
 <section class="slide dark" data-screen-label="03 Four Steps">
   <div class="chrome">
     <div>&sect;4.2 &middot; Four steps in valuation</div>
-    <div>03 / 12</div>
+    <div>03 / 13</div>
   </div>
-  <div class="frame grid-2-7-5" style="padding-top:3vh">
-    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2vh">
+  <div class="frame grid-2-7-5" style="padding-top:2.4vh">
+    <div style="display:flex; flex-direction:column; gap:1.4vh">
       <div>
         <div class="kicker">Framework &middot; universal method</div>
-        <h2 class="h-xl" style="font-size:5.4vw">Four steps.</h2>
-        <p class="lead" style="margin-top:1vh; max-width:42vw">
+        <h2 class="h-xl" style="font-size:4.2vw">Four steps.</h2>
+        <p class="lead" style="margin-top:.8vh; max-width:42vw; font-size:1.2vw">
           Most valuation methodologies boil down to four steps: identify value drivers, forecast the future, discount to present value, and divide the pie.
         </p>
       </div>
       <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
-        <div class="pipeline" data-cols="4">
+        <div class="pipeline" data-cols="2">
           <div class="step">
-            <div class="step-nb">01</div>
-            <div class="step-title" style="font-size:1.3vw">Identify</div>
-            <div class="step-desc">Find value drivers: top-down (TAM, macro) and bottom-up (firm-specific: leadership, brand, unit economics). GIGO principle applies.</div>
+            <div class="step-nb">01 &middot; Identify</div>
+            <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Value drivers: top-down (TAM, macro) and bottom-up (leadership, brand, unit economics). GIGO applies.</div>
           </div>
           <div class="step">
-            <div class="step-nb">02</div>
-            <div class="step-title" style="font-size:1.3vw">Forecast</div>
-            <div class="step-desc">Project future sales and margins using scenario analysis: base, bull, and bear cases with probability weights. Private data is scarce.</div>
+            <div class="step-nb">02 &middot; Forecast</div>
+            <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Project sales/margins via scenario analysis: base, bull, bear. Private data is scarce.</div>
           </div>
           <div class="step">
-            <div class="step-nb">03</div>
-            <div class="step-title" style="font-size:1.3vw">Discount</div>
-            <div class="step-desc">PV = FV / (1+r%)^n. Discount each future cash flow using the IRR. $100 at 10% for 7 years = $51.32 today. Compounding works exponentially.</div>
+            <div class="step-nb">03 &middot; Discount</div>
+            <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">PV = FV / (1+r)^n. $100 at 10% for 7 yrs = $51.32 today.</div>
           </div>
           <div class="step">
-            <div class="step-nb">04</div>
-            <div class="step-title" style="font-size:1.3vw">Divide</div>
-            <div class="step-desc">EV = Net Debt + Equity. Creditors get repaid first; shareholders own the residual. Use as-converted basis for SAFEs and convertible notes.</div>
+            <div class="step-nb">04 &middot; Divide</div>
+            <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">EV = Net Debt + Equity. Creditors first; shareholders residual. Use as-converted for SAFEs/notes.</div>
           </div>
         </div>
       </div>
-      <div class="callout" style="margin-top:1vh">
-        Enterprise Value (EV) = Total Debt &minus; Cash + Preferred + Common + NCI. A going-concern assumption means assets generate cash flows into the future &mdash; always higher than liquidation value.
+      <div class="callout" style="margin-top:.4vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        Enterprise Value = Total Debt &minus; Cash + Preferred + Common + NCI. Going concern always > liquidation.
         <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
       </div>
     </div>
-    <div style="display:flex; flex-direction:column; gap:1.4vh; padding-top:1vh">
-      <div class="frame-img contain" style="height:36vh; border:1px solid rgba(255,255,255,.1)">
+    <div style="display:flex; flex-direction:column; gap:.8vh; padding-top:.8vh">
+      <div class="frame-img contain" style="height:30vh; border:1px solid rgba(255,255,255,.1)">
         <img src="../images/ch4/fig4.1.jpg" alt="Figure 4.1 - The Four Steps in Valuation">
       </div>
       <div class="frame-cap"><span>Fig. 4.1 &middot; The Four Steps in Valuation</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
 
-      <div class="frame-img contain" style="height:34vh; border:1px solid rgba(255,255,255,.1); margin-top:1vh">
+      <div class="frame-img contain" style="height:30vh; border:1px solid rgba(255,255,255,.1); margin-top:.4vh">
         <img src="../images/ch4/tab4.1.png" alt="Table 4.1 - Pre-Money and Post-Money Price Per Share">
       </div>
       <div class="frame-cap"><span>Tab. 4.1 &middot; Pre-Money &amp; Post-Money Price Per Share</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
@@ -310,41 +307,41 @@
 <section class="slide light" data-screen-label="04 Payne Scorecard">
   <div class="chrome">
     <div>&sect;4.3 &middot; Angel valuation &middot; Payne Scorecard</div>
-    <div>04 / 12</div>
+    <div>04 / 13</div>
   </div>
-  <div class="frame grid-2-7-5" style="padding-top:3vh">
-    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2vh">
+  <div class="frame grid-2-7-5" style="padding-top:2.4vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
       <div>
         <div class="kicker">Angel investors &middot; scorecards</div>
-        <h2 class="h-xl" style="font-size:5.2vw">Bill Payne Scorecard.</h2>
-        <p class="lead" style="margin-top:1vh; max-width:42vw">
-          A relative valuation method that starts from an average pre-money valuation of $2M for recent angel-funded deals in the region, then adjusts up or down across seven dimensions based on due diligence and expert judgment.
+        <h2 class="h-xl" style="font-size:4vw">Bill Payne Scorecard.</h2>
+        <p class="lead" style="margin-top:.8vh; max-width:42vw; font-size:1.15vw">
+          A relative valuation that starts from an average pre-money valuation of $2M for recent angel-funded deals in the region, then adjusts up or down across seven dimensions.
         </p>
       </div>
-      <div style="display:flex; flex-direction:column; gap:1.6vh">
-        <div class="stat-card">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:1vh">
           <div class="stat-label">Seven dimensions</div>
-          <div class="step-desc" style="margin-top:.6vh; line-height:1.65">
-            <strong>1.</strong> Strength of entrepreneur &amp; team (30%) &middot;
-            <strong>2.</strong> Size of opportunity (25%) &middot;
-            <strong>3.</strong> Product / technology (15%) &middot;
-            <strong>4.</strong> Competitive environment (10%) &middot;
-            <strong>5.</strong> Marketing &amp; sales channels (10%) &middot;
-            <strong>6.</strong> Need for additional investment (5%) &middot;
-            <strong>7.</strong> Other factors (5%)
+          <div class="step-desc" style="margin-top:.4vh; line-height:1.55; font-size:max(11px,.85vw)">
+            <strong>1.</strong> Entrepreneur &amp; team (30%) &middot;
+            <strong>2.</strong> Opportunity (25%) &middot;
+            <strong>3.</strong> Product / tech (15%) &middot;
+            <strong>4.</strong> Competition (10%) &middot;
+            <strong>5.</strong> Marketing / sales (10%) &middot;
+            <strong>6.</strong> Need for additional capital (5%) &middot;
+            <strong>7.</strong> Other (5%)
           </div>
         </div>
-        <div class="callout" style="margin-top:.4vh">
-          In the textbook example, adjustments sum to 115.5% of the $2M base, yielding a pre-money valuation of <strong>$2.31M</strong>. The scorecard is subjective &mdash; two angels may reach different conclusions from the same data.
+        <div class="callout" style="margin-top:.2vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          Textbook example: adjustments sum to 115.5% of $2M base &rarr; pre-money <strong>$2.31M</strong>. Subjective &mdash; two angels may reach different conclusions.
           <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
         </div>
-        <div class="meta-row" style="margin-top:1vh">
-          <span>10% of angel investments = 90% of total returns</span><span>&middot;</span><span>Portfolio avg: 2.6&times; over 3.5 yr (~27% IRR)</span>
+        <div class="meta-row" style="margin-top:.4vh; font-size:max(10px,.78vw)">
+          <span>10% of angel investments = 90% of returns</span><span>&middot;</span><span>Portfolio avg: 2.6&times; / 3.5 yr (~27% IRR)</span>
         </div>
       </div>
     </div>
-    <div style="display:flex; flex-direction:column; gap:1.4vh; padding-top:1vh">
-      <div class="frame-img contain" style="height:56vh; border:1px solid rgba(127,127,127,.15)">
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.8vh">
+      <div class="frame-img contain" style="height:50vh; border:1px solid rgba(127,127,127,.15)">
         <img src="../images/ch4/tab4.2.png" alt="Table 4.2 - Bill Payne Scorecard Valuation">
       </div>
       <div class="frame-cap"><span>Tab. 4.2 &middot; Bill Payne Scorecard Valuation</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
@@ -362,40 +359,35 @@
 <section class="slide dark" data-screen-label="05 Berkus & RFS">
   <div class="chrome">
     <div>&sect;4.3 &middot; Berkus &amp; Risk Factor Summation</div>
-    <div>05 / 12</div>
+    <div>05 / 13</div>
   </div>
-  <div class="frame" style="padding-top:3vh">
+  <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Angel valuation &middot; two more methods</div>
-    <h2 class="h-xl" style="font-size:5.2vw">Berkus &amp; Risk Factor Summation.</h2>
+    <h2 class="h-xl" style="font-size:4vw">Berkus &amp; Risk Factor Summation.</h2>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1.4vh">
-        <div class="stat-card">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.8vh">
           <div class="stat-label">Dave Berkus Method</div>
-          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Max Pre-Money: $2.5M</div>
-          <div class="step-desc">Base $500K for a sound idea + up to $500K each for four risk categories: (1) working prototype (technology risk), (2) quality team (execution risk), (3) product rollout/sales (production risk), (4) strategic relationships (market risk). First published 1996, updated 2016. Berkus has invested in 100+ start-ups.</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Max Pre-Money: $2.5M</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Base $500K for a sound idea + up to $500K each for 4 risks: (1) prototype (tech), (2) team (execution), (3) rollout (production), (4) strategic relationships (market). Published 1996.</div>
         </div>
-        <div class="frame-img contain" style="height:34vh; border:1px solid rgba(255,255,255,.1)">
+        <div class="frame-img contain" style="height:28vh; border:1px solid rgba(255,255,255,.1)">
           <img src="../images/ch4/tab4.3.png" alt="Table 4.3 - Dave Berkus Method">
         </div>
         <div class="frame-cap"><span>Tab. 4.3 &middot; Berkus Method Example = $1.9M</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:1.4vh">
-        <div class="stat-card">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.8vh">
           <div class="stat-label">Risk Factor Summation</div>
-          <div class="step-title" style="font-size:1.4vw; margin-top:.4vh">Ohio TechAngels &middot; 12 Risk Categories</div>
-          <div class="step-desc">Starts from average regional valuation (e.g. $2M). Adjust &minus;2 to +2 for each of 12 risks: management, stage, legislation, manufacturing, sales/marketing, funding, competition, technology, litigation, international, reputation, and exit potential. Each unit = &plusmn;$250K. Example yields $2.25M.</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Ohio TechAngels &middot; 12 Risk Categories</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Start from regional avg (~$2M). Adjust &minus;2 to +2 across 12 risks (management, stage, legislation, manufacturing, sales, funding, competition, tech, litigation, international, reputation, exit). Each unit = &plusmn;$250K.</div>
         </div>
-        <div class="frame-img contain" style="height:34vh; border:1px solid rgba(255,255,255,.1)">
+        <div class="frame-img contain" style="height:28vh; border:1px solid rgba(255,255,255,.1)">
           <img src="../images/ch4/tab4.4.png" alt="Table 4.4 - Risk Factor Summation Method">
         </div>
         <div class="frame-cap"><span>Tab. 4.4 &middot; Risk Factor Summation = $2.25M</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
       </div>
-    </div>
-
-    <div class="callout" style="margin-top:2vh">
-      All three angel methods are subjective and rely on expert judgment. Payne and RFS start from regional comparables (relative valuation); Berkus builds from a fixed base. Early-stage valuation remains an art.
-      <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
     </div>
   </div>
   <div class="foot">
@@ -410,7 +402,7 @@
 <section class="slide hero light" data-screen-label="06 VC Valuation">
   <div class="chrome">
     <div>&sect;4.4 &middot; VC valuation method</div>
-    <div>06 / 12</div>
+    <div>06 / 13</div>
   </div>
   <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
     <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
@@ -467,43 +459,43 @@
 <section class="slide light" data-screen-label="07 Market Multiples">
   <div class="chrome">
     <div>&sect;4.5 &middot; Relative valuation</div>
-    <div>07 / 12</div>
+    <div>07 / 13</div>
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker">Mature companies &middot; comparable analysis</div>
-    <h2 class="h-xl" style="font-size:5.2vw">Market multiples &amp; precedent transactions.</h2>
-    <p class="lead" style="margin-top:1vh; max-width:62vw; opacity:.78; font-size:1.4vw">
-      Relative valuation standardizes company value using equity multiples (P/E) and enterprise multiples (EV/Sales, EV/EBITDA). Use 3&ndash;5 comparable companies; calculate average and median, dropping outliers. Precedent transactions add a control premium from completed acquisitions.
+    <h2 class="h-xl" style="font-size:4.2vw">Market multiples &amp; precedent transactions.</h2>
+    <p class="lead" style="margin-top:.8vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      Relative valuation standardizes value via equity multiples (P/E) and enterprise multiples (EV/Sales, EV/EBITDA). Use 3&ndash;5 comparables; calculate avg/median, drop outliers. Precedent transactions add a control premium.
     </p>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1.4vh">
-        <div class="frame-img contain" style="height:22vh; border:1px solid rgba(127,127,127,.15)">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="frame-img contain" style="height:18vh; border:1px solid rgba(127,127,127,.15)">
           <img src="../images/ch4/tab4.5.png" alt="Table 4.5 - Common Market Multiples">
         </div>
         <div class="frame-cap"><span>Tab. 4.5 &middot; Common Market Multiples</span><span class="idx">Source: <em>Fintech Explained</em></span></div>
 
-        <div class="stat-card" style="margin-top:1vh">
+        <div class="stat-card" style="margin-top:.4vh; padding-top:.8vh">
           <div class="stat-label">Three steps to relative valuation</div>
-          <div class="step-desc" style="margin-top:.6vh; line-height:1.65">
-            <strong>1.</strong> Identify comparable companies or transactions (same industry, geography, size) &middot;
-            <strong>2.</strong> Choose valuation multiples (LTM and NTM, equity and enterprise) &middot;
-            <strong>3.</strong> Generate implied value for target (e.g. 15&times; P/E &times; $10M earnings = $150M)
+          <div class="step-desc" style="margin-top:.4vh; line-height:1.5; font-size:max(11px,.85vw)">
+            <strong>1.</strong> Identify comparables (industry, geo, size) &middot;
+            <strong>2.</strong> Choose multiples (LTM/NTM, equity/enterprise) &middot;
+            <strong>3.</strong> Generate implied value (15&times; P/E &times; $10M = $150M)
           </div>
         </div>
-        <div class="callout" style="margin-top:1vh">
-          Precedent example: acquisitions at 3&times;, 2&times;, 4&times;, 5&times;, 8&times; EV/Sales. Average = 4.4&times;; target with $50M sales = $220M implied value. Dropping the 8&times; outlier: 3.5&times; = $175M &mdash; 20% lower.
+        <div class="callout" style="margin-top:.4vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          Precedent: 3&times;, 2&times;, 4&times;, 5&times;, 8&times; EV/Sales. Avg = 4.4&times;; $50M sales target &rarr; $220M. Drop 8&times; outlier &rarr; 3.5&times; = $175M (&minus;20%).
           <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
         </div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:1.4vh">
-        <div class="frame-img contain" style="height:42vh; border:1px solid rgba(127,127,127,.15)">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="frame-img contain" style="height:36vh; border:1px solid rgba(127,127,127,.15)">
           <img src="../images/ch4/tab4.6.png" alt="Table 4.6 - Market Multiples for Adyen">
         </div>
         <div class="frame-cap"><span>Tab. 4.6 &middot; Adyen vs. Comparable Companies</span><span class="idx">Source: Refinitiv, Dec 2022</span></div>
-        <div class="stat-card" style="margin-top:1vh">
+        <div class="stat-card" style="margin-top:.4vh; padding-top:.8vh">
           <div class="stat-label">Adyen (ADYEN) &middot; Dutch payments fintech</div>
-          <div class="step-desc" style="margin-top:.4vh">$44B market cap. P/E of 75.5&times; (LTM) vs. peer average 39.4&times;. EBITDA margin 10% vs. Visa 71% and MasterCard 61%. Adyen trades at a premium P/E but lower EBITDA margin &mdash; reflecting growth expectations over current profitability.</div>
+          <div class="step-desc" style="margin-top:.3vh; font-size:max(11px,.85vw); line-height:1.45">$44B market cap. P/E 75.5&times; (LTM) vs. peer avg 39.4&times;. EBITDA margin 10% vs. Visa 71%, Mastercard 61%. Premium P/E reflects growth expectations.</div>
         </div>
       </div>
     </div>
@@ -520,7 +512,7 @@
 <section class="slide dark" data-screen-label="08 DCF Model">
   <div class="chrome">
     <div>&sect;4.6 &middot; Discounted Cash Flow</div>
-    <div>08 / 12</div>
+    <div>08 / 13</div>
   </div>
   <div class="frame" style="padding-top:3vh">
     <div class="kicker">Fundamental valuation &middot; intrinsic value</div>
@@ -570,66 +562,60 @@
 <section class="slide light" data-screen-label="09 ARK Invest">
   <div class="chrome">
     <div>&sect;4.7 &middot; ARK Invest &amp; adjusted EBITDA</div>
-    <div>09 / 12</div>
+    <div>09 / 13</div>
   </div>
-  <div class="frame" style="padding-top:3vh">
+  <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Disruptive valuation &middot; Cathie Wood</div>
-    <h2 class="h-xl" style="font-size:5vw">ARK Invest &amp; adjusted EBITDA.</h2>
-    <p class="lead" style="margin-top:.8vh; max-width:62vw; opacity:.78; font-size:1.4vw">
-      ARK Invest argues GAAP metrics penalize disruptive companies investing heavily to scale. Wood proposes five adjustments to EBITDA. ARK rose to $50B AUM by Feb 2021, then collapsed ~70% to $16B by mid-2022.
+    <h2 class="h-xl" style="font-size:4vw">ARK Invest &amp; adjusted EBITDA.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      ARK argues GAAP penalizes disruptors investing heavily to scale. Wood proposes five adjustments to EBITDA. ARK: $50B AUM Feb 2021 &rarr; $16B mid-2022 (&minus;70%).
     </p>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:1vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1.2vh">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:.8vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:.8vh">
         <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
-          <div class="pipeline-label">Five GAAP Adjustments</div>
-          <div class="pipeline" data-cols="3" style="gap:1vw">
+          <div class="pipeline-label" style="margin-bottom:.8vh">Five GAAP Adjustments</div>
+          <div class="pipeline" data-cols="3" style="gap:.8vw">
             <div class="step">
-              <div class="step-nb">01</div>
-              <div class="step-title" style="font-size:1.15vw">R&amp;D Expense</div>
-              <div class="step-desc">Add back. ARK median 28.5% vs. Nasdaq 100 median 12%. IFRS allows capitalization; GAAP expenses it all.</div>
+              <div class="step-nb">01 &middot; R&amp;D</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Add back. ARK 28.5% vs. Nasdaq 12%. IFRS capitalizes; GAAP expenses.</div>
             </div>
             <div class="step">
-              <div class="step-nb">02</div>
-              <div class="step-title" style="font-size:1.15vw">Sales &amp; Marketing</div>
-              <div class="step-desc">Add back incremental portion. ARK median 33.2% vs. Nasdaq 17.2%. Customer acquisition cost for scaling.</div>
+              <div class="step-nb">02 &middot; S&amp;M</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Add incremental. ARK 33.2% vs. Nasdaq 17.2%. CAC for scaling.</div>
             </div>
             <div class="step">
-              <div class="step-nb">03</div>
-              <div class="step-title" style="font-size:1.15vw">Stock-Based Comp.</div>
-              <div class="step-desc">Add back as non-cash. ARK median 22.6% vs. Nasdaq 3.2% (7&times; higher). Like D&amp;A treatment.</div>
+              <div class="step-nb">03 &middot; SBC</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Non-cash. ARK 22.6% vs. Nasdaq 3.2% (7&times; higher). Like D&amp;A.</div>
             </div>
           </div>
-          <div class="pipeline" data-cols="3" style="gap:1vw; margin-top:0.6vh">
+          <div class="pipeline" data-cols="3" style="gap:.8vw; margin-top:.6vh">
             <div class="step">
-              <div class="step-nb">04</div>
-              <div class="step-title" style="font-size:1.15vw">Deferred Revenue</div>
-              <div class="step-desc">Count when cash is received. Multi-year prepaid contracts signal validation, not a liability.</div>
+              <div class="step-nb">04 &middot; Deferred Rev</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Count when cash received. Multi-year prepaid signals validation.</div>
             </div>
             <div class="step">
-              <div class="step-nb">05</div>
-              <div class="step-title" style="font-size:1.15vw">Asset Impairment</div>
-              <div class="step-desc">Add back one-time goodwill write-downs from market declines. Non-cash and non-recurring.</div>
+              <div class="step-nb">05 &middot; Impairment</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Add back one-time goodwill write-downs. Non-cash, non-recurring.</div>
             </div>
             <div class="step">
-              <div class="step-nb" style="opacity:.3">&bull;</div>
-              <div class="step-title" style="font-size:1.15vw; opacity:.7">Skepticism Check</div>
-              <div class="step-desc">Wood&rsquo;s incentive is to increase ARK ETF values. Market multiples can be manipulated &mdash; always verify how metrics are calculated.</div>
+              <div class="step-nb" style="opacity:.5">Skeptic</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Wood&rsquo;s incentive is ETF valuations. Always verify metrics.</div>
             </div>
           </div>
         </div>
-        <div class="frame-img contain" style="height:26vh; border:1px solid rgba(127,127,127,.15)">
+        <div class="frame-img contain" style="height:22vh; border:1px solid rgba(127,127,127,.15); margin-top:.4vh">
           <img src="../images/ch4/fig4.2.jpg" alt="Figure 4.2 - ARKF vs. S&P500">
         </div>
-        <div class="frame-cap"><span>Fig. 4.2 &middot; ARKF vs. S&amp;P500 (indexed to 100)</span><span class="idx">Source: Refinitiv Eikon</span></div>
+        <div class="frame-cap"><span>Fig. 4.2 &middot; ARKF vs. S&amp;P500 (indexed)</span><span class="idx">Source: Refinitiv Eikon</span></div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:1.4vh">
-        <div class="frame-img contain" style="height:44vh; border:1px solid rgba(127,127,127,.15)">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="frame-img contain" style="height:38vh; border:1px solid rgba(127,127,127,.15)">
           <img src="../images/ch4/tab4.7.png" alt="Table 4.7 - ARK Fintech Innovation ETF Holdings">
         </div>
         <div class="frame-cap"><span>Tab. 4.7 &middot; ARKF Holdings &amp; Market Multiples</span><span class="idx">Source: ARK / Refinitiv, Dec 2022</span></div>
-        <div class="callout" style="margin-top:1vh">
-          8 of 10 ARKF companies are EV/EBITDA outliers (above 20&times; or negative). Robinhood has negative EV &mdash; its market cap is below its cash holdings. P/E multiples are inflated by near-zero or negative EPS. EV/Sales (2&times;&ndash;10&times;) is the most stable metric.
+        <div class="callout" style="margin-top:.4vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          8 of 10 ARKF companies are EV/EBITDA outliers (&gt;20&times; or negative). Robinhood has negative EV. EV/Sales (2&times;&ndash;10&times;) is the most stable metric.
           <div class="callout-src">&mdash; Fintech Explained, Ch. 4</div>
         </div>
       </div>
@@ -647,50 +633,50 @@
 <section class="slide dark" data-screen-label="10 Bank Valuation">
   <div class="chrome">
     <div>&sect;4.8 &middot; Bank valuation</div>
-    <div>10 / 12</div>
+    <div>10 / 13</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Financial intermediaries &middot; no DCF possible</div>
-    <h2 class="h-xl" style="font-size:5vw">Valuing banks: JPMorgan.</h2>
-    <p class="lead" style="margin-top:.6vh; max-width:62vw; opacity:.78; font-size:1.35vw">
-      Banks lack sales and EBITDA, so enterprise multiples and DCF cannot be used. Analysts rely on equity multiples (P/E, P/Book) and financial ratios (NIM, efficiency ratio, ROA, ROE).
+    <h2 class="h-xl" style="font-size:4vw">Valuing banks: JPMorgan.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      Banks lack sales and EBITDA &mdash; enterprise multiples and DCF cannot be used. Analysts rely on equity multiples (P/E, P/Book) and ratios (NIM, efficiency, ROA, ROE).
     </p>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.4vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1.2vh">
-        <div class="frame-img contain" style="height:28vh; border:1px solid rgba(255,255,255,.1)">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2vw; margin-top:1vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:.8vh">
+        <div class="frame-img contain" style="height:24vh; border:1px solid rgba(255,255,255,.1)">
           <img src="../images/ch4/tab4.8.png" alt="Table 4.8 - JPMorgan Balance Sheet">
         </div>
         <div class="frame-cap"><span>Tab. 4.8 &middot; JPMorgan Balance Sheet 2020&ndash;2022</span><span class="idx">Source: JPMorgan Annual Reports</span></div>
-        <div class="frame-img contain" style="height:28vh; border:1px solid rgba(255,255,255,.1)">
+        <div class="frame-img contain" style="height:24vh; border:1px solid rgba(255,255,255,.1)">
           <img src="../images/ch4/tab4.9.png" alt="Table 4.9 - JPMorgan Income Statement">
         </div>
         <div class="frame-cap"><span>Tab. 4.9 &middot; JPMorgan Income Statement</span><span class="idx">Source: JPMorgan Annual Reports</span></div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:1.4vh">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.4vw">
-          <div class="stat-card">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+          <div class="stat-card" style="padding-top:.8vh">
             <div class="stat-label">NIM (2022)</div>
-            <div class="stat-nb" style="font-size:4vw">2.5%</div>
-            <div class="stat-note">Net interest income / avg interest-earning assets. Range: 1&ndash;3% for NA banks.</div>
+            <div class="stat-nb" style="font-size:2.6vw">2.5%</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">NII / avg int-earning assets. NA range 1&ndash;3%.</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-card" style="padding-top:.8vh">
             <div class="stat-label">Efficiency Ratio</div>
-            <div class="stat-nb" style="font-size:4vw">59%</div>
-            <div class="stat-note">Noninterest expense / total revenues. Lower = better cost control.</div>
+            <div class="stat-nb" style="font-size:2.6vw">59%</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">Noninterest exp / revenue. Lower = better cost control.</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-card" style="padding-top:.8vh">
             <div class="stat-label">ROE (2022)</div>
-            <div class="stat-nb" style="font-size:4vw">15.2%</div>
-            <div class="stat-note">ROE = ROA &times; leverage. JPM: 0.6% &times; 12.5&times; = 7.5% (approximation; actual reflects mix).</div>
+            <div class="stat-nb" style="font-size:2.6vw">15.2%</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">ROE = ROA &times; leverage.</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-card" style="padding-top:.8vh">
             <div class="stat-label">Revenue Split</div>
-            <div class="stat-nb" style="font-size:4vw">52/48</div>
-            <div class="stat-note">Net interest income (52%) vs. noninterest income (48%) in 2022. $129B total revenue.</div>
+            <div class="stat-nb" style="font-size:2.6vw">52/48</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">NII (52%) vs. noninterest (48%). $129B total.</div>
           </div>
         </div>
-        <div class="frame-img contain" style="height:24vh; border:1px solid rgba(255,255,255,.1)">
+        <div class="frame-img contain" style="height:22vh; border:1px solid rgba(255,255,255,.1)">
           <img src="../images/ch4/tab4.10.png" alt="Table 4.10 - JPMorgan vs. Comparable US Banks">
         </div>
         <div class="frame-cap"><span>Tab. 4.10 &middot; JPMorgan vs. Peer Banks</span><span class="idx">Source: Refinitiv, Apr 2023</span></div>
@@ -709,40 +695,40 @@
 <section class="slide light" data-screen-label="11 Fintech Multiples">
   <div class="chrome">
     <div>&sect;4.9 &middot; Fintech multiples comparison</div>
-    <div>11 / 12</div>
+    <div>11 / 13</div>
   </div>
-  <div class="frame grid-2-7-5" style="padding-top:3vh">
-    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2vh">
+  <div class="frame grid-2-7-5" style="padding-top:2.4vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
       <div>
         <div class="kicker">Cross-sector comparison</div>
-        <h2 class="h-xl" style="font-size:5vw">Fintech multiples: a wide spectrum.</h2>
-        <p class="lead" style="margin-top:1vh; max-width:42vw">
-          Table 4.11 shows NTM multiples and financial ratios for seven listed fintechs. Extreme variation highlights why relative valuation is unreliable for younger fintech companies.
+        <h2 class="h-xl" style="font-size:4vw">Fintech multiples: a wide spectrum.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:42vw; font-size:1.15vw">
+          NTM multiples and ratios for seven listed fintechs. Extreme variation highlights why relative valuation is unreliable for younger fintechs.
         </p>
       </div>
-      <div style="display:flex; flex-direction:column; gap:1.6vh">
-        <div class="stat-card">
-          <div class="stat-label">PayPal &mdash; most attractively valued?</div>
-          <div class="step-desc" style="margin-top:.6vh; line-height:1.65">
-            Highest ROE (11.5%), highest ROA (3.1%), lowest P/E NTM (14.9&times;), lowest EV/EBITDA NTM (11.0&times;). But median P/E of 14.9&times; vs. average 29.5&times; shows extreme outlier distortion from negative-earnings fintechs.
+      <div style="display:flex; flex-direction:column; gap:.8vh">
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">PayPal &mdash; most attractive?</div>
+          <div class="step-desc" style="margin-top:.3vh; line-height:1.45; font-size:max(11px,.85vw)">
+            Highest ROE (11.5%), ROA (3.1%), lowest P/E NTM (14.9&times;), lowest EV/EBITDA (11&times;). Median P/E 14.9&times; vs. avg 29.5&times; shows outlier distortion.
           </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">Wise Plc &mdash; highest leverage</div>
-          <div class="step-desc" style="margin-top:.6vh">
-            Assets/Equity = 18.5&times; (vs. median 3.4&times;). ROE of 14.4% but ROA only 0.6%. P/Book NTM of 11.0&times; &mdash; highest in the group. Wise operates more like a bank with customer deposits.
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Wise &mdash; highest leverage</div>
+          <div class="step-desc" style="margin-top:.3vh; font-size:max(11px,.85vw); line-height:1.45">
+            A/E = 18.5&times; (vs. median 3.4&times;). ROE 14.4% but ROA 0.6%. P/Book NTM 11&times; &mdash; operates like a bank.
           </div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" style="padding-top:.8vh">
           <div class="stat-label">Negative earners</div>
-          <div class="step-desc" style="margin-top:.6vh">
-            Square, Robinhood, SoFi, and Paytm all have negative ROE. P/E is meaningless when earnings are negative. This is why ARK&rsquo;s adjusted EBITDA argument resonates &mdash; GAAP makes growth-stage companies look unprofitable.
+          <div class="step-desc" style="margin-top:.3vh; font-size:max(11px,.85vw); line-height:1.45">
+            Square, Robinhood, SoFi, Paytm all have negative ROE. P/E is meaningless &mdash; this is ARK&rsquo;s argument for adjusted EBITDA.
           </div>
         </div>
       </div>
     </div>
-    <div style="display:flex; flex-direction:column; gap:1.4vh; padding-top:1vh">
-      <div class="frame-img contain" style="height:56vh; border:1px solid rgba(127,127,127,.15)">
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.8vh">
+      <div class="frame-img contain" style="height:50vh; border:1px solid rgba(127,127,127,.15)">
         <img src="../images/ch4/tab4.11.png" alt="Table 4.11 - Valuation Multiples for Select Fintech Companies">
       </div>
       <div class="frame-cap"><span>Tab. 4.11 &middot; Fintech Multiples &amp; Financial Ratios</span><span class="idx">Source: Refinitiv, Apr 2023</span></div>
@@ -755,12 +741,112 @@
 </section>
 
 <!-- ============================================================
-     SLIDE 12 · Closing (hero dark)
+     SLIDE 12 · Valuation Reset 2024-2026 (hyperframe · animated)
      ============================================================ -->
-<section class="slide hero dark" data-screen-label="12 Closing">
+<section class="slide light" data-screen-label="12 Valuation 2024-2026">
+  <div class="chrome">
+    <div>&sect;4.10 &middot; Valuation reset 2024&ndash;2026</div>
+    <div>12 / 13</div>
+  </div>
+  <style>
+    @keyframes hf4-fade-up { from {opacity:0; transform:translateY(14px)} to {opacity:1; transform:translateY(0)} }
+    @keyframes hf4-pulse { 0%,100%{opacity:.55} 50%{opacity:1} }
+    @keyframes hf4-line-grow { from {stroke-dashoffset:1000} to {stroke-dashoffset:0} }
+    .slide[data-screen-label="12 Valuation 2024-2026"].active .hf4-row { animation: hf4-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="12 Valuation 2024-2026"].active .hf4-row:nth-child(1) { animation-delay: .15s }
+    .slide[data-screen-label="12 Valuation 2024-2026"].active .hf4-row:nth-child(2) { animation-delay: .3s }
+    .slide[data-screen-label="12 Valuation 2024-2026"].active .hf4-row:nth-child(3) { animation-delay: .45s }
+    .slide[data-screen-label="12 Valuation 2024-2026"].active .hf4-row:nth-child(4) { animation-delay: .6s }
+    .slide[data-screen-label="12 Valuation 2024-2026"].active .hf4-row:nth-child(5) { animation-delay: .75s }
+    .slide[data-screen-label="12 Valuation 2024-2026"].active .hf4-card { animation: hf4-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0; animation-delay: .9s }
+    .slide[data-screen-label="12 Valuation 2024-2026"].active .hf4-line { stroke-dasharray:1000; animation: hf4-line-grow 1.6s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: 1.1s }
+    .slide[data-screen-label="12 Valuation 2024-2026"].active .hf4-live { animation: hf4-pulse 1.6s ease-in-out infinite }
+    .hf4-row { display:grid; grid-template-columns:auto 1fr auto auto; gap:1vw; align-items:center; padding:1vh 1.2vw; border-top:1px solid rgba(0,0,0,.08); font-family:var(--sans-zh) }
+    .hf4-row:first-child { border-top:0 }
+    .hf4-row .hf4-firm { font-family:var(--serif-zh); font-weight:700; font-size:1.15vw; min-width:8vw }
+    .hf4-row .hf4-meta { font-size:max(11px,.8vw); opacity:.78; line-height:1.4 }
+    .hf4-row .hf4-old { font-family:var(--serif-en); font-size:max(12px,.95vw); opacity:.5; text-decoration:line-through; font-feature-settings:"tnum" }
+    .hf4-row .hf4-new { font-family:var(--serif-en); font-weight:800; font-size:1.4vw; font-feature-settings:"tnum"; letter-spacing:-.02em }
+    .hf4-row .hf4-up { color:#3b8a4f }
+    .hf4-row .hf4-down { color:#b54a3e }
+    .hf4-card { padding:1.4vh 1.4vw; border:1px solid rgba(0,0,0,.1); border-radius:6px; background:rgba(0,0,0,.02); display:flex; flex-direction:column; gap:.6vh }
+    .hf4-card .hf4-tag { font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.6 }
+    .hf4-card .hf4-stat { font-family:var(--serif-en); font-weight:800; font-size:2.2vw; line-height:.95; letter-spacing:-.025em; font-feature-settings:"tnum" }
+    .hf4-card .hf4-desc { font-family:var(--sans-zh); font-size:max(11px,.82vw); line-height:1.45; opacity:.78 }
+    .hf4-live-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#3b8a4f; margin-right:.6em; vertical-align:middle }
+  </style>
+  <div class="frame" style="padding-top:2.4vh">
+    <div class="kicker"><span class="hf4-live"><span class="hf4-live-dot"></span>Hyperframe &middot; live composition</span></div>
+    <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2024&ndash;2026 valuation reset.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.15vw">
+      Private fintech valuations have largely re-rated from the 2021 peak. Stripe and Klarna have begun recovering through tender offers and IPO filings; pure neobanks remain depressed. Public-market multiples have compressed to ~6&times; EV/Sales for growth and 12&ndash;15&times; P/E for profitable mature fintechs.
+    </p>
+
+    <div style="display:grid; grid-template-columns:7fr 5fr; gap:2vw; margin-top:1.4vh; align-items:start">
+      <div style="border:1px solid rgba(0,0,0,.08); border-radius:6px; background:rgba(0,0,0,.02)">
+        <div class="hf4-row">
+          <div class="hf4-firm">Stripe</div>
+          <div class="hf4-meta">Recovered from 2023 trough; Feb 2025 tender at $91.5B; secondary $107B (rumored)</div>
+          <div class="hf4-old">$95B (2021)</div>
+          <div class="hf4-new hf4-up">$91.5B</div>
+        </div>
+        <div class="hf4-row">
+          <div class="hf4-firm">Klarna</div>
+          <div class="hf4-meta">IPO filing March 2025 (NYSE: KLAR); target ~$15B from $46B 2021 peak</div>
+          <div class="hf4-old">$46B (2021)</div>
+          <div class="hf4-new hf4-down">~$15B</div>
+        </div>
+        <div class="hf4-row">
+          <div class="hf4-firm">Revolut</div>
+          <div class="hf4-meta">Aug 2024 secondary tender at $45B, exceeding 2021 round</div>
+          <div class="hf4-old">$33B (2021)</div>
+          <div class="hf4-new hf4-up">$45B</div>
+        </div>
+        <div class="hf4-row">
+          <div class="hf4-firm">Plaid</div>
+          <div class="hf4-meta">Apr 2025 round at $6.1B reportedly; pre-IPO; Visa deal blocked at $5.3B (2021)</div>
+          <div class="hf4-old">$13.4B (2021)</div>
+          <div class="hf4-new hf4-down">$6.1B</div>
+        </div>
+        <div class="hf4-row">
+          <div class="hf4-firm">Chime</div>
+          <div class="hf4-meta">2025 IPO target ~$8B; 2021 round priced $25B at peak. Still cash-generative.</div>
+          <div class="hf4-old">$25B (2021)</div>
+          <div class="hf4-new hf4-down">~$8B</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="hf4-card">
+          <div class="hf4-tag">Public market multiples</div>
+          <div class="hf4-stat">~6&times;</div>
+          <div class="hf4-desc">Median EV/Sales for growth fintechs (Q1 2025) vs. 25&times; in 2021. Mature fintechs: P/E 12&ndash;15&times;.</div>
+        </div>
+        <div class="hf4-card">
+          <div class="hf4-tag">AI premium</div>
+          <div class="hf4-stat">+2.4&times;</div>
+          <div class="hf4-desc">Median valuation premium for AI-native fintechs over generalist fintech peers in 2024&ndash;25 financings.</div>
+        </div>
+        <div class="hf4-card">
+          <div class="hf4-tag">Rule of 40 returns</div>
+          <div class="hf4-stat">40+</div>
+          <div class="hf4-desc">Growth + FCF margin threshold investors now demand. PayPal, Adyen, Mastercard clear it; Affirm and Block do not.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 12 &middot; Valuation reset 2024&ndash;2026</div>
+    <div>Stripe &middot; Klarna &middot; Revolut</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 · Closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="13 Closing">
   <div class="chrome">
     <div>Chapter 04 &middot; Closing</div>
-    <div>12 / 12</div>
+    <div>13 / 13</div>
   </div>
   <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:76vh">
     <div class="kicker">The valuation toolkit</div>
