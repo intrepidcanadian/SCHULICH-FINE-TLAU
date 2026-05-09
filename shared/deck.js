@@ -143,6 +143,16 @@ function go(n){
   const el=slides[idx];
   const th=el.dataset.theme || (el.classList.contains('light')?'light':(el.classList.contains('dark')?'dark':'dark'));
   document.body.classList.toggle('light-bg',th==='light');
+  /* HyperFrames embed: play the active slide's intro video, reset others.
+     A slide opts in by including <video class="hf-bg" data-hf …>; the MP4
+     is authored as a paused-GSAP HyperFrames composition under hf/<id>/
+     and rendered via `npx hyperframes render`. Missing MP4 fails silently. */
+  slides.forEach((s,i)=>{
+    const v=s.querySelector('video[data-hf]');
+    if(!v)return;
+    if(i===idx){try{v.currentTime=0;v.play().catch(()=>{});}catch(e){}}
+    else{try{v.pause();v.currentTime=0;}catch(e){}}
+  });
   lock=true;setTimeout(()=>lock=false,700);
 }
 
