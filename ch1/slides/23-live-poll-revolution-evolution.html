@@ -1,0 +1,165 @@
+<!-- ============================================================
+     SLIDE 23 · Live Poll · Revolution or evolution? (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="23 Live Poll" data-poll-id="ch1-revolution-evolution">
+  <div class="chrome">
+    <div>§1.4b · Live poll · Revisit the paradigms</div>
+    <div>23 / 24</div>
+  </div>
+
+  <style>
+    /* Scoped to this slide via .lpoll- prefix */
+    .lpoll-grid{display:grid;grid-template-columns:7fr 5fr;gap:4vw;flex:1;align-items:stretch;padding-top:1vh}
+    .lpoll-bars{display:flex;flex-direction:column;gap:1.6vh;justify-content:center}
+    .lpoll-row{display:grid;grid-template-columns:14vw 1fr 6vw;gap:1.4vw;align-items:center}
+    .lpoll-name{font-family:var(--serif-zh);font-weight:700;font-size:1.5vw;line-height:1.15}
+    .lpoll-note{font-family:var(--sans-zh);font-weight:400;font-size:max(11px,.84vw);opacity:.62;line-height:1.3;margin-top:.3vh}
+    .lpoll-track{position:relative;height:3.4vh;background:rgba(var(--ink-rgb),.07);border-radius:3px;overflow:hidden}
+    .lpoll-fill{
+      position:absolute;inset:0 auto 0 0;width:0%;
+      background:linear-gradient(90deg,rgba(232,163,61,.85),rgba(232,163,61,.55));
+      transition:width .6s cubic-bezier(.22,.65,.27,1);
+      border-right:1px solid rgba(232,163,61,.85);
+    }
+    .lpoll-pct{font-family:var(--serif-en);font-weight:700;font-size:1.6vw;text-align:right;font-feature-settings:"tnum";line-height:1}
+    .lpoll-count{font-family:var(--mono);font-size:max(10px,.74vw);letter-spacing:.18em;text-transform:uppercase;opacity:.55;text-align:right;margin-top:.4vh}
+
+    .lpoll-side{display:flex;flex-direction:column;gap:1.8vh;align-items:flex-start;justify-content:center;padding-left:1vw;border-left:1px solid rgba(127,127,127,.18)}
+    .lpoll-qr{
+      width:18vw;height:18vw;max-width:34vh;max-height:34vh;
+      background:#fff;padding:1.2vh;border-radius:6px;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 18px rgba(var(--ink-rgb),.08);
+    }
+    .lpoll-qr svg, .lpoll-qr img{width:100%;height:100%}
+    .lpoll-url{font-family:var(--mono);font-size:max(11px,.92vw);letter-spacing:.06em;word-break:break-all;opacity:.78}
+    .lpoll-total{font-family:var(--serif-en);font-weight:800;font-size:3.6vw;letter-spacing:-.02em;line-height:1;font-feature-settings:"tnum"}
+    .lpoll-total-label{font-family:var(--mono);font-size:max(10px,.78vw);letter-spacing:.22em;text-transform:uppercase;opacity:.55;margin-top:.4vh}
+    .lpoll-mode{
+      font-family:var(--mono);font-size:max(9px,.7vw);letter-spacing:.2em;text-transform:uppercase;
+      padding:.4vh .8vw;border:1px solid currentColor;border-radius:2px;opacity:.45;
+    }
+    .lpoll-mode.live{color:#1e7a4f;border-color:#1e7a4f;opacity:.85}
+  </style>
+
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Live poll · scan to vote</div>
+    <h2 class="h-xl" style="font-size:4.4vw;margin-bottom:.6vh">Revolution or evolution?</h2>
+    <p class="lead" style="max-width:60vw;font-size:1.4vw;margin-bottom:1.6vh">
+      You’ve seen Christensen, the two paradigms, and the 2024–26 wave (stablecoins, agentic rails, BNPL, real-time rails). Pick the framing you find most defensible right now.
+    </p>
+
+    <div class="lpoll-grid">
+      <div class="lpoll-bars" id="lpoll-bars"><!-- rows injected by JS --></div>
+
+      <div class="lpoll-side">
+        <div class="lpoll-qr" id="lpoll-qr" aria-label="QR code linking to the voter page"></div>
+        <div>
+          <div class="lpoll-url" id="lpoll-url">…</div>
+        </div>
+        <div>
+          <div class="lpoll-total" id="lpoll-total">0</div>
+          <div class="lpoll-total-label">votes received</div>
+        </div>
+        <div class="lpoll-mode" id="lpoll-mode">demo mode</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div>Page 23 · Live poll · Revisit Ch. 1</div>
+    <div>Revolution / Evolution / Both / Too early</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <script>
+  (function () {
+    if (window.__lpollInit) return; window.__lpollInit = true;
+
+    function init() {
+      const slide = document.querySelector('section.slide[data-poll-id="ch1-revolution-evolution"]');
+      if (!slide) return;
+      const pollId = slide.dataset.pollId;
+      const poll = (window.POLLS || {})[pollId];
+      if (!poll) { console.warn('poll not registered:', pollId); return; }
+
+      // Build voter URL — use absolute origin so QR works on any phone.
+      // Drop chN/ off the path so /vote/ resolves at the deck root.
+      const url = new URL(location.href);
+      url.pathname = url.pathname.replace(/\/ch\d+\/?[^/]*$/, '/') + 'vote/';
+      url.search = '?poll=' + encodeURIComponent(pollId);
+      url.hash = '';
+      const voterUrl = url.toString();
+
+      // Render QR
+      try {
+        const qr = qrcode(0, 'M');
+        qr.addData(voterUrl);
+        qr.make();
+        document.getElementById('lpoll-qr').innerHTML = qr.createSvgTag({
+          scalable: true,
+          margin: 0,
+        });
+      } catch (e) {
+        console.warn('qr render failed', e);
+      }
+
+      // Show short URL (drop https:// for legibility)
+      document.getElementById('lpoll-url').textContent =
+        voterUrl.replace(/^https?:\/\//, '');
+
+      // Mode badge
+      const modeEl = document.getElementById('lpoll-mode');
+      const isLive = window.PollClient.config.mode === 'live' && window.PollClient.config.bucket;
+      modeEl.textContent = isLive ? 'live · across devices' : 'demo mode · same browser';
+      if (isLive) modeEl.classList.add('live');
+
+      // Build rows
+      const barsEl = document.getElementById('lpoll-bars');
+      barsEl.innerHTML = '';
+      poll.options.forEach((opt, i) => {
+        const row = document.createElement('div');
+        row.className = 'lpoll-row';
+        row.innerHTML =
+          '<div>' +
+            '<div class="lpoll-name"></div>' +
+            (opt.note ? '<div class="lpoll-note"></div>' : '') +
+          '</div>' +
+          '<div class="lpoll-track"><div class="lpoll-fill" data-i="' + i + '"></div></div>' +
+          '<div>' +
+            '<div class="lpoll-pct" data-pct="' + i + '">0%</div>' +
+            '<div class="lpoll-count" data-count="' + i + '">0 votes</div>' +
+          '</div>';
+        row.querySelector('.lpoll-name').textContent = opt.label;
+        if (opt.note) row.querySelector('.lpoll-note').textContent = opt.note;
+        barsEl.appendChild(row);
+      });
+
+      const totalEl = document.getElementById('lpoll-total');
+
+      window.PollClient.subscribePoll(pollId, (data) => {
+        const tallies = data.tallies || {};
+        let total = 0;
+        for (let i = 0; i < poll.options.length; i++) total += tallies[i] || 0;
+        totalEl.textContent = total;
+        for (let i = 0; i < poll.options.length; i++) {
+          const c = tallies[i] || 0;
+          const pct = total > 0 ? (c * 100 / total) : 0;
+          const fill = barsEl.querySelector('[data-i="' + i + '"]');
+          const pctEl = barsEl.querySelector('[data-pct="' + i + '"]');
+          const cntEl = barsEl.querySelector('[data-count="' + i + '"]');
+          if (fill) fill.style.width = pct.toFixed(1) + '%';
+          if (pctEl) pctEl.textContent = pct.toFixed(0) + '%';
+          if (cntEl) cntEl.textContent = c + (c === 1 ? ' vote' : ' votes');
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+</section>
