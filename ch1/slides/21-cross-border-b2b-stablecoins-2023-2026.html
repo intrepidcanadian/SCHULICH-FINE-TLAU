@@ -36,7 +36,11 @@
     .hfxb-card .hfxb-num .hfxb-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
     .hfxb-card .hfxb-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
     .hfxb-rows { display:flex; flex-direction:column }
-    .hfxb-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hfxb-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.55vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    /* Override deck.css global !important to claw back ~12px on this dense 5-row table */
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"] .hfxb-rows .hfxb-row { padding: .3vh 1vw !important }
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"] .hfxb-row .hfxb-2020,
+    .slide[data-screen-label="21 X-Border B2B Stables 2023-2026"] .hfxb-row .hfxb-2025 { line-height:1.22 }
     .hfxb-row:first-child { border-top:0 }
     .hfxb-row .hfxb-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
     .hfxb-row .hfxb-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
