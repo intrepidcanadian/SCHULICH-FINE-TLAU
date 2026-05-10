@@ -283,6 +283,9 @@ Status (updated 2026-05-10 audit pass):
 - 📌 Fourth audit pass (polish-chapters-1-4 scheduled task, May 10 2026 — second run): one residual mismatch caught and fixed:
   - ch2/20 Embedded finance — 2024-baseline card was still rendering "$109B" while the headline and lead paragraph already read "$108.6B" (per the May-10 fix). Updated the card stat in `ch2/slides/20-embedded-finance-yoy-2024-2026.html` (and re-ran `scripts/build.py` so `ch2/index.html` mirrors it) to "$108.6B" — headline, lead, and card now match.
   - Layout regression at 1920×1080 still returns `[]` for ch1, ch2, ch3, ch4 after the edit.
+- 📌 Fifth audit pass (polish-chapters-1-4 scheduled task, May 10 2026 — third run): one cross-slide attribution mismatch caught and fixed:
+  - ch1/15 Global fintech hubs — the lead paragraph framed the slide's "2020" column as "Slide 11's 2020 Findexable rankings", but slide 11 embeds Table 1.3 ("Findexable Ltd., Accenture" composite — Silicon Valley · NY · London · Hong Kong · Boston) while slide 15's 2020 column is Findexable's own Global Fintech Index city ranking (SF · London · NY · São Paulo · Tel Aviv). Reframed the lead in `ch1/slides/15-global-fintech-hubs-2020-2025.html` to "Findexable's 2020 Global Fintech Index city ranking has aged (a different cut from Table 1.3's Findexable + Accenture composite shown on slide 11)" so the two sources are no longer conflated. Re-ran `scripts/build.py` so `ch1/index.html` mirrors the partial.
+  - Layout regression at 1920×1080 still returns `[]` for ch1, ch2, ch3, ch4 after the edit.
 
 Next concrete tasks:
 
