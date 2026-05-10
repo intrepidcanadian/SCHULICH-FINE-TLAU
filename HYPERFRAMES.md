@@ -267,6 +267,18 @@ Status (updated 2026-05-10 audit pass):
   - ch4/22 Blockchain card — promoted card to the row's headline "Blockchain & crypto infra · 26.6× mean / 14.2× median"; removed the conflicting standalone 17.3× figure.
   - ch2/09 Monetization callout — replaced the loose "incumbent banks ~60%" generalization with the JPMorgan-specific "~65%" (the figure actually shown in Tab. 2.1) so the callout no longer overstates the cross-incumbent average.
 - 📌 New HyperFrames composition `hf/14-capital-rebound/` added on 2026-05-10 — paused GSAP timeline (~7s, 4 stat cards + scrub-bar sweep) ready to render to `output.mp4` and embed behind ch1/14.
+- 📌 Second content audit pass (May 10 2026, polish-chapters-1-4 task) landed these accuracy fixes:
+  - ch1/20 Spot crypto ETFs — reconciled BlackRock IBIT AUM to **$63.5B (May 2026)** in the body lead (was "~$66B"); now matches the AUM card.
+  - ch1/22 GENIUS Era — reconciled the Jul-2025 stablecoin total to **~$250B** in both the lead and the supply card (was "~$165B"), so the headline matches the per-issuer rows (USDT ~$160B + USDC ~$60B + others).
+  - ch2/04 Philippon callout — corrected the journal of the cited 2015 paper from **Quarterly Journal of Economics** to **American Economic Review**.
+  - ch2/20 Embedded finance — aligned the YoY headline 2024 baseline to **$108.6B** (was "$109B") so it matches ch2/12's reported 2024 baseline.
+  - ch3/11 Funding climate — replaced "Plaid prepares S-1 for late 2025" with "Plaid sets up a 2026 listing (no IPO in 2025)" to match ch3/20's $13.4B → $6.1B → $8–10B 2026 IPO band.
+  - ch3/12 Closing IPO grid — Chime debut pop reframed as "intraday peak +59%, closed day 1 at +37%" (was "+37%" only) to reconcile with ch3/13/21 wording.
+  - ch3/21 Class of 2025 IPOs — Chime row now reads "intraday peak +59%, closed day 1 +37%"; eToro row now reads "$4.2B IPO cap (~$5B post-pop)" so both numbers reconcile with ch3/12.
+  - ch4/12 Valuation reset — AI premium card reframed as **+38% EV/Sales premium (CB Insights)** (was "+2.4×") so it matches ch4/13/14/15's repeated +38% figure.
+  - ch4/16 AI-native premium — Revolut secondary mark reset to **$45B (Aug 2024 tender)** (was "$75B (2025)") to match ch4/12's $45B Aug-2024 tender row.
+  - ch4/18 BTC corporate treasury — mNAV figures reconciled across body, card, and table row from "~1×" to **~0.65×** so that the $50B mkt cap vs. ~$77B BTC-at-spot math actually produces the sub-1× claim made in the bear-case framing.
+- ✅ Layout regression check at 1920×1080 returns `[]` for ch1, ch2, ch3, ch4 after the May-10 audit pass — no slide bleeds past the 1080 frame.
 
 Next concrete tasks:
 
