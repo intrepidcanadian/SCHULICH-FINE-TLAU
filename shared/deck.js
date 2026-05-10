@@ -132,6 +132,8 @@ slides.forEach((s,i)=>{
 
 function go(n){
   if(lock)return;
+  /* Hide the keyboard-hint chip after the first navigation. */
+  document.body.classList.add('deck-touched');
   idx=Math.max(0,Math.min(total-1,n));
   deck.style.transform=`translateX(${-idx*100}vw)`;
   /* load-bearing: .slide.active is read by Open Design's host bridge

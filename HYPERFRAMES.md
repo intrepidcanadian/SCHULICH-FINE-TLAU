@@ -12,13 +12,20 @@ primitives we can drop in either as inline embeds (HTML-in-Canvas),
 as ready-to-use catalog blocks, or as full 1080p video files
 authored once and embedded in the slide.
 
-Reference: `../hyperframeshtmlcanvas.md`
+References:
+- HTML-in-Canvas API spec: `../hyperframeshtmlcanvas.md`
+- Live composition (working proof): `hf/01-title/index.html`
+- Live composition (data-view + GSAP): `hf/12-fourth-wave/index.html`
 
 ---
 
 ## Setup commands (one-time)
 
 ```bash
+# Install the heygen-com/hyperframes skill bundle (Claude authoring
+# patterns: gsap, animejs, css-animations, hyperframes-cli, …)
+npx skills add heygen-com/hyperframes
+
 # Scaffold a new HyperFrames project for chapter clips
 npx hyperframes init schulich-clips --example nyt-graph
 
@@ -37,18 +44,24 @@ npx hyperframes add shimmer-sweep     # text highlight reveal
 npx hyperframes skills
 ```
 
-Examples to scaffold from when picking a tone:
+Examples to scaffold from when picking a tone (each is a `--example`
+arg to `npx hyperframes init my-video --example <name>`):
 
-| Example         | Tone / use case                                                    |
-| --------------- | ------------------------------------------------------------------ |
-| `warm-grain`    | Documentary / archival — pairs with Fintech 1.0/2.0 history slides |
-| `play-mode`     | Energetic kinetic intro — chapter title cards                      |
-| `swiss-grid`    | Editorial typographic grid — paradigms, taxonomies, eight-categories |
-| `kinetic-type`  | Big-statement number reveals — $1.2T, $200B, $853B                 |
-| `decision-tree` | Branching logic — VC method, valuation flow, capital structure     |
-| `product-promo` | Product showcase — Stripe, Wealthsimple, Nubank, Plaid arcs        |
-| `nyt-graph`     | Newspaper-style charts — capital rebound, multiples reset          |
-| `vignelli`      | Modernist editorial — closing cards, financial inclusion           |
+| Example         | Tone / use case                                                    | Init command                                                  |
+| --------------- | ------------------------------------------------------------------ | ------------------------------------------------------------- |
+| `warm-grain`    | Documentary / archival — pairs with Fintech 1.0/2.0 history slides | `npx hyperframes init schulich-history --example warm-grain`  |
+| `play-mode`     | Energetic kinetic intro — chapter title cards                      | `npx hyperframes init schulich-titles --example play-mode`    |
+| `swiss-grid`    | Editorial typographic grid — paradigms, taxonomies, 8 categories   | `npx hyperframes init schulich-grids --example swiss-grid`    |
+| `kinetic-type`  | Big-statement number reveals — $1.2T, $200B, $853B                 | `npx hyperframes init schulich-numbers --example kinetic-type`|
+| `decision-tree` | Branching logic — VC method, valuation flow, capital structure     | `npx hyperframes init schulich-trees --example decision-tree` |
+| `product-promo` | Product showcase — Stripe, Wealthsimple, Nubank, Plaid arcs        | `npx hyperframes init schulich-promo --example product-promo` |
+| `nyt-graph`     | Newspaper-style charts — capital rebound, multiples reset          | `npx hyperframes init schulich-charts --example nyt-graph`    |
+| `vignelli`      | Modernist editorial — closing cards, financial inclusion           | `npx hyperframes init schulich-vignelli --example vignelli`   |
+
+Pick `nyt-graph` for the bulk of the data-view fourth-wave slides
+(chapters 1/12, 1/14, 1/17, 2/19, 3/15, 3/16, 4/15, 4/22 etc.) and
+fall back to `kinetic-type` only for the headline reveal slides
+($1.2T cumulative, $200B AUM, $853B FedNow, $159B Stripe).
 
 ---
 
@@ -169,6 +182,48 @@ Migration sketch for ch1/slide 12:
 
 This timeline is seekable by HyperFrames during render, unlike CSS
 keyframes which fire on `animation-delay` only.
+
+---
+
+## HTML-in-Canvas — install + usage
+
+Per `../hyperframeshtmlcanvas.md`, the `drawElementImage` API lets a
+`<canvas layoutsubtree>` capture live DOM into a WebGL texture at
+60fps. To install all blocks that exploit it:
+
+```bash
+npx hyperframes add html-in-canvas
+```
+
+Individual blocks (each is its own `npx hyperframes add <name>`):
+
+| Block               | Slide candidates                                            |
+| ------------------- | ----------------------------------------------------------- |
+| `vfx-text-cursor`   | All chapter title cards (ch1/01, ch2/01, ch3/01, ch4/01)    |
+| `vfx-iphone-device` | Ch1/18 BNPL Klarna, Ch2/19 Wealthfront app, Ch3/15 Wealthsimple arc  |
+| `vfx-liquid-glass`  | Ch2/06 Pisano landscape quadrant reveal                     |
+| `vfx-portal`        | Transitions into ch1/12, ch1/14 data-view boxes             |
+| `vfx-shatter`       | Ch1/05 "Old paradigm shatters", ch2/21 closing              |
+| `vfx-magnetic`      | Ch1/24 Financial inclusion field                            |
+
+The Chrome flag `chrome://flags/#canvas-draw-element` must be enabled
+for live preview; the `npx hyperframes render` command auto-enables
+the flag inside its render harness.
+
+---
+
+## Working compositions in this repo
+
+| Path                                  | Slide      | Purpose                                                                        |
+| ------------------------------------- | ---------- | ------------------------------------------------------------------------------ |
+| `hf/01-title/index.html`              | ch1/01     | GSAP-paused title reveal, three-scene composition, MP4 embedded as `<video>`   |
+| `hf/12-fourth-wave/index.html`        | ch1/12     | data-chart-style stat reveal with GSAP timeline (replaces CSS keyframes)       |
+
+Both compositions register a single paused GSAP timeline on
+`window.__timelines[<composition-id>]` so `npx hyperframes render`
+can drive the playhead frame-by-frame. To author a new one, copy
+`hf/12-fourth-wave/index.html` and adjust the data, total duration,
+and stat columns.
 
 ---
 

@@ -165,7 +165,8 @@
   body.light-bg #nav{background:rgba(255,255,255,.25)}
   body.light-bg #nav .dot{background:rgba(var(--ink-rgb),.25)}
   body.light-bg #nav .dot.active{background:rgba(var(--ink-rgb),.9)}
-  #hint{position:fixed;bottom:3vh;right:3vw;z-index:30;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;mix-blend-mode:difference;color:#aaa}
+  #hint{position:fixed;top:6vh;left:50%;transform:translateX(-50%);z-index:30;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.32;color:currentColor;pointer-events:none;transition:opacity .6s ease}
+  body.deck-touched #hint{opacity:0}
 
   /* ============ LAYOUTS API ============ */
   .frame{flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
