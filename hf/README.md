@@ -103,8 +103,10 @@ deck should still load over a hotel-Wi-Fi connection.
 
 ## Catalog
 
-| Slide        | Composition           | Status                                |
-| ------------ | --------------------- | ------------------------------------- |
-| ch1/01 Title | `hf/01-title/`        | Source committed; render pending      |
+| Slide                    | Composition                  | Status                                |
+| ------------------------ | ---------------------------- | ------------------------------------- |
+| ch1/01 Title             | `hf/01-title/`               | Source committed; render pending      |
+| ch1/12 Fourth-Wave Reveal| `hf/12-fourth-wave/`         | Source committed; render pending      |
+| ch1/14 Capital Rebound   | `hf/14-capital-rebound/`     | Source committed; render pending      |
 
 (Add a row each time you ship a new composition.)
