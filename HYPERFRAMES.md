@@ -248,10 +248,21 @@ and stat columns.
 
 ## Recommended next steps (for a future PR)
 
-Status (updated 2026-05-10):
+Status (updated 2026-05-10 audit pass):
 - ✅ ch1/01 title and ch1/12 fourth-wave hyperframes are live with paused GSAP timelines.
+- ✅ Layout regression check at 1920×1080 returns `[]` for ch1, ch2, ch3, ch4 — no slide bleeds past the frame.
 - ⏳ All other "data view" slides (ch1/13–22, ch2/10–20, ch3/11–21, ch4/12–22) still use raw CSS `@keyframes` with `animation-delay` chains, plus the deck.css `[class$="-scrub-fill"]` overrides to neutralise the legacy scrub animations during static viewing.
-- 📌 Content audit complete; minor accuracy fixes landed (ch1/15 hub baseline clarified, ch1/22 USDT timeline disambiguated, ch2/19 Wealthfront 2020 AUM corrected, ch3/13 IPO-class composition matched to ch3/21, ch3/17 column header generalised, ch3/19 OpenAI delta math fixed).
+- 📌 Content audit pass (May 10 2026) landed these accuracy fixes:
+  - ch1/17 Goldman GenAI 2023 row — removed incorrect Devin attribution; replaced with "Internal coding-assistant pilots (proprietary)".
+  - ch1/20 Spot ETH ETF — corrected issuer count from "9" to "8" in both the stat card and the comparison row; clarified the 0.19–0.25% TER band attributing 0.20% to BITB and 0.25% to IBIT/FBTC.
+  - ch1/22 GENIUS Act — replaced unverifiable "Title II / Title VII" structural references with the Act's published feature names (federal payment-stablecoin charter, no-issuer-yield rule); reframed the USDT card so the Jan–Feb dip and Apr 2026 $187B rebound no longer read as a contradiction.
+  - ch2/20 BaaS sub-segment — fixed CAGR endpoint mismatch (was $25B 2025 → $79B 2030 at 17.8%, which compounds to 25.9%); restated as ~$41B 2026 → $79B 2030, consistent with the cited 17.8% CAGR.
+  - ch3/11 Funding Climate — removed unsupported "$90B+ combined cap" pent-up listings figure (contradicted ch3/13/21 $3.2B proceeds total); replaced with the Class-of-2025 proceeds anchor.
+  - ch3/13 — relabeled "Triple raise · Klarna+Chime+Circle" to "Class of '25 · Klarna+Chime+Circle+eToro" to match ch3/21's four-issuer composition.
+  - ch3/20 Plaid — aligned IPO band: lead and card both now read "$8–10B" (was lead "$8.5–10B" / card "$8–10B").
+  - ch4/18 BTC corporate treasury — corrected ratio from ~3.4× to ~3.3× (95/29).
+  - ch4/20 Nubank customer count — updated row from "~120M+ (May 2026)" to "~131M (Q4 2025)" so it doesn't regress against ch4/16's 131M figure; delta updated to +64%.
+  - ch4/22 Blockchain card — promoted card to the row's headline "Blockchain & crypto infra · 26.6× mean / 14.2× median"; removed the conflicting standalone 17.3× figure.
 
 Next concrete tasks:
 
