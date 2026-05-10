@@ -75,10 +75,17 @@ fall back to `kinetic-type` only for the headline reveal slides
 | 03 Growth $1.2T / 38K                              | `apple-money-count`                                 | Counts $0 → $1,200,000,000,000. Pairs with Fig. 1.1.                           |
 | 04 Three Eras pipeline                             | `flowchart` block                                   | 1858 → 1967 → 2006 timeline as animated decision tree.                         |
 | 12 The 2024–2026 Wave                              | `data-chart` (replace hand-written keyframes)       | Bar chart with staggered reveal for $85B / $2.8B / $853B figures.              |
+| 13 Stablecoin & RWA Reset 2025–26                  | `data-chart` + `shimmer-sweep`                      | $27T stablecoin volume / $24B RWA / 350+ agentic pilots / 134 CBDCs grid.      |
 | 14 2025 Capital Rebound                            | `data-chart` (line + bar)                           | Drop-in replacement for the bespoke scrub bar.                                 |
 | 15 Global Fintech Hubs 2020→2025                   | `nyc-paris-flight` style map block (forked)         | World map ranking deltas as kinetic map annotations.                           |
+| 16 Stablecoin Reg Inflection 2024–26               | `flowchart`                                         | EU MiCA → US GENIUS → HK/SG sandbox timeline as a regulatory decision tree.    |
 | 17 Bank GenAI 2023→2025                            | `data-chart`                                        | JPMorgan / MS / Citi adoption bars.                                            |
-| 20 Spot Crypto ETFs 2024–2026                      | `data-chart` + `shimmer-sweep` on the AUM number   | Inflow streak with shimmer highlight on $200B.                                 |
+| 18 BNPL 2020–2025 Evolution                        | `data-chart` + `vfx-iphone-device` (Klarna app)     | Klarna AI hybrid, Affirm GAAP-profitable arc; phone overlay for product shot.  |
+| 19 Real-Time Rails 2023–2026                       | `data-chart` (multi-bar)                            | FedNow / UPI / Pix / FPS volumes with staggered reveal.                        |
+| 20 Spot Crypto ETFs 2024–2026                      | `data-chart` + `shimmer-sweep` on the AUM number    | Inflow streak with shimmer highlight on $200B.                                 |
+| 21 Cross-Border B2B Stablecoins 2023–2026          | `data-chart` (4-card stat reveal + comparison rows) | $400B / $6B-mo / $4.6B Visa / 57% Wise — staggered card reveal + table fade.   |
+| 22 GENIUS Era Stablecoin Market 2025–26            | `data-chart` (4-card + comparison rows)             | $280B supply / USDT $187B / USDC $77B / $6.6T deposit relief.                  |
+| 23 Live Poll · Revolution vs Evolution             | `vfx-portal` transition + `flowchart`               | In-class vote integration.                                                     |
 | 24 Financial Inclusion (closing)                   | `logo-outro` + `grain-overlay`                      | Warm closing card with course mark.                                            |
 
 ### Chapter 2 · Theories & Business Models
@@ -87,9 +94,17 @@ fall back to `kinetic-type` only for the headline reveal slides
 | -------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------ |
 | 03 Five Dimensions (Fig 2.1)                       | `flowchart`                                         | Five-node radial diagram around "Financial intermediation".                    |
 | 05 Disruptive Innovation                           | `data-chart` (line cross-over)                      | Performance-vs-time trajectories, Christensen 1997.                            |
-| 06 Pisano Innovation Landscape                     | `flowchart` quadrant                                | 2×2 with animated quadrant labels.                                             |
+| 06 Pisano Innovation Landscape                     | `flowchart` quadrant + `vfx-liquid-glass`           | 2×2 with animated quadrant labels and overlay reveal.                          |
 | 09 Monetization (Tab 2.1)                          | `data-chart`                                        | Stacked bars: agency vs. principal revenue mix.                                |
+| 10 AI Agents 2024–26                               | `data-chart`                                        | Klarna AI ROI / Stripe Agents volume / Visa Intelligent Commerce launch.       |
+| 11 Agentic Commerce 2025–26                        | `flowchart` (agent → checkout)                      | Stripe Agents + Visa Intelligent Commerce + 47% adoption.                      |
+| 12 Embedded Finance 2025                           | `data-chart` (TPV bars)                             | Stripe $1.4T / Bain $148B market.                                              |
+| 13 2-puzzle 2015–2025                              | `data-chart` (line trajectories)                    | Marketplace evolution comparison.                                              |
 | 14 Network Effects MSP 2025–26                     | `data-chart`                                        | Replace hand-rolled scrub timeline.                                            |
+| 15 Broker Revenue Mix 2021–2025                    | `data-chart` (stacked bar)                          | Robinhood NII shift, SoFi deposits, Nubank.                                    |
+| 16 P2P Payments Evolution 2020–2025                | `data-chart`                                        | Zelle / Venmo / Cash App volumes.                                              |
+| 17 Open Banking Rule 1033 2024–26                  | `flowchart`                                         | CFPB rule timeline.                                                            |
+| 18 Klarna AI Hybrid 2023–26                        | `data-chart` + `vfx-iphone-device`                  | Cost-per-transaction reduction; phone overlay for product.                     |
 | 19 Robo-Advisor 2.0 AI Wealth                      | `data-chart` + `shimmer-sweep` on AUM               | Wealthfront $90B reveal.                                                       |
 | 20 Embedded Finance YoY 2024–26                    | `data-chart`                                        | YoY growth bars with timeline scrub.                                           |
 | 21 Closing                                         | `logo-outro`                                        | Course closing card.                                                           |
@@ -104,10 +119,14 @@ fall back to `kinetic-type` only for the headline reveal slides
 | 10 Cap Table dilution                              | `apple-money-count` style ownership counter         | Founder share counts down 100% → 16% across rounds.                            |
 | 11 Funding Climate 2024–2026                       | `data-chart`                                        | Replace hand-rolled timeline.                                                  |
 | 13 2025 IPO Resurgence                             | `data-chart` + `shimmer-sweep`                      | Reddit, Klaviyo, Instacart, Astera arcs.                                       |
-| 15 Wealthsimple Arc 2014→2025                      | `data-chart` (multi-axis)                           | AUM and valuation overlay.                                                     |
+| 14 YC Fintech 2014–2025                            | `data-chart`                                        | 5,000+ alumni, $600B aggregate value.                                          |
+| 15 Wealthsimple Arc 2014→2025                      | `data-chart` (multi-axis) + `vfx-iphone-device`     | AUM and valuation overlay; iPhone shows app.                                   |
 | 16 Stripe Valuation Arc 2014→2025                  | `apple-money-count`                                 | $1.75B → $95B → $70B → $91.5B.                                                 |
+| 17 AI-Native Fintech Funding 2023–25               | `data-chart`                                        | $ raised by AI-native fintechs vs. wider market.                               |
+| 18 Nubank Arc 2014→2025                            | `data-chart` (multi-axis)                           | Customer count + revenue arc; 114M customers.                                  |
+| 19 Secondary Tender Markets 2024–26                | `data-chart`                                        | Stripe / SpaceX-style tender pricing arcs.                                     |
 | 20 Plaid Down-Round to IPO 2021–2026               | `data-chart`                                        | $13.4B → $6.1B → $8–10B target IPO.                                            |
-| 21 Class of 2025 IPOs Q1 2026                      | `data-chart`                                        | Day-1 pop / current price grid.                                                |
+| 21 Class of 2025 IPOs Q1 2026                      | `data-chart` (4-card stat + comparison rows)        | Chime / Klarna / Circle / eToro debut + Q1 2026 follow-through.                |
 | 22 Closing                                         | `logo-outro`                                        |                                                                                |
 
 ### Chapter 4 · Valuation of Fintech Companies
@@ -239,3 +258,39 @@ and stat columns.
    the `animejs` adapter skill documents).
 4. Add a `vfx-text-cursor` clip behind each chapter title slide.
 5. Render an `ultrareview` ship checklist before the next lecture.
+
+---
+
+## Layout regression check (1920×1080)
+
+Before pushing the deck, run a one-shot natural-height check to make
+sure no content extends past the visible 1080 area on a 16:9 screen.
+Drop this into the browser console with the deck loaded:
+
+```js
+(() => {
+  const out = [];
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    const clone = s.cloneNode(true);
+    clone.style.cssText = 'position:absolute; left:0; top:0; width:1920px; height:auto; min-height:0; max-height:none; overflow:visible; flex:initial; visibility:hidden';
+    document.body.appendChild(clone);
+    let maxBottom = 0;
+    clone.querySelectorAll('*').forEach(el => {
+      if (el.closest('.foot') || el.closest('.chrome')) return;
+      const cs = getComputedStyle(el);
+      if (cs.position === 'absolute' || cs.position === 'fixed') return;
+      const r = el.getBoundingClientRect();
+      if (r.height === 0) return;
+      const relB = r.bottom - clone.getBoundingClientRect().top;
+      if (relB > maxBottom) maxBottom = relB;
+    });
+    document.body.removeChild(clone);
+    if (maxBottom > 1080 + 4) out.push({ idx: i+1, label: s.dataset.screenLabel, over: Math.round(maxBottom - 1080) });
+  });
+  return out;
+})()
+```
+
+Expected output: `[]`. Anything reported is content bleeding past the
+slide bottom — usually fixable by trimming the lead paragraph or
+shrinking the dense-table row padding.
