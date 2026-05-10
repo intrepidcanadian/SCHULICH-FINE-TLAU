@@ -280,6 +280,9 @@ Status (updated 2026-05-10 audit pass):
   - ch4/18 BTC corporate treasury — mNAV figures reconciled across body, card, and table row from "~1×" to **~0.65×** so that the $50B mkt cap vs. ~$77B BTC-at-spot math actually produces the sub-1× claim made in the bear-case framing.
 - ✅ Layout regression check at 1920×1080 returns `[]` for ch1, ch2, ch3, ch4 after the May-10 audit pass — no slide bleeds past the 1080 frame.
 - 📌 Third audit pass (polish-chapters-1-4 scheduled task, May 10 2026): re-ran content-vs-markdown cross-check for chapters 1-4 against `chapters/chapter[1-4].md` and the layout regression script. Result: every textbook-grounded slide (ch1/01-11, ch2/01-08, ch3/01-09, ch4/01-10) faithfully reflects the source markdown's definitions, figures, and tables. The 2024-2026 update slides (ch1/12-22, ch2/09-20, ch3/10-21, ch4/11-22) extend the textbook with current-cycle data; no contradictions were introduced. Layout regression at 1920×1080 returns `[]` across all four chapters.
+- 📌 Fourth audit pass (polish-chapters-1-4 scheduled task, May 10 2026 — second run): one residual mismatch caught and fixed:
+  - ch2/20 Embedded finance — 2024-baseline card was still rendering "$109B" while the headline and lead paragraph already read "$108.6B" (per the May-10 fix). Updated the card stat in `ch2/slides/20-embedded-finance-yoy-2024-2026.html` (and re-ran `scripts/build.py` so `ch2/index.html` mirrors it) to "$108.6B" — headline, lead, and card now match.
+  - Layout regression at 1920×1080 still returns `[]` for ch1, ch2, ch3, ch4 after the edit.
 
 Next concrete tasks:
 
