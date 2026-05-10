@@ -248,6 +248,13 @@ and stat columns.
 
 ## Recommended next steps (for a future PR)
 
+Status (updated 2026-05-10):
+- ✅ ch1/01 title and ch1/12 fourth-wave hyperframes are live with paused GSAP timelines.
+- ⏳ All other "data view" slides (ch1/13–22, ch2/10–20, ch3/11–21, ch4/12–22) still use raw CSS `@keyframes` with `animation-delay` chains, plus the deck.css `[class$="-scrub-fill"]` overrides to neutralise the legacy scrub animations during static viewing.
+- 📌 Content audit complete; minor accuracy fixes landed (ch1/15 hub baseline clarified, ch1/22 USDT timeline disambiguated, ch2/19 Wealthfront 2020 AUM corrected, ch3/13 IPO-class composition matched to ch3/21, ch3/17 column header generalised, ch3/19 OpenAI delta math fixed).
+
+Next concrete tasks:
+
 1. Run `npx hyperframes init schulich-clips --example nyt-graph` in a
    sibling folder; produce ten `data-chart` clips for the highest-value
    slides (Ch1/12, Ch1/14, Ch3/16, Ch4/15, etc.).
