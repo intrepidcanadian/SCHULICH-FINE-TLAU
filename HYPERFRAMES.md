@@ -296,6 +296,12 @@ Status (updated 2026-05-10 audit pass):
   - Spot-checked the Stripe valuation arc cross-references: ch3/16 ends at $91.5B (Feb 2025) for its 2014→2025 scope; ch3/19 picks up the Feb 2026 tender at $159B (sourced to Crunchbase); ch3/22 closing carries $159B Feb 2026. The three slides are consistent because ch3/16's scope is explicitly bounded at 2025.
   - HTML structural integrity check: section/div tag balance verified across all ch1-4 slide partials (Python `re` scan over 90 files — all balanced).
   - Layout regression at 1920×1080 returns `[]` for ch1, ch2, ch3, ch4.
+- 📌 Eighth audit pass (polish-chapters-1-4 scheduled task, May 10 2026 — sixth run): no new mismatches found. Verified live in the preview server at `http://localhost:8765/chN/`:
+  - Layout regression script run against ch1, ch2, ch3, ch4 in-browser at 1920×1080 viewport — all four returned `[]` (zero overflow). The 1366×768 sweep is a viewport-scaling artefact (the slide's `vw` units depend on the actual window width, not the cloned element's width); the in-window 1920 result is the authoritative check.
+  - Visual sanity check on the historically dense slides — ch1/12 (fourth wave, 3 stat cards), ch2/19 (Robo 2.0, 3-col stats + comparison rows), ch3/15 (Wealthsimple arc, scrub timeline + 3 cards + 4-row table), ch4/22 (Q1 2026 multiples, 5 stat cards + 6-row sub-sector table) — all render within the 1080 frame with no card / table / lead-paragraph collisions.
+  - Independent textbook spot-check across ch1-4 slides 01-10 (the markdown-grounded section) re-confirmed that key facts ($1.2T cumulative + 38K deals, 1858/1867/1967/2006/2009 dates, Philippon 2015's ~2% intermediation cost claim, $25K angel cheque + 9-in-10 failure rate, 25–35% VC IRR target) all match `chapters/chapter[1-4].md`.
+  - Cross-slide consistency on the fourth-wave stats — Nubank (~131M Q4 2025 across ch3/18 + ch4/12 + ch4/20), USDT (~$187B Apr 2026 on ch1/22), Stripe ($95B 2021 peak / $91.5B Feb 2025 / $159B Feb 2026 across ch3/16-19-22) — remains coherent.
+  - HyperFrames integration state unchanged since 7th pass: `hf/01-title`, `hf/12-fourth-wave`, `hf/14-capital-rebound` compositions present and well-formed; output MP4s still need to be rendered (`npx hyperframes render`) before the `<video class="hf-bg">` tags in ch1/01, ch1/12, ch1/14 light up.
 
 Next concrete tasks:
 
