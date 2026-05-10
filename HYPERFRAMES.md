@@ -286,6 +286,10 @@ Status (updated 2026-05-10 audit pass):
 - 📌 Fifth audit pass (polish-chapters-1-4 scheduled task, May 10 2026 — third run): one cross-slide attribution mismatch caught and fixed:
   - ch1/15 Global fintech hubs — the lead paragraph framed the slide's "2020" column as "Slide 11's 2020 Findexable rankings", but slide 11 embeds Table 1.3 ("Findexable Ltd., Accenture" composite — Silicon Valley · NY · London · Hong Kong · Boston) while slide 15's 2020 column is Findexable's own Global Fintech Index city ranking (SF · London · NY · São Paulo · Tel Aviv). Reframed the lead in `ch1/slides/15-global-fintech-hubs-2020-2025.html` to "Findexable's 2020 Global Fintech Index city ranking has aged (a different cut from Table 1.3's Findexable + Accenture composite shown on slide 11)" so the two sources are no longer conflated. Re-ran `scripts/build.py` so `ch1/index.html` mirrors the partial.
   - Layout regression at 1920×1080 still returns `[]` for ch1, ch2, ch3, ch4 after the edit.
+- 📌 Sixth audit pass (polish-chapters-1-4 scheduled task, May 10 2026 — fourth run): one cross-chapter Nubank customer-count drift caught and fixed:
+  - ch3/18 Nubank arc — headline, lead, customers card, and Mexico card were already updated to "131M / Q4 2025" in an in-progress edit, but the comparison-row "Status · 2024–2025" cell still read "127M (Q3 2025)". This contradicted ch4/12 (Nubank Q4'25 ROE card: "131M customers") and ch4/20 (Nubank row: "~131M across BR/MX/CO (Q4 2025)"). Updated `ch3/slides/18-nubank-arc-2014-2025.html` row to "131M (Q4 2025); 3 countries; deposits, lending, investing, mobile, marketplace" and re-ran `scripts/build.py` so `ch3/index.html` mirrors the partial. Headline, lead, all three cards, and the comparison row now all read 131M / Q4 2025.
+  - Layout regression at 1920×1080 returns `[]` for ch1, ch2, ch3, ch4 after the edit.
+  - Visual verification in the preview server confirmed the slide renders within the 1080 frame and all four 131M / Q4 2025 references are visible together.
 
 Next concrete tasks:
 
