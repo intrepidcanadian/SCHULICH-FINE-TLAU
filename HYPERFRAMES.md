@@ -290,6 +290,12 @@ Status (updated 2026-05-10 audit pass):
   - ch3/18 Nubank arc — headline, lead, customers card, and Mexico card were already updated to "131M / Q4 2025" in an in-progress edit, but the comparison-row "Status · 2024–2025" cell still read "127M (Q3 2025)". This contradicted ch4/12 (Nubank Q4'25 ROE card: "131M customers") and ch4/20 (Nubank row: "~131M across BR/MX/CO (Q4 2025)"). Updated `ch3/slides/18-nubank-arc-2014-2025.html` row to "131M (Q4 2025); 3 countries; deposits, lending, investing, mobile, marketplace" and re-ran `scripts/build.py` so `ch3/index.html` mirrors the partial. Headline, lead, all three cards, and the comparison row now all read 131M / Q4 2025.
   - Layout regression at 1920×1080 returns `[]` for ch1, ch2, ch3, ch4 after the edit.
   - Visual verification in the preview server confirmed the slide renders within the 1080 frame and all four 131M / Q4 2025 references are visible together.
+- 📌 Seventh audit pass (polish-chapters-1-4 scheduled task, May 10 2026 — fifth run): no new mismatches found. Parallel content audit across all four chapters re-confirmed:
+  - ch1/01-11, ch2/01-09, ch3/01-10, ch4/01-10 (textbook-grounded slides) faithfully reflect `chapters/chapter[1-4].md` definitions, figures, tables, and named dates.
+  - ch1/12-24, ch2/10-21, ch3/11-22, ch4/11-23 (2024-2026 fourth-wave updates) remain internally consistent across all stat cards, comparison rows, and lead paragraphs.
+  - Spot-checked the Stripe valuation arc cross-references: ch3/16 ends at $91.5B (Feb 2025) for its 2014→2025 scope; ch3/19 picks up the Feb 2026 tender at $159B (sourced to Crunchbase); ch3/22 closing carries $159B Feb 2026. The three slides are consistent because ch3/16's scope is explicitly bounded at 2025.
+  - HTML structural integrity check: section/div tag balance verified across all ch1-4 slide partials (Python `re` scan over 90 files — all balanced).
+  - Layout regression at 1920×1080 returns `[]` for ch1, ch2, ch3, ch4.
 
 Next concrete tasks:
 
