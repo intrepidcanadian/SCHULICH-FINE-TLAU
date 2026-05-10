@@ -237,20 +237,22 @@ the flag inside its render harness.
 | ------------------------------------- | ---------- | ------------------------------------------------------------------------------ |
 | `hf/01-title/index.html`              | ch1/01     | GSAP-paused title reveal, three-scene composition, MP4 embedded as `<video>`   |
 | `hf/12-fourth-wave/index.html`        | ch1/12     | data-chart-style stat reveal with GSAP timeline (replaces CSS keyframes)       |
+| `hf/14-capital-rebound/index.html`    | ch1/14     | nyt-graph 4-card stat reveal + scrub-bar sweep, GSAP timeline, ~7s             |
 
-Both compositions register a single paused GSAP timeline on
+All three compositions register a single paused GSAP timeline on
 `window.__timelines[<composition-id>]` so `npx hyperframes render`
 can drive the playhead frame-by-frame. To author a new one, copy
-`hf/12-fourth-wave/index.html` and adjust the data, total duration,
-and stat columns.
+`hf/12-fourth-wave/index.html` (3-card / dark / 6s) or
+`hf/14-capital-rebound/index.html` (4-card / light / 7s with scrub bar)
+and adjust the data, total duration, and stat columns.
 
 ---
 
 ## Recommended next steps (for a future PR)
 
 Status (updated 2026-05-10 audit pass):
-- ✅ ch1/01 title and ch1/12 fourth-wave hyperframes are live with paused GSAP timelines.
-- ✅ Layout regression check at 1920×1080 returns `[]` for ch1, ch2, ch3, ch4 — no slide bleeds past the frame.
+- ✅ ch1/01 title, ch1/12 fourth-wave, and ch1/14 capital-rebound hyperframes are live with paused GSAP timelines.
+- ✅ Layout regression check at 1920×1080 (and 1366×768) returns `[]` for ch1, ch2, ch3, ch4 — no slide bleeds past the frame.
 - ⏳ All other "data view" slides (ch1/13–22, ch2/10–20, ch3/11–21, ch4/12–22) still use raw CSS `@keyframes` with `animation-delay` chains, plus the deck.css `[class$="-scrub-fill"]` overrides to neutralise the legacy scrub animations during static viewing.
 - 📌 Content audit pass (May 10 2026) landed these accuracy fixes:
   - ch1/17 Goldman GenAI 2023 row — removed incorrect Devin attribution; replaced with "Internal coding-assistant pilots (proprietary)".
@@ -263,6 +265,8 @@ Status (updated 2026-05-10 audit pass):
   - ch4/18 BTC corporate treasury — corrected ratio from ~3.4× to ~3.3× (95/29).
   - ch4/20 Nubank customer count — updated row from "~120M+ (May 2026)" to "~131M (Q4 2025)" so it doesn't regress against ch4/16's 131M figure; delta updated to +64%.
   - ch4/22 Blockchain card — promoted card to the row's headline "Blockchain & crypto infra · 26.6× mean / 14.2× median"; removed the conflicting standalone 17.3× figure.
+  - ch2/09 Monetization callout — replaced the loose "incumbent banks ~60%" generalization with the JPMorgan-specific "~65%" (the figure actually shown in Tab. 2.1) so the callout no longer overstates the cross-incumbent average.
+- 📌 New HyperFrames composition `hf/14-capital-rebound/` added on 2026-05-10 — paused GSAP timeline (~7s, 4 stat cards + scrub-bar sweep) ready to render to `output.mp4` and embed behind ch1/14.
 
 Next concrete tasks:
 
