@@ -261,6 +261,160 @@ and stat columns.
 
 ---
 
+## Integration recipes (copy-paste templates)
+
+Three concrete patterns cover ~95% of the slide-clip work. Each
+recipe is self-contained — copy, edit the inputs, run the build.
+
+### Recipe A · drop-in `data-chart` clip behind a data-view slide
+
+Use when the slide already has a hand-rolled bar/line chart (e.g.
+`ch1/slides/12-the-2024-2026-wave.html`). The clip plays as the
+visual layer; the slide keeps the text overlay.
+
+```bash
+# 1. Scaffold a one-off project rooted in nyt-graph (newspaper bars)
+npx hyperframes init schulich-ch1-12 --example nyt-graph
+cd schulich-ch1-12
+npx hyperframes add data-chart           # bar/line/stacked
+npx hyperframes add shimmer-sweep        # optional highlight
+
+# 2. Edit src/composition.tsx — point data-chart at the same numbers
+#    used in the slide ($85B, $2.8B, $853B, etc.) and set total = 6s.
+
+# 3. Render to a 1920×1080 mp4 and copy into the deck
+npx hyperframes render --output output.mp4
+cp output.mp4 ../SCHULICH-FINE-TLAU/hf/12-fourth-wave/output.mp4
+```
+
+In the slide, layer it behind the text the same way `ch1/01-title.html`
+already does:
+
+```html
+<video class="hf-bg" data-hf playsinline muted loop preload="auto"
+  style="position:absolute;inset:0;width:100%;height:100%;
+         object-fit:cover;z-index:-2;background:transparent">
+  <source src="../hf/12-fourth-wave/output.mp4" type="video/mp4">
+</video>
+```
+
+If the MP4 is missing the slide degrades to its existing CSS, so the
+clip is purely additive — no risk to the live deck.
+
+### Recipe B · `html-in-canvas` overlay (vfx-* blocks)
+
+Use when you want a shader/3D effect on the slide's *own* DOM —
+chapter title chromatic-shadow reveals, Pisano-quadrant liquid-glass,
+"old paradigm shatters" closing transitions. Requires the Chrome
+flag `chrome://flags/#canvas-draw-element` for live preview;
+`npx hyperframes render` enables it automatically.
+
+```bash
+# 1. Install all html-in-canvas blocks at once
+npx hyperframes add html-in-canvas
+
+# 2. Or only the one you need
+npx hyperframes add vfx-text-cursor      # title chromatic shadows
+npx hyperframes add vfx-liquid-glass     # voronoi parallax reveal
+npx hyperframes add vfx-shatter          # glass-fragment break-up
+npx hyperframes add vfx-iphone-device    # 3D iPhone with live HTML
+```
+
+Minimal capture pattern (from `hyperframeshtmlcanvas.md`):
+
+```html
+<canvas id="capture" layoutsubtree width="1920" height="1080">
+  <div class="my-dashboard">
+    <h1>Revenue: $4.2M</h1>
+    <div class="chart">…</div>
+  </div>
+</canvas>
+<canvas id="theater" width="1920" height="1080"></canvas>
+```
+
+```javascript
+const cap = document.getElementById('capture');
+const ctx = cap.getContext('2d');
+ctx.drawElementImage(cap.querySelector('.my-dashboard'), 0, 0, 1920, 1080);
+const tex = new THREE.CanvasTexture(cap);
+// …feed tex into a vfx-text-cursor / vfx-liquid-glass shader pass
+```
+
+Always feature-detect — the slide must keep working on Safari /
+Firefox / Chrome-without-the-flag:
+
+```javascript
+const isSupported = (() => {
+  const tc = document.createElement('canvas');
+  if (!('layoutSubtree' in tc)) return false;
+  tc.setAttribute('layoutsubtree', '');
+  const ctx = tc.getContext('2d');
+  return ctx && typeof ctx.drawElementImage === 'function';
+})();
+if (isSupported) ctx.drawElementImage(el, 0, 0, w, h);
+// else: fall through to the static image already in the slide
+```
+
+For animated re-capture (scroll-counters, ticker reveals), call
+`drawElementImage` inside the GSAP/RAF render loop and set
+`tex.needsUpdate = true` on the Three.js texture each frame.
+
+### Recipe C · replace CSS `@keyframes` with a paused GSAP timeline
+
+The fourth-wave slides today rely on `animation-delay` chains, which
+are not seekable by `npx hyperframes render`. Re-author them as a
+single paused timeline registered on `window.__timelines[<id>]`.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+<script>
+  const tl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
+  tl.from('.hf-card', { opacity: 0, y: 14, duration: 0.8, stagger: 0.2 })
+    .from('.hf-bar',  { width: 0,                  duration: 1.4 }, '+=0.2')
+    .to  ('.hf-live', { opacity: 0.4, duration: 0.8, repeat: -1, yoyo: true }, 0);
+
+  // Expose for the HyperFrames render harness:
+  window.__timelines = window.__timelines || {};
+  window.__timelines['ch1-slide12'] = tl;
+
+  // For live preview, just play it:
+  tl.play();
+</script>
+```
+
+`npx hyperframes render` walks `window.__timelines`, drives each
+playhead frame-by-frame at 60 fps, and writes a deterministic MP4 —
+no flicker, no off-by-one in the stagger.
+
+Working examples in this repo:
+
+- `hf/01-title/index.html` — three-scene title with a paused master timeline
+- `hf/12-fourth-wave/index.html` — data-card reveal that replaces CSS keyframes
+
+Copy either as a starting point.
+
+### Recipe D · pick the right `--example` template
+
+Each `--example` arg seeds a different visual grammar. Choose by the
+slide's role, not its data:
+
+| Slide intent                                  | `--example`     | Slides this fits                                     |
+| --------------------------------------------- | --------------- | ---------------------------------------------------- |
+| Big single number reveal                      | `kinetic-type`  | Ch1/03 ($1.2T), Ch3/22 ($159B Stripe), Ch4/18 (BTC)  |
+| Multi-bar / line / stacked chart              | `nyt-graph`     | Ch1/12, Ch1/14, Ch1/17, Ch3/15, Ch4/15, Ch4/22       |
+| Branching logic / decision flow               | `decision-tree` | Ch1/04 eras, Ch4/06 VC method, Ch3/02 growth stages  |
+| Editorial typographic grid                    | `swiss-grid`    | Ch1/05 paradigms, Ch1/08 categories, Ch2/06 Pisano   |
+| Documentary archive feel                      | `warm-grain`    | Ch1/04 1858–1967 history, Ch2 prefatory historical   |
+| Energetic chapter open                        | `play-mode`     | All chapter title cards (ch1/01 → ch4/01)            |
+| Product / app showcase                        | `product-promo` | Ch3/05 Wealthsimple, Ch3/16 Stripe, Ch3/18 Nubank    |
+| Closing card                                  | `vignelli`      | Ch1/24, Ch2/21, Ch3/22, Ch4/23                       |
+
+Default to `nyt-graph` for data-view slides (the bulk of the
+fourth-wave content) and reserve `kinetic-type` for the headline
+reveals where one number carries the slide.
+
+---
+
 ## Layout regression check (1920×1080)
 
 Before pushing the deck, run a one-shot natural-height check to make
