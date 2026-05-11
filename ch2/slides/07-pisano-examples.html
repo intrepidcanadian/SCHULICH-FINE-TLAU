@@ -1,0 +1,86 @@
+<!-- ============================================================
+     SLIDE 07 · Pisano Examples (light · 2x2 visual map)
+     ============================================================ -->
+<section class="slide light" data-screen-label="07 Pisano Examples">
+  <div class="chrome">
+    <div>&sect;2.4b &middot; Mapping real fintechs</div>
+    <div>07 / 24</div>
+  </div>
+  <style>
+    .pisano-grid { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:0; margin-top:1.6vh; border:2px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; position:relative }
+    .pisano-cell { padding:2vh 1.8vw; display:flex; flex-direction:column; gap:.6vh; border:1px solid rgba(10,31,61,.08) }
+    .pisano-cell:nth-child(1) { background:rgba(10,31,61,.02) }
+    .pisano-cell:nth-child(2) { background:rgba(180,74,62,.04) }
+    .pisano-cell:nth-child(3) { background:rgba(59,138,79,.04) }
+    .pisano-cell:nth-child(4) { background:rgba(10,31,61,.06) }
+    .pisano-type { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55 }
+    .pisano-co { font-family:var(--serif-en), Georgia, serif; font-weight:700; font-size:2.2vw; line-height:1.1 }
+    .pisano-how { font-family:var(--serif-en), Georgia, serif; font-weight:500; font-size:max(12px,.95vw); line-height:1.45; opacity:.82; margin-top:.2vh }
+    .pisano-tag { display:inline-block; font-family:var(--mono); font-size:max(9px,.65vw); letter-spacing:.18em; text-transform:uppercase; padding:.3vh .6vw; border-radius:3px; margin-top:.4vh; width:fit-content }
+    .pisano-tag-tech { background:rgba(10,31,61,.08); color:rgba(10,31,61,.7) }
+    .pisano-tag-bm { background:rgba(10,31,61,.08); color:rgba(10,31,61,.7) }
+    .pisano-axis { position:absolute; font-family:var(--mono); font-size:max(9px,.68vw); letter-spacing:.28em; text-transform:uppercase; opacity:.4 }
+    .pisano-axis-x { bottom:-2.6vh; left:50%; transform:translateX(-50%) }
+    .pisano-axis-y { top:50%; left:-3.6vw; transform:translateY(-50%) rotate(-90deg); white-space:nowrap }
+  </style>
+  <div class="frame" style="padding-top:2.4vh">
+    <div class="kicker">Pisano (2015) &middot; fintech examples in each quadrant</div>
+    <h2 class="h-xl" style="font-size:4.4vw">Where do real fintechs sit?</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:62vw; opacity:.78; font-size:1.2vw">
+      Most fintechs start in one quadrant and migrate. The strategic question: which direction are they moving &mdash; and why?
+    </p>
+
+    <div style="display:grid; grid-template-columns:auto 1fr; gap:0 1vw; align-items:center; margin-top:1vh">
+      <!-- Y-axis label -->
+      <div style="writing-mode:vertical-lr; transform:rotate(180deg); font-family:var(--mono); font-size:max(9px,.68vw); letter-spacing:.28em; text-transform:uppercase; opacity:.4; text-align:center; padding-right:.4vw">
+        Business Model &rarr; New
+      </div>
+      <div>
+        <!-- X-axis labels above grid -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; margin-bottom:.4vh; padding-left:1.8vw; padding-right:1.8vw">
+          <div style="font-family:var(--mono); font-size:max(9px,.68vw); letter-spacing:.28em; text-transform:uppercase; opacity:.4; text-align:center">Existing Technology</div>
+          <div style="font-family:var(--mono); font-size:max(9px,.68vw); letter-spacing:.28em; text-transform:uppercase; opacity:.4; text-align:center">New Technology</div>
+        </div>
+
+        <div class="pisano-grid">
+          <!-- Top-left: Disruptive (existing tech + new model) -->
+          <div class="pisano-cell">
+            <div class="pisano-type">Disruptive</div>
+            <div class="pisano-co">LendingClub</div>
+            <div class="pisano-how">Existing credit-scoring technology, but a new P2P marketplace model that bypasses bank balance sheets. Lenders fund borrowers directly; the platform earns origination and servicing fees.</div>
+            <div><span class="pisano-tag pisano-tag-tech">Existing tech</span>&nbsp;<span class="pisano-tag pisano-tag-bm">New model</span></div>
+          </div>
+          <!-- Top-right: Architectural (new tech + new model) -->
+          <div class="pisano-cell">
+            <div class="pisano-type">Architectural</div>
+            <div class="pisano-co">Uniswap</div>
+            <div class="pisano-how">Smart contracts on Ethereum replace the order book, market makers, and the exchange itself. Automated market makers (AMMs) let anyone provide liquidity and earn fees &mdash; no intermediary needed.</div>
+            <div><span class="pisano-tag pisano-tag-tech">New tech</span>&nbsp;<span class="pisano-tag pisano-tag-bm">New model</span></div>
+          </div>
+          <!-- Bottom-left: Routine (existing tech + existing model) -->
+          <div class="pisano-cell">
+            <div class="pisano-type">Routine</div>
+            <div class="pisano-co">Chime</div>
+            <div class="pisano-how">Same deposit-and-fee banking model as incumbents, delivered through a mobile app instead of branches. Better UX and lower costs, but fundamentally the same product and revenue structure.</div>
+            <div><span class="pisano-tag pisano-tag-tech">Existing tech</span>&nbsp;<span class="pisano-tag pisano-tag-bm">Existing model</span></div>
+          </div>
+          <!-- Bottom-right: Radical (new tech + existing model) -->
+          <div class="pisano-cell">
+            <div class="pisano-type">Radical</div>
+            <div class="pisano-co">Upstart</div>
+            <div class="pisano-how">AI/ML underwriting using neural networks and 1,600+ variables &mdash; far beyond traditional FICO scoring. But the business model is unchanged: originate consumer loans through partner banks, earn origination and servicing fees. New technology, same lending model.</div>
+            <div><span class="pisano-tag pisano-tag-tech">New tech</span>&nbsp;<span class="pisano-tag pisano-tag-bm">Existing model</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meta-row" style="margin-top:1.2vh">
+      <span>Discussion</span><span>&middot;</span><span>Where does Nubank sit today vs. at launch? Where is Stripe heading?</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; Pisano map &middot; fintech examples</div>
+    <div>FINE 6280 &middot; Ch. 02</div>
+  </div>
+</section>
