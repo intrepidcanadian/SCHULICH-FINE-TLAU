@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 4: Valuation of Fintech Companies — Speaker Notes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #0a1f3d;
+  }
+  .subtitle {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #0a1f3d;
+  }
+  .slide-block {
+    margin-bottom: 2.2rem;
+    padding: 1.4rem 1.6rem;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #0a1f3d;
+    border-radius: 3px;
+    page-break-inside: avoid;
+  }
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.8rem;
+  }
+  .slide-number {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0a1f3d;
+    background: #e8edf4;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+  }
+  .slide-time {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+  }
+  .slide-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.7rem;
+  }
+  .notes ul {
+    margin: 0;
+    padding-left: 1.4rem;
+  }
+  .notes li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .transition {
+    margin-top: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed #ccc;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.82rem;
+    color: #666;
+    font-style: italic;
+  }
+  .total-time {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #555;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #e8edf4;
+    border-radius: 4px;
+  }
+  @media print {
+    body { padding: 1cm; font-size: 10pt; max-width: none; }
+    .slide-block { border: 1px solid #ccc; box-shadow: none; page-break-inside: avoid; }
+    .total-time { background: #eee; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .slide-block { padding: 1rem; }
+    .slide-header { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Chapter 4: Valuation of Fintech Companies — Speaker Notes</h1>
+<p class="subtitle">FINE 6280 &middot; Fintech &middot; Schulich School of Business &middot; Graduate Seminar &middot; Lecture 04 of 14<br>
+Target duration: ~75 minutes &middot; 23 slides</p>
+
+<!-- SLIDE 01 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 01</span>
+    <span class="slide-time">~2 min</span>
+  </div>
+  <div class="slide-title">Cover — Valuation of Fintech Companies</div>
+  <div class="notes">
+    <ul>
+      <li>Welcome the class. Frame the session: today we move from business models (Ch. 3) to putting a number on them. Remind students the reading is Chapter 4 of <em>Fintech Explained</em>.</li>
+      <li>Preview the arc: we start with why valuation is subjective (ZOPA), walk through angel methods for pre-revenue companies, move to VC discount rates for growth stage, then tackle mature-firm tools (multiples, DCF), and end with 2024-2026 market data showing how these multiples actually moved.</li>
+      <li>Pose the opening question: "If I told you a fintech startup has no revenue, no product, and one slide deck — would you invest at a $2M valuation? By the end of today you'll know exactly what assumptions justify that number."</li>
+      <li>Housekeeping: we have ~75 minutes. I'll pause for questions after the VC method and again after the market-data section.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Let's start with a fundamental truth about valuation..."</div>
+</div>
+
+<!-- SLIDE 02 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 02</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">The Art of Valuation &amp; ZOPA</div>
+  <div class="notes">
+    <ul>
+      <li>Emphasize the negotiation framing: valuation is not a calculation — it is a bargaining outcome. The party with better alternatives (BATNA) steers the price. Ask students: "In an early-stage deal, who typically has more bargaining power — founder or angel?" (Answer: usually the investor, unless the startup is hot.)</li>
+      <li>Explain ZOPA (Zone of Possible Agreement): the buyer's ceiling and seller's floor create the negotiable range. Outside ZOPA, no deal happens. Connect to real estate negotiations students may have seen.</li>
+      <li>Distinguish fundamental (intrinsic) value from relative value. Fundamental = bottom-up DCF; relative = what comparable companies trade at. Both are tools in a negotiation, not objective truth. A model's output depends on who chose the inputs.</li>
+      <li>Founder trade-off: equity dilution vs. growth capital. The emotional dimension — founders anchoring too high, investors anchoring too low. Behavioral biases (anchoring, overconfidence) shape every term sheet.</li>
+      <li>Timing cue: keep this conceptual. The math comes next.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Now that we agree valuation is subjective, is there a structured way to approach it? Yes — four universal steps."</div>
+</div>
+
+<!-- SLIDE 03 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 03</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Four Steps in Valuation (Fig. 4.1)</div>
+  <div class="notes">
+    <ul>
+      <li>Walk through the four steps deliberately: (1) Identify value drivers — what makes this company worth anything? Top-down (TAM, macro tailwinds) and bottom-up (team quality, unit economics). Stress GIGO: garbage assumptions in, garbage valuation out.</li>
+      <li>(2) Forecast — project revenues, margins. Scenario analysis: base, bull, bear. For private companies, data is scarce; you often rely on management projections (always skeptically).</li>
+      <li>(3) Discount — time value of money. Quick refresher: PV = FV / (1+r)^n. Ask a student: "$100 in 7 years at 10% — what's it worth today?" ($51.32). The discount rate is where all the controversy lives.</li>
+      <li>(4) Divide the pie — Enterprise Value = Net Debt + Equity. Creditors are senior; equity is residual. For startups with SAFEs and convertible notes, the "as-converted" cap table gets complex fast. Point to Table 4.1 showing pre-money vs. post-money per share math.</li>
+      <li>Reference Fig. 4.1 on slide: a simple flowchart students can anchor the rest of the lecture against.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "For early-stage companies with no revenue, steps 2 and 3 are basically impossible with traditional models. So angel investors invented scorecards..."</div>
+</div>
+
+<!-- SLIDE 04 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 04</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Angel Valuation — Bill Payne Scorecard</div>
+  <div class="notes">
+    <ul>
+      <li>Context: angel investors face the hardest valuation problem — no revenue, maybe no product. They use heuristics, not spreadsheets. The Payne Scorecard is the most widely taught.</li>
+      <li>Mechanics: start from an average pre-money for recent angel deals in your region (~$2M is the textbook default). Then adjust across seven dimensions, each weighted. The entrepreneur/team dimension alone is 30% — ask students why. (Answer: at pre-revenue, execution risk dominates.)</li>
+      <li>Walk through the textbook example: adjustments sum to 115.5% of the $2M base, yielding $2.31M pre-money. Emphasize subjectivity — two angels looking at the same startup could get $1.8M or $2.6M. That's the point: it's structured subjectivity, not science.</li>
+      <li>Statistics to mention: only 10% of angel investments generate 90% of returns. Portfolio average is 2.6x over 3.5 years (~27% IRR). Angels need the winners to be very big.</li>
+      <li>Ask: "Would this method work for a fintech startup with $500K ARR?" (Answer: probably not — once you have revenue, you should use revenue-based methods.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Payne isn't the only scorecard. Let's look at two more: Berkus and Risk Factor Summation."</div>
+</div>
+
+<!-- SLIDE 05 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 05</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Berkus Method &amp; Risk Factor Summation</div>
+  <div class="notes">
+    <ul>
+      <li>Berkus (1996): simpler than Payne. Start at $500K for a sound idea, then add up to $500K each for four risk-mitigation milestones: prototype, team, rollout, strategic relationships. Max pre-money = $2.5M. The worked example gives $1.9M. Good for very early (idea-stage) companies.</li>
+      <li>Risk Factor Summation (Ohio TechAngels): start from regional average (~$2M), then adjust +/- across 12 risk categories (management, competition, tech, litigation, etc.). Each unit = +/- $250K. More granular than Berkus but still qualitative. Example yields $2.25M.</li>
+      <li>Compare all three angel methods: they all anchor around $1.5M–$2.5M pre-money for a typical pre-revenue startup. The similarity is not coincidental — it reflects empirical angel deal data in North America.</li>
+      <li>Ask students: "Which risk categories do you think are most relevant for a fintech startup specifically?" (Guide toward: regulation/legislation, technology risk, funding risk.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Once a startup raises a Series A, angel scorecards won't cut it. VCs have their own method — working backward from the exit."</div>
+</div>
+
+<!-- SLIDE 06 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 06</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">The VC Valuation Method</div>
+  <div class="notes">
+    <ul>
+      <li>This is the first method that uses actual financial projections. VCs target 25-35% IRR over 6-10 years. They work BACKWARD: start at exit, discount to today. The twist: they adjust for bankruptcy risk (most startups fail).</li>
+      <li>Walk through the worked example step by step. TV = $2M profit x 20x P/E = $40M exit. Discount rate = (1.25 / 0.20) - 1 = 56.25% p.a. — that 20% is annual survival probability. Post-money = $40M / (1.5625)^5 = $4.3M. Pre-money = $4.3M - $2.5M investment = $1.8M.</li>
+      <li>Key insight: the 56.25% discount rate is NOT the cost of capital in a CAPM sense. It's an IRR hurdle adjusted for the 80% probability of total loss each year. Ask: "If survival probability were 50% instead of 20%, what happens to the discount rate?" (Answer: it drops to ~150%, making the valuation higher — more survival = higher price today.)</li>
+      <li>Ownership math: VC owns 58.2% ($2.5M / $4.3M). Founders + angels diluted to 41.8%. Post-money shares = 1M / 0.418 = 2.39M shares. Price = $1.79/share.</li>
+      <li>Reality check: multiple rounds (A through F), ESOP pools, and anti-dilution provisions make real cap tables far more complex. But the logic is the same.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "The VC method works for growth-stage private companies. But what about mature, publicly-traded fintechs? We need market multiples."</div>
+</div>
+
+<!-- SLIDE 07 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 07</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Market Multiples &amp; Precedent Transactions</div>
+  <div class="notes">
+    <ul>
+      <li>Relative valuation: instead of building a model from scratch, ask "what are similar companies worth?" Three steps: (1) identify comparables, (2) choose the right multiple (P/E for equity, EV/Sales or EV/EBITDA for enterprise), (3) apply to your target.</li>
+      <li>Table 4.5: catalog the common multiples. P/E works for profitable firms. EV/Sales works for growth firms with no earnings. EV/EBITDA is the workhorse for mid-stage. LTM (last twelve months) vs. NTM (next twelve months, forward-looking).</li>
+      <li>Adyen example (Table 4.6): Dutch payments processor, $44B market cap. P/E of 75.5x vs. peer average 39.4x. Why the premium? Growth expectations + 50%+ EBITDA margin. But EBITDA margin is only 10% of revenue vs. Visa's 71% — different business models require different multiples.</li>
+      <li>Precedent transactions: add a control premium (typically 20-40%) because you're buying the whole company. Show the outlier problem: dropping one outlier from 3x, 2x, 4x, 5x, 8x changes the answer from $220M to $175M (-20%).</li>
+      <li>Warning: "changing the comparables changes the answer." This is both a feature and a bug of relative valuation.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Multiples are quick but shallow. For a deeper, first-principles answer, we need the DCF model."</div>
+</div>
+
+<!-- SLIDE 08 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 08</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">The DCF Model</div>
+  <div class="notes">
+    <ul>
+      <li>This is the gold standard of fundamental valuation. Forecast free cash flows (FCFF) over 5-10 years, discount at WACC, add terminal value. CRITICAL LIMITATION: cannot be used for banks or financial intermediaries (no "sales" or "EBITDA" in the traditional sense).</li>
+      <li>FCFF formula: EBIT(1-t) + D&A - CAPEX - change in NWC. Walk through each component. Use marginal tax rate, not effective. D&A is non-cash (add back). CAPEX and working capital are real cash drains to fund growth.</li>
+      <li>Terminal value: typically 70-80% of total EV. Two approaches that should give similar answers: (a) perpetuity growth — TV = FCFF(t+1) / (WACC - g), where g = 2-4% long-term GDP growth; (b) exit multiple — TV = EBITDA(t) x comparable EV/EBITDA.</li>
+      <li>Ask students: "If terminal value is 70-80% of total EV, what does that tell you about the sensitivity of a DCF?" (Answer: the model is extremely sensitive to terminal-value assumptions — growth rate and exit multiple dominate everything.)</li>
+      <li>Net Working Capital definition: (Current Assets - Cash) - (Current Liabilities - Short-term Debt). The CHANGE captures incremental cash needed to support sales growth each year.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "DCF works beautifully for a mature SaaS company. But what about fintechs that are growing 50%+ and deliberately losing money? Cathie Wood has an answer..."</div>
+</div>
+
+<!-- SLIDE 09 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 09</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">ARK Invest &amp; Adjusted EBITDA</div>
+  <div class="notes">
+    <ul>
+      <li>ARK's thesis: GAAP accounting penalizes disruptive companies that invest heavily to scale. Wood proposes five adjustments: (1) add back R&D (28.5% of revenue for ARK holdings vs. 12% Nasdaq average), (2) add incremental S&M (customer acquisition for scaling), (3) add back stock-based compensation (non-cash, like D&A), (4) count deferred revenue when cash is received, (5) add back goodwill impairments.</li>
+      <li>Critical discussion point: Who benefits from these adjustments? ARK manages ETFs — higher adjusted EBITDA means higher implied valuations means higher AUM means higher fees. Always consider incentives. Ask students: "Is this analysis or marketing?"</li>
+      <li>ARKF performance: $50B AUM (Feb 2021) crashed to $16B (mid-2022), a -70% decline. Fig. 4.2 shows ARKF vs. S&P 500 indexed. The portfolio concentrated in fintechs with negative GAAP earnings.</li>
+      <li>Table 4.7 observation: 8 of 10 ARKF companies have EV/EBITDA outliers (>20x or negative). Robinhood had NEGATIVE enterprise value. When EV/EBITDA breaks down, EV/Sales (2x-10x) becomes the fallback metric.</li>
+      <li>Takeaway: adjusted EBITDA is ONE lens. It's useful for understanding unit economics, but can be manipulated to justify any price.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "We said DCF doesn't work for banks. So how DO you value a bank? Let's look at JPMorgan."</div>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 10</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Bank Valuation — JPMorgan</div>
+  <div class="notes">
+    <ul>
+      <li>Banks lack traditional "sales" and "EBITDA." Interest income IS the product. Enterprise multiples and DCF cannot be applied. Analysts use equity multiples (P/E, P/Book) and performance ratios.</li>
+      <li>Key ratios for JPMorgan (2022): NIM 2.5% (net interest income / average interest-earning assets; North American range 1-3%), Efficiency Ratio 59% (noninterest expense / revenue; lower = better), ROE 15.2% (ROA x leverage). Revenue split: 52% NII, 48% noninterest income.</li>
+      <li>Valuation anchor: Table 4.10 shows JPMorgan vs. peer US banks. P/E and P/Book are the only multiples that work. Banks with higher ROE trade at premium P/Book — this is the key relationship.</li>
+      <li>Ask students: "Why can't we use EV/EBITDA for a bank?" (Answer: debt is NOT financing for a bank — it IS the product. Deposits are liabilities that generate interest income. Enterprise value loses meaning.)</li>
+      <li>This slide matters because later we'll compare bank multiples to neobank multiples — the gap is dramatic.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Now let's put actual fintech companies side by side and see what their multiples look like."</div>
+</div>
+
+<!-- SLIDE 11 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 11</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Fintech Multiples Comparison (Apr 2023 Baseline)</div>
+  <div class="notes">
+    <ul>
+      <li>Table 4.11 is the textbook's snapshot (Refinitiv, April 2023). Seven listed fintechs with extreme variation in NTM multiples. This is the "before" picture — we'll update it in slides 14-15.</li>
+      <li>PayPal looks most attractive on traditional metrics: highest ROA (3.1%), lowest P/E NTM (14.9x), lowest EV/EBITDA (11x). But it's also the slowest grower. Cheap for a reason?</li>
+      <li>Wise operates like a bank: Assets/Equity = 18.5x (vs. median 3.4x). High ROE (14.4%) but low ROA (0.6%). The leverage is customer float, not debt.</li>
+      <li>Square, Robinhood, SoFi, Paytm: all negative ROE in April 2023. P/E is meaningless — validates ARK's argument for adjusted metrics. But this was the trough. By 2025, all four became profitable.</li>
+      <li>Key takeaway: a single "fintech multiple" does not exist. The variation here is 3x-4x across companies in the same sector.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "That was April 2023. The world didn't stand still. Let's see what the 2024-2026 reset looks like."</div>
+</div>
+
+<!-- SLIDE 12 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 12</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">The 2024–2026 Valuation Reset</div>
+  <div class="notes">
+    <ul>
+      <li>Private fintech valuations have largely re-rated from the 2021 peak. Walk through the five names: Stripe recovered ($95B peak to $50B trough to $159B in Feb 2026 — exceeded its peak). Klarna IPO'd at $15.1B (down from $45.6B). Revolut at $45B (above its 2021 round). Plaid at $6.1B (down from $13.4B). Chime IPO'd at $11.6B (down from $25B).</li>
+      <li>The pattern: payments infrastructure (Stripe) and profitable neobanks (Revolut) recovered or exceeded. Pure consumer plays (Chime) and data aggregators (Plaid) remain depressed. BNPL (Klarna) took the biggest haircut.</li>
+      <li>Public market: median EV/Sales compressed from ~25x (2021) to ~6x for growth fintechs. Mature fintechs trade at P/E 12-15x. The AI premium (+38% EV/Sales for AI-native fintechs) and Rule of 40 are the new gatekeepers.</li>
+      <li>Ask: "If you were advising a fintech founder on when to IPO, what does this data tell you?" (Answer: wait until profitable, demonstrate Rule of 40, highlight AI if genuine.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "The 2025-2026 period introduced a genuinely new asset class for relative valuation: tokenized real-world assets."</div>
+</div>
+
+<!-- SLIDE 13 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 13</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Tokenized RWA Valuation 2025-26</div>
+  <div class="notes">
+    <ul>
+      <li>New comparable set: tokenized real-world-asset funds are now liquid enough to serve as valuation anchors. BlackRock BUIDL ($2.8B AUM), Ondo USDY ($610M), Franklin BENJI ($420M) — these trade on-chain with intraday secondary marks.</li>
+      <li>New multiples emerge: P/AUM (implied multiples on tokenized-asset issuers in 2024-25 secondaries run 2-4x, vs. ~1x for traditional ETF managers). This premium reflects protocol-level network effects and programmable distribution.</li>
+      <li>AI-fintech valuation premium: +38% median EV/Sales premium for AI-native fintech vs. traditional fintech (CB Insights). But this compresses to +12% if the company misses Rule of 40. The premium is conditional on execution.</li>
+      <li>Pedagogical point: when new asset classes appear, the first challenge is finding the RIGHT comparable set. Tokenized fund issuers are neither traditional asset managers nor DeFi protocols — they sit in between.</li>
+      <li>Ask: "How would you value Securitize (the tokenization platform)? Is it a fintech, an asset manager, or an infrastructure play?"</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Let's zoom in on how public fintech multiples specifically reset from the 2021 mania."</div>
+</div>
+
+<!-- SLIDE 14 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 14</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Fintech Multiples Reset — 2025 Normalisation</div>
+  <div class="notes">
+    <ul>
+      <li>Concrete numbers showing the compression: Adyen from 100x+ P/E to ~50x. Block from 200x+ to ~25x. Visa/Mastercard at 30x/38x remain the "ceiling" for asset-light, scaled-rails fintech.</li>
+      <li>The new dual mandate: profitable growth + operating leverage. 2021 rewarded growth at any cost. 2025 rewards growth WITH margins. This is a regime change, not a cycle.</li>
+      <li>AI-native premium (+38% EV/Sales) is real but conditional. If your Rule-of-40 score slips, the premium compresses to +12%. Markets are differentiating between genuine AI margin expansion and AI-washing.</li>
+      <li>Ask: "Adyen still trades at 50x — well above Visa at 30x. What justifies the premium?" (Answer: higher growth rate, expanding into financial services beyond payments, platform model with higher switching costs.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Let's look at the actual numbers for our textbook companies — how did each one's P/E change from April 2023 to late 2025?"</div>
+</div>
+
+<!-- SLIDE 15 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 15</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Multiples Evolution: Apr 2023 to Q4 2025</div>
+  <div class="notes">
+    <ul>
+      <li>Direct update to Slide 11's Table 4.11. PayPal P/E compressed from 14.9x to ~12.5x (-16%) — buybacks lifted EPS but growth stalled. Wise compressed from 38x to ~22x (-42%) — profit beat but market re-priced the growth multiple.</li>
+      <li>The dramatic reversals: Robinhood went from negative (not meaningful) to ~38x — profitable since Q1 2024. SoFi went from negative to ~28x — GAAP positive FY24. Paytm from negative to ~45x — recovered after RBI restrictions.</li>
+      <li>Median fintech P/E NTM moved from ~14.9x (April 2023) to ~24x (Q4 2025). This expansion happened because formerly-unprofitable companies became profitable, not because valuations got frothy. The denominator changed.</li>
+      <li>Context: 10-year US Treasury yield fell ~50bps from 4.6% to 4.1% (Fed cut 100bps from peak). Lower rates help multiples expand.</li>
+      <li>Key lesson: relative valuation snapshots decay fast. If you're writing a pitch deck with April 2023 comps, you're already wrong by Q4 2025.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Within this overall re-rating, one cohort is separating from the pack: AI-native fintechs."</div>
+</div>
+
+<!-- SLIDE 16 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 16</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">AI-Native Fintech Premium 2025-26</div>
+  <div class="notes">
+    <ul>
+      <li>The market is now visibly bifurcating: AI-native expense/ops platforms (Ramp at $32B on $1B run-rate, Mercury, Brex) price on AI-attach gross margin and net retention. Traditional acquirers and lenders revert toward bank multiples.</li>
+      <li>Data points: ~75% of every dollar invested in 2025 enterprise software went to AI (F-Prime). Fintech's AI share is ~33% but rising fast as AI agents move into operations and underwriting. Vertical platform multiple ceiling is 8x+ revenue for AI-native with "Goldilocks" profile.</li>
+      <li>Anchors: Klarna IPO'd at ~3.5x revenue (BNPL/payments band). Stripe at $159B is the ceiling. Nubank ROE of 33% shows digital banks can print software-grade returns. The comparable set depends entirely on which kind of fintech you are.</li>
+      <li>Klarna's AI story: AI agent replaced 700 FTEs of customer service work. This is margin expansion through AI — exactly what the market rewards.</li>
+      <li>Challenge for students: "If you're valuing an AI-native fintech, should your comp set be other fintechs, or enterprise SaaS companies like Salesforce and ServiceNow?"</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Not all fintech sectors recovered equally. Let's disaggregate by category."</div>
+</div>
+
+<!-- SLIDE 17 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 17</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Public Fintech Reset by Category (2021-2025)</div>
+  <div class="notes">
+    <ul>
+      <li>The averaging from Slide 11 hid everything. By category: Payment networks (Visa) +30% above 2021 peak. Neobanks (Nubank) +63%. Robinhood +117% (best expansion). But BNPL (Affirm) still -47% from peak. Crypto (Coinbase) just +9% above peak despite S&P 500 inclusion.</li>
+      <li>Robinhood's turnaround is remarkable: $36B peak, $6B trough (2022), $78B by Q4 2025. Net interest income transformed the business model and the multiple. Same company, same product, different revenue mix.</li>
+      <li>Affirm/Klarna: BNPL took the most painful reset. Credit losses matter again when rates rise. The market moved from "growth at any cost" to "show me credit discipline."</li>
+      <li>Practical implication: a single "fintech multiple" band masks ~3x dispersion across categories. Before benchmarking, always disaggregate by sub-vertical and revenue model.</li>
+      <li>Ask: "If you were building a comp table for a new payments fintech, would you include Affirm? Why or why not?"</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Speaking of new valuation problems, let's look at something the textbook didn't anticipate: corporate Bitcoin treasuries."</div>
+</div>
+
+<!-- SLIDE 18 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 18</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Corporate BTC Treasuries 2020-2026 (Strategy/MicroStrategy)</div>
+  <div class="notes">
+    <ul>
+      <li>New valuation problem: how do you value a company whose primary asset is Bitcoin on its balance sheet? Strategy (formerly MicroStrategy) holds 818K BTC (~$54B cost basis), financed ~97% through ATM equity sales. This is a leveraged Bitcoin play disguised as a software company.</li>
+      <li>The key metric is mNAV (market cap / BTC NAV). It hovered ~3x through the 2024 ETF launch, but compressed to ~0.65x by late 2025 ($50B market cap < $77B of BTC at spot). When mNAV < 1, fresh ATM issuance is dilutive, not accretive — the bear case.</li>
+      <li>Why did mNAV compress? US spot BTC ETFs launched Jan 2024 ($170B+ AUM by 2026). Institutions can now hold Bitcoin directly via BlackRock IBIT at lower cost than buying MSTR stock at a premium. The "only institutional vehicle for BTC" argument evaporated.</li>
+      <li>The "42/42" plan: $42B equity + $42B fixed income over 3 years. This is unprecedented capital-markets engineering for a single-asset treasury strategy.</li>
+      <li>Discussion: "Is Strategy a fintech? A hedge fund? A leveraged ETF? How would you classify it for comp purposes?"</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "From Bitcoin treasuries to stablecoins — another crypto-adjacent fintech went public in 2025."</div>
+</div>
+
+<!-- SLIDE 19 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 19</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Circle IPO — June 2025</div>
+  <div class="notes">
+    <ul>
+      <li>Circle (NYSE: CRCL) is the first major stablecoin issuer to go public. Priced $31 on Jun 5, 2025, raised ~$1.05B. Day-1 close +168%; eventually peaked at ~$60B market cap. The business model: USDC float (~$60B supply) earns short-rate yield on Treasury reserves.</li>
+      <li>Valuation challenge: How do you value a stablecoin issuer? FY24 revenue was $1.68B, ~99% from reserve interest. But ~50% is paid to distribution partners (primarily Coinbase). The real question: is this a financial infrastructure company (high multiple) or an interest-rate-sensitive intermediary (low multiple)?</li>
+      <li>The GENIUS Act (signed Jul 18, 2025) — first US federal stablecoin law: 1:1 reserves, monthly attestations, OCC licensing. This codifies Circle's existing model and creates a moat vs. offshore competitors.</li>
+      <li>Multiple lens: ~20-30x trailing GAAP earnings; alternatively, EV/USDC supply at ~50-100bps. The "partner heavy" risk: if Coinbase renegotiates its 50% revenue share, Circle's margins transform overnight.</li>
+      <li>Connection to Slide 13 (tokenized RWA): Circle is the supply-side equivalent of BlackRock BUIDL. One tokenizes treasuries for yield; the other issues the dollar-denominated wrapper those yields are quoted in.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Let's return to the bank valuation question from Slide 10 and update it with 2026 data."</div>
+</div>
+
+<!-- SLIDE 20 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 20</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Bank vs. Neobank Multiples 2023-2026</div>
+  <div class="notes">
+    <ul>
+      <li>Direct update to Slide 10: JPMorgan P/E expanded from ~10-11x (Apr 2023) to ~14.8x trailing (May 2026). Still a "bank multiple." But Nu Holdings trades at ~24-31x trailing — roughly 2x JPMorgan's multiple. Why?</li>
+      <li>The answer is unit economics: Nu ROE ~33% vs. JPM ~17%. Nu cost-to-serve ~$0.80/month per customer. Nu efficiency ratio ~19.9% vs. ~50%+ for typical retail bank. The digital-only model is structurally cheaper.</li>
+      <li>The textbook said "banks deserve a discount." That's still true for traditional banks. But digital banks with software-grade cost structures earn software-grade multiples. The valuation toolkit didn't change — the underlying economics did.</li>
+      <li>Nu grew from ~80M customers (Q1 2023) to ~131M (Q4 2025) across Brazil, Mexico, Colombia. That's +64% customer growth while ALSO becoming highly profitable. Growth + profit + EM tailwind = premium.</li>
+      <li>Ask: "At what point does Nubank's multiple converge with JPMorgan's? What would cause that?" (Answer: if growth slows, credit losses spike in a recession, or regulatory constraints force higher capital ratios.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "The profitability story isn't just Nubank. Let's look at Q1 2026 earnings for the whole cohort."</div>
+</div>
+
+<!-- SLIDE 21 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 21</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Public Fintech Profitability Inflection — Q1 2026</div>
+  <div class="notes">
+    <ul>
+      <li>The "profitable fintech" archetype is now real, not aspirational. SoFi: $167M net income Q1 2026 (+134% YoY), 10th consecutive profitable quarter, revenue $1.1B (+41%), Rule-of-40 score = 72%. Robinhood: $346M net income, revenue $1.07B (+15%).</li>
+      <li>The earnings-quality shift: SoFi's profit now comes from interest income on $30B+ deposits, not adjusted-anything. This is a bank charter paying off. When we discussed "adjusted EBITDA" on Slide 9, the question was whether these companies would ever generate GAAP profit. The answer is now yes.</li>
+      <li>Block (formerly Square): FY2025 net income >$1.5B, S&P 500 inclusion (Jul 2024). Affirm: GAAP-profitable for the first time in FY2025. The "negative earners" from Slide 11 have all inflected.</li>
+      <li>Valuation implication: discount rate falls (less risk), terminal-value share of EV rises (profitability validates long-term forecasts), the bank/neobank multiple gap narrows as neobanks prove durability.</li>
+      <li>Key question for students: "Now that these companies are profitable, which valuation method works best — multiples, DCF, or something else?"</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "One final data slide: the Q1 2026 multiples by sub-sector show the dispersion is getting wider, not narrower."</div>
+</div>
+
+<!-- SLIDE 22 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 22</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Q1 2026 Fintech Multiples by Sub-Sector</div>
+  <div class="notes">
+    <ul>
+      <li>Finro's Q1 2026 dataset: 416 fintechs across 9 sub-sectors. The headline average is 14.5x EV/Revenue. The median is 7.6x. That 1.9x mean/median ratio tells you a few high-flyers skew everything. The aggregate is useless — only sub-sector splits matter.</li>
+      <li>The stack from top to bottom: Blockchain & crypto infra (26.6x mean / 14.2x median) — Circle IPO rerated this. WealthTech (25.0x / 16.2x) — AI advice premium. SMB & Enterprise (17.1x / 10.1x) — software-like. Payments (7.7x / 3.6x) — bifurcated between Stripe and legacy. Lending (3.5x / 2.6x) — bottom, rate and NPL drag.</li>
+      <li>Practical takeaway for students doing valuation projects: "When someone says 'fintech trades at 10x revenue,' your first question should be 'which sub-sector?' The answer ranges from 2.6x to 26.6x."</li>
+      <li>Connection to M&A: $44.7B in H1 2025 fintech M&A, payments = 40%. Premium B2B-payments and vertical-SaaS assets fetch ~2x the multiple of legacy peers.</li>
+      <li>SaaS anchor: public SaaS index at ~6.5x late-2025. Fintech sub-sectors with software-like economics now rerate against this anchor, not against each other.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: "Let's close with a synthesis of everything we covered today."</div>
+</div>
+
+<!-- SLIDE 23 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 23</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Closing — The Valuation Toolkit</div>
+  <div class="notes">
+    <ul>
+      <li>Synthesize the toolkit by stage: Early-stage (pre-revenue) = angel scorecards. Growth-stage (Series A+) = VC method. Mature/public = market multiples or DCF. Banks = P/E and P/Book only. Disruptive/pre-profit fintechs = adjusted EBITDA as ONE lens, always verify.</li>
+      <li>Three numbers to remember: $2M (Payne Scorecard base), 56.25% (VC discount rate at 20% survival), 70-80% (terminal value share of DCF enterprise value).</li>
+      <li>The big lesson from 2024-2026 data: relative valuation snapshots decay fast. The comparable set matters more than the multiple. Sub-sector dispersion is 10x (from 2.6x lending to 26.6x blockchain). AI-native and Rule-of-40 are the new gatekeepers for premium multiples.</li>
+      <li>Preview next class: Chapter 5 — Bitcoin, Blockchain & Cryptocurrencies. We'll go deeper into the asset class that several of today's slides touched on (Strategy, Circle, tokenized RWA).</li>
+      <li>Final question to leave students with: "If valuation is an art and not a science, what makes one analyst better than another?" (Answer: better assumptions, better comparable selection, and intellectual honesty about uncertainty.)</li>
+    </ul>
+  </div>
+  <div class="transition">End of lecture. Open floor for questions. Remind students of any assignments due.</div>
+</div>
+
+<div class="total-time">
+  Total estimated lecture time: ~76 minutes<br>
+  (Includes natural pauses for questions after Slides 6, 11, and 17)
+</div>
+
+</body>
+</html>

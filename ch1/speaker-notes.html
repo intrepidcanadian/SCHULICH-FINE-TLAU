@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1: Fintech Defined — Speaker Notes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #fafaf8;
+    color: #1a1a1a;
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #0a1f3d;
+  }
+  .subtitle {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid #0a1f3d;
+    padding-bottom: 1rem;
+  }
+  .slide-block {
+    margin-bottom: 2.2rem;
+    padding: 1.4rem 1.6rem;
+    background: #fff;
+    border: 1px solid #e0ddd8;
+    border-left: 4px solid #0a1f3d;
+    border-radius: 3px;
+    page-break-inside: avoid;
+  }
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.6rem;
+  }
+  .slide-title {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0a1f3d;
+  }
+  .slide-time {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+    white-space: nowrap;
+  }
+  .notes ul {
+    margin: 0.5rem 0 0.8rem 1.4rem;
+  }
+  .notes li {
+    margin-bottom: 0.45rem;
+    font-size: 0.95rem;
+  }
+  .transition {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #6a6a6a;
+    font-style: italic;
+    margin-top: 0.6rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #d0cdc8;
+  }
+  .timing-summary {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9rem;
+    background: #0a1f3d;
+    color: #fff;
+    padding: 1rem 1.4rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+  }
+  .timing-summary strong { color: #f4b13a; }
+  @media print {
+    body { padding: 1rem; font-size: 11pt; }
+    .slide-block { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+    .timing-summary { background: #333; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .slide-block { padding: 1rem; }
+    .slide-header { flex-direction: column; gap: 0.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Chapter 1: Fintech Defined &mdash; Speaker Notes</h1>
+<div class="subtitle">FINE 6280 &middot; Fintech Explained &middot; Schulich School of Business &middot; Lecture 01 of 14</div>
+
+<div class="timing-summary">
+  <strong>Total target time: ~75 minutes.</strong> Part I (Slides 1-5): ~18 min. Part II &mdash; The Lens (Slides 6-11): ~20 min. Part III &mdash; The 2024-2026 Wave (Slides 12-22): ~28 min. Close &amp; Poll (Slides 23-24): ~9 min.
+</div>
+
+<!-- SLIDE 01 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 01 &mdash; Title: Fintech Defined</div>
+    <div class="slide-time">~2 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Welcome the class. Introduce yourself and the course structure: 14 lectures, one chapter of the textbook each week, building toward a group consulting project.</li>
+      <li>Frame the course goal: by week 14, students should be able to take any fintech firm and decompose it analytically using the lens introduced today.</li>
+      <li>Set expectations: this is a graduate seminar, not a survey. We care about frameworks, not just company names. Participation counts.</li>
+      <li>Point out the required reading: Chapter 1 of Fintech Explained. Ask if everyone has access.</li>
+    </ul>
+    <div class="transition">Transition: "Let's start with what seems like a simple question but actually isn't &mdash; what is fintech?"</div>
+  </div>
+</div>
+
+<!-- SLIDE 02 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 02 &mdash; What is Fintech?</div>
+    <div class="slide-time">~4 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Start with the definitional challenge: fintech conflates an industry label with a process. Ask the class: "Is Goldman Sachs a fintech? Is Shopify? Why or why not?" Use this to surface the boundary problem.</li>
+      <li>Walk through the three value propositions (speed, access, cost) with concrete examples. T+1 settlement was just implemented by the SEC in May 2024 &mdash; ask who follows capital markets and whether they noticed the change.</li>
+      <li>Emphasize the Arner et al. (2015) insight: fintech is a method, not a sector. This is the intellectual foundation for everything that follows.</li>
+      <li>Pause on M-Pesa's 51M active users &mdash; ask students if any of them have used mobile money or know someone who has. This anchors the "access" pillar in lived experience.</li>
+      <li>Flag that Wise's FX compression from 3% to 0.4-0.7% is a concrete example of disintermediation rents &mdash; we will return to this when discussing the "How" question of monetization.</li>
+    </ul>
+    <div class="transition">Transition: "So it's big, it's definitionally tricky, but how big exactly? Let's look at the numbers."</div>
+  </div>
+</div>
+
+<!-- SLIDE 03 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 03 &mdash; Growth: $1.2T / 38K Deals</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Let the numbers land: $1.2 trillion cumulative private capital, 38,000+ deals. This is not a niche &mdash; it is a structural reallocation of venture and PE capital toward financial services.</li>
+      <li>Draw attention to the cyclicality in Figure 1.1: the 2021 peak at ~$240B was ZIRP-driven euphoria; the 2023 trough at $113B represents the hangover. Ask: "What does this tell us about whether fintech is maturing or was in a bubble?"</li>
+      <li>Point to Figure 1.2 (media mentions) as evidence that the term barely existed before 2014. The discourse created the category, which then attracted capital. Performativity in markets.</li>
+      <li>Foreshadow: we will see the 2025 rebound data on slide 14 &mdash; capital is flowing back, but differently.</li>
+    </ul>
+    <div class="transition">Transition: "To understand where we are, we need to understand how we got here. Three eras."</div>
+  </div>
+</div>
+
+<!-- SLIDE 04 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 04 &mdash; Three Eras of Fintech</div>
+    <div class="slide-time">~4 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Walk through each era chronologically. For Era 1 (1858-1967): emphasize that technology was built BY and FOR incumbents &mdash; there was no disruption threat. The transatlantic cable, Fedwire, telex &mdash; all infrastructure that banks controlled.</li>
+      <li>For Era 2 (1967-2008): the Barclays ATM in 1967 is the symbolic start. Ask: "Why did banks digitize?" Answer: cost reduction and customer convenience, but the value chain stayed vertically integrated. Goldman's terminal didn't threaten Goldman.</li>
+      <li>For Era 3 (2006-present): stress the three catalysts &mdash; LendingClub/Zopa launching P2P lending (2006), AWS enabling cloud-native startups (2006), and the GFC creating a trust deficit (2007-08). New entrants pushed services OUTSIDE the regulated perimeter.</li>
+      <li>Mention "Fintech 3.5" for developing economies &mdash; mobile leapfrogging where formal banking never fully penetrated. We will return to this on slide 24 with financial inclusion.</li>
+      <li>Ask the class: "Are we now in a fourth era? What would define it?" Hold the question &mdash; slides 12-22 will propose an answer.</li>
+    </ul>
+    <div class="transition">Transition: "Within these eras, firms pursue fundamentally different strategies. Two paradigms."</div>
+  </div>
+</div>
+
+<!-- SLIDE 05 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 05 &mdash; Two Paradigms: Traditional vs. Transformational</div>
+    <div class="slide-time">~5 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Frame this as Kuhn meets Christensen. Traditional fintech = sustaining innovation. JPMorgan's $15.3B tech spend makes existing services faster and cheaper. Transformational fintech = new cost structures that make the old model uncompetitive.</li>
+      <li>Use the "faster horses vs. a different car" metaphor. Ask: "Is Stripe a faster horse or a different car?" The answer is nuanced &mdash; it started as transformational (unbundled merchant acquiring) but is now itself an incumbent being attacked.</li>
+      <li>Point to Ant Group as the most dramatic example: re-bundling payments + credit + wealth. Yu'e Bao's $268B AUM peak meant a money-market fund inside a payments app &mdash; that is a fundamentally different architecture than what banks offered.</li>
+      <li>Discuss Table 1.1 briefly. The key diagnostic question: does the firm require the existing regulated perimeter to function, or does it create value precisely by operating outside it?</li>
+      <li>This distinction will be the backbone of how we evaluate every case study this term. Flag that we will revisit this paradigm distinction after seeing the data slides on GenAI deployment by banks (slide 17) &mdash; traditional fintech is scaling faster than people expected.</li>
+    </ul>
+    <div class="transition">Transition: "Now that we have definitions and history, let's build the analytical toolkit you'll use all term. Part II: The Lens."</div>
+  </div>
+</div>
+
+<!-- SLIDE 06 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 06 &mdash; The Lens (Section Divider)</div>
+    <div class="slide-time">~2 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Signal a gear shift: we are moving from "what is fintech" to "how do we analyze any fintech." The Lens is the analytical framework for the entire course.</li>
+      <li>Preview the four moves: Who (customer), What (pain point), Why (value proposition), How (monetization). These map to the four questions on the next slide.</li>
+      <li>Point to Figure 1.3 and explain that every subsequent chapter's case studies will be run through this framework. Their group projects will use it as well.</li>
+      <li>Emphasize: the Lens is sequential. You cannot answer "Why will customers pay?" without first knowing WHO they are and WHAT pain they feel. Order matters.</li>
+    </ul>
+    <div class="transition">Transition: "Four questions. Let me walk you through each one with examples."</div>
+  </div>
+</div>
+
+<!-- SLIDE 07 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 07 &mdash; Four Questions</div>
+    <div class="slide-time">~5 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Walk through each question with a live example. Take Wealthsimple: Who? = Canadian millennials underserved by Big 5 banks. What? = high MER fees (2%+) and intimidating advisor minimums. Why? = lower cost (0.4-0.5% management fee), simpler UX, no minimums. How? = AUM-based fee + premium subscription tiers.</li>
+      <li>For Question 1 (Who): stress B2B2C as the often-overlooked model. Borrowell doesn't sell to consumers directly in the traditional sense &mdash; it uses free credit scores to generate lead-gen revenue from lenders. That changes everything about unit economics.</li>
+      <li>For Question 2 (What): connect to the value propositions from slide 02. Every pain point maps to one of: cost, speed, access, convenience.</li>
+      <li>For Question 3 (Why): the four value-prop adjectives are "cheaper, easier, faster, more convenient." Ask students: "Can a firm deliver ALL four simultaneously, or do they have to pick?" Discuss trade-offs.</li>
+      <li>For Question 4 (How): flag the variety of monetization models &mdash; take-rate (Stripe), spread (Nubank), subscription (Plaid), data (many "free" apps). Ask: "If a fintech app is free to the consumer, who is the real customer?"</li>
+    </ul>
+    <div class="transition">Transition: "Now that we know HOW to ask the questions, let's categorize WHAT fintechs actually do. Eight categories."</div>
+  </div>
+</div>
+
+<!-- SLIDE 08 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 08 &mdash; Eight Categories of Fintech</div>
+    <div class="slide-time">~4 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Walk through the eight categories briskly &mdash; do not spend equal time on all. The purpose is to show breadth and to note that MOST firms span 2-3 categories. The analytical task is identifying which category is load-bearing for unit economics.</li>
+      <li>Ask: "Where does Stripe fit?" (Payments primarily, but also digital banking via Treasury, and increasingly lending via Stripe Capital.) "Where does Nubank fit?" (Digital banking + payments + online lending + wealth management.) The best firms are category-spanning platforms.</li>
+      <li>Highlight the DeFi category as distinct from crypto &mdash; crypto is a store-of-value play; DeFi is about replacing intermediaries with smart contracts. Different thesis, different risk.</li>
+      <li>Note Nubank's ~131M customers as of Q4 2025 &mdash; larger than most Canadian banks' entire customer base. Scale is not just a Silicon Valley phenomenon.</li>
+      <li>Flag that we will dedicate one lecture to each of the major categories over the term: payments (Ch. 5), lending (Ch. 6), wealth management (Ch. 7), crypto/DeFi (Ch. 8-9), insurance (Ch. 10).</li>
+    </ul>
+    <div class="transition">Transition: "Categories tell us WHAT firms do. But WHO are these firms? Four types."</div>
+  </div>
+</div>
+
+<!-- SLIDE 09 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 09 &mdash; Four Firm Types</div>
+    <div class="slide-time">~4 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Frame this as a competitive topology. Each type has different strengths and weaknesses (Table 1.2). The strategic question is: which strengths are most valuable in the current environment?</li>
+      <li>For Type 1 (Start-Up): they have innovation culture and technical agility, but lack capital, scale, brand, and regulatory expertise. Ask: "What percentage of fintech startups fail?" (roughly the same rate as other VC-backed startups &mdash; ~90%). Why?</li>
+      <li>For Type 2 (Mature Fintech): PayPal, Square/Block &mdash; they combine innovation with scale, but are lighter on regulatory depth. They are attackable from above (Big Tech) and below (nimbler start-ups).</li>
+      <li>For Type 3 (Digital-Only Bank): distinguish born-digital (Nubank, Chime) from incumbent-launched (Marcus by Goldman, JP Morgan Chase's digital bank). Different DNA, different constraints.</li>
+      <li>For Type 4 (Global Tech Platform): Apple, Google, Amazon, Tencent. They bring unmatched data and distribution. Ask: "Is Apple Pay a fintech or a distribution play for hardware?" This is where the boundary problem from slide 02 gets real.</li>
+    </ul>
+    <div class="transition">Transition: "The last piece of the Lens: what technology stack makes all of this possible? Ten technologies."</div>
+  </div>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 10 &mdash; Ten Technologies</div>
+    <div class="slide-time">~4 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Do NOT read all ten descriptions. Instead, explain the analytical use: for any firm, ask "which of the ten, in what combination, and which is the defensibility bottleneck?"</li>
+      <li>Give a worked example: Stripe = APIs + Cloud Computing + Multi-Sided Platform. The defensibility bottleneck is the API network effect &mdash; the more merchants integrate, the harder it is to switch. That is not AI or blockchain; it is APIs.</li>
+      <li>Contrast with Uniswap: Blockchain + Smart Contracts + P2P Network. The defensibility bottleneck is liquidity (network effects again), not the code (which is open-source and forkable).</li>
+      <li>Note that AI/ML and Big Data are enabling layers that appear across almost every category. Ask: "Is AI a fintech category or an infrastructure layer?" (Answer: layer &mdash; like electricity.)</li>
+      <li>Point out that several "technologies" on this list (Multi-Sided Platform, P2P Network) are really business models or architectural patterns, not technologies per se. Ask students if they think the taxonomy is clean. This is a good place for brief Socratic pushback.</li>
+    </ul>
+    <div class="transition">Transition: "Technologies don't deploy in a vacuum. They need an ecosystem. Let's zoom out."</div>
+  </div>
+</div>
+
+<!-- SLIDE 11 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 11 &mdash; The Fintech Ecosystem</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Emphasize that fintechs are embedded in an ecosystem: accelerators, regulators, VCs, universities, talent pools. The firm-level analysis from the Lens is necessary but not sufficient &mdash; you also need to understand the environment.</li>
+      <li>Point to Table 1.3 (2020 ecosystem rankings) and note that these rankings shift rapidly. Silicon Valley, London, Singapore lead, but the field is becoming more multipolar. We will see updated data on slide 15.</li>
+      <li>Connect to Canadian context: where does Toronto/Canada sit in this ecosystem? MaRS, the Ontario Securities Commission sandbox, Wealthsimple, Nuvei, Lightspeed. Ask students: "What would it take for Toronto to break into the global top 5?"</li>
+      <li>Mention regulatory sandboxes (UK FCA 2016, MAS Singapore) as a competitive tool &mdash; governments actively competing for fintech capital through regulatory design.</li>
+    </ul>
+    <div class="transition">Transition: "That was the textbook framework &mdash; the Lens as published. But the textbook was written in a different market. Let me show you what happened since. Part III: The 2024-2026 wave."</div>
+  </div>
+</div>
+
+<!-- SLIDE 12 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 12 &mdash; The 2024-2026 Wave</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Signal that we are now entering "current affairs" territory. The next 10 slides bring the textbook framework into 2024-2026 data. This is material that will appear on exams and that distinguishes this course from reading the book alone.</li>
+      <li>Frame the three pillars of the fourth wave: (1) GenAI in the back office &mdash; $85B forecast bank spend by 2027; (2) Tokenization &mdash; BlackRock BUIDL at $2.8B AUM on Ethereum; (3) Real-time rails &mdash; FedNow, UPI, Pix all at scale. These are not speculative; they are deployed.</li>
+      <li>Ask: "If Fintech 3.0 was about new entrants disrupting from outside the perimeter, what is Fintech 4.0 about?" Proposed answer: incumbents and challengers converging on the same technology stack (AI + on-chain + instant settlement), with regulatory frameworks catching up in real time.</li>
+      <li>The BlackRock BUIDL example is crucial: the world's largest asset manager tokenizing US Treasuries on a public blockchain. That is not a crypto-bro project &mdash; it is institutional finance adopting blockchain infrastructure. Ask: "Why Ethereum and not a private chain?"</li>
+    </ul>
+    <div class="transition">Transition: "Let's go deeper on each of these themes. First: stablecoins and real-world assets."</div>
+  </div>
+</div>
+
+<!-- SLIDE 13 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 13 &mdash; Stablecoins, RWAs & Agent-Driven Rails</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Lead with the headline number: $27T annualized stablecoin settlement in 2024 already exceeds Visa + Mastercard combined. Let that sink in. But qualify: much of this is trading/DeFi volume, not "real economy" payments. The adjusted figure is still massive.</li>
+      <li>Tokenized RWA market at $24B is still small relative to total fixed income, but the growth rate and the quality of participants (BlackRock, Franklin Templeton, Ondo) signal institutional commitment. Ask: "What does it mean when Larry Fink says every asset will be tokenized?"</li>
+      <li>Introduce agentic finance: 350+ banks/fintechs running production AI-agent workflows. Stripe Agents and Visa Intelligent Commerce are live products. The implication: software that moves money without human approval loops. What does that mean for compliance? For fraud?</li>
+      <li>Note 134 countries with active CBDC R&D. The question for students: "Are CBDCs competitors to stablecoins or complements?" We will explore this in detail in the crypto/DeFi chapter.</li>
+    </ul>
+    <div class="transition">Transition: "What's happening to capital flows? Is the money coming back after the 2022-23 winter?"</div>
+  </div>
+</div>
+
+<!-- SLIDE 14 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 14 &mdash; 2025 Capital Rebound</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Connect back to slide 03: we showed $1.2T cumulative. Now zoom into the cycle. 2021 peak ($240B) to 2023 trough ($113B) to 2024 flat ($95.5B) to 2025 rebound ($116B). The market didn't die &mdash; it repriced.</li>
+      <li>Key insight: deal count fell to 4,719 (lowest since 2017) while dollars rose. Average check size up ~42% YoY. This means capital is concentrating in fewer, larger, later-stage rounds &mdash; AI-fintech and stablecoin infrastructure rounds specifically.</li>
+      <li>Note the exit activity: Klarna, Chime, Circle IPOs reopened the window after a three-year drought. Ask: "What does the IPO market signal about fintech valuations normalizing?"</li>
+      <li>Americas dominated at $66.5B (57% of global). APAC slowed to $9.3B as China and SE Asia regulatory environments tightened. Discuss briefly: regulatory risk as the key factor in geographic capital allocation.</li>
+      <li>$33T stablecoin settlement in 2025 &mdash; note the qualifier about bot/trading volume vs. real economic flow (~$8T+). Still enormous.</li>
+    </ul>
+    <div class="transition">Transition: "The capital goes somewhere. Which cities are winning the competition for fintech talent and firms?"</div>
+  </div>
+</div>
+
+<!-- SLIDE 15 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 15 &mdash; Global Fintech Hubs: 2020 to 2025</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Walk through the ranking shifts: San Francisco still #1, but New York overtook London (Brexit drag). Singapore entered the top 5 (MAS proactive regulation), and India (Bangalore/Mumbai) surged on UPI's success.</li>
+      <li>India data point: $1.9B in fintech funding in 2024, 3rd-largest ecosystem globally. UPI processed 172B transactions in 2024 &mdash; 70%+ of consumer digital payments. Ask: "Could India's fintech ecosystem become larger than the US by volume within 10 years?"</li>
+      <li>Singapore: 1,600+ MAS-licensed fintechs by 2025. Project Guardian and MAS Global Layer One drive tokenization. Singapore chose to become the regulatory sandbox for Asia &mdash; that is a deliberate state strategy.</li>
+      <li>London: held #1 in EMEA despite Brexit at $13.4B (KPMG). The Revolut/Wise/Monzo IPO pipeline keeps capital sticky. Ask students: "Does regulatory certainty or talent density matter more for hub formation?"</li>
+    </ul>
+    <div class="transition">Transition: "Speaking of regulation &mdash; the biggest regulatory development of 2024-2025 was stablecoins getting a rule-book. Three jurisdictions, one year."</div>
+  </div>
+</div>
+
+<!-- SLIDE 16 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 16 &mdash; Stablecoin Regulatory Inflection 2024-2026</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Frame the significance: in 2020, stablecoins had no jurisdictional rule-book anywhere. Between December 2024 and August 2025, the EU (MiCA), US (GENIUS Act), and Hong Kong (Stablecoins Ordinance) all enacted comprehensive frameworks. This is a regime change.</li>
+      <li>Walk through the three dates: EU MiCA fully in force Dec 2024; GENIUS Act signed Jul 18, 2025 (Senate 68-30, bipartisan); HK Stablecoins Ordinance live Aug 1, 2025. Ask: "Why did all three move in the same 8-month window?" (Answer: competitive pressure + Tether's growth forced regulators' hands.)</li>
+      <li>Total stablecoin float at $280B (Apr 2026), ATH. USDT $187B (67%), USDC $77B (28%). The GENIUS Act limits issuance to insured banks and Fed-approved nonbanks with 100% reserve backing. This is a chartered-infrastructure play, not Wild West crypto.</li>
+      <li>Note that 75% of crypto trading volume in Q1 2026 is stablecoin-denominated. Stablecoins are now functionally a settlement rail, not a speculative wrapper. This reframes how we teach "crypto" in this course.</li>
+    </ul>
+    <div class="transition">Transition: "Regulation is one side. On the other side, banks are not standing still. Look at how fast GenAI deployed inside the G-SIBs."</div>
+  </div>
+</div>
+
+<!-- SLIDE 17 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 17 &mdash; Bank GenAI Deployment 2023-2025</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Connect back to slide 05's "traditional fintech" paradigm. This is sustaining innovation actually scaling at unprecedented speed. Every G-SIB now runs production LLMs to tens of thousands of employees. The 2023 baseline (30% of tier-1 banks with production AI) went to 100% by mid-2025.</li>
+      <li>Walk through the JPMorgan example: from internal pilots in 2023 to LLM Suite + IndexGPT serving 200K+ users, tech spend rising from $15.3B to ~$17B, 450+ AI/ML patents filed in 2024 alone. This is not experimentation &mdash; it is organizational transformation.</li>
+      <li>Morgan Stanley: GPT-4 advisor copilot rolled out to all 16K financial advisors. Ask: "What does this mean for the value proposition of human advisory? Does it become commodity or premium?"</li>
+      <li>Key takeaway for students: the "disruptors vs. incumbents" framing from Christensen may be too simple. Incumbents with $17B tech budgets and 450+ AI patents are not standing still. The real question is whether new entrants can do things incumbents structurally cannot (because of regulation, legacy architecture, or incentive misalignment).</li>
+    </ul>
+    <div class="transition">Transition: "Let's look at a category that went from startup novelty to public-market juggernaut in five years: Buy Now, Pay Later."</div>
+  </div>
+</div>
+
+<!-- SLIDE 18 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 18 &mdash; BNPL 2020-2025 Evolution</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>BNPL is a perfect case study for the course: it went from pandemic novelty ($120B GMV in 2020) to $560B GMV in 2025 and the largest IPO of 2025 (Klarna at $15B). But it also consolidated dramatically &mdash; Apple killed its in-house Pay Later after 9 months.</li>
+      <li>Walk through the competitive dynamics: Klarna IPO'd (down from $46B private peak &mdash; discuss valuation compression), Affirm became the default checkout for Apple Pay (partner strategy beat Apple's build-it-yourself strategy), Afterpay was absorbed into Block.</li>
+      <li>Ask: "Using the four questions: Who is the BNPL customer? What pain are they solving?" (Answers: Gen Z/millennials who dislike revolving credit; the pain is avoiding interest + immediate gratification. But is it also creating new consumer debt risk?)</li>
+      <li>Discuss the CFPB regulatory arc: 2024 interpretive rule withdrawn in April 2025. Ask: "Should BNPL be regulated like credit cards?" This is a live policy debate.</li>
+      <li>Key lesson: Apple Pay Later's failure shows that even the world's most powerful tech platform cannot always win &mdash; Affirm's merchant network and underwriting expertise were the moat.</li>
+    </ul>
+    <div class="transition">Transition: "From credit to payments infrastructure. Real-time rails went from niche to table-stakes in three years."</div>
+  </div>
+</div>
+
+<!-- SLIDE 19 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 19 &mdash; Real-Time Rails 2023-2026</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Frame the shift: from batch processing (ACH, T+2) to instant settlement as the global default. Every major payment market now has a domestic real-time rail at scale. The question is no longer "will instant payments happen?" but "what gets built on top?"</li>
+      <li>Compare systems: FedNow (US, 1,400+ banks, government-operated), UPI (India, 17B txns/month, NPCI-operated), Pix (Brazil, 80% adult adoption in 4 years). Ask: "Why did Brazil and India adopt faster than the US?" (Answer: less legacy infrastructure to overcome; greenfield advantage.)</li>
+      <li>UPI at ~$3T annual value and 50% of global real-time payments by volume is staggering. India built a public digital infrastructure stack (Aadhaar + UPI + ONDC) that has no Western equivalent.</li>
+      <li>Connect to the Lens: real-time rails collapse the "speed" pain point. If settlement is instant and free, what new value propositions become possible? (Embedded finance, request-to-pay, programmable money flows.)</li>
+    </ul>
+    <div class="transition">Transition: "Real-time domestic rails are solved. But what about the bridge between crypto and traditional finance? Enter the spot ETF."</div>
+  </div>
+</div>
+
+<!-- SLIDE 20 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 20 &mdash; Spot Crypto ETFs 2024-2026</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>This slide tells a story about the wrapper, not the asset. Bitcoin existed since 2009, but institutional adoption only accelerated when the SEC approved a familiar wrapper (ETF) in January 2024. The lesson: regulatory packaging matters as much as the underlying technology.</li>
+      <li>Speed of adoption: ~$200B AUM in 16 months. BlackRock's IBIT was the fastest ETF in history to reach $50B (~7 months). This is not retail FOMO &mdash; it is wirehouses (Morgan Stanley, Wells Fargo) clearing advisors to recommend, and early 401(k) inclusion.</li>
+      <li>The fee war: TERs at 0.19-0.25%, down from GBTC's ~1.5% trust premium. Ask: "What does fee compression tell us about where bitcoin is in its commoditization arc?"</li>
+      <li>Ether spot ETF (Jul 2024) followed but smaller (~$15B AUM). Staking excluded at the wrapper level. Ask: "Why is the ETH ETF smaller? What does excluding staking mean for the value proposition?"</li>
+      <li>Key framing for the course: crypto is entering the regulated financial system through wrappers (ETFs, tokenized treasuries, stablecoins), not by replacing it. This is integration, not revolution.</li>
+    </ul>
+    <div class="transition">Transition: "If stablecoins are a settlement layer and ETFs are a wrapper, what does that mean for the real pain point in global finance &mdash; cross-border B2B payments?"</div>
+  </div>
+</div>
+
+<!-- SLIDE 21 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 21 &mdash; Cross-Border B2B Stablecoins 2023-2026</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Frame the market: ~92% of B2B cross-border still routes through SWIFT correspondent banking. But stablecoin B2B grew from less than $100M/month in early 2023 to $6B/month by mid-2025 (+733% YoY). This is the highest-margin layer of global finance under attack.</li>
+      <li>Real-payment stablecoin volume (excluding trading) doubled to ~$400B in 2025, with ~60% B2B. That is ~$240B of B2B settlement directly competing with SWIFT's revenue base. Ask: "What is SWIFT's response?" (Answer: SWIFT GPI + partnership with Wise.)</li>
+      <li>Visa now books $4.6B annualized stablecoin settlement on its own rail. The card network is itself a stablecoin acquirer &mdash; the network is absorbing the disruptor rather than being displaced by it. This is a key strategic pattern.</li>
+      <li>Wise Platform: 60+ bank partners, 57% of cross-border transfers settle in under 20 seconds. Ask students to think about Wise through the Lens: Who = SMEs + banks; What = high FX spreads + slow settlement; Why = 0.4-0.7% vs. 3%; How = platform fees from bank partners.</li>
+    </ul>
+    <div class="transition">Transition: "Let's zoom in on the regulatory capstone of all this stablecoin activity: the GENIUS Act and what comes after."</div>
+  </div>
+</div>
+
+<!-- SLIDE 22 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 22 &mdash; GENIUS Era: Post-Legislation Stablecoin Market</div>
+    <div class="slide-time">~3 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>This is the synthesis slide for the stablecoin arc (slides 13, 16, 21). The GENIUS Act (Jul 18, 2025) created a federal payment-stablecoin issuer charter. Key provisions: 100% reserve backing (US Treasuries/cash), monthly public attestation, prohibition on issuer-paid interest to holders.</li>
+      <li>The yield prohibition is subtle but powerful: by preventing stablecoins from paying interest, the Act protects ~$6.6T of bank deposits from migration. Ask: "Is this consumer protection or incumbent protection?" (Both &mdash; and that is the political bargain.)</li>
+      <li>Walk through the competitive landscape post-GENIUS: Circle (NYSE: CRCL, IPO'd June 2025) is the compliant US champion at $77B; Tether ($187B) is ring-fencing a US lane (USAT) but remains primarily offshore; banks (BNY, Citi, JPMD) are entering with OCC trust charters.</li>
+      <li>Networks: Visa went from ~$200M annualized stablecoin settlement pre-GENIUS to $4.6B post-GENIUS (22x growth). Ask: "Is Visa defending against stablecoins or co-opting them?" (Answer: co-opting &mdash; turning the disruptor into a feature of the existing network.)</li>
+      <li>The fourth-wave thesis is now codified in law. This is rare &mdash; usually regulation lags innovation by 5-10 years. Here, the regulation ENABLES the next wave rather than constraining it.</li>
+    </ul>
+    <div class="transition">Transition: "We've covered a lot of ground. Let me check your intuition with a live poll before we close."</div>
+  </div>
+</div>
+
+<!-- SLIDE 23 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 23 &mdash; Live Poll: Revolution or Evolution?</div>
+    <div class="slide-time">~5 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>Launch the poll. Give students 60-90 seconds to scan the QR code and vote. Options: Revolution / Evolution / Both / Too early to tell.</li>
+      <li>While votes come in, recap the tension: slide 05 framed traditional vs. transformational. Slides 12-22 showed BOTH happening simultaneously &mdash; incumbents deploying GenAI at scale AND new entrants building entirely new rails (stablecoins, tokenized assets).</li>
+      <li>After votes close, discuss the distribution. If "Both" wins (likely): ask students to articulate what is revolutionary and what is evolutionary. If "Evolution" wins: push back with the stablecoin settlement data. If "Revolution" wins: push back with the bank GenAI deployment data.</li>
+      <li>Use this as a Socratic moment: "The answer to this question actually depends on your time horizon and which layer of the stack you're looking at." Infrastructure is evolutionary (adding rails); business models can be revolutionary (eliminating intermediaries); regulation oscillates between enabling and constraining.</li>
+      <li>Tell students: we will revisit this poll at the end of the term (Lecture 14) and see if their views have changed. Keep a screenshot of the results.</li>
+    </ul>
+    <div class="transition">Transition: "Let me close with something that grounds all of this in why it matters beyond shareholder value."</div>
+  </div>
+</div>
+
+<!-- SLIDE 24 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <div class="slide-title">Slide 24 &mdash; Financial Inclusion & Closing</div>
+    <div class="slide-time">~4 min</div>
+  </div>
+  <div class="notes">
+    <ul>
+      <li>End on purpose. 1.7B adults remain unbanked, but two-thirds own a mobile phone. Over the last decade, 1.2B people gained access primarily via mobile money (M-Pesa, GCash, bKash). Fintech is not just about making rich people's money move faster &mdash; it is infrastructure for economic development.</li>
+      <li>Connect to the "Fintech 3.5" concept from slide 04: in developing economies, mobile leapfrogging preceded formal banking. The next billion users will not get bank accounts &mdash; they will get stablecoin wallets on feature phones.</li>
+      <li>Ask: "What responsibility do fintech firms have for financial inclusion? Is it a market opportunity, a moral obligation, or both?" This connects to governance and ESG themes we will explore later in the course.</li>
+      <li>Preview Chapter 2: Theories and Business Models. They should read Chapter 2 before next class. The Lens from today will be applied to specific theoretical frameworks (network effects, two-sided markets, Christensen's disruptive innovation).</li>
+      <li>Remind students of any assignments due, office hours, and how to reach you. Thank them for their participation today.</li>
+    </ul>
+    <div class="transition">End of lecture. Next session: Chapter 2 &mdash; Theories & Business Models.</div>
+  </div>
+</div>
+
+</body>
+</html>
