@@ -134,9 +134,9 @@ fourth-wave 2024-26 slides.
 | 13 2025 IPO Resurgence                             | `data-chart` + `shimmer-sweep`                      | Reddit, Klaviyo, Instacart, Astera arcs.                                       |
 | 14 YC Fintech 2014–2025                            | `data-chart`                                        | 5,000+ alumni, $600B aggregate value.                                          |
 | 15 Wealthsimple Arc 2014→2025                      | `data-chart` (multi-axis) + `vfx-iphone-device`     | AUM and valuation overlay; iPhone shows app.                                   |
-| 16 Stripe Valuation Arc 2014→2025                  | `apple-money-count`                                 | $1.75B → $95B → $70B → $91.5B.                                                 |
+| 16 Stripe Valuation Arc 2014→2025                  | `apple-money-count`                                 | $1.75B → $95B → $50B → $91.5B → $159B (Feb 2026 tender).                       |
 | 17 AI-Native Fintech Funding 2023–25               | `data-chart`                                        | $ raised by AI-native fintechs vs. wider market.                               |
-| 18 Nubank Arc 2014→2025                            | `data-chart` (multi-axis)                           | Customer count + revenue arc; 114M customers.                                  |
+| 18 Nubank Arc 2014→2025                            | `data-chart` (multi-axis)                           | Customer count + revenue arc; 131M customers (Q4 2025).                        |
 | 19 Secondary Tender Markets 2024–26                | `data-chart`                                        | Stripe / SpaceX-style tender pricing arcs.                                     |
 | 20 Plaid Down-Round to IPO 2021–2026               | `data-chart`                                        | $13.4B → $6.1B → $8–10B target IPO.                                            |
 | 21 Class of 2025 IPOs Q1 2026                      | `data-chart` (4-card stat + comparison rows)        | Chime / Klarna / Circle / eToro debut + Q1 2026 follow-through.                |
