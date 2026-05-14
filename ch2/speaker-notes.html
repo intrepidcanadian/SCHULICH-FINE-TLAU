@@ -110,11 +110,13 @@
 <p class="subtitle">FINE 6280 &middot; Fintech &middot; Schulich School of Business &middot; Graduate Seminar &middot; Lecture 02 of 14</p>
 
 <div class="timing-summary">
-  <strong>Timing Overview (target: ~90 minutes total)</strong>
-  Slides 01-10 (theoretical foundations): ~35 min &middot;
-  Slides 11-17 (business models + 2024-26 vectors): ~25 min &middot;
-  Slides 18-25 (data updates &amp; cases): ~25 min &middot;
-  Slide 26 (synthesis &amp; closing): ~5 min
+  <strong>Timing Overview (target: ~55 minutes total)</strong>
+  Slides 01-02 (framing): ~5 min &middot;
+  Slides 03-06 (intermediation theory): ~15 min &middot;
+  Slides 07-10 (Christensen + Pisano): ~13 min &middot;
+  Slides 11-14 (business models, network effects, monetisation, vulnerability): ~17 min &middot;
+  Slide 15 (closing synthesis): ~5 min
+  &mdash; The 2024&ndash;2026 data-update slides (formerly slides 15&ndash;25) live in the locked Ch 2 Appendix deck for reference.
 </div>
 
 <!-- SLIDE 01 -->
@@ -220,7 +222,7 @@
       <li>Let the big number land. Pause on the stat. This is the single most provocative finding in fintech research: 130 years of technology — ATMs, electronic trading, the internet — and the unit cost of intermediation hasn't budged.</li>
       <li>Explain the implication: "The finance industry has become more efficient at extracting rents, not at lowering them." Technology improved quality but the savings were captured by intermediaries.</li>
       <li>Facilitate a 2-minute discussion: "If 130 years of technology haven't lowered the cost, what makes this time different? Is the fintech era genuinely different, or will costs simply re-anchor at 2%?" Push for specific mechanisms (competition, open banking, AI cost compression).</li>
-      <li>Foreshadow: "We'll revisit this question on Slide 18 with 2024-2025 data. Spoiler: the answer is nuanced — some segments have compressed, but the aggregate is stubborn."</li>
+      <li>Foreshadow: "The Ch 2 Appendix deck revisits this puzzle with 2024-2025 data. Spoiler: the answer is nuanced — some segments have compressed (EU retail FX down 80%, stablecoin L2 transfers at $0.04), but the aggregate is stubborn (~2% &rarr; ~1.7%)."</li>
     </ul>
     <div class="transition">Transition: "Now that we understand what intermediaries do and what they cost, let's turn to Stop 02 — innovation theory. How do new entrants dislodge these incumbents?"</div>
   </div>
@@ -347,7 +349,7 @@
       <li>Draw the fundamental split clearly: Agency = fee/commission revenue (transaction fees, interchange, advisory fees, PFOF, subscription). Capital-light, scalable, low regulatory burden. Principal = spread/gain revenue (net interest income, trading gains, underwriting profit). Requires regulatory capital, balance sheet risk.</li>
       <li>Use Stripe vs. SoFi as the contrast: Stripe earns 2.9% + $0.30 per transaction (pure agency). SoFi, post-bank-charter, earns NIM of 5.9% (principal). SoFi carries credit risk; Stripe does not.</li>
       <li>Note JPMorgan derives ~65% from principal activities. The irony: fintechs that started as pure agency players (Robinhood, SoFi, Nubank) are migrating toward principal revenue. Why? Higher margins, stickier deposits, and a rate environment that rewards balance-sheet strategies.</li>
-      <li>Foreshadow Slide 20: "We'll see exactly how dramatically this mix shifted in 2021-2025 when the Fed rate cycle inverted the economics."</li>
+      <li>Foreshadow (Ch 2 Appendix): "The 2021-2025 broker mix shift is the empirical payoff for this theory. Robinhood went from 75% PFOF/crypto to 37% NII; SoFi's bank charter scaled deposits 26&times;. The Fed rate cycle inverted the economics."</li>
       <li>Ask: "What are the regulatory implications of moving from agency to principal? What changes when you become a bank?" (Capital requirements, deposit insurance, supervisory burden, but also access to the Fed window and stable NIM.)</li>
     </ul>
     <div class="transition">Transition: "We have the toolkit. Before we apply it to 2024-26 data, let's diagnose which incumbent businesses are most exposed."</div>
@@ -376,208 +378,6 @@
 <div class="slide-block">
   <div class="slide-header">
     <span class="slide-number">15</span>
-    <span class="slide-title">AI Agents: A New Disruption Vector (2024-2026)</span>
-    <span class="slide-time">~4 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>Apply Christensen's four steps explicitly to AI agents: (1) Incumbents overshoot — wealth managers serve $1M+ AUM clients with $10K+ fees, mass-affluent underserved; (2) Low-end entry — Morgan Stanley GPT-4 copilot automates 80% of analyst prep, cost per query under $0.05; (3) Move upmarket — Klarna AI handles 2.3M chats, replaces 700 FTEs, saves $40M/year; (4) Displace — agent-to-agent payments emerging (Stripe Agents, Visa Intelligent Commerce).</li>
-      <li>Hit the three data points hard: Klarna $40M/year savings, Morgan Stanley 16K financial advisors augmented, JPMorgan LLM Suite scaled from 60K employees (2024) to 200K+ users (2025). These are not pilots — these are production deployments at scale.</li>
-      <li>Key conceptual point: AI agents are targeting the most overserved tier with a 10x cost structure that incumbents cannot match without dismantling their own labor model. This is textbook Christensen.</li>
-      <li>Ask the class: "If you're a wealth management firm with 5,000 financial advisors, what is your correct strategic response? Separate unit? Augment existing advisors? Wait and see?"</li>
-    </ul>
-    <div class="transition">Transition: "AI agents aren't just a cost play — they're creating entirely new platform sides. Let's look at agent-to-agent commerce."</div>
-  </div>
-</div>
-
-<!-- SLIDE 16 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">16</span>
-    <span class="slide-title">Agentic Commerce 2025-26</span>
-    <span class="slide-time">~3 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>Frame the paradigm shift: multi-sided platforms just got a third side. Previously it was consumers and merchants. Now AI agents are an autonomous transacting party. Stripe Agents processes $50B+ run-rate volume routed by AI agents.</li>
-      <li>Visa Intelligent Commerce (Apr 2025): Anthropic, OpenAI, Microsoft as partners. Agents can transact within consumer-set guardrails. This is not a concept — it launched with 100+ partners.</li>
-      <li>Connect to business model theory from Slide 11-12: Who is the subsidy side in a three-sided platform? Who is the money side? The answer isn't obvious and is still being determined by the market.</li>
-      <li>ChatGPT shopping with 700M weekly active users converting the chat surface into a new acquisition funnel above merchants — this disintermediates Google Shopping, not just banks.</li>
-    </ul>
-    <div class="transition">Transition: "Agentic commerce is one expression of a broader trend: embedded finance. Financial services are becoming SDK calls, not destinations."</div>
-  </div>
-</div>
-
-<!-- SLIDE 17 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">17</span>
-    <span class="slide-title">Embedded Finance &amp; BaaS (2025 snapshot)</span>
-    <span class="slide-time">~3 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>Frame embedded finance through Christensen's "jobs to be done": financial services are no longer destinations, they're SDK calls inside vertical SaaS, marketplaces, and AI agents. The consumer doesn't go to a bank; the bank comes to them inside Shopify, Toast, or Uber.</li>
-      <li>Key numbers: $148B global revenue in 2025, up 36% from $108.6B in 2024. Stripe processed $1.4T in 2024 — approximately 1.3% of global GDP. The platform opportunity is $185B (BCG x Adyen estimate).</li>
-      <li>The 350+ banks and fintechs in production AI-agent commerce by end-2025 signals this is past the experimentation phase. Stripe Agents, Visa Intelligent Commerce, Mastercard Agentic Tokens are all live.</li>
-      <li>Ask: "What does this mean for the traditional bank branch? For the bank's digital app? If finance is embedded in every platform, what remains of the standalone banking relationship?"</li>
-    </ul>
-    <div class="transition">Transition: "Let's return to our 2% puzzle from Slide 06. Ten years after Philippon, has fintech actually moved the needle?"</div>
-  </div>
-</div>
-
-<!-- SLIDE 18 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">18</span>
-    <span class="slide-title">The 2% Puzzle Revisited (2015-2025)</span>
-    <span class="slide-time">~4 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>Call back explicitly to Slide 06. The U.S. unit cost has come down marginally — from ~2% to ~1.7% (NYU Stern updated series). That's progress but not revolution.</li>
-      <li>The nuance is distributional: some segments compressed dramatically (EU retail FX spread down 80% thanks to Wise and Revolut; stablecoin L2 transfers at $0.04), while others held firm (custody, asset management, core payments infrastructure).</li>
-      <li>Remittance fees: down from 7.5% to 6.4% globally, but mobile-money corridors (Wise, Remitly) average 3.4%. The SDG target of 3% is still unmet — ask why.</li>
-      <li>The critical insight: "compute savings get captured by intermediaries, not consumers." Even as marginal costs approach zero on-chain, the wedge accrues to wallets and on-ramps. This validates Philippon's original thesis — technology benefits intermediaries first.</li>
-      <li>Discussion prompt: "Given this data, are you optimistic or pessimistic that the 2% will finally break? What would it take?"</li>
-    </ul>
-    <div class="transition">Transition: "Let's update our network effects framework — two-sided platforms are evolving into agent-sided commerce."</div>
-  </div>
-</div>
-
-<!-- SLIDE 19 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">19</span>
-    <span class="slide-title">Agent-Sided MSP Evolution (2025-26)</span>
-    <span class="slide-time">~3 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>Connect directly to Slide 12's two-sided platform theory. Visa was the textbook two-sided platform (cardholders and merchants). In April 2025, Visa Intelligent Commerce opened rails to a THIRD side: autonomous AI agents acting on consumers' behalf.</li>
-      <li>Mastercard launched Agent Pay in parallel with Shared Payment Tokens. 30+ partners building in Visa's sandbox by Q4 2025. 47% of US shoppers already using AI tools for at least one shopping task.</li>
-      <li>Theoretical question for the class: "Does Rochet &amp; Tirole's pricing framework still hold with three sides? Who gets subsidized? The consumer, the merchant, or the agent?" This is genuinely unsettled — good exam question territory.</li>
-      <li>Klarna context: 2.3M customer chats in one month, IPO at $15B in Sep 2025. The AI-native fintech is being valued as a platform company, not a BNPL lender.</li>
-    </ul>
-    <div class="transition">Transition: "Now let's see how the agency vs. principal revenue split from Slide 13 actually played out in real broker P&amp;Ls over the last three years."</div>
-  </div>
-</div>
-
-<!-- SLIDE 20 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">20</span>
-    <span class="slide-title">Broker Revenue Mix Shift (2021-2025)</span>
-    <span class="slide-time">~4 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>This is the empirical payoff for Slide 13's theory. Call back explicitly: "Remember the agency vs. principal split? Here's what happened in practice." Three years of Fed hikes fundamentally inverted the revenue mix at Robinhood, SoFi, Coinbase, and Nubank.</li>
-      <li>Robinhood: from 75% PFOF/crypto in 2021 to NII of $1.10B (37% of revenue) by FY2024. Gold cash-sweep now holds $150B+ in deposits. SoFi: bank charter in 2022 took deposits from $1B to $26B — a 26x increase enabling principal-heavy NIM.</li>
-      <li>Key thesis: "The agency-only fintech archetype is largely extinct." Every successful fintech is migrating toward principal revenue because the unit economics are superior in a positive rate environment.</li>
-      <li>Nubank is the most dramatic case: ~131M customers (Q4 2025), $9.5B NII and $2.0B net income (FY2024), 30%+ ROE. It went from interchange-led and unprofitable to Latin America's largest financial institution by users.</li>
-      <li>Ask: "What happens to this thesis when rates come down? Does the mix shift reverse?" (Partially, but deposits are sticky and bank charters are permanent.)</li>
-    </ul>
-    <div class="transition">Transition: "Let's look at another real-world test of our network effects theory — the P2P payments war between Zelle, Venmo, and Cash App."</div>
-  </div>
-</div>
-
-<!-- SLIDE 21 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">21</span>
-    <span class="slide-title">P2P Payments Evolution (2020-2025)</span>
-    <span class="slide-time">~3 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>Call back to Slide 12: we used Venmo as the canonical same-side network effects example. Five years later, the bank-owned Zelle has won the volume war ($1.2T vs. $340B Venmo). But Venmo has more mindshare among younger users. Distribution channel (your bank app vs. your peer group) shapes which network effect loop wins.</li>
-      <li>Theoretical insight: direct network effects compound, but the DISTRIBUTION mechanism determines which loop wins. Zelle won because it's embedded in 145M+ bank accounts — users don't need to download anything. Venmo won the social graph but lost on volume.</li>
-      <li>FedNow (launched Jul 2023) as the infrastructure layer beneath all of this. 1,400+ banks live, 1B+ cumulative transactions. This is the rails that neutralizes speed-based competitive advantages.</li>
-      <li>Ask: "Zelle has 54.6% volume share but Venmo has 97M MAU. Who 'won'? Does it matter?" This surfaces the difference between volume-based and engagement-based platform metrics.</li>
-    </ul>
-    <div class="transition">Transition: "P2P payments illustrate network effects in action. Now let's look at a regulatory intervention that attacks information asymmetry directly — CFPB Rule 1033."</div>
-  </div>
-</div>
-
-<!-- SLIDE 22 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">22</span>
-    <span class="slide-title">Open Banking: CFPB Rule 1033 (2024-2026)</span>
-    <span class="slide-time">~4 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>Connect directly to Slide 05's information asymmetry dimension. Rule 1033 attacks it legislatively: consumer access to financial data becomes a federally enforceable right via authorized third-party APIs. This is the US catching up to the UK's PSD2/Open Banking framework.</li>
-      <li>Timeline matters: finalized Oct 22, 2024. First compliance wave (banks &gt;$250B, the top ~14 institutions) by April 2026. Full rollout through 2030. But litigation (Bank Policy Institute lawsuit) and administration change have reopened the rule for amendment.</li>
-      <li>Impact framework: banks become data holders with mandatory API obligations; aggregators (Plaid, MX) become authorized "representatives" with statutory access rights; fintechs get lower customer acquisition costs but face data-use limits (no secondary marketing).</li>
-      <li>For Schulich students: compare to Canada's Consumer-Directed Finance framework (still voluntary). Ask: "Should Canada follow the US's mandatory approach or the UK's outcomes-based approach?"</li>
-      <li>The 100M+ active users already connected via Plaid/MX/Finicity means this codifies existing practice — but forces migration from screen-scraping to permissioned APIs.</li>
-    </ul>
-    <div class="transition">Transition: "We've seen AI reshape cost structures and regulation reshape data access. Let's look at the best single case study of AI in fintech operations: Klarna."</div>
-  </div>
-</div>
-
-<!-- SLIDE 23 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">23</span>
-    <span class="slide-title">Klarna AI Hybrid Model (2023-2026)</span>
-    <span class="slide-time">~4 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>This is the most complete AI-in-finance case study we have. Frame it as a three-act story: Act 1 (2023-24) — "AI replaces customer service," hiring freeze, 700-FTE workload absorbed. Act 2 (early 2025) — cost-per-transaction falls 40% ($0.32 to $0.19), workforce shrinks 40%. Act 3 (mid-2025) — CEO admits "gone too far," quality degraded on complex/emotional cases, human agents rehired.</li>
-      <li>The unit economics are real AND the quality ceiling is real. This is not a failure story — it's a maturation story. The hybrid model (AI handles triage and volume, humans own the long tail) is likely the equilibrium for the next 2-3 years.</li>
-      <li>Connect to Christensen: AI entered at the low end (simple FAQ queries), moved upmarket (handling 2/3 of all conversations), then hit the quality ceiling on the most complex cases. The disruption trajectory stalled partway up.</li>
-      <li>Key question for the class: "At what point does cost reduction from AI get competed away? If every BNPL provider deploys AI customer service, does Klarna retain a cost advantage?" (First-mover advantage in training data and process optimization may be durable.)</li>
-      <li>Klarna IPO at $15B (Sep 2025) — the market valued the hybrid model, not the "replace all humans" model.</li>
-    </ul>
-    <div class="transition">Transition: "Klarna shows AI in operations. Let's look at AI in the advisory/wealth space — robo-advisors 2.0."</div>
-  </div>
-</div>
-
-<!-- SLIDE 24 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">24</span>
-    <span class="slide-title">Robo-Advisor 2.0: AI Wealth (2024-2026)</span>
-    <span class="slide-time">~3 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>Frame the evolution: a decade after Vanguard's incumbent counter-attack, the "robo" layer has moved from low-fee allocation to AI tax-loss harvesting at the individual-stock level. Wealthfront at $90B AUM filed for IPO (WLTH). Betterment at $65B AUM acquiring for direct-indexing capabilities.</li>
-      <li>The wedge has shifted: it's no longer about 0.25% pricing (that's table stakes). It's about AI-driven tax-loss harvesting, goal-based personalization, and CFP-on-demand. Direct indexing (replacing an S&amp;P 500 ETF with 500 underlying stocks) creates vastly more tax-alpha opportunities.</li>
-      <li>Canadian context: Wealthsimple at C$100B+ AUA — the "super-app" pivot (trading, crypto, tax, mortgages) beat the pure-robo path. Students will know this company well.</li>
-      <li>Incumbent counter: Vanguard PAS &gt;$300B, Schwab Intelligent &gt;$80B. Incumbents still own the largest pools, but marginal customers are going to AI-personalized challengers. This is Christensen in slow motion — incumbents retain the installed base while challengers win net flows.</li>
-    </ul>
-    <div class="transition">Transition: "Let's pull the camera back one more time on embedded finance — the year-over-year trajectory tells the story of where the industry is going."</div>
-  </div>
-</div>
-
-<!-- SLIDE 25 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">25</span>
-    <span class="slide-title">Embedded Finance YoY (2024-2026)</span>
-    <span class="slide-time">~3 min</span>
-  </div>
-  <div class="notes">
-    <ul>
-      <li>The trajectory: $108.6B (2024) to $148B (2025) to $173B (2026). 26-31% blended CAGR — faster than every other fintech sub-sector. Projected $454B by 2031. This is the macro trend that subsumes many of the individual stories we've discussed.</li>
-      <li>Break down by layer: embedded payments (~$92B by 2026, +59%), embedded lending (~$36B, +64%), BaaS/banking infra (~$30B, +36%), embedded insurance + wealth (~$15B, +88%). Insurance and wealth are the fastest-growing segments — small base, large opportunity.</li>
-      <li>Key structural shift: merchants and SaaS platforms (not banks) are now the primary distribution layer for financial services. This is the platform theory from Slide 11-12 in action at industry scale.</li>
-      <li>Tie it all together: "Every theory we discussed today — intermediation, disruption, platform economics — converges on this trend. Embedded finance IS the unbundling of the five intermediation dimensions, delivered through multi-sided platforms, following Christensen's trajectory upmarket."</li>
-    </ul>
-    <div class="transition">Transition: "Let me bring this all together with a synthesis framework you can apply to any case this term."</div>
-  </div>
-</div>
-
-<!-- SLIDE 26 -->
-<div class="slide-block">
-  <div class="slide-header">
-    <span class="slide-number">26</span>
     <span class="slide-title">Closing: Disruption Vulnerability</span>
     <span class="slide-time">~5 min</span>
   </div>
