@@ -811,3 +811,138 @@ Drop this into the browser console with the deck loaded:
 Expected output: `[]`. Anything reported is content bleeding past the
 slide bottom — usually fixable by trimming the lead paragraph or
 shrinking the dense-table row padding.
+
+---
+
+## 22nd pass · 2026-05-15 audit landed
+
+Goal: align the source-of-truth slide files with the pedagogical reorder
+documented above, so the `slides/*.html` filenames match the build order.
+
+What changed:
+
+- **ch2 was rebuilt 27 → 26 slides.** Removed the stale
+  `03-five-dimensions-fig-2-1.html` (single-slide pre-split version that
+  bundled Fig. 2.1 with the cards; superseded by `04-five-dimensions-guess`
+  + `05-five-dimensions-revealed`). All remaining 26 files renumbered to
+  the canonical pedagogical sequence:
+
+  ```
+  01-cover.html
+  02-multidisciplinary-approach.html
+  03-financial-intermediaries.html
+  04-five-dimensions-guess.html
+  05-five-dimensions-revealed.html
+  06-cost-of-intermediation.html    ← was 04-big-stat-2.html
+  07-disruptive-innovation.html     ← was 05-disruptive-innovation.html
+  08-sustaining-vs-disruptive.html  ← was 06-sustaining-vs-disruptive.html
+  09-pisano-innovation-landscape.html
+  10-pisano-examples.html           ← was 07-pisano-examples.html
+  11-business-models.html           ← was 07-business-models.html
+  12-network-effects.html           ← was 08-network-effects-...
+  13-monetization.html              ← was 09-monetization-...
+  14-businesses-at-risk.html        ← was 10-businesses-at-risk.html
+  15-ai-agents-2024-2026.html       ← was 10-ai-agents-...
+  16-agentic-commerce-2025-26.html  ← was 11-...
+  17-embedded-finance-2025.html
+  18-2-puzzle-2015-2025.html
+  19-network-effects-msp-agent-sided-2025-26.html
+  20-broker-revenue-mix-shift-2021-2025.html
+  21-p2p-payments-evolution-2020-2025.html
+  22-open-banking-rule-1033-2024-2026.html
+  23-klarna-ai-hybrid-2023-2026.html
+  24-robo-advisor-2-0-ai-wealth-2024-2026.html
+  25-embedded-finance-yoy-2024-2026.html
+  26-closing.html
+  ```
+
+  Inside each file the chrome `NN / MM` counter, the foot `Page NN`
+  label, and `data-screen-label` were normalised so every slide reads
+  `NN / 26`. The `data-screen-label` rewrite also pushed through every
+  CSS selector chain (e.g. `.slide[data-screen-label="10 AI Agents
+  2024-2026"]` was rewritten to `15 AI Agents 2024-2026` so the staggered
+  reveal animations still bind correctly).
+
+- **ch3 file rename.** `12-closing.html` was misleading — the actual closing
+  card is `22-closing.html`, and the file at position 12 is the "IPO Window
+  reopens" data view. Renamed in place to `12-ipo-window-2025-26.html`.
+  No content change, no rebuild diff.
+
+- **Root `index.html` card deck refreshed.** The landing page advertised
+  the pre-split slide counts (Ch 1 · 11, Ch 2 · 15) and kept Ch 3/Ch 4
+  in `locked` "Coming soon" state. Updated to:
+  - Ch 1 · 24 slides (was 11)
+  - Ch 2 · 26 slides (was 15)
+  - Ch 3 · 22 slides (unlocked, was locked)
+  - Ch 4 · 23 slides (unlocked, was locked)
+
+  The two `…/appendix/` `locked` cards (Ch 1, Ch 2) were removed from
+  the landing because their content is already mirrored inside the
+  main decks since the 21st pass folded fourth-wave slides into the
+  primary `slides/` directories. The `ch1/appendix/` and `ch2/appendix/`
+  folders are left on disk for the HyperFrames render pipeline that
+  still treats them as a separate render target.
+
+- **Verified visually.** Live preview at `http://localhost:8765/{ch1,ch2,ch3,ch4}/`:
+  - Ch 1: 24 slides, no overflow, all `/ 24` counters consistent.
+  - Ch 2: 26 slides, no overflow, all `/ 26` counters consistent,
+    pedagogical order matches the table at the top of this document.
+  - Ch 3: 22 slides, no overflow.
+  - Ch 4: 23 slides, no overflow.
+
+  The `js`/`scrollHeight` overflow probe (see "QA · overflow check"
+  recipe) returns `[]` on every chapter.
+
+## Integration cheat-sheet for future passes
+
+When adding a new slide that needs HyperFrames animation, decide between
+three integration tiers:
+
+1. **Inline CSS keyframes** (current pattern on every fourth-wave slide
+   in `ch1/slides/12-…`, `ch1/slides/13-…`, `ch2/slides/15-…`, etc.):
+   cheapest, deterministic on `npx hyperframes render`, zero external
+   deps. Best for staggered card reveals and simple progress bars.
+   Bind animation to `.slide[data-screen-label="…"].active` so it only
+   plays when navigated to.
+
+2. **GSAP timeline** (`hf/12-fourth-wave/index.html`): when you need
+   labelled sequencing (`tl.to('.hf-card', { … }, 'reveal+=0.2')`),
+   stagger primitives, or `quickTo` cursor hover. Register the timeline
+   on `window.__hfGsap` and let HyperFrames seek into it for
+   deterministic rendering.
+
+3. **Catalog block** (`npx hyperframes add <block>`): when the slide
+   maps to a documented block (`data-chart`, `flowchart`,
+   `apple-money-count`, `shimmer-sweep`, `logo-outro`, `grain-overlay`,
+   `vfx-text-cursor`, `vfx-iphone-device`, `vfx-liquid-glass`,
+   `vfx-portal`, `vfx-shatter`, `vfx-magnetic`). Render the block to
+   an MP4 under `hf/<slug>/output.mp4` and reference it from the slide
+   via `<video class="hf-bg" data-hf>` so the slide degrades gracefully
+   when the MP4 is missing.
+
+Example scaffolds (one-shot, per slide):
+
+```bash
+npx hyperframes init schulich-charts --example nyt-graph     # data-view cards
+npx hyperframes init schulich-titles --example play-mode     # title cards
+npx hyperframes init schulich-numbers --example kinetic-type # big-number reveals
+npx hyperframes init schulich-trees  --example decision-tree # VC method, valuation flow
+npx hyperframes init schulich-promo  --example product-promo # Stripe / Nubank arcs
+npx hyperframes init schulich-history --example warm-grain   # Fintech 1.0/2.0 history
+npx hyperframes init schulich-grids  --example swiss-grid    # 8-cat / 4-firm grids
+npx hyperframes init schulich-vignelli --example vignelli    # closing cards
+```
+
+Bring the html-in-canvas catalog in once per project, then add blocks
+individually:
+
+```bash
+npx hyperframes add html-in-canvas        # entire catalog
+npx hyperframes add data-chart            # animated bar/line chart
+npx hyperframes add flowchart             # animated decision tree
+npx hyperframes add apple-money-count     # finance counter
+npx hyperframes add logo-outro            # closing card
+npx hyperframes add grain-overlay         # warm-grain texture
+npx hyperframes add shimmer-sweep         # text highlight reveal
+```
+
