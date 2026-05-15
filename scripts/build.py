@@ -80,6 +80,10 @@ def main(argv: list[str]) -> int:
 
     for ch in chapters:
         build_chapter(ch)
+        # Also build chN/appendix/ if it has its own slides/ + index.html.
+        appendix = ch / "appendix"
+        if (appendix / "slides").is_dir() and (appendix / "index.html").exists():
+            build_chapter(appendix)
     return 0
 
 

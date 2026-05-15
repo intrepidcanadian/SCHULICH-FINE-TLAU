@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 03 Appendix &middot; FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../deck.css">
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">&larr; &rarr; navigate &middot; ESC overview</div>
+
+<div id="deck">
+
+
+<!-- ============================================================
+     SLIDES - Chapter 03 Appendix: 2024-2026 Funding & IPO Updates
+     ============================================================ -->
+
+<!-- BEGIN SLIDES -->
+<!-- ============================================================
+     SLIDE 11 · Funding climate 2024-2026 (hyperframe · animated)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="01 Funding 2024-2026">
+  <div class="chrome">
+    <div>&sect;3.10 &middot; Funding climate 2024&ndash;2026</div>
+    <div>01 / 11</div>
+  </div>
+  <style>
+    @keyframes hf3-fade-up { from {opacity:0; transform:translateY(14px)} to {opacity:1; transform:translateY(0)} }
+    @keyframes hf3-bar-fill { from {height:0} to {height:var(--h)} }
+    @keyframes hf3-pulse { 0%,100%{opacity:.55} 50%{opacity:1} }
+    .slide[data-screen-label="01 Funding 2024-2026"].active .hf3-card { animation: hf3-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="01 Funding 2024-2026"].active .hf3-card:nth-child(1) { animation-delay: .15s }
+    .slide[data-screen-label="01 Funding 2024-2026"].active .hf3-card:nth-child(2) { animation-delay: .35s }
+    .slide[data-screen-label="01 Funding 2024-2026"].active .hf3-card:nth-child(3) { animation-delay: .55s }
+    .slide[data-screen-label="01 Funding 2024-2026"].active .hf3-bar { animation: hf3-bar-fill 1.2s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: 1s; height:0 }
+    .slide[data-screen-label="01 Funding 2024-2026"].active .hf3-live { animation: hf3-pulse 1.6s ease-in-out infinite }
+    .hf3-card { padding:1.6vh 1.4vw; border:1px solid rgba(255,255,255,.14); border-radius:6px; background:rgba(255,255,255,.03); display:flex; flex-direction:column; gap:.8vh; min-height:0 }
+    .hf3-card .hf3-tag { font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.6 }
+    .hf3-card .hf3-num { font-family:var(--serif-en); font-weight:800; font-size:3vw; line-height:.95; letter-spacing:-.025em; font-feature-settings:"tnum" }
+    .hf3-card .hf3-num .hf3-unit { font-family:var(--serif-zh); font-weight:500; font-size:.4em; opacity:.72; margin-left:.14em }
+    .hf3-card .hf3-desc { font-family:var(--sans-zh); font-size:max(11px,.82vw); line-height:1.45; opacity:.78 }
+    .hf3-cycle { display:flex; gap:.9vw; align-items:flex-end; height:14vh; padding-top:1.4vh }
+    .hf3-cycle .hf3-bar-col { flex:1; display:flex; flex-direction:column; align-items:center; gap:.6vh }
+    .hf3-cycle .hf3-bar { width:100%; background:linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255,.85)); border-radius:3px 3px 0 0 }
+    .hf3-cycle .hf3-yr { font-family:var(--mono); font-size:max(10px,.7vw); letter-spacing:.18em; text-transform:uppercase; opacity:.62 }
+    .hf3-cycle .hf3-val { font-family:var(--serif-en); font-weight:700; font-size:max(11px,.88vw); opacity:.92; font-feature-settings:"tnum" }
+    .hf3-live-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#5fc77f; margin-right:.6em; vertical-align:middle }
+  </style>
+  <div class="frame" style="padding-top:2.4vh">
+    <div class="kicker"><span class="hf3-live"><span class="hf3-live-dot"></span>2024 → 2026 indicators</span></div>
+    <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2024&ndash;2026 funding reset.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.15vw">
+      Global fintech funding bottomed in 2023 and stabilized through 2024 at roughly one-fifth of the 2021 peak. AI-native fintechs now command a disproportionate share of capital while pure neobanks and BNPL startups face a colder market.
+    </p>
+
+    <div style="display:grid; grid-template-columns:8fr 4fr; gap:2vw; margin-top:1.6vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1.2vh">
+        <div class="kicker" style="opacity:.72; margin-bottom:.4vh">Global fintech VC funding &middot; 2021&ndash;2025E (CB Insights / KPMG Pulse of Fintech)</div>
+        <div class="hf3-cycle">
+          <div class="hf3-bar-col"><div class="hf3-val">$140B</div><div class="hf3-bar" style="--h:100%; height:0"></div><div class="hf3-yr">2021</div></div>
+          <div class="hf3-bar-col"><div class="hf3-val">$78B</div><div class="hf3-bar" style="--h:56%; height:0"></div><div class="hf3-yr">2022</div></div>
+          <div class="hf3-bar-col"><div class="hf3-val">$39B</div><div class="hf3-bar" style="--h:28%; height:0"></div><div class="hf3-yr">2023</div></div>
+          <div class="hf3-bar-col"><div class="hf3-val">$43B</div><div class="hf3-bar" style="--h:31%; height:0"></div><div class="hf3-yr">2024</div></div>
+          <div class="hf3-bar-col"><div class="hf3-val">~$55B</div><div class="hf3-bar" style="--h:39%; height:0"></div><div class="hf3-yr">2025E</div></div>
+        </div>
+        <div class="meta-row" style="margin-top:.4vh; font-size:max(10px,.78vw)">
+          <span>Source &middot; CB Insights State of Fintech Q4 2024</span><span>&middot;</span><span>KPMG Pulse of Fintech H2 2024</span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="hf3-card">
+          <div class="hf3-tag">AI-native fintech share</div>
+          <div class="hf3-num">38<span class="hf3-unit">%</span></div>
+          <div class="hf3-desc">Of fintech mega-rounds in 2024 went to AI-native firms (Brex, Ramp, Mercury, plus AI-finance infrastructure plays).</div>
+        </div>
+        <div class="hf3-card">
+          <div class="hf3-tag">Down-rounds</div>
+          <div class="hf3-num">~30<span class="hf3-unit">%</span></div>
+          <div class="hf3-desc">Of late-stage 2024 rounds priced below prior valuation. Klarna, Stripe (recovered), Brex, Plaid all repriced.</div>
+        </div>
+        <div class="hf3-card">
+          <div class="hf3-tag">IPO window reopens</div>
+          <div class="hf3-num">2025</div>
+          <div class="hf3-desc">Klarna files (Mar 2025), Chime files. Plaid sets up a 2026 listing (no IPO in 2025). The 2025 fintech debut cohort priced ~$3.2B in proceeds across four issuers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 01 &middot; Funding climate 2024&ndash;2026</div>
+    <div>Reset &middot; AI premium</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 · Closing (hero dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="02 IPO Window 2025-26">
+  <div class="chrome">
+    <div>&sect;3.10b &middot; the IPO window reopens</div>
+    <div>02 / 11</div>
+  </div>
+  <style>
+    @keyframes hf3v-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hf3v-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hf3v-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hf3v-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="02 IPO Window 2025-26"].active .hf3v-card { animation: hf3v-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="02 IPO Window 2025-26"].active .hf3v-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="02 IPO Window 2025-26"].active .hf3v-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="02 IPO Window 2025-26"].active .hf3v-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="02 IPO Window 2025-26"].active .hf3v-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="02 IPO Window 2025-26"].active .hf3v-bar { animation: hf3v-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="02 IPO Window 2025-26"].active .hf3v-rec { animation: hf3v-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="02 IPO Window 2025-26"].active .hf3v-scrub-fill { animation: hf3v-scrub 9s linear infinite }
+    .hf3v-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hf3v-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
+    .hf3v-rec { color:#e85d4f; letter-spacing:.3em }
+    .hf3v-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hf3v-stage { padding:2vh 1.6vw; display:grid; grid-template-columns:repeat(4,1fr); gap:1.2vw }
+    .hf3v-card { display:flex; flex-direction:column; gap:.6vh; padding:1vh 1vw; border-left:2px solid rgba(255,255,255,.18) }
+    .hf3v-card .hf3v-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55 }
+    .hf3v-card .hf3v-num { font-family:var(--serif-en); font-weight:800; font-size:2.6vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hf3v-card .hf3v-num .hf3v-unit { font-family:var(--serif-zh); font-weight:500; font-size:.4em; opacity:.72; margin-left:.14em }
+    .hf3v-card .hf3v-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.4; opacity:.72 }
+    .hf3v-bar-wrap { padding:0 1.6vw 1.4vh }
+    .hf3v-bar-track { height:3px; background:rgba(255,255,255,.08); border-radius:99px; overflow:hidden }
+    .hf3v-bar { height:100%; background:linear-gradient(90deg, rgba(255,255,255,.4), rgba(255,255,255,.95)); border-radius:99px }
+    .hf3v-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hf3v-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hf3v-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.12); position:relative; overflow:hidden }
+    .hf3v-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent) }
+    .hf3v-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.10b &middot; 2025&ndash;2026 update</div>
+    <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">Fintech IPO window reopens.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
+      After three years of frozen exits, the post-2024 cycle restarted with profitability-first listings. Discipline returned: clean cap tables, Rule-of-40 metrics, and AI-leverage stories. The cohort is small but defining.
+    </p>
+
+    <div class="hf3v-frame" style="margin-top:1.6vh">
+      <div class="hf3v-topbar">
+        <div><span class="hf3v-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V01</div>
+        <div class="hf3v-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hf3v-stage">
+        <div class="hf3v-card">
+          <div class="hf3v-tag">Klarna IPO (Sep 2025)</div>
+          <div class="hf3v-num">$15.1<span class="hf3v-unit">B</span></div>
+          <div class="hf3v-desc">Listed on NYSE at ~$15.1B valuation — well below 2021 peak ($45.6B), but profitable: $21M H1-2024 net income. Re-rated on AI-cost story.</div>
+        </div>
+        <div class="hf3v-card">
+          <div class="hf3v-tag">Chime IPO (Jun 2025)</div>
+          <div class="hf3v-num">$11.6<span class="hf3v-unit">B</span></div>
+          <div class="hf3v-desc">Priced at $27 (above range); intraday peak +59%, closed day 1 at +37%. 8.6M active members, 67% revenue growth. Last private round was $25B (2021).</div>
+        </div>
+        <div class="hf3v-card">
+          <div class="hf3v-tag">Circle IPO (Jun 2025)</div>
+          <div class="hf3v-num">+168<span class="hf3v-unit">%</span></div>
+          <div class="hf3v-desc">NYSE listing priced $31; +168% day-one pop &mdash; biggest fintech IPO debut of 2025 (Klarna larger by proceeds + valuation). USDC cap ~$60B at listing, $77B by Apr 2026 post-GENIUS. Outperforming the broader crypto sector.</div>
+        </div>
+        <div class="hf3v-card">
+          <div class="hf3v-tag">eToro IPO (May 2025)</div>
+          <div class="hf3v-num">$4.2<span class="hf3v-unit">B</span></div>
+          <div class="hf3v-desc">Nasdaq, $52/share; +29% on debut; ~$5B post-pop. Profitability-driven; replaced the 2021 SPAC attempt at $10.4B. Class of '25 combined IPO proceeds: $3.2B (Klarna+Chime+Circle+eToro).</div>
+        </div>
+      </div>
+      <div class="hf3v-bar-wrap">
+        <div class="hf3v-bar-track"><div class="hf3v-bar" style="--w:62%"></div></div>
+      </div>
+      <div class="hf3v-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hf3v-scrub-bar"><div class="hf3v-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hf3v-watermark">DATA HORIZON · 2024 → 2026</div>
+    </div>
+
+    <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
+      <span>Sources · Klarna F-1 (2025)</span><span>&middot;</span><span>Chime S-1 / NYSE listing</span><span>&middot;</span><span>eToro Nasdaq prospectus</span><span>&middot;</span><span>Pitchbook State of Fintech Q3-2025</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 &middot; the IPO window reopens</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 · 2025 IPO Resurgence (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="03 2025 IPO Resurgence">
+  <div class="chrome">
+    <div>&sect;3.7b &middot; fintech IPO resurgence</div>
+    <div>03 / 11</div>
+  </div>
+  <style>
+    @keyframes hf3b-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hf3b-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hf3b-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hf3b-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="03 2025 IPO Resurgence"].active .hf3b-card { animation: hf3b-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="03 2025 IPO Resurgence"].active .hf3b-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="03 2025 IPO Resurgence"].active .hf3b-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="03 2025 IPO Resurgence"].active .hf3b-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="03 2025 IPO Resurgence"].active .hf3b-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="03 2025 IPO Resurgence"].active .hf3b-bar { animation: hf3b-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="03 2025 IPO Resurgence"].active .hf3b-rec { animation: hf3b-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="03 2025 IPO Resurgence"].active .hf3b-scrub-fill { animation: hf3b-scrub 9s linear infinite }
+    .hf3b-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hf3b-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
+    .hf3b-topbar .hf3b-rec { color:#c33b2a; letter-spacing:.3em }
+    .hf3b-topbar .hf3b-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hf3b-stage { padding:2vh 1.6vw; display:grid; grid-template-columns:repeat(4,1fr); gap:1.2vw }
+    .hf3b-card { display:flex; flex-direction:column; gap:.6vh; padding:1vh 1vw; border-left:2px solid rgba(10,31,61,.22) }
+    .hf3b-card .hf3b-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.62 }
+    .hf3b-card .hf3b-num { font-family:var(--serif-en); font-weight:800; font-size:2.6vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hf3b-card .hf3b-num .hf3b-unit { font-family:var(--serif-zh); font-weight:500; font-size:.4em; opacity:.72; margin-left:.14em }
+    .hf3b-card .hf3b-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.4; opacity:.76 }
+    .hf3b-bar-wrap { padding:0 1.6vw 1.4vh }
+    .hf3b-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hf3b-bar { height:100%; background:linear-gradient(90deg, rgba(10,31,61,.55), rgba(10,31,61,.95)); border-radius:99px }
+    .hf3b-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hf3b-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hf3b-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hf3b-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.5), transparent) }
+    .hf3b-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.7b &middot; fintech IPO resurgence 2025</div>
+    <h2 class="h-xl" style="font-size:4vw; margin-top:.4vh">The 2025 IPO window: opened, then disciplined.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.1vw">
+      After a three-year drought, fintech IPOs returned in 2025 &mdash; but at sober prices. Klarna re-listed at one-third of its 2021 peak; Chime priced below private-market last rounds. The lesson: down-round IPOs can still clear when listings reset expectations.
+    </p>
+
+    <div class="hf3b-frame" style="margin-top:1.6vh">
+      <div class="hf3b-topbar">
+        <div><span class="hf3b-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V02</div>
+        <div class="hf3b-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hf3b-stage">
+        <div class="hf3b-card">
+          <div class="hf3b-tag">Klarna IPO valuation 2025</div>
+          <div class="hf3b-num">$15.1<span class="hf3b-unit">B</span></div>
+          <div class="hf3b-desc">Sept 2025 NYSE listing at $40/share, raised $1.37B. Vs. $45.6B private peak (2021) &mdash; a 67% reset. Closed the week at $42.92, just above offer.</div>
+        </div>
+        <div class="hf3b-card">
+          <div class="hf3b-tag">Chime debut 2025</div>
+          <div class="hf3b-num">$11.6<span class="hf3b-unit">B</span></div>
+          <div class="hf3b-desc">Nasdaq June 2025 &mdash; priced $27, opened &gt;$42 (+59% intraday peak); closed day 1 at +37%. ~$18.4B fully diluted. 8.6M active members; turned profitable Q1 post-IPO. Has since drifted below offer.</div>
+        </div>
+        <div class="hf3b-card">
+          <div class="hf3b-tag">Class of '25 · Klarna+Chime+Circle+eToro</div>
+          <div class="hf3b-num">$3.2<span class="hf3b-unit">B</span></div>
+          <div class="hf3b-desc">Combined 2025 fintech IPO proceeds (Invezz Dec 2025). Circle priced at $31, +168% day-one pop &mdash; the year&rsquo;s biggest fintech IPO debut (Klarna larger by proceeds + valuation); eToro May 2025 NASDAQ at $4.2B cap (~$5B post-pop).</div>
+        </div>
+        <div class="hf3b-card">
+          <div class="hf3b-tag">Stripe 2025 tender</div>
+          <div class="hf3b-num">$91.5<span class="hf3b-unit">B</span></div>
+          <div class="hf3b-desc">Q1 2025 tender — recovered from the $50B 2023 markdown but below the $95B 2021 peak (and since re-rated to $159B at the Feb 2026 tender, see ch3/19). Founder dilution: Collisons together hold a low-teens% stake; combined paper holdings &gt;$20B at the Feb 2026 $159B mark.</div>
+        </div>
+      </div>
+      <div class="hf3b-bar-wrap">
+        <div class="hf3b-bar-track"><div class="hf3b-bar" style="--w:69%"></div></div>
+      </div>
+      <div class="hf3b-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hf3b-scrub-bar"><div class="hf3b-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hf3b-watermark">DATA HORIZON · 2024 → 2026</div>
+    </div>
+
+    <div class="meta-row" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
+      <span>Sources · Klarna F-1 2025</span><span>&middot;</span><span>Chime Form S-1 2025</span><span>&middot;</span><span>Stripe Q1 2025 tender</span><span>&middot;</span><span>This Week in Fintech 2025</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; 2025 IPO resurgence</div>
+    <div>2025–2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 14 · YC Fintech 2014→2025 (light · evolution)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04 YC Fintech 2014 to 2025">
+  <div class="chrome">
+    <div>&sect;3.11 &middot; accelerator evolution</div>
+    <div>04 / 11</div>
+  </div>
+  <style>
+    @keyframes hf3y-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hf3y-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hf3y-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hf3y-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="04 YC Fintech 2014 to 2025"].active .hf3y-card { animation: hf3y-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="04 YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="04 YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="04 YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="04 YC Fintech 2014 to 2025"].active .hf3y-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="04 YC Fintech 2014 to 2025"].active .hf3y-bar { animation: hf3y-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.2s; width:0 }
+    .slide[data-screen-label="04 YC Fintech 2014 to 2025"].active .hf3y-rec { animation: hf3y-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="04 YC Fintech 2014 to 2025"].active .hf3y-scrub-fill { animation: hf3y-scrub 9s linear infinite }
+    .hf3y-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hf3y-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
+    .hf3y-topbar .hf3y-rec { color:#c33b2a; letter-spacing:.3em }
+    .hf3y-topbar .hf3y-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hf3y-stage { padding:2vh 1.6vw; display:grid; grid-template-columns:repeat(4,1fr); gap:1.2vw }
+    .hf3y-card { display:flex; flex-direction:column; gap:.6vh; padding:1vh 1vw; border-left:2px solid rgba(10,31,61,.22) }
+    .hf3y-card .hf3y-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.62 }
+    .hf3y-card .hf3y-num { font-family:var(--serif-en); font-weight:800; font-size:2.6vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hf3y-card .hf3y-num .hf3y-unit { font-family:var(--serif-zh); font-weight:500; font-size:.4em; opacity:.72; margin-left:.14em }
+    .hf3y-card .hf3y-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.4; opacity:.76 }
+    .hf3y-bar-wrap { padding:0 1.6vw 1.4vh }
+    .hf3y-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hf3y-bar { height:100%; background:linear-gradient(90deg, rgba(10,31,61,.55), rgba(10,31,61,.95)); border-radius:99px }
+    .hf3y-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hf3y-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hf3y-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hf3y-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.5), transparent) }
+    .hf3y-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hf3y-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hf3y-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.11 &middot; Y Combinator 2014 → 2025</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">From Wealthsimple to AI fintech-as-a-service.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slides 04&ndash;05 anchor the 2014 era: Wealthsimple seed-pitched to 14 angels; YC reported &ldquo;3,500+ companies funded.&rdquo; By the W25 + S25 batches, YC funds twice as many fintech-adjacent startups per year, half are AI-native, and median check-size has compressed back to seed levels even as outcomes are larger and faster.
+    </p>
+
+    <div class="hf3y-frame" style="margin-top:1.4vh">
+      <div class="hf3y-topbar">
+        <div><span class="hf3y-rec">●</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V03</div>
+        <div class="hf3y-tc">DATA AS OF · APR 2026</div>
+      </div>
+      <div class="hf3y-stage">
+        <div class="hf3y-card">
+          <div class="hf3y-tag">YC alumni count 2025</div>
+          <div class="hf3y-num">5,000<span class="hf3y-unit">+</span></div>
+          <div class="hf3y-desc">Up from 3,500+ companies funded in 2023 (slide 04). YC accelerated 1,000+ startups in 2024 alone — 4× the W14 cohort that funded Wealthsimple.</div>
+        </div>
+        <div class="hf3y-card">
+          <div class="hf3y-tag">AI-native share W25 batch</div>
+          <div class="hf3y-num">~70<span class="hf3y-unit">%</span></div>
+          <div class="hf3y-desc">Of the W25 cohort building on LLMs/agents (YC Demo Day W25). In W14 it was &lt;5%. The fintech sub-cohort is dominated by agentic ops, AI underwriting, and stablecoin rails.</div>
+        </div>
+        <div class="hf3y-card">
+          <div class="hf3y-tag">YC standard deal 2024+</div>
+          <div class="hf3y-num">$500<span class="hf3y-unit">K</span></div>
+          <div class="hf3y-desc">$125K SAFE for 7% + $375K MFN uncapped (post-2022). Wealthsimple raised ~$2M from angels in 2014 — comparable dilution, far cheaper for founders.</div>
+        </div>
+        <div class="hf3y-card">
+          <div class="hf3y-tag">Aggregate alumni value 2024</div>
+          <div class="hf3y-num">$600<span class="hf3y-unit">B+</span></div>
+          <div class="hf3y-desc">Combined valuation of YC alumni (Coinbase, Stripe, Airbnb, DoorDash, Instacart, Brex, Faire). Up from ~$400B in 2021 — the AI cohort drove the recovery.</div>
+        </div>
+      </div>
+      <div class="hf3y-bar-wrap">
+        <div class="hf3y-bar-track"><div class="hf3y-bar" style="--w:74%"></div></div>
+      </div>
+      <div class="hf3y-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hf3y-scrub-bar"><div class="hf3y-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hf3y-watermark">DATA HORIZON · 2024 → 2026</div>
+    </div>
+
+    <div class="meta-row hf3y-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
+      <span>Sources · <a href="https://www.ycombinator.com/topcompanies" target="_blank" rel="noopener">Y Combinator Top Companies</a></span><span>&middot;</span><span><a href="https://www.ycombinator.com/blog" target="_blank" rel="noopener">YC Demo Day W25 / S24 announcements</a></span><span>&middot;</span><span><a href="https://pitchbook.com/news/articles/state-of-the-fintech-market" target="_blank" rel="noopener">Pitchbook State of Fintech 2025</a></span><span>&middot;</span><span><a href="https://www.ycombinator.com/deal" target="_blank" rel="noopener">YC standard deal terms</a></span><span>&middot;</span><span><a href="https://www.cbinsights.com/research/" target="_blank" rel="noopener">CB Insights Q3 2025</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; YC fintech 2014 → 2025</div>
+    <div>2025–2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 15 · Wealthsimple Arc 2014→2025 (dark · evolution)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 Wealthsimple Arc 2014-2025">
+  <div class="chrome">
+    <div>&sect;3.12 &middot; case study update</div>
+    <div>05 / 11</div>
+  </div>
+  <style>
+    @keyframes hf3w-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hf3w-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hf3w-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hf3w-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-card { animation: hf3w-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-row { animation: hf3w-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(1) { animation-delay:1.1s }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(2) { animation-delay:1.25s }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(3) { animation-delay:1.4s }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-row:nth-child(4) { animation-delay:1.55s }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-bar { animation: hf3w-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.3s; width:0 }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-rec { animation: hf3w-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="05 Wealthsimple Arc 2014-2025"].active .hf3w-scrub-fill { animation: hf3w-scrub 9s linear infinite }
+    .hf3w-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hf3w-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hf3w-rec { color:#ff7458; letter-spacing:.3em }
+    .hf3w-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hf3w-stage { padding:1.6vh 1.4vw; display:grid; grid-template-columns:6fr 6fr; gap:1.4vw; align-items:start }
+    .hf3w-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hf3w-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(255,255,255,.28); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hf3w-card .hf3w-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hf3w-card .hf3w-num { font-family:var(--serif-en); font-weight:800; font-size:1.95vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hf3w-card .hf3w-num .hf3w-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hf3w-card .hf3w-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hf3w-rows { display:flex; flex-direction:column }
+    .hf3w-row { display:grid; grid-template-columns:auto 1fr auto; gap:.8vw; align-items:center; padding:.9vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hf3w-row:first-child { border-top:0 }
+    .hf3w-row .hf3w-yr { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.18em; opacity:.65; min-width:3.5vw }
+    .hf3w-row .hf3w-event { font-family:var(--serif-zh); font-weight:600; font-size:.95vw; line-height:1.25 }
+    .hf3w-row .hf3w-event span { display:block; font-family:var(--sans-zh); font-weight:400; font-size:.72vw; opacity:.7; margin-top:.2vh }
+    .hf3w-row .hf3w-marker { font-family:var(--serif-en); font-weight:700; font-size:.92vw; opacity:.55; font-feature-settings:"tnum" }
+    .hf3w-bar-wrap { padding:0 1.4vw 1vh }
+    .hf3w-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hf3w-bar { height:100%; background:linear-gradient(90deg, rgba(255,116,88,.55), rgba(255,255,255,.92)); border-radius:99px }
+    .hf3w-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hf3w-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hf3w-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hf3w-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hf3w-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hf3w-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hf3w-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.12 &middot; the case study, ten years on</div>
+    <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Wealthsimple AUA: $0 in 2014 &rarr; C$100B in 2025.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 05&rsquo;s case anchored Wealthsimple at its 2014 angel round. By Oct 2025 the firm crossed C$100B in assets under administration &mdash; three years ahead of its own plan &mdash; and closed a C$750M Series F at a C$10B post-money valuation. AUA doubled in twelve months. Of the 14 angels who said &ldquo;yes&rdquo; in 2014, the early backers now hold positions worth orders of magnitude more than their cheques.
+    </p>
+
+    <div class="hf3w-frame" style="margin-top:1.4vh">
+      <div class="hf3w-topbar">
+        <div><span class="hf3w-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V04</div>
+        <div class="hf3w-tc">DATA AS OF · APR 2026</div>
+      </div>
+      <div class="hf3w-stage">
+        <div class="hf3w-cards">
+          <div class="hf3w-card">
+            <div class="hf3w-tag">AUA &middot; Oct 22 2025</div>
+            <div class="hf3w-num">C$100<span class="hf3w-unit">B</span></div>
+            <div class="hf3w-desc">3 years ahead of internal plan. From $50B AUA in 2024 &mdash; doubled in twelve months. Profitable since Q2 2023.</div>
+          </div>
+          <div class="hf3w-card">
+            <div class="hf3w-tag">Series F &middot; Oct 2025</div>
+            <div class="hf3w-num">C$750<span class="hf3w-unit">M</span></div>
+            <div class="hf3w-desc">Co-led by Dragoneer &amp; GIC at C$10B post-money. Validates the disruptive arc: from a $2M seed pitched to 14 angels.</div>
+          </div>
+          <div class="hf3w-card">
+            <div class="hf3w-tag">Canadian clients · 2025</div>
+            <div class="hf3w-num">3<span class="hf3w-unit">M+</span></div>
+            <div class="hf3w-desc">Roughly 1 in 13 Canadians. Among the largest North-American robo-advisors by AUM. Bank-grade product breadth: invest, save, tax, crypto, FX.</div>
+          </div>
+          <div class="hf3w-card">
+            <div class="hf3w-tag">YoY total assets growth Q2 2025</div>
+            <div class="hf3w-num">+93<span class="hf3w-unit">%</span></div>
+            <div class="hf3w-desc">Compounding into a banking-oligopoly opening. Katchen: targeting C$1T AUA over the next decade.</div>
+          </div>
+        </div>
+        <div class="hf3w-rows">
+          <div class="hf3w-row">
+            <div class="hf3w-yr">2014</div>
+            <div class="hf3w-event">Seed close: pitched 14 angels<span>Mike Katchen launches robo-advisor for Canadian retail (slide 05).</span></div>
+            <div class="hf3w-marker">$0 AUA</div>
+          </div>
+          <div class="hf3w-row">
+            <div class="hf3w-yr">2018</div>
+            <div class="hf3w-event">Power Corp recap<span>Power Financial &middot; PowerCorp lead growth round; Wealthsimple Trade launches.</span></div>
+            <div class="hf3w-marker">~$3B</div>
+          </div>
+          <div class="hf3w-row">
+            <div class="hf3w-yr">2021</div>
+            <div class="hf3w-event">$5B valuation peak<span>Series E during 2021 mania; pulls back, expands product into crypto + tax.</span></div>
+            <div class="hf3w-marker">~$15B</div>
+          </div>
+          <div class="hf3w-row">
+            <div class="hf3w-yr">2025</div>
+            <div class="hf3w-event">$100B AUA, $10B valuation<span>Series F Oct 2025 (Dragoneer/GIC). Profitable since Q2 2023.</span></div>
+            <div class="hf3w-marker">C$100B</div>
+          </div>
+        </div>
+      </div>
+      <div class="hf3w-bar-wrap">
+        <div class="hf3w-bar-track"><div class="hf3w-bar" style="--w:80%"></div></div>
+      </div>
+      <div class="hf3w-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hf3w-scrub-bar"><div class="hf3w-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hf3w-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hf3w-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://newsroom.wealthsimple.com/wealthsimple-announces-750-million-equity-round-at-10-billion-post-money-valuation-to-accelerate-growth" target="_blank" rel="noopener">Wealthsimple Series F press release</a></span><span>&middot;</span><span><a href="https://www.theglobeandmail.com/business/article-wealthsimple-100-billion-in-assets/" target="_blank" rel="noopener">Globe and Mail (Oct 22 2025)</a></span><span>&middot;</span><span><a href="https://newsroom.wealthsimple.com/wealthsimples-total-assets-climb-93-year-over-year" target="_blank" rel="noopener">Wealthsimple Q2 2025 update</a></span><span>&middot;</span><span><a href="https://en.wikipedia.org/wiki/Wealthsimple" target="_blank" rel="noopener">Wealthsimple corporate timeline</a></span><span>&middot;</span><span><a href="https://markmacleod.me/wealthsimples-mike-katchen-on-challenging-canadas-banking-oligopoly-achieving-profitable-growth-and-building-for-the-future/" target="_blank" rel="noopener">Katchen interview (2025)</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Wealthsimple 2014 &rarr; 2025</div>
+    <div>2025–2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 16 · Stripe Valuation Arc 2014→2025 (light · evolution)
+     ============================================================ -->
+<section class="slide light" data-screen-label="06 Stripe Arc 2014-2025">
+  <div class="chrome">
+    <div>&sect;3.13 &middot; private valuation arc</div>
+    <div>06 / 11</div>
+  </div>
+  <style>
+    @keyframes hf3s-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hf3s-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hf3s-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hf3s-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-card { animation: hf3s-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-card:nth-child(1) { animation-delay:.2s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-card:nth-child(2) { animation-delay:.45s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-card:nth-child(3) { animation-delay:.7s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-card:nth-child(4) { animation-delay:.95s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-row { animation: hf3s-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(1) { animation-delay:1.0s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(2) { animation-delay:1.15s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(3) { animation-delay:1.30s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(4) { animation-delay:1.45s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(5) { animation-delay:1.60s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(6) { animation-delay:1.75s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-row:nth-child(7) { animation-delay:1.90s }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-bar { animation: hf3s-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.5s; width:0 }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-rec { animation: hf3s-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="06 Stripe Arc 2014-2025"].active .hf3s-scrub-fill { animation: hf3s-scrub 9s linear infinite }
+    .hf3s-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hf3s-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hf3s-rec { color:#c33b2a; letter-spacing:.3em }
+    .hf3s-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hf3s-stage { padding:1.6vh 1.4vw; display:grid; grid-template-columns:6fr 6fr; gap:1.4vw; align-items:start }
+    .hf3s-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hf3s-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(10,31,61,.28); background:rgba(10,31,61,.025); border-radius:0 4px 4px 0 }
+    .hf3s-card .hf3s-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hf3s-card .hf3s-num { font-family:var(--serif-en); font-weight:800; font-size:1.95vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hf3s-card .hf3s-num .hf3s-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hf3s-card .hf3s-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hf3s-rows { display:flex; flex-direction:column }
+    .hf3s-row { display:grid; grid-template-columns:auto 1fr auto; gap:.8vw; align-items:center; padding:.7vh 1vw; border-top:1px solid rgba(10,31,61,.08); font-family:var(--sans-zh) }
+    .hf3s-row:first-child { border-top:0 }
+    .hf3s-row .hf3s-yr { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.18em; opacity:.65; min-width:3.5vw }
+    .hf3s-row .hf3s-event { font-family:var(--serif-zh); font-weight:600; font-size:.92vw; line-height:1.25 }
+    .hf3s-row .hf3s-event span { display:block; font-family:var(--sans-zh); font-weight:400; font-size:.72vw; opacity:.7; margin-top:.2vh }
+    .hf3s-row .hf3s-marker { font-family:var(--serif-en); font-weight:700; font-size:.9vw; opacity:.62; font-feature-settings:"tnum" }
+    .hf3s-row .hf3s-down { color:#b54a3e }
+    .hf3s-bar-wrap { padding:0 1.4vw 1vh }
+    .hf3s-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hf3s-bar { height:100%; background:linear-gradient(90deg, rgba(195,59,42,.55), rgba(10,31,61,.92)); border-radius:99px }
+    .hf3s-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hf3s-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hf3s-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hf3s-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.55), transparent) }
+    .hf3s-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hf3s-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hf3s-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.13 &middot; the canonical fintech valuation arc</div>
+    <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Stripe: $1.75B (2014) &rarr; $159B (2026) &mdash; through a $50B detour.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      The closing slide cited Stripe at &ldquo;$95B&rdquo; &mdash; the 2021 mania peak. The company wrote that mark down 47% to $50B in 2023&rsquo;s primary capital raise (Series I, $6.5B), climbed back to $91.5B by Feb 2025 on the back of stablecoin acquisitions (Bridge, $1.1B) and AI-merchant primitives, and crossed $159B in the Feb 2026 tender. Same enterprise; private mark moved $50B &rarr; $159B in three years. The cycle inside Ch. 3&rsquo;s S-curve, made literal.
+    </p>
+
+    <div class="hf3s-frame" style="margin-top:1.4vh">
+      <div class="hf3s-topbar">
+        <div><span class="hf3s-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V05</div>
+        <div class="hf3s-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hf3s-stage">
+        <div class="hf3s-cards">
+          <div class="hf3s-card">
+            <div class="hf3s-tag">Latest tender &middot; Feb 2026</div>
+            <div class="hf3s-num">$159<span class="hf3s-unit">B</span></div>
+            <div class="hf3s-desc">Tender priced at $159B post-money (Crunchbase, Feb 2026). Up from $106.7B (Sep 2025), $91.5B (Feb 2025), $70B (July 2024), $50B (Mar 2023). Now ~67% above the 2021 mania peak.</div>
+          </div>
+          <div class="hf3s-card">
+            <div class="hf3s-tag">Total payment volume &middot; FY 2024</div>
+            <div class="hf3s-num">$1.4<span class="hf3s-unit">T</span></div>
+            <div class="hf3s-desc">2024 annual letter (Patrick Collison). Up 38% YoY. Half the Fortune 100 now uses Stripe; ~1.3% of global GDP runs through the rails.</div>
+          </div>
+          <div class="hf3s-card">
+            <div class="hf3s-tag">Bridge acquisition &middot; Oct 2024</div>
+            <div class="hf3s-num">$1.1<span class="hf3s-unit">B</span></div>
+            <div class="hf3s-desc">Largest crypto-fintech M&amp;A. Brings stablecoin issuance, infra, and SDKs in-house &mdash; underpinning the Q4 2024&ndash;Q1 2025 markup.</div>
+          </div>
+          <div class="hf3s-card">
+            <div class="hf3s-tag">2025 AI agentic launch</div>
+            <div class="hf3s-num">350<span class="hf3s-unit">+</span></div>
+            <div class="hf3s-desc">Stripe Agents partners (Sessions May 2025). Issuing programmable cards to AI agents; capture-rate proxy for Ch. 1&rsquo;s &ldquo;agent-driven rails.&rdquo;</div>
+          </div>
+        </div>
+        <div class="hf3s-rows">
+          <div class="hf3s-row">
+            <div class="hf3s-yr">2014</div>
+            <div class="hf3s-event">Series B &middot; Founders Fund<span>Closes Series B (Jan); first major venture mark. Series C in Dec 2014 at $3.5B (Sequoia).</span></div>
+            <div class="hf3s-marker">$1.75B</div>
+          </div>
+          <div class="hf3s-row">
+            <div class="hf3s-yr">2018</div>
+            <div class="hf3s-event">Series E &middot; Tiger / Sequoia<span>Crosses $20B; Stripe Capital, Atlas, Issuing launch.</span></div>
+            <div class="hf3s-marker">$20B</div>
+          </div>
+          <div class="hf3s-row">
+            <div class="hf3s-yr">2021</div>
+            <div class="hf3s-event">Series H &middot; mania peak<span>$600M round at $95B post; ZIRP-era benchmark for fintech.</span></div>
+            <div class="hf3s-marker">$95B</div>
+          </div>
+          <div class="hf3s-row">
+            <div class="hf3s-yr">2023</div>
+            <div class="hf3s-event">Down round &middot; primary<span>Series I: raises $6.5B at $50B post (Mar 2023) for RSU tax bills. &minus;47% from peak.</span></div>
+            <div class="hf3s-marker hf3s-down">$50B</div>
+          </div>
+          <div class="hf3s-row">
+            <div class="hf3s-yr">2024</div>
+            <div class="hf3s-event">Tender &middot; Sequoia LP recap<span>Employee tender at $70B (July). Profitability + $1T TPV milestone.</span></div>
+            <div class="hf3s-marker">$70B</div>
+          </div>
+          <div class="hf3s-row">
+            <div class="hf3s-yr">2025</div>
+            <div class="hf3s-event">Tenders &middot; Feb &amp; Sep 2025<span>$91.5B (Feb) then $106.7B (Sep). Bridge integrated; agentic rails live.</span></div>
+            <div class="hf3s-marker">$106.7B</div>
+          </div>
+          <div class="hf3s-row">
+            <div class="hf3s-yr">2026</div>
+            <div class="hf3s-event">Tender &middot; Feb 2026<span>Tender priced $159B (Crunchbase). +67% above 2021 mania peak.</span></div>
+            <div class="hf3s-marker">$159B</div>
+          </div>
+        </div>
+      </div>
+      <div class="hf3s-bar-wrap">
+        <div class="hf3s-bar-track"><div class="hf3s-bar" style="--w:78%"></div></div>
+      </div>
+      <div class="hf3s-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hf3s-scrub-bar"><div class="hf3s-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hf3s-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hf3s-srclinks" style="margin-top:1.4vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://www.bloomberg.com/news/articles/2025-02-27/stripe-discusses-tender-offer-that-would-value-it-at-91-5-billion" target="_blank" rel="noopener">Bloomberg (Feb 27 2025)</a></span><span>&middot;</span><span><a href="https://stripe.com/newsroom/news/stripe-2024-update" target="_blank" rel="noopener">Stripe 2024 Annual Letter</a></span><span>&middot;</span><span><a href="https://stripe.com/newsroom/news/stripe-acquires-bridge" target="_blank" rel="noopener">Stripe acquires Bridge ($1.1B, Oct 2024)</a></span><span>&middot;</span><span><a href="https://www.wsj.com/articles/stripe-doubles-valuation-to-70-billion-77a4cba6" target="_blank" rel="noopener">WSJ (Stripe $70B, July 2024)</a></span><span>&middot;</span><span><a href="https://en.wikipedia.org/wiki/Stripe,_Inc." target="_blank" rel="noopener">Stripe corporate timeline</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Stripe valuation arc 2014 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 17 · AI-native fintech funding 2023→2025 (dark · new)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="07 AI-Native Fintech 2023-2025">
+  <div class="chrome">
+    <div>&sect;3.7d &middot; AI-native fintech VC</div>
+    <div>07 / 11</div>
+  </div>
+  <style>
+    @keyframes hfa-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfa-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfa-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfa-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-card { animation: hfa-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-row { animation: hfa-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-bar { animation: hfa-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-rec { animation: hfa-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="07 AI-Native Fintech 2023-2025"].active .hfa-scrub-fill { animation: hfa-scrub 9s linear infinite }
+    .hfa-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hfa-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfa-rec { color:#ff7458; letter-spacing:.3em }
+    .hfa-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfa-stage { padding:1.6vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfa-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfa-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(255,255,255,.28); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hfa-card .hfa-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfa-card .hfa-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfa-card .hfa-num .hfa-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfa-card .hfa-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfa-rows { display:flex; flex-direction:column }
+    .hfa-row { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hfa-row:first-child { border-top:0 }
+    .hfa-row .hfa-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw }
+    .hfa-row .hfa-2023 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfa-row .hfa-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfa-row .hfa-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#5fc77f }
+    .hfa-row .hfa-delta.exit { color:#a3b8d8 }
+    .hfa-bar-wrap { padding:0 1.4vw 1vh }
+    .hfa-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hfa-bar { height:100%; background:linear-gradient(90deg, rgba(255,116,88,.55), rgba(255,255,255,.92)); border-radius:99px }
+    .hfa-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfa-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfa-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hfa-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hfa-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfa-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfa-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.7d &middot; the AI-native funding bid</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Capital concentrated into AI-native fintechs, 2023&rarr;2025.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 11 framed the 2024-26 funding rebound. Inside that rebound, capital is concentrating: SMB-finance &amp; corporate-card platforms that wrap LLM agents around the workflow now command 2&minus;3&times; the multiples of vintage neobanks. Ramp went from $5.8B (Aug 2023) to $32B (Nov 2025) &mdash; a ~5.5&times; private mark in 27 months &mdash; while Brex&rsquo;s mark slid from a $12.3B 2022 peak as it pivoted upmarket.
+    </p>
+
+    <div class="hfa-frame" style="margin-top:1.4vh">
+      <div class="hfa-topbar">
+        <div><span class="hfa-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V07</div>
+        <div class="hfa-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfa-stage">
+        <div class="hfa-cards">
+          <div class="hfa-card">
+            <div class="hfa-tag">Ramp valuation &middot; Nov 2025</div>
+            <div class="hfa-num">$32<span class="hfa-unit">B</span></div>
+            <div class="hfa-desc">$300M Series F-2 led by Lightspeed (TechStartups, Nov 2025). +42% from Jul 2025 ($22.5B); ~5.5&times; from Aug 2023 ($5.8B). $1B+ ARR run-rate.</div>
+          </div>
+          <div class="hfa-card">
+            <div class="hfa-tag">Mercury &middot; reported 2026 round</div>
+            <div class="hfa-num">$5<span class="hfa-unit">B</span></div>
+            <div class="hfa-desc">Reuters/Crowdfund Insider (Apr 2026). Up from $3.5B (Sequoia-led Series C, Mar 2025). ~$650M annualised revenue; 3 yrs GAAP profitable.</div>
+          </div>
+          <div class="hfa-card">
+            <div class="hfa-tag">Brex &middot; private mark drift</div>
+            <div class="hfa-num">$12.3<span class="hfa-unit">B</span></div>
+            <div class="hfa-desc">2022 peak; no priced up-round since. Pivoted from SMB to enterprise / large-corporate cards; layoffs in 2023&ndash;24 and tender-driven re-marks. Cautionary tale for vintage neobanks (Sacra).</div>
+          </div>
+          <div class="hfa-card">
+            <div class="hfa-tag">"Autonomous finance" thesis</div>
+            <div class="hfa-num">2&ndash;3<span class="hfa-unit">&times;</span></div>
+            <div class="hfa-desc">Revenue-multiple premium for AI-agent-led platforms vs. vintage neobanks (Founders Fund / Lightspeed memos cited Fortune Sep 2025).</div>
+          </div>
+        </div>
+        <div class="hfa-rows">
+          <div class="hfa-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Firm</div><div>Aug 2023</div><div>Nov 2025 / 2026</div><div style="text-align:right">Mark</div>
+          </div>
+          <div class="hfa-row">
+            <div class="hfa-firm">Ramp</div>
+            <div class="hfa-2023">$5.8B (Aug 2023)</div>
+            <div class="hfa-2025">$32B (Nov 2025); $1B+ ARR; AI-agent core</div>
+            <div class="hfa-delta">5.5&times;</div>
+          </div>
+          <div class="hfa-row">
+            <div class="hfa-firm">Mercury</div>
+            <div class="hfa-2023">$1.6B (post 2021); flat 2022-23</div>
+            <div class="hfa-2025">$3.5B (Mar 2025) &rarr; reported $5B+ (Apr 2026)</div>
+            <div class="hfa-delta">3.1&times;</div>
+          </div>
+          <div class="hfa-row">
+            <div class="hfa-firm">Brex</div>
+            <div class="hfa-2023">$12.3B private peak (Jan 2022)</div>
+            <div class="hfa-2025">No priced up-round; enterprise pivot, 2023&ndash;24 layoffs</div>
+            <div class="hfa-delta exit">Flat</div>
+          </div>
+          <div class="hfa-row">
+            <div class="hfa-firm">Stripe</div>
+            <div class="hfa-2023">$50B (Mar 2023 down-round)</div>
+            <div class="hfa-2025">$91.5B (Feb 2025 tender)</div>
+            <div class="hfa-delta">1.83&times;</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfa-bar-wrap">
+        <div class="hfa-bar-track"><div class="hfa-bar" style="--w:78%"></div></div>
+      </div>
+      <div class="hfa-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfa-scrub-bar"><div class="hfa-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfa-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfa-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://techstartups.com/2025/11/17/ramp-hits-32b-valuation-with-new-300m-funding-round-as-investors-double-down-on-autonomous-finance/" target="_blank" rel="noopener">TechStartups: Ramp $32B (Nov 2025)</a></span><span>&middot;</span><span><a href="https://techcrunch.com/2025/03/26/fintech-mercury-lands-300m-in-sequoia-led-series-c-doubles-valuation-to-3-5b/" target="_blank" rel="noopener">TechCrunch: Mercury $3.5B (Mar 2025)</a></span><span>&middot;</span><span><a href="https://www.crowdfundinsider.com/2026/04/271581-fintech-firm-mercury-reportedly-targets-5-billion-valuation/" target="_blank" rel="noopener">Crowdfund Insider: Mercury $5B target</a></span><span>&middot;</span><span><a href="https://sacra.com/c/brex/" target="_blank" rel="noopener">Sacra: Brex revenue/funding profile</a></span><span>&middot;</span><span><a href="https://fortune.com/2025/09/09/ramp-valuation-founders-fund-thrive-keith-rabois-brex-fintech/" target="_blank" rel="noopener">Fortune: Ramp $22.5B (Sep 2025)</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; AI-native fintech 2023 &rarr; 2025</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 18 · Nubank Arc 2014→2025 (light · new)
+     ============================================================ -->
+<section class="slide light" data-screen-label="08 Nubank Arc 2014-2025">
+  <div class="chrome">
+    <div>&sect;3.7c &middot; Latam fintech compounding</div>
+    <div>08 / 11</div>
+  </div>
+  <style>
+    @keyframes hfnu-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfnu-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfnu-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfnu-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-card { animation: hfnu-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-row { animation: hfnu-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-bar { animation: hfnu-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-rec { animation: hfnu-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="08 Nubank Arc 2014-2025"].active .hfnu-scrub-fill { animation: hfnu-scrub 9s linear infinite }
+    .hfnu-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hfnu-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.8 }
+    .hfnu-topbar .hfnu-rec { color:#820ad1; letter-spacing:.3em }
+    .hfnu-topbar .hfnu-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfnu-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfnu-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfnu-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(130,10,209,.55); background:rgba(10,31,61,.025); border-radius:0 4px 4px 0 }
+    .hfnu-card .hfnu-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.62 }
+    .hfnu-card .hfnu-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfnu-card .hfnu-num .hfnu-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfnu-card .hfnu-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfnu-rows { display:flex; flex-direction:column }
+    .hfnu-row { display:grid; grid-template-columns:1fr 1.1fr 1.1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(10,31,61,.08); font-family:var(--sans-zh) }
+    .hfnu-row:first-child { border-top:0 }
+    .hfnu-row .hfnu-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfnu-row .hfnu-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfnu-row .hfnu-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfnu-row .hfnu-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#3b8a4f }
+    .hfnu-row .hfnu-delta.warn { color:#c33b2a }
+    .hfnu-bar-wrap { padding:0 1.4vw 1vh }
+    .hfnu-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hfnu-bar { height:100%; background:linear-gradient(90deg, rgba(130,10,209,.55), rgba(10,31,61,.92)); border-radius:99px }
+    .hfnu-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfnu-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfnu-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hfnu-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(130,10,209,.5), transparent) }
+    .hfnu-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfnu-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfnu-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.7c &middot; emerging-market fintech compounding</div>
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Nubank: from credit-card-only neobank to 131M Latam customers, 2014&rarr;2025.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      The Wealthsimple and Stripe arcs (slides 15&ndash;16) showed two North-American paths. Nubank is the largest fintech IPO of the post-2020 era and the clearest emerging-market test of the model. From 12M customers in 2019 it now serves 131M across Brazil, Mexico, and Colombia (Q4 2025) &mdash; ~58% of Brazil&rsquo;s adult population &mdash; while compounding revenue at &gt;30% YoY and posting consistent GAAP profits. Market cap recovered from a ~$11B trough (mid-2022) to ~$70B+ by 2025.
+    </p>
+
+    <div class="hfnu-frame" style="margin-top:1.4vh">
+      <div class="hfnu-topbar">
+        <div><span class="hfnu-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V06</div>
+        <div class="hfnu-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfnu-stage">
+        <div class="hfnu-cards">
+          <div class="hfnu-card">
+            <div class="hfnu-tag">Customers &middot; Q4 2025</div>
+            <div class="hfnu-num">131<span class="hfnu-unit">M</span></div>
+            <div class="hfnu-desc">Nubank 4Q25 release: 131M customers across BR/MX/CO (+4M net adds Q-o-Q). Brazil alone: ~104M (~58% of adults aged 15+).</div>
+          </div>
+          <div class="hfnu-card">
+            <div class="hfnu-tag">Annualised revenue &middot; 2024</div>
+            <div class="hfnu-num">$11.5<span class="hfnu-unit">B</span></div>
+            <div class="hfnu-desc">FY2024 revenue $11.5B (+58% YoY FX-neutral). FY2024 net income $1.97B; ROE in the 20-30% band &mdash; rare for a neobank.</div>
+          </div>
+          <div class="hfnu-card">
+            <div class="hfnu-tag">Market cap &middot; 2025</div>
+            <div class="hfnu-num">$70<span class="hfnu-unit">B+</span></div>
+            <div class="hfnu-desc">NYSE: NU. Up from ~$11B trough (Jul 2022) and below $50B IPO. Berkshire Hathaway disclosed exit Q1 2025; stock continued to compound.</div>
+          </div>
+          <div class="hfnu-card">
+            <div class="hfnu-tag">Mexico customers &middot; 2025</div>
+            <div class="hfnu-num">12<span class="hfnu-unit">M+</span></div>
+            <div class="hfnu-desc">Nu Mexico: full banking license granted Apr 2024; deposit launch drove customer growth from ~3M (2022) to 12M+ (Q4 2025).</div>
+          </div>
+        </div>
+        <div class="hfnu-rows">
+          <div class="hfnu-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Stage</div><div>Status &middot; 2014&minus;2019</div><div>Status &middot; 2024&minus;2025</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfnu-row">
+            <div class="hfnu-firm">Customer base</div>
+            <div class="hfnu-2020">12M (2019); credit-card-only Brazil; mostly young digital natives</div>
+            <div class="hfnu-2025">131M (Q4 2025); 3 countries; deposits, lending, investing, mobile, marketplace</div>
+            <div class="hfnu-delta">+10&times;</div>
+          </div>
+          <div class="hfnu-row">
+            <div class="hfnu-firm">Funding stage</div>
+            <div class="hfnu-2020">Series F 2019: $400M @ $10B (TCV-led)</div>
+            <div class="hfnu-2025">Public since Dec 2021 (NYSE: NU); Tencent, Sequoia mostly distributed; Berkshire exited Q1 2025</div>
+            <div class="hfnu-delta">IPO + ROE</div>
+          </div>
+          <div class="hfnu-row">
+            <div class="hfnu-firm">Profit posture</div>
+            <div class="hfnu-2020">Loss-making; CAC heavy; growth-first</div>
+            <div class="hfnu-2025">Eight straight profitable quarters (FY24); ARPAC ~$11; CAC ~$7; 30%+ ROE</div>
+            <div class="hfnu-delta">Profit flip</div>
+          </div>
+          <div class="hfnu-row">
+            <div class="hfnu-firm">Geographic mix</div>
+            <div class="hfnu-2020">Brazil only</div>
+            <div class="hfnu-2025">BR (~104M), MX (12M+), CO (~3M); eyeing further expansion via NuColombia/NuMexico full bank licenses</div>
+            <div class="hfnu-delta">3 markets</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfnu-bar-wrap">
+        <div class="hfnu-bar-track"><div class="hfnu-bar" style="--w:82%"></div></div>
+      </div>
+      <div class="hfnu-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfnu-scrub-bar"><div class="hfnu-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfnu-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfnu-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://investors.nu/" target="_blank" rel="noopener">Nubank · Investor Relations &amp; quarterly reports</a></span><span>&middot;</span><span><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001691493&type=20-F&dateb=&owner=include&count=40" target="_blank" rel="noopener">SEC EDGAR · NU 20-F filings</a></span><span>&middot;</span><span><a href="https://www.reuters.com/business/finance/berkshire-exits-stake-brazils-nubank-2025-02-15/" target="_blank" rel="noopener">Reuters · Berkshire exits Nu (Feb 2025)</a></span><span>&middot;</span><span><a href="https://www.bloomberg.com/news/articles/2024-04-12/nubank-wins-mexico-banking-license-for-deposit-business" target="_blank" rel="noopener">Bloomberg · Nu Mexico banking license (Apr 2024)</a></span><span>&middot;</span><span><a href="https://www.bcb.gov.br/en/financialstability/relstaben" target="_blank" rel="noopener">Banco Central do Brasil · Financial stability</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; Nubank arc 2014 &rarr; 2025</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 19 · Secondary Tender Markets 2024-2026 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="09 Secondary Tenders 2024-2026">
+  <div class="chrome">
+    <div>&sect;3.13b &middot; staying private, getting liquid</div>
+    <div>09 / 11</div>
+  </div>
+  <style>
+    @keyframes hfsec-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfsec-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfsec-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfsec-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-card { animation: hfsec-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-row { animation: hfsec-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-bar { animation: hfsec-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-rec { animation: hfsec-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="09 Secondary Tenders 2024-2026"].active .hfsec-scrub-fill { animation: hfsec-scrub 9s linear infinite }
+    .hfsec-frame { border:1px solid rgba(255,255,255,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); position:relative }
+    .hfsec-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(255,255,255,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfsec-rec { color:#7fd3ff; letter-spacing:.3em }
+    .hfsec-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfsec-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfsec-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfsec-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(127,211,255,.55); background:rgba(255,255,255,.025); border-radius:0 4px 4px 0 }
+    .hfsec-card .hfsec-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfsec-card .hfsec-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfsec-card .hfsec-num .hfsec-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfsec-card .hfsec-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfsec-rows { display:flex; flex-direction:column }
+    .hfsec-row { display:grid; grid-template-columns:1fr 1.05fr 1.1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(255,255,255,.08); font-family:var(--sans-zh) }
+    .hfsec-row:first-child { border-top:0 }
+    .hfsec-row .hfsec-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfsec-row .hfsec-y0 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfsec-row .hfsec-y1 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfsec-row .hfsec-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#7fd3ff }
+    .hfsec-bar-wrap { padding:0 1.4vw 1vh }
+    .hfsec-bar-track { height:3px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden }
+    .hfsec-bar { height:100%; background:linear-gradient(90deg, rgba(127,211,255,.55), rgba(255,255,255,.92)); border-radius:99px }
+    .hfsec-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(255,255,255,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfsec-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfsec-scrub-bar { flex:1; height:2px; background:rgba(255,255,255,.14); position:relative; overflow:hidden }
+    .hfsec-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent) }
+    .hfsec-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfsec-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfsec-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">&sect;3.13b &middot; the IPO substitute</div>
+    <h2 class="h-xl" style="font-size:3.6vw; margin-top:.4vh">Tender offers replaced the IPO as the liquidity venue (2024-2026).</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slides 8 (IPO Performance) and 12 (IPO Window) framed the public exit. The bigger 2024-2026 story is companies staying private longer and using employer-led tender offers as a structured liquidity venue. Stripe alone re-rated from $50B (Mar 2023) to $159B (Feb 2026) entirely through tenders. Industry-wide secondary volume hit $240B in 2025, up from $162B in 2024 (Industry Ventures + Goldman Sachs estimates). The cap table arithmetic of slide 10 still holds &mdash; but the &ldquo;exit&rdquo; column now includes a private liquidity event that can recur every 6&ndash;12 months.
+    </p>
+
+    <div class="hfsec-frame" style="margin-top:1.4vh">
+      <div class="hfsec-topbar">
+        <div><span class="hfsec-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V08</div>
+        <div class="hfsec-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfsec-stage">
+        <div class="hfsec-cards">
+          <div class="hfsec-card">
+            <div class="hfsec-tag">Secondary volume &middot; 2025</div>
+            <div class="hfsec-num">~$240<span class="hfsec-unit">B</span></div>
+            <div class="hfsec-desc">Up from ~$162B in 2024 (Industry Ventures + Goldman Sachs Capital Solutions tracking). LP-led plus direct secondaries; private equity adjacent.</div>
+          </div>
+          <div class="hfsec-card">
+            <div class="hfsec-tag">Stripe tender &middot; Feb 2026</div>
+            <div class="hfsec-num">$159<span class="hfsec-unit">B</span></div>
+            <div class="hfsec-desc">+74% YoY. $1.9T 2025 total payment volume (+34%). Latest in a sequence of tenders that re-priced Stripe from $50B (2023) to above its 2021 peak.</div>
+          </div>
+          <div class="hfsec-card">
+            <div class="hfsec-tag">OpenAI secondary &middot; 2024-2026</div>
+            <div class="hfsec-num">$500<span class="hfsec-unit">B+</span></div>
+            <div class="hfsec-desc">Oct 2024 $6.6B primary at $157B re-rated to $500B by the Oct 2025 employee tender; subsequent rounds priced staff / early holders at $850-900B+. Frontier-AI capital trains the secondary plumbing.</div>
+          </div>
+          <div class="hfsec-card">
+            <div class="hfsec-tag">Databricks &middot; 2024 round</div>
+            <div class="hfsec-num">$62<span class="hfsec-unit">B</span></div>
+            <div class="hfsec-desc">$10B raise mixing primary + secondary so employees and former staff can sell &mdash; standard 2024-26 structure for late-stage AI and AI-adjacent firms.</div>
+          </div>
+        </div>
+        <div class="hfsec-rows">
+          <div class="hfsec-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Issuer</div><div>Pre-2024 marker</div><div>2025-2026 marker</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfsec-row">
+            <div class="hfsec-firm">Stripe</div>
+            <div class="hfsec-y0">$50B (Mar 2023, primary)</div>
+            <div class="hfsec-y1">$91.5B (Feb 2025) &rarr; $106.7B (Sep 2025) &rarr; $159B (Feb 2026, all tenders)</div>
+            <div class="hfsec-delta">+218%</div>
+          </div>
+          <div class="hfsec-row">
+            <div class="hfsec-firm">OpenAI</div>
+            <div class="hfsec-y0">$157B (Oct 2024)</div>
+            <div class="hfsec-y1">$500B tender (Oct 2025) &rarr; subsequent rounds reportedly $850-900B+</div>
+            <div class="hfsec-delta">+218%+</div>
+          </div>
+          <div class="hfsec-row">
+            <div class="hfsec-firm">SpaceX</div>
+            <div class="hfsec-y0">$180B (mid-2023 tender)</div>
+            <div class="hfsec-y1">~$350B+ via semiannual employee tenders by late 2025</div>
+            <div class="hfsec-delta">+94%+</div>
+          </div>
+          <div class="hfsec-row">
+            <div class="hfsec-firm">Databricks</div>
+            <div class="hfsec-y0">$43B (Sep 2023)</div>
+            <div class="hfsec-y1">$62B (Dec 2024 raise + secondary); $5B follow-on, $2B debt facility (Feb 2025)</div>
+            <div class="hfsec-delta">+44%</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfsec-bar-wrap">
+        <div class="hfsec-bar-track"><div class="hfsec-bar" style="--w:80%"></div></div>
+      </div>
+      <div class="hfsec-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfsec-scrub-bar"><div class="hfsec-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfsec-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfsec-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://news.crunchbase.com/fintech/unicorn-stripe-secondary-sale-valuation/" target="_blank" rel="noopener">Crunchbase &middot; Stripe $159B tender (Feb 2026)</a></span><span>&middot;</span><span><a href="https://news.crunchbase.com/ai/openai-valuation-secondary-share-sale-biggest-unicorn-spacex/" target="_blank" rel="noopener">Crunchbase &middot; OpenAI $500B secondary</a></span><span>&middot;</span><span><a href="https://sfstandard.com/2025/04/25/secondary-sales-housing-market-stripe-openai-databricks/" target="_blank" rel="noopener">SF Standard &middot; secondaries replace IPO (Apr 2025)</a></span><span>&middot;</span><span><a href="https://www.benzinga.com/markets/private-markets/26/05/52397464/stripe-spacex-databricks-and-the-end-of-a-traditional-ipo" target="_blank" rel="noopener">Benzinga / JPMorgan &middot; end of the traditional IPO (May 2026)</a></span><span>&middot;</span><span><a href="https://www.industryventures.com/insights/secondary-market-2025/" target="_blank" rel="noopener">Industry Ventures &middot; private secondary tracker</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; Secondary tenders 2024 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 20 · Plaid Down-Round to IPO 2021-2026 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="10 Plaid Arc 2021-2026">
+  <div class="chrome">
+    <div>&sect;3.10c &middot; the late-stage reset</div>
+    <div>10 / 11</div>
+  </div>
+  <style>
+    @keyframes hfpl-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfpl-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfpl-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfpl-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-card { animation: hfpl-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-row { animation: hfpl-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-row:nth-child(1) { animation-delay:.85s }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-row:nth-child(2) { animation-delay:1.0s }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-row:nth-child(3) { animation-delay:1.15s }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-row:nth-child(4) { animation-delay:1.3s }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-bar { animation: hfpl-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-rec { animation: hfpl-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="10 Plaid Arc 2021-2026"].active .hfpl-scrub-fill { animation: hfpl-scrub 9s linear infinite }
+    .hfpl-frame { border:1px solid rgba(10,31,61,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(10,31,61,.04), rgba(10,31,61,.01)); position:relative }
+    .hfpl-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(10,31,61,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.82 }
+    .hfpl-rec { color:#c14a4a; letter-spacing:.3em }
+    .hfpl-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfpl-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfpl-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfpl-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(193,74,74,.55); background:rgba(10,31,61,.025); border-radius:0 4px 4px 0 }
+    .hfpl-card .hfpl-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfpl-card .hfpl-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfpl-card .hfpl-num .hfpl-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfpl-card .hfpl-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.78 }
+    .hfpl-rows { display:flex; flex-direction:column }
+    .hfpl-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.85vh 1vw; border-top:1px solid rgba(10,31,61,.08); font-family:var(--sans-zh) }
+    .hfpl-row:first-child { border-top:0 }
+    .hfpl-row .hfpl-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfpl-row .hfpl-2020 { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfpl-row .hfpl-2025 { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfpl-row .hfpl-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#c14a4a }
+    .hfpl-bar-wrap { padding:0 1.4vw 1vh }
+    .hfpl-bar-track { height:3px; background:rgba(10,31,61,.1); border-radius:99px; overflow:hidden }
+    .hfpl-bar { height:100%; background:linear-gradient(90deg, rgba(193,74,74,.65), rgba(10,31,61,.92)); border-radius:99px }
+    .hfpl-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(10,31,61,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfpl-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfpl-scrub-bar { flex:1; height:2px; background:rgba(10,31,61,.14); position:relative; overflow:hidden }
+    .hfpl-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(10,31,61,.55), transparent) }
+    .hfpl-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfpl-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfpl-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:2vh">
+    <h2 class="h-xl" style="font-size:3.8vw; margin-top:.4vh">Plaid: $13.4B &rarr; $6.1B &rarr; ~$8&ndash;10B IPO. The whole 2021-2026 cycle in one company.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; opacity:.78; font-size:1.05vw">
+      Slide 02 named Plaid as a Visa acquisition target ($5.3B blocked Nov 2020). Slide 13 listed Klarna, Chime and Circle reopening the IPO window. Plaid is the missing link &mdash; it shows what happens to a private fintech that <em>doesn&rsquo;t</em> rush. April 2025: $575M secondary, valued at $6.1B (down 54% from the 2021 peak). FY2025 ARR: $546M, +40% YoY. Plaid told TechCrunch it would not IPO in 2025; analysts now project a 2026 listing at $8&ndash;10B. The arc is the cycle: 2021 mega-mark, 2022&ndash;2024 freeze, 2025 down round + profitability discipline, 2026 IPO at a re-earned mark.
+    </p>
+
+    <div class="hfpl-frame" style="margin-top:1.4vh">
+      <div class="hfpl-topbar">
+        <div><span class="hfpl-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V09</div>
+        <div class="hfpl-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfpl-stage">
+        <div class="hfpl-cards">
+          <div class="hfpl-card">
+            <div class="hfpl-tag">2021 peak post-money</div>
+            <div class="hfpl-num">$13.4<span class="hfpl-unit">B</span></div>
+            <div class="hfpl-desc">Series D (Apr 2021) led by Altimeter, Silver Lake, Ribbit, after Visa&rsquo;s $5.3B acquisition was blocked on antitrust grounds (Nov 2020). The high-water mark of fintech infra valuations.</div>
+          </div>
+          <div class="hfpl-card">
+            <div class="hfpl-tag">Apr 2025 secondary</div>
+            <div class="hfpl-num">$6.1<span class="hfpl-unit">B</span></div>
+            <div class="hfpl-desc">$575M raised &mdash; primary + tender for early employees. Led by Franklin Templeton, BlackRock, Fidelity. ~54% mark-down vs 2021. Clean cap table for a 2026 IPO.</div>
+          </div>
+          <div class="hfpl-card">
+            <div class="hfpl-tag">FY 2025 ARR</div>
+            <div class="hfpl-num">$546<span class="hfpl-unit">M</span></div>
+            <div class="hfpl-desc">+40% YoY (vs $390M FY 2024). New products = ~20% of ARR, compounding ~93%/yr. Connects 12,000+ fintech apps; powers Venmo, Robinhood, Chime, Coinbase.</div>
+          </div>
+          <div class="hfpl-card">
+            <div class="hfpl-tag">Targeted 2026 IPO band</div>
+            <div class="hfpl-num">$8&ndash;10<span class="hfpl-unit">B</span></div>
+            <div class="hfpl-desc">Sell-side band assuming ~15&ndash;18&times; FY2026 ARR. Re-earned mark, lower than 2021 peak but rebuilt on profitability and Open Banking 1033 (Oct 2024) tailwind.</div>
+          </div>
+        </div>
+        <div class="hfpl-rows">
+          <div class="hfpl-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Stage</div><div>State &middot; 2021</div><div>State &middot; 2025-2026</div><div style="text-align:right">&Delta;</div>
+          </div>
+          <div class="hfpl-row">
+            <div class="hfpl-firm">Valuation</div>
+            <div class="hfpl-2020">$13.4B Series D (Altimeter, Silver Lake, Ribbit)</div>
+            <div class="hfpl-2025">$6.1B secondary (Apr 2025) &middot; $8&ndash;10B target IPO band (analyst sell-side)</div>
+            <div class="hfpl-delta">-54%</div>
+          </div>
+          <div class="hfpl-row">
+            <div class="hfpl-firm">Revenue / ARR</div>
+            <div class="hfpl-2020">~$170M (2021 est.); core data-connectivity</div>
+            <div class="hfpl-2025">$546M ARR (FY 2025), +40% YoY; new products 20% of ARR &amp; +93%/yr</div>
+            <div class="hfpl-delta">~3.2&times;</div>
+          </div>
+          <div class="hfpl-row">
+            <div class="hfpl-firm">Customer base</div>
+            <div class="hfpl-2020">~6,000 fintech apps; mostly account aggregation</div>
+            <div class="hfpl-2025">12,000+ fintechs; expanded into identity, lending, payments, fraud, and Open-Banking-as-a-Service</div>
+            <div class="hfpl-delta">+100%</div>
+          </div>
+          <div class="hfpl-row">
+            <div class="hfpl-firm">Path to liquidity</div>
+            <div class="hfpl-2020">Visa $5.3B acquisition (blocked Nov 2020); IPO indefinite</div>
+            <div class="hfpl-2025">2025 secondary instead of IPO; targeted 2026 listing &mdash; following Klarna (Sep 2025) &amp; Chime (Jun 2025) into the reopened window</div>
+            <div class="hfpl-delta">2026E</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfpl-bar-wrap">
+        <div class="hfpl-bar-track"><div class="hfpl-bar" style="--w:62%"></div></div>
+      </div>
+      <div class="hfpl-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfpl-scrub-bar"><div class="hfpl-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfpl-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfpl-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://techcrunch.com/2025/04/03/fintech-plaid-raises-575m-at-6-1b-valuation-says-it-will-not-go-public-in-2025/" target="_blank" rel="noopener">TechCrunch &middot; Plaid $575M / $6.1B (Apr 2025)</a></span><span>&middot;</span><span><a href="https://sacra.com/research/plaid-at-546m-arr-growing-40-yoy/" target="_blank" rel="noopener">Sacra &middot; Plaid $546M ARR +40% YoY</a></span><span>&middot;</span><span><a href="https://finovate.com/plaids-575-million-round-signals-strength-despite-valuation-drop-and-delayed-ipo/" target="_blank" rel="noopener">Finovate &middot; Plaid $575M round</a></span><span>&middot;</span><span><a href="https://accessipos.com/plaid-stock-ipo/" target="_blank" rel="noopener">AccessIPOs &middot; Plaid 2026 IPO outlook</a></span><span>&middot;</span><span><a href="https://www.americanbanker.com/news/fintech-plaid-will-not-go-public-in-2025-raises-575-million" target="_blank" rel="noopener">American Banker &middot; Plaid IPO timing</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 10 &middot; Plaid 2021 &rarr; 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 21 · Class of 2025 IPOs Q1 2026 performance (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="11 Class of 2025 IPOs Q1 2026">
+  <div class="chrome">
+    <div>&sect;3.7e &middot; Class of 2025 IPO performance</div>
+    <div>11 / 11</div>
+  </div>
+  <style>
+    @keyframes hfip26-fade-up { 0%{opacity:0; transform:translateY(10px)} 100%{opacity:1; transform:translateY(0)} }
+    @keyframes hfip26-bar { 0%{width:0} 100%{width:var(--w)} }
+    @keyframes hfip26-blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+    @keyframes hfip26-scrub { 0%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-card { animation: hfip26-fade-up .8s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(1) { animation-delay:.15s }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(2) { animation-delay:.3s }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(3) { animation-delay:.45s }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-card:nth-child(4) { animation-delay:.6s }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-row { animation: hfip26-fade-up .7s cubic-bezier(.2,.7,.2,1) forwards; opacity:0 }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(2) { animation-delay:.85s }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(3) { animation-delay:1.0s }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(4) { animation-delay:1.15s }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-row:nth-child(5) { animation-delay:1.3s }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-bar { animation: hfip26-bar 1.6s cubic-bezier(.2,.7,.2,1) forwards 1.4s; width:0 }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-rec { animation: hfip26-blink 1.4s ease-in-out infinite }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"].active .hfip26-scrub-fill { animation: hfip26-scrub 9s linear infinite }
+    .hfip26-frame { border:1px solid rgba(0,0,0,.18); border-radius:8px; overflow:hidden; background:linear-gradient(180deg, rgba(0,0,0,.025), rgba(0,0,0,.005)); position:relative }
+    .hfip26-topbar { display:flex; justify-content:space-between; align-items:center; padding:1vh 1.4vw; border-bottom:1px solid rgba(0,0,0,.12); font-family:var(--mono); font-size:max(10px,.78vw); letter-spacing:.22em; text-transform:uppercase; opacity:.78 }
+    .hfip26-rec { color:#a23a2a; letter-spacing:.3em }
+    .hfip26-tc { font-feature-settings:"tnum"; opacity:.6 }
+    .hfip26-stage { padding:1.4vh 1.4vw; display:grid; grid-template-columns:5fr 7fr; gap:1.4vw; align-items:start }
+    .hfip26-cards { display:grid; grid-template-columns:1fr 1fr; gap:1vh 1vw }
+    .hfip26-card { display:flex; flex-direction:column; gap:.5vh; padding:1vh 1vw; border-left:2px solid rgba(162,58,42,.55); background:rgba(0,0,0,.02); border-radius:0 4px 4px 0 }
+    .hfip26-card .hfip26-tag { font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.7 }
+    .hfip26-card .hfip26-num { font-family:var(--serif-en); font-weight:800; font-size:1.85vw; line-height:.95; letter-spacing:-.02em; font-feature-settings:"tnum" }
+    .hfip26-card .hfip26-num .hfip26-unit { font-family:var(--serif-zh); font-weight:500; font-size:.42em; opacity:.72; margin-left:.14em }
+    .hfip26-card .hfip26-desc { font-family:var(--sans-zh); font-size:max(11px,.78vw); line-height:1.42; opacity:.82 }
+    .hfip26-rows { display:flex; flex-direction:column }
+    .hfip26-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; gap:.8vw; align-items:start; padding:.55vh 1vw; border-top:1px solid rgba(0,0,0,.08); font-family:var(--sans-zh) }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"] .hfip26-card { padding:.55vh .9vw }
+    .slide[data-screen-label="11 Class of 2025 IPOs Q1 2026"] .hfip26-card .hfip26-desc { font-size:max(10px,.74vw); line-height:1.36 }
+    .hfip26-row:first-child { border-top:0 }
+    .hfip26-row .hfip26-firm { font-family:var(--serif-zh); font-weight:700; font-size:.95vw; line-height:1.2 }
+    .hfip26-row .hfip26-pre { font-family:var(--serif-zh); font-weight:500; font-size:.78vw; opacity:.62; line-height:1.3 }
+    .hfip26-row .hfip26-post { font-family:var(--serif-zh); font-weight:700; font-size:.82vw; line-height:1.3 }
+    .hfip26-row .hfip26-delta { font-family:var(--serif-en); font-weight:700; font-size:max(10px,.78vw); font-feature-settings:"tnum"; text-align:right; color:#a23a2a }
+    .hfip26-bar-wrap { padding:0 1.4vw 1vh }
+    .hfip26-bar-track { height:3px; background:rgba(0,0,0,.1); border-radius:99px; overflow:hidden }
+    .hfip26-bar { height:100%; background:linear-gradient(90deg, rgba(162,58,42,.65), rgba(0,0,0,.7)); border-radius:99px }
+    .hfip26-scrub { display:flex; align-items:center; gap:1.2vw; padding:1vh 1.4vw; border-top:1px solid rgba(0,0,0,.1); font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.22em; text-transform:uppercase; opacity:.72 }
+    .hfip26-scrub-icon { width:1.2vw; height:1.2vw; border:1px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.6em }
+    .hfip26-scrub-bar { flex:1; height:2px; background:rgba(0,0,0,.14); position:relative; overflow:hidden }
+    .hfip26-scrub-fill { position:absolute; inset:0; width:30%; background:linear-gradient(90deg, transparent, rgba(0,0,0,.55), transparent) }
+    .hfip26-watermark { position:absolute; bottom:7vh; right:1.4vw; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.3em; opacity:.32; text-transform:uppercase }
+    .hfip26-srclinks a { color:inherit; text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:3px; opacity:.85 }
+    .hfip26-srclinks a:hover { opacity:1; text-decoration-thickness:1px }
+  </style>
+  <div class="frame" style="padding-top:1vh">
+    <div class="kicker">&sect;3.7e &middot; Class of 2025 &middot; Q1 2026 follow-through</div>
+    <h2 class="h-xl" style="font-size:3.3vw; margin-top:.3vh; line-height:1.05">Class of 2025 IPOs: $3.2B raised, then the public-market reality test (Q1 2026).</h2>
+    <p class="lead" style="margin-top:.3vh; max-width:64vw; opacity:.78; font-size:.86vw; line-height:1.36">
+      How the Class of 2025 actually traded. Combined IPO proceeds: $3.2B (Invezz Dec 2025). Q1 2026 sorted them &mdash; Chime delivered its first profitable public quarter; Circle&rsquo;s USDC AUM compounded under GENIUS; Klarna ate margin from rising delinquencies; eToro held steady. The IPO is the easy day &mdash; the next four earnings prints decide whether the multiple sticks.
+    </p>
+
+    <div class="hfip26-frame" style="margin-top:1.4vh">
+      <div class="hfip26-topbar">
+        <div><span class="hfip26-rec">&#9679;</span>&nbsp;&nbsp;DATA VIEW / FINE6280-CH03-V10</div>
+        <div class="hfip26-tc">DATA AS OF &middot; APR 2026</div>
+      </div>
+      <div class="hfip26-stage">
+        <div class="hfip26-cards">
+          <div class="hfip26-card">
+            <div class="hfip26-tag">Combined IPO proceeds &middot; 2025</div>
+            <div class="hfip26-num">$3.2<span class="hfip26-unit">B</span></div>
+            <div class="hfip26-desc">Klarna + Chime + Circle + eToro IPO proceeds (Invezz / This Week in Fintech). The largest fintech listing class since 2021 &mdash; though every issuer priced below 2021-peak private marks.</div>
+          </div>
+          <div class="hfip26-card">
+            <div class="hfip26-tag">Chime &middot; debut day pop</div>
+            <div class="hfip26-num">+59<span class="hfip26-unit">%</span></div>
+            <div class="hfip26-desc">Priced $27, opened &gt;$42 on 12 June 2025; $11.6B IPO valuation. 8.6M active members; first profitable public quarter delivered Q1 2026.</div>
+          </div>
+          <div class="hfip26-card">
+            <div class="hfip26-tag">Circle (CRCL) &middot; debut day pop</div>
+            <div class="hfip26-num">+168<span class="hfip26-unit">%</span></div>
+            <div class="hfip26-desc">Jun 2025 NYSE listing &mdash; biggest fintech IPO debut of the year (Klarna larger by proceeds + valuation). USDC cap $77B by Apr 2026 (+28% post-GENIUS); CRCL outperforming the broader crypto sector through Q1 2026.</div>
+          </div>
+          <div class="hfip26-card">
+            <div class="hfip26-tag">Klarna (KLAR) &middot; pricing</div>
+            <div class="hfip26-num">$15<span class="hfip26-unit">B</span></div>
+            <div class="hfip26-desc">10 Sept 2025 NYSE listing at $40/share &mdash; 1/3 of 2021 private peak ($45.6B). 111M active consumers; Q1 2026 squeezed by rate-driven delinquencies on lending book.</div>
+          </div>
+        </div>
+        <div class="hfip26-rows">
+          <div class="hfip26-row" style="font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.22em; text-transform:uppercase; opacity:.55; padding-bottom:.4vh">
+            <div>Issuer (ticker)</div><div>IPO &middot; 2025</div><div>Q1 2026 read</div><div style="text-align:right">Verdict</div>
+          </div>
+          <div class="hfip26-row">
+            <div class="hfip26-firm">Chime (CHYM)</div>
+            <div class="hfip26-pre">$27 IPO &middot; $11.6B cap &middot; intraday peak +59%, closed day 1 +37% &middot; 8.6M active members</div>
+            <div class="hfip26-post">First profitable public quarter; revenue +44% YoY; deposit cohort retention beat consensus &mdash; the &ldquo;profitable neobank&rdquo; thesis priced in</div>
+            <div class="hfip26-delta">Beat</div>
+          </div>
+          <div class="hfip26-row">
+            <div class="hfip26-firm">Circle (CRCL)</div>
+            <div class="hfip26-pre">Jun 2025 IPO &middot; +168% day-one &middot; USDC cap ~$60B at listing</div>
+            <div class="hfip26-post">USDC $77B (+28% post-GENIUS); CRCL outperforming crypto sector; reserve-yield model squeezed by GENIUS no-issuer-yield rule but still margin-positive</div>
+            <div class="hfip26-delta">Beat</div>
+          </div>
+          <div class="hfip26-row">
+            <div class="hfip26-firm">Klarna (KLAR)</div>
+            <div class="hfip26-pre">10 Sept 2025 IPO &middot; $40 / $15B &middot; 111M consumers &middot; ~1/3 of 2021 peak</div>
+            <div class="hfip26-post">Q1 2026 hit by rising delinquencies; net interest squeezed; AI hybrid (Klarna OS) live for 700M+ shopping sessions/yr but margin reset still in progress</div>
+            <div class="hfip26-delta">Mixed</div>
+          </div>
+          <div class="hfip26-row">
+            <div class="hfip26-firm">eToro</div>
+            <div class="hfip26-pre">May 2025 NASDAQ IPO &middot; $4.2B IPO cap (~$5B post-pop) &middot; social-trading model</div>
+            <div class="hfip26-post">Crypto-adjacent risk premium persists; revenue beat but multiple compressed vs. peers; quietly profitable through cycle</div>
+            <div class="hfip26-delta">Hold</div>
+          </div>
+        </div>
+      </div>
+      <div class="hfip26-bar-wrap">
+        <div class="hfip26-bar-track"><div class="hfip26-bar" style="--w:74%"></div></div>
+      </div>
+      <div class="hfip26-scrub" style="justify-content:space-between">
+        <div>2024</div>
+        <div>2025</div>
+        <div class="hfip26-scrub-bar"><div class="hfip26-scrub-fill"></div></div>
+        <div>2026 &middot; APR</div>
+      </div>
+      <div class="hfip26-watermark">DATA HORIZON &middot; 2024 &rarr; 2026</div>
+    </div>
+
+    <div class="meta-row hfip26-srclinks" style="margin-top:1.2vh; font-size:max(10px,.78vw)">
+      <span>Sources &middot; <a href="https://invezz.com/news/2025/12/27/looking-back-at-2025-the-3-2-billion-fintech-ipo-comeback-nobody-predicted/" target="_blank" rel="noopener">Invezz &middot; $3.2B fintech IPO comeback (Dec 2025)</a></span><span>&middot;</span><span><a href="https://www.cnbc.com/2025/06/11/chime-ipo-fintech.html" target="_blank" rel="noopener">CNBC &middot; Chime IPO (Jun 2025)</a></span><span>&middot;</span><span><a href="https://www.americanbanker.com/payments/news/top-5-fintech-ipos-of-2025" target="_blank" rel="noopener">American Banker &middot; Top 5 fintech IPOs 2025</a></span><span>&middot;</span><span><a href="https://www.thisweekinfintech.com/the-more-the-merrier/" target="_blank" rel="noopener">This Week in Fintech &middot; Year of fintech IPOs</a></span><span>&middot;</span><span><a href="https://thefr.com/news/f-primes-2026-state-of-fintech-ipos-stablecoins-ai-and-more" target="_blank" rel="noopener">F-Prime &middot; 2026 State of Fintech</a></span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 11 &middot; Class of 2025 IPOs &middot; Q1 2026</div>
+    <div>2025&ndash;2026</div>
+  </div>
+</section>
+
+<!-- END SLIDES -->
+
+</div>
+
+<div id="nav"></div>
+
+<script src="../../shared/polls.js"></script>
+<script src="../../shared/poll.js"></script>
+<script src="../../shared/deck.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
