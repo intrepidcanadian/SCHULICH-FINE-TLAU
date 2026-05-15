@@ -132,13 +132,13 @@ let idx=0,total=slides.length,lock=false;
   a.innerHTML='← Home';
   a.style.cssText='position:fixed;top:1.6vh;left:1.6vw;z-index:30;'+
     'font-family:var(--mono,"IBM Plex Mono",monospace);font-size:max(10px,.72vw);'+
-    'letter-spacing:.18em;text-transform:uppercase;color:currentColor;opacity:.7;'+
-    'text-decoration:none;padding:.55vh .95vw;border:1px solid currentColor;'+
-    'border-radius:3px;background:rgba(127,127,127,.12);'+
-    'backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);'+
-    'transition:opacity .25s ease, background .25s ease';
-  a.onmouseenter=()=>{a.style.opacity='1';a.style.background='rgba(127,127,127,.22)';};
-  a.onmouseleave=()=>{a.style.opacity='.7';a.style.background='rgba(127,127,127,.12)';};
+    'letter-spacing:.18em;text-transform:uppercase;'+
+    'color:#f4f1eb;background:#0a0a14;'+
+    'text-decoration:none;padding:.6vh 1vw;border:1px solid rgba(255,255,255,.18);'+
+    'border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.35);'+
+    'transition:background .2s ease, transform .2s ease';
+  a.onmouseenter=()=>{a.style.background='#1a1a2e';a.style.transform='translateY(-1px)';};
+  a.onmouseleave=()=>{a.style.background='#0a0a14';a.style.transform='translateY(0)';};
   document.body.appendChild(a);
 })();
 
