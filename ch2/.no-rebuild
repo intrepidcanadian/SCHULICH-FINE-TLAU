@@ -1,0 +1,1 @@
+Locked-split: ch2 main deck is curated to 15 slides (01-14 + closing). Appendix lives at ch2/appendix/. Running build.py would re-inflate ch2/index.html to all 26 partials in slides/, undoing the curated split. Delete this file only if you intend to abandon the locked-appendix architecture.

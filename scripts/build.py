@@ -29,11 +29,21 @@ END = "<!-- END SLIDES -->"
 def build_chapter(chapter_dir: Path) -> None:
     index_path = chapter_dir / "index.html"
     slides_dir = chapter_dir / "slides"
+    no_rebuild = chapter_dir / ".no-rebuild"
 
     if not index_path.exists():
         raise SystemExit(f"missing {index_path}")
     if not slides_dir.is_dir():
         raise SystemExit(f"missing {slides_dir}")
+
+    if no_rebuild.exists():
+        # Chapter is locked: index.html is hand-curated (e.g. locked-appendix
+        # split) and must not be regenerated from the full slides/*.html glob,
+        # which would re-inflate the curated deck back to the union of partials.
+        # See HYPERFRAMES.md "Locked-split topology" for the rationale.
+        reason = no_rebuild.read_text(encoding="utf-8").strip().splitlines()[0] if no_rebuild.stat().st_size else "locked"
+        print(f"  {chapter_dir.name}: SKIPPED (.no-rebuild present — {reason})")
+        return
 
     partials = sorted(p for p in slides_dir.glob("*.html"))
     if not partials:

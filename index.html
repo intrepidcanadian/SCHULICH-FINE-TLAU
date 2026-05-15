@@ -41,11 +41,17 @@
   }
   .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:2rem;
+    grid-template-columns:repeat(4,1fr);
+    gap:1.6rem;
     margin-top:4rem;
-    max-width:1100px;
+    max-width:1280px;
     width:100%;
+  }
+  @media (max-width:980px){
+    .cards{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .cards{grid-template-columns:1fr;}
   }
   .card{
     background:rgba(255,255,255,.06);
@@ -96,6 +102,35 @@
   .card.locked .card-arrow{
     opacity:.3;
   }
+  .section-label{
+    margin-top:3.5rem;
+    width:100%;
+    max-width:1100px;
+    display:flex;
+    align-items:center;
+    gap:1.2rem;
+    font-size:.75rem;
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent-light);
+    opacity:.55;
+  }
+  .section-label::before,
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:rgba(255,255,255,.12);
+  }
+  .cards.appendix{
+    margin-top:1.5rem;
+    grid-template-columns:repeat(2,1fr);
+    max-width:1280px;
+  }
+  @media (max-width:560px){
+    .cards.appendix{grid-template-columns:1fr;}
+  }
   .footer{
     margin-top:5rem;
     font-size:.8rem;
@@ -118,35 +153,39 @@
       <div class="card-desc">Fintech 1.0&ndash;3.0, eight categories, four firm types, the fintech lens, ten core technologies, the fintech ecosystem, and financial inclusion as the closing societal frame.</div>
       <div class="card-arrow">&rarr; View slides</div>
     </a>
-    <a href="ch1/appendix/" class="card locked">
-      <div class="card-num">Ch 1 Appendix &middot; 12 slides &middot; Locked</div>
-      <div class="card-title">2024&ndash;2026 Data Updates</div>
-      <div class="card-desc">Hyperframe data cards on the fourth wave, stablecoins, RWAs, agentic rails, capital rebound, hubs 2020&rarr;2025, stablecoin rules, bank GenAI 2023&rarr;2025, BNPL 2020&rarr;2025, real-time rails 2023&rarr;2026, spot crypto ETFs 2024&rarr;2026, cross-border B2B stablecoins, the GENIUS-era stablecoin market, and the in-class live poll.</div>
-      <div class="card-arrow">&middot; Reference only</div>
-    </a>
     <a href="ch2/" class="card">
       <div class="card-num">Chapter 2 &middot; 15 slides</div>
       <div class="card-title">Theories &amp; Business Models</div>
       <div class="card-desc">Multidisciplinary lens, financial intermediation (five dimensions), the 2% intermediation puzzle, Christensen&rsquo;s disruption theory, Pisano&rsquo;s innovation landscape, one- vs multi-sided business models, network effects, agency vs principal monetisation, McKinsey&rsquo;s four signs of vulnerability, and the closing synthesis.</div>
       <div class="card-arrow">&rarr; View slides</div>
     </a>
-    <a href="ch2/appendix/" class="card locked">
-      <div class="card-num">Ch 2 Appendix &middot; 11 slides &middot; Locked</div>
-      <div class="card-title">2024&ndash;2026 Data Updates</div>
-      <div class="card-desc">Hyperframe slides on AI agents, agentic commerce, embedded finance, the 2% puzzle revisited 2015&rarr;2025, agent-sided MSP evolution, broker-revenue mix shift, P2P payments, Open Banking Rule 1033, Klarna AI hybrid, Robo-Advisor 2.0, and embedded finance YoY.</div>
-      <div class="card-arrow">&middot; Reference only</div>
-    </a>
-    <a href="ch3/" class="card locked">
-      <div class="card-num">Chapter 3 &middot; Locked</div>
+    <a href="ch3/" class="card">
+      <div class="card-num">Chapter 3 &middot; 22 slides</div>
       <div class="card-title">Funding Fintech Start-Ups</div>
       <div class="card-desc">Growth stages, the valley of death, angel investing, VC method (TAM/SAM/SOM), SAFEs &amp; convertible notes, IPO performance, cap tables, the reopened 2025 IPO window, YC fintech 2014&rarr;2025, Wealthsimple/Stripe/Nubank arcs, AI-native fintech 2023&rarr;2025, tender-offer secondaries 2024&rarr;2026, the Plaid down-round to IPO arc, and the class of 2025 IPOs through Q1 2026.</div>
-      <div class="card-arrow">&middot; Coming soon</div>
+      <div class="card-arrow">&rarr; View slides</div>
     </a>
-    <a href="ch4/" class="card locked">
-      <div class="card-num">Chapter 4 &middot; Locked</div>
+    <a href="ch4/" class="card">
+      <div class="card-num">Chapter 4 &middot; 23 slides</div>
       <div class="card-title">Valuation of Fintech Companies</div>
       <div class="card-desc">Angel valuation (Payne Scorecard, Berkus, RFS), VC method, market multiples (EV/Sales, EV/EBITDA, P/E), DCF, ARK adjusted EBITDA, bank valuation, tokenized RWA, fintech multiples 2025, multiples reset 2023&rarr;2025, AI-native premium, public-fintech sector reset 2021&rarr;2025, corporate BTC treasuries, Circle IPO 2025, bank vs neobank multiples 2023&rarr;2026, and the public-fintech profitability inflection Q1 2026.</div>
-      <div class="card-arrow">&middot; Coming soon</div>
+      <div class="card-arrow">&rarr; View slides</div>
+    </a>
+  </div>
+
+  <div class="section-label">Appendix &middot; 2024&ndash;2026 Data Updates &middot; Reference only</div>
+  <div class="cards appendix">
+    <a href="ch1/appendix/" class="card locked">
+      <div class="card-num">Ch 1 Appendix &middot; 12 slides &middot; Locked</div>
+      <div class="card-title">Fourth Wave 2024&ndash;2026</div>
+      <div class="card-desc">Hyperframe data cards on the fourth wave, stablecoins, RWAs, agentic rails, capital rebound, hubs 2020&rarr;2025, stablecoin rules, bank GenAI 2023&rarr;2025, BNPL 2020&rarr;2025, real-time rails 2023&rarr;2026, spot crypto ETFs 2024&rarr;2026, cross-border B2B stablecoins, the GENIUS-era stablecoin market, and the in-class live poll.</div>
+      <div class="card-arrow">&middot; Reference only</div>
+    </a>
+    <a href="ch2/appendix/" class="card locked">
+      <div class="card-num">Ch 2 Appendix &middot; 11 slides &middot; Locked</div>
+      <div class="card-title">AI &amp; Embedded Finance 2024&ndash;2026</div>
+      <div class="card-desc">Hyperframe slides on AI agents, agentic commerce, embedded finance, the 2% puzzle revisited 2015&rarr;2025, agent-sided MSP evolution, broker-revenue mix shift, P2P payments, Open Banking Rule 1033, Klarna AI hybrid, Robo-Advisor 2.0, and embedded finance YoY.</div>
+      <div class="card-arrow">&middot; Reference only</div>
     </a>
   </div>
 

@@ -51,6 +51,14 @@ Renumber slides: rename the files. Filename order = slide order.
   the `<!-- BEGIN SLIDES -->` / `<!-- END SLIDES -->` markers. Idempotent;
   prints "unchanged" when there's nothing to do. Pass chapter names as args
   to scope it.
+
+  **`.no-rebuild` guard**: if a chapter directory contains a `.no-rebuild`
+  file, `build.py` skips that chapter and prints the first line of the file
+  as the skip reason. `ch1/` and `ch2/` ship with this marker because their
+  `index.html` is curated to a 12-slide / 15-slide locked-appendix split
+  (with the remaining partials surfaced via `chN/appendix/index.html`).
+  Without the guard, `build.py` would re-inflate them to the full 24 / 26
+  partial set, undoing the split. See `HYPERFRAMES.md` for the rationale.
 - `split.py` — one-time bootstrap. Reads each chapter's `index.html`, peels
   out every slide into `slides/NN-slug.html`, and replaces the slide region
   with the build markers. Already run once during the migration; you should
