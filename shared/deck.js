@@ -120,6 +120,28 @@ const slides=deck.querySelectorAll('.slide');
 const nav=document.getElementById('nav');
 let idx=0,total=slides.length,lock=false;
 
+// =============== Back-to-landing link ===============
+// Sits fixed in the top-left. Relative href so it works both at
+// /chN/ (one level deep) and /chN/appendix/ (two levels deep).
+(function injectBackLink(){
+  // Count path depth: '/ch1/' -> 1, '/ch1/appendix/' -> 2, etc.
+  const segs=location.pathname.replace(/\/[^/]*$/,'/').split('/').filter(Boolean);
+  const href=('../'.repeat(segs.length))||'./';
+  const a=document.createElement('a');
+  a.id='back-home';a.href=href;a.setAttribute('aria-label','Back to course landing');
+  a.innerHTML='← Home';
+  a.style.cssText='position:fixed;top:1.6vh;left:1.6vw;z-index:30;'+
+    'font-family:var(--mono,"IBM Plex Mono",monospace);font-size:max(10px,.72vw);'+
+    'letter-spacing:.18em;text-transform:uppercase;color:currentColor;opacity:.7;'+
+    'text-decoration:none;padding:.55vh .95vw;border:1px solid currentColor;'+
+    'border-radius:3px;background:rgba(127,127,127,.12);'+
+    'backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);'+
+    'transition:opacity .25s ease, background .25s ease';
+  a.onmouseenter=()=>{a.style.opacity='1';a.style.background='rgba(127,127,127,.22)';};
+  a.onmouseleave=()=>{a.style.opacity='.7';a.style.background='rgba(127,127,127,.12)';};
+  document.body.appendChild(a);
+})();
+
 // 关键：矫正 deck 宽度为 total * 100vw，否则翻页会错位
 deck.style.width=(total*100)+'vw';
 
