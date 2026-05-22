@@ -71,6 +71,7 @@
     transform:translateY(-4px);
     box-shadow:0 12px 40px rgba(74,111,165,.2);
   }
+  a.card{display:flex;}
   .card-num{
     font-size:.85rem;
     font-weight:600;
@@ -93,6 +94,28 @@
     font-size:.85rem;
     color:var(--accent-light);
     opacity:.7;
+  }
+  .card-links{
+    margin-top:auto;
+    display:flex;
+    gap:1.2rem;
+    align-items:center;
+    font-size:.85rem;
+  }
+  .card-links a{
+    color:var(--accent-light);
+    text-decoration:none;
+    opacity:.7;
+    transition:opacity .2s;
+  }
+  .card-links a:hover{
+    opacity:1;
+    text-decoration:underline;
+  }
+  .card-links .sep{
+    width:1px;
+    height:1em;
+    background:rgba(255,255,255,.2);
   }
   .card.locked{
     pointer-events:none;
@@ -147,30 +170,46 @@
   </div>
 
   <div class="cards">
-    <a href="ch1/" class="card">
+    <div class="card">
       <div class="card-num">Chapter 1 &middot; 12 slides</div>
       <div class="card-title">Introduction to Fintech</div>
       <div class="card-desc">Fintech 1.0&ndash;3.0, eight categories, four firm types, the fintech lens, ten core technologies, the fintech ecosystem, and financial inclusion as the closing societal frame.</div>
-      <div class="card-arrow">&rarr; View slides</div>
-    </a>
-    <a href="ch2/" class="card">
+      <div class="card-links">
+        <a href="ch1/">&rarr; View slides</a>
+        <div class="sep"></div>
+        <a href="pdf/ch1-slides.pdf" download>&darr; PDF</a>
+      </div>
+    </div>
+    <div class="card">
       <div class="card-num">Chapter 2 &middot; 15 slides</div>
       <div class="card-title">Theories &amp; Business Models</div>
       <div class="card-desc">Multidisciplinary lens, financial intermediation (five dimensions), the 2% intermediation puzzle, Christensen&rsquo;s disruption theory, Pisano&rsquo;s innovation landscape, one- vs multi-sided business models, network effects, agency vs principal monetisation, McKinsey&rsquo;s four signs of vulnerability, and the closing synthesis.</div>
-      <div class="card-arrow">&rarr; View slides</div>
-    </a>
-    <a href="ch3/" class="card">
+      <div class="card-links">
+        <a href="ch2/">&rarr; View slides</a>
+        <div class="sep"></div>
+        <a href="pdf/ch2-slides.pdf" download>&darr; PDF</a>
+      </div>
+    </div>
+    <div class="card">
       <div class="card-num">Chapter 3 &middot; 11 slides</div>
       <div class="card-title">Funding Fintech Start-Ups</div>
       <div class="card-desc">Growth stages, the valley of death, angel investing, the Wealthsimple case study, the Series A&ndash;F path, VC method (TAM/SAM/SOM), IPO performance, financial securities (SAFE, convertible note, preferred, common, venture debt), cap tables and dilution arithmetic, and the closing synthesis.</div>
-      <div class="card-arrow">&rarr; View slides</div>
-    </a>
-    <a href="ch4/" class="card">
+      <div class="card-links">
+        <a href="ch3/">&rarr; View slides</a>
+        <div class="sep"></div>
+        <a href="pdf/ch3-slides.pdf" download>&darr; PDF</a>
+      </div>
+    </div>
+    <div class="card">
       <div class="card-num">Chapter 4 &middot; 12 slides</div>
       <div class="card-title">Valuation of Fintech Companies</div>
       <div class="card-desc">The art of valuation (Zopa), four steps in valuation (Fig 4.1), angel valuation (Payne Scorecard, Berkus, RFS), VC method, market multiples (EV/Sales, EV/EBITDA, P/E), DCF, ARK adjusted EBITDA, bank valuation (JPMorgan), fintech-multiples comparison, and the closing synthesis.</div>
-      <div class="card-arrow">&rarr; View slides</div>
-    </a>
+      <div class="card-links">
+        <a href="ch4/">&rarr; View slides</a>
+        <div class="sep"></div>
+        <a href="pdf/ch4-slides.pdf" download>&darr; PDF</a>
+      </div>
+    </div>
   </div>
 
   <div class="section-label">Appendix &middot; 2024&ndash;2026 Data Updates &middot; Reference only</div>
