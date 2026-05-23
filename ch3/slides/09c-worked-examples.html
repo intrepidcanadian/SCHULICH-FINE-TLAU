@@ -1,0 +1,105 @@
+<!-- ============================================================
+     SLIDE 09c · Worked Examples: Valuation Cap, Discount, Acquisition (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="09c Worked Examples">
+  <div class="chrome">
+    <div>&sect;3.8c &middot; Worked examples</div>
+    <div>11 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Pre-money &amp; post-money &middot; conversion mechanics</div>
+    <h2 class="h-xl" style="font-size:4.2vw">Three worked examples.</h2>
+    <p class="lead" style="margin-top:.8vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      How do valuation caps and conversion discounts translate into shares? These examples from the textbook walk through the arithmetic that determines what early investors actually receive.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.6vw; margin-top:1.4vh; align-items:start">
+
+      <!-- Example 1: Valuation Cap -->
+      <div style="display:flex; flex-direction:column; gap:.6vh; border:1px solid rgba(10,31,61,.12); border-radius:8px; padding:1.4vh 1.2vw; background:rgba(10,31,61,.03)">
+        <div style="font-family:var(--mono);font-size:max(10px,.72vw);letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#4a6fa5)">Example 1 &middot; Valuation Cap</div>
+        <div style="font-size:max(14px,1.2vw);font-weight:700;line-height:1.2">SAFE with a $5M cap</div>
+        <div style="font-size:max(11px,.88vw);line-height:1.55;opacity:.8">
+          Investor buys a <strong>SAFE for $100K</strong> with a $5M valuation cap. Series A raises $1M at a $10M pre-money valuation. 1M shares outstanding.
+        </div>
+        <div style="display:flex; flex-direction:column; gap:.3vh; margin-top:.3vh">
+          <div style="font-size:max(11px,.82vw);line-height:1.5;font-family:var(--mono);letter-spacing:.02em">
+            Series A price = $10M &divide; 1M = <strong>$10.00</strong>
+          </div>
+          <div style="font-size:max(11px,.82vw);line-height:1.5;font-family:var(--mono);letter-spacing:.02em">
+            SAFE price = ($5M/$10M) &times; $10 = <strong>$5.00</strong>
+          </div>
+          <div style="font-size:max(11px,.82vw);line-height:1.5;font-family:var(--mono);letter-spacing:.02em">
+            Shares = $100K &divide; $5.00 = <strong>20,000</strong>
+          </div>
+        </div>
+        <div style="margin-top:.4vh; padding:.6vh .8vw; background:rgba(10,31,61,.06); border-radius:4px">
+          <div style="font-size:max(11px,.82vw);line-height:1.5">
+            Post-money shares: 1,120,000<br>
+            Post-money valuation: <strong>$11.2M</strong>
+          </div>
+        </div>
+        <div style="font-size:max(10px,.72vw);opacity:.5;margin-top:.2vh">The cap gives the SAFE holder a 50% discount on Series A price.</div>
+      </div>
+
+      <!-- Example 2: Conversion Discount -->
+      <div style="display:flex; flex-direction:column; gap:.6vh; border:1px solid rgba(10,31,61,.12); border-radius:8px; padding:1.4vh 1.2vw; background:rgba(10,31,61,.03)">
+        <div style="font-family:var(--mono);font-size:max(10px,.72vw);letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#4a6fa5)">Example 2 &middot; Conversion Discount</div>
+        <div style="font-size:max(14px,1.2vw);font-weight:700;line-height:1.2">Convertible note at 80% discount</div>
+        <div style="font-size:max(11px,.88vw);line-height:1.55;opacity:.8">
+          Investor buys a <strong>convertible note for $20K</strong> with an 80% conversion discount. Series A raises $400K at $2M pre-money. 10M shares outstanding.
+        </div>
+        <div style="display:flex; flex-direction:column; gap:.3vh; margin-top:.3vh">
+          <div style="font-size:max(11px,.82vw);line-height:1.5;font-family:var(--mono);letter-spacing:.02em">
+            Series A price = $2M &divide; 10M = <strong>$0.20</strong>
+          </div>
+          <div style="font-size:max(11px,.82vw);line-height:1.5;font-family:var(--mono);letter-spacing:.02em">
+            Conv. price = 80% &times; $0.20 = <strong>$0.16</strong>
+          </div>
+          <div style="font-size:max(11px,.82vw);line-height:1.5;font-family:var(--mono);letter-spacing:.02em">
+            Shares = $20K &divide; $0.16 = <strong>125,000</strong>
+          </div>
+        </div>
+        <div style="margin-top:.4vh; padding:.6vh .8vw; background:rgba(10,31,61,.06); border-radius:4px">
+          <div style="font-size:max(11px,.82vw);line-height:1.5">
+            Post-money shares: 12,125,000<br>
+            Post-money valuation: <strong>$2.425M</strong>
+          </div>
+        </div>
+        <div style="font-size:max(10px,.72vw);opacity:.5;margin-top:.2vh">The 20% discount rewards early risk-taking vs. Series A investors.</div>
+      </div>
+
+      <!-- Example 3: Acquisition with SAFE -->
+      <div style="display:flex; flex-direction:column; gap:.6vh; border:1px solid rgba(10,31,61,.12); border-radius:8px; padding:1.4vh 1.2vw; background:rgba(10,31,61,.03)">
+        <div style="font-family:var(--mono);font-size:max(10px,.72vw);letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#4a6fa5)">Example 3 &middot; Acquisition Exit</div>
+        <div style="font-size:max(14px,1.2vw);font-weight:700;line-height:1.2">SAFE at acquisition ($50M offer)</div>
+        <div style="font-size:max(11px,.88vw);line-height:1.55;opacity:.8">
+          Same <strong>$100K SAFE</strong> with a $5M cap. A strategic buyer offers $50M. 11.5M shares outstanding.
+        </div>
+        <div style="display:flex; flex-direction:column; gap:.3vh; margin-top:.3vh">
+          <div style="font-size:max(11px,.82vw);line-height:1.5;font-family:var(--mono);letter-spacing:.02em">
+            Buyer price = $50M &divide; 11.5M = <strong>$4.348</strong>
+          </div>
+          <div style="font-size:max(11px,.82vw);line-height:1.5;font-family:var(--mono);letter-spacing:.02em">
+            SAFE price = ($5M/$50M) &times; $4.348 = <strong>$0.870</strong>
+          </div>
+          <div style="font-size:max(11px,.82vw);line-height:1.5;font-family:var(--mono);letter-spacing:.02em">
+            Shares = $100K &divide; $0.870 = <strong>115,008</strong>
+          </div>
+        </div>
+        <div style="margin-top:.4vh; padding:.6vh .8vw; background:rgba(10,31,61,.06); border-radius:4px">
+          <div style="font-size:max(11px,.82vw);line-height:1.5">
+            Value to SAFE holder: <strong>$500,000</strong><br>
+            Money-on-money: <strong>5.0&times;</strong>
+          </div>
+        </div>
+        <div style="font-size:max(10px,.72vw);opacity:.5;margin-top:.2vh">$100K &rarr; $500K in a $50M exit &mdash; the cap protects early investors.</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 11 &middot; Worked examples &mdash; conversion mechanics</div>
+    <div>Valuation cap / Discount / Acquisition</div>
+  </div>
+</section>
