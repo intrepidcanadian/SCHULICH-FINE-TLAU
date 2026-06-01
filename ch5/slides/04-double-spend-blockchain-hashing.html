@@ -1,0 +1,77 @@
+<!-- ============================================================
+     SLIDE 04 · Double-Spend, Blockchain & Hashing (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04 Double-Spend & Blockchain">
+  <div class="chrome">
+    <div>&sect;5.2 &middot; The double-spend problem &middot; SHA-256</div>
+    <div>04 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2.4vh">
+    <div class="kicker">Hashing &middot; cryptographic foundation</div>
+    <h2 class="h-xl" style="font-size:4vw">Solving the double-spend problem.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      Earlier digital monies failed because no one could verify a coin had not already been spent &mdash; without a central mint. Satoshi&rsquo;s solution: a time-stamped distributed ledger secured by cryptographic hashing.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.6vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Blockchain</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Distributed public ledger</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Transactions batched into 1&nbsp;MB blocks every ~10 minutes. Each block: timestamp, prev-block hash, transactions, nonce. Append-only, immutable, transparent.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Hashing &middot; SHA-256</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">One-way fingerprint</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Maps data of any size to a 256-bit string. Identical input &rArr; identical hash. Cannot be inverted with current computing power. Quantum computing threatens this.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Pseudo-anonymity</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Public + private keys</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Owner identified by hashed public key (digital address). Private key unlocks transfers. Real-life identity hidden but traceable.</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+          <div class="pipeline-label" style="margin-bottom:.8vh">Five Building Blocks of Bitcoin</div>
+          <div class="pipeline" data-cols="3" style="gap:.8vw">
+            <div class="step">
+              <div class="step-nb">01 &middot; Blockchain</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Distributed public ledger. Pages of transactions chained by hashes.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">02 &middot; Hashing</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">SHA-256 secures, compresses &amp; chains blocks.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">03 &middot; P2P</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">46,000+ nodes (2023) running Bitcoin Core software.</div>
+            </div>
+          </div>
+          <div class="pipeline" data-cols="3" style="gap:.8vw; margin-top:.6vh">
+            <div class="step">
+              <div class="step-nb">04 &middot; Keys</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Public &amp; private. Cryptographic proof of ownership.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">05 &middot; Script</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Programming language to execute send / receive actions.</div>
+            </div>
+            <div class="step" style="opacity:.55">
+              <div class="step-nb">&middot; Consensus</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Proof-of-work mining randomly selects who appends the next block.</div>
+            </div>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:.2vh; padding:.8vh 1.2vw; font-size:max(11px,.88vw); line-height:1.45">
+          Throughput: ~1,500 transactions per 10-min block = <strong>2.5 TPS</strong> &middot; vs. VISA up to 24,000 TPS. Block size capped at 1&nbsp;MB.
+          <div class="callout-src" style="margin-top:.6vh">&mdash; Fintech Explained, Ch. 5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; Double-spend &middot; Blockchain &middot; Hashing</div>
+    <div>SHA-256 &middot; 2.5 TPS &middot; 1&nbsp;MB blocks</div>
+  </div>
+</section>

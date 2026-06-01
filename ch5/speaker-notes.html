@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5: Bitcoin, Blockchain &amp; Cryptocurrencies &mdash; Speaker Notes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #0a1f3d;
+  }
+  .subtitle {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #0a1f3d;
+  }
+  .slide-block {
+    margin-bottom: 2.2rem;
+    padding: 1.4rem 1.6rem;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #0a1f3d;
+    border-radius: 3px;
+    page-break-inside: avoid;
+  }
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.8rem;
+  }
+  .slide-number {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0a1f3d;
+    background: #e8edf4;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+  }
+  .slide-time {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+  }
+  .slide-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.7rem;
+  }
+  .notes ul {
+    margin: 0;
+    padding-left: 1.4rem;
+  }
+  .notes li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .transition {
+    margin-top: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed #ccc;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.82rem;
+    color: #666;
+    font-style: italic;
+  }
+  .total-time {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #555;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #e8edf4;
+    border-radius: 4px;
+  }
+  @media print {
+    body { padding: 1cm; font-size: 10pt; max-width: none; }
+    .slide-block { border: 1px solid #ccc; box-shadow: none; page-break-inside: avoid; }
+    .total-time { background: #eee; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .slide-block { padding: 1rem; }
+    .slide-header { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Chapter 5: Bitcoin, Blockchain &amp; Cryptocurrencies &mdash; Speaker Notes</h1>
+<p class="subtitle">FINE 6280 &middot; Fintech &middot; Schulich School of Business &middot; Graduate Seminar &middot; Lecture 05 of 14<br>
+Target duration: ~55 minutes &middot; 13 slides (core textbook material).</p>
+
+<!-- SLIDE 01 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 01</span>
+    <span class="slide-time">~2 min</span>
+  </div>
+  <div class="slide-title">Cover &mdash; Bitcoin, Blockchain, and Cryptocurrencies</div>
+  <div class="notes">
+    <ul>
+      <li>Welcome the class. Frame the session: Chapter 4 valued fintechs using DCF and multiples. Today we shift to a category that breaks those tools &mdash; cryptoassets with no cash flows and no balance sheet.</li>
+      <li>Preview the arc: Satoshi&rsquo;s double-spend solution &rarr; PoW mining &rarr; altcoins &rarr; ICOs &rarr; wallets &amp; exchanges &rarr; FTX collapse &rarr; CBDCs &rarr; what the research actually says about returns.</li>
+      <li>Opening question: &ldquo;If you had bought one bitcoin in 2010 at $0.06 and held to the 2021 peak of $69K, what is your return?&rdquo; (Roughly 1,150,000x &mdash; over a million-fold.) Then ask: &ldquo;Would you have held?&rdquo;</li>
+      <li>Housekeeping: ~55&ndash;75 min. Pause for questions after PoW (slide 5), after FTX (slide 9), and at the end.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Let&rsquo;s start with what cryptoassets actually are &mdash; and why economists care.&rdquo;</div>
+</div>
+
+<!-- SLIDE 02 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 02</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Cryptoeconomics &amp; Caveat Emptor</div>
+  <div class="notes">
+    <ul>
+      <li>Define cryptoasset: a digital asset whose ownership is on a distributed ledger and secured by cryptography. Etymology: <em>kryptos</em> = hidden. Ancient Egyptians used ciphers.</li>
+      <li>Walk through the four token flavors: utility (BAT), security (digital common stock), governance (Maker), NFT (non-divisible art/media). Stress that token is an umbrella term &mdash; covers many shapes.</li>
+      <li>Market context: $1.3T (Apr 2023) down from $2.0T (year-end 2021). Crypto winters are recurring &mdash; this is not the first or the last.</li>
+      <li>Behavioral angle: FOMO drives top-tick buying. Caveat emptor &mdash; informed consent matters in a market with no investor protection regime.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;The asset class begins with one coin. Why did Satoshi build it &mdash; and how?&rdquo;</div>
+</div>
+
+<!-- SLIDE 03 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 03</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Bitcoin &amp; Crypto Winters</div>
+  <div class="notes">
+    <ul>
+      <li>Origin: nine-page whitepaper, October 2008. Bitcoin launched January 2009. Satoshi&rsquo;s genesis block references the Times headline &ldquo;Chancellor on Brink of Second Bailout for Banks&rdquo; &mdash; a political statement, not just a timestamp.</li>
+      <li>Identity: still unknown. Satoshi&rsquo;s public key holds 1,125,150 BTC &mdash; worth tens of billions at peak. Untouched.</li>
+      <li>Walk Fig 5.1 and Tab 5.1 across the boom-bust cycles: 2011 ($35 &rarr; $4), 2013 ($1,150 &rarr; $177), 2017 ($19K &rarr; $4K), 2021 ($69K &rarr; $17K). The pattern: 75&ndash;85% drawdowns are normal.</li>
+      <li>Ask: &ldquo;What does volatility this extreme tell us about Bitcoin as a store of value?&rdquo; (Answer: not great. But narrative-driven assets behave this way until liquidity normalizes.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;How does this actually work under the hood? Let&rsquo;s solve the hardest problem &mdash; double-spending.&rdquo;</div>
+</div>
+
+<!-- SLIDE 04 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 04</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">Double-Spend, Blockchain &amp; Hashing</div>
+  <div class="notes">
+    <ul>
+      <li>Set up the double-spend problem: digital coins are bits &mdash; perfect copies. Without a central mint, how do you know I haven&rsquo;t already spent the same coin? Earlier digital cash projects (DigiCash, b-money) failed this test.</li>
+      <li>Satoshi&rsquo;s solution: a time-stamped, append-only, distributed ledger where every transaction is publicly visible. Identical copies on 46,000+ nodes (2023). Hashing chains the blocks.</li>
+      <li>Explain SHA-256: 256-bit one-way function. Same input &rarr; same hash. Quantum computing will eventually break this &mdash; signal a future research/policy question.</li>
+      <li>Walk the five building blocks: blockchain, hashing, P2P network, digital keys, Bitcoin script. The architectural choices solve the trust problem without a trusted intermediary.</li>
+      <li>Throughput call-out: 2.5 TPS vs. Visa&rsquo;s 24,000 TPS. Block size cap of 1 MB is a hard ceiling &mdash; this becomes the source of every later fight (Bitcoin Cash hard fork, transaction fee inflation).</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Verifying transactions takes work &mdash; literally. Let&rsquo;s talk mining.&rdquo;</div>
+</div>
+
+<!-- SLIDE 05 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 05</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">Proof-of-Work, Mining &amp; PoS</div>
+  <div class="notes">
+    <ul>
+      <li>Mining is random number guessing. Miners search for a nonce that, hashed with the block, gives a hash starting with N leading zeros. First to find it wins. Difficulty adjusts to keep blocks 10 min apart.</li>
+      <li>Walk the halving schedule: 50 BTC &rarr; 25 &rarr; 12.5 &rarr; 6.25 (May 2020) &rarr; 3.125 (Apr 2024). Long-run incentive: as block rewards shrink, transaction fees must replace them. This is where mempool fee auctions come in.</li>
+      <li>Energy: 73 TWh/yr (2022) &mdash; Austria. Carbon footprint of Switzerland. Down from a 200 TWh peak in early 2022 because BTC fell and Ethereum left for PoS.</li>
+      <li>Concentration: ~75% of hash power in a handful of mining pools. Research suggests collusion to leave blocks partially empty &mdash; extracting fees from urgent users while crowding out small payments.</li>
+      <li>Pivot to PoS: validators stake collateral instead of burning electricity. Slashing penalizes downtime or double signing. Ethereum&rsquo;s Merge (Sept 2022) cut energy by 99.95%. Bitcoin will not follow &mdash; the community treats PoW as definitional.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Bitcoin spawned thousands of imitators. Which ones matter?&rdquo;</div>
+</div>
+
+<!-- SLIDE 06 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 06</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Altcoins &amp; the Top 10</div>
+  <div class="notes">
+    <ul>
+      <li>Open-source legacy: Satoshi posted Bitcoin Core on GitHub in 2009. Modify the code, change a few parameters, launch a new coin. Litecoin (2011), Namecoin (2011), Peercoin (2012), Dogecoin (2013), XRP (2013) all followed.</li>
+      <li>Tab 5.2 (Apr 2023): top 10 = $1.5T &mdash; 79% of total market cap. BTC alone = 41%. Stablecoins (USDT, USDC, BUSD) sit at #3, #5, plus others.</li>
+      <li>Ask: &ldquo;Why is Ether (ETH) #2?&rdquo; (Programmable blockchain &mdash; smart contracts. We&rsquo;ll do Ch. 6 next week entirely on Ethereum.)</li>
+      <li>Hard forks: Bitcoin Cash (Aug 2017, 8 MB blocks), Bitcoin Gold (Oct 2017), Bitcoin SV (Nov 2018). The day after the BCH fork, holders had both coins &mdash; sum of parts &gt; whole. Magic.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;If launching a coin is easy, raising money against one is easier still. Enter the ICO boom.&rdquo;</div>
+</div>
+
+<!-- SLIDE 07 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 07</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">ICOs &mdash; The Boom and the Crackdown</div>
+  <div class="notes">
+    <ul>
+      <li>ICO mechanics: pre-mine a token, write a whitepaper, post it online, open a one-month subscription window. Buyers send BTC/ETH, get the new token. No investment bank, no offering document.</li>
+      <li>Scale: $20B raised across 860 ICOs from 2014 to mid-2018. EOS ($4.2B), Telegram ($1.7B). 2017 alone: 343 ICOs, $5.5B.</li>
+      <li>The Howey test (July 25, 2017): the SEC asserted that ICO tokens are investment contracts &mdash; therefore securities. (1) investment of money, (2) common enterprise, (3) profits from efforts of others. The market shut down by mid-2018.</li>
+      <li>Fraud statistics: WSJ reviewed 3,291 whitepapers and flagged 2,000 with signs of fraud. Studies estimate 80% of 2017 ICOs were scams. The SEC even launched a fake ICO (&ldquo;HoweyCoin&rdquo;) as an investor education campaign.</li>
+      <li>Ripple XRP case study: classic over-promise, under-deliver. Founders pre-mined 100B XRP, kept 20B. RippleNet for interbank payments was real. But banks used fiat, not XRP. Price collapsed when this became clear in 2018. SEC fined for AML violations.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Buying a token is one thing. Holding it safely is another.&rdquo;</div>
+</div>
+
+<!-- SLIDE 08 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 08</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">Wallets &amp; Exchanges &mdash; Honey Pots</div>
+  <div class="notes">
+    <ul>
+      <li>A cryptowallet doesn&rsquo;t hold coins &mdash; it holds keys. The coins are on the blockchain. Lose the private key, lose access to the coins permanently. Estimates: 20% of all BTC are lost forever.</li>
+      <li>Evolution: paper &rarr; software (hot) &rarr; hardware (cold). Trezor (2014) was first &mdash; PIN, passphrase, USB, open-source. Ledger came later.</li>
+      <li>Three components every wallet has: address (public, share freely), private key (sign transactions), recovery seed (restore if lost). Phishing attacks target the seed.</li>
+      <li>Exchanges are honey pots. Tab 5.5 covers Binance, Coinbase, Kraken. When coins sit on an exchange, the exchange holds the private keys &mdash; on-chain, they own the coins. &ldquo;Not your keys, not your coins.&rdquo;</li>
+      <li>Hack history: Mt. Gox 2014 (850K BTC, $460M, 70% of global BTC volume), Bitfinex 2016 ($72M), Coincheck 2018 ($535M). The list keeps growing &mdash; sets up the FTX collapse next.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Speaking of exchanges that vaporize &mdash; let&rsquo;s talk FTX.&rdquo;</div>
+</div>
+
+<!-- SLIDE 09 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 09</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">The FTX Collapse &mdash; Case Study</div>
+  <div class="notes">
+    <ul>
+      <li>SBF: MIT &rsquo;14, Jane Street, Centre for Effective Altruism, Alameda Research, FTX (2019). At peak in 2021: FTT $80, FTX 3rd-largest cryptoexchange, SBF net worth $26.5B. He was crypto&rsquo;s public face &mdash; testifying before Congress, lobbying regulators.</li>
+      <li>The fatal structure: FTX created FTT token. Alameda held $5.8B of FTT against $14.6B balance sheet. FTX lent Alameda customer funds against FTT collateral. Circular &mdash; like a bank pledging its own stock to itself.</li>
+      <li>Timeline: Nov 2 CoinDesk leaks Alameda&rsquo;s balance sheet. Nov 6 CZ (Binance, FTT investor) dumps $2B FTT. FTT crashes. Bank run on FTX. Nov 8 trading halted. Nov 10 Binance walks away from rescue after finding $9.4B hole. Nov 22 bankruptcy.</li>
+      <li>The legal indictment: SBF used customer funds to finance Alameda trading. Customer escrow rules &mdash; standard in regulated exchanges &mdash; were not followed. Sullivan &amp; Cromwell called it &ldquo;a personal fiefdom.&rdquo;</li>
+      <li>Aftermath: $1B in customer funds missing. SBF convicted on all 7 counts, Nov 2023. Sentenced to 25 years.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;After FTX, regulators woke up. What about the people who don&rsquo;t trade &mdash; the HODLers?&rdquo;</div>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 10</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">CBDCs &amp; the Six Risks to HODLers</div>
+  <div class="notes">
+    <ul>
+      <li>CBDCs: 80+ central banks exploring. Three open questions: blockchain or centralized ledger? Does it threaten monetary policy? Retail or wholesale only? Most countries focus on wholesale (interbank settlement).</li>
+      <li>Critique of Bitcoin as money: fails as medium of exchange (few merchants), as store of value (extreme volatility), barely works as unit of account. CBDCs are central banks&rsquo; answer.</li>
+      <li>Why crypto enthusiasts dislike CBDCs: centralized = surveillance. Not decentralized. Defeats the original purpose. Government can freeze accounts. Privacy concerns.</li>
+      <li>Walk Tab 5.6 &mdash; six risks every HODLer should know: price, counterparty, settlement, operational, governance, legal/regulatory. Ask: &ldquo;Which of these did the FTX customers experience?&rdquo; (Answer: all six.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;What do academics say about all this? Three findings.&rdquo;</div>
+</div>
+
+<!-- SLIDE 11 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 11</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Cryptoeconomics Research</div>
+  <div class="notes">
+    <ul>
+      <li>Three families of research findings: (1) trust is broken &mdash; illegal activity, manipulation, suspicion; (2) Bitcoin cannot scale &mdash; structural throughput limits, oligopolistic mining; (3) volatility is a feature, not a bug &mdash; multiple equilibria, sunspot dynamics.</li>
+      <li>The 25% illegal activity finding was high-profile &mdash; later disputed by other researchers using better data (less than 3% of volume). The truth is in between, but the stigma sticks.</li>
+      <li>Connect to slide 5: the &ldquo;empty blocks&rdquo; finding from researchers studying every block since genesis. Mining pools may strategically leave blocks empty to inflate fees. This is collusive behavior.</li>
+      <li>Bottom line for academics: Bitcoin is unlikely to replace fiat. But the blockchain layer &mdash; tokens, smart contracts, programmable money &mdash; may still transform finance. That&rsquo;s next week.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;So if Bitcoin doesn&rsquo;t work as money, does it work as an investment?&rdquo;</div>
+</div>
+
+<!-- SLIDE 12 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 12</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Asset Pricing &mdash; Crypto vs. Stocks</div>
+  <div class="notes">
+    <ul>
+      <li>Liu &amp; Tsyvinski (2021): monthly return 20.4% vs. 0.94% S&amp;P. Standard deviation 70.8% vs. 3.42%. Sharpe ratio 0.29 vs. 0.27 &mdash; nearly identical risk-adjusted return.</li>
+      <li>Walk Tab 5.7 across daily / weekly / monthly. The high returns are real &mdash; but so is the volatility. The Sharpe says you&rsquo;re paid for the risk you take.</li>
+      <li>What drives crypto returns? User adoption &mdash; wallet users, active addresses, transaction count. NOT electricity, NOT mining cost. Network effects. Adoption begets value begets adoption.</li>
+      <li>Three factors explain the cross-section: market beta, size (small coins &gt; large), momentum (past 1&ndash;4 month winners outperform 1&ndash;4 weeks ahead). Familiar from equity markets.</li>
+      <li>Side note: Google searches for &ldquo;Bitcoin&rdquo; predict returns 1&ndash;6 weeks ahead. Attention-driven momentum &mdash; not surprising for retail-dominated markets.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Let&rsquo;s zoom out and pull the threads together.&rdquo;</div>
+</div>
+
+<!-- SLIDE 13 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 13</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Closing &mdash; Code Is Law</div>
+  <div class="notes">
+    <ul>
+      <li>Synthesis: Satoshi&rsquo;s technical achievement was real &mdash; SHA-256 + PoW + P2P ledger solves double-spend. But the institutional layer (exchanges, ICOs, stablecoins) reintroduced every problem of traditional finance: fraud, insolvency, conflicts of interest.</li>
+      <li>Three numbers: 21M (the hard cap), $20B (ICO total raise, 80% scams), 99.95% (Ethereum&rsquo;s energy savings from PoW &rarr; PoS).</li>
+      <li>Where the research lands: Bitcoin probably isn&rsquo;t money. But blockchain may still be transformative for tokens, smart contracts, decentralized markets. That&rsquo;s the bridge to Chapter 6.</li>
+      <li>Preview next class: Chapter 6 &mdash; Ethereum, Smart Contracts, and DeFi. Programmable blockchains, ether and gas, NFTs and DAOs, stablecoins (and TerraUSD&rsquo;s death), MakerDAO as a decentralized central bank.</li>
+      <li>Final question: &ldquo;If you had to design a successor to Bitcoin that addressed the failures we covered today, what would you change?&rdquo; (Lead toward: PoS, programmable contracts, native stable unit of account &mdash; which is exactly what Ethereum + DeFi tries to do.)</li>
+    </ul>
+  </div>
+  <div class="transition">End of lecture. Open floor for questions. Reading for next week: Chapter 6.</div>
+</div>
+
+
+<div class="total-time">
+  Total estimated lecture time: ~54 minutes<br>
+  (Includes natural pauses for questions after Slides 5, 9, and 12)
+</div>
+
+</body>
+</html>

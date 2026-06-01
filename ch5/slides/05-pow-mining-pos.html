@@ -1,0 +1,61 @@
+<!-- ============================================================
+     SLIDE 05 · Proof-of-Work, Mining & PoS (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 PoW & Mining">
+  <div class="chrome">
+    <div>&sect;5.2 &middot; Proof-of-work, mining &amp; PoS</div>
+    <div>05 / 13</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.4vh">
+    <div style="display:flex; flex-direction:column; gap:1.4vh">
+      <div>
+        <div class="kicker">Consensus mechanism &middot; PoW</div>
+        <h2 class="h-xl" style="font-size:4vw">Mining: random number guessing.</h2>
+        <p class="lead" style="margin-top:.8vh; max-width:42vw; font-size:1.15vw">
+          Miners race to find a nonce that &mdash; when hashed with block contents &mdash; produces a hash with N leading zeros. The first to find it earns the block reward. Difficulty auto-adjusts to keep blocks 10 min apart.
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Block reward (2020)</div>
+          <div class="stat-nb" style="font-size:2.8vw">6.25</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">BTC per block &middot; halves every ~4 yrs (210K blocks)</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Energy (2022)</div>
+          <div class="stat-nb" style="font-size:2.8vw">73 TWh</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">Equivalent to Austria&rsquo;s annual electricity</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Hash rate</div>
+          <div class="stat-nb" style="font-size:2.8vw">&uarr;</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">Exponential growth as more miners compete</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Mining pools</div>
+          <div class="stat-nb" style="font-size:2.8vw">~75%</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">of network hash power concentrated</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:.4vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>The Merge (Sept 2022):</strong> Ethereum switched PoW &rarr; PoS, slashing energy use by 99.95%. PoS validators stake collateral instead of burning electricity.
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 5</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:.8vh; padding-top:.8vh">
+      <div class="frame-img contain" style="height:38vh; border:1px solid rgba(255,255,255,.1)">
+        <img src="../images/ch5/fig5.2.jpg" alt="Figure 5.2 - Bitcoin Price vs. Hash Rate">
+      </div>
+      <div class="frame-cap"><span>Fig. 5.2 &middot; BTC Price vs. Hash Rate</span><span class="idx">Source: blockchain.info/stats</span></div>
+
+      <div class="stat-card" style="padding-top:.8vh; margin-top:.6vh">
+        <div class="stat-label">Transaction fees &middot; voluntary &rarr; de facto mandatory</div>
+        <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">No official network fees. Senders pay <strong>feerate</strong> (Satoshis/byte) to jump the queue when the mempool is congested. Miners pick highest fee/size ratio &mdash; like a Disney FastPass.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Proof-of-work &middot; Mining &middot; PoS</div>
+    <div>6.25 BTC reward &middot; 73 TWh &middot; The Merge</div>
+  </div>
+</section>

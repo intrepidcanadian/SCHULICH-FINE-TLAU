@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitcoin, Blockchain &amp; Cryptocurrencies &middot; Chapter 05 &middot; FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">&larr; &rarr; navigate &middot; ESC overview</div>
+
+<div id="deck">
+
+<!-- BEGIN SLIDES -->
+<!-- ============================================================
+     SLIDE 01 · Cover (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="01 Cover">
+  <div class="chrome">
+    <div>FINE 6280 &middot; Fintech</div>
+    <div>Chapter 05 &middot; Lecture</div>
+  </div>
+  <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:72vh">
+    <div class="kicker">Chapter 05 &middot; Crypto &amp; Blockchain</div>
+    <h1 class="h-hero" style="font-size:6.8vw">Bitcoin, Blockchain, and Cryptocurrencies</h1>
+    <h2 class="h-sub" style="max-width:64vw; font-size:2.6vw">From Satoshi&rsquo;s double-spend solution and proof-of-work mining to altcoins, ICOs, cryptoexchanges, hard forks, and the spectacular collapse of FTX &mdash; the rise and fall of the first decade of cryptoeconomics.</h2>
+    <div class="meta-row" style="margin-top:1vh">
+      <span>Department of Finance</span><span>&middot;</span><span>Graduate Seminar</span><span>&middot;</span><span>Lecture 05 of 14</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Reading &middot; Chapter 5 of <em>Fintech Explained</em></div>
+    <div>&mdash; &middot; &mdash;</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 02 · Cryptoeconomics & Caveat Emptor (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="02 Cryptoeconomics">
+  <div class="chrome">
+    <div>&sect;5.1 &middot; The rise (and fall) of cryptoeconomics</div>
+    <div>02 / 17</div>
+  </div>
+  <div class="frame" style="padding-top:2.4vh">
+    <div class="kicker">Cryptoassets &middot; pure fintech innovation</div>
+    <h2 class="h-xl" style="font-size:4.4vw">Cryptography meets economics.</h2>
+    <p class="lead" style="margin-top:.8vh; max-width:62vw; opacity:.78; font-size:1.2vw">
+      A cryptoasset is a digital asset whose ownership is recorded on a distributed ledger (blockchain) and secured by cryptography. Total market cap: $1.3T (Apr 2023), down from $2.0T at year-end 2021. Caveat emptor.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:1.6vw; margin-top:1.6vh; align-items:start">
+      <div class="stat-card" style="padding-top:1vh">
+        <div class="stat-label">Utility token</div>
+        <div class="step-title" style="font-size:1.05vw; margin-top:.3vh">Service claim</div>
+        <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">A claim to a product or service. Brave&rsquo;s BAT tips creators.</div>
+      </div>
+      <div class="stat-card" style="padding-top:1vh">
+        <div class="stat-label">Security token</div>
+        <div class="step-title" style="font-size:1.05vw; margin-top:.3vh">Ownership claim</div>
+        <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">A claim to cash flows of a business or asset. Digital equivalent of common stock.</div>
+      </div>
+      <div class="stat-card" style="padding-top:1vh">
+        <div class="stat-label">Governance token</div>
+        <div class="step-title" style="font-size:1.05vw; margin-top:.3vh">Voting rights</div>
+        <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">Vote on protocol decisions, e.g. Maker for DAI.</div>
+      </div>
+      <div class="stat-card" style="padding-top:1vh">
+        <div class="stat-label">Non-fungible token</div>
+        <div class="step-title" style="font-size:1.05vw; margin-top:.3vh">NFT</div>
+        <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">Cryptographically secured data file. Art, photo, video, audio.</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1.4fr 1fr; gap:2.4vw; margin-top:2.6vh; align-items:start">
+      <div class="callout" style="padding:1.2vh 1.6vw; font-size:max(13px,1vw); line-height:1.5">
+        <div class="q-big" style="font-size:max(15px,1.2vw)">Cryptocurrencies and tokens are a fascinating, volatile landscape. Like the broader financial markets, the crypto markets have seen their share of fraud and scams. The bottom line: <em>caveat emptor</em>.</div>
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 5</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.2vh">
+        <div class="stat-card" style="padding-top:1vh">
+          <div class="stat-label">Cryptography</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">From Greek <em>kryptos</em> &mdash; hidden. Ancient Egyptians and Romans used ciphers more than 2,000 years ago.</div>
+        </div>
+        <div class="stat-card" style="padding-top:1vh">
+          <div class="stat-label">Behavioral risk &middot; FOMO</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Crypto winters punish HODLers who chase the top. Stay informed, avoid fear of missing out.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 &middot; Cryptoeconomics</div>
+    <div>$1.3T market cap &middot; Apr 2023</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 03 · Bitcoin & Crypto Winters (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="03 Bitcoin & Crypto Winters">
+  <div class="chrome">
+    <div>&sect;5.2 &middot; Bitcoin: the first cryptocurrency</div>
+    <div>03 / 17</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.4vh">
+    <div style="display:flex; flex-direction:column; gap:1.4vh">
+      <div>
+        <div class="kicker">Satoshi Nakamoto &middot; 2008 whitepaper</div>
+        <h2 class="h-xl" style="font-size:4.2vw">A peer-to-peer electronic cash system.</h2>
+        <p class="lead" style="margin-top:.8vh; max-width:42vw; font-size:1.2vw">
+          Bitcoin (BTC) emerged in 2009 as a response to the 2008 GFC. The genesis block referenced &ldquo;Chancellor on Brink of Second Bailout for Banks.&rdquo;
+        </p>
+      </div>
+      <div class="callout" style="margin-top:.4vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        Satoshi&rsquo;s identity remains unknown. The fabled creator&rsquo;s public key holds 1,125,150 BTC.
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 5</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw; margin-top:.4vh">
+        <div class="stat-card" style="padding-top:1vh">
+          <div class="stat-label">Peak 2021</div>
+          <div class="stat-nb" style="font-size:2.8vw">$69K</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">All-time high &middot; Nov 10 2021</div>
+        </div>
+        <div class="stat-card" style="padding-top:1vh">
+          <div class="stat-label">Trough 2022</div>
+          <div class="stat-nb" style="font-size:2.8vw">&minus;75%</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">Crypto winter to &lt;$17K year-end</div>
+        </div>
+        <div class="stat-card" style="padding-top:1vh">
+          <div class="stat-label">Circulation</div>
+          <div class="stat-nb" style="font-size:2.8vw">19.2M</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">of 21M cap &middot; year-end 2022</div>
+        </div>
+        <div class="stat-card" style="padding-top:1vh">
+          <div class="stat-label">Thaw</div>
+          <div class="stat-nb" style="font-size:2.8vw">$30K</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">By mid-April 2023 &middot; rebound</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:.8vh; padding-top:.8vh">
+      <div class="frame-img contain" style="height:30vh; border:1px solid rgba(255,255,255,.1)">
+        <img src="../images/ch5/fig5.1.jpg" alt="Figure 5.1 - Bitcoin Price and Crypto Winters">
+      </div>
+      <div class="frame-cap"><span>Fig. 5.1 &middot; BTC Price &amp; Crypto Winters</span><span class="idx">Source: CoinMarketCap</span></div>
+      <div class="frame-img contain" style="height:30vh; border:1px solid rgba(255,255,255,.1); margin-top:.4vh">
+        <img src="../images/ch5/tab5.1.png" alt="Table 5.1 - Bitcoin Statistics 2010-2022">
+      </div>
+      <div class="frame-cap"><span>Tab. 5.1 &middot; BTC Statistics 2010&ndash;2022</span><span class="idx">Source: CoinMarketCap</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; Bitcoin price history &middot; Boom-bust</div>
+    <div>$0.06 (2010) &rarr; $69K (2021) &rarr; $17K (2022)</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04 · Double-Spend, Blockchain & Hashing (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04 Double-Spend & Blockchain">
+  <div class="chrome">
+    <div>&sect;5.2 &middot; The double-spend problem &middot; SHA-256</div>
+    <div>04 / 17</div>
+  </div>
+  <div class="frame" style="padding-top:2.4vh">
+    <div class="kicker">Hashing &middot; cryptographic foundation</div>
+    <h2 class="h-xl" style="font-size:4vw">Solving the double-spend problem.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      Earlier digital monies failed because no one could verify a coin had not already been spent &mdash; without a central mint. Satoshi&rsquo;s solution: a time-stamped distributed ledger secured by cryptographic hashing.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.6vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Blockchain</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Distributed public ledger</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Transactions batched into 1&nbsp;MB blocks every ~10 minutes. Each block: timestamp, prev-block hash, transactions, nonce. Append-only, immutable, transparent.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Hashing &middot; SHA-256</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">One-way fingerprint</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Maps data of any size to a 256-bit string. Identical input &rArr; identical hash. Cannot be inverted with current computing power. Quantum computing threatens this.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Pseudo-anonymity</div>
+          <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Public + private keys</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Owner identified by hashed public key (digital address). Private key unlocks transfers. Real-life identity hidden but traceable.</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+          <div class="pipeline-label" style="margin-bottom:.8vh">Five Building Blocks of Bitcoin</div>
+          <div class="pipeline" data-cols="3" style="gap:.8vw">
+            <div class="step">
+              <div class="step-nb">01 &middot; Blockchain</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Distributed public ledger. Pages of transactions chained by hashes.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">02 &middot; Hashing</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">SHA-256 secures, compresses &amp; chains blocks.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">03 &middot; P2P</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">46,000+ nodes (2023) running Bitcoin Core software.</div>
+            </div>
+          </div>
+          <div class="pipeline" data-cols="3" style="gap:.8vw; margin-top:.6vh">
+            <div class="step">
+              <div class="step-nb">04 &middot; Keys</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Public &amp; private. Cryptographic proof of ownership.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">05 &middot; Script</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Programming language to execute send / receive actions.</div>
+            </div>
+            <div class="step" style="opacity:.55">
+              <div class="step-nb">&middot; Consensus</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Proof-of-work mining randomly selects who appends the next block.</div>
+            </div>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:.2vh; padding:.8vh 1.2vw; font-size:max(11px,.88vw); line-height:1.45">
+          Throughput: ~1,500 transactions per 10-min block = <strong>2.5 TPS</strong> &middot; vs. VISA up to 24,000 TPS. Block size capped at 1&nbsp;MB.
+          <div class="callout-src" style="margin-top:.6vh">&mdash; Fintech Explained, Ch. 5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; Double-spend &middot; Blockchain &middot; Hashing</div>
+    <div>SHA-256 &middot; 2.5 TPS &middot; 1&nbsp;MB blocks</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04b · Anatomy of a Bitcoin Block (light, technical)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04b Anatomy of a Block">
+  <div class="chrome">
+    <div>&sect;5.2 &middot; Technical &middot; block header</div>
+    <div>04b / 17</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Technical deep dive &middot; what is actually hashed</div>
+    <h2 class="h-xl" style="font-size:3.8vw">A block is 80 bytes of header &middot; plus transactions.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.1vw">
+      Miners do <strong>not</strong> hash the whole block. They hash the 80-byte block header. The transactions are committed to via a single 32-byte Merkle root that lives inside the header &mdash; a clever compression trick that lets light clients verify membership without downloading every transaction.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1.05fr .95fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">Block header &middot; 80 bytes</div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10.5px,.78vw); line-height:1.55; margin-top:.6vh; background:rgba(127,127,127,.06); padding:.8vh 1vw; border-radius:4px">
+            <div><span style="opacity:.55">04 B</span> &nbsp; <strong>version</strong> &nbsp;&nbsp;&nbsp; consensus rules in effect</div>
+            <div><span style="opacity:.55">32 B</span> &nbsp; <strong>prev_block_hash</strong> &nbsp; chains to parent (the &ldquo;chain&rdquo;)</div>
+            <div><span style="opacity:.55">32 B</span> &nbsp; <strong>merkle_root</strong> &nbsp;&nbsp; SHA-256(SHA-256(tx tree))</div>
+            <div><span style="opacity:.55">04 B</span> &nbsp; <strong>timestamp</strong> &nbsp;&nbsp;&nbsp; Unix seconds, &plusmn;2&nbsp;hr tolerance</div>
+            <div><span style="opacity:.55">04 B</span> &nbsp; <strong>bits</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compact-encoded difficulty target</div>
+            <div><span style="opacity:.55">04 B</span> &nbsp; <strong>nonce</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32-bit search space (miners cycle this)</div>
+          </div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">When the 32-bit nonce range is exhausted, miners increment the coinbase <em>extraNonce</em>, which changes the Merkle root, giving them effectively unlimited search space.</div>
+        </div>
+        <div class="callout" style="padding:.9vh 1.3vw; font-size:max(11px,.88vw); line-height:1.45">
+          <strong>Block hash</strong> = SHA-256(SHA-256(80-byte header)). Bitcoin uses <em>double SHA-256</em> to defend against length-extension attacks &mdash; legacy hardening from the SHA-2 era.
+          <div class="callout-src" style="margin-top:.6vh">&mdash; Bitcoin Core source &middot; Nakamoto (2008)</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">Merkle tree &middot; hash the tree, not the trades</div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.6; margin-top:.6vh; background:rgba(127,127,127,.06); padding:.8vh 1vw; border-radius:4px; white-space:pre">              <strong>ROOT</strong>
+            /        \
+         H(AB)       H(CD)
+         /  \         /  \
+       H(A) H(B)   H(C) H(D)
+        |    |      |    |
+       tx_A tx_B   tx_C tx_D</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">A <strong>Merkle proof</strong> for tx_C is just {H(D), H(AB)} &mdash; log&#8322;(n) hashes. A light client (SPV wallet) verifies inclusion without storing the chain.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vw">
+          <div class="stat-card" style="padding-top:.6vh">
+            <div class="stat-label">Block size</div>
+            <div class="stat-nb" style="font-size:2.4vw">1 MB</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">Hard cap on serialized block (SegWit raised effective limit to ~4 MB weight)</div>
+          </div>
+          <div class="stat-card" style="padding-top:.6vh">
+            <div class="stat-label">Avg block</div>
+            <div class="stat-nb" style="font-size:2.4vw">~2K</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">transactions &middot; ~250 bytes each on average</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04b &middot; Anatomy of a Bitcoin block</div>
+    <div>80-byte header &middot; Merkle root &middot; double-SHA-256</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04c · SHA-256 Avalanche Effect (dark, technical)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="04c SHA-256 Avalanche">
+  <div class="chrome">
+    <div>&sect;5.2 &middot; Technical &middot; SHA-256 properties</div>
+    <div>04c / 17</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Technical deep dive &middot; the math that makes mining hard</div>
+    <h2 class="h-xl" style="font-size:3.8vw">One bit flips. The whole hash explodes.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.1vw">
+      A cryptographic hash function must satisfy three properties: <strong>pre-image resistance</strong> (can&rsquo;t reverse), <strong>second pre-image resistance</strong> (can&rsquo;t collide deliberately), and the <strong>avalanche effect</strong> (1-bit input change &rArr; ~50% of output bits flip). Miners exploit the avalanche effect by iterating the nonce until a hash falls below the target.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">Avalanche effect &middot; worked example</div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px">
+            <div style="opacity:.72">input: <strong>&ldquo;hello&rdquo;</strong></div>
+            <div>SHA-256: <span style="color:#9ad1ff">2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824</span></div>
+            <div style="margin-top:.6vh; opacity:.72">input: <strong>&ldquo;Hello&rdquo;</strong> &nbsp;<span style="opacity:.55">(only the &ldquo;h&rdquo; case flipped)</span></div>
+            <div>SHA-256: <span style="color:#ffb38a">185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969</span></div>
+            <div style="margin-top:.6vh; opacity:.72">Hamming distance &asymp; <strong>50% of bits</strong> &mdash; no pattern, no shortcut.</div>
+          </div>
+        </div>
+        <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          <strong>One-wayness:</strong> given a 256-bit output, there is no algorithm faster than brute force &mdash; on average 2&sup2;&#8309;&#8309; attempts &mdash; to find any input that produces it. Quantum (Grover) reduces this to 2&#185;&#178;&#8312;, still astronomical.
+          <div class="callout-src">&mdash; NIST FIPS 180-4 &middot; SHA-2 family</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">SHA-256 pipeline &middot; one block at a time</div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px; white-space:pre">message → pad to 512-bit chunks
+        ↓
+      [8 × 32-bit state words]
+        ↓  (×64 rounds per block)
+      Maj / Ch / &Sigma;&#8320; / &Sigma;&#8321; + K_t + W_t
+        ↓
+      compress → next chunk
+        ↓
+   final state = 256-bit digest</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">Each compression round mixes bits via shifts, XORs, and modular addition. Bitcoin ASICs implement this directly in silicon, achieving ~100 TH/s per chip.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vw">
+          <div class="stat-card" style="padding-top:.6vh">
+            <div class="stat-label">Output</div>
+            <div class="stat-nb" style="font-size:2.4vw">256-bit</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">Always 32 bytes &middot; 64 hex chars</div>
+          </div>
+          <div class="stat-card" style="padding-top:.6vh">
+            <div class="stat-label">Network hash rate</div>
+            <div class="stat-nb" style="font-size:2.4vw">500+ EH/s</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">5 &times; 10&sup2;&#8304; SHA-256 ops / second (2024)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04c &middot; SHA-256 &middot; Avalanche &middot; One-way</div>
+    <div>1-bit flip &rarr; ~50% output flip</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · Proof-of-Work, Mining & PoS (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 PoW & Mining">
+  <div class="chrome">
+    <div>&sect;5.2 &middot; Proof-of-work, mining &amp; PoS</div>
+    <div>05 / 17</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.4vh">
+    <div style="display:flex; flex-direction:column; gap:1.4vh">
+      <div>
+        <div class="kicker">Consensus mechanism &middot; PoW</div>
+        <h2 class="h-xl" style="font-size:4vw">Mining: random number guessing.</h2>
+        <p class="lead" style="margin-top:.8vh; max-width:42vw; font-size:1.15vw">
+          Miners race to find a nonce that &mdash; when hashed with block contents &mdash; produces a hash with N leading zeros. The first to find it earns the block reward. Difficulty auto-adjusts to keep blocks 10 min apart.
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Block reward (2020)</div>
+          <div class="stat-nb" style="font-size:2.8vw">6.25</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">BTC per block &middot; halves every ~4 yrs (210K blocks)</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Energy (2022)</div>
+          <div class="stat-nb" style="font-size:2.8vw">73 TWh</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">Equivalent to Austria&rsquo;s annual electricity</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Hash rate</div>
+          <div class="stat-nb" style="font-size:2.8vw">&uarr;</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">Exponential growth as more miners compete</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Mining pools</div>
+          <div class="stat-nb" style="font-size:2.8vw">~75%</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">of network hash power concentrated</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:.4vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>The Merge (Sept 2022):</strong> Ethereum switched PoW &rarr; PoS, slashing energy use by 99.95%. PoS validators stake collateral instead of burning electricity.
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 5</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:.8vh; padding-top:.8vh">
+      <div class="frame-img contain" style="height:38vh; border:1px solid rgba(255,255,255,.1)">
+        <img src="../images/ch5/fig5.2.jpg" alt="Figure 5.2 - Bitcoin Price vs. Hash Rate">
+      </div>
+      <div class="frame-cap"><span>Fig. 5.2 &middot; BTC Price vs. Hash Rate</span><span class="idx">Source: blockchain.info/stats</span></div>
+
+      <div class="stat-card" style="padding-top:.8vh; margin-top:.6vh">
+        <div class="stat-label">Transaction fees &middot; voluntary &rarr; de facto mandatory</div>
+        <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">No official network fees. Senders pay <strong>feerate</strong> (Satoshis/byte) to jump the queue when the mempool is congested. Miners pick highest fee/size ratio &mdash; like a Disney FastPass.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Proof-of-work &middot; Mining &middot; PoS</div>
+    <div>6.25 BTC reward &middot; 73 TWh &middot; The Merge</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05b · Mining Algorithm in Code (light, technical)
+     ============================================================ -->
+<section class="slide light" data-screen-label="05b Mining Algorithm">
+  <div class="chrome">
+    <div>&sect;5.2 &middot; Technical &middot; the mining loop</div>
+    <div>05b / 17</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Technical deep dive &middot; what the ASIC is actually doing</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Mining = brute-forcing one inequality.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.1vw">
+      A miner builds a candidate block, then loops the nonce until the 256-bit double-SHA-256 of the header is numerically <strong>less than the target</strong>. The target is encoded in the 4-byte <code>bits</code> field. As the network hash rate grows, the difficulty bomb shrinks the target, making valid hashes rarer.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1.1fr .9fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">Mining loop &middot; pseudocode</div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.78vw); line-height:1.55; margin-top:.6vh; background:rgba(127,127,127,.07); padding:1vh 1.1vw; border-radius:4px; white-space:pre"><span style="color:#888">def</span> mine(header, target):
+    <span style="color:#888">for</span> nonce <span style="color:#888">in range</span>(0, 2**32):
+        header.nonce = nonce
+        h = sha256(sha256(serialize(header)))
+        <span style="color:#888">if</span> int(h, 16) &lt; target:
+            <span style="color:#888">return</span> nonce, h     <span style="color:#888"># &larr; valid block!</span>
+    <span style="color:#888"># 4B nonce exhausted &mdash;</span>
+    <span style="color:#888"># bump extraNonce in coinbase, rebuild Merkle root, retry</span></div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">No structure. No shortcut. Just a tight hash &amp; compare loop. ASICs do this in dedicated silicon at <strong>~100 TH/s per chip</strong>; a modern S21 box runs ~200 TH/s.</div>
+        </div>
+        <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          <strong>Probability of success</strong> per hash &asymp; target / 2&sup2;&#8309;&#8310;. At a difficulty of D, expected hashes to find a block &asymp; D &times; 2&sup3;&sup2;. A miner with hash rate <em>h</em> wins block reward at rate <em>h</em> / H<sub>network</sub>.
+          <div class="callout-src">&mdash; Bitcoin Core &middot; <code>chainparams.cpp</code></div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">Difficulty adjustment &middot; every 2,016 blocks</div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(127,127,127,.07); padding:.9vh 1.1vw; border-radius:4px; white-space:pre">new_target = old_target &times;
+   ( actual_time(2016 blocks) /
+     expected_time = 2016 &times; 10 min )
+
+clamp factor &isin; [1/4 , 4]
+expected window = 2 weeks</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">If the last 2,016 blocks were mined faster than 2 weeks, target shrinks (harder). If slower, target grows (easier). The clamp prevents oscillation. Keeps block-time at ~10 min regardless of total hash power.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vw">
+          <div class="stat-card" style="padding-top:.6vh">
+            <div class="stat-label">Search space</div>
+            <div class="stat-nb" style="font-size:2.4vw">2&sup3;&sup2;</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">4.29 billion nonces per Merkle root</div>
+          </div>
+          <div class="stat-card" style="padding-top:.6vh">
+            <div class="stat-label">Target now (~)</div>
+            <div class="stat-nb" style="font-size:2.4vw">~2&sup1;&#8311;&#8312;</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">Valid hash must be &lt; this. 78 leading zero bits in 2024.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05b &middot; Mining loop &middot; Difficulty</div>
+    <div>2,016-block adjustment &middot; ASIC &middot; 100 TH/s</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05c · UTXO & Transaction Anatomy (dark, technical)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05c UTXO Model">
+  <div class="chrome">
+    <div>&sect;5.2 &middot; Technical &middot; UTXO &amp; scripts</div>
+    <div>05c / 17</div>
+  </div>
+  <div class="frame" style="padding-top:1.6vh">
+    <div class="kicker">Technical deep dive &middot; what a Bitcoin payment really is</div>
+    <h2 class="h-xl" style="font-size:3vw">Bitcoin has no accounts. Only unspent outputs.</h2>
+    <p class="lead" style="margin-top:.2vh; max-width:64vw; opacity:.78; font-size:1vw; line-height:1.4">
+      The Bitcoin state is not a list of balances &mdash; it is a set of <strong>Unspent Transaction Outputs</strong> (UTXOs), each locked to a <code>scriptPubKey</code>. To spend, supply a <code>scriptSig</code> that satisfies the lock. A transaction consumes UTXOs (inputs), creates new ones (outputs); the rest is fee.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2vw; margin-top:1vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">Transaction structure</div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px; white-space:pre">tx {
+  version: 2
+  inputs:  [
+    { prev_tx: 0xabc..., vout: 1,
+      scriptSig: &lt;sig&gt; &lt;pubKey&gt; }
+  ]
+  outputs: [
+    { value: 0.40 BTC,            <span style="opacity:.6">// to Bob</span>
+      scriptPubKey: P2PKH(hash160(pubKey_B)) },
+    { value: 0.09 BTC,            <span style="opacity:.6">// change to self</span>
+      scriptPubKey: P2PKH(hash160(pubKey_A)) }
+  ]
+  <span style="opacity:.6">// fee = sum(in) &minus; sum(out) = 0.01 BTC</span>
+}</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">Inputs must be consumed entirely &mdash; if Alice has a 0.50 BTC UTXO and wants to pay 0.40, she must create a 0.09 change output back to herself (the rest is fee).</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">P2PKH script &middot; the most common lock</div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px; white-space:pre"><span style="opacity:.6"># scriptPubKey (lock, in the output)</span>
+OP_DUP OP_HASH160 &lt;pubKeyHash&gt; OP_EQUALVERIFY OP_CHECKSIG
+
+<span style="opacity:.6"># scriptSig (key, supplied by spender)</span>
+&lt;signature&gt; &lt;pubKey&gt;
+
+<span style="opacity:.6"># Stack execution:</span>
+push sig, push pubKey, DUP, HASH160,
+compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">Bitcoin Script is a Forth-like, <strong>non-Turing-complete</strong> stack language &mdash; no loops, no recursion. Deliberately limited to keep validation deterministic and cheap.</div>
+        </div>
+        <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          <strong>Why UTXO?</strong> Each output can be validated independently &mdash; perfect for parallel verification and pruning. <strong>The cost:</strong> wallets must track many small &ldquo;coins&rdquo;, and dust outputs bloat the UTXO set (~5 GB and growing in 2024).
+          <div class="callout-src">&mdash; Bitcoin Wiki &middot; <em>Transaction</em>, <em>Script</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1vw; margin-top:1vh">
+      <div class="stat-card" style="padding-top:.4vh">
+        <div class="stat-label" style="font-size:max(9px,.7vw)">Address types</div>
+        <div class="step-desc" style="font-size:max(9px,.72vw); line-height:1.35">P2PKH (1...) &middot; P2SH (3...) &middot; Bech32 (bc1q...) &middot; Taproot (bc1p...)</div>
+      </div>
+      <div class="stat-card" style="padding-top:.4vh">
+        <div class="stat-label" style="font-size:max(9px,.7vw)">UTXO set</div>
+        <div class="step-desc" style="font-size:max(9px,.72vw); line-height:1.35">~190M outputs in 2024 &middot; ~5 GB in RAM</div>
+      </div>
+      <div class="stat-card" style="padding-top:.4vh">
+        <div class="stat-label" style="font-size:max(9px,.7vw)">Mempool</div>
+        <div class="step-desc" style="font-size:max(9px,.72vw); line-height:1.35">Unconfirmed tx pool &middot; miners pick by fee/vByte</div>
+      </div>
+      <div class="stat-card" style="padding-top:.4vh">
+        <div class="stat-label" style="font-size:max(9px,.7vw)">Coinbase tx</div>
+        <div class="step-desc" style="font-size:max(9px,.72vw); line-height:1.35">First tx, no inputs &middot; mints reward + collects fees</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05c &middot; UTXO &middot; Script &middot; P2PKH</div>
+    <div>No accounts &middot; only unspent outputs</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · Altcoins & Top 10 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="06 Altcoins">
+  <div class="chrome">
+    <div>&sect;5.3 &middot; Cryptocurrencies &amp; altcoins</div>
+    <div>06 / 17</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.4vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Bitcoin&rsquo;s open-source progeny</div>
+        <h2 class="h-xl" style="font-size:4vw">17,000+ coins. 41% Bitcoin.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:42vw; font-size:1.15vw">
+          Satoshi posted the source code on GitHub in 2009. Programmers cloned and modified it: Litecoin, Namecoin, Peercoin, Dogecoin, XRP. As of April 2023, 23,000+ coins. The top 10 = 79% of market cap.
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw; margin-top:.4vh">
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Litecoin (2011)</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Scrypt hash &mdash; memory-bound, costlier to mine.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Namecoin (2011)</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Censorship-resistant DNS, bypasses ICANN.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Peercoin (2012)</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">First to combine PoW with PoS.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Dogecoin (2013)</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Joke coin with the Doge meme &mdash; reached new audience.</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:.2vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Hard fork:</strong> divorce among holders. Aug 2017 &rarr; Bitcoin Cash (8 MB blocks). Oct 2017 &rarr; Bitcoin Gold. Nov 2018 &rarr; Bitcoin SV. Holders end up with coins on both chains &mdash; the sum-of-parts exceeds the original price.
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 5</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.8vh">
+      <div class="frame-img contain" style="height:50vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch5/tab5.2.png" alt="Table 5.2 - Top 10 Cryptocurrencies by Market Capitalization">
+      </div>
+      <div class="frame-cap"><span>Tab. 5.2 &middot; Top 10 Cryptocurrencies by Market Cap</span><span class="idx">Source: CoinMarketCap, Apr 2023</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Altcoins &middot; Hard forks</div>
+    <div>BTC 41% &middot; ETH 18% &middot; Stablecoins next</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · ICOs & The Boom (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="07 ICOs">
+  <div class="chrome">
+    <div>&sect;5.4 &middot; Initial coin offerings</div>
+    <div>07 / 17</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Crowdsale of pre-mined tokens</div>
+    <h2 class="h-xl" style="font-size:3.8vw">$20B raised. 860 ICOs. Mostly fraud.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      ICOs let founders skip investment banks. A whitepaper online + a month-long subscription window = millions in BTC/ETH. The Ethereum crowdsale (mid-2014) raised $18.4M. The boom peaked in mid-2018 before regulators shut it down.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="frame-img contain" style="height:22vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch5/tab5.3.png" alt="Table 5.3 - Capital Raised in ICOs 2014-2018">
+        </div>
+        <div class="frame-cap"><span>Tab. 5.3 &middot; ICO Capital Raised 2014&ndash;mid-2018</span><span class="idx">Source: CoinDesk; Factiva</span></div>
+        <div class="frame-img contain" style="height:26vh; border:1px solid rgba(255,255,255,.1)">
+          <img src="../images/ch5/tab5.4.png" alt="Table 5.4 - Top 10 Largest ICOs">
+        </div>
+        <div class="frame-cap"><span>Tab. 5.4 &middot; Top 10 Largest ICOs</span><span class="idx">Source: CoinDesk ICO Tracker</span></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+          <div class="stat-card" style="padding-top:.8vh">
+            <div class="stat-label">Largest ICO</div>
+            <div class="stat-nb" style="font-size:2.6vw">$4.2B</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">EOS &middot; Block.one &middot; Jun 2018</div>
+          </div>
+          <div class="stat-card" style="padding-top:.8vh">
+            <div class="stat-label">Telegram</div>
+            <div class="stat-nb" style="font-size:2.6vw">$1.7B</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">Gram coin &middot; Feb&ndash;Mar 2018</div>
+          </div>
+          <div class="stat-card" style="padding-top:.8vh">
+            <div class="stat-label">2017 ICOs</div>
+            <div class="stat-nb" style="font-size:2.6vw">343</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">Raised $5.5B &middot; explosion</div>
+          </div>
+          <div class="stat-card" style="padding-top:.8vh">
+            <div class="stat-label">Fraud rate</div>
+            <div class="stat-nb" style="font-size:2.6vw">80%</div>
+            <div class="stat-note" style="font-size:max(10px,.78vw)">of 2017 ICOs were scams</div>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:.4vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          <strong>The Howey test (July 25, 2017):</strong> SEC asserted jurisdiction. An ICO is a security if it is (1) an investment of money, (2) in a common enterprise, (3) with profits from the efforts of others. WSJ found 2,000 of 3,291 whitepapers showed signs of fraud.
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 5</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Case study &middot; Ripple XRP</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">RippleNet for interbank payments. Founders pre-mined 100B XRP, kept 20B. Peaked at $3.36 (Jan 2018). Banks never used XRP &mdash; no use-case. Crashed to $0.14 (Mar 2020). $700K SEC fine for AML breach.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; ICOs &middot; 2014&ndash;mid-2018</div>
+    <div>$20B raised &middot; 80% fraud &middot; Howey test</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · Cryptowallets & Cryptoexchanges (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="08 Wallets & Exchanges">
+  <div class="chrome">
+    <div>&sect;5.5 &middot; Wallets, exchanges, honey pots</div>
+    <div>08 / 17</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Storage and trading &mdash; the two pain points</div>
+    <h2 class="h-xl" style="font-size:4vw">Paper, software, hardware &mdash; and exchanges as honey pots.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      A cryptowallet stores private keys, not coins. Hot wallets (software) connect to the internet; cold wallets (hardware) keep keys offline. Trezor (2014) was the first hardware wallet. Cryptoexchanges &mdash; Binance, Coinbase, Kraken &mdash; trade 24/7 across 400+ unregulated venues.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+          <div class="pipeline-label" style="margin-bottom:.8vh">Wallet evolution</div>
+          <div class="pipeline" data-cols="3" style="gap:.8vw">
+            <div class="step">
+              <div class="step-nb">01 &middot; Paper</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Print keys, lock them away. Lost, stolen, destroyed.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">02 &middot; Software</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Hot wallet. Desktop, tablet, smartphone. Free, exposed.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">03 &middot; Hardware</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Cold wallet. Trezor (2014), Ledger. PIN + passphrase, USB.</div>
+            </div>
+          </div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Key components</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45"><strong>Address:</strong> public identifier for receiving payments. <strong>Private key:</strong> secret number for signing transfers. <strong>Recovery seed:</strong> word list to restore a lost wallet.</div>
+        </div>
+        <div class="callout" style="margin-top:.2vh; padding:.9vh 1.3vw; font-size:max(11px,.88vw); line-height:1.45">
+          When you deposit coins on an exchange, the exchange holds the private keys &mdash; <strong>they own the coins on-chain</strong>. The exchange becomes a honey pot.
+          <div class="callout-src" style="margin-top:.6vh">&mdash; Fintech Explained, Ch. 5</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="frame-img contain" style="height:30vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+          <img src="../images/ch5/tab5.5.png" alt="Table 5.5 - Leading Cryptocurrency Exchanges">
+        </div>
+        <div class="frame-cap"><span>Tab. 5.5 &middot; Leading Cryptoexchanges</span><span class="idx">Source: CoinMarketCap; Forbes</span></div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Hack history &middot; honey pots</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">
+            <strong>Mt. Gox</strong> 2014: 850K BTC stolen, $460M, 70% of BTC volume. &middot; Bitfinex $72M (2016). &middot; Coincheck $535M (2018). &middot; BitGrail $195M (2018). &middot; Zaif $60M (2018). &middot; Binance $40M (2017).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; Cryptowallets &middot; Cryptoexchanges</div>
+    <div>Cold &gt; Hot &middot; 850K BTC lost at Mt. Gox</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · The FTX Collapse (dark, hero)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="09 FTX Collapse">
+  <div class="chrome">
+    <div>&sect;5.6 &middot; The FTX collapse</div>
+    <div>09 / 17</div>
+  </div>
+  <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
+      <div class="kicker">Case study &middot; Sam Bankman-Fried</div>
+      <h1 class="h-hero" style="font-size:6.4vw">$32B fiefdom. $1B missing.</h1>
+      <p class="lead" style="max-width:40vw; font-size:1.5vw">
+        FTX was the 3rd-largest cryptoexchange. SBF was crypto&rsquo;s public face &mdash; testifying before Congress, lobbying regulators, donating $45M to politicians. Then a CoinDesk article exposed FTT-collateralized loans between FTX and Alameda. The run took 10 days.
+      </p>
+      <div class="meta-row" style="margin-top:1vh">
+        <span>Founded 2019</span><span>&middot;</span><span>Peak FTT $80</span><span>&middot;</span><span>SBF net worth $26.5B</span>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:1.6vh">
+      <div class="frame-img contain" style="height:30vh; border:1px solid rgba(255,255,255,.1)">
+        <img src="../images/ch5/fig5.3.jpg" alt="Figure 5.3 - FTT vs. Bitcoin during the collapse">
+      </div>
+      <div class="frame-cap"><span>Fig. 5.3 &middot; FTT vs. Bitcoin</span><span class="idx">Source: Refinitiv Eikon</span></div>
+
+      <div class="pipeline-section" style="margin-top:.4vh; padding-top:0; border:0">
+        <div class="pipeline" data-cols="3" style="gap:.8vw">
+          <div class="step">
+            <div class="step-nb">Nov 2</div>
+            <div class="step-title" style="font-size:1vw">CoinDesk leak</div>
+            <div class="step-desc" style="font-size:max(10px,.78vw)">$5.8B of Alameda&rsquo;s $14.6B balance sheet was FTT &mdash; circular collateral.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">Nov 6</div>
+            <div class="step-title" style="font-size:1vw">CZ exits</div>
+            <div class="step-desc" style="font-size:max(10px,.78vw)">Binance liquidates $2B FTT. Bank run begins. BTC drops 26%.</div>
+          </div>
+          <div class="step">
+            <div class="step-nb">Nov 22</div>
+            <div class="step-title" style="font-size:1vw">Bankruptcy</div>
+            <div class="step-desc" style="font-size:max(10px,.78vw)">$9.4B hole. FTX + Alameda file. Customer funds lost.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:.4vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        SBF ran FTX &ldquo;with a lack of corporate controls that none of us in the profession have ever seen.&rdquo; Customer escrow rules were not followed.
+        <div class="callout-src">&mdash; Sullivan &amp; Cromwell, bankruptcy filing</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; FTX collapse &middot; Case study</div>
+    <div>3rd-largest exchange &rarr; bankruptcy in 10 days</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · CBDC, Risks to HODLers (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="10 CBDC & HODLer Risks">
+  <div class="chrome">
+    <div>&sect;5.7 &middot; CBDC &amp; risks to HODLers</div>
+    <div>10 / 17</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Money: unit of account, medium of exchange, store of value</div>
+        <h2 class="h-xl" style="font-size:4vw">CBDCs &amp; the six risks to HODLers.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:42vw; font-size:1.1vw">
+          Central banks are responding with digital fiat. The BIS reports 80+ countries are exploring CBDCs. Most focus on wholesale (interbank), not retail. Crypto enthusiasts are unimpressed.
+        </p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:.8vh">
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">Critique of Bitcoin as money</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">Few merchants accept BTC for payment. Mining takes hours-to-days to settle. Extreme volatility undermines its store-of-value function.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.6vh">
+          <div class="stat-label">Three open questions on CBDCs</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45"><strong>1.</strong> Blockchain or centralized ledger? &middot; <strong>2.</strong> Does CBDC threaten monetary policy and stability? &middot; <strong>3.</strong> Retail or wholesale only?</div>
+        </div>
+        <div class="callout" style="margin-top:.2vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          A CBDC controlled by a central bank does not require a blockchain &mdash; there&rsquo;s a trusted party. But a truly decentralized, P2P CBDC would need one.
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 5</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.8vh">
+      <div class="frame-img contain" style="height:50vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch5/tab5.6.png" alt="Table 5.6 - Risks to HODLers of Cryptocurrencies">
+      </div>
+      <div class="frame-cap"><span>Tab. 5.6 &middot; Six Risks to HODLers</span><span class="idx">Source: Fintech Explained</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 10 &middot; CBDC &middot; Six risks to HODLers</div>
+    <div>Price &middot; Counterparty &middot; Settlement &middot; Operational &middot; Governance &middot; Legal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 · Cryptoeconomics Research (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="11 Cryptoeconomics Research">
+  <div class="chrome">
+    <div>&sect;5.8 &middot; Cryptoeconomics research</div>
+    <div>11 / 17</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Three bodies of academic research</div>
+    <h2 class="h-xl" style="font-size:4vw">Trust, throughput, and the speed of light.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      Cryptoeconomics applies theory and empirics to Bitcoin and blockchain. Three findings dominate: trust is broken, the network cannot scale, and high volatility is structural &mdash; not transient.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.8vw; margin-top:1.6vh; align-items:start">
+      <div class="stat-card" style="padding-top:1vh">
+        <div class="stat-label">01 &middot; Trust</div>
+        <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Illegal activity &amp; manipulation</div>
+        <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">One study: 25% of users, 50% of transactions 2009&ndash;2017 tied to illegal activity. Disputed by follow-ups (&lt;3% volume). Suspicious addresses move BTC price. Stigma lingers.</div>
+      </div>
+      <div class="stat-card" style="padding-top:1vh">
+        <div class="stat-label">02 &middot; Operational efficiency</div>
+        <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Bitcoin cannot scale</div>
+        <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Block size 1 MB limits TPS. Miners&rsquo; concentrated hash power = natural oligopoly. As network expands, consensus delays grow. Adoption is an equilibrium ceiling.</div>
+      </div>
+      <div class="stat-card" style="padding-top:1vh">
+        <div class="stat-label">03 &middot; Stability</div>
+        <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Volatility is a feature</div>
+        <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Multiple equilibria with different price/security levels. Price feedback amplifies booms and busts. Sunspot-like volatility unrelated to fundamentals.</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:start">
+      <div class="callout" style="padding:1.2vh 1.6vw; font-size:max(13px,1vw); line-height:1.5">
+        <div class="q-big" style="font-size:max(15px,1.2vw)">Some researchers conclude Bitcoin is an intrinsically worthless, non-dividend-paying object that will never replace the US dollar &mdash; while blockchain itself may still be transformational.</div>
+        <div class="callout-src">&mdash; Cryptoeconomics literature, 2018&ndash;2023</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Why miners may collude</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Pools controlling ~75% of hash power may strategically leave blocks partially empty to extract higher fees from urgent users, crowding out small payments.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Six discussion questions for crypto</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Can BTC be a global currency? What are actors&rsquo; incentives? What governance resolves moral hazard? Asymmetry between miners/users? Best consensus algo? Drivers of returns?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 11 &middot; Cryptoeconomics research</div>
+    <div>Trust &middot; Scale &middot; Stability</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 · Asset Pricing — Crypto vs Stocks (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="12 Asset Pricing">
+  <div class="chrome">
+    <div>&sect;5.9 &middot; Asset pricing &amp; crypto returns</div>
+    <div>12 / 17</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Cross-section of returns &middot; 2011&ndash;2018</div>
+        <h2 class="h-xl" style="font-size:4vw">20.4% monthly. 70.8% st. dev.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:42vw; font-size:1.15vw">
+          Liu &amp; Tsyvinski (2021) studied 1,700+ cryptocurrencies. Monthly return: 20.4% vs. 0.94% for US stocks. Standard deviation 70.8% vs. 3.42%. Risk-adjusted (Sharpe ratio) is comparable.
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Monthly return</div>
+          <div class="stat-nb" style="font-size:2.4vw">20.4%</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">Crypto index vs. 0.94% S&amp;P</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Monthly stdev</div>
+          <div class="stat-nb" style="font-size:2.4vw">70.8%</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">vs. 3.42% S&amp;P 500</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Sharpe ratio</div>
+          <div class="stat-nb" style="font-size:2.4vw">0.29</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">vs. 0.27 stock market &middot; similar</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Three factors</div>
+          <div class="stat-nb" style="font-size:2.4vw">3</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">Market, size, momentum explain XS</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:.2vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        Returns are driven by <strong>user adoption</strong> (wallets, active addresses, transactions) &mdash; not electricity or computing cost. Google searches for &ldquo;Bitcoin&rdquo; predict returns 1&ndash;6 weeks ahead. Past 1&ndash;4 month winners outperform.
+        <div class="callout-src">&mdash; Liu &amp; Tsyvinski (2021)</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.8vh">
+      <div class="frame-img contain" style="height:40vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch5/tab5.7.png" alt="Table 5.7 - Cryptocurrency Index vs. US Stocks">
+      </div>
+      <div class="frame-cap"><span>Tab. 5.7 &middot; Crypto Index vs. US Stocks</span><span class="idx">Source: Liu &amp; Tsyvinski, 2021</span></div>
+      <div class="stat-card" style="padding-top:.8vh">
+        <div class="stat-label">Market microstructure findings</div>
+        <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">BTC explains 80% of altcoin moves. Arbitrage opportunities persist for &gt;1 min on tick data 2013&ndash;2018. Traders left money on the table &mdash; lack of capital and sophistication.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 12 &middot; Asset pricing &middot; Crypto returns</div>
+    <div>20.4% / 70.8% / Sharpe 0.29</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 · Closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="13 Closing">
+  <div class="chrome">
+    <div>Chapter 05 &middot; Closing</div>
+    <div>13 / 17</div>
+  </div>
+  <div class="frame" style="display:grid; gap:2vh; align-content:center; min-height:70vh">
+    <div class="kicker">The first decade of cryptoeconomics</div>
+    <h1 class="h-hero" style="font-size:5.8vw">Code is law &mdash; until someone breaks the code.</h1>
+    <p class="lead" style="max-width:60vw; font-size:1.25vw">
+      Satoshi solved double-spending with SHA-256 hashing, PoW mining, and a P2P ledger. Bitcoin spawned altcoins, ICOs raised $20B (mostly fraud), and cryptoexchanges became honey pots. Mt. Gox lost 850K BTC. FTX vaporized $32B in 10 days. Researchers find Bitcoin is structurally unstable but blockchain may still transform finance.
+    </p>
+    <div style="display:flex; gap:4vw; margin-top:.4vh">
+      <div>
+        <div class="stat-nb" style="font-size:3.6vw">21M</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Hard cap on bitcoins to ever exist</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.6vw">$20B</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Raised across 860 ICOs (80% scams)</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.6vw">99.95%</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Ethereum energy cut from PoW &rarr; PoS</div>
+      </div>
+    </div>
+    <div class="meta-row" style="margin-top:.4vh">
+      <span>End of Chapter 05</span><span>&middot;</span><span>FINE 6280</span><span>&middot;</span><span>Next &middot; Ch. 06 &middot; Ethereum, Smart Contracts &amp; DeFi</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Closing &middot; End of Chapter 05 &middot; FINE 6280</div>
+    <div>Next &middot; Ch. 06 &middot; Ethereum &amp; DeFi</div>
+  </div>
+</section>
+
+<!-- END SLIDES -->
+
+</div>
+
+<div id="nav"></div>
+
+<script src="../shared/deck.js"></script>
+</body>
+</html>

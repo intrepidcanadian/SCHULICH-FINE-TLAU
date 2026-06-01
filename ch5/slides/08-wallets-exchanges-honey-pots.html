@@ -1,0 +1,62 @@
+<!-- ============================================================
+     SLIDE 08 · Cryptowallets & Cryptoexchanges (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="08 Wallets & Exchanges">
+  <div class="chrome">
+    <div>&sect;5.5 &middot; Wallets, exchanges, honey pots</div>
+    <div>08 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Storage and trading &mdash; the two pain points</div>
+    <h2 class="h-xl" style="font-size:4vw">Paper, software, hardware &mdash; and exchanges as honey pots.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      A cryptowallet stores private keys, not coins. Hot wallets (software) connect to the internet; cold wallets (hardware) keep keys offline. Trezor (2014) was the first hardware wallet. Cryptoexchanges &mdash; Binance, Coinbase, Kraken &mdash; trade 24/7 across 400+ unregulated venues.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+          <div class="pipeline-label" style="margin-bottom:.8vh">Wallet evolution</div>
+          <div class="pipeline" data-cols="3" style="gap:.8vw">
+            <div class="step">
+              <div class="step-nb">01 &middot; Paper</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Print keys, lock them away. Lost, stolen, destroyed.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">02 &middot; Software</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Hot wallet. Desktop, tablet, smartphone. Free, exposed.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">03 &middot; Hardware</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Cold wallet. Trezor (2014), Ledger. PIN + passphrase, USB.</div>
+            </div>
+          </div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Key components</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45"><strong>Address:</strong> public identifier for receiving payments. <strong>Private key:</strong> secret number for signing transfers. <strong>Recovery seed:</strong> word list to restore a lost wallet.</div>
+        </div>
+        <div class="callout" style="margin-top:.2vh; padding:.9vh 1.3vw; font-size:max(11px,.88vw); line-height:1.45">
+          When you deposit coins on an exchange, the exchange holds the private keys &mdash; <strong>they own the coins on-chain</strong>. The exchange becomes a honey pot.
+          <div class="callout-src" style="margin-top:.6vh">&mdash; Fintech Explained, Ch. 5</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="frame-img contain" style="height:30vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+          <img src="../images/ch5/tab5.5.png" alt="Table 5.5 - Leading Cryptocurrency Exchanges">
+        </div>
+        <div class="frame-cap"><span>Tab. 5.5 &middot; Leading Cryptoexchanges</span><span class="idx">Source: CoinMarketCap; Forbes</span></div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Hack history &middot; honey pots</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">
+            <strong>Mt. Gox</strong> 2014: 850K BTC stolen, $460M, 70% of BTC volume. &middot; Bitfinex $72M (2016). &middot; Coincheck $535M (2018). &middot; BitGrail $195M (2018). &middot; Zaif $60M (2018). &middot; Binance $40M (2017).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; Cryptowallets &middot; Cryptoexchanges</div>
+    <div>Cold &gt; Hot &middot; 850K BTC lost at Mt. Gox</div>
+  </div>
+</section>
