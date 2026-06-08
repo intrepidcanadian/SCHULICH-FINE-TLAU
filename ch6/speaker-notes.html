@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 6: Ethereum, Smart Contracts &amp; DeFi &mdash; Speaker Notes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #0a1f3d;
+  }
+  .subtitle {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #0a1f3d;
+  }
+  .slide-block {
+    margin-bottom: 2.2rem;
+    padding: 1.4rem 1.6rem;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #0a1f3d;
+    border-radius: 3px;
+    page-break-inside: avoid;
+  }
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.8rem;
+  }
+  .slide-number {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0a1f3d;
+    background: #e8edf4;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+  }
+  .slide-time {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+  }
+  .slide-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.7rem;
+  }
+  .notes ul {
+    margin: 0;
+    padding-left: 1.4rem;
+  }
+  .notes li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .transition {
+    margin-top: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed #ccc;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.82rem;
+    color: #666;
+    font-style: italic;
+  }
+  .total-time {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #555;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #e8edf4;
+    border-radius: 4px;
+  }
+  @media print {
+    body { padding: 1cm; font-size: 10pt; max-width: none; }
+    .slide-block { border: 1px solid #ccc; box-shadow: none; page-break-inside: avoid; }
+    .total-time { background: #eee; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .slide-block { padding: 1rem; }
+    .slide-header { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Chapter 6: Ethereum, Smart Contracts &amp; DeFi &mdash; Speaker Notes</h1>
+<p class="subtitle">FINE 6280 &middot; Fintech &middot; Schulich School of Business &middot; Graduate Seminar &middot; Lecture 06 of 14<br>
+Target duration: ~55 minutes &middot; 13 slides (core textbook material).</p>
+
+<!-- SLIDE 01 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 01</span>
+    <span class="slide-time">~2 min</span>
+  </div>
+  <div class="slide-title">Cover &mdash; Ethereum, Smart Contracts &amp; DeFi</div>
+  <div class="notes">
+    <ul>
+      <li>Welcome the class. Frame: last week was Bitcoin&rsquo;s payment ledger and its scandals. Today we cover the second-generation blockchain that Buterin built to do far more than move coins &mdash; a general-purpose computer.</li>
+      <li>Preview the arc: Buterin and Ethereum&rsquo;s origins &rarr; ether and gas &rarr; smart contracts and dapps &rarr; tokens (ERC-20, ERC-721) &rarr; DAOs and the DAO Hack &rarr; stablecoins &rarr; DeFi as crypto LEGO &rarr; Curve, MakerDAO, Lido &rarr; R3 Corda as the permissioned counter-example.</li>
+      <li>Opening hook: &ldquo;If you could rebuild banking, brokerage, and asset management without bank charters, broker-dealer licenses, or a clearinghouse &mdash; what would it cost? Under a dollar. That&rsquo;s DeFi.&rdquo;</li>
+      <li>Housekeeping: pause for questions after the DAO Hack (slide 5), after MakerDAO (slide 10), and at the end.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Let&rsquo;s start with the visionary &mdash; and what Bitcoin lacked.&rdquo;</div>
+</div>
+
+<!-- SLIDE 02 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 02</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">The Ethereum Network &amp; Vitalik Buterin</div>
+  <div class="notes">
+    <ul>
+      <li>Buterin&rsquo;s biography: born in Russia 1994, emigrated to Toronto at 6, learned about Bitcoin at 17 from his programmer father, co-founded Bitcoin Magazine. At 19 he wrote the Ethereum whitepaper (Nov 2013). At 20 he won a Thiel fellowship and dropped out of Waterloo.</li>
+      <li>The critique of Bitcoin: too slow, too narrow, too limited a scripting language. Bitcoin records only BTC transactions. Buterin wanted a blockchain that could host arbitrary applications.</li>
+      <li>Walk the milestones (Tab 6.1): Whitepaper (Nov 2013) &rarr; Yellowpaper by Gavin Wood (Apr 2014) &rarr; Crowdsale $18.4M (Jul&ndash;Sep 2014) &rarr; Frontier launch (Jul 2015) &rarr; DAO fork (Jul 2016) &rarr; Beacon Chain (Dec 2020) &rarr; The Merge (Sep 2022).</li>
+      <li>Reference Gavin Wood &mdash; first CTO of the Ethereum Foundation, designer of Solidity, author of the Yellowpaper. He later left to build Polkadot.</li>
+      <li>Fig 6.1 (Google searches): Bitcoin dominates media attention. But Ethereum rose steadily and is now associated with real adoption (DeFi, NFTs) rather than just speculation.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Running programs on a blockchain isn&rsquo;t free. You pay for computation in gas. Let&rsquo;s see how.&rdquo;</div>
+</div>
+
+<!-- SLIDE 03 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 03</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Ether, Gas &amp; Proof-of-Stake</div>
+  <div class="notes">
+    <ul>
+      <li>The metaphor: if Ethereum is a virtual computer, ETH is the electricity. You buy gas with ETH. Simple programs use little gas. Complex programs use a lot.</li>
+      <li>Why gas matters: forces developers to write efficient code. Prevents infinite loops (any program would burn all the sender&rsquo;s ETH and halt). Provides spam protection &mdash; you can&rsquo;t flood the network for free.</li>
+      <li>Block reward history: 5 ETH &rarr; 3 (late 2017) &rarr; 2 (early 2019). No supply cap on ETH (unlike Bitcoin&rsquo;s 21M). ~120M ETH in circulation (Apr 2022).</li>
+      <li>The Merge (Sept 15, 2022): PoW &rarr; PoS. Cut energy consumption 99.95%. Validators stake 32 ETH each. One proposer per 12-sec slot, randomly chosen weighted by stake. A committee votes (attests). Every 32 slots = 1 epoch = a checkpoint vote.</li>
+      <li>Slashing: validators lose stake for downtime (small penalty) or double signing (severe, 5%+). Discuss the new concern post-Merge: stake concentration. Lido alone controls ~30% of all staked ETH &mdash; centralizing what was meant to decentralize.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Now that we have a programmable blockchain, what do you build on it? LEGO.&rdquo;</div>
+</div>
+
+<!-- SLIDE 04 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 04</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">Smart Contracts as LEGO &amp; the Token Zoo</div>
+  <div class="notes">
+    <ul>
+      <li>Define smart contract: code that executes a transaction with no human intervention. Lives at a contract address on-chain, immutable once deployed. Quote Buterin&rsquo;s definition &mdash; assets in, formulaic redistribution out.</li>
+      <li>Solidity is Turing-complete &mdash; you can write any program. Influenced by C++/Python/JS. Runs on the EVM. Other languages: Vyper, Yul. The choice of language affects auditability and bug risk.</li>
+      <li>Why &ldquo;LEGO&rdquo;? Because smart contracts are composable. A DEX uses a lending pool. A yield aggregator uses both. A wrapped token references a bridge. Each piece is a brick. Build something new by stacking them.</li>
+      <li>Four dapp rules: open-source, on-chain data, cryptographic token, consensus mechanism. These are the necessary conditions for &ldquo;decentralized.&rdquo;</li>
+      <li>Token taxonomy &mdash; ERC-20 fungible: payment (ETH), utility (BAT), security (digital stock), governance (Maker, UNI, AAVE). ERC-721 non-fungible: art, collectibles. Use Beeple&rsquo;s $69.3M sale and CryptoKitties ($110K for one cat) as anchors.</li>
+      <li>Discussion question: &ldquo;Which token category should be regulated as securities? Why?&rdquo; (Lead to: security tokens clearly; utility and governance are gray; payment tokens like BTC have been ruled non-securities by the SEC.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;If smart contracts can run a company, can they BE a company? Meet the DAO.&rdquo;</div>
+</div>
+
+<!-- SLIDE 05 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 05</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">DAOs &amp; The DAO Hack</div>
+  <div class="notes">
+    <ul>
+      <li>DAO = a virtual company in code. Slock.It&rsquo;s &ldquo;The DAO&rdquo; (April 2016) was the first ambitious one: holders would vote on which projects to fund. Raised $150M in 28 days &mdash; 12M ETH, 15% of all ETH in circulation.</li>
+      <li>The hack (June 17, 2016): an attacker exploited a re-entrancy vulnerability in the smart contract code and drained $40M of ETH. The hack was visible on-chain in real time. The Ethereum community could see it happening.</li>
+      <li>The philosophical question: &ldquo;Is a blockchain capable of being modified or not?&rdquo; The purists said no &mdash; immutability is sacred, the hacker followed the code. The pragmatists, led by Buterin, said the theft must be reversed.</li>
+      <li>The hard fork (July 20, 2016): a majority of ETH holders voted to rewrite the ledger and return the funds. Ethereum split: ETH (modified) and Ethereum Classic (ETC, original chain). Today ETH dominates; ETC is a speculative curiosity.</li>
+      <li>The lesson: the vulnerability was not in Ethereum &mdash; it was in the application&rsquo;s smart contract. Code is law only as long as the code is correct. This is why smart-contract auditing is now a multibillion-dollar industry (OpenZeppelin, Trail of Bits, Certik).</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Even on Ethereum, prices move violently. To use crypto as money, we need a stable unit. Enter stablecoins.&rdquo;</div>
+</div>
+
+<!-- SLIDE 06 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 06</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">Stablecoins &mdash; the Peg Problem</div>
+  <div class="notes">
+    <ul>
+      <li>The volatility problem: BTC daily vol ~4%, daily range often &gt;10%. A medium of exchange and unit of account require stability. Stablecoins solve this by pegging to a reference asset.</li>
+      <li>Four backings: fiat (USDT, USDC, BUSD), commodity (Digix Gold), crypto (DAI), algorithmic (TerraUSD). The first three are collateralized; the last is purely incentive-based. Walk Tab 6.2.</li>
+      <li>Centralized vs. decentralized: Tether is run by Bitfinex founders &mdash; opaque reserves, regulator-fined for misrepresentation. DAI is minted by the MakerDAO smart contract &mdash; transparent, overcollateralized, governance-token controlled. Trade-off: centralization gives speed; decentralization gives trust.</li>
+      <li>Case study: TerraUSD &amp; LUNA (May 2022). UST market cap peaked at $60B. The <strong>Anchor protocol</strong> promised 20% APR to UST depositors &mdash; unsustainable yields that attracted speculative capital and inflated the ecosystem. Then a coordinated attack triggered a UST de-pegging. The algorithm minted LUNA to defend the peg, hyperinflating LUNA from $119 to $0. UST fell to $0.10. $45B in market cap evaporated in days; $300B across all of crypto via contagion.</li>
+      <li>Lesson: algorithmic stablecoins without external collateral are reflexive &mdash; they work only as long as confidence holds. Once a run starts, the algorithm accelerates the collapse. Do Kwon faces criminal charges in multiple jurisdictions.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Stablecoins are the unit. Smart contracts are the rails. Put them together and you get DeFi.&rdquo;</div>
+</div>
+
+<!-- SLIDE 07 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 07</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">DeFi &mdash; The Internet of Money</div>
+  <div class="notes">
+    <ul>
+      <li>Define DeFi: a financial system built on cryptoassets, blockchains, and smart contracts that disintermediates banks, brokers, and asset managers. Always open. Permissionless. Transparent. Automated.</li>
+      <li>The metric is TVL &mdash; total value locked in smart contracts. Peak $175B (late 2021). Year-end 2022 $40B (after Terra, FTX, the broader crypto winter). DeFi = ~5% of total crypto market cap.</li>
+      <li>Ethereum dominates: ~60% of DeFi TVL. Tron 10.8%, BSC 10.5%. Why? Network effects &mdash; deepest developer base, ERC-20 standard, Solidity, EVM. Other chains compete on speed and cost but cannot match the ecosystem.</li>
+      <li>Quote Buterin from Harvey et al.&rsquo;s book: DeFi was always part of the Ethereum vision. The platform was deliberately general-purpose so financial applications could emerge alongside non-financial ones.</li>
+      <li>Surface the <strong>paradigm debate</strong> explicitly: the textbook names two camps. The <em>transformational</em> view says DeFi will dramatically alter how financial markets operate &mdash; disintermediating banks, brokers, and clearinghouses. The <em>traditional</em> view says DeFi will co-exist with the old system but never dominate &mdash; regulation, trust, and scale favor incumbents. Ask: &ldquo;Which camp are you in, and what evidence would change your mind?&rdquo;</li>
+      <li>Discussion question: &ldquo;Is DeFi disrupting traditional finance or running parallel to it?&rdquo; (Lead to: today it&rsquo;s parallel and small. But it forces incumbents to respond &mdash; faster settlement, lower fees, programmable assets. Even if DeFi stays small, its influence on TradFi is large.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;DeFi isn&rsquo;t one thing &mdash; it&rsquo;s ten categories. Let&rsquo;s map the LEGO.&rdquo;</div>
+</div>
+
+<!-- SLIDE 08 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 08</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">DeFi Categories &amp; the LEGO Stack</div>
+  <div class="notes">
+    <ul>
+      <li>Walk Tab 6.3 and Fig 6.2. The big four: DEXes (40% of TVL), Lending (27%), Liquidity Staking (22%), CDP (20%). Smaller: bridges, yield farming, services, derivatives, algo-stables, yield aggregators.</li>
+      <li>DEXes: 655 protocols. Curve specializes in stablecoin swaps. Uniswap dominates token-to-token. PancakeSwap dominates on BSC. AMMs replace order books with liquidity pools.</li>
+      <li>Lending: AAVE, Compound &mdash; pool-based. Lenders deposit; borrowers take overcollateralized loans. Interest rates auto-adjust to supply/demand. This is the same model as MakerDAO &mdash; we&rsquo;ll cover it shortly.</li>
+      <li>Liquidity staking: Lido lets you stake ETH and get stETH back (1:1). You can re-stake stETH elsewhere for additional yield. Composability in action &mdash; same dollar of capital earns yield twice.</li>
+      <li>Bridges: blockchains are siloed. Wrapped Bitcoin (WBTC) is an ERC-20 token backed 1:1 by BTC custody. It brings BTC liquidity onto Ethereum. Each bridge is a custodian &mdash; and a target. Several bridges have been hacked for hundreds of millions (Ronin $625M, Poly Network $611M).</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Let&rsquo;s look at one DEX in detail. Curve is the gold standard for stablecoin swaps.&rdquo;</div>
+</div>
+
+<!-- SLIDE 09 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 09</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Curve Finance &mdash; Case Study</div>
+  <div class="notes">
+    <ul>
+      <li>Curve was built specifically for swapping assets that should be worth the same &mdash; stablecoins. The AMM math minimizes slippage when all assets in the pool hover around $1.</li>
+      <li>Walk the 3CRV pool: holds DAI, USDT, USDC. Users swap between any pair, paying 0.04% (vs. ~0.30% on Coinbase Pro and ~0.10% on Binance). Liquidity providers (LPs) earn 50% of the fees pro-rata.</li>
+      <li>Why depositors do it: yield. Early Curve advertised 10&ndash;50% APR. That claim has been removed &mdash; yields depend on volume and have compressed.</li>
+      <li>CEX vs. DEX trade-off: Coinbase holds your keys (the honey pot). Curve&rsquo;s smart contract is open-source &mdash; you keep your keys. But smart contracts can have bugs. The DAO Hack was a 2016 reminder; bridge hacks are a 2022&ndash;2023 reminder. Always audit.</li>
+      <li>TVL collapse: $25B (YE 2021) to $3.6B (YE 2022). Same story as the rest of DeFi &mdash; the 2022 crypto winter destroyed leverage and confidence.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;If Curve is the trading floor, MakerDAO is the central bank.&rdquo;</div>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 10</span>
+    <span class="slide-time">~5 min</span>
+  </div>
+  <div class="slide-title">MakerDAO &amp; the Decentralized Central Bank</div>
+  <div class="notes">
+    <ul>
+      <li>MakerDAO is the largest DeFi protocol &mdash; $6B TVL at YE 2022, 15% of all DeFi. The model: deposit ETH or other ERC-20 tokens, mint DAI (a $1-pegged stablecoin) against them.</li>
+      <li>200% collateralization: deposit $100, borrow $50 of DAI. Why so much? Crypto is volatile. If ETH drops 30%, your $100 collateral is now $70 &mdash; the smart contract liquidates to keep the system solvent.</li>
+      <li>Why borrow DAI? Liquidity without selling. Avoid taxable events. Lever up by re-depositing DAI in another DeFi protocol. Or just transact in a stable dollar unit on-chain.</li>
+      <li>Why &ldquo;decentralized central bank&rdquo;? MakerDAO sets interest rates (the &ldquo;DAI Savings Rate&rdquo; and &ldquo;Stability Fee&rdquo;) via governance vote. The Maker token holders are the voters. The smart contract enforces. The Federal Reserve has a board; MakerDAO has token holders. The mechanics are similar; the politics are radically different.</li>
+      <li>Abracadabra is the #2 CDP: accepts interest-bearing tokens as collateral &mdash; users can stretch collateral twice and create on-chain leverage. Higher yield, higher liquidation risk. Composability cuts both ways.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Three more building blocks complete the picture.&rdquo;</div>
+</div>
+
+<!-- SLIDE 11 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 11</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Yield Farming, Derivatives &amp; Bridges</div>
+  <div class="notes">
+    <ul>
+      <li>Lido: liquidity staking. Stake ETH, get stETH (1:1). Restake stETH elsewhere. $18.7B TVL within 18 months. The double-dipping concern: if you can restake the staked token, you&rsquo;re creating phantom collateral. Regulators are watching.</li>
+      <li>Synthetix: on-chain derivatives. sBTC tracks BTC. sUSD tracks the dollar. Synthetic equities exist too. Pay 0.30% per trade &mdash; no broker, no clearing house. Decentralized derivatives are a TradFi disruption story to watch.</li>
+      <li>Wrapped Bitcoin (WBTC): ERC-20 token backed 1:1 with BTC. Bridges Bitcoin liquidity onto Ethereum. Lets BTC be used as DeFi collateral. The largest bridging token by far.</li>
+      <li>Yield farming: chase the highest APY by moving liquidity between protocols. Deposit in Curve &rarr; flip the LP token to Convex &rarr; deposit elsewhere. Composability magnifies returns and risks. A bug in any contract in the stack can wipe you out.</li>
+      <li>Discussion question: &ldquo;If composability is the killer feature of DeFi, what is the systemic risk implication?&rdquo; (Lead to: a single smart-contract bug can cascade across protocols that share collateral. Think 2008 mortgage CDOs in code.)</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Before we leave the permissionless world, one more piece of theory: tokenomics.&rdquo;</div>
+</div>
+
+<!-- SLIDE 11b -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 11b</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">Tokenomics &mdash; Tokens vs. Equity</div>
+  <div class="notes">
+    <ul>
+      <li>This is the academic backbone for everything we&rsquo;ve seen. Tokenomics asks: when is a token a better financing vehicle than equity? The answer depends on the moral-hazard problem between founders, investors, and users.</li>
+      <li>Token pricing is demand-driven, not DCF. The equilibrium token price is determined by total user transaction volume, not discounted cash flows. This is a fundamentally different pricing model than what students learned in corporate finance. Ask: &ldquo;If I can&rsquo;t discount cash flows, how do I value a token?&rdquo; (Answer: model adoption &mdash; wallets, transaction volume, network effects.)</li>
+      <li>Filecoin case: users pay FIL to store data; miners post FIL as collateral. As the user base grows, counterparties are easier to find, the token becomes more useful, and its value rises. Network effects drive the price &mdash; not earnings.</li>
+      <li>Tokens vs. equity: research concludes tokens dominate equity for start-ups where entrepreneurial effort is crucial and signaling quality to outside investors is hard. The optimal design combines an ICO crowdsale with a revenue-sharing agreement &mdash; replicating equity payoffs without equity&rsquo;s governance overhead.</li>
+      <li>The supply paradox: miner compensation increases token supply, lowering investor willingness to pay. The counter-solution is token burning &mdash; deliberately destroying tokens to reduce oversupply and support value. Ethereum&rsquo;s EIP-1559 does exactly this with base fees.</li>
+      <li>The commitment device: blockchain prevents platform owners from secretly diluting user stakes. Founder payoff depends on profit; token investor payoff depends on transaction volume. These aligned but distinct incentives reduce moral hazard. Ask: &ldquo;How does this compare to the principal-agent problem in traditional corporate governance?&rdquo;</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Now let&rsquo;s see what banks are doing with this technology &mdash; on their own terms.&rdquo;</div>
+</div>
+
+<!-- SLIDE 12 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 12</span>
+    <span class="slide-time">~4 min</span>
+  </div>
+  <div class="slide-title">R3 Corda &mdash; The Permissioned Alternative</div>
+  <div class="notes">
+    <ul>
+      <li>R3 is the counter-example. David Rutter, ex-ICAP electronic-brokerage CEO, saw blockchain&rsquo;s back-office potential without the crypto religion. Founded R3CEV in 2014; became R3 in 2016.</li>
+      <li>Funding model: 42 banks joined by YE 2015, each paying up to $5M annual membership and seconding staff. $100M+ raised, zero equity given up. The banks underwrote their own back-office disruption.</li>
+      <li>Five Corda choices vs. Ethereum: (1) Permissioned, not public. (2) Validates transactions individually, not in blocks. (3) Notaries verify, not mining. (4) Data shared only with counterparties. (5) Smart contracts inside the JVM.</li>
+      <li>Throughput: 20K TPS vs. Ethereum&rsquo;s ~15 TPS. Estimated industry savings: $15B-$20B/year in back-office costs.</li>
+      <li>The takeaway: blockchain doesn&rsquo;t have to mean &ldquo;decentralized.&rdquo; The technology stack &mdash; DLT, cryptographic verification, smart contracts &mdash; is independent of the governance model. Regulated finance is absorbing DLT without crypto.</li>
+    </ul>
+  </div>
+  <div class="transition">Transition: &ldquo;Let&rsquo;s pull it together.&rdquo;</div>
+</div>
+
+<!-- SLIDE 13 -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="slide-number">Slide 13</span>
+    <span class="slide-time">~3 min</span>
+  </div>
+  <div class="slide-title">Closing &mdash; Crypto LEGO</div>
+  <div class="notes">
+    <ul>
+      <li>Synthesis: Ethereum gave us programmable money. Smart contracts let strangers transact without intermediaries. DAOs codify governance. Stablecoins solve the volatility problem &mdash; when they hold. DeFi composes these primitives into a parallel financial system.</li>
+      <li>Four numbers: 32 ETH (staking minimum), $175B (peak DeFi TVL), $45B (TerraUSD&rsquo;s death), $69.3M (Beeple&rsquo;s NFT).</li>
+      <li>The unresolved tension: composability is DeFi&rsquo;s superpower and its systemic risk. One bug can cascade through the LEGO tower. The Terra collapse rippled through every protocol that held UST. The DAO Hack threatened Ethereum itself.</li>
+      <li>The permissioned alternative (Corda) shows regulated finance can absorb DLT without crypto. Both futures are plausible &mdash; decentralized DeFi and permissioned bank-grade DLT &mdash; and they may coexist.</li>
+      <li>Preview next class: Chapter 7 &mdash; Payments. Real-time rails, card networks, cross-border, the role of stablecoins in mainstream payments.</li>
+      <li>Final question: &ldquo;If you ran a major bank, would you build on Ethereum, on Corda, or on neither? Why?&rdquo; (Force them to articulate the trust-vs-openness trade-off.)</li>
+    </ul>
+  </div>
+  <div class="transition">End of lecture. Open floor for questions. Reading for next week: Chapter 7.</div>
+</div>
+
+
+<div class="total-time">
+  Total estimated lecture time: ~57 minutes<br>
+  (Includes natural pauses for questions after Slides 5, 10, 11b, and 12)
+</div>
+
+</body>
+</html>

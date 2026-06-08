@@ -1,0 +1,63 @@
+<!-- ============================================================
+     SLIDE 03 · Ether, Gas & PoS (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="03 Ether, Gas & PoS">
+  <div class="chrome">
+    <div>&sect;6.2 &middot; Ether, gas, and proof-of-stake</div>
+    <div>03 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">If Ethereum is a toll road, ETH is the cost to use it</div>
+    <h2 class="h-xl" style="font-size:4vw">Buying gas to run smart contracts.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.15vw">
+      Ether (ETH) is the native token of Ethereum. Users buy &ldquo;gas&rdquo; to pay for computation. More complex programs = more gas. Incentivizes efficient code and prevents network spam. Hashing algorithm Ethash; new block every 12&ndash;15 sec.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:1.4vh; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Block reward evolution</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">5 ETH (genesis) &rarr; 3 ETH (late 2017) &rarr; 2 ETH (early 2019). No supply cap. ~120M ETH circulating (Apr 2022); 72M from crowdsale.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Proof-of-Stake mechanics</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Validators deposit (stake) <strong>32 ETH</strong> into a smart contract. One block proposer per 12-sec slot, randomly selected. A committee of validators attests. Checkpoint vote every 32 slots (epoch) for finality.</div>
+        </div>
+        <div class="stat-card" style="padding-top:.8vh">
+          <div class="stat-label">Slashing</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Malicious validators lose their stake (&ldquo;burned&rdquo;). Downtime &rarr; small penalty (0.1% of tokens). Double signing &rarr; severe penalty (5%+).</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
+          <div class="pipeline-label" style="margin-bottom:.8vh">The Merge &middot; Sept 15, 2022</div>
+          <div class="pipeline" data-cols="3" style="gap:.8vw">
+            <div class="step">
+              <div class="step-nb">Two years</div>
+              <div class="step-title" style="font-size:1.05vw">Parallel chains</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Beacon Chain ran alongside mainnet to test PoS before the switch.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">99.95%</div>
+              <div class="step-title" style="font-size:1.05vw">Energy cut</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">PoW mining replaced by validator staking. No more ASIC farms.</div>
+            </div>
+            <div class="step">
+              <div class="step-nb">12-15s</div>
+              <div class="step-title" style="font-size:1.05vw">Block time</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Faster than BTC&rsquo;s 10 min; supports complex contracts.</div>
+            </div>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:.6vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          <strong>Why staking changes incentives:</strong> validators don&rsquo;t compete with hash power &mdash; they&rsquo;re chosen randomly in proportion to ETH staked. No energy waste. But it raises the new concern of stake concentration (e.g. Lido controls ~30% of staked ETH).
+          <div class="callout-src">&mdash; Fintech Explained, Ch. 6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; Ether &middot; Gas &middot; PoS</div>
+    <div>32 ETH stake &middot; 12-sec slots &middot; 99.95% energy cut</div>
+  </div>
+</section>
