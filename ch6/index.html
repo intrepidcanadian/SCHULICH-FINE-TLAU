@@ -46,7 +46,7 @@
 <section class="slide light" data-screen-label="02 Ethereum & Buterin">
   <div class="chrome">
     <div>&sect;6.1 &middot; The Ethereum network</div>
-    <div>02 / 17</div>
+    <div>02 / 14</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.4vh">
@@ -107,7 +107,7 @@
 <section class="slide dark" data-screen-label="03 Ether, Gas & PoS">
   <div class="chrome">
     <div>&sect;6.2 &middot; Ether, gas, and proof-of-stake</div>
-    <div>03 / 17</div>
+    <div>03 / 14</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">If Ethereum is a toll road, ETH is the cost to use it</div>
@@ -153,7 +153,7 @@
           </div>
         </div>
         <div class="callout" style="margin-top:.6vh; padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
-          <strong>Why staking changes incentives:</strong> validators don&rsquo;t compete with hash power &mdash; they&rsquo;re chosen randomly in proportion to ETH staked. No energy waste. But it raises the new concern of stake concentration (e.g. Lido controls ~30% of staked ETH).
+          <strong>Why staking changes incentives:</strong> validators don&rsquo;t compete with hash power &mdash; they&rsquo;re chosen randomly in proportion to ETH staked. No energy waste.
           <div class="callout-src">&mdash; Fintech Explained, Ch. 6</div>
         </div>
       </div>
@@ -165,153 +165,7 @@
   </div>
 </section>
 
-<!-- ============================================================
-     SLIDE 03b · Account Model vs UTXO (light, technical)
-     ============================================================ -->
-<section class="slide light" data-screen-label="03b Account Model">
-  <div class="chrome">
-    <div>&sect;6.2 &middot; Technical &middot; world state</div>
-    <div>03b / 17</div>
-  </div>
-  <div class="frame" style="padding-top:2.2vh">
-    <div class="kicker">Technical deep dive &middot; Ethereum&rsquo;s data model</div>
-    <h2 class="h-xl" style="font-size:3.8vw">Ethereum has accounts &mdash; not coins.</h2>
-    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.1vw">
-      Bitcoin tracks UTXOs; Ethereum tracks <strong>accounts</strong> in a global <strong>world state</strong>. There are two account types: <em>externally owned accounts</em> (controlled by a private key) and <em>contract accounts</em> (controlled by their own code). The world state is the Merkle root of a state trie that every full node maintains in lockstep.
-    </p>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Account fields &middot; both types</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10.5px,.78vw); line-height:1.55; margin-top:.6vh; background:rgba(127,127,127,.06); padding:.9vh 1.1vw; border-radius:4px">
-            <div><strong>nonce</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tx counter (EOA) / contracts created (CA)</div>
-            <div><strong>balance</strong> &nbsp;&nbsp;&nbsp; ETH held, in wei (1 ETH = 10&sup1;&#8312; wei)</div>
-            <div><strong>storageRoot</strong> &nbsp; root hash of contract&rsquo;s storage trie</div>
-            <div><strong>codeHash</strong> &nbsp;&nbsp; keccak256 of contract bytecode (empty for EOA)</div>
-          </div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">An EOA has <code>codeHash = keccak256("")</code>. A contract&rsquo;s code is immutable after deployment, but its <strong>storage</strong> mutates on every transaction.</div>
-        </div>
-        <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
-          <strong>Why not UTXO?</strong> Smart contracts need persistent, mutable state &mdash; counters, mappings, balances of other tokens. UTXO is stateless by design. Accounts let contracts hold and modify storage between calls.
-          <div class="callout-src">&mdash; Ethereum Yellow Paper &middot; Wood (2014)</div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">World state trie &middot; Merkle Patricia Trie</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(127,127,127,.06); padding:.9vh 1.1vw; border-radius:4px; white-space:pre">         stateRoot  (in block header)
-              |
-         [Patricia trie keyed by address]
-            /      |       \
-   0x123...     0xabc...    0xdef...
-    EOA          contract    contract
-   { nonce,     { ..,        { ..,
-     balance,    storageRoot   storageRoot
-     0, &empty; }      → trie }       → trie }</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">A <strong>Merkle Patricia Trie</strong> = radix trie + Merkle hashing. Light clients can prove any account or storage slot with O(log n) hashes. Each block header commits to <code>stateRoot</code>, <code>txRoot</code>, and <code>receiptsRoot</code>.</div>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vw">
-          <div class="stat-card" style="padding-top:.6vh">
-            <div class="stat-label">Hash function</div>
-            <div class="stat-nb" style="font-size:2.2vw">Keccak-256</div>
-            <div class="stat-note" style="font-size:max(10px,.78vw)">Pre-NIST SHA-3 variant &middot; not standard SHA3</div>
-          </div>
-          <div class="stat-card" style="padding-top:.6vh">
-            <div class="stat-label">Address</div>
-            <div class="stat-nb" style="font-size:2.2vw">160-bit</div>
-            <div class="stat-note" style="font-size:max(10px,.78vw)">Last 20 bytes of keccak256(pubkey)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="foot">
-    <div>Page 03b &middot; Account model &middot; World state</div>
-    <div>EOA + Contract &middot; Patricia trie</div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SLIDE 03c · EVM, Gas & EIP-1559 (dark, technical)
-     ============================================================ -->
-<section class="slide dark" data-screen-label="03c EVM & EIP-1559">
-  <div class="chrome">
-    <div>&sect;6.2 &middot; Technical &middot; EVM &amp; gas economics</div>
-    <div>03c / 17</div>
-  </div>
-  <div class="frame" style="padding-top:2vh">
-    <div class="kicker">Technical deep dive &middot; the world computer</div>
-    <h2 class="h-xl" style="font-size:3.8vw">The EVM is a 256-bit stack machine.</h2>
-    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.1vw">
-      Every Ethereum node runs the <strong>Ethereum Virtual Machine</strong>, a deterministic, sandboxed, 256-bit stack machine. Bytecode is executed one opcode at a time, with each opcode charged a fixed amount of <strong>gas</strong>. If gas runs out, all state changes revert &mdash; but the fee is still paid. EIP-1559 (Aug 2021) replaced the auction-style fee market with a predictable base fee + tip.
-    </p>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">EVM opcode gas costs (selection)</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10.5px,.78vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px">
-            <div><strong>ADD / SUB</strong> &nbsp;&nbsp;&nbsp; 3 gas &nbsp; <span style="opacity:.55">// cheap arithmetic</span></div>
-            <div><strong>MUL / DIV</strong> &nbsp;&nbsp;&nbsp; 5 gas</div>
-            <div><strong>SLOAD</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2,100 gas (cold) &middot; 100 (warm)</div>
-            <div><strong>SSTORE</strong> &nbsp;&nbsp;&nbsp;&nbsp; 20,000 gas (new) &middot; 5,000 (update)</div>
-            <div><strong>CREATE</strong> &nbsp;&nbsp;&nbsp;&nbsp; 32,000 + bytecode cost</div>
-            <div><strong>CALL</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100 + access list cost</div>
-            <div><strong>tx base</strong> &nbsp;&nbsp;&nbsp; 21,000 gas (every transaction)</div>
-          </div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">Storage is <strong>200&times; more expensive</strong> than computation because every node must replicate it forever. This shapes Solidity idioms: pack into bytes, use events for logs, prefer memory over storage.</div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">EIP-1559 fee formula (post Aug 2021)</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10.5px,.78vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px; white-space:pre">tx_fee = gasUsed &times; (baseFee + priorityFee)
-
-baseFee_next = baseFee &times;
-   (1 + 1/8 &times; (gasUsed &minus; target) / target)
-
-target = 15M gas &middot; cap = 30M gas / block
-baseFee is BURNED &middot; priorityFee &rarr; validator</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">Base fee rises 12.5% when blocks are full, falls 12.5% when empty &mdash; converging to demand. The burn makes ETH <em>deflationary</em> when usage is high. &gt;4M ETH burned since the upgrade.</div>
-        </div>
-        <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
-          <strong>Gas limit vs. gas price.</strong> A user specifies <code>gasLimit</code> (max work) and <code>maxFeePerGas</code> (max price). If execution exceeds <code>gasLimit</code>, EVM throws &ldquo;out of gas&rdquo; &mdash; <strong>state reverts, fee paid in full</strong>.
-          <div class="callout-src">&mdash; EIP-1559 &middot; Buterin, Conner, Dudley, Slipper, Norden, Bakhta</div>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:1.2vw; margin-top:1.6vh">
-      <div class="stat-card" style="padding-top:.6vh">
-        <div class="stat-label">Word size</div>
-        <div class="stat-nb" style="font-size:2vw">256-bit</div>
-        <div class="stat-note" style="font-size:max(10px,.78vw)">Stack &middot; storage slots &middot; arithmetic</div>
-      </div>
-      <div class="stat-card" style="padding-top:.6vh">
-        <div class="stat-label">Stack depth</div>
-        <div class="stat-nb" style="font-size:2vw">1,024</div>
-        <div class="stat-note" style="font-size:max(10px,.78vw)">Max items &middot; overflow reverts</div>
-      </div>
-      <div class="stat-card" style="padding-top:.6vh">
-        <div class="stat-label">Block gas limit</div>
-        <div class="stat-nb" style="font-size:2vw">30M</div>
-        <div class="stat-note" style="font-size:max(10px,.78vw)">Total compute per block</div>
-      </div>
-      <div class="stat-card" style="padding-top:.6vh">
-        <div class="stat-label">ETH burned</div>
-        <div class="stat-nb" style="font-size:2vw">4M+</div>
-        <div class="stat-note" style="font-size:max(10px,.78vw)">Since EIP-1559 (~$12B at 2024 prices)</div>
-      </div>
-    </div>
-  </div>
-  <div class="foot">
-    <div>Page 03c &middot; EVM &middot; Gas &middot; EIP-1559</div>
-    <div>Stack machine &middot; base fee burned &middot; tip to validator</div>
-  </div>
-</section>
 
 <!-- ============================================================
      SLIDE 04 · Smart Contracts as LEGO (light)
@@ -319,7 +173,7 @@ baseFee is BURNED &middot; priorityFee &rarr; validator</div>
 <section class="slide light" data-screen-label="04 Smart Contracts LEGO">
   <div class="chrome">
     <div>&sect;6.3 &middot; Smart contracts &amp; dapps</div>
-    <div>04 / 17</div>
+    <div>04 / 14</div>
   </div>
   <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Crypto LEGO &middot; programmable money</div>
@@ -355,17 +209,17 @@ baseFee is BURNED &middot; priorityFee &rarr; validator</div>
             <div class="step">
               <div class="step-nb">Utility</div>
               <div class="step-title" style="font-size:1.05vw">Service claim</div>
-              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Brave BAT tips creators. Filecoin FIL for storage.</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Brave BAT tips creators.</div>
             </div>
             <div class="step">
               <div class="step-nb">Security</div>
               <div class="step-title" style="font-size:1.05vw">Cash flow claim</div>
-              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Digital equivalent of common stock. Regulated under Howey.</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">The digital equivalent of a common stock or other financial security.</div>
             </div>
             <div class="step">
               <div class="step-nb">Governance</div>
               <div class="step-title" style="font-size:1.05vw">Voting rights</div>
-              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Maker token decides DAI policy. UNI, AAVE, COMP.</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Maker token decides DAI policy.</div>
             </div>
           </div>
         </div>
@@ -386,71 +240,6 @@ baseFee is BURNED &middot; priorityFee &rarr; validator</div>
   </div>
 </section>
 
-<!-- ============================================================
-     SLIDE 04b · Solidity ERC-20 in Code (dark, technical)
-     ============================================================ -->
-<section class="slide dark" data-screen-label="04b ERC-20 Solidity">
-  <div class="chrome">
-    <div>&sect;6.3 &middot; Technical &middot; ERC-20 interface</div>
-    <div>04b / 17</div>
-  </div>
-  <div class="frame" style="padding-top:2vh">
-    <div class="kicker">Technical deep dive &middot; what a token contract actually is</div>
-    <h2 class="h-xl" style="font-size:3.8vw">A token is a contract with a mapping.</h2>
-    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.1vw">
-      An ERC-20 token is not a separate currency &mdash; it is a single smart contract on Ethereum that keeps a <code>mapping(address =&gt; uint256)</code> of balances and exposes six required functions. Wallets and DEXes can interact with <em>any</em> ERC-20 because they all share this interface. This standard is why composability is possible.
-    </p>
-
-    <div style="display:grid; grid-template-columns:1.15fr .85fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Minimal ERC-20 in Solidity</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px; white-space:pre"><span style="color:#9ad1ff">contract</span> Token {
-  <span style="opacity:.65">// State stored in the EVM forever</span>
-  <span style="color:#9ad1ff">mapping</span>(<span style="color:#9ad1ff">address</span> =&gt; <span style="color:#9ad1ff">uint256</span>) <span style="color:#9ad1ff">public</span> balanceOf;
-  <span style="color:#9ad1ff">mapping</span>(<span style="color:#9ad1ff">address</span> =&gt; <span style="color:#9ad1ff">mapping</span>(<span style="color:#9ad1ff">address</span> =&gt; <span style="color:#9ad1ff">uint256</span>)) allowance;
-  <span style="color:#9ad1ff">uint256</span> <span style="color:#9ad1ff">public</span> totalSupply;
-
-  <span style="color:#ffb38a">event</span> Transfer(<span style="color:#9ad1ff">address indexed</span> from, <span style="color:#9ad1ff">address indexed</span> to, <span style="color:#9ad1ff">uint256</span> value);
-  <span style="color:#ffb38a">event</span> Approval(<span style="color:#9ad1ff">address indexed</span> owner, <span style="color:#9ad1ff">address indexed</span> spender, <span style="color:#9ad1ff">uint256</span> value);
-
-  <span style="color:#9ad1ff">function</span> transfer(<span style="color:#9ad1ff">address</span> to, <span style="color:#9ad1ff">uint256</span> amt) <span style="color:#9ad1ff">external returns</span> (<span style="color:#9ad1ff">bool</span>) {
-    <span style="color:#9ad1ff">require</span>(balanceOf[<span style="color:#9ad1ff">msg.sender</span>] &gt;= amt, <span style="color:#a8e6a3">"insufficient"</span>);
-    balanceOf[<span style="color:#9ad1ff">msg.sender</span>] -= amt;
-    balanceOf[to]             += amt;
-    <span style="color:#ffb38a">emit</span> Transfer(<span style="color:#9ad1ff">msg.sender</span>, to, amt);
-    <span style="color:#9ad1ff">return true</span>;
-  }
-  <span style="opacity:.65">// approve(), transferFrom(), name(), symbol(), decimals()</span>
-}</div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Six required functions</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10.5px,.78vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px">
-            <div><strong>totalSupply()</strong> &nbsp; total tokens minted</div>
-            <div><strong>balanceOf(a)</strong> &nbsp;&nbsp; tokens held by address a</div>
-            <div><strong>transfer(to,n)</strong> &nbsp; send n to address to</div>
-            <div><strong>approve(s,n)</strong> &nbsp; allow spender s to pull n</div>
-            <div><strong>transferFrom</strong>(f,t,n) &nbsp; spender pulls from f</div>
-            <div><strong>allowance</strong>(o,s) &nbsp; remaining approval</div>
-          </div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">The <strong>approve / transferFrom</strong> pattern is what lets a DEX swap tokens without custody &mdash; you approve Uniswap to pull X tokens, then call swap. It is also the source of the <em>approval phishing</em> attack vector.</div>
-        </div>
-        <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
-          <strong>Compile and deploy.</strong> Solidity &rarr; EVM bytecode (~50 KB for a basic ERC-20) &rarr; <code>CREATE</code> opcode deploys it to a new address. Deployment costs ~1M gas (one-time). Every <code>transfer()</code> after that costs ~50K gas.
-          <div class="callout-src">&mdash; ERC-20: Token Standard &middot; Vogelsteller &amp; Buterin (2015)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="foot">
-    <div>Page 04b &middot; ERC-20 &middot; Solidity</div>
-    <div>mapping(address =&gt; uint256) &middot; 6 functions</div>
-  </div>
-</section>
 
 <!-- ============================================================
      SLIDE 05 · DAOs and The DAO Hack (dark)
@@ -458,7 +247,7 @@ baseFee is BURNED &middot; priorityFee &rarr; validator</div>
 <section class="slide dark" data-screen-label="05 DAOs & DAO Hack">
   <div class="chrome">
     <div>&sect;6.4 &middot; DAOs &amp; the DAO Hack</div>
-    <div>05 / 17</div>
+    <div>05 / 14</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">A virtual company programmed in code</div>
@@ -527,102 +316,6 @@ baseFee is BURNED &middot; priorityFee &rarr; validator</div>
   </div>
 </section>
 
-<!-- ============================================================
-     SLIDE 05b · PoS Validator Lifecycle (light, technical)
-     ============================================================ -->
-<section class="slide light" data-screen-label="05b PoS Validator">
-  <div class="chrome">
-    <div>&sect;6.4 &middot; Technical &middot; validator lifecycle</div>
-    <div>05b / 17</div>
-  </div>
-  <div class="frame" style="padding-top:2.2vh">
-    <div class="kicker">Technical deep dive &middot; how PoS finalises a block</div>
-    <h2 class="h-xl" style="font-size:3.4vw">Propose, attest, finalise, slash.</h2>
-    <p class="lead" style="margin-top:.3vh; max-width:62vw; opacity:.78; font-size:1vw; line-height:1.4">
-      Time is divided into <strong>12-second slots</strong> and <strong>32-slot epochs</strong>. One validator proposes per slot; a committee attests. A block is <em>finalised</em> when two consecutive epochs are justified by ~2/3 of staked ETH. Protocol: <strong>Gasper</strong> (LMD-GHOST fork choice + Casper FFG finality).
-    </p>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="pipeline-section" style="margin-top:0; padding-top:0; border:0">
-          <div class="pipeline-label" style="margin-bottom:.8vh">Validator state machine</div>
-          <div class="pipeline" data-cols="2" style="gap:.8vw">
-            <div class="step">
-              <div class="step-nb">01 &middot; Deposit</div>
-              <div class="step-title" style="font-size:1.05vw">Stake 32 ETH</div>
-              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Send 32 ETH to deposit contract <code>0x0000...00219</code>. Enter activation queue.</div>
-            </div>
-            <div class="step">
-              <div class="step-nb">02 &middot; Active</div>
-              <div class="step-title" style="font-size:1.05vw">Attest every epoch</div>
-              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Sign vote on head + target + source checkpoints. BLS-signed.</div>
-            </div>
-            <div class="step">
-              <div class="step-nb">03 &middot; Propose</div>
-              <div class="step-title" style="font-size:1.05vw">~1 in 8K slots</div>
-              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Selected at random by RANDAO. Build &amp; broadcast block.</div>
-            </div>
-            <div class="step">
-              <div class="step-nb">04 &middot; Slash / Exit</div>
-              <div class="step-title" style="font-size:1.05vw">Burn or withdraw</div>
-              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Voluntary exit &rarr; full withdrawal. Equivocation &rarr; slash.</div>
-            </div>
-          </div>
-        </div>
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Slashing conditions (Casper FFG)</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45"><strong>Double proposing</strong> &mdash; sign two distinct blocks for the same slot. <strong>Surround voting</strong> &mdash; attest in a way that contradicts a prior vote. Penalty: min 1 ETH burned + forced exit. Correlated slashing penalty grows with how many validators are slashed in the same window.</div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Finality timeline &middot; Gasper</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(127,127,127,.07); padding:.9vh 1.1vw; border-radius:4px; white-space:pre">slot:   0  1  2  ... 31 | 32 33 ... 63 | 64 ...
-epoch:  ─── N ──────────| ─── N+1 ──── | N+2
-
-block proposed every slot (12 s)
-attestations aggregated by committees
-checkpoint at slot 0 of each epoch
-
-epoch N justified  → epoch N+1 finalises N
-&therefore; finality &asymp; 2 epochs = ~12.8 min</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">Once finalised, reverting requires <strong>1/3 of staked ETH</strong> (~$30B) to be slashed. This is the &ldquo;economic finality&rdquo; that PoS sells as stronger than PoW&rsquo;s probabilistic finality.</div>
-        </div>
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:.7vw">
-          <div class="stat-card" style="padding-top:.4vh">
-            <div class="stat-label" style="font-size:max(9px,.7vw)">Slot</div>
-            <div class="stat-nb" style="font-size:1.6vw">12 s</div>
-            <div class="stat-note" style="font-size:max(9px,.7vw)">1 proposer + committee</div>
-          </div>
-          <div class="stat-card" style="padding-top:.4vh">
-            <div class="stat-label" style="font-size:max(9px,.7vw)">Epoch</div>
-            <div class="stat-nb" style="font-size:1.8vw">32</div>
-            <div class="stat-note" style="font-size:max(9px,.7vw)">slots = 6.4 min</div>
-          </div>
-          <div class="stat-card" style="padding-top:.4vh">
-            <div class="stat-label" style="font-size:max(9px,.7vw)">Validators</div>
-            <div class="stat-nb" style="font-size:1.8vw">1M+</div>
-            <div class="stat-note" style="font-size:max(9px,.7vw)">~25% of ETH supply</div>
-          </div>
-          <div class="stat-card" style="padding-top:.4vh">
-            <div class="stat-label" style="font-size:max(9px,.7vw)">APR</div>
-            <div class="stat-nb" style="font-size:1.8vw">~3-5%</div>
-            <div class="stat-note" style="font-size:max(9px,.7vw)">Issuance + tips + MEV</div>
-          </div>
-        </div>
-        <div class="callout" style="padding:.7vh 1.2vw; font-size:max(11px,.85vw); line-height:1.45">
-          <strong>RANDAO</strong> picks the proposer using a BLS-signature mixing scheme &mdash; validators contribute entropy; no single actor can bias selection.
-          <div class="callout-src" style="margin-top:.4vh">&mdash; Ethereum consensus specs &middot; Casper FFG</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="foot">
-    <div>Page 05b &middot; PoS &middot; Gasper &middot; Finality</div>
-    <div>12-s slots &middot; 32-slot epochs &middot; ~12.8 min finality</div>
-  </div>
-</section>
 
 <!-- ============================================================
      SLIDE 06 · Stablecoins (light)
@@ -630,7 +323,7 @@ epoch N justified  → epoch N+1 finalises N
 <section class="slide light" data-screen-label="06 Stablecoins">
   <div class="chrome">
     <div>&sect;6.5 &middot; Stablecoins</div>
-    <div>06 / 17</div>
+    <div>06 / 14</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -679,7 +372,7 @@ epoch N justified  → epoch N+1 finalises N
 <section class="slide hero dark" data-screen-label="07 DeFi Internet of Money">
   <div class="chrome">
     <div>&sect;6.6 &middot; Decentralized finance</div>
-    <div>07 / 17</div>
+    <div>07 / 14</div>
   </div>
   <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
     <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
@@ -724,7 +417,7 @@ epoch N justified  → epoch N+1 finalises N
 <section class="slide light" data-screen-label="08 DeFi Categories">
   <div class="chrome">
     <div>&sect;6.7 &middot; DeFi categories</div>
-    <div>08 / 17</div>
+    <div>08 / 14</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -781,7 +474,7 @@ epoch N justified  → epoch N+1 finalises N
 <section class="slide dark" data-screen-label="09 Curve DEX">
   <div class="chrome">
     <div>&sect;6.7b &middot; Case study &middot; Curve Finance</div>
-    <div>09 / 17</div>
+    <div>09 / 14</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Case study &middot; decentralized exchange &middot; AMM</div>
@@ -842,7 +535,7 @@ epoch N justified  → epoch N+1 finalises N
         </div>
         <div class="stat-card" style="padding-top:.8vh">
           <div class="stat-label">Compare &middot; CEX vs. DEX</div>
-          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Coinbase / Binance hold your private keys (honey pot). Curve&rsquo;s smart contract is open-source and audited &mdash; you keep your keys. No KYC. No custodian. But: contract bugs are still possible (see DAO Hack).</div>
+          <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">A centralized exchange holds your private keys on your behalf. A DEX like Curve uses an open-source smart contract &mdash; you keep your keys. No KYC. No custodian. But: contract bugs are still possible (see DAO Hack).</div>
         </div>
       </div>
     </div>
@@ -859,7 +552,7 @@ epoch N justified  → epoch N+1 finalises N
 <section class="slide light" data-screen-label="10 MakerDAO">
   <div class="chrome">
     <div>&sect;6.7c &middot; Case study &middot; MakerDAO</div>
-    <div>10 / 17</div>
+    <div>10 / 14</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -877,7 +570,7 @@ epoch N justified  → epoch N+1 finalises N
         </div>
         <div class="stat-card" style="padding-top:.6vh">
           <div class="stat-label">Why borrow DAI?</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">Get liquidity without selling your ETH. Avoid capital-gains tax events. Lever up by re-depositing DAI elsewhere. Use DAI for stable USD transactions on-chain.</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">Borrow against your cryptocurrency holdings, providing liquidity without the need to sell. Lever up by re-depositing DAI elsewhere. Use DAI for stable USD transactions on-chain.</div>
         </div>
         <div class="stat-card" style="padding-top:.6vh">
           <div class="stat-label">Decentralized central bank</div>
@@ -912,7 +605,7 @@ epoch N justified  → epoch N+1 finalises N
 <section class="slide dark" data-screen-label="11 Yield, Derivatives, Bridges">
   <div class="chrome">
     <div>&sect;6.7d &middot; Yield, derivatives, bridges</div>
-    <div>11 / 17</div>
+    <div>11 / 14</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Composability &middot; DeFi LEGO in action</div>
@@ -925,7 +618,7 @@ epoch N justified  → epoch N+1 finalises N
       <div class="stat-card" style="padding-top:1vh">
         <div class="stat-label">Lido &middot; liquidity staking</div>
         <div class="step-title" style="font-size:1.15vw; margin-top:.3vh">Double-dipping rewards</div>
-        <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Stake ETH &rarr; receive stETH (1:1). Then stake stETH elsewhere across DeFi for additional yield. $18.7B TVL within 18 months of launch. The leading liquidity-staking protocol.</div>
+        <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Stake ETH &rarr; receive stToken (1:1). Then stake stToken elsewhere across DeFi for additional yield. $18.7B TVL within 18 months of launch. The leading liquidity-staking protocol.</div>
       </div>
       <div class="stat-card" style="padding-top:1vh">
         <div class="stat-label">Synthetix &middot; derivatives</div>
@@ -945,14 +638,14 @@ epoch N justified  → epoch N+1 finalises N
         <div class="step-desc" style="font-size:max(11px,.85vw); line-height:1.45">Maximize returns by moving liquidity across protocols. Deposit into Curve, flip the LP token to Convex Finance, restake the new LP token elsewhere. Higher yield, higher complexity, higher risk &mdash; smart-contract exploits compound across layers.</div>
       </div>
       <div class="callout" style="padding:1.2vh 1.6vw; font-size:max(13px,1vw); line-height:1.5">
-        <div class="q-big" style="font-size:max(14px,1.1vw)">Most blockchains are closed by design &mdash; they lack interoperability. Bridges break that wall, but every bridge is also a new attack surface.</div>
+        <div class="q-big" style="font-size:max(14px,1.1vw)">Most blockchains are closed by design &mdash; they lack interoperability. Bridges break that wall, enabling assets to move between chains.</div>
         <div class="callout-src">&mdash; Fintech Explained, Ch. 6</div>
       </div>
     </div>
   </div>
   <div class="foot">
     <div>Page 11 &middot; Yield farming &middot; Derivatives &middot; Bridges</div>
-    <div>stETH &middot; sBTC &middot; WBTC</div>
+    <div>stToken &middot; sBTC &middot; WBTC</div>
   </div>
 </section>
 
@@ -962,7 +655,7 @@ epoch N justified  → epoch N+1 finalises N
 <section class="slide light" data-screen-label="11b Tokenomics">
   <div class="chrome">
     <div>&sect;6.7e &middot; Tokenomics</div>
-    <div>11b / 18</div>
+    <div>11b / 14</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Token economics &middot; theoretical foundations</div>
@@ -1018,7 +711,7 @@ epoch N justified  → epoch N+1 finalises N
 <section class="slide light" data-screen-label="12 R3 Corda">
   <div class="chrome">
     <div>&sect;6.8 &middot; R3 Corda &middot; permissioned DLT</div>
-    <div>12 / 17</div>
+    <div>12 / 14</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -1026,7 +719,7 @@ epoch N justified  → epoch N+1 finalises N
         <div class="kicker">The pragmatist&rsquo;s blockchain</div>
         <h2 class="h-xl" style="font-size:3.8vw">A DLT built for regulated finance.</h2>
         <p class="lead" style="margin-top:.6vh; max-width:42vw; font-size:1.1vw">
-          David Rutter (ex-ICAP CEO) saw blockchain&rsquo;s potential for back-office settlement &mdash; without the hype. R3&rsquo;s permissioned DLT validates transactions individually with trusted notaries. No mining. No tokens. Just lower costs for the banks who funded it.
+          David Rutter (ex-ICAP CEO) saw blockchain&rsquo;s potential for back-office settlement &mdash; without the hype. R3&rsquo;s permissioned DLT validates transactions individually with trusted notaries. No mining. Just lower costs for the banks who funded it.
         </p>
       </div>
       <div style="display:flex; flex-direction:column; gap:.8vh">
@@ -1036,7 +729,7 @@ epoch N justified  → epoch N+1 finalises N
         </div>
         <div class="stat-card" style="padding-top:.6vh">
           <div class="stat-label">Five Corda choices vs. Ethereum</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45"><strong>1.</strong> Permissioned, not public. &middot; <strong>2.</strong> Validates transactions individually, not in blocks. &middot; <strong>3.</strong> Notaries, not mining. &middot; <strong>4.</strong> Data shared only with counterparties. &middot; <strong>5.</strong> Smart contracts run inside the JVM.</div>
+          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45"><strong>1.</strong> Permissioned, not public. &middot; <strong>2.</strong> Validates transactions individually, not in blocks. &middot; <strong>3.</strong> Notaries, not mining. &middot; <strong>4.</strong> Data shared only with counterparties. &middot; <strong>5.</strong> Compatible with the Java Virtual Machine and many business databases.</div>
         </div>
         <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
           One estimate put the back-office savings at <strong>$15&ndash;$20B/year</strong>. By year-end 2022 hundreds of regulated institutions &mdash; central banks, commercial banks, fintechs, exchanges &mdash; were using Corda.
@@ -1049,7 +742,7 @@ epoch N justified  → epoch N+1 finalises N
         <div class="stat-card" style="padding-top:1vh">
           <div class="stat-label">Throughput</div>
           <div class="stat-nb" style="font-size:3.4vw">20K</div>
-          <div class="stat-note" style="font-size:max(10px,.78vw)">transactions per second &middot; vs. ETH ~15 TPS</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">transactions per second</div>
         </div>
         <div class="stat-card" style="padding-top:1vh">
           <div class="stat-label">Annual savings</div>
@@ -1086,7 +779,7 @@ epoch N justified  → epoch N+1 finalises N
 <section class="slide hero dark" data-screen-label="13 Closing">
   <div class="chrome">
     <div>Chapter 06 &middot; Closing</div>
-    <div>13 / 17</div>
+    <div>13 / 14</div>
   </div>
   <div class="frame" style="display:grid; gap:2vh; align-content:center; min-height:70vh">
     <div class="kicker">Crypto LEGO</div>

@@ -46,7 +46,7 @@
 <section class="slide light" data-screen-label="02 Cryptoeconomics">
   <div class="chrome">
     <div>&sect;5.1 &middot; The rise (and fall) of cryptoeconomics</div>
-    <div>02 / 17</div>
+    <div>02 / 13</div>
   </div>
   <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Cryptoassets &middot; pure fintech innovation</div>
@@ -59,7 +59,7 @@
       <div class="stat-card" style="padding-top:1vh">
         <div class="stat-label">Utility token</div>
         <div class="step-title" style="font-size:1.05vw; margin-top:.3vh">Service claim</div>
-        <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">A claim to a product or service. Brave&rsquo;s BAT tips creators.</div>
+        <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">A claim to a product or service, e.g. BAT.</div>
       </div>
       <div class="stat-card" style="padding-top:1vh">
         <div class="stat-label">Security token</div>
@@ -69,7 +69,7 @@
       <div class="stat-card" style="padding-top:1vh">
         <div class="stat-label">Governance token</div>
         <div class="step-title" style="font-size:1.05vw; margin-top:.3vh">Voting rights</div>
-        <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">Vote on protocol decisions, e.g. Maker for DAI.</div>
+        <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45">Vote on protocol decisions, e.g. Maker.</div>
       </div>
       <div class="stat-card" style="padding-top:1vh">
         <div class="stat-label">Non-fungible token</div>
@@ -107,7 +107,7 @@
 <section class="slide dark" data-screen-label="03 Bitcoin & Crypto Winters">
   <div class="chrome">
     <div>&sect;5.2 &middot; Bitcoin: the first cryptocurrency</div>
-    <div>03 / 17</div>
+    <div>03 / 13</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.4vh">
@@ -125,8 +125,8 @@
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw; margin-top:.4vh">
         <div class="stat-card" style="padding-top:1vh">
           <div class="stat-label">Peak 2021</div>
-          <div class="stat-nb" style="font-size:2.8vw">$69K</div>
-          <div class="stat-note" style="font-size:max(10px,.78vw)">All-time high &middot; Nov 10 2021</div>
+          <div class="stat-nb" style="font-size:2.8vw">$67,562</div>
+          <div class="stat-note" style="font-size:max(10px,.78vw)">Rose above $60K by November 2021</div>
         </div>
         <div class="stat-card" style="padding-top:1vh">
           <div class="stat-label">Trough 2022</div>
@@ -158,7 +158,7 @@
   </div>
   <div class="foot">
     <div>Page 03 &middot; Bitcoin price history &middot; Boom-bust</div>
-    <div>$0.06 (2010) &rarr; $69K (2021) &rarr; $17K (2022)</div>
+    <div>$0.06 (2010) &rarr; $67,562 (2021) &rarr; $17K (2022)</div>
   </div>
 </section>
 
@@ -168,7 +168,7 @@
 <section class="slide light" data-screen-label="04 Double-Spend & Blockchain">
   <div class="chrome">
     <div>&sect;5.2 &middot; The double-spend problem &middot; SHA-256</div>
-    <div>04 / 17</div>
+    <div>04 / 13</div>
   </div>
   <div class="frame" style="padding-top:2.4vh">
     <div class="kicker">Hashing &middot; cryptographic foundation</div>
@@ -241,148 +241,12 @@
 </section>
 
 <!-- ============================================================
-     SLIDE 04b · Anatomy of a Bitcoin Block (light, technical)
-     ============================================================ -->
-<section class="slide light" data-screen-label="04b Anatomy of a Block">
-  <div class="chrome">
-    <div>&sect;5.2 &middot; Technical &middot; block header</div>
-    <div>04b / 17</div>
-  </div>
-  <div class="frame" style="padding-top:2.2vh">
-    <div class="kicker">Technical deep dive &middot; what is actually hashed</div>
-    <h2 class="h-xl" style="font-size:3.8vw">A block is 80 bytes of header &middot; plus transactions.</h2>
-    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.1vw">
-      Miners do <strong>not</strong> hash the whole block. They hash the 80-byte block header. The transactions are committed to via a single 32-byte Merkle root that lives inside the header &mdash; a clever compression trick that lets light clients verify membership without downloading every transaction.
-    </p>
-
-    <div style="display:grid; grid-template-columns:1.05fr .95fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Block header &middot; 80 bytes</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10.5px,.78vw); line-height:1.55; margin-top:.6vh; background:rgba(127,127,127,.06); padding:.8vh 1vw; border-radius:4px">
-            <div><span style="opacity:.55">04 B</span> &nbsp; <strong>version</strong> &nbsp;&nbsp;&nbsp; consensus rules in effect</div>
-            <div><span style="opacity:.55">32 B</span> &nbsp; <strong>prev_block_hash</strong> &nbsp; chains to parent (the &ldquo;chain&rdquo;)</div>
-            <div><span style="opacity:.55">32 B</span> &nbsp; <strong>merkle_root</strong> &nbsp;&nbsp; SHA-256(SHA-256(tx tree))</div>
-            <div><span style="opacity:.55">04 B</span> &nbsp; <strong>timestamp</strong> &nbsp;&nbsp;&nbsp; Unix seconds, &plusmn;2&nbsp;hr tolerance</div>
-            <div><span style="opacity:.55">04 B</span> &nbsp; <strong>bits</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compact-encoded difficulty target</div>
-            <div><span style="opacity:.55">04 B</span> &nbsp; <strong>nonce</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32-bit search space (miners cycle this)</div>
-          </div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">When the 32-bit nonce range is exhausted, miners increment the coinbase <em>extraNonce</em>, which changes the Merkle root, giving them effectively unlimited search space.</div>
-        </div>
-        <div class="callout" style="padding:.9vh 1.3vw; font-size:max(11px,.88vw); line-height:1.45">
-          <strong>Block hash</strong> = SHA-256(SHA-256(80-byte header)). Bitcoin uses <em>double SHA-256</em> to defend against length-extension attacks &mdash; legacy hardening from the SHA-2 era.
-          <div class="callout-src" style="margin-top:.6vh">&mdash; Bitcoin Core source &middot; Nakamoto (2008)</div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Merkle tree &middot; hash the tree, not the trades</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.6; margin-top:.6vh; background:rgba(127,127,127,.06); padding:.8vh 1vw; border-radius:4px; white-space:pre">              <strong>ROOT</strong>
-            /        \
-         H(AB)       H(CD)
-         /  \         /  \
-       H(A) H(B)   H(C) H(D)
-        |    |      |    |
-       tx_A tx_B   tx_C tx_D</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">A <strong>Merkle proof</strong> for tx_C is just {H(D), H(AB)} &mdash; log&#8322;(n) hashes. A light client (SPV wallet) verifies inclusion without storing the chain.</div>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vw">
-          <div class="stat-card" style="padding-top:.6vh">
-            <div class="stat-label">Block size</div>
-            <div class="stat-nb" style="font-size:2.4vw">1 MB</div>
-            <div class="stat-note" style="font-size:max(10px,.78vw)">Hard cap on serialized block (SegWit raised effective limit to ~4 MB weight)</div>
-          </div>
-          <div class="stat-card" style="padding-top:.6vh">
-            <div class="stat-label">Avg block</div>
-            <div class="stat-nb" style="font-size:2.4vw">~2K</div>
-            <div class="stat-note" style="font-size:max(10px,.78vw)">transactions &middot; ~250 bytes each on average</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="foot">
-    <div>Page 04b &middot; Anatomy of a Bitcoin block</div>
-    <div>80-byte header &middot; Merkle root &middot; double-SHA-256</div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SLIDE 04c · SHA-256 Avalanche Effect (dark, technical)
-     ============================================================ -->
-<section class="slide dark" data-screen-label="04c SHA-256 Avalanche">
-  <div class="chrome">
-    <div>&sect;5.2 &middot; Technical &middot; SHA-256 properties</div>
-    <div>04c / 17</div>
-  </div>
-  <div class="frame" style="padding-top:2vh">
-    <div class="kicker">Technical deep dive &middot; the math that makes mining hard</div>
-    <h2 class="h-xl" style="font-size:3.8vw">One bit flips. The whole hash explodes.</h2>
-    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.1vw">
-      A cryptographic hash function must satisfy three properties: <strong>pre-image resistance</strong> (can&rsquo;t reverse), <strong>second pre-image resistance</strong> (can&rsquo;t collide deliberately), and the <strong>avalanche effect</strong> (1-bit input change &rArr; ~50% of output bits flip). Miners exploit the avalanche effect by iterating the nonce until a hash falls below the target.
-    </p>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Avalanche effect &middot; worked example</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px">
-            <div style="opacity:.72">input: <strong>&ldquo;hello&rdquo;</strong></div>
-            <div>SHA-256: <span style="color:#9ad1ff">2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824</span></div>
-            <div style="margin-top:.6vh; opacity:.72">input: <strong>&ldquo;Hello&rdquo;</strong> &nbsp;<span style="opacity:.55">(only the &ldquo;h&rdquo; case flipped)</span></div>
-            <div>SHA-256: <span style="color:#ffb38a">185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969</span></div>
-            <div style="margin-top:.6vh; opacity:.72">Hamming distance &asymp; <strong>50% of bits</strong> &mdash; no pattern, no shortcut.</div>
-          </div>
-        </div>
-        <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
-          <strong>One-wayness:</strong> given a 256-bit output, there is no algorithm faster than brute force &mdash; on average 2&sup2;&#8309;&#8309; attempts &mdash; to find any input that produces it. Quantum (Grover) reduces this to 2&#185;&#178;&#8312;, still astronomical.
-          <div class="callout-src">&mdash; NIST FIPS 180-4 &middot; SHA-2 family</div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">SHA-256 pipeline &middot; one block at a time</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px; white-space:pre">message → pad to 512-bit chunks
-        ↓
-      [8 × 32-bit state words]
-        ↓  (×64 rounds per block)
-      Maj / Ch / &Sigma;&#8320; / &Sigma;&#8321; + K_t + W_t
-        ↓
-      compress → next chunk
-        ↓
-   final state = 256-bit digest</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">Each compression round mixes bits via shifts, XORs, and modular addition. Bitcoin ASICs implement this directly in silicon, achieving ~100 TH/s per chip.</div>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vw">
-          <div class="stat-card" style="padding-top:.6vh">
-            <div class="stat-label">Output</div>
-            <div class="stat-nb" style="font-size:2.4vw">256-bit</div>
-            <div class="stat-note" style="font-size:max(10px,.78vw)">Always 32 bytes &middot; 64 hex chars</div>
-          </div>
-          <div class="stat-card" style="padding-top:.6vh">
-            <div class="stat-label">Network hash rate</div>
-            <div class="stat-nb" style="font-size:2.4vw">500+ EH/s</div>
-            <div class="stat-note" style="font-size:max(10px,.78vw)">5 &times; 10&sup2;&#8304; SHA-256 ops / second (2024)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="foot">
-    <div>Page 04c &middot; SHA-256 &middot; Avalanche &middot; One-way</div>
-    <div>1-bit flip &rarr; ~50% output flip</div>
-  </div>
-</section>
-
-<!-- ============================================================
      SLIDE 05 · Proof-of-Work, Mining & PoS (dark)
      ============================================================ -->
 <section class="slide dark" data-screen-label="05 PoW & Mining">
   <div class="chrome">
     <div>&sect;5.2 &middot; Proof-of-work, mining &amp; PoS</div>
-    <div>05 / 17</div>
+    <div>05 / 13</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.4vh">
@@ -439,162 +303,12 @@
 </section>
 
 <!-- ============================================================
-     SLIDE 05b · Mining Algorithm in Code (light, technical)
-     ============================================================ -->
-<section class="slide light" data-screen-label="05b Mining Algorithm">
-  <div class="chrome">
-    <div>&sect;5.2 &middot; Technical &middot; the mining loop</div>
-    <div>05b / 17</div>
-  </div>
-  <div class="frame" style="padding-top:2.2vh">
-    <div class="kicker">Technical deep dive &middot; what the ASIC is actually doing</div>
-    <h2 class="h-xl" style="font-size:3.8vw">Mining = brute-forcing one inequality.</h2>
-    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.1vw">
-      A miner builds a candidate block, then loops the nonce until the 256-bit double-SHA-256 of the header is numerically <strong>less than the target</strong>. The target is encoded in the 4-byte <code>bits</code> field. As the network hash rate grows, the difficulty bomb shrinks the target, making valid hashes rarer.
-    </p>
-
-    <div style="display:grid; grid-template-columns:1.1fr .9fr; gap:2.2vw; margin-top:1.4vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Mining loop &middot; pseudocode</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.78vw); line-height:1.55; margin-top:.6vh; background:rgba(127,127,127,.07); padding:1vh 1.1vw; border-radius:4px; white-space:pre"><span style="color:#888">def</span> mine(header, target):
-    <span style="color:#888">for</span> nonce <span style="color:#888">in range</span>(0, 2**32):
-        header.nonce = nonce
-        h = sha256(sha256(serialize(header)))
-        <span style="color:#888">if</span> int(h, 16) &lt; target:
-            <span style="color:#888">return</span> nonce, h     <span style="color:#888"># &larr; valid block!</span>
-    <span style="color:#888"># 4B nonce exhausted &mdash;</span>
-    <span style="color:#888"># bump extraNonce in coinbase, rebuild Merkle root, retry</span></div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">No structure. No shortcut. Just a tight hash &amp; compare loop. ASICs do this in dedicated silicon at <strong>~100 TH/s per chip</strong>; a modern S21 box runs ~200 TH/s.</div>
-        </div>
-        <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
-          <strong>Probability of success</strong> per hash &asymp; target / 2&sup2;&#8309;&#8310;. At a difficulty of D, expected hashes to find a block &asymp; D &times; 2&sup3;&sup2;. A miner with hash rate <em>h</em> wins block reward at rate <em>h</em> / H<sub>network</sub>.
-          <div class="callout-src">&mdash; Bitcoin Core &middot; <code>chainparams.cpp</code></div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Difficulty adjustment &middot; every 2,016 blocks</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(127,127,127,.07); padding:.9vh 1.1vw; border-radius:4px; white-space:pre">new_target = old_target &times;
-   ( actual_time(2016 blocks) /
-     expected_time = 2016 &times; 10 min )
-
-clamp factor &isin; [1/4 , 4]
-expected window = 2 weeks</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">If the last 2,016 blocks were mined faster than 2 weeks, target shrinks (harder). If slower, target grows (easier). The clamp prevents oscillation. Keeps block-time at ~10 min regardless of total hash power.</div>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vw">
-          <div class="stat-card" style="padding-top:.6vh">
-            <div class="stat-label">Search space</div>
-            <div class="stat-nb" style="font-size:2.4vw">2&sup3;&sup2;</div>
-            <div class="stat-note" style="font-size:max(10px,.78vw)">4.29 billion nonces per Merkle root</div>
-          </div>
-          <div class="stat-card" style="padding-top:.6vh">
-            <div class="stat-label">Target now (~)</div>
-            <div class="stat-nb" style="font-size:2.4vw">~2&sup1;&#8311;&#8312;</div>
-            <div class="stat-note" style="font-size:max(10px,.78vw)">Valid hash must be &lt; this. 78 leading zero bits in 2024.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="foot">
-    <div>Page 05b &middot; Mining loop &middot; Difficulty</div>
-    <div>2,016-block adjustment &middot; ASIC &middot; 100 TH/s</div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SLIDE 05c · UTXO & Transaction Anatomy (dark, technical)
-     ============================================================ -->
-<section class="slide dark" data-screen-label="05c UTXO Model">
-  <div class="chrome">
-    <div>&sect;5.2 &middot; Technical &middot; UTXO &amp; scripts</div>
-    <div>05c / 17</div>
-  </div>
-  <div class="frame" style="padding-top:1.6vh">
-    <div class="kicker">Technical deep dive &middot; what a Bitcoin payment really is</div>
-    <h2 class="h-xl" style="font-size:3vw">Bitcoin has no accounts. Only unspent outputs.</h2>
-    <p class="lead" style="margin-top:.2vh; max-width:64vw; opacity:.78; font-size:1vw; line-height:1.4">
-      The Bitcoin state is not a list of balances &mdash; it is a set of <strong>Unspent Transaction Outputs</strong> (UTXOs), each locked to a <code>scriptPubKey</code>. To spend, supply a <code>scriptSig</code> that satisfies the lock. A transaction consumes UTXOs (inputs), creates new ones (outputs); the rest is fee.
-    </p>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2vw; margin-top:1vh; align-items:start">
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">Transaction structure</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px; white-space:pre">tx {
-  version: 2
-  inputs:  [
-    { prev_tx: 0xabc..., vout: 1,
-      scriptSig: &lt;sig&gt; &lt;pubKey&gt; }
-  ]
-  outputs: [
-    { value: 0.40 BTC,            <span style="opacity:.6">// to Bob</span>
-      scriptPubKey: P2PKH(hash160(pubKey_B)) },
-    { value: 0.09 BTC,            <span style="opacity:.6">// change to self</span>
-      scriptPubKey: P2PKH(hash160(pubKey_A)) }
-  ]
-  <span style="opacity:.6">// fee = sum(in) &minus; sum(out) = 0.01 BTC</span>
-}</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">Inputs must be consumed entirely &mdash; if Alice has a 0.50 BTC UTXO and wants to pay 0.40, she must create a 0.09 change output back to herself (the rest is fee).</div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:1vh">
-        <div class="stat-card" style="padding-top:.6vh">
-          <div class="stat-label">P2PKH script &middot; the most common lock</div>
-          <div style="font-family:'IBM Plex Mono', monospace; font-size:max(10px,.74vw); line-height:1.55; margin-top:.6vh; background:rgba(255,255,255,.06); padding:.9vh 1.1vw; border-radius:4px; white-space:pre"><span style="opacity:.6"># scriptPubKey (lock, in the output)</span>
-OP_DUP OP_HASH160 &lt;pubKeyHash&gt; OP_EQUALVERIFY OP_CHECKSIG
-
-<span style="opacity:.6"># scriptSig (key, supplied by spender)</span>
-&lt;signature&gt; &lt;pubKey&gt;
-
-<span style="opacity:.6"># Stack execution:</span>
-push sig, push pubKey, DUP, HASH160,
-compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
-          <div class="step-desc" style="font-size:max(11px,.82vw); line-height:1.45; margin-top:.6vh">Bitcoin Script is a Forth-like, <strong>non-Turing-complete</strong> stack language &mdash; no loops, no recursion. Deliberately limited to keep validation deterministic and cheap.</div>
-        </div>
-        <div class="callout" style="padding:1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
-          <strong>Why UTXO?</strong> Each output can be validated independently &mdash; perfect for parallel verification and pruning. <strong>The cost:</strong> wallets must track many small &ldquo;coins&rdquo;, and dust outputs bloat the UTXO set (~5 GB and growing in 2024).
-          <div class="callout-src">&mdash; Bitcoin Wiki &middot; <em>Transaction</em>, <em>Script</em></div>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1vw; margin-top:1vh">
-      <div class="stat-card" style="padding-top:.4vh">
-        <div class="stat-label" style="font-size:max(9px,.7vw)">Address types</div>
-        <div class="step-desc" style="font-size:max(9px,.72vw); line-height:1.35">P2PKH (1...) &middot; P2SH (3...) &middot; Bech32 (bc1q...) &middot; Taproot (bc1p...)</div>
-      </div>
-      <div class="stat-card" style="padding-top:.4vh">
-        <div class="stat-label" style="font-size:max(9px,.7vw)">UTXO set</div>
-        <div class="step-desc" style="font-size:max(9px,.72vw); line-height:1.35">~190M outputs in 2024 &middot; ~5 GB in RAM</div>
-      </div>
-      <div class="stat-card" style="padding-top:.4vh">
-        <div class="stat-label" style="font-size:max(9px,.7vw)">Mempool</div>
-        <div class="step-desc" style="font-size:max(9px,.72vw); line-height:1.35">Unconfirmed tx pool &middot; miners pick by fee/vByte</div>
-      </div>
-      <div class="stat-card" style="padding-top:.4vh">
-        <div class="stat-label" style="font-size:max(9px,.7vw)">Coinbase tx</div>
-        <div class="step-desc" style="font-size:max(9px,.72vw); line-height:1.35">First tx, no inputs &middot; mints reward + collects fees</div>
-      </div>
-    </div>
-  </div>
-  <div class="foot">
-    <div>Page 05c &middot; UTXO &middot; Script &middot; P2PKH</div>
-    <div>No accounts &middot; only unspent outputs</div>
-  </div>
-</section>
-
-<!-- ============================================================
      SLIDE 06 · Altcoins & Top 10 (light)
      ============================================================ -->
 <section class="slide light" data-screen-label="06 Altcoins">
   <div class="chrome">
     <div>&sect;5.3 &middot; Cryptocurrencies &amp; altcoins</div>
-    <div>06 / 17</div>
+    <div>06 / 13</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.4vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -647,7 +361,7 @@ compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
 <section class="slide dark" data-screen-label="07 ICOs">
   <div class="chrome">
     <div>&sect;5.4 &middot; Initial coin offerings</div>
-    <div>07 / 17</div>
+    <div>07 / 13</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Crowdsale of pre-mined tokens</div>
@@ -713,7 +427,7 @@ compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
 <section class="slide light" data-screen-label="08 Wallets & Exchanges">
   <div class="chrome">
     <div>&sect;5.5 &middot; Wallets, exchanges, honey pots</div>
-    <div>08 / 17</div>
+    <div>08 / 13</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Storage and trading &mdash; the two pain points</div>
@@ -737,7 +451,7 @@ compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
             </div>
             <div class="step">
               <div class="step-nb">03 &middot; Hardware</div>
-              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Cold wallet. Trezor (2014), Ledger. PIN + passphrase, USB.</div>
+              <div class="step-desc" style="font-size:max(10px,.78vw); line-height:1.4">Cold wallet. Trezor (2014). PIN + passphrase, USB.</div>
             </div>
           </div>
         </div>
@@ -776,7 +490,7 @@ compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
 <section class="slide hero dark" data-screen-label="09 FTX Collapse">
   <div class="chrome">
     <div>&sect;5.6 &middot; The FTX collapse</div>
-    <div>09 / 17</div>
+    <div>09 / 13</div>
   </div>
   <div class="frame" style="display:grid; grid-template-columns:1fr 1fr; gap:4vw; align-content:center; min-height:80vh">
     <div style="display:flex; flex-direction:column; justify-content:center; gap:3vh">
@@ -832,7 +546,7 @@ compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
 <section class="slide light" data-screen-label="10 CBDC & HODLer Risks">
   <div class="chrome">
     <div>&sect;5.7 &middot; CBDC &amp; risks to HODLers</div>
-    <div>10 / 17</div>
+    <div>10 / 13</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -877,7 +591,7 @@ compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
 <section class="slide dark" data-screen-label="11 Cryptoeconomics Research">
   <div class="chrome">
     <div>&sect;5.8 &middot; Cryptoeconomics research</div>
-    <div>11 / 17</div>
+    <div>11 / 13</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Three bodies of academic research</div>
@@ -933,7 +647,7 @@ compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
 <section class="slide light" data-screen-label="12 Asset Pricing">
   <div class="chrome">
     <div>&sect;5.9 &middot; Asset pricing &amp; crypto returns</div>
-    <div>12 / 17</div>
+    <div>12 / 13</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -994,7 +708,7 @@ compare to pubKeyHash, CHECKSIG → TRUE/FALSE</div>
 <section class="slide hero dark" data-screen-label="13 Closing">
   <div class="chrome">
     <div>Chapter 05 &middot; Closing</div>
-    <div>13 / 17</div>
+    <div>13 / 13</div>
   </div>
   <div class="frame" style="display:grid; gap:2vh; align-content:center; min-height:70vh">
     <div class="kicker">The first decade of cryptoeconomics</div>
