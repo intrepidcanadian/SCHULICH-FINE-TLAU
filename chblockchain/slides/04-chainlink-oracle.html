@@ -1,0 +1,111 @@
+<!-- ============================================================
+     SLIDE 04 · How a Chainlink price oracle works (dark · diagram)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="04 Chainlink Oracle">
+  <div class="chrome">
+    <div>Blockchain Businesses &middot; &sect;B.4 &middot; The price layer</div>
+    <div>04 / 05</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">The data layer beneath DeFi &middot; Chainlink Data Feeds</div>
+    <h2 class="h-xl" style="font-size:2.7vw">How an on-chain price oracle works.</h2>
+
+    <div style="margin-top:1vh; width:100%; display:flex; justify-content:center">
+      <svg viewBox="0 0 1280 500" style="width:100%; max-height:60vh; height:auto" font-family="'Source Serif 4', system-ui, sans-serif" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ah-s" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#8aa0bf"/></marker>
+          <marker id="ah-b" markerWidth="10" markerHeight="10" refX="7.5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6f8ef2"/></marker>
+          <marker id="ah-m" markerWidth="10" markerHeight="10" refX="7.5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2dd4bf"/></marker>
+        </defs>
+
+        <!-- ===== Stage 1 · data providers ===== -->
+        <text x="130" y="74" text-anchor="middle" fill="#9fb3d0" font-size="13" font-family="'IBM Plex Mono',monospace" letter-spacing="1.5">DATA PROVIDERS</text>
+        <g fill="rgba(138,160,191,.12)" stroke="#8aa0bf" stroke-width="1">
+          <rect x="40" y="96"  width="180" height="34" rx="7"/>
+          <rect x="40" y="138" width="180" height="34" rx="7"/>
+          <rect x="40" y="180" width="180" height="34" rx="7"/>
+          <rect x="40" y="222" width="180" height="34" rx="7"/>
+          <rect x="40" y="264" width="180" height="34" rx="7"/>
+        </g>
+        <g fill="#dbe5f2" font-size="14" text-anchor="middle">
+          <text x="130" y="118">Coinbase</text>
+          <text x="130" y="160">Binance</text>
+          <text x="130" y="202">Kraken</text>
+          <text x="130" y="244">Bitstamp</text>
+          <text x="130" y="286" fill="#9fb3d0" font-style="italic">+ many more</text>
+        </g>
+
+        <!-- converging arrows into the DON -->
+        <g stroke="#8aa0bf" stroke-width="1.2" opacity=".55" fill="none" marker-end="url(#ah-s)">
+          <path d="M222,113 C265,135 270,150 296,160"/>
+          <path d="M222,155 C262,160 268,160 296,162"/>
+          <path d="M222,197 C262,185 268,168 296,165"/>
+          <path d="M222,239 C260,210 268,175 296,168"/>
+          <path d="M222,281 C258,235 266,180 296,170"/>
+        </g>
+
+        <!-- ===== Stage 2 · Chainlink DON ===== -->
+        <rect x="300" y="60" width="432" height="376" rx="16" fill="rgba(111,142,242,.07)" stroke="#6f8ef2" stroke-width="1.4"/>
+        <text x="516" y="90" text-anchor="middle" fill="#9db4ff" font-size="14" font-family="'IBM Plex Mono',monospace" letter-spacing="1.2">CHAINLINK DECENTRALIZED ORACLE NETWORK</text>
+
+        <!-- node operators -->
+        <g>
+          <circle cx="372" cy="150" r="26" fill="rgba(111,142,242,.20)" stroke="#6f8ef2" stroke-width="1.4"/>
+          <circle cx="468" cy="150" r="26" fill="rgba(111,142,242,.20)" stroke="#6f8ef2" stroke-width="1.4"/>
+          <circle cx="564" cy="150" r="26" fill="rgba(111,142,242,.20)" stroke="#6f8ef2" stroke-width="1.4"/>
+          <circle cx="660" cy="150" r="26" fill="rgba(111,142,242,.20)" stroke="#6f8ef2" stroke-width="1.4"/>
+          <g fill="#cdd9f7" font-size="11" text-anchor="middle" font-family="'IBM Plex Mono',monospace">
+            <text x="372" y="154">node</text>
+            <text x="468" y="154">node</text>
+            <text x="564" y="154">node</text>
+            <text x="660" y="154">node</text>
+          </g>
+        </g>
+        <text x="516" y="200" text-anchor="middle" fill="#c3cfe6" font-size="12.5">Independent operators &mdash; each reads many sources &amp; signs its observation</text>
+
+        <!-- OCR aggregation box -->
+        <rect x="330" y="224" width="372" height="190" rx="11" fill="rgba(111,142,242,.12)" stroke="#6f8ef2" stroke-width="1.1" stroke-dasharray="5 4"/>
+        <text x="516" y="256" text-anchor="middle" fill="#9db4ff" font-size="13.5" font-weight="700">Off-chain Reporting (OCR)</text>
+        <text x="516" y="300" text-anchor="middle" fill="#e3e9f4" font-size="13">Nodes converge on a single</text>
+        <text x="516" y="322" text-anchor="middle" fill="#e3e9f4" font-size="13"><tspan font-weight="700">median price</tspan> and co-sign one report</text>
+        <text x="516" y="366" text-anchor="middle" fill="#aebbd6" font-size="12">&rarr; posted on-chain in just</text>
+        <text x="516" y="388" text-anchor="middle" fill="#aebbd6" font-size="12">one transaction (gas-efficient)</text>
+
+        <!-- ===== PUSH arrow ===== -->
+        <line x1="734" y1="150" x2="856" y2="150" stroke="#6f8ef2" stroke-width="2.6" marker-end="url(#ah-b)"/>
+        <text x="795" y="132" text-anchor="middle" fill="#9db4ff" font-size="14" font-weight="700" font-family="'IBM Plex Mono',monospace">PUSH</text>
+        <text x="795" y="176" text-anchor="middle" fill="#9fb3d0" font-size="10.5">on &gt;0.5% move</text>
+        <text x="795" y="190" text-anchor="middle" fill="#9fb3d0" font-size="10.5">or heartbeat</text>
+
+        <!-- ===== Stage 3 · on-chain price feed ===== -->
+        <rect x="860" y="60" width="392" height="176" rx="16" fill="rgba(190,208,255,.06)" stroke="#bcd0ff" stroke-width="1.4"/>
+        <text x="884" y="92" fill="#cfe0ff" font-size="13" font-family="'IBM Plex Mono',monospace" letter-spacing=".5">ON-CHAIN PRICE FEED &middot; Aggregator</text>
+        <text x="884" y="140" fill="#e8eef5" font-size="16" font-weight="700">ETH / USD</text>
+        <text x="884" y="182" fill="#2dd4bf" font-size="33" font-weight="800" font-family="'IBM Plex Mono',monospace">$3,412.55</text>
+        <text x="884" y="212" fill="#aebbd6" font-size="11">round #18,234 &middot; stored on-chain &middot; latestRoundData()</text>
+
+        <!-- ===== PULL arrows ===== -->
+        <line x1="1040" y1="298" x2="1040" y2="240" stroke="#2dd4bf" stroke-width="1.4" stroke-dasharray="5 4" opacity=".7" marker-end="url(#ah-m)"/>
+        <line x1="1066" y1="238" x2="1066" y2="296" stroke="#2dd4bf" stroke-width="2.4" marker-end="url(#ah-m)"/>
+        <text x="1086" y="258" fill="#5fe0cd" font-size="13" font-weight="700" font-family="'IBM Plex Mono',monospace">PULL</text>
+        <text x="1086" y="276" fill="#9fb3d0" font-size="10.5">read when</text>
+        <text x="1086" y="289" fill="#9fb3d0" font-size="10.5">needed</text>
+
+        <!-- ===== Stage 4 · your contract ===== -->
+        <rect x="860" y="300" width="392" height="150" rx="16" fill="rgba(45,212,191,.07)" stroke="#2dd4bf" stroke-width="1.4"/>
+        <text x="884" y="332" fill="#5fe0cd" font-size="13" font-family="'IBM Plex Mono',monospace" letter-spacing=".5">YOUR CONTRACT &middot; AAVE / Uniswap</text>
+        <text x="884" y="364" fill="#e8eef5" font-size="13">Reads the latest stored price on demand &mdash; to</text>
+        <text x="884" y="384" fill="#e8eef5" font-size="13">value collateral, price swaps &amp; trigger liquidations.</text>
+        <text x="884" y="420" fill="#5fe0cd" font-size="12.5" font-family="'IBM Plex Mono',monospace">price = feed.latestRoundData()</text>
+      </svg>
+    </div>
+
+    <div class="step-desc" style="margin-top:.8vh; text-align:center; font-size:max(11px,.86vw); opacity:.82; max-width:84vw; margin-left:auto; margin-right:auto; line-height:1.5">
+      <strong>Decentralized sources &rarr; off-chain median &rarr; on-chain finality</strong> &mdash; no single feed to bribe or break. The network <strong>pushes</strong> a fresh price only when it moves past a threshold or a heartbeat elapses; your contract <strong>pulls</strong> that stored value the instant it needs it.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Blockchain Businesses &middot; Chainlink price oracle</div>
+    <div>Providers &rarr; DON aggregation &rarr; push &rarr; on-chain feed &rarr; pull</div>
+  </div>
+</section>

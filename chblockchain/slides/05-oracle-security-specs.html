@@ -1,0 +1,73 @@
+<!-- ============================================================
+     SLIDE 05 · What secures an oracle + feed specifications (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 Oracle Security & Specs">
+  <div class="chrome">
+    <div>Blockchain Businesses &middot; &sect;B.5 &middot; Oracle security &amp; specs</div>
+    <div>05 / 05</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Why you can trust the price &mdash; and how a feed is configured</div>
+    <h2 class="h-xl" style="font-size:2.6vw">What secures an oracle, and how it&rsquo;s tuned.</h2>
+
+    <div class="split" style="margin-top:1.4vh; align-items:start; gap:3.2vw">
+      <!-- ===== LEFT · crypto-economic security via staking ===== -->
+      <div style="display:flex; flex-direction:column; gap:1vh">
+        <div class="pipeline-label" style="color:#9db4ff; margin-bottom:.2vh">Crypto-economic security &middot; LINK staking</div>
+        <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.94vw); line-height:1.45; border-left-color:#6f8ef2">
+          <strong>Bonded collateral (slashable).</strong> Node operators and the community stake LINK behind a feed. If it breaks its service guarantee &mdash; goes stale or underperforms &mdash; the stake can be slashed. A <em>financial</em> backstop, not just reputation.
+        </div>
+        <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.94vw); line-height:1.45; border-left-color:#6f8ef2">
+          <strong>Cost of corruption &gt; profit from corruption.</strong> Staking raises what an attacker must overcome to bribe or collude the network into a bad price &mdash; vital when a wrong price can drain a lending market like AAVE.
+        </div>
+        <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.94vw); line-height:1.45; border-left-color:#6f8ef2">
+          <strong>Alerting &amp; monitoring.</strong> Stakers can raise on-chain alerts when a feed misbehaves (e.g. misses its heartbeat); honest alerters are rewarded and faulty operators penalized.
+        </div>
+        <div class="step-desc" style="font-size:max(11px,.82vw); opacity:.72; line-height:1.5">
+          Primary security is still <strong>decentralization + premium data sourcing</strong>; staking adds a slashable guarantee on top. (Chainlink Staking v0.2, 2023 &mdash; rolling out across major feeds.)
+        </div>
+      </div>
+
+      <!-- ===== RIGHT · feed specifications ===== -->
+      <div style="display:flex; flex-direction:column; gap:.7vh">
+        <div class="pipeline-label" style="color:#5fe0cd; margin-bottom:.2vh">Feed specifications &middot; ETH/USD (illustrative)</div>
+        <div class="step-desc" style="font-size:max(11px,.82vw); opacity:.72; margin-bottom:.2vh">A feed updates on whichever comes first &mdash; <strong>deviation</strong> or <strong>heartbeat</strong>.</div>
+
+        <div style="display:flex; flex-direction:column; gap:.55vh">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:1vw; border-top:1px solid rgba(127,127,127,.16); padding-top:.55vh">
+            <div><strong style="font-size:max(12px,.95vw)">Deviation threshold</strong><div class="step-desc" style="font-size:max(10px,.76vw); opacity:.7">push when price moves &gt; X% from the on-chain value</div></div>
+            <div style="font-family:var(--mono); color:#2dd4bf; font-weight:700; font-size:max(12px,1vw); white-space:nowrap">~0.5%</div>
+          </div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:1vw; border-top:1px solid rgba(127,127,127,.16); padding-top:.55vh">
+            <div><strong style="font-size:max(12px,.95vw)">Heartbeat</strong><div class="step-desc" style="font-size:max(10px,.76vw); opacity:.7">max time between updates &mdash; guarantees freshness</div></div>
+            <div style="font-family:var(--mono); color:#2dd4bf; font-weight:700; font-size:max(12px,1vw); white-space:nowrap">~1 hr</div>
+          </div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:1vw; border-top:1px solid rgba(127,127,127,.16); padding-top:.55vh">
+            <div><strong style="font-size:max(12px,.95vw)">Oracles (nodes)</strong><div class="step-desc" style="font-size:max(10px,.76vw); opacity:.7">independent node operators contributing</div></div>
+            <div style="font-family:var(--mono); color:#2dd4bf; font-weight:700; font-size:max(12px,1vw); white-space:nowrap">~31</div>
+          </div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:1vw; border-top:1px solid rgba(127,127,127,.16); padding-top:.55vh">
+            <div><strong style="font-size:max(12px,.95vw)">Min responses (quorum)</strong><div class="step-desc" style="font-size:max(10px,.76vw); opacity:.7">observations needed to form a valid round</div></div>
+            <div style="font-family:var(--mono); color:#2dd4bf; font-weight:700; font-size:max(12px,1vw); white-space:nowrap">signing threshold</div>
+          </div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:1vw; border-top:1px solid rgba(127,127,127,.16); padding-top:.55vh">
+            <div><strong style="font-size:max(12px,.95vw)">Aggregation</strong><div class="step-desc" style="font-size:max(10px,.76vw); opacity:.7">how node answers combine into one</div></div>
+            <div style="font-family:var(--mono); color:#2dd4bf; font-weight:700; font-size:max(12px,1vw); white-space:nowrap">median</div>
+          </div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:1vw; border-top:1px solid rgba(127,127,127,.16); padding-top:.55vh">
+            <div><strong style="font-size:max(12px,.95vw)">Decimals</strong><div class="step-desc" style="font-size:max(10px,.76vw); opacity:.7">precision of the reported integer answer</div></div>
+            <div style="font-family:var(--mono); color:#2dd4bf; font-weight:700; font-size:max(12px,1vw); white-space:nowrap">8 &middot; (18 for ETH pairs)</div>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:.5vh; padding:.9vh 1.2vw; font-size:max(10.5px,.82vw); line-height:1.45; border-left-color:#2dd4bf">
+          Read on-chain via <span style="font-family:var(--mono)">latestRoundData()</span> &rarr; <span style="font-family:var(--mono)">roundId, answer, startedAt, updatedAt, answeredInRound</span>. Check <span style="font-family:var(--mono)">updatedAt</span> against the heartbeat to reject stale data.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Blockchain Businesses &middot; Oracle security &amp; specifications</div>
+    <div>Values vary by feed &amp; chain &middot; ETH/USD shown for illustration</div>
+  </div>
+</section>

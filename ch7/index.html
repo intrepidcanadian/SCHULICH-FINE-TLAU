@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crowdfunding &amp; P2P Lending · Chapter 07 · FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">&larr; &rarr; navigate &middot; ESC overview</div>
+
+<div id="deck">
+
+<!-- BEGIN SLIDES -->
+<!-- ============================================================
+     SLIDE 01 · Cover (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="01 Cover">
+  <div class="chrome">
+    <div>FINE 6280 &middot; Fintech</div>
+    <div>Chapter 07 &middot; Lecture</div>
+  </div>
+  <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:72vh">
+    <div class="kicker">Chapter 07 &middot; Alternative Finance</div>
+    <h1 class="h-hero" style="font-size:6.6vw">Crowdfunding &amp; P2P Lending</h1>
+    <h2 class="h-sub" style="max-width:64vw; font-size:2.6vw">Raising capital directly from the crowd &mdash; debt, equity, donations, and rewards &mdash; and why disrupting the bank turned out to be far harder than it looked.</h2>
+    <div class="meta-row" style="margin-top:1vh">
+      <span>Department of Finance</span><span>&middot;</span><span>Graduate Seminar</span><span>&middot;</span><span>Lecture 07 of 14</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Reading &middot; Chapter 7 of <em>Fintech Explained</em></div>
+    <div>&mdash; &middot; &mdash;</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 02 · Most disruptive way to raise money? + pioneers (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="02 Disruptive Pioneers">
+  <div class="chrome">
+    <div>&sect;7.1 &middot; The most disruptive model?</div>
+    <div>02 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Bypassing banks and venture capitalists</div>
+    <h2 class="h-xl" style="font-size:4vw">Raising money directly from the crowd.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; font-size:1.12vw">
+      Crowdfunding lets individuals, businesses, and social causes raise capital as debt, equity, donations, or rewards &mdash; faster and simpler than the screening of banks and broker/dealers. Low barriers to entry: by 2022 Crunchbase counted ~1,500 active US platforms, plus 200 already closed.
+    </p>
+
+    <div class="callout" style="margin-top:1.4vh; padding:1.1vh 1.4vw; font-size:max(13px,1vw); line-height:1.5">
+      <div class="q-big" style="font-size:max(15px,1.35vw)">Crowdfunding is potentially the most disruptive of all the new models in finance.</div>
+      <div class="callout-src">&mdash; Goldman Sachs (2015)</div>
+    </div>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">The pioneers &middot; a new platform almost every year</div>
+      <div class="pipeline">
+        <div class="step"><div class="step-nb">2005</div><div class="step-title">Zopa &middot; UK</div><div class="step-desc">First online P2P lender &mdash; the acknowledged pioneer.</div></div>
+        <div class="step"><div class="step-nb">2006</div><div class="step-title">Prosper, OnDeck</div><div class="step-desc">US consumer and small-business lending.</div></div>
+        <div class="step"><div class="step-nb">2007</div><div class="step-title">LendingClub</div><div class="step-desc">Grows into the largest US P2P lender.</div></div>
+        <div class="step"><div class="step-nb">2008</div><div class="step-title">Indiegogo, GoFundMe</div><div class="step-desc">Rewards and donation crowdfunding arrive.</div></div>
+        <div class="step"><div class="step-nb">2009</div><div class="step-title">Kickstarter, Funding Circle</div><div class="step-desc">Creative projects and SME finance scale up.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 &middot; Alternative finance defined</div>
+    <div>Debt &middot; Equity &middot; Donations &middot; Rewards</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 03 · Four models of crowdfunding · Table 7.1 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="03 Four Models">
+  <div class="chrome">
+    <div>&sect;7.2 &middot; Crowdfunding basics</div>
+    <div>03 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">What does the contributor expect for their money?</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Four models &mdash; but debt dominates the dollars.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.05vw">
+      Investment crowdfunding (debt and equity) expects a financial return. Non-investment crowdfunding (donations and rewards) is driven by other motivations. Capital raised in 2020 &mdash; Cambridge Centre for Alternative Finance.
+    </p>
+
+    <figure class="frame-img contain" style="height:56vh; margin:1.6vh auto 0; border:1px solid rgba(127,127,127,.18); background:#fff">
+      <img src="../images/ch7/tab7.1.png" alt="Table 7.1 - Types of Crowdfunding Portals and Investors">
+    </figure>
+    <div class="frame-cap"><span>Tab. 7.1 &middot; Types of crowdfunding portals &amp; investors</span><span class="idx">Source: Cambridge Centre for Alternative Finance</span></div>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; Table 7.1 &middot; Models of crowdfunding</div>
+    <div>Source &middot; Cambridge Centre for Alternative Finance</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04 · Online lending: two business models (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04 Online Lending">
+  <div class="chrome">
+    <div>&sect;7.3 &middot; Online lending</div>
+    <div>04 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.4vh; justify-content:space-between">
+    <div>
+      <div class="kicker">Who holds the loan decides who bears the risk</div>
+      <h2 class="h-xl" style="font-size:3.8vw">P2P/marketplace vs. balance sheet lending.</h2>
+    </div>
+
+    <div class="split" style="flex:0 0 auto; align-items:stretch; gap:3vw">
+      <div class="callout" style="padding:2.2vh 1.8vw; font-size:max(13.5px,1.12vw); line-height:1.62">
+        <strong style="font-size:max(15px,1.28vw)">P2P / marketplace lender &middot; the intermediary</strong>
+        <div style="margin-top:1.1vh">Matches borrowers with lenders for a fee. Loans funded by retail and institutional investors. <strong>Defaults pass through to the investor</strong> &mdash; the platform bears no loss. Incentives misaligned: it earns origination fees on volume with no skin in the game.</div>
+      </div>
+      <div class="callout" style="padding:2.2vh 1.8vw; font-size:max(13.5px,1.12vw); line-height:1.62">
+        <strong style="font-size:max(15px,1.28vw)">Balance sheet lender &middot; the principal</strong>
+        <div style="margin-top:1.1vh">Acts like a bank, lending its own funds and holding loans on its balance sheet. <strong>It bears the credit losses</strong> it originates. Incentives aligned with sound underwriting (e.g. Lendified, OnDeck). Many large platforms run both models.</div>
+      </div>
+    </div>
+
+    <div class="pipeline-section" style="margin-top:0; padding-top:3vh">
+      <div class="pipeline-label" style="font-size:max(12px,.9vw); margin-bottom:2.6vh">Who borrows? &middot; 4 million US consumer loans, 2012&ndash;2017</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step"><div class="step-title" style="font-size:2.6vw">$8,500</div><div class="step-desc" style="font-size:max(12px,.96vw)">Average loan size</div></div>
+        <div class="step"><div class="step-title" style="font-size:2.6vw">3.25 yr</div><div class="step-desc" style="font-size:max(12px,.96vw)">Average maturity</div></div>
+        <div class="step"><div class="step-title" style="font-size:2.6vw">654</div><div class="step-desc" style="font-size:max(12px,.96vw)">Average credit score &mdash; below the US average</div></div>
+        <div class="step"><div class="step-title" style="font-size:2.6vw">49</div><div class="step-desc" style="font-size:max(12px,.96vw)">Average borrower age</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; Two lending models &middot; borrower profile</div>
+    <div>Individuals &le; $50K &middot; small business &le; $500K</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · From P2P to marketplace lending · Table 7.2 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 P2P to Marketplace">
+  <div class="chrome">
+    <div>&sect;7.3 &middot; From P2P to marketplace</div>
+    <div>05 / 28</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">&ldquo;Peer-to-peer&rdquo; is now a misnomer</div>
+        <h2 class="h-xl" style="font-size:3.6vw">The money comes from institutions.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1.05vw">
+          As demand outgrew retail capital, portals opened to hedge funds, banks, and insurers who treat online loans as an alternative asset class. ~85% of Prosper&rsquo;s funds are institutional; LendingClub and Funding Circle shut their retail channels entirely.
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Rise of the robots.</strong> Institutions connect by API and screen postings in real time with proprietary algorithms. Robot investors systematically outperform &mdash; but only when the portal discloses enough borrower information to assess default risk.
+        <div class="callout-src">&mdash; Study of LendingClub data</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:.8vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.4vh">Table 7.2 &middot; US consumer loan terms</div>
+      <figure class="frame-img contain" style="height:38vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch7/tab7.2.png" alt="Table 7.2 - Terms for Consumer Loans on US P2P/Marketplace Lenders">
+      </figure>
+      <div class="frame-cap"><span>Tab. 7.2 &middot; Terms for consumer loans</span><span class="idx">Source: company sites, 2023</span></div>
+      <div class="step-desc" style="margin-top:.6vh; font-size:max(11px,.84vw)">Fintechs gained a foothold with higher-risk borrowers, then grew by targeting lower-risk ones. Whether they truly use &ldquo;alternative data&rdquo; is contested.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Marketplace lending &middot; institutional capital</div>
+    <div>Invoice finance &middot; BNPL &middot; mini-bonds &middot; microfinance</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · Case study: Lendified (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="06 Case: Lendified">
+  <div class="chrome">
+    <div>&sect;7.3 &middot; Case study</div>
+    <div>06 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Lendified &middot; Toronto, 2015 &middot; acquired by Merchant Growth, 2023</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Using AI to lend to the businesses banks ignore.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; font-size:1.05vw">
+      Two former bank executives saw small businesses stuck without funding or overpaying for merchant advances. Lendified is a <strong>balance sheet lender</strong> &mdash; it originates and holds loans, funded by institutional credit facilities.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.4vw; margin-top:1.6vh">
+      <div class="stat-card"><div class="stat-label">Apply online</div><div class="stat-nb" style="font-size:3vw">&lt;10<span class="stat-unit">min</span></div></div>
+      <div class="stat-card"><div class="stat-label">Decision</div><div class="stat-nb" style="font-size:3vw">Instant</div></div>
+      <div class="stat-card"><div class="stat-label">Funding</div><div class="stat-nb" style="font-size:3vw">48<span class="stat-unit">hrs</span></div></div>
+      <div class="stat-card"><div class="stat-label">Max loan &middot; 24-mo term</div><div class="stat-nb" style="font-size:3vw">$150K</div></div>
+    </div>
+
+    <div class="split" style="margin-top:1.8vh; align-items:start; gap:3vw">
+      <div class="callout" style="padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>The edge: Judi.ai.</strong> Proprietary software connects by API to the applicant&rsquo;s bank account, auto-generates a cash-flow forecast, and feeds a credit engine that decides in minutes rather than weeks &mdash; cutting adjudication costs up to 90%. Licensed to other lenders across North America.
+      </div>
+      <div>
+        <div class="pipeline-label" style="margin-bottom:1.4vh">Borrower requirements</div>
+        <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.7">
+          Profitable, 6+ months operating &middot; $100K+ revenue &middot; owner credit score 610+ &middot; 3% one-time origination fee &middot; fixed bi-weekly payments, no prepayment penalty.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Lendified &middot; balance sheet SME lender</div>
+    <div>Source &middot; lendified.com</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06a · Pop quiz: reading the borrower (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="07 Quiz: Reading the Borrower">
+  <div class="chrome">
+    <div>&sect;7.3b &middot; Pop quiz</div>
+    <div>07 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; then reveal the example, then the study result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; reading the borrower.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Do retail lenders <strong>favor</strong> or <strong>disfavor</strong> applications with emotion-evoking keywords?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>Favor</div>
+          <div class="quiz-opt">Disfavor</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Emotionally charged phrasing &mdash; e.g. &ldquo;I work two jobs to support my family and I <em>promise</em> to repay every cent.&rdquo; <span class="quiz-illus">(illustrative)</span></div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Favor.</strong> Retail lenders are <em>more</em> likely to fund applications whose descriptions use keywords that evoke emotion.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; soft-information study (note 11)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Spelling errors, or a description that&rsquo;s too short or too long &mdash; <strong>favored</strong> or <strong>avoided</strong>?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">Favored</div>
+          <div class="quiz-opt" data-correct>Avoided</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> A one-line request, a rambling three-paragraph plea, or a write-up riddled with typos. <span class="quiz-illus">(illustrative)</span></div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Avoided.</strong> Lenders shy away from spelling errors and from descriptions that are either too short or too long &mdash; they read them as low-quality signals.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; soft-information study (note 11)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; how the crowd reads a loan application</div>
+    <div>Soft information &middot; click each card to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06b · Pop quiz: who defaults? (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="08 Quiz: Who Defaults?">
+  <div class="chrome">
+    <div>&sect;7.3b &middot; Pop quiz</div>
+    <div>08 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; the example is shown; click to reveal the result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; who defaults?</h2>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.8vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q"><strong>Renter</strong> or <strong>homeowner</strong> &mdash; who is more likely to default?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>Renter</div>
+          <div class="quiz-opt">Homeowner</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Same income and credit score; only the housing line differs. <span class="quiz-illus">(illustrative)</span></div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>The renter.</strong> Renting is one of the borrower signals that predicts higher default risk.
+          <div class="quiz-cite">Ch. 7 &middot; default-prediction study (note 12)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Loans for a <strong>wedding, a car, or debt consolidation</strong> &mdash; default <strong>more</strong> or <strong>less</strong>?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">More</div>
+          <div class="quiz-opt" data-correct>Less</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Compare them with loans for medical bills or to fund a small business.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Less.</strong> Borrowing for a wedding, a car, or debt consolidation &mdash; or being a professional &mdash; predicts <em>lower</em> default; medical, small-business, renting and five-year loans predict <em>higher</em>.
+          <div class="quiz-cite">Ch. 7 &middot; default-prediction study (note 12)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Same risk &mdash; does a <strong>fintech</strong> loan or a <strong>bank</strong> loan default more?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>Fintech loan</div>
+          <div class="quiz-opt">Bank loan</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Identical FICO and income &mdash; one borrows on a marketplace platform to consolidate debt, one from a bank.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>The fintech loan</strong> &mdash; significantly more, for equal risk. After consolidating, online borrowers tend to <em>re-lever</em>, spend more, and end up worse off.
+          <div class="quiz-cite">Ch. 7 &middot; fintech-vs-bank default study (note 13)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; what predicts default</div>
+    <div>Housing &middot; loan purpose &middot; re-levering &middot; click to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06c · Pop quiz: nudges & who succeeds (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="09 Quiz: Nudges & Success">
+  <div class="chrome">
+    <div>&sect;7.3b &middot; Pop quiz</div>
+    <div>09 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; then reveal the example, then the study result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; nudges &amp; who succeeds.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Texts that <strong>remind borrowers of the consequences</strong> of not repaying &mdash; do they help or backfire?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">Help repayment</div>
+          <div class="quiz-opt" data-correct>Backfire</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Text A: &ldquo;We believe you&rsquo;ll repay on time.&rdquo; &nbsp;Text B: &ldquo;Miss a payment and your credit score will suffer.&rdquo; <span class="quiz-illus">(illustrative)</span></div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Backfire.</strong> Messages expressing <em>positive</em> expectations (Text A) raised repayment; reminders of negative consequences (Text B) had the <em>opposite</em> effect.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; repayment-nudge study (note 14)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">On Kickstarter, do women have <strong>higher</strong> or <strong>lower</strong> success rates than men?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>Higher</div>
+          <div class="quiz-opt">Lower</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Women run only ~35% of Kickstarter campaigns &mdash; so you might expect them to fare worse. <span class="quiz-illus">(set-up)</span></div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Higher.</strong> Although women are just 35% of campaigns and set similar goals, they enjoy <em>higher</em> funding-success rates than men.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; Kickstarter gender study (note 56)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; nudges &amp; who succeeds</div>
+    <div>Positive nudges work &middot; women out-succeed &middot; click to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06d · Pop quiz: raising money (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="10 Quiz: Raising Money">
+  <div class="chrome">
+    <div>&sect;7.4b &middot; Pop quiz</div>
+    <div>10 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; the example is shown; click to reveal the study result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; raising money.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Which raises more on average &mdash; <strong>all-or-nothing</strong> or <strong>keep-it-all</strong> campaigns?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>All-or-nothing</div>
+          <div class="quiz-opt">Keep-it-all</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Goal $100,000; only $90,000 is pledged. All-or-nothing <em>returns</em> the $90,000; keep-it-all hands it to the founder.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>All-or-nothing.</strong> It forces founders to bear more risk but raises more on average &mdash; and higher-quality, more innovative projects succeed more often.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; all-or-nothing study (note 16)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Does more platform <strong>due diligence</strong> lead to <strong>more</strong> or <strong>fewer</strong> successful campaigns?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>More</div>
+          <div class="quiz-opt">Fewer</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Before a campaign goes live the platform runs background checks, site visits, credit checks and account monitoring.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>More.</strong> Greater due diligence is associated with a higher share of successful campaigns, more contributors, and more capital raised.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; due-diligence study (note 18)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; what makes a raise succeed</div>
+    <div>All-or-nothing &middot; due diligence &middot; click to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06e · Pop quiz: algorithms & bias (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="11 Quiz: Algorithms & Bias">
+  <div class="chrome">
+    <div>&sect;7.11b &middot; Pop quiz</div>
+    <div>11 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; the example is shown; click to reveal the study result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; algorithms &amp; bias.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Does &ldquo;alternative data&rdquo; find hidden-prime borrowers &mdash; or do ratings mostly <strong>track ordinary credit reports</strong>?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">Finds hidden prime</div>
+          <div class="quiz-opt" data-correct>Tracks credit reports</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> A platform claims its AI sees creditworthiness <em>beyond</em> FICO &mdash; lending profitably to &ldquo;invisible prime&rdquo; borrowers banks reject.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Contested.</strong> Some studies support &ldquo;invisible prime,&rdquo; but one study of <strong>4 million US loans</strong> found the platform&rsquo;s ratings were mostly explained by the hard data already in ordinary credit reports.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; alternative-data study (note 10)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Identical equity pitch &mdash; founder appears Black vs. white. Funded <strong>equally</strong> or <strong>less</strong>?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">Equally</div>
+          <div class="quiz-opt" data-correct>Less</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> The same project, plan and numbers are shown to backers; only the founder&rsquo;s apparent race differs.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Less.</strong> African American male founders are significantly less likely to be funded for identical projects &mdash; a gap that shrinks with third-party endorsements and evidence of prior success.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; equity-crowdfunding bias study (note 59)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; algorithms &amp; bias</div>
+    <div>&ldquo;Alternative data&rdquo; &middot; identical-project bias &middot; click to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06f · Pop quiz: smart money (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="12 Quiz: Smart Money">
+  <div class="chrome">
+    <div>&sect;7.3c &middot; Pop quiz</div>
+    <div>12 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; the example is shown; click to reveal the study result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; smart money.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Who picks better loans &mdash; algorithmic <strong>&ldquo;robot&rdquo;</strong> investors or <strong>human</strong> retail investors?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>Robots</div>
+          <div class="quiz-opt">Humans</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Institutions plug into the platform&rsquo;s API and let proprietary algorithms screen every new loan posting in real time.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Robots.</strong> They systematically outperform less-sophisticated human investors &mdash; but <em>only</em> when the portal discloses enough borrower information to gauge default risk.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; LendingClub robot-investor study (note 7)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Does heavy <strong>promotional self-praise</strong> (no facts) win over sophisticated investors?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">Yes, it sells</div>
+          <div class="quiz-opt" data-correct>No, it repels</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> A pitch full of &ldquo;world-class team,&rdquo; &ldquo;revolutionary,&rdquo; &ldquo;guaranteed winner&rdquo; &mdash; but light on evidence.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>No &mdash; it repels.</strong> Sophisticated investors are turned off by promotional language without factual support. Unsophisticated retail investors, however, are undeterred.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; equity-disclosure study (note 19)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; smart money</div>
+    <div>Algorithms beat amateurs &middot; facts beat hype &middot; click to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06g · Pop quiz: how marketplace lending works (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="13 Quiz: How It Works">
+  <div class="chrome">
+    <div>&sect;7.3d &middot; Pop quiz</div>
+    <div>13 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; the example is shown; click to reveal the result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; how marketplace lending works.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">When a borrower defaults on a P2P/marketplace loan, who takes the loss?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">The platform</div>
+          <div class="quiz-opt" data-correct>The investor</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Your slice of a loan to a stranger goes bad. Does the portal that matched you eat the loss &mdash; or do you?</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>The investor.</strong> The platform passes the loss through and keeps its origination fee &mdash; a classic <em>principal-agent</em> problem (misaligned incentives). A balance sheet lender, by contrast, bears its own losses.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; credit risk &amp; incentives (&sect;7.9)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Where does most &ldquo;peer-to-peer&rdquo; funding come from today &mdash; the <strong>crowd</strong> or <strong>institutions</strong>?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">The crowd</div>
+          <div class="quiz-opt" data-correct>Institutions</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> The name implies many individuals each chipping in ~$100 to fund a loan.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Institutions.</strong> Hedge funds, banks and insurers now supply most of the money &mdash; about <strong>85% of Prosper&rsquo;s</strong> funds &mdash; which is why it&rsquo;s now called <em>marketplace</em> lending.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; from P2P to marketplace (&sect;7.3)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; how marketplace lending works</div>
+    <div>Investor bears the loss &middot; money is institutional &middot; click to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06h · Pop quiz: scale & motivation (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="14 Quiz: Scale & Motivation">
+  <div class="chrome">
+    <div>&sect;7.7c &middot; Pop quiz</div>
+    <div>14 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; the example is shown; click to reveal the result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; scale &amp; motivation.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Why do small businesses pick online lenders &mdash; mainly for <strong>low cost</strong> or for <strong>speed</strong>?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">Low cost</div>
+          <div class="quiz-opt" data-correct>Speed &amp; access</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> US Fed survey &mdash; firms ranked speed of decision (63%), chance of being funded (61%), no collateral (45%)&hellip; and cost?</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Speed &amp; access.</strong> Cost / interest rate was the <em>least</em>-cited reason &mdash; just <strong>13%</strong> &mdash; even though online loans are often more expensive.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; US Fed Small Business Credit Survey, 2019 (note 34)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Which raises more money globally &mdash; <strong>debt</strong> or <strong>equity</strong> crowdfunding?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>Debt</div>
+          <div class="quiz-opt">Equity</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Equity platforms get the headlines (Wefunder, StartEngine, AngelList) &mdash; so you might assume they dominate the dollars.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Debt &mdash; by a mile.</strong> P2P + balance sheet lending is ~<strong>89&ndash;90%</strong> of all dollars raised; equity is just ~<strong>4%</strong>; donations and rewards make up the rest.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; Table 7.1, CCAF (2020)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; scale &amp; motivation</div>
+    <div>Speed &gt; cost &middot; debt dwarfs equity &middot; click to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06i · Pop quiz: trust & turmoil (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="15 Quiz: Trust & Turmoil">
+  <div class="chrome">
+    <div>&sect;7.6b &middot; Pop quiz</div>
+    <div>15 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; the example is shown; click to reveal the result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; trust &amp; turmoil.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Do founders with <strong>trustworthy-looking faces</strong> raise more on Kickstarter?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>Yes</div>
+          <div class="quiz-opt">No</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Two otherwise-identical campaigns; backers rate the founders&rsquo; photos for &ldquo;trustworthiness.&rdquo;</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Yes.</strong> Founders judged to have trustworthy faces receive more pledges and attract more backers &mdash; a stronger effect for women.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; Kickstarter &ldquo;trustworthy faces&rdquo; study (note 58)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">China built the world&rsquo;s biggest P2P market. Did it mostly <strong>survive</strong> or <strong>collapse</strong>?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">Survived &amp; matured</div>
+          <div class="quiz-opt" data-correct>Collapsed</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> By 2017 China was 86% of global alternative finance &mdash; 6,600+ portals, $200B from 50M savers chasing 10%+ returns.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>Collapsed.</strong> Widespread fraud and Ponzi schemes &mdash; Ezubao alone was <strong>95% fake</strong>, costing 900,000 investors <strong>$7.6B</strong> &mdash; triggered a crackdown; 84%+ of platforms failed and China fell to ~1% of global volume.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; Figure 7.1 &amp; the Ezubao case</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; trust &amp; turmoil</div>
+    <div>Faces sway backers &middot; China&rsquo;s P2P imploded &middot; click to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06j · Pop quiz: the long game & fees (dark · interactive)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="16 Quiz: Long Game & Fees">
+  <div class="chrome">
+    <div>&sect;7.10b &middot; Pop quiz</div>
+    <div>16 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Guess first &mdash; the example is shown; click to reveal the result</div>
+    <h2 class="h-xl" style="font-size:2.7vw">Pop quiz &middot; the long game &amp; fees.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.4vw; margin-top:2vh; align-items:stretch; flex:1; align-content:center">
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">LendingClub finally turned a profit by <strong>doubling down on P2P</strong> &mdash; or by <strong>exiting it</strong>?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt">Doubling down</div>
+          <div class="quiz-opt" data-correct>Exiting P2P</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> After years of losses, the largest US P2P lender had to change course in 2020&ndash;2021.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>By exiting.</strong> It closed its retail channel (2020), left P2P/marketplace lending entirely (2021), and relaunched as a chartered <em>bank</em> &mdash; profitable in 2021 and 2022 for the first time.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; LendingClub case (Table 7.5)</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+      <div class="quiz" data-stage="0">
+        <div class="quiz-q">Raise <strong>$10,000</strong> on Kickstarter. Roughly how much do you keep?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-correct>~$9,240</div>
+          <div class="quiz-opt">~$7,500</div>
+        </div>
+        <div class="quiz-example"><span class="quiz-tag">Example</span> Free to list, but on success Kickstarter charges a 5% platform fee + ~3% + $0.20 per pledge.</div>
+        <div class="quiz-answer"><span class="quiz-tag answer">Result</span> <strong>~$9,240.</strong> Fees take about <strong>7.6%</strong> (~$760). And the money is <em>taxable income</em> in the year you receive it.
+          <div class="quiz-cite">Fintech Explained, Ch. 7 &middot; Kickstarter case study</div>
+        </div>
+        <div class="quiz-hint"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Pop quiz &middot; the long game &amp; fees</div>
+    <div>Pivot to bank &middot; keep ~92% of a raise &middot; click to reveal</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06b · Crowdfunding research findings (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="17 Research Findings">
+  <div class="chrome">
+    <div>&sect;7.11 &middot; Crowdfunding research findings</div>
+    <div>17 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">What the academic studies actually find &mdash; lending, equity, rewards, inclusion &amp; bias</div>
+    <h2 class="h-xl" style="font-size:2.6vw">What the research finds.</h2>
+
+    <!-- top row · 3 cards -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.4vh 1.4vw; margin-top:1.3vh">
+
+      <div style="background:#fff; border:1px solid #E2E8F0; border-left:3px solid #0D7377; border-radius:5px; padding:1.3vh 1.3vw">
+        <div style="font-family:var(--mono); font-size:max(9.5px,.7vw); letter-spacing:.12em; text-transform:uppercase; color:#0D7377; font-weight:700; margin-bottom:.65vh">How lenders &amp; the crowd choose</div>
+        <div style="display:flex; flex-direction:column; gap:.55vh; font-size:max(10.5px,.88vw); line-height:1.38">
+          <div>&bull; Retail lenders favor applications with <strong>emotion-evoking keywords</strong>; shun spelling errors and too-short/long descriptions.</div>
+          <div>&bull; They <strong>avoid higher-rate loans</strong> &mdash; reading the rate as a default-risk signal.</div>
+          <div>&bull; API &ldquo;robot&rdquo; investors outperform &mdash; but only when the portal discloses enough borrower data.</div>
+          <div>&bull; &ldquo;Alternative data&rdquo; is contested: a 4M-loan study found ratings mostly track ordinary credit reports.</div>
+          <div>&bull; <strong>Sophisticated</strong> investors are repelled by promotional language with no facts; retail investors aren&rsquo;t.</div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #E2E8F0; border-left:3px solid #1E3A5F; border-radius:5px; padding:1.3vh 1.3vw">
+        <div style="font-family:var(--mono); font-size:max(9.5px,.7vw); letter-spacing:.12em; text-transform:uppercase; color:#1E3A5F; font-weight:700; margin-bottom:.65vh">What predicts default</div>
+        <div style="display:flex; flex-direction:column; gap:.55vh; font-size:max(10.5px,.88vw); line-height:1.38">
+          <div>&bull; <strong>More likely:</strong> renters; medical or small-business loans; five-year maturities.</div>
+          <div>&bull; <strong>Less likely:</strong> professionals; loans for a wedding, a car, or debt consolidation.</div>
+          <div>&bull; Fintech loans default <strong>more than equal-risk bank loans</strong> &mdash; borrowers re-lever and end up worse off.</div>
+          <div>&bull; Nudges: <strong>positive</strong>-expectation texts help; reminders of consequences <strong>backfire</strong>.</div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #E2E8F0; border-left:3px solid #1d6b3a; border-radius:5px; padding:1.3vh 1.3vw">
+        <div style="font-family:var(--mono); font-size:max(9.5px,.7vw); letter-spacing:.12em; text-transform:uppercase; color:#1d6b3a; font-weight:700; margin-bottom:.65vh">What makes a raise succeed</div>
+        <div style="display:flex; flex-direction:column; gap:.55vh; font-size:max(10.5px,.88vw); line-height:1.38">
+          <div>&bull; <strong>All-or-nothing</strong> campaigns raise more on average; higher-quality projects win.</div>
+          <div>&bull; Credible disclosure and founder <strong>skin in the game</strong> signal quality; serial founders leverage social capital.</div>
+          <div>&bull; More platform <strong>due diligence</strong> &rarr; more successful campaigns, backers, and capital.</div>
+          <div>&bull; In rewards campaigns, deeper <strong>customer-investor involvement</strong> lifts success.</div>
+          <div>&bull; A successful equity raise <strong>helps secure VC later</strong>; Kickstarter&rsquo;s 2012 &ldquo;risks&rdquo; section cut high-risk backing.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- bottom row · 2 wider cards -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.4vh 1.4vw; margin-top:1.4vh">
+
+      <div style="background:#fff; border:1px solid #E2E8F0; border-left:3px solid #b07d2b; border-radius:5px; padding:1.3vh 1.35vw">
+        <div style="font-family:var(--mono); font-size:max(9.5px,.7vw); letter-spacing:.12em; text-transform:uppercase; color:#b07d2b; font-weight:700; margin-bottom:.65vh">Financial inclusion (contested)</div>
+        <div style="display:flex; flex-direction:column; gap:.55vh; font-size:max(10.5px,.88vw); line-height:1.38">
+          <div>&bull; <strong>For:</strong> fintechs entered underbanked, fewer-branch areas; after 2008 they lifted small-business lending where banks pulled back &mdash; supporting jobs, wages &amp; new businesses for ~8 years.</div>
+          <div>&bull; Competition boosts inclusion by <strong>disrupting monopolistic banks that exploit payment data</strong> to gauge credit quality; in China, Ant Group credit access cut small-firm volatility &amp; bankruptcy.</div>
+          <div>&bull; <strong>Against:</strong> many target already-banked, creditworthy borrowers; charge lower-rated borrowers more; PPP loans showed 4&times; more fraud flags by 2021.</div>
+          <div>&bull; Fintech <strong>mortgage</strong> lenders are ~20% faster but charge a premium, serve more-educated/older borrowers, and default less.</div>
+          <div>&bull; Globally, fintech credit grows in <strong>richer economies with weaker bank regulation</strong> &mdash; not emerging ones.</div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #E2E8F0; border-left:3px solid #9a3b2e; border-radius:5px; padding:1.3vh 1.35vw">
+        <div style="font-family:var(--mono); font-size:max(9.5px,.7vw); letter-spacing:.12em; text-transform:uppercase; color:#9a3b2e; font-weight:700; margin-bottom:.65vh">Bias &amp; discrimination</div>
+        <div style="display:flex; flex-direction:column; gap:.55vh; font-size:max(10.5px,.88vw); line-height:1.38">
+          <div>&bull; Women run only <strong>35%</strong> of Kickstarters yet enjoy <strong>higher</strong> success rates.</div>
+          <div>&bull; Experienced investors show no gender preference; <strong>inexperienced female investors favor female founders</strong>.</div>
+          <div>&bull; Founders with <strong>trustworthy-looking faces</strong> get more pledges &mdash; a stronger effect for women.</div>
+          <div>&bull; <strong>Black founders</strong> are rated lower on identical equity projects; endorsements and prior success shrink the gap.</div>
+          <div>&bull; Minority borrowers pay <strong>higher risk-adjusted mortgage rates</strong> &mdash; ML can inherit bias from its training data.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 17 &middot; Crowdfunding research findings</div>
+    <div>Source &middot; Fintech Explained, Ch. 7 (studies cited, notes 7&ndash;60)</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06z1 · Competition & financial inclusion (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="18 Competition & Inclusion">
+  <div class="chrome">
+    <div>&sect;7.11 &middot; Competition &amp; financial inclusion</div>
+    <div>18 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.4vh; justify-content:space-between">
+    <div>
+      <div class="kicker">Does alternative finance widen access &mdash; or just skim the creditworthy?</div>
+      <h2 class="h-xl" style="font-size:3vw">Competition &amp; financial inclusion.</h2>
+    </div>
+
+    <div class="split" style="flex:0 0 auto; align-items:start; gap:3vw">
+
+      <div>
+        <div class="pipeline-label" style="color:#2dd4bf; margin-bottom:.8vh">The optimistic case &middot; filling the gap</div>
+        <div style="display:flex; flex-direction:column; gap:.9vh; font-size:max(11.5px,.98vw); line-height:1.42">
+          <div>&bull; Online lenders move into markets with <strong>fewer bank branches</strong>, underbanked rural areas, places with more bank-misconduct complaints, and regions banks abandoned in past downturns.</div>
+          <div>&bull; After 2008, fintechs and non-banks <strong>lifted small-business lending as big banks pulled back</strong> &mdash; supporting jobs, wages and new businesses for ~8 years, and lending more where COVID hit hardest.</div>
+          <div>&bull; Competition can widen inclusion by <strong>disrupting monopolistic banks</strong> that exploit payment data to judge credit quality.</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="pipeline-label" style="color:#e0896b; margin-bottom:.8vh">The skeptical case &middot; banking the banked</div>
+        <div style="display:flex; flex-direction:column; gap:.9vh; font-size:max(11.5px,.98vw); line-height:1.42">
+          <div>&bull; Other studies find online lenders chase the <strong>most creditworthy borrowers</strong> &mdash; people who already have bank credit, not the marginal or underserved.</div>
+          <div>&bull; They make smaller loans and undercut banks for high-score borrowers, but <strong>charge lower-rated borrowers more</strong> &mdash; a stretch to call that &ldquo;access.&rdquo;</div>
+          <div>&bull; Fintech mortgage lenders are ~20% faster yet charge a <strong>premium</strong> and serve more-educated, older borrowers; fintech PPP loans showed <strong>4&times; more fraud flags</strong> by 2021.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout" style="margin-top:0; padding:1.3vh 1.4vw; font-size:max(11px,.95vw); line-height:1.55">
+      <strong>Globally:</strong> fintech credit grows where the financial system is <em>already</em> developed &mdash; higher GDP per capita, stronger investor protection and courts, but weaker bank regulation &mdash; not in emerging markets. (In China, though, Ant Group credit access cut small-firm volatility and bankruptcy risk.)
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 18 &middot; Competition &amp; financial inclusion</div>
+    <div>Source &middot; Fintech Explained, Ch. 7 (notes 41&ndash;55)</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06z2 · Discrimination & bias in alternative finance (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="19 Discrimination & Bias">
+  <div class="chrome">
+    <div>&sect;7.11 &middot; Discrimination &amp; bias</div>
+    <div>19 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Gender, race &mdash; and the algorithms that can encode both</div>
+    <h2 class="h-xl" style="font-size:3vw">Discrimination &amp; bias in alternative finance.</h2>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.6vw; margin-top:1.6vh; flex:1; align-content:center">
+
+      <div style="background:#fff; border:1px solid #E2E8F0; border-left:3px solid #0D7377; border-radius:5px; padding:1.5vh 1.4vw">
+        <div style="font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.14em; text-transform:uppercase; color:#0D7377; font-weight:700; margin-bottom:.8vh">Gender</div>
+        <div style="display:flex; flex-direction:column; gap:.7vh; font-size:max(11px,.9vw); line-height:1.4">
+          <div>&bull; Women run only <strong>35%</strong> of Kickstarter campaigns and set similar goals &mdash; yet enjoy <strong>higher</strong> success rates than men.</div>
+          <div>&bull; Experienced investors show <strong>no</strong> gender preference; <strong>inexperienced female</strong> investors favor female founders.</div>
+          <div>&bull; Founders with <strong>trustworthy-looking faces</strong> attract more pledges &mdash; a stronger effect for women.</div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #E2E8F0; border-left:3px solid #9a3b2e; border-radius:5px; padding:1.5vh 1.4vw">
+        <div style="font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.14em; text-transform:uppercase; color:#9a3b2e; font-weight:700; margin-bottom:.8vh">Race</div>
+        <div style="display:flex; flex-direction:column; gap:.7vh; font-size:max(11px,.9vw); line-height:1.4">
+          <div>&bull; In equity crowdfunding, <strong>African American men</strong> are significantly less likely than similar white founders to be funded &mdash; backers rate <em>identical</em> projects lower when they believe the founder is a Black male.</div>
+          <div>&bull; In online lending, after adjusting for risk, <strong>Latinx and African American borrowers</strong> are charged significantly higher mortgage rates.</div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #E2E8F0; border-left:3px solid #b07d2b; border-radius:5px; padding:1.5vh 1.4vw">
+        <div style="font-family:var(--mono); font-size:max(10px,.74vw); letter-spacing:.14em; text-transform:uppercase; color:#b07d2b; font-weight:700; margin-bottom:.8vh">Algorithms &amp; mitigation</div>
+        <div style="display:flex; flex-direction:column; gap:.7vh; font-size:max(11px,.9vw); line-height:1.4">
+          <div>&bull; Machine-learning underwriting can <strong>absorb the human biases</strong> (gender, race, income) baked into its training data &mdash; then reproduce them at scale.</div>
+          <div>&bull; <strong>What helps:</strong> pre-treat training data to counter bias; add third-party endorsements and proof of prior success; strip indicators of the founder&rsquo;s race.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 19 &middot; Discrimination &amp; bias in alternative finance</div>
+    <div>Source &middot; Fintech Explained, Ch. 7 (notes 56&ndash;60)</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · Equity crowdfunding (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="20 Equity Crowdfunding">
+  <div class="chrome">
+    <div>&sect;7.4 &middot; Equity crowdfunding</div>
+    <div>20 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Selling ownership stakes to the crowd &middot; just 4% of dollars, the most regulated</div>
+    <h2 class="h-xl" style="font-size:3.8vw">All-or-nothing vs. keep-it-all.</h2>
+
+    <div class="split" style="margin-top:1.4vh; align-items:start; gap:3vw">
+      <div class="callout" style="padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+        <strong>All-or-nothing.</strong> Money is collected only if the campaign hits its target; otherwise pledges are returned. Entrepreneurs bear more risk but raise more on average &mdash; and higher-quality, more innovative projects succeed more often.
+      </div>
+      <div class="callout" style="padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+        <strong>Keep-it-all.</strong> Any money pledged goes to the sponsor even if the target is missed. Lower risk for the entrepreneur, but a weaker quality signal to investors.
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:1.4vh; max-width:64vw; opacity:.8; font-size:1vw">
+      Because most start-ups fail, regulators cap retail exposure: US Reg CF limits investment to the greater of $2,200 or 5% of income (10% above $150K income); Canada caps CA$2,500 per deal (CA$10,000 with dealer advice). Accredited-only platforms like AngelList face fewer rules.
+    </p>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">What makes a campaign succeed</div>
+      <div class="pipeline" data-cols="3">
+        <div class="step"><div class="step-title">Disclosure</div><div class="step-desc">Detailed, credible business information; risk disclosure itself signals quality.</div></div>
+        <div class="step"><div class="step-title">Skin in the game</div><div class="step-desc">Founders retaining equity reassures investors of commitment.</div></div>
+        <div class="step"><div class="step-title">Track record</div><div class="step-desc">Serial entrepreneurs leverage social capital from past campaigns.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 20 &middot; Equity, real estate &amp; royalty crowdfunding</div>
+    <div>Success also helps raise venture capital later</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · Donations & rewards + Kickstarter case (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="21 Donations, Rewards & Kickstarter">
+  <div class="chrome">
+    <div>&sect;7.5 &middot; Non-investment crowdfunding</div>
+    <div>21 / 28</div>
+  </div>
+  <div class="frame grid-2-6-6" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Community-driven, not return-driven</div>
+        <h2 class="h-xl" style="font-size:3.4vw">Donations &amp; rewards.</h2>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>Donation-based &middot; $7.0B (2020).</strong> No benefit promised &mdash; donors give to help. Charities, medical bills, civic projects, disaster relief. GoFundMe leads (acquired Crowdrise, 2017); volumes more than doubled during COVID-19.
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>Rewards-based &middot; $1.3B (2020).</strong> Backers pre-purchase a future product. Kickstarter and Indiegogo dominate. Mandatory risk disclosure (2012) reduced backing of high-risk projects.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Case study &middot; Kickstarter &middot; &ldquo;bring creative projects to life&rdquo;</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+        <div class="stat-card"><div class="stat-label">Projects hosted</div><div class="stat-nb" style="font-size:3vw">589K+</div></div>
+        <div class="stat-card"><div class="stat-label">Reached goal</div><div class="stat-nb" style="font-size:3vw">40%</div></div>
+        <div class="stat-card"><div class="stat-label">Pledged to successes</div><div class="stat-nb" style="font-size:3vw">$6.6B</div></div>
+        <div class="stat-card"><div class="stat-label">Avg successful raise</div><div class="stat-nb" style="font-size:3vw">$27.8K</div></div>
+      </div>
+      <div class="callout" style="margin-top:.6vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        <strong>Fees only on success.</strong> On a $10,000 raise: 5% platform fee ($500) + ~3% processing ($260) &rarr; you keep <strong>$9,240</strong>. All-or-nothing: creators get nothing if the goal is missed. Viral hits: Pebble Time ($20M), Veronica Mars ($6M).
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 21 &middot; Donations, rewards &amp; Kickstarter economics</div>
+    <div>700+ projects have raised $1M or more</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · Rise and fall globally · China collapse (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="22 Rise & Fall · China">
+  <div class="chrome">
+    <div>&sect;7.6 &middot; The rise and fall globally</div>
+    <div>22 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">China built 86% of the world&rsquo;s market &mdash; then it collapsed</div>
+    <h2 class="h-xl" style="font-size:3.8vw">A boom, a fraud wave, a crackdown.</h2>
+
+    <div class="pipeline" data-cols="3" style="margin-top:1.8vh">
+      <div class="step">
+        <div class="step-nb">2017 &middot; the peak</div>
+        <div class="step-title">$358B in China</div>
+        <div class="step-desc">86% of the $419B global market. 6,600+ portals; $200B from 50 million savers chasing 10%+ returns; $1.2T cumulative.</div>
+      </div>
+      <div class="step">
+        <div class="step-nb">2016&ndash;18 &middot; unraveling</div>
+        <div class="step-title">Fraud &amp; Ponzis</div>
+        <div class="step-desc">Ezubao: $8B raised in two years, 95% of investments fake, 900,000 investors lose $7.6B. Regulators crack down.</div>
+      </div>
+      <div class="step">
+        <div class="step-nb">2020 &middot; aftermath</div>
+        <div class="step-title">84%+ fail</div>
+        <div class="step-desc">China falls to 1% of global volume ($1.2B). The US becomes the largest market &mdash; 65% share, $73.6B.</div>
+      </div>
+    </div>
+
+    <div class="split" style="margin-top:1.6vh; align-items:start; gap:2.5vw">
+      <div style="flex:1.4">
+        <figure class="frame-img contain" style="height:24vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+          <img src="https://utppublishing.com/cms/10.3138/9781487544096.007/asset/images/9781487544096.007.f001.jpg" alt="Figure 7.1 - The Rise and Fall of Global Crowdfunding">
+        </figure>
+        <div class="frame-cap"><span>Fig. 7.1 &middot; Rise and fall of global crowdfunding</span><span class="idx">Source: CCAF</span></div>
+      </div>
+      <div class="callout" style="flex:1; padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+      <strong>The bigger picture.</strong> Despite China&rsquo;s collapse, most regions kept growing &mdash; ~$1.5 trillion raised over eight years at a 33% CAGR, fueled by low rates and institutions&rsquo; search for yield. But pioneers pivoted: LendingClub and Zopa became banks; Funding Circle went institutional-only; Kabbage and OnDeck sold to incumbents.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 22 &middot; Figure 7.1 &middot; Global rise and fall</div>
+    <div>Source &middot; Cambridge Centre for Alternative Finance</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · Global crowdfunding volumes · Table 7.3 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="23 Global Volumes">
+  <div class="chrome">
+    <div>&sect;7.7 &middot; Market size and growth</div>
+    <div>23 / 28</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1vh">
+      <div>
+        <div class="kicker">Table 7.3 &middot; Global volumes, 2019&ndash;2020 (US$B)</div>
+        <h2 class="h-xl" style="font-size:3vw">COVID-19 reshaped the mix.</h2>
+      </div>
+      <figure class="frame-img contain" style="height:50vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch7/tab7.3.png" alt="Table 7.3 - Global Crowdfunding Volumes 2019-2020">
+      </figure>
+      <div class="frame-cap"><span>Tab. 7.3 &middot; Global volumes 2019&ndash;2020 (US$B)</span><span class="idx">Source: CCAF, 2021</span></div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Reading the shifts</div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.6">
+        <strong>Consumer P2P shrank</strong> as government pandemic support to households squeezed out platforms serving consumers.
+      </div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.6">
+        <strong>Balance sheet rose</strong> where governments (e.g. the UK) funneled small-business support through online portals.
+      </div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.6">
+        <strong>Donations surged 161%</strong> as communities rallied during COVID-19.
+      </div>
+      <div class="callout" style="margin-top:.6vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        In the US, <strong>96% of crowdfunding dollars are debt</strong> &mdash; 53% consumers, 44% businesses, 3% real estate. Equity just 2.5%; donations and rewards 1.5%.
+      </div>
+      <figure class="frame-img contain" style="height:18vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="https://utppublishing.com/cms/10.3138/9781487544096.007/asset/images/9781487544096.007.f002.jpg" alt="Figure 7.2">
+      </figure>
+      <div class="frame-cap"><span>Fig. 7.2 &middot; US crowdfunding</span><span class="idx">Source: CCAF</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 23 &middot; Table 7.3 &amp; Figure 7.2 &middot; Volumes</div>
+    <div>Source &middot; Cambridge Centre for Alternative Finance, 2021</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 · Regulation & the partner-bank structure · Fig 7.3 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="24 Regulation">
+  <div class="chrome">
+    <div>&sect;7.8 &middot; Regulation &amp; logistics</div>
+    <div>24 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">No international standard &mdash; and a clever US workaround</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Marketplace loans run on partner banks.</h2>
+
+    <div class="pipeline-label" style="margin-top:1.4vh">Figure 7.3 &middot; How a LendingClub note was issued (2014)</div>
+    <div class="pipeline" data-cols="4" style="margin-top:.4vh">
+      <div class="step"><div class="step-title">Borrower</div><div class="step-desc">Applies online; signs the loan agreement.</div></div>
+      <div class="step"><div class="step-title">WebBank (Utah)</div><div class="step-desc">Regulated bank issues the loan.</div></div>
+      <div class="step"><div class="step-title">LendingClub</div><div class="step-desc">Buys the loan, issues notes, services payments.</div></div>
+      <div class="step"><div class="step-title">Investors</div><div class="step-desc">Hold the notes &mdash; and bear every credit loss.</div></div>
+    </div>
+    <figure class="frame-img contain" style="height:22vh; margin-top:1vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+      <img src="https://utppublishing.com/cms/10.3138/9781487544096.007/asset/images/9781487544096.007.f003.jpg" alt="Figure 7.3 - LendingClub Structure for Issuing Notes (2014)">
+    </figure>
+    <div class="frame-cap"><span>Fig. 7.3 &middot; LendingClub note-issuing structure</span><span class="idx">Source: LendingClub, 2014</span></div>
+
+    <div class="split" style="margin-top:1.8vh; align-items:start; gap:3vw">
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>A patchwork of rules.</strong> Some countries fold portals into existing bank/securities law (Germany, Singapore); others wrote new fintech-credit rules (UK, France, Switzerland). In Canada, online loans are securities &mdash; prospectus costs effectively exclude retail investors. In the US, funding portals must register with the SEC and join FINRA, and cannot give advice or hold client funds without a broker-dealer license.
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>The fintech charter.</strong> After years of legal challenges, the OCC granted its first special-purpose national bank charter to <strong>SoFi</strong> in January 2022 &mdash; bringing it &ldquo;inside the federal bank regulatory perimeter&hellip; subject to the full panoply of bank regulations.&rdquo;
+        <div class="callout-src">&mdash; OCC press release (2022)</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 24 &middot; Figure 7.3 &middot; The partner-bank model</div>
+    <div>No recourse &middot; no guarantee &middot; loss falls on the investor</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 · Benefits and risks · Table 7.4 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="25 Benefits & Risks">
+  <div class="chrome">
+    <div>&sect;7.9 &middot; Benefits &amp; risks</div>
+    <div>25 / 28</div>
+  </div>
+  <div class="frame grid-2-6-6" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Benefits accrue to borrowers</div>
+        <h2 class="h-xl" style="font-size:3vw">Ease, speed, access.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:42vw; font-size:1vw">
+          Banks won&rsquo;t lend to a start-up without revenue or collateral, and VCs wait for traction. Crowdfunding fills the pre-seed gap &mdash; or lets entrepreneurs pre-sell the product itself.
+        </p>
+      </div>
+      <div class="pipeline-label">Why SMEs choose online lenders &middot; US Fed survey</div>
+      <div style="display:flex; flex-direction:column; gap:.7vh">
+        <div class="step-desc" style="font-size:max(12px,.92vw)"><strong>63%</strong> &middot; speed of decision or funding</div>
+        <div class="step-desc" style="font-size:max(12px,.92vw)"><strong>61%</strong> &middot; chance of being funded</div>
+        <div class="step-desc" style="font-size:max(12px,.92vw)"><strong>45%</strong> &middot; no collateral required</div>
+        <div class="step-desc" style="font-size:max(12px,.92vw); opacity:.55"><strong>13%</strong> &middot; cost or interest rate (least cited)</div>
+      </div>
+      <div class="step-desc" style="font-size:max(11px,.84vw); opacity:.7">32% of SMEs seeking funding applied to an online lender in 2018 (up from 19% in 2016) &mdash; despite lower satisfaction than with banks.</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Risks borne by investors &middot; Table 7.4 (US SEC)</div>
+      <figure class="frame-img contain" style="height:46vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch7/tab7.4.png" alt="Table 7.4 - Risks in Crowdfunding">
+      </figure>
+      <div class="frame-cap"><span>Tab. 7.4 &middot; Risks in crowdfunding</span><span class="idx">Source: US SEC</span></div>
+      <div class="callout" style="margin-top:.4vh; padding:.9vh 1.2vw; font-size:max(11px,.85vw); line-height:1.45">
+        Also flagged by the SEC: difficult valuation, cancelation restrictions, and the absence of professional investor guidance.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 25 &middot; Table 7.4 &middot; Benefits vs. risks</div>
+    <div>Source &middot; US Securities and Exchange Commission</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12b · How crowdfunding portals make money (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="26 How Portals Make Money">
+  <div class="chrome">
+    <div>&sect;7.10 &middot; How portals make money</div>
+    <div>26 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2.4vh; justify-content:space-between">
+    <div>
+      <div class="kicker">Multi-sided platforms &mdash; the party raising money pays the most</div>
+      <h2 class="h-xl" style="font-size:3vw">How crowdfunding portals make money.</h2>
+    </div>
+
+    <div class="split" style="flex:0 0 auto; align-items:start; gap:3vw">
+
+      <!-- Non-investment / equity: only the fundraiser pays -->
+      <div>
+        <div class="pipeline-label" style="color:#0D7377; margin-bottom:.8vh">Equity &middot; rewards &middot; donations &mdash; only the fundraiser pays</div>
+        <div style="display:flex; flex-direction:column; gap:.85vh; font-size:max(11.5px,1vw)">
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Listing / sign-up fee</strong></span><span style="font-family:var(--mono); color:#0D7377; font-weight:700; white-space:nowrap">flat</span></div>
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Subscription fee</strong> &middot; run N campaigns</span><span style="font-family:var(--mono); color:#0D7377; font-weight:700; white-space:nowrap">monthly / annual</span></div>
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Underwriting / platform fee</strong> &middot; on funds raised</span><span style="font-family:var(--mono); color:#0D7377; font-weight:700; white-space:nowrap">1&ndash;5%</span></div>
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Payment processing</strong> &middot; passed to card issuer</span><span style="font-family:var(--mono); color:#0D7377; font-weight:700; white-space:nowrap">~3% + per pledge</span></div>
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Management fee + carry</strong> &middot; if the platform co-invests</span><span style="font-family:var(--mono); color:#0D7377; font-weight:700; white-space:nowrap">% of AUM</span></div>
+        </div>
+        <div class="step-desc" style="margin-top:.7vh; font-size:max(10px,.8vw); opacity:.7">Free to the backer, donor, or investor &mdash; some fees only charged on a <em>successful</em> raise.</div>
+      </div>
+
+      <!-- Online lending: both sides pay -->
+      <div>
+        <div class="pipeline-label" style="color:#1E3A5F; margin-bottom:.8vh">Online lending &mdash; <strong>both</strong> sides pay</div>
+        <div style="display:flex; flex-direction:column; gap:.85vh; font-size:max(11.5px,1vw)">
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Loan interest (APR)</strong> &middot; borrower &rarr; interest income</span><span style="font-family:var(--mono); color:#1E3A5F; font-weight:700; white-space:nowrap">6&ndash;30%+</span></div>
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Origination fee</strong> &middot; borrower, on the loan</span><span style="font-family:var(--mono); color:#1E3A5F; font-weight:700; white-space:nowrap">3.0&ndash;6.5%</span></div>
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Servicing fee</strong> &middot; lender, on repayments</span><span style="font-family:var(--mono); color:#1E3A5F; font-weight:700; white-space:nowrap">1&ndash;3% / yr</span></div>
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Late / missed payment</strong> &middot; borrower (+ NSF)</span><span style="font-family:var(--mono); color:#1E3A5F; font-weight:700; white-space:nowrap">~15% + $50</span></div>
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Bank-partner transaction fee</strong> &middot; LendingClub</span><span style="font-family:var(--mono); color:#1E3A5F; font-weight:700; white-space:nowrap">1&ndash;6%</span></div>
+          <div style="display:flex; justify-content:space-between; gap:1vw; border-top:1px solid #E2E8F0; padding-top:.85vh"><span><strong>Early repayment</strong></span><span style="font-family:var(--mono); color:#1d6b3a; font-weight:700; white-space:nowrap">usually free</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout" style="margin-top:0; padding:1.3vh 1.4vw; font-size:max(11px,.95vw); line-height:1.55">
+      <strong>But the costs run higher.</strong> Customer acquisition alone is <strong>$500&ndash;$1,000 per customer</strong>, on top of technology, R&amp;D, salaries, and G&amp;A &mdash; plus funding costs and write-downs on non-performing loans for balance sheet lenders. The result: years of losses, and every publicly listed portal fell below its IPO price.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 26 &middot; How crowdfunding portals make money</div>
+    <div>Issuer/borrower pays most &middot; lenders charge both sides</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 · Portal economics + LendingClub & SoFi · Tab 7.5/7.6 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="27 Economics: LendingClub & SoFi">
+  <div class="chrome">
+    <div>&sect;7.10 &middot; How portals make money</div>
+    <div>27 / 28</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Many fees on both sides &mdash; yet expenses are higher still</div>
+    <h2 class="h-xl" style="font-size:3.4vw">A genuinely tough business.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1vw">
+      Borrowers pay 3.0&ndash;6.5% origination plus 6&ndash;30%+ interest; investors pay 1&ndash;3% servicing and processing fees. But customer acquisition runs $500&ndash;$1,000 each &mdash; every listed portal fell below its IPO price.
+    </p>
+
+    <div class="split" style="margin-top:1.6vh; align-items:start; gap:3vw">
+      <div>
+        <div class="pipeline-label" style="margin-bottom:.6vh">LendingClub &middot; the pivot worked (Tab 7.5, US$M)</div>
+        <figure class="frame-img contain" style="height:24vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+          <img src="../images/ch7/tab7.5.png" alt="Table 7.5 - LendingClub Selected Financial Statements 2020-2022">
+        </figure>
+        <div class="frame-cap"><span>Tab. 7.5 &middot; LendingClub financials (US$M)</span><span class="idx">Source: annual reports</span></div>
+        <div class="step-desc" style="margin-top:.6vh; font-size:max(11px,.82vw)">Exited P2P, became a bank in 2021 &mdash; profitable for the first time. Stock: &minus;93% vs. S&amp;P 500 +119% (IPO&ndash;2021).</div>
+      </div>
+      <div>
+        <div class="pipeline-label" style="margin-bottom:.6vh">SoFi &middot; growth first, profits later (Tab 7.6, US$M)</div>
+        <figure class="frame-img contain" style="height:24vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+          <img src="../images/ch7/tab7.6.png" alt="Table 7.6 - SoFi Selected Financial Statements 2020-2022">
+        </figure>
+        <div class="frame-cap"><span>Tab. 7.6 &middot; SoFi financials (US$M)</span><span class="idx">Source: annual reports</span></div>
+        <div class="step-desc" style="margin-top:.6vh; font-size:max(11px,.82vw)">Revenue nearly tripled, but expenses exceeded revenue every year. Targets HENRYs; a one-stop bank since 2022.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 27 &middot; Tables 7.5 &amp; 7.6 &middot; Portal economics</div>
+    <div>Source &middot; LendingClub &amp; SoFi annual reports</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 14 · Research findings & closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="28 Closing">
+  <div class="chrome">
+    <div>Chapter 07 &middot; Closing</div>
+    <div>28 / 28</div>
+  </div>
+  <div class="frame" style="display:grid; gap:2vh; align-content:center; min-height:70vh">
+    <div class="kicker">Research findings &middot; an alternative channel, not a revolution</div>
+    <h1 class="h-hero" style="font-size:5vw">Disruption promised &mdash; an extra channel delivered.</h1>
+    <p class="lead" style="max-width:62vw; font-size:1.15vw">
+      Debt is ~90% of the dollars, and most funding now comes from institutions &mdash; &ldquo;P2P&rdquo; became marketplace lending. Running a portal is brutal: high acquisition costs and years of losses forced pioneers to pivot, sell, or shut down. Financial inclusion is contested: some online lenders reach underbanked areas, but most capital flows to borrowers who already had bank access &mdash; and risk-adjusted bias against minority borrowers persists.
+    </p>
+    <div style="display:flex; gap:4vw; margin-top:.4vh; flex-wrap:wrap">
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">~90%</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Of dollars raised is debt (loans)</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">$1.5T</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Raised over eight years (33% CAGR)</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">35%</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Women&rsquo;s share of Kickstarter &mdash; higher success rate</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">4&times;</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">More fraud flags in fintech PPP loans by 2021</div>
+      </div>
+    </div>
+    <div class="meta-row" style="margin-top:.4vh">
+      <span>End of Chapter 07</span><span>&middot;</span><span>FINE 6280</span><span>&middot;</span><span>Next &middot; Ch. 08 &middot; Digital Wealth Management</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Closing &middot; End of Chapter 07 &middot; FINE 6280</div>
+    <div>Next &middot; Ch. 08 &middot; Digital Wealth Management</div>
+  </div>
+</section>
+
+<!-- END SLIDES -->
+
+</div>
+
+<div id="nav"></div>
+
+<script src="../shared/deck.js"></script>
+<script src="../shared/lightbox.js"></script>
+<script src="../shared/quiz.js"></script>
+</body>
+</html>
