@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payments, FX &amp; Insurance · Chapter 09 · FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">&larr; &rarr; navigate &middot; ESC overview</div>
+
+<div id="deck">
+
+<!-- BEGIN SLIDES -->
+<!-- ============================================================
+     SLIDE 01 · Cover (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="01 Cover">
+  <div class="chrome">
+    <div>FINE 6280 &middot; Fintech</div>
+    <div>Chapter 09 &middot; Lecture</div>
+  </div>
+  <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:72vh">
+    <div class="kicker">Chapter 09 &middot; Payments, FX &amp; Insurance</div>
+    <h1 class="h-hero" style="font-size:6.6vw">Payments, FX &amp; Insurance</h1>
+    <h2 class="h-sub" style="max-width:64vw; font-size:2.6vw">Two complex, regulated, fragmented profit pools &mdash; a $2 trillion payments industry and a $6 trillion insurance industry &mdash; and the fintechs solving the pain points within them.</h2>
+    <div class="meta-row" style="margin-top:1vh">
+      <span>Department of Finance</span><span>&middot;</span><span>Graduate Seminar</span><span>&middot;</span><span>Lecture 09 of 14</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Reading &middot; Chapter 9 of <em>Fintech Explained</em></div>
+    <div>&mdash; &middot; &mdash;</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 02 · A $2 trillion industry + pain points (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="02 A $2T Industry">
+  <div class="chrome">
+    <div>&sect;9.1 &middot; Payments, money transfer &amp; FX</div>
+    <div>02 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">The front line between fintechs and incumbents</div>
+    <h2 class="h-xl" style="font-size:4vw">A $2 trillion industry &mdash; and ~40% of bank revenues.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:66vw; font-size:1.12vw">
+      McKinsey put global payments revenues at $1.9 trillion in 2020, forecast to reach $2.5 trillion by 2025. About half is in Asia Pacific, a quarter in North America. More $1B+ fintech unicorns have been born in payments than in any other line of financial services.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.6vw; margin-top:1.6vh; align-items:start">
+      <div class="stat-card"><div class="stat-label">North America revenues, 2020</div><div class="stat-nb" style="font-size:4vw">$485<span class="stat-unit">billion</span></div><div class="stat-note" style="font-size:max(11px,.86vw)">44% credit-card interest &amp; fees, 28% domestic payments, 20% accounts &amp; overdrafts, 9% cross-border.</div></div>
+      <div class="stat-card"><div class="stat-label">Asia Pacific &middot; largest market</div><div class="stat-nb" style="font-size:4vw">$900<span class="stat-unit">billion</span></div><div class="stat-note" style="font-size:max(11px,.86vw)">45% from bank accounts &amp; overdrafts &mdash; the high profitability fintechs are now attacking.</div></div>
+      <div class="stat-card"><div class="stat-label">JPMorgan &middot; Chase customers</div><div class="stat-nb" style="font-size:4vw">69<span class="stat-unit">txns / mo</span></div><div class="stat-note" style="font-size:max(11px,.86vw)">3.2B fee-generating transactions monthly; 65% of clients would leave a firm lacking digital channels.</div></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1.7fr 1fr; gap:1.4vw; align-items:start; margin-top:1.4vh">
+      <div class="callout" style="padding:1.1vh 1.4vw; font-size:max(13px,1vw); line-height:1.5">
+        <strong>The pain points.</strong> Payments are slow, opaque, and costly &mdash; especially across borders. A bank wire runs ~$35 and several days; an overseas remittance can cost ~10% and take weeks. Poor service, many fees, little transparency.
+        <div class="callout-src">&mdash; McKinsey &amp; Company</div>
+      </div>
+      <div>
+        <figure class="frame-img contain" style="height:18vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+          <img src="https://utppublishing.com/cms/10.3138/9781487544096.009/asset/images/9781487544096.009.f001.jpg" alt="Figure 9.1 - Global Payments Revenues, 2020">
+        </figure>
+        <div class="frame-cap"><span>Fig. 9.1 &middot; Global payments revenues, 2020</span><span class="idx">Source: McKinsey</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 &middot; Figure 9.1 &middot; Global payments revenues</div>
+    <div>Payment &middot; method &middot; transfer &middot; remittance &middot; FX</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 03 · The payment rails (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="03 Payment Rails">
+  <div class="chrome">
+    <div>&sect;9.1 &middot; The payment rails</div>
+    <div>03 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">The plumbing of the economy &mdash; and control of it brings wealth</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Highways for the big payments, local roads for the small.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1.05vw">
+      Payments travel a physical network of cables, wires, and fiber. In most countries the rails are government-owned and were run by banks. There are separate roads by size, plus border checkpoints for anti-money laundering (AML).
+    </p>
+
+    <div class="split" style="margin-top:1.6vh; align-items:start; gap:3vw">
+      <div>
+        <div class="pipeline-label" style="margin-bottom:.6vh">Large value transfer system (LVTS) &middot; same-day or intraday</div>
+        <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+          B2B payments and securities settle bank-to-bank, increasingly at <strong>real-time gross settlement (RTGS)</strong>. US: <strong>Fedwire</strong> (central bank) and <strong>CHIPS</strong> (private). Canada: <strong>Lynx</strong>. Europe: <strong>TARGET2</strong>, overseen by the ECB.
+        </div>
+      </div>
+      <div>
+        <div class="pipeline-label" style="margin-bottom:.6vh">Small payments system &middot; slower, high volume</div>
+        <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+          Built for checks, credit and debit cards. US: <strong>ACH</strong>. Canada: <strong>ACSS</strong>. Europe: <strong>EUCHA</strong>. Each country controls its own network; cross-border traffic passes &ldquo;customs&rdquo; checks to prevent crime.
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.6vh; padding:1.1vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>Who polices the rails.</strong> In the US, the Federal Reserve plus federal/state regulators; Treasury&rsquo;s FinCEN registers money service businesses (MSBs). In Canada, the Bank of Canada oversees payments and FINTRAC enforces AML and maintains the MSB registry.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; The payment rails &middot; LVTS vs. small payments</div>
+    <div>RTGS &middot; Fedwire &middot; CHIPS &middot; Lynx &middot; TARGET2 &middot; ACH</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04 · The payment players · Figure 9.2 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04 Payment Players">
+  <div class="chrome">
+    <div>&sect;9.2 &middot; The payment players</div>
+    <div>04 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Who touches a credit-card purchase &middot; Figure 9.2</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Many players, two steps: authorize, then settle.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:66vw; font-size:1vw">
+      Banks are everywhere &mdash; but so are non-bank money service businesses (MSBs) like Western Union, PayPal, Square, and Stripe. Authorization takes 1&ndash;2 seconds; settlement up to two business days.
+    </p>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">The roles in a card transaction</div>
+      <div class="pipeline" data-cols="3">
+        <div class="step"><div class="step-nb">issues the card</div><div class="step-title">Issuing bank</div><div class="step-desc">Lends you the money, bills you, collects payment, handles chargebacks &amp; interchange.</div></div>
+        <div class="step"><div class="step-nb">sets the rules</div><div class="step-title">Card network</div><div class="step-desc">VISA, MasterCard, Amex set network rules and the interchange fee &mdash; a toll on every sale.</div></div>
+        <div class="step"><div class="step-nb">serves the merchant</div><div class="step-title">Merchant bank</div><div class="step-desc">The acquirer; provides the POS machine and is paid by the merchant for the sale.</div></div>
+        <div class="step"><div class="step-nb">transmits securely</div><div class="step-title">Payment gateway</div><div class="step-desc">Encrypts and routes transaction data to the correct network (e.g. PayPal).</div></div>
+        <div class="step"><div class="step-nb">delivers messages</div><div class="step-title">Payment processor</div><div class="step-desc">The &ldquo;postal service&rdquo; between gateway and banks &mdash; First Data, FIS, WorldPay, Moneris.</div></div>
+        <div class="step"><div class="step-nb">does both</div><div class="step-title">Combined fintechs</div><div class="step-desc">Adyen, PayPal, and Square act as gateway <em>and</em> processor in one.</div></div>
+      </div>
+    </div>
+
+    <figure class="frame-img contain" style="height:20vh; border:1px solid rgba(127,127,127,.18); background:#fff; margin-top:1.4vh">
+      <img src="https://utppublishing.com/cms/10.3138/9781487544096.009/asset/images/9781487544096.009.f002.jpg" alt="Figure 9.2 - The Payment Players">
+    </figure>
+    <div class="frame-cap"><span>Fig. 9.2 &middot; The payment players</span><span class="idx">Source: Fintech Explained, Ch. 9</span></div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; Figure 9.2 &middot; The payment players</div>
+    <div>Authorization 1&ndash;2 sec &middot; settlement up to 2 days</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · How payment players make money · Table 9.1 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 How Players Make Money">
+  <div class="chrome">
+    <div>&sect;9.3 &middot; How payment players make money</div>
+    <div>05 / 15</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Table 9.1 &middot; Splitting the fee on a $100 card payment</div>
+        <h2 class="h-xl" style="font-size:3vw">The merchant keeps $97.39.</h2>
+      </div>
+      <figure class="frame-img contain" style="height:30vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch9/tab9.1.png" alt="Table 9.1 - Fees Charged for a $100 Credit Card Payment">
+      </figure>
+      <div class="frame-cap"><span>Tab. 9.1 &middot; Fees on a $100 card payment</span><span class="idx">Source: Fintech Explained, Ch. 9</span></div>
+      <div class="step-desc" style="margin-top:.4vh; font-size:max(11px,.84vw)">The interchange (1.75%) plus assessment (0.11%) is the <strong>swipe fee</strong>. The flat $0.50 processing fee shrinks to 0.05% on a $1,000 sale.</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Two engines of revenue</div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.6"><strong>Fees.</strong> Interchange, assessment, processing, plus account, maintenance, NSF, and trade-finance fees. Cross-border adds an FX conversion fee &mdash; up to 3% for consumers, often hidden in the rate.</div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.6"><strong>Risk income.</strong> Banks earn the <strong>bid-ask spread</strong> on volatile FX, plus returns for bearing liquidity and credit risk &mdash; small per trade, vast across trillions.</div>
+      <div class="callout" style="margin-top:.4vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        <strong>Paytm&rsquo;s take rate.</strong> Payment-processing revenue = GMV &times; take rate. On $137B of GMV, $159M of revenue &mdash; a take rate of just <strong>12 bps</strong>.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Table 9.1 &middot; Fees on a $100 card payment</div>
+    <div>Swipe fee &middot; interchange &middot; assessment &middot; bid-ask spread</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · Case study: Paytm · Table 9.2 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="06 Case: Paytm">
+  <div class="chrome">
+    <div>&sect;9.3 &middot; Case study</div>
+    <div>06 / 15</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Paytm &middot; &ldquo;pay through mobile&rdquo; &middot; New Delhi, 2010</div>
+        <h2 class="h-xl" style="font-size:3vw">India&rsquo;s largest payments platform &mdash; still deep in losses.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1vw">
+          From phone top-ups to a super-app: 337M consumers and 22M merchants by its 2021 IPO &mdash; India&rsquo;s largest ever, valuing it at $18.5B. The stock fell 27% on day one and is down 66% since.
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+        <div class="stat-card"><div class="stat-label">Consumers</div><div class="stat-nb" style="font-size:2.6vw">337M</div></div>
+        <div class="stat-card"><div class="stat-label">Merchants</div><div class="stat-nb" style="font-size:2.6vw">22M</div></div>
+        <div class="stat-card"><div class="stat-label">Lending fee &middot; distribution</div><div class="stat-nb" style="font-size:2.6vw">2.5&ndash;3.5<span class="stat-unit">%</span></div></div>
+        <div class="stat-card"><div class="stat-label">Device subscription</div><div class="stat-nb" style="font-size:2.6vw">$1.2&ndash;3.1<span class="stat-unit">/mo</span></div></div>
+      </div>
+      <div class="step-desc" style="font-size:max(11px,.84vw); opacity:.75">Two segments: payment &amp; financial services, and commerce &amp; cloud. Backed by Ant Financial, Alibaba, and SoftBank. QR code, Soundbox, POS, co-branded credit card, BNPL.</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Table 9.2 &middot; Income statement (% of revenues, FY to Mar 31)</div>
+      <figure class="frame-img contain" style="height:34vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch9/tab9.2.png" alt="Table 9.2 - Paytm Financial Statements">
+      </figure>
+      <div class="frame-cap"><span>Tab. 9.2 &middot; Paytm financial statements</span><span class="idx">Source: Refinitiv</span></div>
+      <div class="step-desc" style="margin-top:.4vh; font-size:max(11px,.82vw)">Marketing has fallen sharply, but operating expenses still exceed 100% of revenues &mdash; losses persist even as scale grows.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Table 9.2 &middot; Paytm financial statements</div>
+    <div>Source &middot; Refinitiv</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · The fintech value proposition · cross-border (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="07 Value Proposition">
+  <div class="chrome">
+    <div>&sect;9.4 &middot; The fintech value proposition</div>
+    <div>07 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Beaver Inc. (Canada) pays Eagle Ltd. (US) &mdash; four routes</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Faster, cheaper, transparent.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1vw">
+      The value proposition: same payment, lower cost, clearer fees, better experience. Cross-border, every route carries a transfer fee, a conversion fee, and a bid-ask spread &mdash; but they differ sharply.
+    </p>
+
+    <div class="pipeline" data-cols="4" style="margin-top:1.6vh">
+      <div class="step">
+        <div class="step-nb">option 1</div>
+        <div class="step-title">Bank wire</div>
+        <div class="step-desc">CA$25 sender + $10 recipient + 3% FX. CA$1,000 costs $65 (6.5%); CA$10,000 costs $335 (3.35%). Fixed costs hurt small transfers.</div>
+      </div>
+      <div class="step">
+        <div class="step-nb">option 2</div>
+        <div class="step-title">PayPal</div>
+        <div class="step-desc">Travels LVTS&ndash;ACH rails. CA$2.98 fixed + 3.5% FX; 1&ndash;5 days. Cheaper than a wire for small sums, dearer for large.</div>
+      </div>
+      <div class="step">
+        <div class="step-nb">option 3</div>
+        <div class="step-title">RippleNet</div>
+        <div class="step-desc">Private interbank network linking member banks directly &mdash; near-instant, near-zero bank cost; in principle the cheapest.</div>
+      </div>
+      <div class="step">
+        <div class="step-nb">option 4</div>
+        <div class="step-title">Cryptocurrency</div>
+        <div class="step-desc">P2P over the blockchain &mdash; but wallets, exchanges, and processors add intermediaries, hidden fees, and delays.</div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.6vh; padding:1.1vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>The strategy.</strong> Start with one use-case &mdash; a trusted means of payment, mobile money, a fair FX rate, a cheap remittance &mdash; build a foothold, then expand across the value chain to grow sticky, recurring revenue.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; Cross-border payment &middot; four routes compared</div>
+    <div>Transfer fee &middot; conversion fee &middot; bid-ask spread</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · Fintechs disrupting payments · 5 cases (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="08 Disrupting Payments">
+  <div class="chrome">
+    <div>&sect;9.5 &middot; Fintechs disrupting payments</div>
+    <div>08 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">One pain point each &mdash; trust, access, FX, remittances, cash</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Five solutions to five customer pain points.</h2>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">From a single use-case to a platform</div>
+      <div class="pipeline" data-cols="5">
+        <div class="step">
+          <div class="step-nb">trust &middot; China</div>
+          <div class="step-title">Alipay</div>
+          <div class="step-desc">Escrow until goods arrive created trust in e-commerce. 1.3B users; 50%+ of China mobile payments. Spun into Ant Group.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">access &middot; Kenya</div>
+          <div class="step-title">M-PESA</div>
+          <div class="step-desc">&ldquo;Mobile money&rdquo; for the unbanked via agents. 52M customers in 7 countries; 90% Kenya penetration; 19B transactions.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">FX &middot; UK</div>
+          <div class="step-title">Wise</div>
+          <div class="step-desc">Mid-market rates, one transparent flat fee. Up to 8&times; cheaper than UK banks; 56 currencies. $11B 2021 listing.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">remittance &middot; UK</div>
+          <div class="step-title">WorldRemit</div>
+          <div class="step-desc">100% cashless, $3.99 fee + 1% FX; 90%+ in minutes. Send from 50, receive in 130+ countries via M-PESA, MTN, bKash.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">cashless &middot; HK</div>
+          <div class="step-title">Octopus</div>
+          <div class="step-desc">Tap-and-go stored-value card. Used by 98% of residents; 33M cards; accepted by 140,000 merchants; 15M txns/day.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.8vh; padding:1.1vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>Incumbents fight back.</strong> Partnerships, consortiums, and acquisitions: eight US banks built Zelle to rival Venmo; JPMorgan bought WePay; Fiserv took First Data, FIS took WorldPay; VISA seeded Square, Stripe, and Klarna. Timing helped too &mdash; smartphones, RTGS, NFC/QR, stronger authentication, and open-banking rules.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; Alipay &middot; M-PESA &middot; Wise &middot; WorldRemit &middot; Octopus</div>
+    <div>Trust &middot; access &middot; FX &middot; remittances &middot; cashless</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · The rise of insurtech · a $6T industry (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="09 Rise of Insurtech">
+  <div class="chrome">
+    <div>&sect;9.6 &middot; The rise of insurtech</div>
+    <div>09 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">A vast profit pool ripe for disruption &middot; Figure 9.3</div>
+    <h2 class="h-xl" style="font-size:3.8vw">A $6 trillion industry &mdash; in gross written premiums.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1.05vw">
+      Premiums totaled US$5.7 trillion in 2020, growing ~4% a year since 2010 but slowing. The best opportunities are in emerging markets &mdash; Asia Pacific, Latin America, Africa. Insurers price risk, collect premiums, and pay claims.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.6vw; margin-top:1.6vh; align-items:start">
+      <div class="stat-card"><div class="stat-label">Life insurance</div><div class="stat-nb" style="font-size:4vw">42<span class="stat-unit">% of premiums</span></div><div class="stat-note" style="font-size:max(11px,.86vw)">Lump sum to beneficiaries on disability or premature death of the insured.</div></div>
+      <div class="stat-card"><div class="stat-label">Property &amp; casualty</div><div class="stat-nb" style="font-size:4vw">31<span class="stat-unit">% of premiums</span></div><div class="stat-note" style="font-size:max(11px,.86vw)">Property covers fire, theft, weather; casualty covers auto, theft, and liability.</div></div>
+      <div class="stat-card"><div class="stat-label">Health insurance</div><div class="stat-nb" style="font-size:4vw">27<span class="stat-unit">% of premiums</span></div><div class="stat-note" style="font-size:max(11px,.86vw)">Covers medical treatment, drugs, and checkups. Plus two B2B pools: distribution &amp; reinsurance.</div></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.4vw; align-items:start; margin-top:1.4vh">
+      <div class="callout" style="padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Why it&rsquo;s ripe for disruption.</strong> Crude average-based pricing, paper-based onboarding and claims, costly distribution, and poor service &mdash; products generic and commoditized. Complexity, regulation, and the need for scale built high barriers that protected incumbents.
+        <div class="callout-src">&mdash; Fintech Explained, Ch. 9</div>
+      </div>
+      <div>
+        <figure class="frame-img contain" style="height:18vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+          <img src="https://utppublishing.com/cms/10.3138/9781487544096.009/asset/images/9781487544096.009.f003.jpg" alt="Figure 9.3 - Gross Written Premiums in the Global Insurance Industry">
+        </figure>
+        <div class="frame-cap"><span>Fig. 9.3 &middot; Gross written premiums</span><span class="idx">Source: Fintech Explained, Ch. 9</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; Figure 9.3 &middot; Global gross written premiums</div>
+    <div>Underwriting &middot; premium &middot; claim &middot; settlement</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · Digital transformation by insurtechs · Figure 9.4 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="10 Digital Transformation">
+  <div class="chrome">
+    <div>&sect;9.7 &middot; Digital transformation by insurtechs</div>
+    <div>10 / 15</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">A boom that hides creative destruction</div>
+        <h2 class="h-xl" style="font-size:3vw">Hot capital, brutal attrition.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1vw">
+          Slow until 2015, insurtech then took off &mdash; ~$50B raised from 2018&ndash;2022, $17.8B in 2021 alone, 44 unicorns tracked. Yet of 760 funded insurtechs, a quarter had shut by end-2019 &mdash; mostly for lack of market appetite, not bad tech.
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+        <div class="stat-card"><div class="stat-label">Raised 2018&ndash;2022</div><div class="stat-nb" style="font-size:2.8vw">~$50<span class="stat-unit">B</span></div></div>
+        <div class="stat-card"><div class="stat-label">Raised in 2021</div><div class="stat-nb" style="font-size:2.8vw">$17.8<span class="stat-unit">B</span></div></div>
+        <div class="stat-card"><div class="stat-label">Unicorns (CB Insights)</div><div class="stat-nb" style="font-size:2.8vw">44</div></div>
+        <div class="stat-card"><div class="stat-label">Shut by end-2019</div><div class="stat-nb" style="font-size:2.8vw">&frac14;<span class="stat-unit">of 760</span></div></div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Figure 9.4 &middot; First-year return post-IPO (all 2020, US)</div>
+      <figure class="frame-img contain" style="height:28vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="https://utppublishing.com/cms/10.3138/9781487544096.009/asset/images/9781487544096.009.f004.jpg" alt="Figure 9.4 - Insurtech Performance First Year Post-IPO">
+      </figure>
+      <div class="frame-cap"><span>Fig. 9.4 &middot; Insurtech first-year post-IPO return</span><span class="idx">Source: Refinitiv</span></div>
+      <div class="step-desc" style="margin-top:.4vh; font-size:max(11px,.84vw)">Two rose, two sank &mdash; proof the <strong>business model</strong>, not the technology, decides success.</div>
+      <div class="callout" style="margin-top:.4vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        Insurtechs exploit mobile apps, cloud, biometrics, sensors, data science, and AI &mdash; customizing products, opening digital channels, and automating claims.
+      </div>
+      <div style="margin-top:.6vh; font-family:var(--mono); font-size:max(9px,.66vw); letter-spacing:.03em; opacity:.55; line-height:1.5">[sic] Source per textbook: &ldquo;Towers Wilson Watson&rdquo; &mdash; the author was likely referring to <strong>Willis Towers Watson</strong>.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 10 &middot; Figure 9.4 &middot; Insurtech IPO performance</div>
+    <div>Source &middot; Refinitiv &middot; Towers Wilson Watson</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 · The insurance value chain · Figure 9.5 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="11 Insurance Value Chain">
+  <div class="chrome">
+    <div>&sect;9.8 &middot; The insurance value chain</div>
+    <div>11 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Figure 9.5 &middot; Two customer-facing steps, two back-office steps</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Where insurtechs attack the chain.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1vw">
+      Technology alone is no moat &mdash; it can be replicated, licensed, or acquired. The industry &ldquo;does not need hundreds of insurtechs that do the same thing, worse.&rdquo; Disruptors must win a specific step of the chain.
+    </p>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">Customer-facing</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step"><div class="step-nb">step 1</div><div class="step-title">Product design &amp; pricing</div><div class="step-desc">Use historical data and statistical models to set a premium that earns a profit while paying expected claims.</div></div>
+        <div class="step"><div class="step-nb">step 2</div><div class="step-title">Quote, bind &amp; issue</div><div class="step-desc">Customer gets a quote, buys the policy, and the agent puts coverage in place.</div></div>
+        <div class="step"><div class="step-nb">step 3</div><div class="step-title">Administration</div><div class="step-desc">Records management &mdash; policy, customer, and beneficiary details, billing, and changes over time.</div></div>
+        <div class="step"><div class="step-nb">step 4</div><div class="step-title">Claims &amp; settlement</div><div class="step-desc">Investigate, assess damage, contract repairs, and disburse cash &mdash; where the rubber hits the road.</div></div>
+      </div>
+      <div class="pipeline-label" style="margin-top:2vh; text-align:right; opacity:.5">Back-office &rarr;</div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.4vw; align-items:start; margin-top:1.4vh">
+      <div class="callout" style="padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Why scale wins.</strong> Underwriting needs large pools &mdash; premiums from non-paying policies subsidize the minority that pay out. Concentrated risk relies on portfolio diversification, so insurance does not lend itself to a P2P model.
+      </div>
+      <div>
+        <figure class="frame-img contain" style="height:16vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+          <img src="https://utppublishing.com/cms/10.3138/9781487544096.009/asset/images/9781487544096.009.f005.jpg" alt="Figure 9.5 - The Insurance Value Chain">
+        </figure>
+        <div class="frame-cap"><span>Fig. 9.5 &middot; The insurance value chain</span><span class="idx">Source: Fintech Explained, Ch. 9</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 11 &middot; Figure 9.5 &middot; The insurance value chain</div>
+    <div>Design &middot; quote-bind-issue &middot; admin &middot; claims</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 · Customer-facing insurtechs · Root & Lemonade (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="12 Customer-Facing Insurtechs">
+  <div class="chrome">
+    <div>&sect;9.9 &middot; Customer-facing insurtechs</div>
+    <div>12 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Personalization from sensors, biometrics, IoT &amp; machine learning</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Pricing the individual, not the average.</h2>
+
+    <div class="split" style="margin-top:1.4vh; align-items:start; gap:3vw">
+      <div class="callout" style="padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+        <strong>Root &middot; usage-based auto.</strong> Smartphone sensors measure acceleration, braking, cornering, speed, and route consistency to score driving behavior. Because 30% of drivers cause ~45% of accident costs, Root insures only the safer drivers &mdash; and prices them lower.
+      </div>
+      <div class="callout" style="padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+        <strong>Lemonade &middot; AI-native home &amp; renters.</strong> Founded NYC 2015; bots replace brokers &mdash; AI Maya quotes in two minutes, AI Jim can pay claims in three seconds. 730,000 customers at its 2020 IPO, 70% under 35. But not profitable since inception, with losses expected to grow.
+      </div>
+    </div>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">Digital-only insurers selling direct</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step"><div class="step-title">ZhongAn</div><div class="step-desc">Health, accident, liability, credit, auto, lifestyle &mdash; China&rsquo;s online-only insurer.</div></div>
+        <div class="step"><div class="step-title">Oscar</div><div class="step-desc">Digital-first health insurance.</div></div>
+        <div class="step"><div class="step-title">Clover</div><div class="step-desc">Health insurance powered by data.</div></div>
+        <div class="step"><div class="step-title">Lemonade</div><div class="step-desc">Homeowner &amp; renter, then car, pet, and term life.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 12 &middot; Root &middot; Lemonade &middot; digital-only insurers</div>
+    <div>Customized &middot; personalized &middot; AI-priced</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 · Emerging risks + back office · Cyence & Snapsheet (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="13 Emerging Risks & Back Office">
+  <div class="chrome">
+    <div>&sect;9.10 &middot; Emerging risks &amp; the back office</div>
+    <div>13 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">New risks to underwrite &mdash; and old processes to automate</div>
+    <h2 class="h-xl" style="font-size:3.6vw">From cyber risk to three-second claims.</h2>
+
+    <div class="split" style="margin-top:1.4vh; align-items:start; gap:3vw">
+      <div class="callout" style="padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+        <strong>Emerging risks &middot; Cyence.</strong> Cyber-attacks cost the insurance industry over $1 trillion a year, but P&amp;C insurers lacked the claims history to price them. Founded 2014, Cyence fused cybersecurity, data science, and economics with internet-scale data and machine learning. Raised $40M Series A; acquired by Guidewire for $275M in 2017. Peers: Climate Corporation, Traffk.
+      </div>
+      <div class="callout" style="padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+        <strong>Back office &middot; Snapsheet.</strong> Photo-based auto claims: computer vision returns a repair estimate in 2.7 hours on average, and 90% of auto claims are handled electronically within 30 days &mdash; where rivals take weeks to months. Founded 2011; $100M raised; 100+ carrier partners. Peers: Shift Technology, Clara Analytics.
+      </div>
+    </div>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">What back-office insurtechs automate</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step"><div class="step-title">Onboarding</div><div class="step-desc">Faster applications and KYC via automation and smart contracts.</div></div>
+        <div class="step"><div class="step-title">Underwriting</div><div class="step-desc">Optimized pricing and portfolio risk with data science and ML.</div></div>
+        <div class="step"><div class="step-title">Claims</div><div class="step-desc">AI triage, fraud detection, and customer comms by chatbot and video.</div></div>
+        <div class="step"><div class="step-title">HR &amp; benefits</div><div class="step-desc">Cloud HR and payroll &mdash; Zenefits, Gusto, Namely.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 13 &middot; Cyence &middot; Snapsheet &middot; back-office automation</div>
+    <div>Cyber &middot; climate &middot; claims &middot; underwriting &middot; admin</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 14 · Case study: ZhongAn · Table 9.3 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="14 Case: ZhongAn">
+  <div class="chrome">
+    <div>&sect;9.10 &middot; Case study</div>
+    <div>14 / 15</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">ZhongAn &middot; China&rsquo;s first online-only insurer &middot; launched 2013</div>
+        <h2 class="h-xl" style="font-size:3vw">Capital-light, cloud-native &mdash; and struggling.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1vw">
+          IPO&rsquo;d in Hong Kong in 2017 at HKD 59.70; backed by Alibaba (16%), Tencent (12%), and Ping An (12%). Runs entirely on its Wujieshan cloud platform; over half of 1,700 staff are engineers.
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+        <div class="stat-card"><div class="stat-label">Ecosystem partners</div><div class="stat-nb" style="font-size:2.8vw">200+</div></div>
+        <div class="stat-card"><div class="stat-label">Share since IPO &middot; to 2022</div><div class="stat-nb" style="font-size:2.8vw">&minus;70<span class="stat-unit">%</span></div></div>
+      </div>
+      <div class="step-desc" style="font-size:max(11px,.84vw); opacity:.75">Pioneered shipping-return insurance, phone screen-crack cover, and real-time flight-delay insurance. Partners include Didi, Xiaomi, Ant Financial, Ctrip. AI optimizes products from partner transaction data.</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Table 9.3 &middot; Income statement (% of revenues, RMB)</div>
+      <figure class="frame-img contain" style="height:24vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch9/tab9.3.png" alt="Table 9.3 - ZhongAn Financial Statements">
+      </figure>
+      <div class="frame-cap"><span>Tab. 9.3 &middot; ZhongAn financial statements</span><span class="idx">Source: ZhongAn reports</span></div>
+      <figure class="frame-img contain" style="height:14vh; border:1px solid rgba(127,127,127,.18); background:#fff; margin-top:.6vh">
+        <img src="https://utppublishing.com/cms/10.3138/9781487544096.009/asset/images/9781487544096.009.f006.jpg" alt="Figure 9.6 - ZhongAn Share Price vs. Hang Seng Index">
+      </figure>
+      <div class="frame-cap"><span>Fig. 9.6 &middot; ZhongAn share price vs. Hang Seng</span><span class="idx">Source: Refinitiv</span></div>
+      <div class="step-desc" style="margin-top:.4vh; font-size:max(11px,.82vw)">Revenue rose, but claims and expenses rose faster &mdash; a large 2022 loss after modest profits. Liabilities reached 69% of assets; the share lagged the Hang Seng (&minus;15%).</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 14 &middot; Table 9.3 &middot; ZhongAn financial statements</div>
+    <div>Source &middot; ZhongAn IPO &amp; annual reports</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 15 · Summary & closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="15 Closing">
+  <div class="chrome">
+    <div>Chapter 09 &middot; Closing</div>
+    <div>15 / 15</div>
+  </div>
+  <div class="frame" style="display:grid; gap:2vh; align-content:center; min-height:70vh">
+    <div class="kicker">Research findings &middot; attacking complex, regulated profit pools</div>
+    <h1 class="h-hero" style="font-size:5vw">Solve a pain point, automate the processing.</h1>
+    <p class="lead" style="max-width:64vw; font-size:1.15vw">
+      Fintechs <em>can</em> take the profit pools of payments and insurance &mdash; both complex, regulated, and fragmented. They start with a single use-case, build a foothold, and expand across the value chain. The winners create trust, cut friction, and reach the underserved &mdash; but many burn cash for years, and high-profile names like Paytm and ZhongAn remain deep in losses. The business model, not the technology, decides who survives.
+    </p>
+    <div style="display:flex; gap:4vw; margin-top:.4vh; flex-wrap:wrap">
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">$2T</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Payments industry &mdash; ~40% of bank revenues</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">$5.7T</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Global insurance premiums, 2020</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">~$50B</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Raised by insurtechs, 2018&ndash;2022</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">&frac14;</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Of 760 insurtechs shut within a year</div>
+      </div>
+    </div>
+    <div class="meta-row" style="margin-top:.4vh">
+      <span>End of Chapter 09</span><span>&middot;</span><span>FINE 6280</span><span>&middot;</span><span>Next &middot; Ch. 10 &middot; Digital Banking &amp; Personal Finance</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Closing &middot; End of Chapter 09 &middot; FINE 6280</div>
+    <div>Next &middot; Ch. 10 &middot; Digital Banking &amp; Personal Finance</div>
+  </div>
+</section>
+
+<!-- END SLIDES -->
+
+</div>
+
+<div id="nav"></div>
+
+<script src="../shared/deck.js"></script>
+<script src="../shared/lightbox.js"></script>
+</body>
+</html>

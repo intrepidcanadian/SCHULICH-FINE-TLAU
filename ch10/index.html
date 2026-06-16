@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Banking &amp; Personal Finance · Chapter 10 · FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">&larr; &rarr; navigate &middot; ESC overview</div>
+
+<div id="deck">
+
+<!-- BEGIN SLIDES -->
+<!-- ============================================================
+     SLIDE 01 · Cover (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="01 Cover">
+  <div class="chrome">
+    <div>FINE 6280 &middot; Fintech</div>
+    <div>Chapter 10 &middot; Lecture</div>
+  </div>
+  <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:72vh">
+    <div class="kicker">Chapter 10 &middot; Digital Banking</div>
+    <h1 class="h-hero" style="font-size:6.6vw">Digital Banking &amp; Personal Finance</h1>
+    <h2 class="h-sub" style="max-width:64vw; font-size:2.6vw">App developers, challenger banks, and financial marketplaces are unbundling and rebundling the bank &mdash; delivering an experience that is easier, cheaper, faster, and more convenient.</h2>
+    <div class="meta-row" style="margin-top:1vh">
+      <span>Department of Finance</span><span>&middot;</span><span>Graduate Seminar</span><span>&middot;</span><span>Lecture 10 of 14</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Reading &middot; Chapter 10 of <em>Fintech Explained</em></div>
+    <div>&mdash; &middot; &mdash;</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 02 · The new world of digital banking · Table 10.1 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="02 New World">
+  <div class="chrome">
+    <div>&sect;10.1 &middot; The new world of digital banking</div>
+    <div>02 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Three categories of fintech disruptor</div>
+    <h2 class="h-xl" style="font-size:4vw">Following the disruption playbook.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; font-size:1.12vw">
+      Lower barriers to entry and high profit margins have drawn fintechs into day-to-day banking &mdash; from tiny start-ups to digital-only banks to bigtech with billions of customers. Some want to replace incumbents; others want to partner and sell to their customers. Table 10.1 previews three distinct models.
+    </p>
+
+    <figure class="frame-img contain" style="height:36vh; margin-top:1.2vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+      <img src="../images/ch10/tab10.1.png" alt="Table 10.1 — Categories of Fintechs in Digital Banking and Personal Finance">
+    </figure>
+    <div class="frame-cap"><span>Tab. 10.1 &middot; Categories of fintechs in banking &amp; personal finance</span><span class="idx">Source: textbook</span></div>
+
+    <div class="callout" style="margin-top:1.4vh; padding:1.1vh 1.4vw; font-size:max(13px,1vw); line-height:1.5">
+      The shared value proposition: deliver a superior customer experience &mdash; <strong>easier, cheaper, faster, more convenient</strong> &mdash; by leveraging the internet, mobile, APIs, cloud, and AI to launch better apps at lower cost.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 &middot; Table 10.1 &middot; Three fintech models</div>
+    <div>App developers &middot; challenger banks &middot; marketplaces</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 03 · Pain points in banking & personal finance (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="03 Pain Points">
+  <div class="chrome">
+    <div>&sect;10.2 &middot; Pain points</div>
+    <div>03 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Stressed, underserved, and graded against everyone else</div>
+    <h2 class="h-xl" style="font-size:3.8vw">A giant market of dissatisfied customers.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.05vw">
+      Banks are seen as monolithic gatekeepers earning high profits by overcharging. Minority and lower-income groups struggle to access credit &mdash; or are shut out entirely &mdash; even in the wealthiest economies.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.4vw; margin-top:1.6vh">
+      <div class="stat-card"><div class="stat-label">US unbanked &middot; 2019</div><div class="stat-nb" style="font-size:3.4vw">7M<span class="stat-unit">households</span></div><div class="stat-note" style="font-size:max(11px,.84vw)">No checking or savings account at a bank or credit union.</div></div>
+      <div class="stat-card"><div class="stat-label">US adults &middot; 2023 CNBC</div><div class="stat-nb" style="font-size:3.4vw">70%<span class="stat-unit">stressed</span></div><div class="stat-note" style="font-size:max(11px,.84vw)">Fewer than half have an emergency fund; more women feel stressed.</div></div>
+      <div class="stat-card"><div class="stat-label">UK adults &middot; 2022</div><div class="stat-nb" style="font-size:3.4vw">&gt;33%<span class="stat-unit">anxious</span></div><div class="stat-note" style="font-size:max(11px,.84vw)">10% hopeless; almost 3 in 10 stressed about finances.</div></div>
+      <div class="stat-card"><div class="stat-label">Canada &middot; survey</div><div class="stat-nb" style="font-size:3.4vw">$200<span class="stat-unit">margin</span></div><div class="stat-note" style="font-size:max(11px,.84vw)">Over half were within $200 of not covering bills and debt.</div></div>
+    </div>
+
+    <div class="callout" style="margin-top:1.6vh; padding:1.1vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>And then there is your credit score.</strong> Assembled by Equifax and TransUnion, it is used not only by lenders but by phone and internet providers, auto dealers, insurers, landlords, and potentially employers. Most consumers do not know they are being graded. <em>Do you know yours?</em>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; Pain points &middot; a market opportunity</div>
+    <div>Source &middot; FDIC, CNBC, UK Mental Health Foundation</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04 · Global Financial Crisis opens the door (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04 GFC Opens the Door">
+  <div class="chrome">
+    <div>&sect;10.3 &middot; The crisis opens the door</div>
+    <div>04 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Two hurdles for new entrants &mdash; regulation and trust</div>
+    <h2 class="h-xl" style="font-size:3.8vw">2008&ndash;09 lowered both barriers.</h2>
+
+    <div class="split" style="margin-top:1.4vh; align-items:start; gap:3vw">
+      <div class="callout" style="padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+        <strong>Regulation eased.</strong> Banking is a low-margin commodity business (profit margins below 2% on average) that only generates returns through leverage &mdash; and high leverage means high risk. Post-crisis, angry voters pushed governments to ring-fence banks <em>and</em> to boost competition: many adopted open banking and waved through fintech start-ups.
+      </div>
+      <div class="callout" style="padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+        <strong>Trust collapsed.</strong> A 2012 <em>Guardian</em> survey put trust in banking at a five-year low &mdash; 71% felt banks had not learned their lesson. The damage was worst among the young: a 2016 survey found 71% of millennials would rather visit the dentist than listen to their banks.
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:1.4vh; max-width:64vw; font-size:1vw">
+      The crisis also unleashed a wave of innovation. Disgruntled insiders left to launch fintech start-ups &mdash; they knew exactly where the industry profit pools were located and set about draining them while incumbents were weak and customers were willing to switch.
+    </p>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">A 2016 survey &middot; where millennials would rather go</div>
+      <div class="pipeline" data-cols="3">
+        <div class="step"><div class="step-title" style="font-size:2vw">73%</div><div class="step-desc">Would rather manage finances through Google, Amazon, Apple, PayPal, or Square.</div></div>
+        <div class="step"><div class="step-title" style="font-size:2vw">71%</div><div class="step-desc">Would rather visit the dentist than listen to their banks.</div></div>
+        <div class="step"><div class="step-title" style="font-size:2vw">Earliest</div><div class="step-desc">Adopters of fintech apps &mdash; millennials led the way.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; The Global Financial Crisis as turning point</div>
+    <div>Lower trust &middot; lower barriers &middot; insider exodus</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · Open banking fuels disruption (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 Open Banking">
+  <div class="chrome">
+    <div>&sect;10.4 &middot; Open banking fuels disruption</div>
+    <div>05 / 13</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">&ldquo;Data is the new oil&rdquo; &mdash; but banks hoard it</div>
+        <h2 class="h-xl" style="font-size:3.4vw">From screen scraping to APIs.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1.05vw">
+          The data belongs to the customer, yet banks guard it. The traditional workaround &mdash; <strong>screen scraping</strong> &mdash; forces consumers to hand over their login and password, violating user agreements and creating real security risk. More than 4 million Canadians have done it anyway.
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        Screen scraping creates &ldquo;significant risk to consumers&rsquo; financial health, including the potential for account takeover, unauthorized payment transactions, and identity theft.&rdquo;
+        <div class="callout-src">&mdash; US bank CEO, written Senate testimony</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:.8vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.4vh">The safer alternative &middot; open banking via API</div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.6">
+        <strong>An API</strong> lets two computers exchange data securely over a network &mdash; used inside banks and with partners like VISA and MasterCard for decades.
+      </div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.6">
+        <strong>Open banking</strong> came into force in 2018 in the UK and EU, with countries worldwide following. It gives customers control: a bank <em>must</em> share data with an authorized third party via a secure API, and the customer can revoke access at any time.
+      </div>
+      <div class="callout" style="margin-top:.4vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        <strong>A double-edged sword.</strong> Research finds open banking promotes competition when it levels borrower screening &mdash; but if it hands fintechs monopoly power over data, it can hinder competition and leave all borrowers worse off.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Open banking &middot; access to data</div>
+    <div>UK &amp; EU 2018 &middot; customer-controlled &middot; revocable</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · Fintech app developers · unbundling & rebundling · Tab 10.3 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="06 App Developers">
+  <div class="chrome">
+    <div>&sect;10.5 &middot; Fintech app developers</div>
+    <div>06 / 13</div>
+  </div>
+  <div class="frame grid-2-6-6" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Solve one pain point &mdash; then add more</div>
+        <h2 class="h-xl" style="font-size:3vw">Unbundle, then rebundle.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:42vw; font-size:1vw">
+          <strong>Unbundling</strong> means picking one profitable bank product and offering a better, cheaper version &mdash; avoiding the loss-leaders (like savings accounts) that drag bank margins. Once a foothold is established with early adopters, <strong>rebundling</strong> adds complementary products to make customers sticky and pull rivals&rsquo; customers over.
+        </p>
+      </div>
+      <div class="pipeline-label">App ingredients for success</div>
+      <div style="display:flex; flex-direction:column; gap:.6vh">
+        <div class="step-desc" style="font-size:max(12px,.9vw)"><strong>Onboarding</strong> &middot; simple, intuitive UX</div>
+        <div class="step-desc" style="font-size:max(12px,.9vw)"><strong>Security</strong> &middot; APIs and ML, not screen scraping</div>
+        <div class="step-desc" style="font-size:max(12px,.9vw)"><strong>Personalization</strong> &middot; big-data targeting; gamification for engagement</div>
+        <div class="step-desc" style="font-size:max(11px,.84vw); opacity:.7">B2C channels: one-time fee, in-app purchase, subscription, or freemium.</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Table 10.3 &middot; Unbundling &rarr; rebundling</div>
+      <figure class="frame-img contain" style="height:46vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch10/tab10.3.png" alt="Table 10.3 — Fintechs Unbundling and Rebundling Financial Products">
+      </figure>
+      <div class="frame-cap"><span>Tab. 10.3 &middot; Christensen disruption</span><span class="idx">Source: company websites</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Unbundling &amp; rebundling strategy</div>
+    <div>Foothold at the low end &rarr; move up-market</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · Pivoting B2C to B2B · Sensibill & Moven (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="07 B2C to B2B">
+  <div class="chrome">
+    <div>&sect;10.5 &middot; Pivoting from B2C to B2B</div>
+    <div>07 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Acquiring consumers costs $500&ndash;$1,000 each &mdash; so sell to banks instead</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Banks become the perfect customer.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1vw">
+      Many fintechs found a consumer business too costly to scale, and older customers still trust incumbents. Banks have huge customer bases, deep pockets, and regulatory expertise but are slow and weighed down by legacy IT &mdash; so fintechs license their apps via a <strong>software-as-a-service (SaaS)</strong> model, often <strong>white-labeled</strong> under the bank&rsquo;s brand.
+    </p>
+
+    <div class="split" style="margin-top:1.6vh; align-items:start; gap:3vw">
+      <div class="callout" style="padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Sensibill &middot; Toronto, 2013.</strong> A receipt-management app: snap or forward a receipt, OCR converts the image, and an ML algorithm extracts up to <strong>150 data points</strong> for tagging, search, expense reports, and warranty reminders. Raised CA$2M seed in 2015; white-labeled to four Canadian banks, then expanded to the US (2017) and UK (2018) &mdash; the bank&rsquo;s customer never sees the Sensibill name.
+      </div>
+      <div class="callout" style="padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Moven &middot; US, 2010.</strong> A personal-finance app built on behavioral economics and AI: it aggregates card and credit data, surfaces real-time spending insights, and flags suboptimal decisions &mdash; &ldquo;make smarter decisions and increase savings.&rdquo; TD Bank embedded it as <strong>TD MySpend</strong>. By 2022 Moven had rebranded as a financial-wellness platform serving bank and non-bank partners.
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.4vh; padding:.9vh 1.3vw; font-size:max(11px,.88vw); line-height:1.45">
+      The bank gains an innovative product without building it; the fintech gains a large customer base and stable recurring revenue attractive to investors. The licensing terms stay undisclosed &mdash; they can be a source of competitive advantage.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; SaaS &amp; white-label partnerships</div>
+    <div>Source &middot; Sensibill &amp; Moven</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · Challenger banks · the playbook (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="08 Challenger Banks">
+  <div class="chrome">
+    <div>&sect;10.6 &middot; Challenger banks</div>
+    <div>08 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Neobank &middot; digital bank &middot; online bank &mdash; banking, done electronically</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Open an account in under 10 minutes.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; font-size:1.05vw">
+      The end-to-end digital experience sets a challenger bank apart: no branch, no paper, no face-to-face meeting (just KYC ID upload). Open 24/7/365, with intuitive dashboards, spending stats, embedded fintech tools, education, and chatbots that escalate to live help.
+    </p>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">The playbook &middot; foothold &rarr; rebundle &rarr; expand</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step"><div class="step-nb">01</div><div class="step-title">Single product</div><div class="step-desc">Launch one product at home for retail and small business &mdash; N26 a free deposit account; Revolut a multi-currency prepaid card.</div></div>
+        <div class="step"><div class="step-nb">02</div><div class="step-title">Rebundle via API</div><div class="step-desc">Add products directly or via partners. Starling&rsquo;s 2018 marketplace had 10 fintech partners by 2022; N26 uses Wise and Allianz.</div></div>
+        <div class="step"><div class="step-nb">03</div><div class="step-title">Cross borders</div><div class="step-desc">Expand to neighbors &mdash; N26 across Europe to the US and Brazil; Revolut to the US, Australia, Japan, Singapore.</div></div>
+        <div class="step"><div class="step-nb">04</div><div class="step-title">Licensed or not</div><div class="step-desc">A banking license unlocks insured deposits; without one, partner an FDIC bank. Chime had to drop &ldquo;bank&rdquo; from its ads in 2021.</div></div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.4vh; padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+      <strong>COVID-19 lit the fuse.</strong> Time on digital banking apps rose 35% year-over-year in the US and up to 85% in emerging markets. Challenger-bank downloads topped <strong>264 million</strong> worldwide, led by Brazil and Latin America &mdash; now 300+ challenger banks globally.
+    </div>
+    <figure class="frame-img contain" style="height:20vh; margin-top:1.4vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+      <img src="../images/ch10/tab10.2.png" alt="Table 10.2 — Most Downloaded Free Financial Apps, April 2023">
+    </figure>
+    <div class="frame-cap"><span>Tab. 10.2 &middot; Most-downloaded free financial apps</span><span class="idx">Source: textbook &middot; April 2023</span></div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; The challenger bank playbook</div>
+    <div>Lower cost &middot; transparent fees &middot; digital-only</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · Leading challenger banks · Table 10.4 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="09 Leading Challengers">
+  <div class="chrome">
+    <div>&sect;10.6 &middot; Leading challenger banks</div>
+    <div>09 / 13</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1vh">
+      <div>
+        <div class="kicker">Table 10.4 &middot; Four leaders &mdash; 111M customers at year-end 2022</div>
+        <h2 class="h-xl" style="font-size:3vw">Billions raised, banking licenses contested.</h2>
+      </div>
+      <figure class="frame-img contain" style="height:42vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch10/tab10.4.png" alt="Table 10.4 — Leading Challenger Banks">
+      </figure>
+      <div class="frame-cap"><span>Tab. 10.4 &middot; Customers at YE2022; valuations at last round</span><span class="idx">Source: company websites</span></div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:.9vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">What sets each apart</div>
+      <div class="step-desc" style="font-size:max(12px,.9vw); line-height:1.55"><strong>Revolut</strong> &mdash; multi-currency card spending and ATM in 120 currencies; EU banking license 2018; UK and US licenses pending.</div>
+      <div class="step-desc" style="font-size:max(12px,.9vw); line-height:1.55"><strong>N26</strong> &mdash; free accounts and a MasterCard; EU license 2016; Europe&rsquo;s most valuable fintech in 2019; 24 countries.</div>
+      <div class="step-desc" style="font-size:max(12px,.9vw); line-height:1.55"><strong>Nubank</strong> &mdash; no-fee card to full bank; NYSE IPO late 2021 at $45B with 48M customers; 70M of 75M in Brazil.</div>
+      <div class="step-desc" style="font-size:max(12px,.9vw); line-height:1.55"><strong>Chime</strong> &mdash; &ldquo;a financial technology company, not a bank&rdquo;; services via Bancorp Bank and Stride Bank; raised $750M Series G in 2021.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; Table 10.4 &middot; Leading challenger banks</div>
+    <div>Brazil &middot; India &middot; US &mdash; fastest growth</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · Case study: Nubank · Table 10.5 / Figure 10.1 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="10 Case: Nubank">
+  <div class="chrome">
+    <div>&sect;10.6 &middot; Case study &middot; Nubank</div>
+    <div>10 / 13</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1vh">
+      <div>
+        <div class="kicker">S&atilde;o Paulo, 2013 &middot; Velez, Junqueira &amp; Wible &middot; LatAm&rsquo;s 6th largest bank</div>
+        <h2 class="h-xl" style="font-size:3vw">A 30&times; LTV/CAC engine &mdash; still unprofitable.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.2vw">
+        <div class="stat-card"><div class="stat-label">Cost to acquire</div><div class="stat-nb" style="font-size:2.6vw">$5<span class="stat-unit">CAC</span></div></div>
+        <div class="stat-card"><div class="stat-label">Monthly ARPAC &middot; Q3 2022</div><div class="stat-nb" style="font-size:2.6vw">$7.9</div></div>
+        <div class="stat-card"><div class="stat-label">Early cohorts</div><div class="stat-nb" style="font-size:2.6vw">30&times;<span class="stat-unit">LTV/CAC</span></div></div>
+      </div>
+      <div class="step-desc" style="font-size:max(12px,.9vw); line-height:1.55">
+        Five &ldquo;Financial Seasons&rdquo; &mdash; spending, saving, investing, borrowing, protecting. CAC recovered in under 12 months; cost to serve just $0.80/month. By Q3 2022: 70M customers, $1.3B quarterly revenue, $7.8M quarterly net profit (break-even at the holding level).
+      </div>
+      <div class="callout" style="margin-top:.2vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        <strong>Figure 10.1.</strong> Despite the operating success, Nubank&rsquo;s shares fell <strong>65% since IPO</strong> versus the Bovespa index up 3% over the same period &mdash; the company was still unprofitable on an annual basis.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Table 10.5 &middot; Income statement (US$M)</div>
+      <figure class="frame-img contain" style="height:34vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch10/tab10.5.png" alt="Table 10.5 — Nubank Financial Statements 2020-2022">
+      </figure>
+      <div class="frame-cap"><span>Tab. 10.5 &middot; Total assets reached $29.9B in 2022</span><span class="idx">Source: Nubank filings</span></div>
+      <figure class="frame-img contain" style="height:18vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="https://utppublishing.com/cms/10.3138/9781487544096.010/asset/images/9781487544096.010.f001.jpg" alt="Figure 10.1 — Nubank Share Performance vs. Brazil's Bovespa Index">
+      </figure>
+      <div class="frame-cap"><span>Fig. 10.1 &middot; Nubank shares vs. Bovespa</span><span class="idx">Source: UTP &middot; textbook</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 10 &middot; Table 10.5 &amp; Figure 10.1 &middot; Nubank</div>
+    <div>Source &middot; Nubank IPO prospectus &amp; filings</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 · Financial marketplaces · Fidor, Borrowell, Credit Karma (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="11 Financial Marketplaces">
+  <div class="chrome">
+    <div>&sect;10.7 &middot; Financial marketplaces</div>
+    <div>11 / 13</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Multi-sided platforms built on cloud, APIs, and open banking</div>
+    <h2 class="h-xl" style="font-size:3.6vw">A full-service bank without the capital.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1vw">
+      A financial marketplace connects customers to third-party products &mdash; banking, payments, crypto, investments, insurance &mdash; charging the seller a fee or commission, plus advertising. The goal: build an ecosystem with network effects, no banking license required.
+    </p>
+
+    <div class="pipeline" data-cols="3" style="margin-top:1.6vh">
+      <div class="step">
+        <div class="step-nb">Germany &middot; 2009</div>
+        <div class="step-title">Fidor</div>
+        <div class="step-desc">&ldquo;Bank-as-a-marketplace&rdquo; &mdash; an infrastructure platform with a banking license. Serves 120,000 directly; Fidor Market offers third-party loans, crowdfunding, FX, and crypto.</div>
+      </div>
+      <div class="step">
+        <div class="step-nb">Canada &middot; 2014</div>
+        <div class="step-title">Borrowell</div>
+        <div class="step-desc">Launched as an online lender, struggled to find qualified borrowers, then gave away free credit scores. 1M+ Canadians drew it to pivot into a marketplace with 40+ financial partners.</div>
+      </div>
+      <div class="step">
+        <div class="step-nb">San Francisco &middot; 2007</div>
+        <div class="step-title">Credit Karma</div>
+        <div class="step-desc">Free credit scores hooked 4M users in four years. Diversified into cards, loans, tax, and identity monitoring &mdash; 85M users by 2018, valued at $4B.</div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.6vh; padding:1.1vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>The $7B exit.</strong> Credit Karma&rsquo;s formula &mdash; give away a free product, build a multi-sided platform, then monetize via commissions from banks selling on it &mdash; reached ~half of all US millennials. Intuit acquired it in 2020 for <strong>$7 billion</strong>.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 11 &middot; Financial marketplaces &middot; network effects</div>
+    <div>Source &middot; Fidor, Borrowell, Credit Karma</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 · The response from incumbents · Table 10.6 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="12 Incumbent Response">
+  <div class="chrome">
+    <div>&sect;10.8 &middot; The response from incumbents</div>
+    <div>12 / 13</div>
+  </div>
+  <div class="frame grid-2-6-6" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">&ldquo;Silicon Valley is coming.&rdquo; &mdash; Jamie Dimon, 2014</div>
+        <h2 class="h-xl" style="font-size:3vw">A menu of seven responses.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:42vw; font-size:1vw">
+          The right strategy depends on capabilities and scale. Giants like JPMorgan build, invest, and acquire; the 5,000+ smaller US deposit-takers lack the scale and instead license and partner. The biggest still hold competitive moats &mdash; regulation, customer bases, funding, and budgets to outspend fintechs.
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(11px,.86vw); line-height:1.45">
+        <strong>Beware innovation theater.</strong> BBVA opened the first bank innovation lab in 2007; dozens followed 2014&ndash;17 &mdash; but with little to show. Too often labs are &ldquo;techwashing&rdquo; ribbon-cuttings that never reach production.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Table 10.6 &middot; Incumbent strategies</div>
+      <figure class="frame-img contain" style="height:40vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch10/tab10.6.png" alt="Table 10.6 — Incumbent Strategies to Respond to Fintech Disruption">
+      </figure>
+      <div class="callout" style="margin-top:.2vh; padding:.9vh 1.2vw; font-size:max(11px,.85vw); line-height:1.45">
+        <strong>Target:</strong> treat fintechs as customers via banking-as-a-service (BaaS). But culture clashes bite &mdash; BCPE bought Fidor in 2016 for &euro;150M and &ldquo;did nothing with it,&rdquo; splitting two years later.
+      </div>
+      <div style="margin-top:.4vh; font-family:var(--mono); font-size:max(9px,.66vw); letter-spacing:.03em; opacity:.55; line-height:1.5">[sic] Per textbook: &ldquo;BCPE&rdquo; &mdash; the author was likely referring to <strong>BPCE</strong>, France&rsquo;s second-largest bank.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 12 &middot; Table 10.6 &middot; Incumbent strategies</div>
+    <div>Build &middot; R&amp;D &middot; partner &middot; license &middot; invest &middot; acquire &middot; target</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 · Findings & closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="13 Closing">
+  <div class="chrome">
+    <div>Chapter 10 &middot; Closing</div>
+    <div>13 / 13</div>
+  </div>
+  <div class="frame" style="display:grid; gap:2vh; align-content:center; min-height:70vh">
+    <div class="kicker">Findings &middot; unbundle, rebundle, and partner</div>
+    <h1 class="h-hero" style="font-size:5vw">Better experience &mdash; harder economics.</h1>
+    <p class="lead" style="max-width:62vw; font-size:1.15vw">
+      Fintechs attacked banking&rsquo;s pain points, enabled by post-crisis distrust and open banking. App developers unbundle one product, then rebundle &mdash; many pivoting from costly B2C to B2B SaaS. Challenger banks rebundle a full bank digitally; financial marketplaces use APIs to sell third-party products and earn network effects. Yet customer acquisition is brutal and profits elusive &mdash; Nubank reached 70M customers while still losing money annually. Incumbents answer with a menu: build, R&amp;D, partner, license, invest, acquire, or target fintechs as customers.
+    </p>
+    <div style="display:flex; gap:4vw; margin-top:.4vh; flex-wrap:wrap">
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">300+</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Challenger banks worldwide</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">264M</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Challenger-bank app downloads in a year</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">$7B</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Intuit&rsquo;s 2020 buy of Credit Karma</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">30&times;</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Nubank early-cohort LTV/CAC</div>
+      </div>
+    </div>
+    <div class="meta-row" style="margin-top:.4vh">
+      <span>End of Chapter 10</span><span>&middot;</span><span>FINE 6280</span><span>&middot;</span><span>Next &middot; Ch. 11 &middot; Chinese Techfins &amp; North American Bigtech</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Closing &middot; End of Chapter 10 &middot; FINE 6280</div>
+    <div>Next &middot; Ch. 11 &middot; Chinese Techfins &amp; North American Bigtech</div>
+  </div>
+</section>
+
+<!-- END SLIDES -->
+
+</div>
+
+<div id="nav"></div>
+
+<script src="../shared/deck.js"></script>
+<script src="../shared/lightbox.js"></script>
+</body>
+</html>

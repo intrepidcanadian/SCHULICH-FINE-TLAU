@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Wealth Management · Chapter 08 · FINE 6280</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<canvas id="bg-dark" class="bg"></canvas>
+<canvas id="bg-light" class="bg"></canvas>
+<div id="hint">&larr; &rarr; navigate &middot; ESC overview</div>
+
+<div id="deck">
+
+<!-- BEGIN SLIDES -->
+<!-- ============================================================
+     SLIDE 01 · Cover (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="01 Cover">
+  <div class="chrome">
+    <div>FINE 6280 &middot; Fintech</div>
+    <div>Chapter 08 &middot; Lecture</div>
+  </div>
+  <div class="frame" style="display:grid; gap:3vh; align-content:center; min-height:72vh">
+    <div class="kicker">Chapter 08 &middot; Digital Wealth Management</div>
+    <h1 class="h-hero" style="font-size:6.6vw">Digital Wealth Management</h1>
+    <h2 class="h-sub" style="max-width:64vw; font-size:2.6vw">The rise and stumble of the robo-advisor &mdash; and how technology is quietly transforming a $100 trillion wealth management industry from the inside out.</h2>
+    <div class="meta-row" style="margin-top:1vh">
+      <span>Department of Finance</span><span>&middot;</span><span>Graduate Seminar</span><span>&middot;</span><span>Lecture 08 of 14</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Reading &middot; Chapter 8 of <em>Fintech Explained</em></div>
+    <div>&mdash; &middot; &mdash;</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 02 · Spoiler: Goliath beats David (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="02 Goliath Beats David">
+  <div class="chrome">
+    <div>&sect;8.1 &middot; Spoiler alert</div>
+    <div>02 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Everyone loves a David-vs.-Goliath story &mdash; this time Goliath won</div>
+    <h2 class="h-xl" style="font-size:4vw">Adoption by giants, not disruption by start-ups.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; font-size:1.12vw">
+      Robo-advisors offer automated online portals that use algorithms to recommend customized portfolios of low-cost ETFs. They emerged in 2008 as a cheap, simple option for investors unwilling to pay an advisor. But low fees, high acquisition costs, low barriers to entry, and fierce competition meant only scale survived &mdash; and incumbents had the scale.
+    </p>
+
+    <div class="callout" style="margin-top:1.4vh; padding:1.1vh 1.4vw; font-size:max(13px,1vw); line-height:1.5">
+      <div class="q-big" style="font-size:max(15px,1.35vw)">In the end, robo advice is a story of adoption at major firms, not one of disruption by independent start-ups.</div>
+      <div class="callout-src">&mdash; Backend Benchmarking</div>
+    </div>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">The hard lesson &middot; why technology alone is not enough</div>
+      <div class="pipeline" data-cols="3">
+        <div class="step"><div class="step-title">The biggest barrier is customers</div><div class="step-desc">Tech is widely available; fast-followers replicate or acquire it. Acquiring customers is the real moat.</div></div>
+        <div class="step"><div class="step-title">$100T industry, still in play</div><div class="step-desc">Robo lost the headline battle, yet fintechs keep disrupting the broader wealth management industry.</div></div>
+        <div class="step"><div class="step-title">Consumers win, profits fall</div><div class="step-desc">Better service, lower fees, more transparency &mdash; but lower industry profitability for incumbents.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 02 &middot; Goliath beats David</div>
+    <div>Source &middot; Backend Benchmarking</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 03 · The rise of the robo-advisor · how it works (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="03 Rise of the Robo">
+  <div class="chrome">
+    <div>&sect;8.2 &middot; How a robo-advisor works</div>
+    <div>03 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Answer a questionnaire &rarr; get a portfolio &rarr; let it run</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Automated investing for 0.25&ndash;0.50% of AUM.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1.05vw">
+      You connect over the web or an app, answer questions about goals, return expectations, and risk tolerance. The algorithm maps your answers to a balanced portfolio of low-cost ETFs &mdash; more risk or a longer horizon shifts the allocation toward equities.
+    </p>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">The automated workflow</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step"><div class="step-nb">01</div><div class="step-title">Profile</div><div class="step-desc">Risk-tolerance questionnaire completed online in ~5 minutes.</div></div>
+        <div class="step"><div class="step-nb">02</div><div class="step-title">Onboard</div><div class="step-desc">Open an account and link your bank; onboarding in 20 minutes or less.</div></div>
+        <div class="step"><div class="step-nb">03</div><div class="step-title">Invest</div><div class="step-desc">Funds auto-invested in the chosen ETF portfolio on arrival.</div></div>
+        <div class="step"><div class="step-nb">04</div><div class="step-title">Rebalance</div><div class="step-desc">Auto-rebalanced daily, monthly, or quarterly to the target mix.</div></div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.4vh; padding:1vh 1.3vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>From fully automated to hybrid.</strong> Original robos were fully automated to minimize cost; most now offer access to a salesperson or registered advisor for a higher fee. From this foothold in investing they have expanded into brokerage, financial planning, personal finance, tax reporting, and even banking.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 03 &middot; The rise of the robo-advisor</div>
+    <div>Fee &middot; 0.25&ndash;0.50% of AUM</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04 · Passive investing and ETFs (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="04 Passive Investing & ETFs">
+  <div class="chrome">
+    <div>&sect;8.3 &middot; Passive investing &amp; ETFs</div>
+    <div>04 / 15</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">The trends that laid the groundwork for the robo-advisor</div>
+        <h2 class="h-xl" style="font-size:3.4vw">Fees beat skill &mdash; so capital went passive.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1.02vw">
+          Modern portfolio theory (Markowitz, Sharpe) made the case for low-cost index investing; Bogle&rsquo;s Vanguard built the first index fund in 1975 and now runs $8T+ across 422 funds. After 2008&rsquo;s low rates, investors fixated on fees &mdash; and only one-quarter of active funds beat their passive rivals in the decade to 2021.
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>ETFs beat mutual funds on every dimension.</strong> No minimum investment, intraday trading, and a MER of just 0.03&ndash;1.00% &mdash; versus a mutual fund&rsquo;s $500&ndash;$1,000 minimum, once-a-day pricing, and 1&ndash;2% MER. The SPDR (1993) remains the largest ETF at $450B+.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.1vh; padding-top:.4vh">
+      <div class="stat-card">
+        <div class="stat-label">Global ETF assets</div>
+        <div class="stat-nb" style="font-size:3.6vw">$10T<span class="stat-unit">8,500+ ETFs</span></div>
+        <div class="stat-note" style="font-size:max(11px,.86vw)">Led by BlackRock, Vanguard, and State Street. Source: ETFGI.</div>
+      </div>
+      <figure class="frame-img contain" style="height:24vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="https://utppublishing.com/cms/10.3138/9781487544096.008/asset/images/9781487544096.008.f001.jpg" alt="Figure 8.1 - Growth of Exchange Traded Funds">
+      </figure>
+      <div class="frame-cap"><span>Fig. 8.1 &middot; Growth of ETFs</span><span class="idx">Source: ETFGI</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; Figure 8.1 &middot; Growth of ETFs</div>
+    <div>Source &middot; ETFGI</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · The early disruptors · Table 8.1 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 Early Disruptors">
+  <div class="chrome">
+    <div>&sect;8.4 &middot; The early disruptors</div>
+    <div>05 / 15</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1vh">
+      <div>
+        <div class="kicker">Table 8.1 &middot; The US robo-advisor pioneers (2022 AUM, US$B)</div>
+        <h2 class="h-xl" style="font-size:3vw">The incumbents lead the table.</h2>
+      </div>
+      <figure class="frame-img contain" style="height:54vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch8/tab8.1.png" alt="Table 8.1 - The US Robo-advisor Pioneers">
+      </figure>
+      <div class="frame-cap"><span>Tab. 8.1 &middot; The US Robo-advisor Pioneers</span><span class="idx">Source: Backend Benchmarking</span></div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.2vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">A textbook disruption play &middot; two target segments</div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.6">
+        <strong>Underserved millennials &middot; HENRYs.</strong> High earners, not rich yet ($10K or less to invest), tech-savvy, distrustful of banks &mdash; and too small for incumbents to serve profitably.
+      </div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.6">
+        <strong>Price-sensitive mass-affluent.</strong> Older investors with $100K&ndash;$1M who refused to pay high advisory fees for bundled services &mdash; DIY by cost, not by choice.
+      </div>
+      <div class="callout" style="margin-top:.4vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        Betterment (2010) was first, soon joined by Wealthfront and Personal Capital (2011) and copycats worldwide: Wealthsimple and Nest Wealth (Canada), Nutmeg (UK), Stockspot and Raiz (Australia).
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Table 8.1 &middot; The robo-advisor pioneers</div>
+    <div>Source &middot; Backend Benchmarking</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · The robo-advisor value proposition (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="06 Value Proposition">
+  <div class="chrome">
+    <div>&sect;8.5 &middot; The robo value proposition</div>
+    <div>06 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Four parts &mdash; with a human touch added later</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Delight, transparency, technology, returns.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.4vw 2vw; margin-top:1.4vh; align-items:start">
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>1 &middot; Delightful experience.</strong> Eye-catching, uncluttered design open 24/7 on any device. A portfolio recommendation in ~5 minutes; full onboarding in under 20.
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>2 &middot; Transparent, low fees.</strong> Low or no minimum; fee from 0.25% of AUM or $2/mo at Acorns. Wealthsimple all-in (advisory + ETF MER) is 0.62&ndash;0.73% &mdash; just $62&ndash;$73 on $10,000.
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>3 &middot; State-of-the-art tech.</strong> Platforms coded from scratch, unencumbered by incumbents&rsquo; legacy systems and siloed customer data.
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>4 &middot; Return-enhancing strategies.</strong> Wealthfront&rsquo;s daily tax-loss harvesting lifted pre-tax returns ~4.0%/yr (1.6% after tax); smart beta added 0.70%/yr.
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.4vh; padding:1vh 1.3vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>The human option.</strong> To broaden their demographic, most robos added access to a live agent for a fee. Betterment added a human advisor in 2017 and overtook Wealthfront &mdash; which stayed fully automated &mdash; to become the largest independent robo within 18 months. Vanguard offers live planners above $50K; Schwab Premium charges $300 up front plus $30/mo.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; The robo-advisor value proposition</div>
+    <div>All-in cost &middot; advisory fee + ETF MER</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · Incumbent response · Vanguard case + Table 8.2 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="07 Incumbent Response">
+  <div class="chrome">
+    <div>&sect;8.6 &middot; The response by incumbents</div>
+    <div>07 / 15</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Fast-followers, the Christensen playbook</div>
+        <h2 class="h-xl" style="font-size:3vw">Vanguard turned brand into scale.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1.02vw">
+          Vanguard responded first (2013), Schwab in 2014; by 2016 Bank of America, Capital One, E*Trade, Fidelity, and TD Ameritrade had launched. Christensen&rsquo;s advice: don&rsquo;t overreact &mdash; improve the core product while spinning up a low-cost division to compete head-on.
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Build, license, or buy.</strong> Some white-labelled fintech software (UBS &rarr; SigFig for 7,000 brokers; clients incl. Wells Fargo, Santander). Others acquired: BlackRock bought FutureAdvisor (~$150&ndash;200M, 2015) and now licenses it to BBVA, US Bank, and RBC.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Table 8.2 &middot; Vanguard&rsquo;s two robo offerings</div>
+      <figure class="frame-img contain" style="height:42vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="../images/ch8/tab8.2.png" alt="Table 8.2 - Vanguard US Robo-advisor Options and Services">
+      </figure>
+      <div class="frame-cap"><span>Tab. 8.2 &middot; Vanguard US Robo-advisor Options</span><span class="idx">Source: The Vanguard Group</span></div>
+      <div class="callout" style="margin-top:.4vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        Vanguard&rsquo;s robo hit $112B by 2018 &mdash; over half of all US robo AUM &mdash; and $268B by 2022: 3.5&times; Schwab and 4.6&times; Wealthfront + Betterment combined.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; Table 8.2 &middot; Vanguard robo options</div>
+    <div>Source &middot; The Vanguard Group</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · Lessons for aspiring disruptors · CAC math (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="08 Lessons for Disruptors">
+  <div class="chrome">
+    <div>&sect;8.7 &middot; Lessons for disruptors</div>
+    <div>08 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Why a seven-year head-start was not enough</div>
+    <h2 class="h-xl" style="font-size:3.8vw">The math of acquiring a customer.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; font-size:1.02vw">
+      Acquisition costs $500+ per new customer in advertising. At a 0.35% fee, a $10,000 account earns just $35/yr &mdash; a 14.4-year payback. Even a $50,000 account takes 2.9 years. Incumbents simply cross-sell the service to existing customers for almost nothing.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.4vw; margin-top:1.4vh">
+      <div class="stat-card"><div class="stat-label">Acquisition cost</div><div class="stat-nb" style="font-size:3.4vw">$500<span class="stat-unit">+ per customer</span></div></div>
+      <div class="stat-card"><div class="stat-label">Payback &middot; $10K account</div><div class="stat-nb" style="font-size:3.4vw">14.4<span class="stat-unit">years</span></div></div>
+      <div class="stat-card"><div class="stat-label">Payback &middot; $50K account</div><div class="stat-nb" style="font-size:3.4vw">2.9<span class="stat-unit">years</span></div></div>
+    </div>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">Three takeaways</div>
+      <div class="pipeline" data-cols="3">
+        <div class="step"><div class="step-title">Customers are the moat</div><div class="step-desc">Acquiring customers &mdash; not building tech &mdash; is the binding constraint for a start-up.</div></div>
+        <div class="step"><div class="step-title">Tech is not a moat</div><div class="step-desc">It is copyable. Incumbents out-spend, out-distribute, cross-sell, and acquire (UBS&ndash;SigFig, BlackRock&ndash;FutureAdvisor).</div></div>
+        <div class="step"><div class="step-title">Work with, not against</div><div class="step-desc">Pivot to B2B: Wealthsimple for Advisors and Nest Wealth licensed tech to incumbents to fund growth.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; Lessons for aspiring disruptors</div>
+    <div>Payback &middot; $500 &divide; annual advisory fee</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · Case study: Wealthfront (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="09 Case: Wealthfront">
+  <div class="chrome">
+    <div>&sect;8.7 &middot; Case study</div>
+    <div>09 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Wealthfront &middot; founded 2011 by Andrew Rachleff &amp; Dan Carroll</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Sophisticated advice for everyone, at low cost.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:64vw; font-size:1.02vw">
+      Rachleff &mdash; a VC who taught disruption at Stanford &mdash; saw portfolio modeling done in Excel and built software to automate it. After two failed social-investing ideas, the team pivoted to robo-advice and shipped the platform in three months. A questionnaire mapped clients to 1 of 20 risk profiles.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.4vw; margin-top:1.4vh">
+      <div class="stat-card"><div class="stat-label">Marketing spend</div><div class="stat-nb" style="font-size:3vw">$0</div></div>
+      <div class="stat-card"><div class="stat-label">Gross margin</div><div class="stat-nb" style="font-size:3vw">90<span class="stat-unit">%</span></div></div>
+      <div class="stat-card"><div class="stat-label">Clients &middot; 2022</div><div class="stat-nb" style="font-size:3vw">470K</div></div>
+      <div class="stat-card"><div class="stat-label">AUM &middot; 2022</div><div class="stat-nb" style="font-size:3vw">$25B</div></div>
+    </div>
+
+    <div class="split" style="margin-top:1.6vh; align-items:start; gap:3vw">
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Growth by word-of-mouth.</strong> First clients came from a PowerPoint posted on Facebook and LinkedIn, targeting young tech millennials. A referral program managed $5,000 free per invite; one-third of clients arrived this way &mdash; letting Wealthfront charge a quarter of rivals&rsquo; fees.
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>The UBS that wasn&rsquo;t.</strong> In 2022 UBS offered $1.4B &mdash; $20 per $1 of AUM, $3,000 per client &mdash; for the technology, not the fees. After shareholders protested the price, UBS withdrew; Wealthfront remains independent.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; Case study &middot; Wealthfront</div>
+    <div>Automate the customer&rsquo;s whole financial life</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · Research findings + the wealth management industry (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="10 Research & Industry">
+  <div class="chrome">
+    <div>&sect;8.8 &middot; Research &amp; the industry</div>
+    <div>10 / 15</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">What the evidence says &mdash; and how small robo really is</div>
+        <h2 class="h-xl" style="font-size:3vw">Robo is &lt;2% of a $100T industry.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1.02vw">
+          At ~$1.8T AUM in 2022, robo-advice is under 2% of the $100T wealth management industry. The industry splits into a wholesale side (institutional investors paid on AUM/AUA, fees up to 3.5%) and a retail side (advisors who must be registered &mdash; Series 7, CSC, CFA, CFP).
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>The fintech opening.</strong> HNW clients ($1M+) and family offices (UHNW, $30M+) get personalized service that was once uneconomic for retail. Code now delivers it &mdash; daily rebalancing, tax-loss harvesting, smart beta &mdash; to overcharged retail customers paying an opaque 2&ndash;3% of AUM.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">The most prominent robo study &middot; who benefits?</div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.55">
+        <strong>Under-diversified investors won.</strong> Switching to a robo raised their diversification and market-adjusted returns.
+      </div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.55">
+        <strong>Already-diversified investors lost.</strong> They traded more, but the extra activity did not improve performance.
+      </div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.55">
+        <strong>Both reduced behavioral biases</strong> such as trend chasing &mdash; though the biases did not disappear entirely.
+      </div>
+      <div class="callout" style="margin-top:.4vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        A traditional advisor manages ~200 clients. At 2% of AUM, a $100K client yields $400K in fees &mdash; a $10K client just $40K. The math is why retail was underserved.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 10 &middot; Research findings &amp; the industry</div>
+    <div>$100T AUM &middot; wholesale + retail</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 · Digital wealth management value chain · Figure 8.2 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="11 Value Chain">
+  <div class="chrome">
+    <div>&sect;8.9 &middot; Digital wealth management</div>
+    <div>11 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Figure 8.2 &middot; Where fintechs attack the value chain</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Three activities, many pain points.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1vw">
+      Digital wealth management automates standard tasks to lower cost, raise productivity, and improve the customer experience &mdash; using the cloud, big data, APIs, AI, blockchain, and cryptography across both B2C and B2B channels.
+    </p>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">The wealth management value chain</div>
+      <div class="pipeline" data-cols="3">
+        <div class="step"><div class="step-nb">01</div><div class="step-title">Acquire &amp; onboard</div><div class="step-desc">Marketing and referrals attract clients; onboarding collects data and satisfies KYC and AML. High acquisition cost drives the need for scale.</div></div>
+        <div class="step"><div class="step-nb">02</div><div class="step-title">Portfolio management</div><div class="step-desc">Build a customer profile, set asset allocation via mean-variance optimization, execute trades, then rebalance for drift, tax-loss harvesting, and smart beta.</div></div>
+        <div class="step"><div class="step-nb">03</div><div class="step-title">Operations &middot; back office</div><div class="step-desc">Reporting to clients, tax, and regulators; real-time dashboards; custody, proxy voting, data capture, security, and compliance.</div></div>
+      </div>
+    </div>
+
+    <figure class="frame-img contain" style="height:20vh; margin-top:1vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+      <img src="https://utppublishing.com/cms/10.3138/9781487544096.008/asset/images/9781487544096.008.f002.jpg" alt="Figure 8.2 - Wealth Management Value Chain">
+    </figure>
+    <div class="frame-cap"><span>Fig. 8.2 &middot; Wealth Management Value Chain</span><span class="idx">Acquire &middot; Manage &middot; Operate</span></div>
+
+    <div class="callout" style="margin-top:.9vh; padding:1vh 1.3vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>Beyond the obvious.</strong> Besides portfolio construction, fintechs target customer relationship management (CRM), digital identity, cybersecurity, and regulation and compliance (regtech) &mdash; often selling B2B, behind the scenes, to incumbents.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 11 &middot; Figure 8.2 &middot; Wealth management value chain</div>
+    <div>Acquire &middot; Manage &middot; Operate</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 12 · The hybrid future + the eAdvisor (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="12 Hybrid eAdvisor">
+  <div class="chrome">
+    <div>&sect;8.10 &middot; The future is hybrid</div>
+    <div>12 / 15</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Will robots replace advisors? No &mdash; they augment them</div>
+        <h2 class="h-xl" style="font-size:3vw">Human advisor, machine assistant.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1.02vw">
+          Grace and Sarta argue the future is a hybrid: algorithms handle onboarding, optimization, and reporting; humans handle life decisions and behavioral coaching. EY calls it &ldquo;Advisor 2.0.&rdquo; Many investors &mdash; especially retirees and baby boomers &mdash; still want to talk to a person.
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <div class="q-big" style="font-size:max(13px,1.1vw)">Technology and tools are changing the ways human financial advisors market themselves, interact with clients, optimize processes, and develop and implement investment strategies.</div>
+        <div class="callout-src">&mdash; EY on Advisor 2.0</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">The eAdvisor &middot; Fidelity research, 2016</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw">
+        <div class="stat-card"><div class="stat-label">Higher median AUM</div><div class="stat-nb" style="font-size:3.6vw">+42<span class="stat-unit">%</span></div></div>
+        <div class="stat-card"><div class="stat-label">More AUM per client</div><div class="stat-nb" style="font-size:3.6vw">+35<span class="stat-unit">%</span></div></div>
+      </div>
+      <div class="step-desc" style="font-size:max(12px,.92vw); line-height:1.55; margin-top:.4vh">
+        Tech-enabled eAdvisors are younger, use video conferencing, e-signature, electronic statements, and data-aggregation tools &mdash; managing a larger book of clients with more Gen X and Gen Y.
+      </div>
+      <div class="callout" style="margin-top:.2vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        Demographics drive the urgency: retiring advisors aren&rsquo;t being replaced fast enough to serve an aging population. Productivity from technology is the fix.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 12 &middot; Hybrid advice &amp; the eAdvisor</div>
+    <div>Source &middot; Grace &amp; Sarta &middot; EY &middot; Fidelity</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 · Digital onboarding · Nest Wealth + Aladdin (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="13 Onboarding: Nest Wealth & Aladdin">
+  <div class="chrome">
+    <div>&sect;8.11 &middot; Digital customer onboarding</div>
+    <div>13 / 15</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">The B2B pivot &mdash; selling shovels, not gold</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Fixing the advisor&rsquo;s paperwork problem.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1vw">
+      Most advisors still use paper forms and wet signatures. Up to 15 hours a week is lost to faulty paperwork, compliance, and admin; ~40% of submitted paperwork comes back for corrections, at ~$15/client per month. Onboarding is the worst pain point of all.
+    </p>
+
+    <div class="split" style="margin-top:1.6vh; align-items:start; gap:3vw">
+      <div>
+        <div class="pipeline-label" style="margin-bottom:.6vh">Nest Wealth &middot; Canada&rsquo;s first robo (2014)</div>
+        <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+          Randy Cass couldn&rsquo;t match Wealthsimple&rsquo;s B2C budget after it raised CA$30M. So he pivoted: incumbents wanted not the investing algorithm but the <strong>paperless digital onboarding</strong> and back-office platform. Nest Wealth Pro signed six licensing partners &mdash; including two of Canada&rsquo;s six largest banks &mdash; and B2B now drives most revenue.
+        </div>
+      </div>
+      <div>
+        <div class="pipeline-label" style="margin-bottom:.6vh">BlackRock Aladdin &middot; not all innovation is fintech</div>
+        <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+          Aladdin (&ldquo;Asset Liability and Debt and Derivative Investment Network&rdquo;) ran BlackRock&rsquo;s own book, then was licensed to institutions. <strong>Aladdin Wealth</strong> &mdash; now used by 16 retail firms incl. JPMorgan Stanley and UBS &mdash; unifies front-, middle-, and back-office, stress-tests portfolios, aggregates household wealth via secure APIs, and simplifies compliance.
+        </div>
+        <div style="margin-top:.6vh; font-family:var(--mono); font-size:max(9px,.66vw); letter-spacing:.03em; opacity:.55; line-height:1.5">[sic] Per textbook: &ldquo;JPMorgan Stanley&rdquo; &mdash; the author was likely referring to <strong>JPMorgan and Morgan Stanley</strong> (two separate firms).</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 13 &middot; Digital onboarding &middot; Nest Wealth &amp; Aladdin</div>
+    <div>B2B &middot; the technology platform is the product</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 14 · Sustainable investing + Robinhood case (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="14 Sustainable & Robinhood">
+  <div class="chrome">
+    <div>&sect;8.12 &middot; Sustainable investing &amp; trading</div>
+    <div>14 / 15</div>
+  </div>
+  <div class="frame grid-2-6-6" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">ESG &middot; the fastest-growing trend in asset management</div>
+        <h2 class="h-xl" style="font-size:3vw">Investing to tackle climate change.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:42vw; font-size:1vw">
+          Sustainable investing integrates environmental, social, and governance (ESG) factors into asset selection. By 2020 it reached $35.3T &mdash; over a third of global AUM and up 54% since 2014. BlackRock found 54% of investors call it fundamental; they plan to double sustainable AUM from 18% to 37% by 2025.
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Clim8 Invest &middot; UK, 2019.</strong> A mobile app to invest in clean energy, clean tech, sustainable food, water, and recycling. From &pound;25, three risk profiles, 0.60% fee &mdash; &pound;12M raised and 42 staff by early 2022.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="pipeline-label" style="margin-bottom:.2vh">Case &middot; Robinhood &middot; Figure 8.3</div>
+      <p class="lead" style="font-size:.96vw; line-height:1.5; max-width:40vw; opacity:.85">
+        Robinhood (2014) launched zero-commission trading to democratize finance &mdash; 75% of its first 150K users were born after 1980 &mdash; and forced the industry to follow. Its real revenue was payment for order flow: selling retail trade data to hedge funds.
+      </p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2vw; margin-top:.2vh">
+        <div class="stat-card"><div class="stat-label">IPO &middot; July 2021</div><div class="stat-nb" style="font-size:3.4vw">$38<span class="stat-unit">$31.7B val.</span></div></div>
+        <div class="stat-card"><div class="stat-label">Share price &middot; YE 2022</div><div class="stat-nb" style="font-size:3.4vw; color:#9a3b2e">&minus;78<span class="stat-unit">% vs. S&amp;P &minus;11%</span></div></div>
+      </div>
+      <figure class="frame-img contain" style="height:22vh; margin-top:.2vh; border:1px solid rgba(127,127,127,.18); background:#fff">
+        <img src="https://utppublishing.com/cms/10.3138/9781487544096.008/asset/images/9781487544096.008.f003.jpg" alt="Figure 8.3 - Robinhood vs. S&P500 Composite Index">
+      </figure>
+      <div class="frame-cap"><span>Fig. 8.3 &middot; Robinhood vs. S&amp;P500 Composite Index</span><span class="idx">Source: Refinitiv Eikon</span></div>
+      <div class="callout" style="margin-top:.2vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
+        Research: Robinhood users do more attention-induced trading &mdash; the top stocks they buy each day underperform the market by nearly 5% over the next month.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 14 &middot; Sustainable investing &amp; Robinhood</div>
+    <div>Source &middot; BlackRock &middot; Refinitiv Eikon</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 15 · Summary & closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="15 Closing">
+  <div class="chrome">
+    <div>Chapter 08 &middot; Closing</div>
+    <div>15 / 15</div>
+  </div>
+  <div class="frame" style="display:grid; gap:2vh; align-content:center; min-height:70vh">
+    <div class="kicker">Summary &middot; disruption became adoption</div>
+    <h1 class="h-hero" style="font-size:5vw">Goliath won &mdash; but consumers did too.</h1>
+    <p class="lead" style="max-width:62vw; font-size:1.15vw">
+      Robo-advisors were the most visible fintechs in investing, yet most start-ups pivoted to B2B or were acquired; incumbents became fast-followers and captured most of the AUM. The real story is broader: technology is transforming a $100 trillion wealth management industry, with the future settling on a hybrid model &mdash; a human advisor supported by algorithms that automate the boring work, lower fees, and improve the customer experience.
+    </p>
+    <div style="display:flex; gap:4vw; margin-top:.4vh; flex-wrap:wrap">
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">$100T</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Wealth management AUM globally</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">&lt;2%</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Robo share &mdash; ~$1.8T AUM in 2022</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">$268B</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Vanguard robo &mdash; 4.6&times; Wealthfront + Betterment</div>
+      </div>
+      <div>
+        <div class="stat-nb" style="font-size:3.2vw">$10T</div>
+        <div class="stat-note" style="opacity:.7; font-size:max(12px,.9vw)">Global ETF assets across 8,500+ funds</div>
+      </div>
+    </div>
+    <div class="meta-row" style="margin-top:.4vh">
+      <span>End of Chapter 08</span><span>&middot;</span><span>FINE 6280</span><span>&middot;</span><span>Next &middot; Ch. 09 &middot; Payments, FX &amp; Insurance</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Closing &middot; End of Chapter 08 &middot; FINE 6280</div>
+    <div>Next &middot; Ch. 09 &middot; Payments, FX &amp; Insurance</div>
+  </div>
+</section>
+
+<!-- END SLIDES -->
+
+</div>
+
+<div id="nav"></div>
+
+<script src="../shared/deck.js"></script>
+<script src="../shared/lightbox.js"></script>
+</body>
+</html>
