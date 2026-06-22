@@ -2,12 +2,23 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
 
-const chapters = [
+const ALL_CHAPTERS = [
   { dir: 'ch1', title: 'Chapter 1 — Fintech Defined' },
   { dir: 'ch2', title: 'Chapter 2 — Theories & Business Models' },
   { dir: 'ch3', title: 'Chapter 3 — Financing Fintech Ventures' },
   { dir: 'ch4', title: 'Chapter 4 — Valuation' },
+  { dir: 'ch5', title: 'Chapter 5 — Bitcoin, Blockchain & Cryptocurrencies' },
+  { dir: 'ch6', title: 'Chapter 6 — Ethereum, Smart Contracts & DeFi' },
+  { dir: 'ch7', title: 'Chapter 7 — Crowdfunding & P2P Lending' },
+  { dir: 'chblockchain', title: 'Blockchain Businesses — DeFi vs. TradFi' },
 ];
+
+// Optionally restrict to chapters named on the command line, e.g.
+//   node generate-pdfs.js ch7 chblockchain
+const wanted = process.argv.slice(2);
+const chapters = wanted.length
+  ? ALL_CHAPTERS.filter(c => wanted.includes(c.dir))
+  : ALL_CHAPTERS;
 
 const BASE = path.resolve(__dirname);
 const OUT = path.join(BASE, 'pdf');

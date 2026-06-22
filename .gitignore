@@ -4,3 +4,8 @@
 __pycache__/
 *.pyc
 node_modules/
+
+# Lecture videos are delivered via YouTube; the HeyGen source MP4s are
+# archived locally in videos/ but not committed (too large for git).
+videos/
+*.mp4
