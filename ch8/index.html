@@ -46,7 +46,7 @@
 <section class="slide light" data-screen-label="02 Goliath Beats David">
   <div class="chrome">
     <div>&sect;8.1 &middot; Spoiler alert</div>
-    <div>02 / 16</div>
+    <div>02 / 18</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Everyone loves a David-vs.-Goliath story &mdash; this time Goliath won</div>
@@ -81,7 +81,7 @@
 <section class="slide dark" data-screen-label="03 Rise of the Robo">
   <div class="chrome">
     <div>&sect;8.2 &middot; How a robo-advisor works</div>
-    <div>03 / 16</div>
+    <div>03 / 18</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Answer a questionnaire &rarr; get a portfolio &rarr; let it run</div>
@@ -116,7 +116,7 @@
 <section class="slide light" data-screen-label="04 Passive Investing & ETFs">
   <div class="chrome">
     <div>&sect;8.3 &middot; Passive investing &amp; ETFs</div>
-    <div>04 / 16</div>
+    <div>04 / 18</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -150,12 +150,163 @@
 </section>
 
 <!-- ============================================================
+     SLIDE 04a · The money moved to index — ETF AUM growth (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="05 Passive AUM Growth">
+  <div class="chrome">
+    <div>&sect;8.3 &middot; The money moved to index</div>
+    <div>05 / 18</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Real data &middot; where investor capital actually went</div>
+        <h2 class="h-xl" style="font-size:3.2vw">$19T in ETFs &mdash; and passive just passed active.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1.02vw">
+          Global ETF assets climbed from <strong>$1.3T in 2010 to a record $19T+ by 2025</strong> (ETFGI). In 2024, for the first time ever, US passive funds and ETFs held <strong>more assets than active funds</strong> &mdash; about 53% of all long-term fund assets are now indexed (Morningstar). The shift that began with index mutual funds accelerated through low-cost ETFs &mdash; and now through robo-advisors that buy them.
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Active's grip is slipping.</strong> Active funds fell from 81% of the US market in 2010 to 60% in 2020 &mdash; and crossed below 50% in 2024. AUA tracks AUM: as investors self-direct into index products, custodians increasingly hold assets the <em>client</em>, not an active manager, allocates.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="stat-card">
+        <div class="stat-label">US fund assets now indexed</div>
+        <div class="stat-nb" style="font-size:3.4vw">53%<span class="stat-unit">2024 &middot; first time &gt; active</span></div>
+        <div class="stat-note" style="font-size:max(11px,.86vw)">Source: Morningstar US Active/Passive Barometer.</div>
+      </div>
+      <figure class="frame-img contain" style="height:30vh; border:1px solid rgba(127,127,127,.18); background:#fff; padding:1.4vh 1vw">
+        <svg viewBox="0 0 600 400" style="width:100%; height:100%" font-family="IBM Plex Mono, monospace">
+          <!-- gridlines + axis labels ($5T steps) -->
+          <g stroke="rgba(10,31,61,.12)" stroke-width="1" stroke-dasharray="4 4">
+            <line x1="44" y1="272.5" x2="575" y2="272.5"/>
+            <line x1="44" y1="195"   x2="575" y2="195"/>
+            <line x1="44" y1="117.5" x2="575" y2="117.5"/>
+            <line x1="44" y1="40"    x2="575" y2="40"/>
+          </g>
+          <g fill="rgba(10,31,61,.45)" font-size="13" text-anchor="end">
+            <text x="40" y="277">$5T</text>
+            <text x="40" y="199">$10T</text>
+            <text x="40" y="122">$15T</text>
+            <text x="40" y="44">$20T</text>
+          </g>
+          <!-- baseline -->
+          <line x1="44" y1="350" x2="575" y2="350" stroke="rgba(10,31,61,.5)" stroke-width="1.5"/>
+          <!-- bars (navy; final bar accent green) -->
+          <g fill="#0a1f3d" fill-opacity=".82">
+            <rect x="58"  y="329.85" width="54" height="20.15"/>
+            <rect x="148" y="305.05" width="54" height="44.95"/>
+            <rect x="238" y="230.65" width="54" height="119.35"/>
+            <rect x="328" y="170.2"  width="54" height="179.8"/>
+            <rect x="418" y="119.05" width="54" height="230.95"/>
+          </g>
+          <rect x="508" y="49.3" width="54" height="300.7" fill="#1a7f5a"/>
+          <!-- value labels -->
+          <g fill="#0a1f3d" font-size="17" font-weight="700" text-anchor="middle">
+            <text x="85"  y="320">$1.3T</text>
+            <text x="175" y="295">$2.9T</text>
+            <text x="265" y="221">$7.7T</text>
+            <text x="355" y="161">$11.6T</text>
+            <text x="445" y="110">$14.9T</text>
+            <text x="535" y="40" fill="#1a7f5a">$19.4T</text>
+          </g>
+          <!-- year labels -->
+          <g fill="rgba(10,31,61,.6)" font-size="14" text-anchor="middle">
+            <text x="85"  y="372">2010</text>
+            <text x="175" y="372">2015</text>
+            <text x="265" y="372">2020</text>
+            <text x="355" y="372">2023</text>
+            <text x="445" y="372">2024</text>
+            <text x="535" y="372" fill="#1a7f5a" font-weight="700">2025</text>
+          </g>
+        </svg>
+      </figure>
+      <div class="frame-cap"><span>Global ETF assets under management, 2010&ndash;2025</span><span class="idx">Source: ETFGI</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; Global ETF AUM 2010&ndash;2025</div>
+    <div>Source &middot; ETFGI &middot; Morningstar</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 04b · And the index keeps winning — SPIVA performance (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="06 Index vs Active Performance">
+  <div class="chrome">
+    <div>&sect;8.3 &middot; And the index keeps winning</div>
+    <div>06 / 18</div>
+  </div>
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
+      <div>
+        <div class="kicker">Real data &middot; why the capital keeps flowing passive</div>
+        <h2 class="h-xl" style="font-size:3.2vw">9 in 10 active funds lose to the index.</h2>
+        <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1.02vw">
+          The reason money keeps moving into index ETFs &mdash; and the robos that hold them &mdash; is performance. Per S&amp;P's <strong>SPIVA Year-End 2024</strong> scorecard, 65% of US large-cap active funds trailed the S&amp;P 500 in 2024 alone, and the gap widens with time: <strong>84% over 10 years, 89.5% over 15 years</strong>. A low-cost index fund simply delivers the market return minus a few basis points.
+        </p>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>The robo trade, industrialized.</strong> A top index ETF &mdash; Vanguard's VOO or State Street's SPY &mdash; charges just 0.03&ndash;0.09% and tracks the S&amp;P 500. The median active large-cap fund charges far more and still loses ~9 times out of 10 over 15 years. Robo-advisors automate the winning side of that trade.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
+      <div class="stat-card">
+        <div class="stat-label">Beat the S&amp;P 500 over 15 years</div>
+        <div class="stat-nb" style="font-size:3.4vw">10.5%<span class="stat-unit">of active large-cap funds</span></div>
+        <div class="stat-note" style="font-size:max(11px,.86vw)">i.e. ~89.5% underperformed. Source: SPIVA U.S. YE-2024.</div>
+      </div>
+      <figure class="frame-img contain" style="height:30vh; border:1px solid rgba(127,127,127,.18); background:#fff; padding:1.4vh 1vw">
+        <svg viewBox="0 0 600 400" style="width:100%; height:100%" font-family="IBM Plex Mono, monospace">
+          <!-- baseline -->
+          <line x1="44" y1="350" x2="575" y2="350" stroke="rgba(10,31,61,.5)" stroke-width="1.5"/>
+          <!-- 50% coin-flip reference line -->
+          <line x1="44" y1="195" x2="575" y2="195" stroke="#b4472d" stroke-width="1.2" stroke-dasharray="6 4"/>
+          <text x="50" y="186" fill="#b4472d" font-size="13" text-anchor="start" stroke="#fff" stroke-width="3" paint-order="stroke">50% &middot; coin flip</text>
+          <!-- bars: % of active large-cap funds underperforming the S&P 500 -->
+          <g fill="#0a1f3d" fill-opacity=".82">
+            <rect x="62"  y="148.5" width="64" height="201.5"/>
+            <rect x="170" y="86.5"  width="64" height="263.5"/>
+            <rect x="278" y="114.4" width="64" height="235.6"/>
+            <rect x="386" y="89.6"  width="64" height="260.4"/>
+          </g>
+          <rect x="494" y="71" width="64" height="279" fill="#b4472d"/>
+          <!-- value labels -->
+          <g fill="#0a1f3d" font-size="18" font-weight="700" text-anchor="middle">
+            <text x="94"  y="140">65%</text>
+            <text x="202" y="78">85%</text>
+            <text x="310" y="106">76%</text>
+            <text x="418" y="81">84%</text>
+            <text x="526" y="62" fill="#b4472d">90%</text>
+          </g>
+          <!-- horizon labels -->
+          <g fill="rgba(10,31,61,.6)" font-size="14" text-anchor="middle">
+            <text x="94"  y="372">1-yr</text>
+            <text x="202" y="372">3-yr</text>
+            <text x="310" y="372">5-yr</text>
+            <text x="418" y="372">10-yr</text>
+            <text x="526" y="372" fill="#b4472d" font-weight="700">15-yr</text>
+          </g>
+        </svg>
+      </figure>
+      <div class="frame-cap"><span>% of US large-cap active funds underperforming the S&amp;P 500</span><span class="idx">SPIVA YE-2024</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Active funds underperforming the S&amp;P 500</div>
+    <div>Source &middot; SPIVA U.S. Year-End 2024</div>
+  </div>
+</section>
+
+<!-- ============================================================
      SLIDE 05 · The early disruptors · Table 8.1 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="05 Early Disruptors">
+<section class="slide dark" data-screen-label="07 Early Disruptors">
   <div class="chrome">
     <div>&sect;8.4 &middot; The early disruptors</div>
-    <div>05 / 16</div>
+    <div>07 / 18</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1vh">
@@ -182,7 +333,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 05 &middot; Table 8.1 &middot; The robo-advisor pioneers</div>
+    <div>Page 07 &middot; Table 8.1 &middot; The robo-advisor pioneers</div>
     <div>Source &middot; Backend Benchmarking</div>
   </div>
 </section>
@@ -190,10 +341,10 @@
 <!-- ============================================================
      SLIDE 06 · The robo-advisor value proposition (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="06 Value Proposition">
+<section class="slide light" data-screen-label="08 Value Proposition">
   <div class="chrome">
     <div>&sect;8.5 &middot; The robo value proposition</div>
-    <div>06 / 16</div>
+    <div>08 / 18</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Four parts &mdash; with a human touch added later</div>
@@ -219,7 +370,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 06 &middot; The robo-advisor value proposition</div>
+    <div>Page 08 &middot; The robo-advisor value proposition</div>
     <div>All-in cost &middot; advisory fee + ETF MER</div>
   </div>
 </section>
@@ -227,10 +378,10 @@
 <!-- ============================================================
      SLIDE 07 · Incumbent response · Vanguard case + Table 8.2 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="07 Incumbent Response">
+<section class="slide dark" data-screen-label="09 Incumbent Response">
   <div class="chrome">
     <div>&sect;8.6 &middot; The response by incumbents</div>
-    <div>07 / 16</div>
+    <div>09 / 18</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -257,7 +408,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 07 &middot; Table 8.2 &middot; Vanguard robo options</div>
+    <div>Page 09 &middot; Table 8.2 &middot; Vanguard robo options</div>
     <div>Source &middot; The Vanguard Group</div>
   </div>
 </section>
@@ -265,10 +416,10 @@
 <!-- ============================================================
      SLIDE 08 · Lessons for aspiring disruptors · CAC math (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="08 Lessons for Disruptors">
+<section class="slide light" data-screen-label="10 Lessons for Disruptors">
   <div class="chrome">
     <div>&sect;8.7 &middot; Lessons for disruptors</div>
-    <div>08 / 16</div>
+    <div>10 / 18</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Why a seven-year head-start was not enough</div>
@@ -293,7 +444,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 08 &middot; Lessons for aspiring disruptors</div>
+    <div>Page 10 &middot; Lessons for aspiring disruptors</div>
     <div>Payback &middot; $500 &divide; annual advisory fee</div>
   </div>
 </section>
@@ -301,10 +452,10 @@
 <!-- ============================================================
      SLIDE 09 · Case study: Wealthfront (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="09 Case: Wealthfront">
+<section class="slide dark" data-screen-label="11 Case: Wealthfront">
   <div class="chrome">
     <div>&sect;8.7 &middot; Case study</div>
-    <div>09 / 16</div>
+    <div>11 / 18</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Wealthfront &middot; founded 2011 by Andrew Rachleff &amp; Dan Carroll</div>
@@ -334,7 +485,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 09 &middot; Case study &middot; Wealthfront</div>
+    <div>Page 11 &middot; Case study &middot; Wealthfront</div>
     <div>Automate the customer&rsquo;s whole financial life</div>
   </div>
 </section>
@@ -342,10 +493,10 @@
 <!-- ============================================================
      SLIDE 10 · Research findings + the wealth management industry (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="10 Research & Industry">
+<section class="slide light" data-screen-label="12 Research & Industry">
   <div class="chrome">
     <div>&sect;8.8 &middot; Research &amp; the industry</div>
-    <div>10 / 16</div>
+    <div>12 / 18</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -377,7 +528,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 10 &middot; Research findings &amp; the industry</div>
+    <div>Page 12 &middot; Research findings &amp; the industry</div>
     <div>$100T AUM &middot; wholesale + retail</div>
   </div>
 </section>
@@ -385,10 +536,10 @@
 <!-- ============================================================
      SLIDE 11 · Digital wealth management value chain · Figure 8.2 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="11 Value Chain">
+<section class="slide dark" data-screen-label="13 Value Chain">
   <div class="chrome">
     <div>&sect;8.9 &middot; Digital wealth management</div>
-    <div>11 / 16</div>
+    <div>13 / 18</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Figure 8.2 &middot; Where fintechs attack the value chain</div>
@@ -416,7 +567,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 11 &middot; Figure 8.2 &middot; Wealth management value chain</div>
+    <div>Page 13 &middot; Figure 8.2 &middot; Wealth management value chain</div>
     <div>Acquire &middot; Manage &middot; Operate</div>
   </div>
 </section>
@@ -424,10 +575,10 @@
 <!-- ============================================================
      SLIDE 12 · The hybrid future + the eAdvisor (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="12 Hybrid eAdvisor">
+<section class="slide light" data-screen-label="14 Hybrid eAdvisor">
   <div class="chrome">
     <div>&sect;8.10 &middot; The future is hybrid</div>
-    <div>12 / 16</div>
+    <div>14 / 18</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -458,7 +609,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 12 &middot; Hybrid advice &amp; the eAdvisor</div>
+    <div>Page 14 &middot; Hybrid advice &amp; the eAdvisor</div>
     <div>Source &middot; Grace &amp; Sarta &middot; EY &middot; Fidelity</div>
   </div>
 </section>
@@ -466,10 +617,10 @@
 <!-- ============================================================
      SLIDE 13 · Digital onboarding · Nest Wealth + Aladdin (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="13 Onboarding: Nest Wealth & Aladdin">
+<section class="slide dark" data-screen-label="15 Onboarding: Nest Wealth & Aladdin">
   <div class="chrome">
     <div>&sect;8.11 &middot; Digital customer onboarding</div>
-    <div>13 / 16</div>
+    <div>15 / 18</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">The B2B pivot &mdash; selling shovels, not gold</div>
@@ -495,7 +646,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 13 &middot; Digital onboarding &middot; Nest Wealth &amp; Aladdin</div>
+    <div>Page 15 &middot; Digital onboarding &middot; Nest Wealth &amp; Aladdin</div>
     <div>B2B &middot; the technology platform is the product</div>
   </div>
 </section>
@@ -503,10 +654,10 @@
 <!-- ============================================================
      SLIDE 14 · Sustainable / ESG investing (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="14 Sustainable Investing">
+<section class="slide light" data-screen-label="16 Sustainable Investing">
   <div class="chrome">
     <div>&sect;8.12 &middot; Sustainable investing</div>
-    <div>14 / 16</div>
+    <div>16 / 18</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">ESG &middot; the fastest-growing trend in asset management</div>
@@ -527,7 +678,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 14 &middot; Sustainable / ESG investing</div>
+    <div>Page 16 &middot; Sustainable / ESG investing</div>
     <div>Source &middot; BlackRock &middot; Clim8 Invest</div>
   </div>
 </section>
@@ -535,10 +686,10 @@
 <!-- ============================================================
      SLIDE 14a · Case study: Robinhood (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="15 Case: Robinhood">
+<section class="slide dark" data-screen-label="17 Case: Robinhood">
   <div class="chrome">
     <div>&sect;8.12 &middot; Case study</div>
-    <div>15 / 16</div>
+    <div>17 / 18</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Robinhood &middot; 2014 &middot; Vlad Tenev &amp; Baiju Bhatt &mdash; Stanford roommates turned HFT quants</div>
@@ -577,7 +728,7 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 15 &middot; Case study &middot; Robinhood</div>
+    <div>Page 17 &middot; Case study &middot; Robinhood</div>
     <div>Source &middot; Refinitiv Eikon &middot; <em>Fortune</em></div>
   </div>
 </section>
@@ -585,10 +736,10 @@
 <!-- ============================================================
      SLIDE 15 · Summary & closing (hero dark)
      ============================================================ -->
-<section class="slide hero dark" data-screen-label="16 Closing">
+<section class="slide hero dark" data-screen-label="18 Closing">
   <div class="chrome">
     <div>Chapter 08 &middot; Closing</div>
-    <div>16 / 16</div>
+    <div>18 / 18</div>
   </div>
   <div class="frame" style="display:grid; gap:2vh; align-content:center; min-height:70vh">
     <div class="kicker">Summary &middot; disruption became adoption</div>
