@@ -10,6 +10,7 @@ const ALL_CHAPTERS = [
   { dir: 'ch5', title: 'Chapter 5 — Bitcoin, Blockchain & Cryptocurrencies' },
   { dir: 'ch6', title: 'Chapter 6 — Ethereum, Smart Contracts & DeFi' },
   { dir: 'ch7', title: 'Chapter 7 — Crowdfunding & P2P Lending' },
+  { dir: 'ch8', title: 'Chapter 8 — Digital Wealth Management' },
   { dir: 'chblockchain', title: 'Blockchain Businesses — DeFi vs. TradFi' },
 ];
 
