@@ -78,7 +78,7 @@
     <div>&sect;10.2 &middot; Pain points</div>
     <div>03 / 13</div>
   </div>
-  <div class="frame" style="padding-top:2vh">
+  <div class="frame" style="padding-top:2vh; justify-content:center">
     <div class="kicker">Stressed, underserved, and graded against everyone else</div>
     <h2 class="h-xl" style="font-size:3.8vw">A giant market of dissatisfied customers.</h2>
     <p class="lead" style="margin-top:.4vh; max-width:62vw; opacity:.78; font-size:1.05vw">
@@ -209,11 +209,26 @@
       </div>
     </div>
     <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
-      <div class="pipeline-label" style="margin-bottom:.2vh">Table 10.3 &middot; Unbundling &rarr; rebundling</div>
-      <figure class="frame-img contain" style="height:46vh; border:1px solid rgba(127,127,127,.18); background:#fff">
-        <img src="../images/ch10/tab10.3.png" alt="Table 10.3 — Fintechs Unbundling and Rebundling Financial Products">
-      </figure>
-      <div class="frame-cap"><span>Tab. 10.3 &middot; Christensen disruption</span><span class="idx">Source: company websites</span></div>
+      <div class="pipeline-label" style="margin-bottom:.2vh">Table 10.3 &middot; One product <span style="opacity:.6">(unbundled)</span> &rarr; many <span style="opacity:.6">(rebundled)</span></div>
+      <style>
+        .ubt{width:100%;border-collapse:collapse}
+        .ubt th{font-family:var(--mono);font-size:max(9px,.72vw);letter-spacing:.13em;text-transform:uppercase;opacity:.5;text-align:left;padding:0 1vw .9vh 0;border-bottom:1px solid rgba(10,31,61,.28)}
+        .ubt td{padding:1.35vh 1vw 1.35vh 0;border-bottom:1px solid rgba(10,31,61,.1);font-size:max(11px,.95vw);line-height:1.4;vertical-align:top}
+        .ubt tbody tr:last-child td{border-bottom:0}
+        .ubt .fn{font-family:var(--serif-zh);font-weight:600;font-size:max(13px,1.12vw);white-space:nowrap}
+        .ubt .st{font-weight:600;color:#1a7f5a;white-space:nowrap}
+        .ubt .re{opacity:.82}
+      </style>
+      <table class="ubt">
+        <thead><tr><th>Fintech</th><th>Started with</th><th>Rebundled into</th></tr></thead>
+        <tbody>
+          <tr><td class="fn">Credit Karma</td><td class="st">Credit scores</td><td class="re">Cards, personal &amp; auto loans, auto insurance, tax prep, identity monitoring, mortgages</td></tr>
+          <tr><td class="fn">Revolut</td><td class="st">Digital wallet</td><td class="re">Bank account, debit card, payments, early salary, rewards, crypto, stock &amp; commodity trading, FX, travel</td></tr>
+          <tr><td class="fn">SoFi</td><td class="st">Student loans</td><td class="re">Personal loans, bank account, credit card, crypto, stock trading, mortgage, insurance, SMB loans, budgeting</td></tr>
+          <tr><td class="fn">Wealthsimple</td><td class="st">Robo-advisor</td><td class="re">Cash app (card, payments, transfer), crypto, stock trading, tax preparation</td></tr>
+        </tbody>
+      </table>
+      <div class="frame-cap" style="margin-top:1vh"><span>Tab. 10.3 &middot; Christensen disruption &middot; foothold &rarr; up-market</span><span class="idx">Source: company websites</span></div>
     </div>
   </div>
   <div class="foot">
@@ -230,7 +245,7 @@
     <div>&sect;10.5 &middot; Pivoting from B2C to B2B</div>
     <div>07 / 13</div>
   </div>
-  <div class="frame" style="padding-top:2vh">
+  <div class="frame" style="padding-top:2vh; justify-content:center">
     <div class="kicker">Acquiring consumers costs $500&ndash;$1,000 each &mdash; so sell to banks instead</div>
     <h2 class="h-xl" style="font-size:3.6vw">Banks become the perfect customer.</h2>
     <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1vw">
@@ -309,10 +324,27 @@
         <div class="kicker">Table 10.4 &middot; Four leaders &mdash; 111M customers at year-end 2022</div>
         <h2 class="h-xl" style="font-size:3vw">Billions raised, banking licenses contested.</h2>
       </div>
-      <figure class="frame-img contain" style="height:42vh; border:1px solid rgba(127,127,127,.18); background:#fff">
-        <img src="../images/ch10/tab10.4.png" alt="Table 10.4 — Leading Challenger Banks">
-      </figure>
-      <div class="frame-cap"><span>Tab. 10.4 &middot; Customers at YE2022; valuations at last round</span><span class="idx">Source: company websites</span></div>
+      <style>
+        .cbt{width:100%;border-collapse:collapse;font-feature-settings:"tnum"}
+        .cbt th{font-family:var(--mono);font-size:max(9px,.72vw);letter-spacing:.13em;text-transform:uppercase;opacity:.5;text-align:left;padding:0 1vw 1vh 0;border-bottom:1px solid rgba(255,255,255,.22);white-space:nowrap}
+        .cbt td{padding:1.5vh 1vw 1.5vh 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:max(12px,1.0vw);vertical-align:middle}
+        .cbt tbody tr:last-child td{border-bottom:0}
+        .cbt .bk{font-family:var(--serif-zh);font-weight:600;font-size:max(14px,1.22vw)}
+        .cbt .nx{text-align:right;white-space:nowrap}
+        .cbt th.nx{text-align:right}
+        .cbt .cust{font-family:var(--serif-en);font-weight:800;font-size:max(15px,1.4vw)}
+        .cbt .lic{opacity:.72;font-size:max(11px,.9vw)}
+      </style>
+      <table class="cbt">
+        <thead><tr><th>Challenger bank</th><th>HQ</th><th class="nx">Since</th><th class="nx">Customers</th><th class="nx">Valuation</th><th>Banking license</th></tr></thead>
+        <tbody>
+          <tr><td class="bk">Nubank</td><td class="lic">S&atilde;o Paulo</td><td class="nx">2013</td><td class="nx cust">70M</td><td class="nx">$45B</td><td class="lic">Full bank &middot; NYSE IPO</td></tr>
+          <tr><td class="bk">Revolut</td><td class="lic">London</td><td class="nx">2015</td><td class="nx cust">20M</td><td class="nx">$33B</td><td class="lic">EU 2018 &middot; UK/US pending</td></tr>
+          <tr><td class="bk">Chime</td><td class="lic">San Francisco</td><td class="nx">2013</td><td class="nx cust">13M</td><td class="nx">$25B</td><td class="lic">Partner bank</td></tr>
+          <tr><td class="bk">N26</td><td class="lic">Berlin</td><td class="nx">2013</td><td class="nx cust">8M</td><td class="nx">$9B</td><td class="lic">EU 2016</td></tr>
+        </tbody>
+      </table>
+      <div class="frame-cap" style="margin-top:1vh"><span>Tab. 10.4 &middot; Customers at YE2022; valuations at last round</span><span class="idx">Source: company filings</span></div>
     </div>
     <div style="display:flex; flex-direction:column; gap:.9vh; padding-top:.4vh">
       <div class="pipeline-label" style="margin-bottom:.2vh">What sets each apart</div>
@@ -380,7 +412,7 @@
     <div>&sect;10.7 &middot; Financial marketplaces</div>
     <div>11 / 13</div>
   </div>
-  <div class="frame" style="padding-top:2vh">
+  <div class="frame" style="padding-top:2vh; justify-content:center">
     <div class="kicker">Multi-sided platforms built on cloud, APIs, and open banking</div>
     <h2 class="h-xl" style="font-size:3.6vw">A full-service bank without the capital.</h2>
     <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1vw">

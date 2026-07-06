@@ -11,6 +11,9 @@ const ALL_CHAPTERS = [
   { dir: 'ch6', title: 'Chapter 6 — Ethereum, Smart Contracts & DeFi' },
   { dir: 'ch7', title: 'Chapter 7 — Crowdfunding & P2P Lending' },
   { dir: 'ch8', title: 'Chapter 8 — Digital Wealth Management' },
+  { dir: 'ch9', title: 'Chapter 9 — Payments, FX & Insurance' },
+  { dir: 'ch10', title: 'Chapter 10 — Digital Banking & Personal Finance' },
+  { dir: 'ch11', title: 'Chapter 11 — Chinese Techfins & North American Bigtech' },
   { dir: 'chblockchain', title: 'Blockchain Businesses — DeFi vs. TradFi' },
   { dir: 'chqa', title: 'Q&A Review — Chapters 5–11' },
 ];

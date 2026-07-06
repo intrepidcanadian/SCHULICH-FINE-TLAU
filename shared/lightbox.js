@@ -14,7 +14,7 @@
   // ---- inject styles ----
   var css = `
   .zoomable{cursor:zoom-in;position:relative}
-  .zoomable .lb-badge{
+  .lb-badge{
     position:absolute;top:.6vh;right:.6vw;z-index:5;
     font-family:var(--mono,"IBM Plex Mono",monospace);
     font-size:max(9px,.62vw);letter-spacing:.12em;text-transform:uppercase;
@@ -22,7 +22,7 @@
     background:rgba(10,10,20,.62);color:#f4f1eb;
     border:1px solid rgba(255,255,255,.28);
     opacity:0;transition:opacity .18s ease;pointer-events:none;white-space:nowrap}
-  .zoomable:hover .lb-badge{opacity:1}
+  .zoomable:hover .lb-badge,[data-lb-ready]:hover .lb-badge{opacity:1}
   .lb-overlay{
     position:fixed;inset:0;z-index:1000;display:none;
     align-items:center;justify-content:center;flex-direction:column;gap:1.6vh;
