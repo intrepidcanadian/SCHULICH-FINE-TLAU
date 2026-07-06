@@ -1,0 +1,62 @@
+[
+  { "q": "What is an example of a customer pain point in banking and how does a fintech address this?", "correct": "C",
+    "options": {
+      "A": "Consumers can't open accounts quickly; challenger banks offer 10-minute mobile onboarding.",
+      "B": "Consumers lack budgeting tools; Sensibill white-labels a receipt app to banks.",
+      "C": "Consumers don't know their credit score; Credit Karma and Borrowell give free scores.",
+      "D": "Consumers pay high FX fees; Revolut offers a multi-currency prepaid debit card." } },
+  { "q": "How did the 2008-2009 Global Financial Crisis lower the barriers to entry for fintechs into banking?", "correct": "B",
+    "options": {
+      "A": "It forced banks to raise capital, leaving no funds to compete with fintech start-ups.",
+      "B": "It destroyed the hurdles of trust and regulation, prompting policies encouraging new entrants.",
+      "C": "It eliminated screen scraping, requiring banks to build open APIs for fintechs.",
+      "D": "It made banking highly profitable, attracting fintechs to the industry's profit pools." } },
+  { "q": "What is the value proposition of a fintech app developer and their strategy for building and scaling their business?", "correct": "A",
+    "options": {
+      "A": "An inexpensive solution to one pain point; unbundle a product, then rebundle complementary services.",
+      "B": "A full-service digital bank; bundle third-party products via APIs to create network effects.",
+      "C": "A multi-sided platform charging the money-side commissions on products sold to users.",
+      "D": "A licensed money service business targeting travelers with a no-fee prepaid card." } },
+  { "q": "Why do fintechs want to adopt a B2B model and white-label their mobile apps to incumbents?", "correct": "D",
+    "options": {
+      "A": "B2B lets fintechs avoid open banking regulations that apply only to consumer-facing apps.",
+      "B": "Banks pay higher fees than consumers because they lack any regulatory expertise.",
+      "C": "White-labeling lets fintechs display their own brand inside the bank's mobile app.",
+      "D": "B2C acquisition costs $500-$1,000 per customer, so fintechs license apps to banks with large customer bases." } },
+  { "q": "What is a challenger bank and how is it different from a traditional bricks-and-mortar bank?", "correct": "B",
+    "options": {
+      "A": "A software firm licensing banking apps to incumbents rather than serving customers directly.",
+      "B": "A neobank offering the same products but delivering an entirely end-to-end digital experience.",
+      "C": "A multi-sided marketplace selling third-party banking products without holding a license.",
+      "D": "A data aggregator that connects customer accounts to fintech apps using APIs." } },
+  { "q": "How are challenger banks doing around the world and who are some leading players?", "correct": "A",
+    "options": {
+      "A": "Thriving, with over 300 globally; leaders include Revolut, N26, Nubank, and Chime.",
+      "B": "Declining, with fewer than 50 survivors; leaders include Plaid, Yodlee, and Mint.",
+      "C": "Concentrated only in Europe; leaders include Fidor, Borrowell, and Wealthsimple.",
+      "D": "Struggling to grow, with 300 globally but fastest growth in the UK and Germany." } },
+  { "q": "What has been the go-to-market strategy of challenger banks and are they regulated?", "correct": "C",
+    "options": {
+      "A": "They launch abroad first for scale, and all must hold a full banking license to operate.",
+      "B": "They build multi-sided platforms, and none are regulated since lending is unregulated.",
+      "C": "They build a foothold with one product then rebundle and expand abroad; regulation splits by whether they hold a banking license.",
+      "D": "They partner with incumbents from day one, and only money service business licenses are ever required." } },
+  { "q": "What is the business model and monetization strategy of a financial marketplace?", "correct": "D",
+    "options": {
+      "A": "A one-sided business earning lending income and fees like a challenger bank.",
+      "B": "A centralized agent licensing white-labeled software to banks under a SaaS model.",
+      "C": "A principal holding deposits and underwriting loans while charging monthly subscriptions.",
+      "D": "A multi-sided platform connecting customers to third-party products, earning fees, commissions, and advertising." } },
+  { "q": "What are some of the strategies adopted by incumbents in response to fintech new entrants?", "correct": "B",
+    "options": {
+      "A": "A single mandated strategy: all incumbents must build digital banks in-house.",
+      "B": "A menu based on capabilities and scale: build, R&amp;D, partner, license, invest, acquire, or target fintechs.",
+      "C": "Only defensive lobbying to block open banking and preserve their data moats.",
+      "D": "Exclusively acquiring fintechs, since partnering and licensing always fail from culture clash." } },
+  { "q": "What is banking-as-a-service (BaaS) and what are the advantages for both the fintech and the bank partner?", "correct": "A",
+    "options": {
+      "A": "A licensed bank provides the regulated back office so fintechs offer white-labeled banking products, each focusing on its strengths.",
+      "B": "A fintech provides technology so banks can outsource their customer-facing apps and branding.",
+      "C": "A multi-sided marketplace where banks sell third-party products for fees and commissions.",
+      "D": "An open banking API standard that forces banks to share customer data with any fintech." } }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "q": "What is a techfin and why is their name the reverse of fintech?",
+    "lead": "A techfin is a technology platform (like Alibaba, Tencent) that offers financial services second, with the name reversing 'fintech' to signal it is a technology company first.",
+    "points": [
+      "Term coined by Alibaba's Jack Ma in 2016 to describe Alipay.",
+      "They begin with e-commerce, social media, or gaming, then add finance.",
+      "They expand from payments into money market funds, wealth management, and insurance.",
+      "Financial services are enablers or loss leaders to attract and retain platform customers."
+    ]
+  },
+  {
+    "q": "Why did Alibaba create Alipay and how did this business grow over time? How is Alipay related to Ant Financial, later known as Ant Group?",
+    "lead": "Alibaba created Alipay in 2004 to build trust between buyers and sellers by holding payments in escrow, filling institutional voids in China's underdeveloped payment system.",
+    "points": [
+      "Grew from 100 million users in 2008 to 300 million by March 2010; launched mobile payments in 2009.",
+      "Expanded into money market funds, wealth management, lending, credit scoring, and banking.",
+      "In 2014 Alibaba spun off financial units into Ant Financial Services ahead of its US IPO.",
+      "Ant Financial was later renamed Ant Group, whose 2020 IPO was pulled by China's central bank."
+    ]
+  },
+  {
+    "q": "How did the instant messaging and gaming company Tencent move into financial services? What was the first financial product that it launched?",
+    "lead": "Tencent moved into finance by adding a payment feature to its messaging platform, first launching the proprietary payment service TenPay in 2005 in response to Alipay.",
+    "points": [
+      "TenPay's uptake was slow until WeChat Pay went viral via the 2014 Red Envelope campaign.",
+      "WeChat Pay reached nearly 40% of third-party mobile payments by year-end 2018.",
+      "Diversified into a money market fund (Licaitong), challenger bank (WeBank), and insurtech (WeSure).",
+      "By 2022, WeChat and WeChat Pay had 1.3 billion monthly active users."
+    ]
+  },
+  {
+    "q": "What is a bigtech and how do they compare in size to the incumbent financial institutions such as banks?",
+    "lead": "Bigtech refers to North American global technology companies (Amazon, Apple, Facebook, Google) whose stock market capitalization is far larger than the world's largest financial institutions.",
+    "points": [
+      "They dwarf incumbents like VISA, JPMorgan, MasterCard, Bank of America, and ICBC.",
+      "Their strength is vast multi-sided platforms, billions of customers, and massive datasets.",
+      "In 2022's most valuable brands, bigtech held the top five; JPMorgan was first bank at #24.",
+      "Apple's brand value reached US$482 billion, versus banks lagging far behind."
+    ]
+  },
+  {
+    "q": "What has been Amazon's path into financial services? What financial products does it offer and why?",
+    "lead": "Amazon built a payments foundation starting in 2007 and expanded through trial-and-error into select financial products that support buyers and sellers on its e-commerce platform.",
+    "points": [
+      "Amazon Pay (2007) provides a digital wallet with no interchange fee.",
+      "Amazon Lending (2011) offers merchant loans from $1,000 to $750,000 by invitation.",
+      "Amazon Cash (2017) lets unbanked customers add cash deposits via CVS and 7-Eleven.",
+      "It builds internally to increase marketplace sales, not to become a conventional bank."
+    ]
+  },
+  {
+    "q": "How has Apple found success in embedding financial services into its iOS ecosystem?",
+    "lead": "Apple succeeded by partnering with incumbents to embed banking into its ecosystem and protect its smartphone market share, using financial apps as loss leaders rather than profit sources.",
+    "points": [
+      "Apple Pay (2014) uses NFC, tokenization, and biometric security; reached 507 million users by 2020.",
+      "Apple Card (2019), issued by MasterCard and backed by Goldman Sachs, has no fees and 2% cashback.",
+      "Apple Card Family (2021) shares credit lines with 3% cashback.",
+      "A savings account (2023) at 4.15% interest, backed by Goldman Sachs, was added."
+    ]
+  },
+  {
+    "q": "What was Facebook's Libra project and what happened to it?",
+    "lead": "Libra, announced June 2019, was a Facebook-operated stablecoin backed by fiat currencies and US Treasuries, designed for low-cost global money transfers over Messenger and WhatsApp.",
+    "points": [
+      "Launched with 28 partners but notably had no bank partner.",
+      "Regulators in the US and Europe attacked it and called for hearings; the G7 formed a taskforce.",
+      "Partners dropped out starting with PayPal, then MasterCard, VISA, eBay, and Stripe.",
+      "Rebranded as Diem in December 2020, it was shut down in January 2022 and its code sold."
+    ]
+  },
+  {
+    "q": "What was the experience of Google with its payment product? How did it evolve over time?",
+    "lead": "Google struggled with product-market fit, relaunching its payment product multiple times while losing ground to Apple Pay and Venmo.",
+    "points": [
+      "Started 2011 with Google Wallet, then Android Pay (2015) and Google Tez in India.",
+      "In 2018 it merged Wallet and Android Pay into Google Pay.",
+      "By late 2020 it had 150 million users versus Apple Pay's 500+ million.",
+      "Abandoned Google Plex bank accounts in October 2021, shifting to B2B focus."
+    ]
+  },
+  {
+    "q": "What are the three competitive strengths of the techfins and bigtech in financial services?",
+    "lead": "The three competitive strengths are platform ecosystems and network effects, access to customers and brand recognition, and big data insights and customer experience.",
+    "points": [
+      "Platform ecosystems generate same-side and cross-side network effects that make platforms sticky.",
+      "Massive loyal user bases and strong brands, while banks' branch networks and brand trust have eroded.",
+      "Proprietary data analyzed with AI and machine learning to understand customer needs before they arise.",
+      "The advantage is not the data itself but how it is used to understand a customer's needs."
+    ]
+  },
+  {
+    "q": "How serious is the threat from techfins and bigtech for incumbent financial institutions? Will banks, insurance companies, and asset managers become obsolete?",
+    "lead": "The answer is no; the entry of techfins and bigtech into financial services has had mixed success and will not make incumbents obsolete.",
+    "points": [
+      "Chinese techfins succeeded by addressing institutional voids but always worked with domestic banks.",
+      "North American bigtech built payment footholds but largely failed to move beyond payments.",
+      "Competition has forced banks to become more customer-centric and innovative.",
+      "The winning combination will be bigtech-bank partnerships that combine their respective strengths."
+    ]
+  }
+]

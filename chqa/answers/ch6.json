@@ -1,0 +1,102 @@
+[
+  {
+    "q": "What is the Ethereum network and who created it?",
+    "lead": "Ethereum is an open-source, programmable blockchain supporting smart contracts, dapps, and DAOs, created by Russian-Canadian programmer Vitalik Buterin.",
+    "points": [
+      "Buterin posted the Ethereum whitepaper in November 2013 at age 19.",
+      "Its native currency ether (ETH) buys the 'gas' needed to run dapps.",
+      "It is the foundation for decentralized finance (DeFi), a disruptive financial innovation.",
+      "The Ethereum Foundation officially launched the blockchain on July 30, 2015."
+    ]
+  },
+  {
+    "q": "What problems did Vitalik Buterin see with the Bitcoin network for the future of the internet of value (Web3)?",
+    "lead": "Buterin concluded Bitcoin was inefficient, lacked scalability, and had a limited scripting language, making it a faulty foundation for Web3.",
+    "points": [
+      "Bitcoin transactions were slow due to limited block size and time-consuming mining.",
+      "The Bitcoin blockchain only recorded BTC and could not accommodate other cryptoassets.",
+      "The Bitcoin scripting language was too simplistic for generalized applications.",
+      "He proposed a superior foundational protocol allowing others to build decentralized applications on top."
+    ]
+  },
+  {
+    "q": "What is ether (ETH) and what role does it play on the Ethereum network?",
+    "lead": "Ether (ETH) is Ethereum's native token, described by Buterin as the internal crypto fuel used to buy the 'gas' required to run dapps.",
+    "points": [
+      "The amount of gas depends on the computational resources a program requires.",
+      "This system incentivizes developers to write efficient applications and deters malicious behavior.",
+      "ETH was verified via proof-of-work until September 2022, then proof-of-stake.",
+      "There is no cap on ETH; around 120 million were in circulation in April 2022."
+    ]
+  },
+  {
+    "q": "What is a smart contract? What is a decentralized application (dapp)? How are smart contracts and dapps related to LEGO?",
+    "lead": "A smart contract is computer code that executes a transaction without human intervention, while a dapp is a web application built on decentralized P2P infrastructure.",
+    "points": [
+      "Smart contracts are encrypted on the blockchain to prevent alterations, removing financial intermediaries.",
+      "Smart contracts are the LEGO pieces; dapps and DAOs are what you build with them.",
+      "Smart contracts can be written in Solidity, a Turing-complete language running on the EVM.",
+      "Many dapps combine a smart contract with a front-end user interface."
+    ]
+  },
+  {
+    "q": "What is a token and what are the different categories used by dapps?",
+    "lead": "A token is a digital asset whose ownership is recorded on a blockchain, categorized broadly as fungible (ERC-20) or non-fungible (ERC-721).",
+    "points": [
+      "Fungible tokens include payment, utility (service), security, and governance tokens.",
+      "Payment tokens like ETH buy things; utility tokens like BAT claim a service.",
+      "Governance tokens grant voting rights, such as the Maker token for DAI decisions.",
+      "Non-fungible tokens (NFTs) represent unique, indivisible items like art or collectibles."
+    ]
+  },
+  {
+    "q": "What is a decentralized autonomous organization (DAO) and what happened to the one created by Slock.It?",
+    "lead": "A DAO is a virtual organization operating by rules coded in smart contracts; Slock.It's DAO was hacked and drained of ETH.",
+    "points": [
+      "Slock.It launched the first DAO on April 29, 2016, raising $150 million from 11,000 members.",
+      "Hackers siphoned off $40 million of ETH on June 17, 2016.",
+      "The response sparked a debate over blockchain immutability and a decisive vote.",
+      "It culminated in a hard fork splitting Ethereum (ETH) and Ethereum Classic (ETC)."
+    ]
+  },
+  {
+    "q": "What is the purpose of a stablecoin and what are the different types? What distinguishes Tether from DAI?",
+    "lead": "A stablecoin is a payment token kept stable by pegging to another asset, solving cryptocurrency volatility; Tether is centralized while DAI is decentralized.",
+    "points": [
+      "Types are backed by fiat currency, cryptocurrencies, commodities, or nothing (algorithmic).",
+      "Tether (USDT) is a centralized coin controlled by the founders of the Bitfinex exchange.",
+      "DAI is a decentralized stablecoin controlled by the MakerDAO smart contract.",
+      "Stablecoins are typically pegged at $1.00 and backed by collateral."
+    ]
+  },
+  {
+    "q": "What is decentralized finance (DeFi) and what are the main activities across different blockchains?",
+    "lead": "DeFi is a movement to build a global, decentralized financial system on cryptoassets, blockchains, and smart contracts, disintermediating traditional financial intermediaries.",
+    "points": [
+      "It creates a system that is open, permissionless, transparent, and automated.",
+      "Biggest categories are DEXes, borrowing/lending, and liquidity staking.",
+      "Ethereum dominates with close to 60% of TVL, followed by Tron (10.8%) and BSC (10.5%).",
+      "Other activities include yield farming, bridge tokens, CDPs, and derivatives."
+    ]
+  },
+  {
+    "q": "What is total value locked and how it is measured?",
+    "lead": "Total value locked (TVL) is the dollar value of cryptocurrencies locked in smart contracts, liquidity pools, or staked on a PoS blockchain, and is the main measure of DeFi market size.",
+    "points": [
+      "TVL is the most widely used measure of the health of crypto.",
+      "The DeFi market was close to $40 billion at year-end 2022, down from $175 billion.",
+      "DeFi represented 5% of all cryptocurrencies' $800 billion market capitalization.",
+      "Figures are tracked by the website DefiLlama, as no official statistics exist."
+    ]
+  },
+  {
+    "q": "Which DeFi activities do you find most interesting and why?",
+    "lead": "The chapter presents several notable DeFi activities including decentralized exchanges, collateralized debt positions, liquidity staking, and derivatives, each demonstrating the 'crypto LEGO' potential.",
+    "points": [
+      "DEXes like Curve use automated market makers and liquidity pools to swap tokens.",
+      "MakerDAO acts as a decentralized central bank, minting stablecoin DAI against collateral.",
+      "Liquidity staking via Lido lets users double-dip returns using stTokens.",
+      "Synthetix derivatives give on-chain exposure to off-chain assets through 'synths'."
+    ]
+  }
+]

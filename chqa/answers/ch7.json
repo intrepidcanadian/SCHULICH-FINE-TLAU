@@ -1,0 +1,97 @@
+[
+  {
+    "q": "What are the two types of online portals for alternative finance?",
+    "lead": "Online portals are divided into investment and non-investment crowdfunding, distinguished by what the contributor expects in return for their money.",
+    "points": [
+      "Investment portals issue debt (loans) or equity, where contributors expect a financial return.",
+      "Non-investment portals are donation-based or rewards-based, driven by non-financial motivations.",
+      "Debt crowdfunding dominates at roughly 89% of capital raised in 2020."
+    ]
+  },
+  {
+    "q": "What are the two types of investment crowdfunding and how are they different?",
+    "lead": "The two types are debt and equity: debt is a loan repaid with interest, while equity is an ownership stake in the business.",
+    "points": [
+      "Debt (P2P/marketplace or balance sheet lending) creates a contractual obligation to repay principal plus interest.",
+      "Equity sells common shares, giving investors a legal claim on profits and assets.",
+      "In 2020 debt raised $101 billion (89%) versus equity's $4.4 billion (4%)."
+    ]
+  },
+  {
+    "q": "What are the key differences between rewards-based and donation-based crowdfunding?",
+    "lead": "Rewards-based crowdfunding pre-sells a future product to backers who receive a reward, while donation-based asks for contributions with no promised benefit.",
+    "points": [
+      "Donors give to help causes like charities, medical expenses, or disaster relief, not for returns.",
+      "Backers fund new product/service development and are promised a reward on completion.",
+      "Kickstarter and Indiegogo are rewards-based; GoFundMe is the largest US donation-based portal."
+    ]
+  },
+  {
+    "q": "Why are peer-to-peer (P2P) platforms now called marketplace platforms?",
+    "lead": "The term changed because most funding now comes from institutional investors rather than individuals, making it no longer truly peer-to-peer.",
+    "points": [
+      "Individual capital was insufficient, so portals accepted hedge funds, pension funds, banks, and insurers.",
+      "Around 85% of Prosper's funds come from institutional investors.",
+      "LendingClub and Funding Circle shut their retail channels to work only with institutions."
+    ]
+  },
+  {
+    "q": "What is a balance sheet lender and why are the incentives different from a P2P/marketplace lender?",
+    "lead": "A balance sheet lender acts like a bank, supplying loans directly and holding them on its own balance sheet, so it bears the default risk.",
+    "points": [
+      "P2P/marketplace lenders are intermediaries that pass default losses to the lender, not the platform.",
+      "P2P underwriting commissions create a principal-agent problem with misaligned incentives.",
+      "Balance sheet lenders' incentives are aligned because they suffer any losses they originate."
+    ]
+  },
+  {
+    "q": "Who is borrowing from online lenders and who is providing funding? How do lenders assess the risk of default for online loans?",
+    "lead": "Borrowers are individuals and small businesses; funding comes from both retail and institutional investors; portals assess default risk via credit ratings reflected in interest rates.",
+    "points": [
+      "Individuals borrow up to $50,000 and small businesses up to $500,000, terms up to 5 years.",
+      "Average loan was $8,500, 3.25-year maturity, borrower age 49 with a 654 credit score.",
+      "Portals collect hard and soft data, assign credit ratings, and price loans by default risk.",
+      "Institutional investors use APIs and robot algorithms to screen and outperform less sophisticated investors."
+    ]
+  },
+  {
+    "q": "How is crowdfunding regulated and what are the risks to individual investors or lenders?",
+    "lead": "Regulation varies widely by country with no global standard, and investors face four principal risks: credit risk, illiquidity, poor disclosure, and fraud.",
+    "points": [
+      "US funding portals must register with the SEC and join FINRA under the 1933 Securities Act.",
+      "Some nations use existing laws; others created fintech-specific rules; the OCC granted SoFi a fintech charter in 2022.",
+      "Investments are illiquid with no public resale market and limited, often unaudited disclosure.",
+      "Losses fall on investors, who bear default and fraud risk without recourse to the borrower."
+    ]
+  },
+  {
+    "q": "How successful have crowdfunding platforms been in disrupting traditional financial intermediaries such as banks?",
+    "lead": "Rather than disrupting traditional capital raising, online portals became an alternative digital channel, with many pioneers forced to pivot after years of losses.",
+    "points": [
+      "Running a portal is tough, with customer acquisition costs of $500 to $1,000 each.",
+      "Public portals like LendingClub and OnDeck all fell below their IPO listing prices.",
+      "LendingClub exited P2P entirely in 2021 to relaunch as a challenger bank.",
+      "Portals reduced information asymmetry but failed on liquidity, risk sharing, and trust."
+    ]
+  },
+  {
+    "q": "What has been the growth of alternative finance globally and where is the most capital raised? What has happened in China?",
+    "lead": "Alternative finance has raised close to $1.5 trillion over eight years at a 33% CAGR, now led by the US, after China's market collapsed amid fraud.",
+    "points": [
+      "In 2017 China raised over $350 billion (86%); by 2020 it was just $1.2 billion (1%).",
+      "In 2020 the US led with $73.6 billion (65%), then Europe and the UK at $22.6 billion (20%).",
+      "China saw widespread fraud, Ponzi schemes, and over 84% of platforms failing after a regulatory crackdown.",
+      "Ezubao raised $8 billion then collapsed as a Ponzi scheme; over 900,000 investors lost about $7.6 billion."
+    ]
+  },
+  {
+    "q": "Has crowdfunding increased access to capital for underbanked communities? Are there biases based on gender, race, or other factors?",
+    "lead": "Evidence is mixed on financial inclusion, and research finds racial biases in lending pricing and funding, though gender findings are more nuanced.",
+    "points": [
+      "Some studies show portals fill gaps in underbanked, rural areas with fewer bank branches.",
+      "Other studies find lenders target creditworthy borrowers already with bank access, charging higher rates to lower-rated ones.",
+      "Latinx and African American borrowers were charged higher mortgage rates after adjusting for risk.",
+      "On Kickstarter women had higher success rates; African American men in equity crowdfunding are less likely to receive funding."
+    ]
+  }
+]

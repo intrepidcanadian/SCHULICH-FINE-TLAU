@@ -1,0 +1,102 @@
+[
+  {
+    "q": "What is an example of a customer pain point in banking and how does a fintech address this?",
+    "lead": "A common pain point is consumers not knowing their credit score; fintechs like Credit Karma and Borrowell address it by giving away free credit scores and reports.",
+    "points": [
+      "Credit scores from Equifax and TransUnion measure default risk yet most consumers are unaware of theirs.",
+      "Credit Karma's free app attracted 4 million users in four years and became profitable.",
+      "In 2019 an estimated 7 million US households were unbanked, lacking checking or savings accounts.",
+      "Fintechs deliver an experience that is easier, cheaper, faster, and more convenient."
+    ]
+  },
+  {
+    "q": "How did the 2008-2009 Global Financial Crisis lower the barriers to entry for fintechs into banking?",
+    "lead": "The crisis lowered the two main hurdles of trust and regulation, destroying public confidence in banks and prompting policies that encouraged new entrants.",
+    "points": [
+      "A 2012 Guardian survey found 71% thought banks had not learned their lesson.",
+      "Bailouts and recession spurred open banking legislation forcing banks to share customer data.",
+      "Politicians eased or ignored regulatory requirements for fintech start-ups to boost competition.",
+      "Disgruntled industry insiders left to launch fintech start-ups draining incumbent profit pools."
+    ]
+  },
+  {
+    "q": "What is the value proposition of a fintech app developer and their strategy for building and scaling their business?",
+    "lead": "Fintech app developers provide an innovative, inexpensive solution to a specific pain point, then unbundle a profitable bank product and later rebundle complementary services.",
+    "points": [
+      "Success requires simple onboarding, intuitive UX, strong security, and a personalized experience.",
+      "Unbundling offers a better single product at lower cost, avoiding bank cross-subsidies and loss leaders.",
+      "Establish a foothold with early adopters like millennials, then rebundle to make customers sticky.",
+      "Fits Christensen's disruptive innovation: start cheaper and good enough, then move up-market."
+    ]
+  },
+  {
+    "q": "Why do fintechs want to adopt a B2B model and white-label their mobile apps to incumbents?",
+    "lead": "B2C customer acquisition is very costly ($500 to $1,000 per customer), so many fintechs pivot to B2B, licensing white-labeled apps to banks that have large customer bases.",
+    "points": [
+      "Incumbents have deep pockets, regulatory expertise, and are perfect customers held back by legacy IT.",
+      "White-label means the bank's brand replaces the fintech's, as with Sensibill and Moven.",
+      "SaaS licensing brings stable recurring revenues attractive to shareholders and a path to exit.",
+      "Banks gain innovative solutions without developing them in-house."
+    ]
+  },
+  {
+    "q": "What is a challenger bank and how is it different from a traditional bricks-and-mortar bank?",
+    "lead": "A challenger bank (also neobank or digital bank) offers the same banking products as bricks-and-mortar banks but delivers an entirely electronic, end-to-end digital experience.",
+    "points": [
+      "Account opening takes under 10 minutes on mobile with no branch visit, though KYC ID upload is required.",
+      "The bank is open 24/7, 365 days, with intuitive dashboards, gamification, and chatbots.",
+      "Value proposition is lower cost, transparent fees, fast service, and better customer experience.",
+      "Initially appealed to millennials and Gen Z who valued convenience and speed."
+    ]
+  },
+  {
+    "q": "How are challenger banks doing around the world and who are some leading players?",
+    "lead": "Challenger banks are thriving, with over 300 globally and fastest growth in Brazil, India, and the US; leaders include Revolut, N26, Nubank, and Chime.",
+    "points": [
+      "Four leading banks together served 111 million customers as of year-end 2022.",
+      "COVID-19 accelerated adoption; app downloads worldwide exceeded 264 million, led by Latin America.",
+      "Nubank had 75 million customers by 2022; Revolut was valued at US$33 billion.",
+      "Growth was strongest in markets with many underbanked and unbanked consumers."
+    ]
+  },
+  {
+    "q": "What has been the go-to-market strategy of challenger banks and are they regulated?",
+    "lead": "Challenger banks build a foothold with one product in their home market then rebundle and expand abroad; regulation splits between those holding a banking license and those without.",
+    "points": [
+      "N26 started with a free deposit account and debit card; Revolut began as a licensed MSB targeting travelers.",
+      "A banking license is needed for insured deposits and central bank support, but loans and credit cards are unregulated.",
+      "Unlicensed banks like Chime must partner with licensed banks (Bancorp Bank, Stride Bank).",
+      "Many expand into neighboring countries and partner with fintechs via APIs to add products."
+    ]
+  },
+  {
+    "q": "What is the business model and monetization strategy of a financial marketplace?",
+    "lead": "Financial marketplaces are multi-sided platforms that connect customers with third-party products via APIs and open banking, monetizing through fees, commissions, and advertising.",
+    "points": [
+      "They offer full-service-bank variety without the capital and regulation, building network effects.",
+      "Fees or commissions are charged to the money-side third parties selling products.",
+      "Credit Karma gave away free credit scores then sold products, acquired by Intuit for $7 billion.",
+      "Borrowell and Fidor Market pivoted to bundle third-party financial products for their users."
+    ]
+  },
+  {
+    "q": "What are some of the strategies adopted by incumbents in response to fintech new entrants?",
+    "lead": "Incumbents choose from a menu of options depending on capabilities and scale: build in-house, R&amp;D labs, partner, license, invest, acquire, or target fintechs as customers.",
+    "points": [
+      "Bigger players build apps in-house (Goldman's Marcus) or set up innovation labs, risking innovation theater.",
+      "Partnerships include Canada's Interac e-Transfers and the US banks' Zelle joint venture against Venmo.",
+      "Banks license fintech software (JPMorgan with Plaid) or buy equity via corporate VC arms like RBC Ventures.",
+      "Acquisitions like JPMorgan-WePay can succeed while BPCE-Fidor failed from culture clash."
+    ]
+  },
+  {
+    "q": "What is banking-as-a-service (BaaS) and what are the advantages for both the fintech and the bank partner?",
+    "lead": "BaaS lets a licensed bank provide the regulated back office so fintechs offer white-labeled banking products, letting each side focus on its strengths.",
+    "points": [
+      "The bank holds deposits, underwrites loans, and satisfies capital, KYC, and AML requirements.",
+      "The fintech looks and acts like a bank while focusing on the customer technology experience.",
+      "Smaller regional banks like WebBank, Bancorp, and Cross River seized this opportunity over giants.",
+      "Customers gain FDIC-insured deposits and global payments; WebBank served Klarna and LendingClub."
+    ]
+  }
+]

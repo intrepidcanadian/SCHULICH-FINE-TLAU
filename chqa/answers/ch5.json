@@ -1,0 +1,102 @@
+[
+  {
+    "q": "What is cryptoeconomics and why use the term crypto?",
+    "lead": "Cryptoeconomics is the field studying how blockchain technology drives innovations in how companies are organized, contracts are set up, and incentives are established.",
+    "points": [
+      "The word crypto comes from the Greek kryptos, meaning hidden.",
+      "Cryptography uses computer algorithms to encode and protect data and messages.",
+      "Ciphers were used over 2,000 years ago by Ancient Egyptians and the Roman Empire.",
+      "Cryptoassets are the purest form of fintech innovation, made possible by technology."
+    ]
+  },
+  {
+    "q": "What is Bitcoin? How did its creator Satoshi Nakamoto address the double-spend problem?",
+    "lead": "Bitcoin is the first cryptocurrency, launched in 2009 by the anonymous Satoshi Nakamoto to create a peer-to-peer electronic cash system without a central authority.",
+    "points": [
+      "Double-spend problem: verifying money was not spent twice without a trusted intermediary.",
+      "Satoshi used a time-stamped electronic ledger secured against alteration using cryptography.",
+      "It relied on a P2P network of nodes where transactions were collected in blocks and hashed.",
+      "Identical public copies of the ledger are distributed across the network, over 46,000 nodes in 2023."
+    ]
+  },
+  {
+    "q": "What is blockchain? What are its main differences relative to traditional ledgers?",
+    "lead": "A blockchain is an electronic distributed ledger recording ownership of a single asset, Bitcoin, with transactions batch-processed in blocks and chained together using cryptographic hashes.",
+    "points": [
+      "Each block holds a timestamp, reference to the previous block, verified transactions, and a nonce.",
+      "It is public, permissionless, and fully transparent, so anyone can download and view it.",
+      "It is immutable and append-only, secured against tampering using SHA-256 hashing.",
+      "Identities are pseudo-anonymous, shown by a hashed public key rather than real names."
+    ]
+  },
+  {
+    "q": "What is hashing and SHA-256? How are these two concepts related to proof-of-work and mining of Bitcoin?",
+    "lead": "Hashing is a one-way mathematical algorithm mapping data of any size to a fixed-size string; Bitcoin uses SHA-256, which produces a 256-bit output.",
+    "points": [
+      "A hash cannot be decrypted or inverted to reveal the source data.",
+      "Including each block's hash in the next makes altering prior blocks require redoing all of them.",
+      "Miners race to find a nonce that, hashed with a block, yields a hash with leading zeros.",
+      "This search via trial and error is called mining, and the process is proof-of-work."
+    ]
+  },
+  {
+    "q": "What are the transaction fees associated with Bitcoin and how are they determined and allocated among miners?",
+    "lead": "Bitcoin imposes no official transaction fees, but users offer voluntary fees to incentivize miners to prioritize their transactions from the mempool.",
+    "points": [
+      "Fees arose after mid-2016 when transactions exceeded the 1-MB block size, causing congestion.",
+      "Miners choose transactions with the highest fee-to-size ratio to maximize each block's aggregate fee.",
+      "The fee, called the feerate, is measured in Satoshis-per-byte; 1 bitcoin equals 100,000 Satoshis.",
+      "Fees became de facto mandatory and are highly volatile as the network became more crowded."
+    ]
+  },
+  {
+    "q": "What are altcoins and what were the first ones created? Were they mined or sold through an initial coin offering?",
+    "lead": "Altcoins are Alternatives to Bitcoin, early cryptocurrencies made by modifying Bitcoin's source code with different features and governance.",
+    "points": [
+      "The first altcoins were Litecoin and Namecoin in 2011, then Peercoin in 2012.",
+      "In 2013 came Dogecoin, Gridcoin, Primecoin, Nxt, and Ripple XRP.",
+      "Many competing cryptocurrencies were pre-mined and sold to the public through ICOs.",
+      "Regulators effectively shut down the ICO market in mid-2018 due to widespread frauds."
+    ]
+  },
+  {
+    "q": "What is a hard fork and how did one lead to the creation of Bitcoin Cash?",
+    "lead": "A hard fork is a disagreement among cryptocurrency holders where a minority breaks away to create a new coin on a new blockchain, splitting the original like a stock spin-off.",
+    "points": [
+      "Both coins share the same transaction history up to the point of the fork.",
+      "Bitcoin Cash forked on August 1, 2017, at block 478,558 on the Bitcoin blockchain.",
+      "A minority wanted an 8-MB block size to process more transactions per 10 minutes.",
+      "After the fork, one Bitcoin was ~$2,741 and one Bitcoin Cash ~$380, totaling $3,121."
+    ]
+  },
+  {
+    "q": "What are cryptowallets? What are cryptoexchanges?",
+    "lead": "A cryptowallet is a software application or hardware device that stores a private key or seed to send and receive cryptocurrencies, while a cryptoexchange is an electronic marketplace for buying and selling them for a fee.",
+    "points": [
+      "Wallets are hot (internet-connected software) or more secure cold storage like the Trezor hardware wallet.",
+      "Wallets do not hold coins but store a secret seed used to generate addresses and authorize transactions.",
+      "Exchanges include fiat-to-crypto and crypto-to-crypto types; leaders are Binance, Coinbase, and Kraken.",
+      "Exchanges hold customers' private keys, becoming honey pots vulnerable to hacks like Mt. Gox's 850,000 bitcoins."
+    ]
+  },
+  {
+    "q": "What are the risks of using Bitcoin as a means of payment?",
+    "lead": "Bitcoin has been unsuccessful as a medium of exchange because verifying transactions via mining is slow and costly, taking hours to days, and few merchants accept it.",
+    "points": [
+      "Extreme price volatility undermines its usefulness as a store of value.",
+      "The 1-MB block limit and miner incentives crowd out low-value payments.",
+      "Settlement risk: transactions may be delayed and payments are irreversible.",
+      "Operational, counterparty, governance, and legal/regulatory risks also threaten HODLers."
+    ]
+  },
+  {
+    "q": "What have researchers found explains price changes and the cross-section of returns in Bitcoin?",
+    "lead": "Researchers found cryptocurrency returns are driven by user adoption, investor attention, and momentum, while three factors explain the cross-section of returns across coins.",
+    "points": [
+      "Returns were driven by adoption metrics like wallet users, active addresses, transactions, and payments.",
+      "Returns were unrelated to electricity or computing costs; Google Bitcoin searches and momentum predicted returns.",
+      "The three cross-sectional factors are the crypto market, coin size, and price momentum.",
+      "Small coins and low-price coins had higher average returns; the market tends to follow Bitcoin."
+    ]
+  }
+]

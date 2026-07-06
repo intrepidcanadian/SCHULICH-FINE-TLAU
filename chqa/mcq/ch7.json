@@ -1,0 +1,62 @@
+[
+  { "q": "What are the two types of online portals for alternative finance?", "correct": "C",
+    "options": {
+      "A": "Debt portals and equity portals, split by the security type issued.",
+      "B": "P2P portals and marketplace portals, split by who provides funding.",
+      "C": "Investment and non-investment portals, split by what contributors expect in return.",
+      "D": "Balance sheet portals and donation portals, split by who holds the loan." } },
+  { "q": "What are the two types of investment crowdfunding and how are they different?", "correct": "B",
+    "options": {
+      "A": "P2P and balance sheet lending; one is an intermediary, the other a principal.",
+      "B": "Debt and equity; debt is a loan repaid with interest, equity is an ownership stake.",
+      "C": "Donation-based and rewards-based; one promises a reward, the other nothing.",
+      "D": "All-or-nothing and keep-it-all; they differ on when funds are collected." } },
+  { "q": "What are the key differences between rewards-based and donation-based crowdfunding?", "correct": "A",
+    "options": {
+      "A": "Rewards-based pre-sells a future product for a reward; donation-based promises no benefit.",
+      "B": "Rewards-based issues equity stakes; donation-based issues repayable loans.",
+      "C": "Rewards-based funds charities and disaster relief; donation-based funds new products.",
+      "D": "Rewards-based is all-or-nothing; donation-based is always keep-it-all." } },
+  { "q": "Why are peer-to-peer (P2P) platforms now called marketplace platforms?", "correct": "D",
+    "options": {
+      "A": "Because platforms now hold the loans on their own balance sheets like banks.",
+      "B": "Because regulators required the name change under the 1933 Securities Act.",
+      "C": "Because they now sell equity stakes alongside debt to the crowd.",
+      "D": "Because most funding now comes from institutional investors, not individuals." } },
+  { "q": "What is a balance sheet lender and why are the incentives different from a P2P/marketplace lender?", "correct": "B",
+    "options": {
+      "A": "It is an intermediary matching borrowers with lenders; it passes default risk to lenders.",
+      "B": "It acts like a bank, funding and holding loans itself, so it bears default risk.",
+      "C": "It only serves accredited investors, so it faces less regulatory oversight.",
+      "D": "It earns underwriting commissions on volume, creating misaligned incentives with lenders." } },
+  { "q": "Who is borrowing from online lenders and who is providing funding? How do lenders assess the risk of default for online loans?", "correct": "C",
+    "options": {
+      "A": "Only large corporations borrow; only retail investors fund; risk is assessed by collateral value.",
+      "B": "Individuals and businesses borrow; only banks fund; risk is set by a fixed 30% APR cap.",
+      "C": "Individuals and small businesses borrow; retail and institutional investors fund; portals assign credit ratings priced into interest rates.",
+      "D": "Governments borrow; institutional investors fund; risk is assessed solely by FICO score thresholds." } },
+  { "q": "How is crowdfunding regulated and what are the risks to individual investors or lenders?", "correct": "A",
+    "options": {
+      "A": "Regulation varies by country with no global standard; key risks are credit, illiquidity, poor disclosure, and fraud.",
+      "B": "A single global regulator oversees all portals; the only real risk is illiquidity.",
+      "C": "Portals are unregulated everywhere; investors face credit risk but are protected against fraud.",
+      "D": "The SEC regulates all portals worldwide; losses always fall on the platform, not investors." } },
+  { "q": "How successful have crowdfunding platforms been in disrupting traditional financial intermediaries such as banks?", "correct": "D",
+    "options": {
+      "A": "Highly successful; portals replaced banks and their share prices outperformed the market.",
+      "B": "Successful on liquidity and trust, but they failed to reduce information asymmetry.",
+      "C": "They fully disrupted lending, forcing banks like WebBank to exit consumer credit.",
+      "D": "Rather than disrupting, they became an alternative digital channel, with many pioneers forced to pivot after losses." } },
+  { "q": "What has been the growth of alternative finance globally and where is the most capital raised? What has happened in China?", "correct": "B",
+    "options": {
+      "A": "It shrank to under $100 billion total; Europe leads; China still dominates at 86% share.",
+      "B": "It raised nearly $1.5 trillion over eight years at 33% CAGR, now led by the US, after China collapsed amid fraud.",
+      "C": "It grew steadily led by China, whose regulated P2P market remains the world's largest.",
+      "D": "It stagnated with no real growth; the US and China split the market evenly with no fraud." } },
+  { "q": "Has crowdfunding increased access to capital for underbanked communities? Are there biases based on gender, race, or other factors?", "correct": "C",
+    "options": {
+      "A": "Yes, it fully closed the inclusion gap, and research finds no biases by gender or race.",
+      "B": "No, it reduced credit access everywhere, and only gender bias against women exists.",
+      "C": "Evidence on inclusion is mixed, and research finds racial biases in pricing and funding, with more nuanced gender findings.",
+      "D": "Yes, it eliminated bank monopolies, though African American borrowers received lower mortgage rates." } }
+]

@@ -1,0 +1,62 @@
+[
+  { "q": "What is a techfin and why is their name the reverse of fintech?", "correct": "C",
+    "options": {
+      "A": "A regulated bank that acquires technology start-ups to add digital financial products.",
+      "B": "A fintech start-up that pivots to licensing its software to incumbent banks.",
+      "C": "A technology platform that offers financial services second, being a tech company first.",
+      "D": "A financial firm that builds its own technology platform to disrupt Silicon Valley." } },
+  { "q": "Why did Alibaba create Alipay and how did this business grow over time? How is Alipay related to Ant Financial, later known as Ant Group?", "correct": "B",
+    "options": {
+      "A": "It was created to offer high-interest money market funds, later merging into Tencent.",
+      "B": "It was created in 2004 to build buyer-seller trust via escrow, later spun into Ant Financial.",
+      "C": "It was launched in 2009 as a mobile-only wallet, then renamed WeChat Pay.",
+      "D": "It began as a credit scoring service and grew into the Zhima Credit platform." } },
+  { "q": "How did the instant messaging and gaming company Tencent move into financial services? What was the first financial product that it launched?", "correct": "A",
+    "options": {
+      "A": "It added payments to messaging, first launching TenPay in 2005 to counter Alipay.",
+      "B": "It first launched the money market fund Licaitong in 2014 to rival Yu'ebao.",
+      "C": "It first launched WeBank, a challenger bank, offering Weilidai microloans.",
+      "D": "It first launched WeChat Pay via the 2005 Red Envelope viral campaign." } },
+  { "q": "What is a bigtech and how do they compare in size to the incumbent financial institutions such as banks?", "correct": "D",
+    "options": {
+      "A": "Chinese platforms like Alibaba and Tencent that are smaller than state-owned banks.",
+      "B": "Global banks that acquired technology firms, matching VISA and JPMorgan in size.",
+      "C": "North American firms whose market value is comparable to but below ICBC's.",
+      "D": "North American tech firms whose market capitalization far exceeds the largest banks." } },
+  { "q": "What has been Amazon's path into financial services? What financial products does it offer and why?", "correct": "B",
+    "options": {
+      "A": "It partnered with Goldman Sachs to launch a credit card and savings account.",
+      "B": "It built payments from 2007, expanding by trial-and-error to support its marketplace.",
+      "C": "It relied on external partnerships to launch a full deposit-holding bank.",
+      "D": "It began with merchant loans in 2007, later adding a stablecoin for transfers." } },
+  { "q": "How has Apple found success in embedding financial services into its iOS ecosystem?", "correct": "A",
+    "options": {
+      "A": "By partnering with incumbents to embed banking and protect its smartphone share.",
+      "B": "By building financial products internally to monetize customers for profit.",
+      "C": "By addressing institutional voids in the underbanked US smartphone market.",
+      "D": "By launching a stablecoin backed by fiat currencies over its ecosystem." } },
+  { "q": "What was Facebook's Libra project and what happened to it?", "correct": "C",
+    "options": {
+      "A": "A digital wallet backed by major banks that succeeded after regulatory approval.",
+      "B": "A money market fund modeled on Yu'ebao that was folded into Facebook Pay.",
+      "C": "A stablecoin backed by fiat and US Treasuries; regulators killed it, rebranded Diem, shut down.",
+      "D": "A peer-to-peer payment service over Messenger that scaled globally by 2022." } },
+  { "q": "What was the experience of Google with its payment product? How did it evolve over time?", "correct": "D",
+    "options": {
+      "A": "It quickly overtook Apple Pay in mobile wallet transaction volume by 2020.",
+      "B": "It succeeded with Plex bank accounts launched with Citigroup in 2021.",
+      "C": "It avoided relaunches, keeping a single stable Google Wallet product since 2011.",
+      "D": "It struggled with product-market fit, relaunching repeatedly and losing ground to rivals." } },
+  { "q": "What are the three competitive strengths of the techfins and bigtech in financial services?", "correct": "B",
+    "options": {
+      "A": "Deposit insurance subsidies, branch networks, and risk management expertise.",
+      "B": "Platform ecosystems and network effects, customer access and brand, and big data insights.",
+      "C": "Regulatory compliance, escrow accounts, and low-cost stable funding sources.",
+      "D": "Interchange fees, credit scoring systems, and bricks-and-mortar proximity." } },
+  { "q": "How serious is the threat from techfins and bigtech for incumbent financial institutions? Will banks, insurance companies, and asset managers become obsolete?", "correct": "A",
+    "options": {
+      "A": "No; entry has had mixed success, and the winning combination is bigtech-bank partnerships.",
+      "B": "Yes; bigtech will replace banks as they move well beyond payments into full banking.",
+      "C": "Yes; Chinese techfins have already disintermediated domestic banks entirely.",
+      "D": "No; because regulators have banned techfins and bigtech from all financial services." } }
+]

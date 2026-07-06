@@ -1,0 +1,62 @@
+[
+  { "q": "What are some of the pain points facing customers in the payments, money transfer, and foreign exchange businesses?", "correct": "C",
+    "options": {
+      "A": "Payments are fast and transparent but suffer from weak encryption and fraud.",
+      "B": "The main issue is that fintech apps lack access to the payment rails entirely.",
+      "C": "Payments are slow, non-transparent, and costly, especially cross-border, with poor service and hidden fees.",
+      "D": "Customers mostly complain about too many free services eroding bank profits." } },
+  { "q": "How important are payments for banks and what are the different sources of revenue?", "correct": "B",
+    "options": {
+      "A": "Payments are minor, generating under 10% of bank revenues, mostly from reinsurance.",
+      "B": "Very important, generating close to 40% of bank revenues from fees and interest, US$1.9 trillion in 2020.",
+      "C": "Important, but revenues come almost entirely from the bid-ask spread on FX.",
+      "D": "Payments generate 40% of revenues, driven mainly by interchange from cross-border wires." } },
+  { "q": "What are the payment rails and what is the difference between the large value transfer system and the system for small payments?", "correct": "A",
+    "options": {
+      "A": "Rails are the physical network routing payments; LVTS handles large payments fast, small-payment systems handle high volumes slowly.",
+      "B": "Rails are software APIs; LVTS handles consumer payments while ACH handles interbank transfers.",
+      "C": "Rails are the credit card networks; LVTS is slower than the small-payment local roads.",
+      "D": "Rails are blockchain ledgers; LVTS and ACH both settle payments intraday via RTGS." } },
+  { "q": "Who are the players in the payments ecosystem and what roles do they play?", "correct": "D",
+    "options": {
+      "A": "Only the issuing bank and card network are needed; gateways and processors are optional add-ons.",
+      "B": "The merchant bank issues the customer's card while the issuing bank provides the POS machine.",
+      "C": "Reinsurers, underwriters, and brokers route transactions between the customer and merchant.",
+      "D": "Customer, issuing bank, card network, merchant bank/acquirer, payment gateway, and processor, plus banks and MSBs." } },
+  { "q": "What are the sources of revenue for payment and money transfer companies? Which revenues are fee-based and which are risk-based?", "correct": "B",
+    "options": {
+      "A": "All revenue is fee-based; interchange, assessment, and the bid-ask spread are the only sources.",
+      "B": "Fee-based from interchange, assessment, processing, and conversion fees; risk-based from FX, liquidity, and credit risk.",
+      "C": "Risk-based from interchange fees; fee-based only from the bid-ask spread on currencies.",
+      "D": "Fee-based from reinsurance premiums; risk-based from processing and assessment charges." } },
+  { "q": "What has been the strategy for new entrants into payments and how did they benefit from technological and regulatory changes?", "correct": "A",
+    "options": {
+      "A": "Start with a single use-case, build a foothold with core customers, then expand to capture more of the value chain.",
+      "B": "Launch a full-service bank immediately to win mainstream customers before any niche wedge.",
+      "C": "Acquire incumbent banks first, then narrow the product offering to a single use-case.",
+      "D": "Focus on reinsurance and trade finance, benefiting mainly from tighter AML regulation." } },
+  { "q": "What are examples of pain points in payments and the fintechs that solved them?", "correct": "C",
+    "options": {
+      "A": "M-PESA created e-commerce trust via escrow, while Alipay democratized transfers for unbanked Kenyans.",
+      "B": "Wise cut remittances to a $3.99 fee, while WorldRemit offered mid-market FX rates.",
+      "C": "Alipay built e-commerce trust, M-PESA democratized transfers, Wise lowered FX costs, WorldRemit cut remittances, Octopus enabled cashless payment.",
+      "D": "Octopus created e-commerce escrow trust, while Root offered fair currency exchange rates." } },
+  { "q": "What are the different segments of the insurance market and how can we assess their relative size?", "correct": "D",
+    "options": {
+      "A": "A US$5.7 trillion industry measured by claims paid, split into life, auto, and reinsurance segments.",
+      "B": "A US$2 trillion industry measured by premiums, split evenly across life, P&amp;C, and health.",
+      "C": "A US$5.7 trillion industry measured by gross written premiums, led by health (42%) over P&amp;C and life.",
+      "D": "A US$5.7 trillion industry measured by gross written premiums: life (42%), P&amp;C (31%), health (27%)." } },
+  { "q": "What are insurtechs and what has been their experience disrupting the insurance industry?", "correct": "A",
+    "options": {
+      "A": "Fintechs using mobile, cloud, sensors, data science, and AI to disrupt insurance; experience is rapid growth mixed with many failures.",
+      "B": "Fintechs using only blockchain to disrupt insurance; experience has been uniformly profitable growth.",
+      "C": "Reinsurers using AI to replace brokers; experience has been steady with almost no failures.",
+      "D": "Fintechs exploiting AI and sensors; nearly all insurtech IPOs, including Root, rose strongly post-IPO." } },
+  { "q": "What are some examples of pain points solved by different insurtechs in customer-facing and back-office businesses?", "correct": "B",
+    "options": {
+      "A": "Snapsheet personalizes auto pricing via sensors, while Root automates claims by photo analysis.",
+      "B": "Customer-facing insurtechs personalize products and pricing; back-office insurtechs automate claims and administration.",
+      "C": "Cyence sells renter policies via bots, while Lemonade models cyber risk for P&amp;C insurers.",
+      "D": "All insurtechs focus on back-office claims; none personalize customer-facing products or pricing." } }
+]

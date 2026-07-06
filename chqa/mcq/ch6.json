@@ -1,0 +1,62 @@
+[
+  { "q": "What is the Ethereum network and who created it?", "correct": "C",
+    "options": {
+      "A": "A Bitcoin fork created by Gavin Wood to speed up mining rewards.",
+      "B": "A permissioned ledger built by David Rutter for regulated banks.",
+      "C": "An open-source, programmable blockchain for smart contracts, created by Vitalik Buterin.",
+      "D": "A closed stablecoin network created by Satoshi Nakamoto in 2013." } },
+  { "q": "What problems did Vitalik Buterin see with the Bitcoin network for the future of the internet of value (Web3)?", "correct": "B",
+    "options": {
+      "A": "It used proof-of-stake, which was too centralized and energy-hungry.",
+      "B": "It was inefficient, lacked scalability, and had a limited scripting language.",
+      "C": "It allowed too many cryptoassets, making its scripting language overly complex.",
+      "D": "It relied on notaries and permissioned validation instead of open mining." } },
+  { "q": "What is ether (ETH) and what role does it play on the Ethereum network?", "correct": "D",
+    "options": {
+      "A": "A governance token used to vote on decisions related to the stablecoin DAI.",
+      "B": "A non-fungible token representing ownership of unique dapps on the network.",
+      "C": "A stablecoin pegged to the US dollar and backed by fiat reserves.",
+      "D": "Ethereum's native token, the crypto fuel used to buy 'gas' to run dapps." } },
+  { "q": "What is a smart contract? What is a decentralized application (dapp)? How are smart contracts and dapps related to LEGO?", "correct": "A",
+    "options": {
+      "A": "Code that executes without human intervention; a dapp is built from these LEGO pieces.",
+      "B": "A physical contract stored on paper; dapps are the LEGO blocks used to build it.",
+      "C": "A front-end interface; dapps are the underlying code, and DAOs are the LEGO bricks.",
+      "D": "A mining reward program; dapps are the LEGO instructions telling miners what to build." } },
+  { "q": "What is a token and what are the different categories used by dapps?", "correct": "B",
+    "options": {
+      "A": "A physical coin; categories are fiat, gold, cryptocurrency, and algorithmic.",
+      "B": "A digital asset on a blockchain, broadly fungible (ERC-20) or non-fungible (ERC-721).",
+      "C": "A mining reward, categorized as PoW tokens, PoS tokens, and gas tokens.",
+      "D": "A governance right only, split into payment, security, and bridge tokens." } },
+  { "q": "What is a decentralized autonomous organization (DAO) and what happened to the one created by Slock.It?", "correct": "D",
+    "options": {
+      "A": "A physical corporation; Slock.It's DAO was shut down by Swiss regulators.",
+      "B": "A stablecoin issuer; Slock.It's DAO lost its peg and collapsed to $0.10.",
+      "C": "A mining pool; Slock.It's DAO was delisted after a 51% attack on Ethereum.",
+      "D": "A virtual organization run by smart contracts; Slock.It's DAO was hacked and drained of ETH." } },
+  { "q": "What is the purpose of a stablecoin and what are the different types? What distinguishes Tether from DAI?", "correct": "A",
+    "options": {
+      "A": "A token pegged to another asset to reduce volatility; Tether is centralized, DAI decentralized.",
+      "B": "A token pegged to gold only; Tether is decentralized, DAI centralized.",
+      "C": "A non-fungible token for unique assets; both Tether and DAI are managed by MakerDAO.",
+      "D": "A governance token granting voting rights; Tether and DAI are both algorithmic." } },
+  { "q": "What is decentralized finance (DeFi) and what are the main activities across different blockchains?", "correct": "C",
+    "options": {
+      "A": "A single lending product controlled by banks, offered mainly on the Bitcoin blockchain.",
+      "B": "A permissioned ledger for regulated banks, running mostly on R3 Corda and Tron.",
+      "C": "A decentralized financial system on blockchains, with DEXes, lending, and liquidity staking as top activities.",
+      "D": "A centralized exchange network dominated by BSC, followed by Ethereum and Tron." } },
+  { "q": "What is total value locked and how it is measured?", "correct": "B",
+    "options": {
+      "A": "The total market cap of all cryptocurrencies, measured officially by the SEC.",
+      "B": "The dollar value of crypto locked in smart contracts, pools, or staked, tracked by DefiLlama.",
+      "C": "The number of ETH burned through slashing, reported quarterly by the Ethereum Foundation.",
+      "D": "The gas fees paid across the network, measured by CoinMarketCap in real time." } },
+  { "q": "Which DeFi activities do you find most interesting and why?", "correct": "D",
+    "options": {
+      "A": "Only proof-of-work mining and block validation, which secure the Ethereum network.",
+      "B": "Chiefly permissioned notary settlement and back-office clearing on R3 Corda.",
+      "C": "Primarily NFT breeding games like CryptoKitties and digital art auctions.",
+      "D": "DEXes, collateralized debt positions, liquidity staking, and derivatives as 'crypto LEGO'." } }
+]

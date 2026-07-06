@@ -1,0 +1,62 @@
+[
+  { "q": "What is cryptoeconomics and why use the term crypto?", "correct": "C",
+    "options": {
+      "A": "It is the study of how central banks price and regulate digital fiat currencies.",
+      "B": "It is the practice of mining coins efficiently to minimize electricity consumption.",
+      "C": "It studies how blockchain drives innovation in organizations, contracts, and incentives.",
+      "D": "It is the accounting discipline for valuing pre-mined tokens sold via ICOs." } },
+  { "q": "What is Bitcoin? How did its creator Satoshi Nakamoto address the double-spend problem?", "correct": "B",
+    "options": {
+      "A": "The first stablecoin, solving double-spend by backing each coin with US dollars.",
+      "B": "The first cryptocurrency, using a time-stamped ledger secured by cryptography and hashing.",
+      "C": "A permissioned bank ledger that verifies transactions through 35 trusted third parties.",
+      "D": "An altcoin using proof-of-stake validators to prevent coins being spent twice." } },
+  { "q": "What is blockchain? What are its main differences relative to traditional ledgers?", "correct": "A",
+    "options": {
+      "A": "A distributed ledger of one asset, with transactions batched in blocks chained by hashes.",
+      "B": "A private, permissioned database editable only by a central intermediary's approval.",
+      "C": "A centralized ledger of many assets, secured by passwords rather than cryptography.",
+      "D": "An append-only ledger showing both sides of every transaction, including prices paid." } },
+  { "q": "What is hashing and SHA-256? How are these two concepts related to proof-of-work and mining of Bitcoin?", "correct": "D",
+    "options": {
+      "A": "Hashing is a two-way cipher that can be decrypted to recover the original source data.",
+      "B": "SHA-256 stakes coins so validators are randomly chosen to attest to new blocks.",
+      "C": "Hashing compresses blocks to 1 MB so miners can process 24,000 transactions per second.",
+      "D": "Hashing is one-way; miners race to find a nonce yielding a hash with leading zeros." } },
+  { "q": "What are the transaction fees associated with Bitcoin and how are they determined and allocated among miners?", "correct": "B",
+    "options": {
+      "A": "The network sets fixed fees per byte, split equally among all mining pool participants.",
+      "B": "There are no official fees; users offer voluntary fees to be prioritized from the mempool.",
+      "C": "Fees are mandatory and set by cryptoexchanges like Binance based on trading volume.",
+      "D": "The Bitcoin Core developers determine fees, allocating them to the genesis block owner." } },
+  { "q": "What are altcoins and what were the first ones created? Were they mined or sold through an initial coin offering?", "correct": "C",
+    "options": {
+      "A": "Altcoins are hard forks of Bitcoin; the first were Bitcoin Cash and Bitcoin Gold.",
+      "B": "Altcoins are stablecoins backed by fiat; the first were Tether and USD Coin.",
+      "C": "Altcoins are Alternatives to Bitcoin modifying its code; first were Litecoin and Namecoin.",
+      "D": "Altcoins are governance tokens; the first were Ethereum and Cardano, sold via ICOs." } },
+  { "q": "What is a hard fork and how did one lead to the creation of Bitcoin Cash?", "correct": "A",
+    "options": {
+      "A": "A disagreement where a minority breaks away to create a new coin on a new blockchain.",
+      "B": "A routine split from many nodes confirming blocks simultaneously, resolved automatically.",
+      "C": "A merge of two blockchains into one, as when Ethereum transitioned to proof-of-stake.",
+      "D": "A halving of the block reward every 210,000 blocks that spawns a duplicate coin." } },
+  { "q": "What are cryptowallets? What are cryptoexchanges?", "correct": "D",
+    "options": {
+      "A": "Wallets physically store coins offline; exchanges are the P2P nodes that mine new blocks.",
+      "B": "Wallets are the public blockchain ledger; exchanges are regulated banks holding fiat reserves.",
+      "C": "Wallets convert fiat to crypto; exchanges are hardware devices like the Trezor cold storage.",
+      "D": "Wallets store a private key or seed to send and receive coins; exchanges are trading marketplaces." } },
+  { "q": "What are the risks of using Bitcoin as a means of payment?", "correct": "B",
+    "options": {
+      "A": "It is too fast and cheap, so merchants overuse it and cause network congestion.",
+      "B": "Verifying via mining is slow and costly, prices are volatile, and few merchants accept it.",
+      "C": "Transactions are fully reversible, exposing merchants to constant chargeback fraud.",
+      "D": "A central authority can freeze payments, undermining trust in the peer-to-peer network." } },
+  { "q": "What have researchers found explains price changes and the cross-section of returns in Bitcoin?", "correct": "C",
+    "options": {
+      "A": "Returns are driven by electricity and computing costs; three factors are hash rate, difficulty, and block reward.",
+      "B": "Returns track fiat interest rates; the three factors are inflation, GDP, and exchange fees.",
+      "C": "Returns are driven by adoption, attention, and momentum; three factors are market, coin size, and momentum.",
+      "D": "Returns follow gold prices; the three factors are mining pool size, node count, and volatility." } }
+]

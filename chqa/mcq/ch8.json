@@ -1,0 +1,62 @@
+[
+  { "q": "What is a robo-advisor and how do they create a personalized portfolio for a customer? What does it cost to use a robo-advisor?", "correct": "C",
+    "options": {
+      "A": "A human financial planner who charges 2%-3% of AUM for bespoke stock picks.",
+      "B": "An active fund manager who beats the market through security selection and timing.",
+      "C": "An automated online portal whose algorithm maps risk answers to a low-fee ETF portfolio.",
+      "D": "A brokerage app offering commission-free trading funded by payment for order flow." } },
+  { "q": "What is passive investing and how does it explain the growth of exchange traded funds (ETFs)?", "correct": "B",
+    "options": {
+      "A": "A timing strategy using technical analysis to beat indices, driving demand for leveraged ETFs.",
+      "B": "Tracking broad market indices and minimizing fees, which fueled cheap index-tracking ETFs.",
+      "C": "Selecting undervalued securities via mean-variance analysis, which mutual funds then packaged as ETFs.",
+      "D": "Rebalancing portfolios daily for tax-loss harvesting, a service only ETFs can provide." } },
+  { "q": "What is the business strategy of robo-advisors and what customers are they targeting?", "correct": "A",
+    "options": {
+      "A": "A disruptive-innovation strategy targeting underserved millennials and price-sensitive mass-affluent investors.",
+      "B": "A premium strategy targeting ultra-high-net-worth families needing dedicated family offices.",
+      "C": "A B2B-first strategy licensing software to incumbent banks from the outset.",
+      "D": "A high-frequency trading strategy targeting institutional investors seeking lower spreads." } },
+  { "q": "What has been the experience of incumbent asset managers as they respond to the threat of disruption from robo-advisors?", "correct": "D",
+    "options": {
+      "A": "They ignored the threat and ceded most robo assets to independent start-ups.",
+      "B": "They were slow first-movers whose legacy systems prevented any robo offering.",
+      "C": "They partnered exclusively with Wealthfront to white-label a shared platform.",
+      "D": "They were fast-followers who built or licensed robos and captured most assets." } },
+  { "q": "What are the main lessons from the David-vs.-Goliath battle between robo-advisors and incumbents?", "correct": "B",
+    "options": {
+      "A": "Superior technology is a durable moat, so start-ups win once they out-code incumbents.",
+      "B": "Acquiring customers is the biggest obstacle, technology isn't durable, and partnering can beat attacking.",
+      "C": "Low fees alone guarantee scale, so cutting advisory fees to zero ensures survival.",
+      "D": "First-mover advantage is decisive, so a seven-year head start ensured start-up dominance." } },
+  { "q": "What is the wealth management industry, how big is it, and who works in it?", "correct": "C",
+    "options": {
+      "A": "A $1.8 trillion industry consisting almost entirely of robo-advisors and their engineers.",
+      "B": "A $10 trillion ETF-issuing industry run mainly by BlackRock, Vanguard, and State Street.",
+      "C": "A $100+ trillion industry spanning planning, investing, and operations with diverse professionals.",
+      "D": "A $35 trillion sustainable-investing industry staffed largely by ESG research analysts." } },
+  { "q": "What is the difference between institutional investors and retail customers? What are high net worth customers?", "correct": "A",
+    "options": {
+      "A": "Institutional investors manage portfolios wholesale; retail are individuals; HNW hold $1 million or more.",
+      "B": "Institutional investors are individual DIY savers; retail are pension funds; HNW hold $30 million or more.",
+      "C": "Institutional investors are only paid on AUA; retail only on AUM; HNW means any registered advisor.",
+      "D": "Institutional investors are family offices; retail are beneficial owners; HNW hold $100,000 or more." } },
+  { "q": "What is meant by digital wealth management? What technologies are being used to transform this industry and how?", "correct": "D",
+    "options": {
+      "A": "Replacing all advisors with robots that eliminate human involvement in wealth management.",
+      "B": "A regtech-only approach that automates compliance while leaving investing entirely manual.",
+      "C": "Using blockchain solely to tokenize ETFs and cut the third-party management expense ratio.",
+      "D": "Leveraging cloud, big data, APIs, AI, and blockchain to automate tasks and improve experience." } },
+  { "q": "What are examples of fintechs attacking different parts of the wealth management value chain?", "correct": "B",
+    "options": {
+      "A": "Vanguard onboarding, Schwab custody, Fidelity reporting, and TD Ameritrade research.",
+      "B": "Nest Wealth digital onboarding, Aladdin Wealth portfolio management, Clim8 ESG, Robinhood zero-commission trading.",
+      "C": "Betterment tax-loss harvesting, Wealthfront family offices, SigFig custody, Acorns proxy voting.",
+      "D": "Markowitz mean-variance tools, Bogle index funds, SPDR ETFs, and Bridgewater risk parity." } },
+  { "q": "What is a technology-enabled eAdvisor, and why is a hybrid model so important for the future of the wealth management industry?", "correct": "C",
+    "options": {
+      "A": "A fully automated robo requiring no humans; hybrid matters because it eliminates advisory fees.",
+      "B": "An offshore back-office team; hybrid matters because it outsources compliance and KYC cheaply.",
+      "C": "A tech-enabled advisor managing a larger book; hybrid matters because humans are supported, not replaced.",
+      "D": "An AI chatbot replacing planners; hybrid matters because it removes behavioral biases entirely." } }
+]

@@ -12,6 +12,7 @@ const ALL_CHAPTERS = [
   { dir: 'ch7', title: 'Chapter 7 — Crowdfunding & P2P Lending' },
   { dir: 'ch8', title: 'Chapter 8 — Digital Wealth Management' },
   { dir: 'chblockchain', title: 'Blockchain Businesses — DeFi vs. TradFi' },
+  { dir: 'chqa', title: 'Q&A Review — Chapters 5–11' },
 ];
 
 // Optionally restrict to chapters named on the command line, e.g.

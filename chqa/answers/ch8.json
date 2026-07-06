@@ -1,0 +1,102 @@
+[
+  {
+    "q": "What is a robo-advisor and how do they create a personalized portfolio for a customer? What does it cost to use a robo-advisor?",
+    "lead": "A robo-advisor is an automated online investment portal that uses algorithms to map a customer's answers about goals, returns, and risk tolerance to a portfolio recommendation, charging low fees.",
+    "points": [
+      "You answer questions online about savings goals, return expectations, and risk tolerance.",
+      "Algorithm builds a balanced portfolio of low-cost ETFs, auto-rebalanced quarterly, monthly, or daily.",
+      "Advisory fees typically run 0.25% to 0.50% of AUM, first emerging in 2008.",
+      "Customer also pays the third-party ETF's MER, making an all-in cost around 0.62%-0.73%."
+    ]
+  },
+  {
+    "q": "What is passive investing and how does it explain the growth of exchange traded funds (ETFs)?",
+    "lead": "Passive (index) investing tracks broad market indices and minimizes fees rather than trying to beat markets through selection or timing, which fueled ETF growth as cheap index-tracking vehicles.",
+    "points": [
+      "Grounded in modern portfolio theory by Markowitz, Sharpe; Bogle created first index fund in 1975.",
+      "Only one-quarter of active funds beat passive rivals over the decade ending 2021.",
+      "Active funds fell from 81% of the market in 2010 to 60% in 2020.",
+      "ETFs charge much lower MER (0.03%-1.00%), no minimum, trade all day; passed $10 trillion, 8,500+ funds."
+    ]
+  },
+  {
+    "q": "What is the business strategy of robo-advisors and what customers are they targeting?",
+    "lead": "Robo-advisors followed a textbook disruptive innovation strategy, gaining a foothold by targeting two underserved segments with low fees, a great digital experience, and technology-enabled features.",
+    "points": [
+      "Underserved millennials/HENRYs: tech-savvy, low savings (~$10,000), distrustful of banks.",
+      "Price-sensitive mass-affluent: older DIY investors with $100,000-$1,000,000 unwilling to pay high fees.",
+      "Value proposition: delightful experience, transparent low fees, state-of-the-art tech, tax-loss harvesting.",
+      "Later moved up-market and added a human advisor option for higher fees."
+    ]
+  },
+  {
+    "q": "What has been the experience of incumbent asset managers as they respond to the threat of disruption from robo-advisors?",
+    "lead": "Incumbents were fast-followers who built in-house or licensed robo software and, despite starting later, captured most of the robo-advisory market's assets.",
+    "points": [
+      "Vanguard responded first in 2013, Schwab in 2014, then Bank of America, Fidelity, TD Ameritrade in 2016.",
+      "Followed Christensen's advice: respond with a new low-cost division without abandoning core customers.",
+      "Vanguard's robo reached $268 billion by 2022, 4.6x combined Wealthfront and Betterment.",
+      "Others licensed (SigFig to UBS), white-labeled, or acquired (BlackRock bought FutureAdvisor)."
+    ]
+  },
+  {
+    "q": "What are the main lessons from the David-vs.-Goliath battle between robo-advisors and incumbents?",
+    "lead": "The main lessons are that acquiring customers is the biggest obstacle, technology is not a sustainable competitive advantage, and it may be smarter to partner with incumbents than attack them.",
+    "points": [
+      "Customer acquisition costs upwards of $500 each, giving a 14.4-year payback on a $10,000 account.",
+      "Incumbents have massive customer bases, brands, distribution, and cross-selling to subsidize robos.",
+      "Technology is widely available and copyable; it is not the ultimate value proposition.",
+      "Pivoting to B2B works: Wealthsimple for Advisors and Nest Wealth partnered with incumbents."
+    ]
+  },
+  {
+    "q": "What is the wealth management industry, how big is it, and who works in it?",
+    "lead": "The wealth management industry manages over $100 trillion of investments across financial planning, investing, and operations, employing a wide range of investment professionals.",
+    "points": [
+      "Robo-advice at ~$1.8 trillion is less than 2% of the $100 trillion industry.",
+      "Job titles include financial advisor, planner, portfolio manager, trader, private banker, risk manager.",
+      "Has a wholesale (institutional) side and a retail (individual investor) side.",
+      "Advisors must be registered (Series 7, Canadian Securities Course) and may hold CFA or CFP designations."
+    ]
+  },
+  {
+    "q": "What is the difference between institutional investors and retail customers? What are high net worth customers?",
+    "lead": "Institutional investors are financial intermediaries paid to manage portfolios on the wholesale side, while retail customers are individual investors; high net worth customers hold $1 million or more in investments.",
+    "points": [
+      "Institutional investors include asset managers, pension funds, mutual funds, insurers, and banks.",
+      "Paid on AUM (they decide) or AUA (client decides), with fees up to 3.50%.",
+      "Retail investors are individuals advised by financial advisors, RIAs, planners, or counselors.",
+      "HNW is $1 million+, UHNW is $30 million+; UHNW often set up family offices."
+    ]
+  },
+  {
+    "q": "What is meant by digital wealth management? What technologies are being used to transform this industry and how?",
+    "lead": "Digital wealth management leverages technology to automate and improve the customer experience while generating fees from asset acquisition, portfolio management, and back-office automation.",
+    "points": [
+      "Uses cloud computing, big data, APIs, AI, blockchain, and cryptography.",
+      "Automates repetitive tasks to lower costs, raise productivity, and add investor value.",
+      "Addresses use-cases like CRM, digital identity, cybersecurity, and regtech compliance.",
+      "Brings HNW-level personalized services (tax-loss harvesting, smart beta) to retail at low cost."
+    ]
+  },
+  {
+    "q": "What are examples of fintechs attacking different parts of the wealth management value chain?",
+    "lead": "Fintechs target specific value-chain pain points such as digital onboarding, portfolio management, sustainable investing, and commission-free trading.",
+    "points": [
+      "Nest Wealth pivoted to B2B, offering paperless onboarding to cut advisors' 15 hours/week of admin.",
+      "BlackRock's Aladdin Wealth licensed to 16 firms, combining front-, middle-, back-office functions.",
+      "Clim8 Invest lets UK retail investors put money into ESG/sustainable funds from 25 pounds.",
+      "Robinhood launched zero-commission trading in 2014 to democratize retail investing."
+    ]
+  },
+  {
+    "q": "What is a technology-enabled eAdvisor, and why is a hybrid model so important for the future of the wealth management industry?",
+    "lead": "An eAdvisor is a technology-enabled financial advisor who manages a larger client book using digital tools, and the hybrid model matters because human advisors will be supported, not replaced, by algorithms.",
+    "points": [
+      "Fidelity found eAdvisors have 42% higher median AUM and 35% more AUM per client.",
+      "eAdvisors use video conferencing, e-signature, data aggregation, and client segmentation.",
+      "Grace and Sarta and EY (Advisor 2.0) argue technology automates boring tasks and improves experience.",
+      "Hybrid is vital because many investors, especially retirees and boomers, still want a human."
+    ]
+  }
+]

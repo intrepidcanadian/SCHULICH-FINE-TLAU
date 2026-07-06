@@ -1,0 +1,102 @@
+[
+  {
+    "q": "What are some of the pain points facing customers in the payments, money transfer, and foreign exchange businesses?",
+    "lead": "Customers face payments that are slow, non-transparent, and costly, especially across borders, alongside poor customer service and many hidden fees from existing intermediaries.",
+    "points": [
+      "A bank wire costs around $35 and takes several business days, even domestically.",
+      "Overseas remittances can cost around 10% and take weeks to arrive.",
+      "FX exchanges routinely charge 3% or more, often hidden as 'zero commission'.",
+      "Incumbents provide poor service and charge many fees with little transparency."
+    ]
+  },
+  {
+    "q": "How important are payments for banks and what are the different sources of revenue?",
+    "lead": "Payments are highly important, generating close to 40% of bank revenues from fees and interest charges, with global revenues of US$1.9 trillion in 2020.",
+    "points": [
+      "North America payments earned $485 billion in 2020, 44% from credit card interest and fees.",
+      "28% domestic payment fees, 20% account/overdraft interest, 9% cross-border fees.",
+      "JPMorgan: 47 million Chase customers made 69 fee-generating transactions monthly.",
+      "65% of clients would leave a firm lacking integrated digital channels."
+    ]
+  },
+  {
+    "q": "What are the payment rails and what is the difference between the large value transfer system and the system for small payments?",
+    "lead": "Payment rails are the physical network of cables and computers routing electronic payments; the LVTS handles large business payments fast, while small-payment systems handle high-volume consumer payments slowly.",
+    "points": [
+      "LVTS transfers large sums between banks in one day or intraday, enabling real-time gross settlement.",
+      "US LVTS: Fedwire and CHIPS; Canada: Lynx; Europe: TARGET2.",
+      "Small payments use ACH (US), ACSS (Canada), EUCHA (Europe) for checks and cards.",
+      "Small-payment 'local roads' are slower, taking days to complete."
+    ]
+  },
+  {
+    "q": "Who are the players in the payments ecosystem and what roles do they play?",
+    "lead": "Players include the customer, issuing bank, credit card network, merchant bank (acquirer), payment gateway, and payment processor, plus banks and money service businesses.",
+    "points": [
+      "Issuing bank approves the card, lends funds, and bills the customer.",
+      "Card networks (VISA, MasterCard, Amex) set rules and interchange fees.",
+      "Merchant bank/acquirer provides the POS machine and receives merchant funds.",
+      "Payment gateway securely transmits data; processor routes messages between gateway and banks."
+    ]
+  },
+  {
+    "q": "What are the sources of revenue for payment and money transfer companies? Which revenues are fee-based and which are risk-based?",
+    "lead": "Payment players earn fee-based revenue from interchange, assessment, processing, and conversion fees, and risk-based income from taking FX, liquidity, and credit risk exposures.",
+    "points": [
+      "Fee-based: interchange (1.75%), assessment/swipe fee (0.11%), processing fee, cross-border conversion up to 3%.",
+      "Risk-based: FX risk earns the bid-ask spread on currency inventories.",
+      "Risk-based: liquidity risk from depositing collateral; credit risk from potential customer default.",
+      "Banks also charge indirect fees: account, maintenance, NSF, and trade finance fees."
+    ]
+  },
+  {
+    "q": "What has been the strategy for new entrants into payments and how did they benefit from technological and regulatory changes?",
+    "lead": "New entrants started with a single use-case, built a foothold with core customers, then expanded the product offering to capture more of the value chain and reach mainstream customers.",
+    "points": [
+      "Single use-cases: mobile money, fair FX rates, or quick, inexpensive remittances.",
+      "Benefited from internet, smartphones, 3G/4G/5G networks, and cloud computing.",
+      "Benefited from real-time gross settlement, NFC, tap-and-go, QR codes, and blockchain.",
+      "Regulatory changes promoting open banking, open APIs, and opening the payment rails."
+    ]
+  },
+  {
+    "q": "What are examples of pain points in payments and the fintechs that solved them?",
+    "lead": "Fintechs solved pain points in e-commerce trust, money transfers, foreign exchange, remittances, and cashless payment, including Alipay, M-PESA, Wise, WorldRemit, and Octopus.",
+    "points": [
+      "Alipay created trust in e-commerce via escrow accounts releasing funds only on delivery.",
+      "M-PESA democratized money transfers for unbanked Kenyans using mobile phones.",
+      "Wise lowered FX costs with mid-market rates and transparent flat fees.",
+      "WorldRemit cut remittance costs to a $3.99 fee and 1% conversion rate."
+    ]
+  },
+  {
+    "q": "What are the different segments of the insurance market and how can we assess their relative size?",
+    "lead": "Insurance is a US$5.7 trillion (2020) industry measured by gross written premiums, split into life (42%), property and casualty (31%), and health (27%) insurance.",
+    "points": [
+      "Size is measured by gross written premiums, the dollar value of premiums paid.",
+      "Life insurance pays a lump sum on disability or premature death.",
+      "P&amp;C covers property damage plus casualty risks like auto, theft, and liability.",
+      "Two B2B profit pools: distribution/policy management and reinsurance."
+    ]
+  },
+  {
+    "q": "What are insurtechs and what has been their experience disrupting the insurance industry?",
+    "lead": "Insurtechs are fintechs exploiting mobile apps, cloud, biometrics, sensors, data science, and AI to disrupt insurance; their experience has been rapid growth mixed with many failures.",
+    "points": [
+      "Insurtechs raised close to $50 billion between 2018 and 2022, $17.8 billion in 2021.",
+      "CB Insights tracked 44 insurtech unicorns globally in 2022.",
+      "One-quarter of 760 sampled insurtechs shut down within 2019, often from lack of market appetite.",
+      "IPO performance was mixed: Lemonade +55% and Duck Creek +13%, but GoHealth -48% and Root -88%."
+    ]
+  },
+  {
+    "q": "What are some examples of pain points solved by different insurtechs in customer-facing and back-office businesses?",
+    "lead": "Customer-facing insurtechs personalize products and pricing while back-office insurtechs automate claims and administration to make insurance cheaper, faster, and more convenient.",
+    "points": [
+      "Root customizes auto insurance using smartphone sensors to price driving behavior.",
+      "Lemonade uses AI bots Maya and Jim to sell policies and pay claims in seconds.",
+      "Cyence modeled cyber risk, acquired by Guidewire for $275 million in 2017.",
+      "Snapsheet processes auto claims by photo, estimating repairs in 2.7 hours on average."
+    ]
+  }
+]
