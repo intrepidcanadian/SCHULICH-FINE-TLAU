@@ -1,0 +1,50 @@
+<!-- ============================================================
+     SLIDE 06 · Why Interac feels instant: messaging vs settlement (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="06 Why Interac Is Instant">
+  <div class="chrome">
+    <div>&sect;9.1 &middot; Inside Interac e-Transfer</div>
+    <div>06 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">Why Autodeposit lands in seconds &mdash; even though settlement is slow</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Real-time message, deferred settlement.</h2>
+    <p class="lead" style="margin-top:.5vh; max-width:72vw; opacity:.82; font-size:1.02vw">
+      The trick: Interac doesn&rsquo;t move the money in real time &mdash; it moves an <strong>authenticated message</strong> in real time, and your bank credits you on its strength. The actual interbank money settles later, batched and netted.
+    </p>
+
+    <div class="pipeline-section" style="flex:1; display:flex; flex-direction:column; justify-content:center">
+      <div class="pipeline-label">How one e-Transfer actually moves</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step">
+          <div class="step-nb">1 &middot; send</div>
+          <div class="step-title">Funds secured up front</div>
+          <div class="step-desc">Your bank debits and holds the money the instant you hit send &mdash; the &ldquo;good-funds model.&rdquo; The cash is locked before anything else happens.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">2 &middot; route</div>
+          <div class="step-title">An authenticated message</div>
+          <div class="step-desc">Interac, acting as the clearing facility, routes a secure message bank-to-bank through its central hub &mdash; finding the recipient by their email or phone alias.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">3 &middot; credit</div>
+          <div class="step-title">The recipient&rsquo;s bank fronts it</div>
+          <div class="step-desc">On the trusted good-funds message, that bank credits the account in seconds, advancing the cash to its customer. Autodeposit drops the old security-question claim step, so it&rsquo;s automatic.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">4 &middot; settle</div>
+          <div class="step-title">Real money moves later</div>
+          <div class="step-desc">Interbank settlement happens afterward &mdash; deferred and netted through Payments Canada&rsquo;s infrastructure, off the user&rsquo;s critical path.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.4vh; padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.55">
+      <strong>The speed is in the messaging.</strong> What lands &ldquo;instantly&rdquo; is the recipient&rsquo;s bank <em>advancing</em> funds against the sender&rsquo;s already-secured balance, trusting Interac&rsquo;s good-funds guarantee &mdash; so the bank carries brief pre-settlement risk, which is partly why limits are low. True real-time <em>settlement</em> is what Canada&rsquo;s <strong>Real-Time Rail</strong> will add (Payments Canada&rsquo;s system; Interac as exchange provider, Mastercard&rsquo;s Vocalink for settlement; phased launch targeted ~Q4 2026).
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Inside Interac e-Transfer &middot; messaging vs. settlement</div>
+    <div>Good-funds model &middot; instant credit &middot; deferred net settlement</div>
+  </div>
+</section>

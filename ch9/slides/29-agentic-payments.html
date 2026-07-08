@@ -1,0 +1,39 @@
+<!-- ============================================================
+     SLIDE 29 · Agentic payments: x402 & the machine-money stack (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="29 Agentic Payments">
+  <div class="chrome">
+    <div>Update &middot; Agentic payments (deep dive on slide 28)</div>
+    <div>29 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">When the customer is an AI agent &mdash; a new rail for machine-to-machine money</div>
+    <h2 class="h-xl" style="font-size:3.4vw">Agentic payments: x402 and the machine-money stack.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:70vw; opacity:.82; font-size:1vw">
+      Checkout was built for a human holding a card. Autonomous agents instead need to <em>discover, authorize, and settle</em> payments themselves &mdash; often sub-cent micropayments for APIs, data, and compute, with no one at the keyboard. A new payment rail is forming to make that possible.
+    </p>
+
+    <div class="callout" style="margin-top:1.2vh; padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+      <strong>x402 &middot; the open standard.</strong> Coinbase revived the dormant HTTP <strong>402 &ldquo;Payment Required&rdquo;</strong> status code (May 2025): an agent hits a paywalled endpoint &rarr; the server returns a <strong>402</strong> with a price, token, and chain &rarr; the agent pays in <strong>USDC inside an HTTP header</strong> &rarr; the request is retried and settled on-chain &mdash; <strong>no accounts, API keys, or human checkout</strong>. Now a Linux Foundation standard (Apr 2026) whose members include Visa, Mastercard, Stripe, Google, AWS, Circle, Cloudflare, and Shopify.
+    </div>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">What the companies are building</div>
+      <div class="pipeline" data-cols="5">
+        <div class="step"><div class="step-nb">checkout</div><div class="step-title">Stripe</div><div class="step-desc">Agentic Commerce Protocol (with OpenAI) powers ChatGPT Instant Checkout; a Shared Payment Token and single-use virtual cards (Issuing) let agents pay within set limits.</div></div>
+        <div class="step"><div class="step-nb">settlement L1</div><div class="step-title">Tempo</div><div class="step-desc">Stripe + Paradigm payments blockchain &mdash; ~100k TPS, ~600ms finality, gas paid in stablecoins; mainnet Mar 2026; its Machine Payments Protocol; backers incl. Visa, Deutsche Bank, OpenAI.</div></div>
+        <div class="step"><div class="step-nb">crypto rail</div><div class="step-title">Coinbase</div><div class="step-desc">Authored x402; AgentKit gives every agent an on-chain wallet; &ldquo;Bazaar&rdquo; lets agents discover and pay x402 services in ~200ms.</div></div>
+        <div class="step"><div class="step-nb">the dollar</div><div class="step-title">Circle</div><div class="step-desc">USDC is the default settlement asset; its Agent Stack adds policy-bound agent wallets and nanopayments as small as $0.000001.</div></div>
+        <div class="step"><div class="step-nb">trust layer</div><div class="step-title">Visa &amp; Mastercard</div><div class="step-desc">Intelligent Commerce / Trusted Agent Protocol and Agent Pay / Agentic Tokens add card-network identity and fraud controls to agent transactions.</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.2vh; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.02em; opacity:.6; line-height:1.5">
+      Four standards converging: <strong>ACP</strong> (commerce checkout) &middot; Google <strong>AP2</strong> (rail-neutral authorization) &middot; <strong>x402</strong> (crypto micropayments) &middot; Stripe/Tempo <strong>MPP</strong> &mdash; with the card networks bridging into all of them. Fast-moving; specs &amp; figures as of mid-2026.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 29 &middot; Agentic payments &middot; x402 &middot; Stripe &middot; Tempo &middot; Circle</div>
+    <div>Agents discover &middot; authorize &middot; settle &mdash; machine to machine</div>
+  </div>
+</section>

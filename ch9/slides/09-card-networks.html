@@ -1,0 +1,80 @@
+<!-- ============================================================
+     SLIDE 09 · Card networks: the four-party model (dark, SVG diagram)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="09 Card Networks">
+  <div class="chrome">
+    <div>&sect;9.2 &middot; Card networks</div>
+    <div>09 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">A private network sitting on top of the banking rails</div>
+    <h2 class="h-xl" style="font-size:3.2vw">Card networks: the four-party switch.</h2>
+
+    <svg viewBox="0 0 1280 400" style="width:100%; height:auto; max-height:56vh; margin-top:1.2vh; display:block" xmlns="http://www.w3.org/2000/svg" font-family="'Source Serif 4', Georgia, serif">
+      <defs>
+        <marker id="ahc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto-start-reverse" markerUnits="strokeWidth">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#aeb9c6"/>
+        </marker>
+      </defs>
+
+      <!-- top row: cardholder & merchant -->
+      <rect x="110" y="18" width="300" height="84" rx="12" fill="#f1f3f5" stroke="#9aa7b6"/>
+      <text x="260" y="52" text-anchor="middle" font-size="20" fill="#0a1f3d" font-weight="700">Cardholder</text>
+      <text x="260" y="77" text-anchor="middle" font-size="13" fill="#5a6b80">you &middot; holds the card</text>
+
+      <rect x="870" y="18" width="300" height="84" rx="12" fill="#f1f3f5" stroke="#9aa7b6"/>
+      <text x="1020" y="52" text-anchor="middle" font-size="20" fill="#0a1f3d" font-weight="700">Merchant</text>
+      <text x="1020" y="77" text-anchor="middle" font-size="13" fill="#5a6b80">sells the goods</text>
+
+      <!-- cardholder buys from merchant -->
+      <line x1="410" y1="60" x2="870" y2="60" stroke="#aeb9c6" stroke-width="2" marker-end="url(#ahc)"/>
+      <text x="640" y="46" text-anchor="middle" font-size="13.5" fill="#c4ccd3">buys goods &amp; services</text>
+
+      <!-- bottom row: issuing & acquiring banks -->
+      <rect x="110" y="214" width="300" height="98" rx="12" fill="#f1f3f5" stroke="#9aa7b6"/>
+      <text x="260" y="246" text-anchor="middle" font-size="18" fill="#0a1f3d" font-weight="700">Issuing bank</text>
+      <text x="260" y="269" text-anchor="middle" font-size="12.5" fill="#5a6b80">issues the card, lends,</text>
+      <text x="260" y="287" text-anchor="middle" font-size="12.5" fill="#5a6b80">bills you</text>
+
+      <rect x="870" y="214" width="300" height="98" rx="12" fill="#f1f3f5" stroke="#9aa7b6"/>
+      <text x="1020" y="246" text-anchor="middle" font-size="18" fill="#0a1f3d" font-weight="700">Acquiring (merchant) bank</text>
+      <text x="1020" y="269" text-anchor="middle" font-size="12.5" fill="#5a6b80">provides the POS / gateway,</text>
+      <text x="1020" y="287" text-anchor="middle" font-size="12.5" fill="#5a6b80">pays the merchant</text>
+
+      <!-- verticals -->
+      <line x1="260" y1="102" x2="260" y2="214" stroke="#aeb9c6" stroke-width="2" marker-end="url(#ahc)"/>
+      <text x="276" y="162" font-size="12.5" fill="#c4ccd3">card + credit</text>
+      <line x1="1020" y1="102" x2="1020" y2="214" stroke="#aeb9c6" stroke-width="2" marker-end="url(#ahc)"/>
+      <text x="1004" y="162" text-anchor="end" font-size="12.5" fill="#c4ccd3">banks the sale</text>
+
+      <!-- card network (center, highlighted) -->
+      <rect x="488" y="196" width="304" height="120" rx="14" fill="#ffffff" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="640" y="236" text-anchor="middle" font-size="20" fill="#0a1f3d" font-weight="700">Card network</text>
+      <text x="640" y="261" text-anchor="middle" font-size="14" fill="#33475f">VISA &middot; Mastercard &middot; Amex</text>
+      <text x="640" y="289" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5a6b80">switch + rulebook &middot; sets interchange</text>
+
+      <!-- bank <-> network authorize -->
+      <line x1="410" y1="252" x2="488" y2="252" stroke="#aeb9c6" stroke-width="2" marker-start="url(#ahc)" marker-end="url(#ahc)"/>
+      <text x="449" y="240" text-anchor="middle" font-size="12" fill="#c4ccd3">authorize</text>
+      <line x1="792" y1="252" x2="870" y2="252" stroke="#aeb9c6" stroke-width="2" marker-start="url(#ahc)" marker-end="url(#ahc)"/>
+      <text x="831" y="240" text-anchor="middle" font-size="12" fill="#c4ccd3">authorize</text>
+
+      <!-- interchange arc: acquirer -> issuer -->
+      <path d="M930,312 C 770,378 510,378 350,312" fill="none" stroke="#7f8ea0" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#ahc)"/>
+      <text x="640" y="372" text-anchor="middle" font-size="12.5" font-style="italic" fill="#aeb9c6">interchange fee flows to the issuer (the network skims an assessment)</text>
+    </svg>
+
+    <div class="split" style="margin-top:auto; align-items:stretch; gap:2vw; padding-top:1.2vh">
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(11px,.9vw); line-height:1.5">
+        <strong>A switch, not a bank.</strong> The network routes the authorization and sets the rules &mdash; but it holds no deposits and keeps no ledger. The money settles between the issuing and acquiring banks over the banking rails (slide 8).
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(11px,.9vw); line-height:1.5">
+        <strong>Open vs. closed loop.</strong> Visa &amp; Mastercard are <strong>open four-party</strong> networks (separate issuers and acquirers). Amex &amp; Discover run <strong>closed three-party</strong> loops &mdash; the network is also the issuer and the acquirer.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; Card networks &middot; the four-party model</div>
+    <div>Issuer &middot; network &middot; acquirer &middot; interchange &middot; assessment</div>
+  </div>
+</section>

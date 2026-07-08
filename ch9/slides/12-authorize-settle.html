@@ -1,0 +1,48 @@
+<!-- ============================================================
+     SLIDE 12 · Inside a card transaction: authorize, then settle (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="12 Authorize & Settle">
+  <div class="chrome">
+    <div>&sect;9.2 &middot; Inside a card transaction</div>
+    <div>12 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh; display:flex; flex-direction:column">
+    <div class="kicker">The same players, now in motion &middot; Figure 9.2 continued</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Authorize in seconds, settle in days.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:72vw; font-size:1.08vw">
+      Every card purchase runs in two phases. <strong>Authorization</strong> just asks whether the money is there &mdash; a one-to-two-second round trip across the players. <strong>Settlement</strong> actually moves it, in end-of-day batches, over the next day or two.
+    </p>
+
+    <div class="split" style="margin-top:2.8vh; flex:1; align-items:stretch; gap:3.4vw">
+      <!-- Authorization track -->
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:1.4vh; border-bottom:1px solid rgba(0,0,0,.16); padding-bottom:.7vh">Authorization &middot; 1&ndash;2 seconds &middot; &ldquo;are the funds there?&rdquo;</div>
+        <div style="display:grid; gap:1.55vh; align-content:start">
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">1</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">You tap a card at a POS machine or enter details online &mdash; the data hits the network.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">2</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">Details go via API to the <strong>payment gateway</strong>, which encrypts them and passes them to the processor.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">3</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The <strong>payment processor</strong> routes the request to your <strong>issuing bank</strong> &mdash; &ldquo;enough credit?&rdquo; (Chase Merchant Services, First Data, FIS, Moneris, WorldPay).</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">4</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The issuing bank answers <strong>yes</strong> or <strong>no</strong> &mdash; back to the processor, then the gateway.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">5</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The gateway decrypts and tells the merchant: approved or denied &mdash; you see it, or get a receipt.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">6</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">If approved, the processor tells the <strong>merchant bank</strong> to pay the merchant. The merchant is paid; you&rsquo;ve borrowed from your issuing bank.</span></div>
+        </div>
+      </div>
+      <!-- Settlement track -->
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:1.4vh; border-bottom:1px solid rgba(0,0,0,.16); padding-bottom:.7vh">Settlement &middot; up to 2 business days &middot; moving the money</div>
+        <div style="display:grid; gap:1.55vh; align-content:start">
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">1</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The issuing bank sends the transaction to be processed &mdash; typically <strong>batched</strong> at day&rsquo;s end (hence two dates: transaction and posting).</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">2</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">Funds transfer from the <strong>issuing bank</strong> to the <strong>merchant bank</strong> within one to two days.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">3</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The merchant bank deposits the money to the merchant, <strong>minus fees</strong> &mdash; a processing cost plus the interchange fee.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">4</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The issuing bank posts the charge to your account and bills you monthly &mdash; it has lent you the funds and carries <strong>credit exposure</strong> to you.</span></div>
+        </div>
+        <div class="callout" style="margin-top:auto; padding:1.3vh 1.5vw; font-size:max(12px,1vw); line-height:1.55">
+          <strong>Why your bill shows two dates.</strong> Authorization confirms the money <em>can</em> move; settlement actually moves it. Because transactions clear in end-of-day batches, the posting date trails the transaction date &mdash; and in between, the issuing bank is carrying the credit.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 12 &middot; Authorization &amp; settlement of a card payment</div>
+    <div>Gateway &middot; processor &middot; issuing bank &middot; merchant bank</div>
+  </div>
+</section>

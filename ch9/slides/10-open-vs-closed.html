@@ -1,0 +1,66 @@
+<!-- ============================================================
+     SLIDE 10 · Open vs closed loop card networks (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="10 Open vs Closed Loop">
+  <div class="chrome">
+    <div>&sect;9.2 &middot; Open vs. closed loop</div>
+    <div>10 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">The real question: is the network <em>also</em> the bank?</div>
+    <h2 class="h-xl" style="font-size:3.2vw">Open four-party vs. closed three-party.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2vw; margin-top:1.6vh; flex:1; align-items:stretch">
+      <!-- OPEN -->
+      <div style="border:1px solid rgba(10,31,61,.18); border-radius:14px; padding:1.6vh 1.4vw; display:flex; flex-direction:column; align-items:center; justify-content:space-between; background:rgba(10,31,61,.02)">
+        <div class="pipeline-label" style="align-self:flex-start">Open &middot; four-party &mdash; VISA / Mastercard</div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:.8vh; width:100%">
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)">You &middot; cardholder</div>
+          <div style="font-size:1.1vw; opacity:.4; line-height:1">&darr;</div>
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)"><strong>Issuing bank</strong> &middot; your bank</div>
+          <div style="display:inline-block; background:var(--ink); color:var(--paper); border-radius:999px; padding:.5vh 1vw; font-size:max(10px,.82vw); letter-spacing:.02em">&updownarrow; routed via the network (Visa / MC) &updownarrow;</div>
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)"><strong>Acquiring bank</strong> &middot; merchant&rsquo;s bank &mdash; <strong>a different company</strong></div>
+          <div style="font-size:1.1vw; opacity:.4; line-height:1">&darr;</div>
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)">Merchant</div>
+        </div>
+        <div style="font-size:max(10px,.86vw); opacity:.72; text-align:center; line-height:1.45">Issuer &ne; acquirer &rarr; the network sets an <strong>interchange fee</strong> between the two banks.</div>
+      </div>
+
+      <!-- CLOSED -->
+      <div style="border:1px solid rgba(10,31,61,.18); border-radius:14px; padding:1.6vh 1.4vw; display:flex; flex-direction:column; align-items:center; justify-content:space-between; background:rgba(10,31,61,.02)">
+        <div class="pipeline-label" style="align-self:flex-start">Closed &middot; three-party &mdash; Amex / Discover</div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:1vh; width:100%">
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)">You &middot; cardholder</div>
+          <div style="font-size:1.1vw; opacity:.4; line-height:1">&darr;</div>
+          <div style="width:90%; text-align:center; border:2px solid var(--ink); border-radius:11px; padding:1.8vh .9vw; background:var(--ink); color:var(--paper)">
+            <div style="font-size:max(13px,1.15vw); font-weight:700">American Express</div>
+            <div style="font-size:max(10px,.86vw); opacity:.85; margin-top:.4vh">issuer + acquirer + network &mdash; <strong>one company</strong></div>
+          </div>
+          <div style="font-size:1.1vw; opacity:.4; line-height:1">&darr;</div>
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)">Merchant</div>
+        </div>
+        <div style="font-size:max(10px,.86vw); opacity:.72; text-align:center; line-height:1.45">One company on both sides &rarr; <strong>no interchange</strong>; it just charges a single, higher merchant fee.</div>
+      </div>
+    </div>
+
+    <table style="width:100%; border-collapse:collapse; font-size:max(11px,.9vw); line-height:1.4; margin-top:1.6vh">
+      <thead>
+        <tr style="border-bottom:1.5px solid rgba(0,0,0,.28); text-align:left">
+          <th style="padding:.7vh .6vw; width:22%; font-weight:700"></th>
+          <th style="padding:.7vh .6vw; width:39%; font-weight:700">Open &mdash; Visa / Mastercard</th>
+          <th style="padding:.7vh .6vw; width:39%; font-weight:700">Closed &mdash; Amex / Discover</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.1)"><td style="padding:.6vh .6vw; font-weight:700">Parties</td><td style="padding:.6vh .6vw">Four &mdash; you, issuer, acquirer, merchant (network in the middle)</td><td style="padding:.6vh .6vw">Three &mdash; you, the network-bank, merchant</td></tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.1)"><td style="padding:.6vh .6vw; font-weight:700">Interchange</td><td style="padding:.6vh .6vw"><strong>Yes</strong> &mdash; acquirer pays the issuer (set by the network)</td><td style="padding:.6vh .6vw"><strong>None</strong> &mdash; nothing sits &ldquo;between banks&rdquo;</td></tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.1)"><td style="padding:.6vh .6vw; font-weight:700">Merchant cost</td><td style="padding:.6vh .6vw">Lower (competitive / often regulated)</td><td style="padding:.6vh .6vw">Higher (one all-in fee)</td></tr>
+        <tr><td style="padding:.6vh .6vw; font-weight:700">Reach &amp; data</td><td style="padding:.6vh .6vw">Near-universal acceptance; rewards vary by bank</td><td style="padding:.6vh .6vw">Narrower; sees both sides &rarr; richer data &amp; rewards</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="foot">
+    <div>Page 10 &middot; Open vs. closed loop &middot; four-party vs. three-party</div>
+    <div>Issuer &middot; acquirer &middot; interchange &middot; closed-loop = network is the bank</div>
+  </div>
+</section>

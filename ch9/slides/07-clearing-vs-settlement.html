@@ -1,0 +1,48 @@
+<!-- ============================================================
+     SLIDE 07 · Clearing vs settlement: SWIFT only carries the message (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="07 Clearing vs Settlement">
+  <div class="chrome">
+    <div>&sect;9.1 &middot; Clearing vs. settlement</div>
+    <div>07 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">Three layers people collapse into one &mdash; and where SWIFT really sits</div>
+    <h2 class="h-xl" style="font-size:3.4vw">SWIFT moves the message; settlement moves the money.</h2>
+    <p class="lead" style="margin-top:.5vh; max-width:74vw; opacity:.82; font-size:1.02vw">
+      A payment is really three layers: the <strong>message</strong> (the instruction), <strong>clearing</strong> (netting out who owes whom), and <strong>settlement</strong> (moving the value, finally, in central-bank money). SWIFT is only the first &mdash; which is why &ldquo;I sent it by SWIFT&rdquo; is a myth.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5vw; margin-top:2.2vh; flex:1; align-items:stretch">
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:.7vh">Layer 1 &middot; Messaging &mdash; SWIFT</div>
+        <div class="callout" style="flex:1; display:flex; flex-direction:column; padding:1.4vh 1.4vw; font-size:max(11px,.95vw); line-height:1.58">
+          <div>Carries the <strong>instruction</strong>, not the money: &ldquo;Bank A, pay Bank B $1M&rdquo; (an MT103 / ISO 20022 message). ~11,000 institutions, 200+ countries. It holds <strong>no accounts, moves no value, keeps no ledger</strong> &mdash; the <em>email between banks</em>.</div>
+          <div style="margin-top:auto; padding-top:1vh; border-top:1px solid rgba(255,255,255,.16); font-family:var(--mono); font-size:max(9px,.74vw); letter-spacing:.02em; opacity:.72">messages only &middot; no money &middot; no ledger</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:.7vh">Layer 2 &middot; Clearing &mdash; ACH / ACSS</div>
+        <div class="callout" style="flex:1; display:flex; flex-direction:column; padding:1.4vh 1.4vw; font-size:max(11px,.95vw); line-height:1.58">
+          <div>Batches retail payments and <strong>nets</strong> them &mdash; working out the single amount each bank owes the others. Fast and cheap, but the figures are <strong>provisional</strong>: only the net settles, later. A clearing layer &mdash; <strong>not a ledger</strong>.</div>
+          <div style="margin-top:auto; padding-top:1vh; border-top:1px solid rgba(255,255,255,.16); font-family:var(--mono); font-size:max(9px,.74vw); letter-spacing:.02em; opacity:.72">batch &middot; net &middot; provisional</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:.7vh">Layer 3 &middot; Settlement &mdash; Lynx / Fedwire</div>
+        <div class="callout" style="flex:1; display:flex; flex-direction:column; padding:1.4vh 1.4vw; font-size:max(11px,.95vw); line-height:1.58">
+          <div>The value actually moves &mdash; <strong>in central-bank money, with finality</strong> &mdash; across banks&rsquo; accounts at the central bank, <strong>the real interbank ledger</strong>. RTGS does it per payment in real time; ACH&rsquo;s nets land here too, just deferred.</div>
+          <div style="margin-top:auto; padding-top:1vh; border-top:1px solid rgba(255,255,255,.16); font-family:var(--mono); font-size:max(9px,.74vw); letter-spacing:.02em; opacity:.72">gross &middot; real-time &middot; final &middot; central-bank money</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.6vh; padding:1.2vh 1.4vw; font-size:max(12px,.94vw); line-height:1.55">
+      <strong>Why this is the heart of cross-border pain.</strong> There is <strong>no single global ledger</strong>. An international wire is a SWIFT message + a chain of <strong>correspondent banks</strong> (each holding accounts with the others) + each country&rsquo;s domestic RTGS &mdash; many hops, each settling separately, each taking a fee and an FX spread. That friction is exactly what stablecoins and Ripple attack (slides 15 &amp; 25).
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; Message vs. clearing vs. settlement</div>
+    <div>SWIFT &middot; ACH / ACSS &middot; Lynx / Fedwire &middot; central-bank ledger</div>
+  </div>
+</section>

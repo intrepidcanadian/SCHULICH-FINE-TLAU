@@ -46,7 +46,7 @@
 <section class="slide light" data-screen-label="02 A $2T Industry">
   <div class="chrome">
     <div>&sect;9.1 &middot; Payments, money transfer &amp; FX</div>
-    <div>02 / 15</div>
+    <div>02 / 31</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">The front line between fintechs and incumbents</div>
@@ -81,52 +81,494 @@
 </section>
 
 <!-- ============================================================
-     SLIDE 03 · The payment rails (dark)
+     SLIDE 03 · Why payments = bank revenue · JPMorgan breakdown (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="03 Payment Rails">
+<section class="slide dark" data-screen-label="03 Bank Revenue">
   <div class="chrome">
-    <div>&sect;9.1 &middot; The payment rails</div>
-    <div>03 / 15</div>
+    <div>&sect;9.1 &middot; Why payments are ~40% of bank revenue</div>
+    <div>03 / 31</div>
   </div>
-  <div class="frame" style="padding-top:2vh">
-    <div class="kicker">The plumbing of the economy &mdash; and control of it brings wealth</div>
-    <h2 class="h-xl" style="font-size:3.8vw">Highways for the big payments, local roads for the small.</h2>
-    <p class="lead" style="margin-top:.4vh; max-width:64vw; opacity:.8; font-size:1.05vw">
-      Payments travel a physical network of cables, wires, and fiber. In most countries the rails are government-owned and were run by banks. There are separate roads by size, plus border checkpoints for anti-money laundering (AML).
-    </p>
-
-    <div class="split" style="margin-top:1.6vh; align-items:start; gap:3vw">
+  <div class="frame grid-2-7-5" style="padding-top:2.2vh">
+    <div style="display:flex; flex-direction:column; gap:1.2vh">
       <div>
-        <div class="pipeline-label" style="margin-bottom:.6vh">Large value transfer system (LVTS) &middot; same-day or intraday</div>
-        <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
-          B2B payments and securities settle bank-to-bank, increasingly at <strong>real-time gross settlement (RTGS)</strong>. US: <strong>Fedwire</strong> (central bank) and <strong>CHIPS</strong> (private). Canada: <strong>Lynx</strong>. Europe: <strong>TARGET2</strong>, overseen by the ECB.
-        </div>
-      </div>
-      <div>
-        <div class="pipeline-label" style="margin-bottom:.6vh">Small payments system &middot; slower, high volume</div>
-        <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
-          Built for checks, credit and debit cards. US: <strong>ACH</strong>. Canada: <strong>ACSS</strong>. Europe: <strong>EUCHA</strong>. Each country controls its own network; cross-border traffic passes &ldquo;customs&rdquo; checks to prevent crime.
-        </div>
+        <div class="pipeline-label" style="margin-bottom:.6vh">JPMorgan 2018 Investor Day &middot; the average Chase customer, per month</div>
+        <table style="width:100%; border-collapse:collapse; font-size:max(12px,1vw); line-height:1.2">
+          <thead>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.22)">
+              <th style="text-align:left; padding:1vh .4vw; font-weight:600; letter-spacing:.02em">Transaction type</th>
+              <th style="text-align:right; padding:1vh .4vw; font-family:var(--mono); font-weight:500; opacity:.8">Per customer / mo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.10)"><td style="padding:.85vh .4vw">ATM</td><td style="text-align:right; padding:.85vh .4vw; font-family:var(--mono)">5</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.10)"><td style="padding:.85vh .4vw">Digital wallet</td><td style="text-align:right; padding:.85vh .4vw; font-family:var(--mono)">6</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.10)"><td style="padding:.85vh .4vw">Debit card</td><td style="text-align:right; padding:.85vh .4vw; font-family:var(--mono)">32</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.10)"><td style="padding:.85vh .4vw">Credit card</td><td style="text-align:right; padding:.85vh .4vw; font-family:var(--mono)">21</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.10)"><td style="padding:.85vh .4vw">P2P money transfers</td><td style="text-align:right; padding:.85vh .4vw; font-family:var(--mono)">3</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,.10)"><td style="padding:.85vh .4vw">Online deposits</td><td style="text-align:right; padding:.85vh .4vw; font-family:var(--mono)">2</td></tr>
+            <tr style="border-top:1.5px solid rgba(255,255,255,.32); background:rgba(255,255,255,.05)"><td style="padding:1vh .4vw; font-weight:700">Total fee-generating txns</td><td style="text-align:right; padding:1vh .4vw; font-family:var(--mono); font-weight:700; font-size:max(13px,1.15vw)">69</td></tr>
+          </tbody>
+        </table>
+        <div class="frame-cap" style="margin-top:.4vh"><span>Avg. per Chase customer, per month</span><span class="idx">Source: JPMorgan Investor Day, 2018</span></div>
       </div>
     </div>
-
-    <div class="callout" style="margin-top:1.6vh; padding:1.1vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
-      <strong>Who polices the rails.</strong> In the US, the Federal Reserve plus federal/state regulators; Treasury&rsquo;s FinCEN registers money service businesses (MSBs). In Canada, the Bank of Canada oversees payments and FINTRAC enforces AML and maintains the MSB registry.
+    <div style="display:flex; flex-direction:column; gap:1.1vh; padding-top:.4vh">
+      <div class="kicker">Each tap, swipe, and transfer is a fee</div>
+      <h2 class="h-xl" style="font-size:2.7vw">69 a month &mdash; times 47 million customers.</h2>
+      <p class="lead" style="font-size:1vw; opacity:.85">
+        Multiply 69 by JPMorgan&rsquo;s 47 million Chase customers and you reach <strong>3.2 billion fee-generating transactions every month</strong>. Fees and interest on flows like these are why McKinsey pegs payments at close to <strong>40% of bank revenues</strong>.
+      </p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vw">
+        <div class="stat-card"><div class="stat-label">Chase customers</div><div class="stat-nb" style="font-size:2.4vw">47<span class="stat-unit">million</span></div></div>
+        <div class="stat-card"><div class="stat-label">Txns / month</div><div class="stat-nb" style="font-size:2.4vw">3.2<span class="stat-unit">billion</span></div></div>
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Why the bank defends it.</strong> JPMorgan told investors that <strong>65% of clients would consider leaving</strong> a firm whose digital channels weren&rsquo;t integrated &mdash; so it guards this profit pool with partnerships and acquisitions like the fintech WePay.
+      </div>
     </div>
   </div>
   <div class="foot">
-    <div>Page 03 &middot; The payment rails &middot; LVTS vs. small payments</div>
-    <div>RTGS &middot; Fedwire &middot; CHIPS &middot; Lynx &middot; TARGET2 &middot; ACH</div>
+    <div>Page 03 &middot; JPMorgan &middot; anatomy of bank payment revenue</div>
+    <div>69 txns / customer / mo &middot; 3.2B / mo &middot; ~40% of bank revenue</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 04 · The payment players · Figure 9.2 (light)
+     SLIDE 04 · Payments & money-transfer jargon (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="04 Payment Players">
+<section class="slide light" data-screen-label="04 Payments Jargon">
+  <div class="chrome">
+    <div>&sect;9.1 &middot; Payments &amp; money-transfer jargon</div>
+    <div>04 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Same money, different words &mdash; getting the vocabulary straight</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Payment, transfer, remittance &mdash; not the same thing.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:66vw; font-size:1vw">
+      We&rsquo;ll use &ldquo;payment&rdquo; loosely for the rest of the chapter, but the distinctions matter &mdash; especially once money crosses a border and a currency conversion enters the picture.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.2vw; margin-top:1.6vh; align-items:start">
+      <div class="callout" style="padding:1vh 1.2vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>Payment.</strong> A transfer of money from one party to another in exchange for goods or services.
+      </div>
+      <div class="callout" style="padding:1vh 1.2vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>Method of payment.</strong> <em>How</em> you pay. Consumers: cash, debit, credit, checks, prepaid. Businesses: EFTs, checks, credit, bank wire. Bitcoin is the newest.
+      </div>
+      <div class="callout" style="padding:1vh 1.2vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>Money transfer.</strong> Moving money from one place to another &mdash; a payment, or simply shifting funds between accounts. Venmo (US), Interac e-Transfer (Canada).
+      </div>
+      <div class="callout" style="padding:1vh 1.2vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>Remittance.</strong> Money sent to relatives or friends abroad &mdash; often by a migrant worker supporting family back home.
+      </div>
+      <div class="callout" style="padding:1vh 1.2vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>Cross-border payment.</strong> Money crossing national borders. It always involves an FX transaction &mdash; one currency exchanged for another.
+      </div>
+      <div class="callout" style="padding:1vh 1.2vw; font-size:max(12px,.9vw); line-height:1.5">
+        <strong>FX transaction &amp; exchange rate.</strong> The <strong>exchange rate</strong> converts one currency to another; the transaction carries a fee or commission &mdash; fixed or a % of the amount.
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.6vh; padding:1.1vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>Why the distinction earns its keep.</strong> A bank wire costs ~$35 and takes days even domestically; an overseas remittance can cost ~10% and take weeks. Each added layer &mdash; a border, a currency, an intermediary &mdash; is another fee and another delay for fintechs to attack.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 04 &middot; Payments &amp; money-transfer jargon</div>
+    <div>Payment &middot; method &middot; transfer &middot; remittance &middot; cross-border &middot; FX</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 05 · The payment rails (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="05 Payment Rails">
+  <div class="chrome">
+    <div>&sect;9.1 &middot; The payment rails</div>
+    <div>05 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">The plumbing of the economy &mdash; sized by value, speed, and how it settles</div>
+    <h2 class="h-xl" style="font-size:3.4vw">Highways, local roads &mdash; and a real-time express lane.</h2>
+    <p class="lead" style="margin-top:.5vh; max-width:72vw; opacity:.8; font-size:1.02vw">
+      Payments travel a physical network of cables, wires, and fiber &mdash; mostly government-owned and bank-run. Rails differ by value and speed, but the real distinction is <strong>how they settle</strong>: one-by-one in full, or batched and netted.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5vw; margin-top:2.4vh; flex:1; align-items:stretch">
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:.7vh">Large value &middot; LVTS / RTGS</div>
+        <div class="callout" style="flex:1; display:flex; flex-direction:column; padding:1.4vh 1.4vw; font-size:max(11px,.98vw); line-height:1.6">
+          <div><strong>Like a wire &mdash; gross settlement.</strong> Every payment clears <strong>one at a time, in full, in seconds</strong>, and is final, in central-bank money. Highest value, lowest volume, costliest per payment. US: <strong>Fedwire</strong> &amp; <strong>CHIPS</strong> &middot; Canada: <strong>Lynx</strong> &middot; Europe: <strong>TARGET2</strong>.</div>
+          <div style="margin-top:auto; padding-top:1vh; border-top:1px solid rgba(255,255,255,.16); font-family:var(--mono); font-size:max(9px,.74vw); letter-spacing:.02em; opacity:.72">gross settlement &middot; clears in seconds &middot; highest cost</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:.7vh">Small payments &middot; ACH / ACSS</div>
+        <div class="callout" style="flex:1; display:flex; flex-direction:column; padding:1.4vh 1.4vw; font-size:max(11px,.98vw); line-height:1.6">
+          <div><strong>Batch &amp; net settlement.</strong> Transactions are <strong>bundled and netted</strong> &mdash; banks offset what they owe and settle only the net, usually end-of-day. Slower (next-day+), cheapest per payment, huge volume. Built for checks, debit &amp; credit. US: <strong>ACH</strong> &middot; Canada: <strong>ACSS</strong> &middot; Europe: <strong>EUCHA</strong>.</div>
+          <div style="margin-top:auto; padding-top:1vh; border-top:1px solid rgba(255,255,255,.16); font-family:var(--mono); font-size:max(9px,.74vw); letter-spacing:.02em; opacity:.72">net settlement &middot; next-day+ &middot; lowest cost</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:.7vh">Retail real-time &middot; Interac e-Transfer</div>
+        <div class="callout" style="flex:1; display:flex; flex-direction:column; padding:1.4vh 1.4vw; font-size:max(11px,.94vw); line-height:1.58">
+          <div><strong>Where Interac fits.</strong> A consumer <em>overlay</em>: with <strong>Autodeposit</strong> the money lands in seconds, so it feels instant &mdash; but with <strong>low, bank-set limits</strong> (often a few thousand dollars) and, underneath, it still clears over the retail rails by deferred netting. US analogs: Zelle, Venmo. The true 24/7 rails (FedNow, UPI, Pix; Canada&rsquo;s coming <strong>Real-Time Rail</strong>, built with Interac) are the upgrade &mdash; see slide 24.</div>
+          <div style="margin-top:auto; padding-top:1vh; border-top:1px solid rgba(255,255,255,.16); font-family:var(--mono); font-size:max(9px,.74vw); letter-spacing:.02em; opacity:.72">instant to the user &middot; low limits &middot; nets underneath</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.6vh; padding:1.2vh 1.4vw; font-size:max(12px,.94vw); line-height:1.55">
+      <strong>Who polices the rails.</strong> US: the Federal Reserve plus federal/state regulators; Treasury&rsquo;s FinCEN registers money service businesses (MSBs). Canada: the Bank of Canada oversees payments; FINTRAC enforces AML and keeps the MSB registry. Cross-border traffic passes &ldquo;customs&rdquo; checks to stop crime.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 05 &middot; The payment rails &middot; gross vs. net settlement</div>
+    <div>RTGS &middot; Lynx &middot; TARGET2 &middot; ACH &middot; ACSS &middot; Interac e-Transfer</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 06 · Why Interac feels instant: messaging vs settlement (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="06 Why Interac Is Instant">
+  <div class="chrome">
+    <div>&sect;9.1 &middot; Inside Interac e-Transfer</div>
+    <div>06 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">Why Autodeposit lands in seconds &mdash; even though settlement is slow</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Real-time message, deferred settlement.</h2>
+    <p class="lead" style="margin-top:.5vh; max-width:72vw; opacity:.82; font-size:1.02vw">
+      The trick: Interac doesn&rsquo;t move the money in real time &mdash; it moves an <strong>authenticated message</strong> in real time, and your bank credits you on its strength. The actual interbank money settles later, batched and netted.
+    </p>
+
+    <div class="pipeline-section" style="flex:1; display:flex; flex-direction:column; justify-content:center">
+      <div class="pipeline-label">How one e-Transfer actually moves</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step">
+          <div class="step-nb">1 &middot; send</div>
+          <div class="step-title">Funds secured up front</div>
+          <div class="step-desc">Your bank debits and holds the money the instant you hit send &mdash; the &ldquo;good-funds model.&rdquo; The cash is locked before anything else happens.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">2 &middot; route</div>
+          <div class="step-title">An authenticated message</div>
+          <div class="step-desc">Interac, acting as the clearing facility, routes a secure message bank-to-bank through its central hub &mdash; finding the recipient by their email or phone alias.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">3 &middot; credit</div>
+          <div class="step-title">The recipient&rsquo;s bank fronts it</div>
+          <div class="step-desc">On the trusted good-funds message, that bank credits the account in seconds, advancing the cash to its customer. Autodeposit drops the old security-question claim step, so it&rsquo;s automatic.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">4 &middot; settle</div>
+          <div class="step-title">Real money moves later</div>
+          <div class="step-desc">Interbank settlement happens afterward &mdash; deferred and netted through Payments Canada&rsquo;s infrastructure, off the user&rsquo;s critical path.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.4vh; padding:1.2vh 1.4vw; font-size:max(12px,.95vw); line-height:1.55">
+      <strong>The speed is in the messaging.</strong> What lands &ldquo;instantly&rdquo; is the recipient&rsquo;s bank <em>advancing</em> funds against the sender&rsquo;s already-secured balance, trusting Interac&rsquo;s good-funds guarantee &mdash; so the bank carries brief pre-settlement risk, which is partly why limits are low. True real-time <em>settlement</em> is what Canada&rsquo;s <strong>Real-Time Rail</strong> will add (Payments Canada&rsquo;s system; Interac as exchange provider, Mastercard&rsquo;s Vocalink for settlement; phased launch targeted ~Q4 2026).
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 06 &middot; Inside Interac e-Transfer &middot; messaging vs. settlement</div>
+    <div>Good-funds model &middot; instant credit &middot; deferred net settlement</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 07 · Clearing vs settlement: SWIFT only carries the message (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="07 Clearing vs Settlement">
+  <div class="chrome">
+    <div>&sect;9.1 &middot; Clearing vs. settlement</div>
+    <div>07 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">Three layers people collapse into one &mdash; and where SWIFT really sits</div>
+    <h2 class="h-xl" style="font-size:3.4vw">SWIFT moves the message; settlement moves the money.</h2>
+    <p class="lead" style="margin-top:.5vh; max-width:74vw; opacity:.82; font-size:1.02vw">
+      A payment is really three layers: the <strong>message</strong> (the instruction), <strong>clearing</strong> (netting out who owes whom), and <strong>settlement</strong> (moving the value, finally, in central-bank money). SWIFT is only the first &mdash; which is why &ldquo;I sent it by SWIFT&rdquo; is a myth.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5vw; margin-top:2.2vh; flex:1; align-items:stretch">
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:.7vh">Layer 1 &middot; Messaging &mdash; SWIFT</div>
+        <div class="callout" style="flex:1; display:flex; flex-direction:column; padding:1.4vh 1.4vw; font-size:max(11px,.95vw); line-height:1.58">
+          <div>Carries the <strong>instruction</strong>, not the money: &ldquo;Bank A, pay Bank B $1M&rdquo; (an MT103 / ISO 20022 message). ~11,000 institutions, 200+ countries. It holds <strong>no accounts, moves no value, keeps no ledger</strong> &mdash; the <em>email between banks</em>.</div>
+          <div style="margin-top:auto; padding-top:1vh; border-top:1px solid rgba(255,255,255,.16); font-family:var(--mono); font-size:max(9px,.74vw); letter-spacing:.02em; opacity:.72">messages only &middot; no money &middot; no ledger</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:.7vh">Layer 2 &middot; Clearing &mdash; ACH / ACSS</div>
+        <div class="callout" style="flex:1; display:flex; flex-direction:column; padding:1.4vh 1.4vw; font-size:max(11px,.95vw); line-height:1.58">
+          <div>Batches retail payments and <strong>nets</strong> them &mdash; working out the single amount each bank owes the others. Fast and cheap, but the figures are <strong>provisional</strong>: only the net settles, later. A clearing layer &mdash; <strong>not a ledger</strong>.</div>
+          <div style="margin-top:auto; padding-top:1vh; border-top:1px solid rgba(255,255,255,.16); font-family:var(--mono); font-size:max(9px,.74vw); letter-spacing:.02em; opacity:.72">batch &middot; net &middot; provisional</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:.7vh">Layer 3 &middot; Settlement &mdash; Lynx / Fedwire</div>
+        <div class="callout" style="flex:1; display:flex; flex-direction:column; padding:1.4vh 1.4vw; font-size:max(11px,.95vw); line-height:1.58">
+          <div>The value actually moves &mdash; <strong>in central-bank money, with finality</strong> &mdash; across banks&rsquo; accounts at the central bank, <strong>the real interbank ledger</strong>. RTGS does it per payment in real time; ACH&rsquo;s nets land here too, just deferred.</div>
+          <div style="margin-top:auto; padding-top:1vh; border-top:1px solid rgba(255,255,255,.16); font-family:var(--mono); font-size:max(9px,.74vw); letter-spacing:.02em; opacity:.72">gross &middot; real-time &middot; final &middot; central-bank money</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.6vh; padding:1.2vh 1.4vw; font-size:max(12px,.94vw); line-height:1.55">
+      <strong>Why this is the heart of cross-border pain.</strong> There is <strong>no single global ledger</strong>. An international wire is a SWIFT message + a chain of <strong>correspondent banks</strong> (each holding accounts with the others) + each country&rsquo;s domestic RTGS &mdash; many hops, each settling separately, each taking a fee and an FX spread. That friction is exactly what stablecoins and Ripple attack (slides 15 &amp; 25).
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 07 &middot; Message vs. clearing vs. settlement</div>
+    <div>SWIFT &middot; ACH / ACSS &middot; Lynx / Fedwire &middot; central-bank ledger</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 08 · How the pieces fit: the payments stack (light, SVG diagram)
+     ============================================================ -->
+<section class="slide light" data-screen-label="08 How The Pieces Fit">
+  <div class="chrome">
+    <div>&sect;9.1 &middot; The payments stack &middot; summary of slides 5&ndash;7</div>
+    <div>08 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">Putting the rails together &mdash; from your tap down to the central-bank ledger</div>
+    <h2 class="h-xl" style="font-size:3.2vw">How the pieces fit: message, clearing, settlement.</h2>
+
+    <svg viewBox="0 0 1280 560" style="width:100%; height:auto; max-height:66vh; margin-top:1.2vh; display:block" xmlns="http://www.w3.org/2000/svg" font-family="'Source Serif 4', Georgia, serif">
+      <defs>
+        <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#0a1f3d"/>
+        </marker>
+      </defs>
+
+      <!-- left flow guide -->
+      <text x="16" y="290" transform="rotate(-90 16 290)" text-anchor="middle" font-size="12.5" fill="#9aa7b6" letter-spacing="3">INSTRUCTION  FLOWS  DOWN</text>
+
+      <!-- People -->
+      <rect x="44" y="6" width="1196" height="46" rx="9" fill="#e9edf0" stroke="#c4ccd3"/>
+      <text x="642" y="35" text-anchor="middle" font-size="20" fill="#0a1f3d" font-weight="600">People &amp; businesses &mdash; initiate a payment</text>
+      <line x1="642" y1="52" x2="642" y2="64" stroke="#0a1f3d" stroke-width="2" marker-end="url(#ah)"/>
+
+      <!-- Banks -->
+      <rect x="44" y="66" width="1196" height="46" rx="9" fill="#e9edf0" stroke="#c4ccd3"/>
+      <text x="642" y="95" text-anchor="middle" font-size="18" fill="#0a1f3d">Banks &mdash; participants that hold settlement accounts at the central bank</text>
+      <line x1="642" y1="112" x2="642" y2="124" stroke="#0a1f3d" stroke-width="2" marker-end="url(#ah)"/>
+
+      <!-- MESSAGE / ACCESS tier -->
+      <rect x="44" y="128" width="1196" height="106" rx="12" fill="#dde6ec" stroke="#b9c6d0"/>
+      <text x="66" y="162" font-size="15.5" fill="#33475f" font-weight="700">MESSAGE / ACCESS</text>
+      <text x="66" y="183" font-size="13" fill="#5a6b80">instruction only &mdash;</text>
+      <text x="66" y="200" font-size="13" fill="#5a6b80">holds no ledger</text>
+      <rect x="300" y="150" width="430" height="54" rx="10" fill="#fff" stroke="#0a1f3d" stroke-width="1.5"/>
+      <text x="320" y="176" font-size="18" fill="#0a1f3d" font-weight="700">Interac e-Transfer</text>
+      <text x="320" y="195" font-size="12.5" fill="#5a6b80">retail &middot; instant message &amp; UX (Autodeposit)</text>
+      <rect x="770" y="150" width="430" height="54" rx="10" fill="#fff" stroke="#0a1f3d" stroke-width="1.5"/>
+      <text x="790" y="176" font-size="18" fill="#0a1f3d" font-weight="700">SWIFT</text>
+      <text x="790" y="195" font-size="12.5" fill="#5a6b80">cross-border instruction (MT103 / ISO 20022)</text>
+      <text x="300" y="224" font-size="12.5" font-style="italic" fill="#7a8aa0">&#8627; rides the retail rails (ACSS) underneath &mdash; slide 6</text>
+      <text x="770" y="224" font-size="12.5" font-style="italic" fill="#7a8aa0">&#8627; no settlement; correspondent banks &mdash; slide 7</text>
+      <line x1="642" y1="234" x2="642" y2="246" stroke="#0a1f3d" stroke-width="2" marker-end="url(#ah)"/>
+
+      <!-- CLEARING tier -->
+      <rect x="44" y="250" width="1196" height="66" rx="12" fill="#d2dde6" stroke="#b1c0cc"/>
+      <text x="66" y="282" font-size="15.5" fill="#33475f" font-weight="700">CLEARING</text>
+      <text x="66" y="302" font-size="13" fill="#5a6b80">net who owes whom &middot; provisional</text>
+      <rect x="300" y="264" width="430" height="40" rx="9" fill="#fff" stroke="#0a1f3d" stroke-width="1.5"/>
+      <text x="320" y="290" font-size="17" fill="#0a1f3d" font-weight="700">ACH / ACSS</text>
+      <text x="770" y="289" font-size="13" fill="#5a6b80">batch &amp; net &mdash; only the net settles, later</text>
+      <line x1="642" y1="316" x2="642" y2="328" stroke="#0a1f3d" stroke-width="2" marker-end="url(#ah)"/>
+
+      <!-- SETTLEMENT tier -->
+      <rect x="44" y="332" width="1196" height="66" rx="12" fill="#c2d2de" stroke="#a6b8c6"/>
+      <text x="66" y="364" font-size="15.5" fill="#33475f" font-weight="700">SETTLEMENT</text>
+      <text x="66" y="384" font-size="13" fill="#5a6b80">gross &middot; real-time &middot; final</text>
+      <rect x="300" y="346" width="430" height="40" rx="9" fill="#fff" stroke="#0a1f3d" stroke-width="1.5"/>
+      <text x="320" y="372" font-size="17" fill="#0a1f3d" font-weight="700">Lynx / Fedwire (RTGS)</text>
+      <text x="770" y="371" font-size="13" fill="#5a6b80">each payment settles in central-bank money</text>
+      <line x1="642" y1="398" x2="642" y2="412" stroke="#0a1f3d" stroke-width="2.6" marker-end="url(#ah)"/>
+
+      <!-- CENTRAL BANK foundation -->
+      <rect x="44" y="416" width="1196" height="92" rx="12" fill="#0a1f3d"/>
+      <text x="642" y="455" text-anchor="middle" font-size="21" fill="#f1f3f5" font-weight="700">CENTRAL BANK &mdash; settlement accounts</text>
+      <text x="642" y="482" text-anchor="middle" font-size="14.5" fill="#aebccd">the real interbank ledger &middot; central-bank money &middot; where settlement is final</text>
+
+      <!-- ACH deferred-net path down the right edge into the central bank -->
+      <path d="M1208,284 L1208,416" fill="none" stroke="#33475f" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#ah)"/>
+      <text x="1198" y="356" text-anchor="end" font-size="12" font-style="italic" fill="#7a8aa0">ACH net,</text>
+      <text x="1198" y="371" text-anchor="end" font-size="12" font-style="italic" fill="#7a8aa0">deferred</text>
+    </svg>
+
+    <div class="step-desc" style="margin-top:auto; padding-top:1vh; font-size:max(11px,.86vw); opacity:.78">
+      <strong>The takeaway:</strong> the message layers (Interac, SWIFT) carry instructions and hold no ledger; clearing (ACH) and settlement (Lynx) both bottom out on the central bank&rsquo;s books &mdash; Lynx per payment in real time, ACH as a deferred net.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 08 &middot; The payments stack &middot; who sits where</div>
+    <div>Message &middot; clearing &middot; settlement &middot; central-bank ledger</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 09 · Card networks: the four-party model (dark, SVG diagram)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="09 Card Networks">
+  <div class="chrome">
+    <div>&sect;9.2 &middot; Card networks</div>
+    <div>09 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">A private network sitting on top of the banking rails</div>
+    <h2 class="h-xl" style="font-size:3.2vw">Card networks: the four-party switch.</h2>
+
+    <svg viewBox="0 0 1280 400" style="width:100%; height:auto; max-height:56vh; margin-top:1.2vh; display:block" xmlns="http://www.w3.org/2000/svg" font-family="'Source Serif 4', Georgia, serif">
+      <defs>
+        <marker id="ahc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto-start-reverse" markerUnits="strokeWidth">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#aeb9c6"/>
+        </marker>
+      </defs>
+
+      <!-- top row: cardholder & merchant -->
+      <rect x="110" y="18" width="300" height="84" rx="12" fill="#f1f3f5" stroke="#9aa7b6"/>
+      <text x="260" y="52" text-anchor="middle" font-size="20" fill="#0a1f3d" font-weight="700">Cardholder</text>
+      <text x="260" y="77" text-anchor="middle" font-size="13" fill="#5a6b80">you &middot; holds the card</text>
+
+      <rect x="870" y="18" width="300" height="84" rx="12" fill="#f1f3f5" stroke="#9aa7b6"/>
+      <text x="1020" y="52" text-anchor="middle" font-size="20" fill="#0a1f3d" font-weight="700">Merchant</text>
+      <text x="1020" y="77" text-anchor="middle" font-size="13" fill="#5a6b80">sells the goods</text>
+
+      <!-- cardholder buys from merchant -->
+      <line x1="410" y1="60" x2="870" y2="60" stroke="#aeb9c6" stroke-width="2" marker-end="url(#ahc)"/>
+      <text x="640" y="46" text-anchor="middle" font-size="13.5" fill="#c4ccd3">buys goods &amp; services</text>
+
+      <!-- bottom row: issuing & acquiring banks -->
+      <rect x="110" y="214" width="300" height="98" rx="12" fill="#f1f3f5" stroke="#9aa7b6"/>
+      <text x="260" y="246" text-anchor="middle" font-size="18" fill="#0a1f3d" font-weight="700">Issuing bank</text>
+      <text x="260" y="269" text-anchor="middle" font-size="12.5" fill="#5a6b80">issues the card, lends,</text>
+      <text x="260" y="287" text-anchor="middle" font-size="12.5" fill="#5a6b80">bills you</text>
+
+      <rect x="870" y="214" width="300" height="98" rx="12" fill="#f1f3f5" stroke="#9aa7b6"/>
+      <text x="1020" y="246" text-anchor="middle" font-size="18" fill="#0a1f3d" font-weight="700">Acquiring (merchant) bank</text>
+      <text x="1020" y="269" text-anchor="middle" font-size="12.5" fill="#5a6b80">provides the POS / gateway,</text>
+      <text x="1020" y="287" text-anchor="middle" font-size="12.5" fill="#5a6b80">pays the merchant</text>
+
+      <!-- verticals -->
+      <line x1="260" y1="102" x2="260" y2="214" stroke="#aeb9c6" stroke-width="2" marker-end="url(#ahc)"/>
+      <text x="276" y="162" font-size="12.5" fill="#c4ccd3">card + credit</text>
+      <line x1="1020" y1="102" x2="1020" y2="214" stroke="#aeb9c6" stroke-width="2" marker-end="url(#ahc)"/>
+      <text x="1004" y="162" text-anchor="end" font-size="12.5" fill="#c4ccd3">banks the sale</text>
+
+      <!-- card network (center, highlighted) -->
+      <rect x="488" y="196" width="304" height="120" rx="14" fill="#ffffff" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="640" y="236" text-anchor="middle" font-size="20" fill="#0a1f3d" font-weight="700">Card network</text>
+      <text x="640" y="261" text-anchor="middle" font-size="14" fill="#33475f">VISA &middot; Mastercard &middot; Amex</text>
+      <text x="640" y="289" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5a6b80">switch + rulebook &middot; sets interchange</text>
+
+      <!-- bank <-> network authorize -->
+      <line x1="410" y1="252" x2="488" y2="252" stroke="#aeb9c6" stroke-width="2" marker-start="url(#ahc)" marker-end="url(#ahc)"/>
+      <text x="449" y="240" text-anchor="middle" font-size="12" fill="#c4ccd3">authorize</text>
+      <line x1="792" y1="252" x2="870" y2="252" stroke="#aeb9c6" stroke-width="2" marker-start="url(#ahc)" marker-end="url(#ahc)"/>
+      <text x="831" y="240" text-anchor="middle" font-size="12" fill="#c4ccd3">authorize</text>
+
+      <!-- interchange arc: acquirer -> issuer -->
+      <path d="M930,312 C 770,378 510,378 350,312" fill="none" stroke="#7f8ea0" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#ahc)"/>
+      <text x="640" y="372" text-anchor="middle" font-size="12.5" font-style="italic" fill="#aeb9c6">interchange fee flows to the issuer (the network skims an assessment)</text>
+    </svg>
+
+    <div class="split" style="margin-top:auto; align-items:stretch; gap:2vw; padding-top:1.2vh">
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(11px,.9vw); line-height:1.5">
+        <strong>A switch, not a bank.</strong> The network routes the authorization and sets the rules &mdash; but it holds no deposits and keeps no ledger. The money settles between the issuing and acquiring banks over the banking rails (slide 8).
+      </div>
+      <div class="callout" style="padding:1vh 1.3vw; font-size:max(11px,.9vw); line-height:1.5">
+        <strong>Open vs. closed loop.</strong> Visa &amp; Mastercard are <strong>open four-party</strong> networks (separate issuers and acquirers). Amex &amp; Discover run <strong>closed three-party</strong> loops &mdash; the network is also the issuer and the acquirer.
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 09 &middot; Card networks &middot; the four-party model</div>
+    <div>Issuer &middot; network &middot; acquirer &middot; interchange &middot; assessment</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 10 · Open vs closed loop card networks (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="10 Open vs Closed Loop">
+  <div class="chrome">
+    <div>&sect;9.2 &middot; Open vs. closed loop</div>
+    <div>10 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh; display:flex; flex-direction:column">
+    <div class="kicker">The real question: is the network <em>also</em> the bank?</div>
+    <h2 class="h-xl" style="font-size:3.2vw">Open four-party vs. closed three-party.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2vw; margin-top:1.6vh; flex:1; align-items:stretch">
+      <!-- OPEN -->
+      <div style="border:1px solid rgba(10,31,61,.18); border-radius:14px; padding:1.6vh 1.4vw; display:flex; flex-direction:column; align-items:center; justify-content:space-between; background:rgba(10,31,61,.02)">
+        <div class="pipeline-label" style="align-self:flex-start">Open &middot; four-party &mdash; VISA / Mastercard</div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:.8vh; width:100%">
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)">You &middot; cardholder</div>
+          <div style="font-size:1.1vw; opacity:.4; line-height:1">&darr;</div>
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)"><strong>Issuing bank</strong> &middot; your bank</div>
+          <div style="display:inline-block; background:var(--ink); color:var(--paper); border-radius:999px; padding:.5vh 1vw; font-size:max(10px,.82vw); letter-spacing:.02em">&updownarrow; routed via the network (Visa / MC) &updownarrow;</div>
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)"><strong>Acquiring bank</strong> &middot; merchant&rsquo;s bank &mdash; <strong>a different company</strong></div>
+          <div style="font-size:1.1vw; opacity:.4; line-height:1">&darr;</div>
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)">Merchant</div>
+        </div>
+        <div style="font-size:max(10px,.86vw); opacity:.72; text-align:center; line-height:1.45">Issuer &ne; acquirer &rarr; the network sets an <strong>interchange fee</strong> between the two banks.</div>
+      </div>
+
+      <!-- CLOSED -->
+      <div style="border:1px solid rgba(10,31,61,.18); border-radius:14px; padding:1.6vh 1.4vw; display:flex; flex-direction:column; align-items:center; justify-content:space-between; background:rgba(10,31,61,.02)">
+        <div class="pipeline-label" style="align-self:flex-start">Closed &middot; three-party &mdash; Amex / Discover</div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:1vh; width:100%">
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)">You &middot; cardholder</div>
+          <div style="font-size:1.1vw; opacity:.4; line-height:1">&darr;</div>
+          <div style="width:90%; text-align:center; border:2px solid var(--ink); border-radius:11px; padding:1.8vh .9vw; background:var(--ink); color:var(--paper)">
+            <div style="font-size:max(13px,1.15vw); font-weight:700">American Express</div>
+            <div style="font-size:max(10px,.86vw); opacity:.85; margin-top:.4vh">issuer + acquirer + network &mdash; <strong>one company</strong></div>
+          </div>
+          <div style="font-size:1.1vw; opacity:.4; line-height:1">&darr;</div>
+          <div style="width:84%; text-align:center; border:1.5px solid rgba(10,31,61,.55); border-radius:9px; padding:.7vh .8vw; background:#fff; font-size:max(11px,.92vw)">Merchant</div>
+        </div>
+        <div style="font-size:max(10px,.86vw); opacity:.72; text-align:center; line-height:1.45">One company on both sides &rarr; <strong>no interchange</strong>; it just charges a single, higher merchant fee.</div>
+      </div>
+    </div>
+
+    <table style="width:100%; border-collapse:collapse; font-size:max(11px,.9vw); line-height:1.4; margin-top:1.6vh">
+      <thead>
+        <tr style="border-bottom:1.5px solid rgba(0,0,0,.28); text-align:left">
+          <th style="padding:.7vh .6vw; width:22%; font-weight:700"></th>
+          <th style="padding:.7vh .6vw; width:39%; font-weight:700">Open &mdash; Visa / Mastercard</th>
+          <th style="padding:.7vh .6vw; width:39%; font-weight:700">Closed &mdash; Amex / Discover</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.1)"><td style="padding:.6vh .6vw; font-weight:700">Parties</td><td style="padding:.6vh .6vw">Four &mdash; you, issuer, acquirer, merchant (network in the middle)</td><td style="padding:.6vh .6vw">Three &mdash; you, the network-bank, merchant</td></tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.1)"><td style="padding:.6vh .6vw; font-weight:700">Interchange</td><td style="padding:.6vh .6vw"><strong>Yes</strong> &mdash; acquirer pays the issuer (set by the network)</td><td style="padding:.6vh .6vw"><strong>None</strong> &mdash; nothing sits &ldquo;between banks&rdquo;</td></tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.1)"><td style="padding:.6vh .6vw; font-weight:700">Merchant cost</td><td style="padding:.6vh .6vw">Lower (competitive / often regulated)</td><td style="padding:.6vh .6vw">Higher (one all-in fee)</td></tr>
+        <tr><td style="padding:.6vh .6vw; font-weight:700">Reach &amp; data</td><td style="padding:.6vh .6vw">Near-universal acceptance; rewards vary by bank</td><td style="padding:.6vh .6vw">Narrower; sees both sides &rarr; richer data &amp; rewards</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="foot">
+    <div>Page 10 &middot; Open vs. closed loop &middot; four-party vs. three-party</div>
+    <div>Issuer &middot; acquirer &middot; interchange &middot; closed-loop = network is the bank</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 11 · The payment players · Figure 9.2 (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="11 Payment Players">
   <div class="chrome">
     <div>&sect;9.2 &middot; The payment players</div>
-    <div>04 / 15</div>
+    <div>11 / 31</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Who touches a credit-card purchase &middot; Figure 9.2</div>
@@ -153,18 +595,67 @@
     <div class="frame-cap"><span>Fig. 9.2 &middot; The payment players</span><span class="idx">Source: Fintech Explained, Ch. 9</span></div>
   </div>
   <div class="foot">
-    <div>Page 04 &middot; Figure 9.2 &middot; The payment players</div>
+    <div>Page 11 &middot; Figure 9.2 &middot; The payment players</div>
     <div>Authorization 1&ndash;2 sec &middot; settlement up to 2 days</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 05 · How payment players make money · Table 9.1 (dark)
+     SLIDE 12 · Inside a card transaction: authorize, then settle (light)
      ============================================================ -->
-<section class="slide dark" data-screen-label="05 How Players Make Money">
+<section class="slide light" data-screen-label="12 Authorize & Settle">
+  <div class="chrome">
+    <div>&sect;9.2 &middot; Inside a card transaction</div>
+    <div>12 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh; display:flex; flex-direction:column">
+    <div class="kicker">The same players, now in motion &middot; Figure 9.2 continued</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Authorize in seconds, settle in days.</h2>
+    <p class="lead" style="margin-top:.6vh; max-width:72vw; font-size:1.08vw">
+      Every card purchase runs in two phases. <strong>Authorization</strong> just asks whether the money is there &mdash; a one-to-two-second round trip across the players. <strong>Settlement</strong> actually moves it, in end-of-day batches, over the next day or two.
+    </p>
+
+    <div class="split" style="margin-top:2.8vh; flex:1; align-items:stretch; gap:3.4vw">
+      <!-- Authorization track -->
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:1.4vh; border-bottom:1px solid rgba(0,0,0,.16); padding-bottom:.7vh">Authorization &middot; 1&ndash;2 seconds &middot; &ldquo;are the funds there?&rdquo;</div>
+        <div style="display:grid; gap:1.55vh; align-content:start">
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">1</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">You tap a card at a POS machine or enter details online &mdash; the data hits the network.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">2</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">Details go via API to the <strong>payment gateway</strong>, which encrypts them and passes them to the processor.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">3</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The <strong>payment processor</strong> routes the request to your <strong>issuing bank</strong> &mdash; &ldquo;enough credit?&rdquo; (Chase Merchant Services, First Data, FIS, Moneris, WorldPay).</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">4</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The issuing bank answers <strong>yes</strong> or <strong>no</strong> &mdash; back to the processor, then the gateway.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">5</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The gateway decrypts and tells the merchant: approved or denied &mdash; you see it, or get a receipt.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">6</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">If approved, the processor tells the <strong>merchant bank</strong> to pay the merchant. The merchant is paid; you&rsquo;ve borrowed from your issuing bank.</span></div>
+        </div>
+      </div>
+      <!-- Settlement track -->
+      <div style="display:flex; flex-direction:column">
+        <div class="pipeline-label" style="margin-bottom:1.4vh; border-bottom:1px solid rgba(0,0,0,.16); padding-bottom:.7vh">Settlement &middot; up to 2 business days &middot; moving the money</div>
+        <div style="display:grid; gap:1.55vh; align-content:start">
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">1</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The issuing bank sends the transaction to be processed &mdash; typically <strong>batched</strong> at day&rsquo;s end (hence two dates: transaction and posting).</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">2</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">Funds transfer from the <strong>issuing bank</strong> to the <strong>merchant bank</strong> within one to two days.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">3</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The merchant bank deposits the money to the merchant, <strong>minus fees</strong> &mdash; a processing cost plus the interchange fee.</span></div>
+          <div style="display:flex; gap:.85vw; align-items:flex-start"><span style="flex:0 0 auto; width:2vw; height:2vw; min-width:26px; min-height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:var(--mono); font-weight:700; font-size:max(12px,.92vw)">4</span><span style="font-size:max(12px,1.04vw); line-height:1.45; padding-top:.25vh">The issuing bank posts the charge to your account and bills you monthly &mdash; it has lent you the funds and carries <strong>credit exposure</strong> to you.</span></div>
+        </div>
+        <div class="callout" style="margin-top:auto; padding:1.3vh 1.5vw; font-size:max(12px,1vw); line-height:1.55">
+          <strong>Why your bill shows two dates.</strong> Authorization confirms the money <em>can</em> move; settlement actually moves it. Because transactions clear in end-of-day batches, the posting date trails the transaction date &mdash; and in between, the issuing bank is carrying the credit.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 12 &middot; Authorization &amp; settlement of a card payment</div>
+    <div>Gateway &middot; processor &middot; issuing bank &middot; merchant bank</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 13 · How payment players make money · Table 9.1 (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="13 How Players Make Money">
   <div class="chrome">
     <div>&sect;9.3 &middot; How payment players make money</div>
-    <div>05 / 15</div>
+    <div>13 / 31</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -188,23 +679,23 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 05 &middot; Table 9.1 &middot; Fees on a $100 card payment</div>
+    <div>Page 13 &middot; Table 9.1 &middot; Fees on a $100 card payment</div>
     <div>Swipe fee &middot; interchange &middot; assessment &middot; bid-ask spread</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 06 · Case study: Paytm · Table 9.2 (light)
+     SLIDE 14 · Case study: Paytm · Table 9.2 (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="06 Case: Paytm">
+<section class="slide light" data-screen-label="14 Case: Paytm">
   <div class="chrome">
     <div>&sect;9.3 &middot; Case study</div>
-    <div>06 / 15</div>
+    <div>14 / 31</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
       <div>
-        <div class="kicker">Paytm &middot; &ldquo;pay through mobile&rdquo; &middot; New Delhi, 2010</div>
+        <div class="kicker">Paytm &middot; &ldquo;pay through mobile&rdquo; &middot; founded 2010 by Vijay Shekhar Sharma &middot; New Delhi</div>
         <h2 class="h-xl" style="font-size:3vw">India&rsquo;s largest payments platform &mdash; still deep in losses.</h2>
         <p class="lead" style="margin-top:.6vh; max-width:44vw; font-size:1vw">
           From phone top-ups to a super-app: 337M consumers and 22M merchants by its 2021 IPO &mdash; India&rsquo;s largest ever, valuing it at $18.5B. The stock fell 27% on day one and is down 66% since.
@@ -216,7 +707,7 @@
         <div class="stat-card"><div class="stat-label">Lending fee &middot; distribution</div><div class="stat-nb" style="font-size:2.6vw">2.5&ndash;3.5<span class="stat-unit">%</span></div></div>
         <div class="stat-card"><div class="stat-label">Device subscription</div><div class="stat-nb" style="font-size:2.6vw">$1.2&ndash;3.1<span class="stat-unit">/mo</span></div></div>
       </div>
-      <div class="step-desc" style="font-size:max(11px,.84vw); opacity:.75">Two segments: payment &amp; financial services, and commerce &amp; cloud. Backed by Ant Financial, Alibaba, and SoftBank. QR code, Soundbox, POS, co-branded credit card, BNPL.</div>
+      <div class="step-desc" style="font-size:max(11px,.84vw); opacity:.75">Built under parent One97 Communications on a $2M seed. Two segments: payment &amp; financial services, and commerce &amp; cloud. Backed by Ant Financial, Alibaba, and SoftBank. QR code, Soundbox, POS, co-branded credit card, BNPL.</div>
     </div>
     <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
       <div class="pipeline-label" style="margin-bottom:.2vh">Table 9.2 &middot; Income statement (% of revenues, FY to Mar 31)</div>
@@ -228,18 +719,18 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 06 &middot; Table 9.2 &middot; Paytm financial statements</div>
+    <div>Page 14 &middot; Table 9.2 &middot; Paytm financial statements</div>
     <div>Source &middot; Refinitiv</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 07 · The fintech value proposition · cross-border (dark)
+     SLIDE 15 · The fintech value proposition · cross-border (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="07 Value Proposition">
+<section class="slide dark" data-screen-label="15 Value Proposition">
   <div class="chrome">
     <div>&sect;9.4 &middot; The fintech value proposition</div>
-    <div>07 / 15</div>
+    <div>15 / 31</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Beaver Inc. (Canada) pays Eagle Ltd. (US) &mdash; four routes</div>
@@ -276,22 +767,25 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 07 &middot; Cross-border payment &middot; four routes compared</div>
+    <div>Page 15 &middot; Cross-border payment &middot; four routes compared</div>
     <div>Transfer fee &middot; conversion fee &middot; bid-ask spread</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 08 · Fintechs disrupting payments · 5 cases (light)
+     SLIDE 16 · Fintechs disrupting payments · 5 cases (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="08 Disrupting Payments">
+<section class="slide light" data-screen-label="16 Disrupting Payments">
   <div class="chrome">
     <div>&sect;9.5 &middot; Fintechs disrupting payments</div>
-    <div>08 / 15</div>
+    <div>16 / 31</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">One pain point each &mdash; trust, access, FX, remittances, cash</div>
     <h2 class="h-xl" style="font-size:3.6vw">Five solutions to five customer pain points.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:66vw; font-size:1vw">
+      The new entrants are no longer just fintechs (Adyen, Klarna, Square, Stripe, Wise) &mdash; increasingly they are bigtech (Amazon, Apple, Google, Samsung) and the Chinese techfins Ant Group and Tencent WePay, who use payments as the first foothold to win end-customers and their transaction data.
+    </p>
 
     <div class="pipeline-section">
       <div class="pipeline-label">From a single use-case to a platform</div>
@@ -329,18 +823,18 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 08 &middot; Alipay &middot; M-PESA &middot; Wise &middot; WorldRemit &middot; Octopus</div>
+    <div>Page 16 &middot; Alipay &middot; M-PESA &middot; Wise &middot; WorldRemit &middot; Octopus</div>
     <div>Trust &middot; access &middot; FX &middot; remittances &middot; cashless</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 09 · The rise of insurtech · a $6T industry (dark)
+     SLIDE 17 · The rise of insurtech · a $6T industry (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="09 Rise of Insurtech">
+<section class="slide dark" data-screen-label="17 Rise of Insurtech">
   <div class="chrome">
     <div>&sect;9.6 &middot; The rise of insurtech</div>
-    <div>09 / 15</div>
+    <div>17 / 31</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">A vast profit pool ripe for disruption &middot; Figure 9.3</div>
@@ -369,18 +863,18 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 09 &middot; Figure 9.3 &middot; Global gross written premiums</div>
+    <div>Page 17 &middot; Figure 9.3 &middot; Global gross written premiums</div>
     <div>Underwriting &middot; premium &middot; claim &middot; settlement</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 10 · Digital transformation by insurtechs · Figure 9.4 (light)
+     SLIDE 18 · Digital transformation by insurtechs · Figure 9.4 (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="10 Digital Transformation">
+<section class="slide light" data-screen-label="18 Digital Transformation">
   <div class="chrome">
     <div>&sect;9.7 &middot; Digital transformation by insurtechs</div>
-    <div>10 / 15</div>
+    <div>18 / 31</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -404,7 +898,7 @@
         <img src="https://utppublishing.com/cms/10.3138/9781487544096.009/asset/images/9781487544096.009.f004.jpg" alt="Figure 9.4 - Insurtech Performance First Year Post-IPO">
       </figure>
       <div class="frame-cap"><span>Fig. 9.4 &middot; Insurtech first-year post-IPO return</span><span class="idx">Source: Refinitiv</span></div>
-      <div class="step-desc" style="margin-top:.4vh; font-size:max(11px,.84vw)">Two rose, two sank &mdash; proof the <strong>business model</strong>, not the technology, decides success.</div>
+      <div class="step-desc" style="margin-top:.4vh; font-size:max(11px,.84vw)">Two rose &mdash; <strong>Lemonade +55%</strong>, Duck Creek +13%; two sank &mdash; GoHealth &minus;48%, <strong>Root &minus;88%</strong>. Proof the <strong>business model</strong>, not the technology, decides success.</div>
       <div class="callout" style="margin-top:.4vh; padding:.9vh 1.2vw; font-size:max(11px,.86vw); line-height:1.45">
         Insurtechs exploit mobile apps, cloud, biometrics, sensors, data science, and AI &mdash; customizing products, opening digital channels, and automating claims.
       </div>
@@ -412,18 +906,18 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 10 &middot; Figure 9.4 &middot; Insurtech IPO performance</div>
+    <div>Page 18 &middot; Figure 9.4 &middot; Insurtech IPO performance</div>
     <div>Source &middot; Refinitiv &middot; Towers Wilson Watson</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 11 · The insurance value chain · Figure 9.5 (dark)
+     SLIDE 19 · The insurance value chain · Figure 9.5 (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="11 Insurance Value Chain">
+<section class="slide dark" data-screen-label="19 Insurance Value Chain">
   <div class="chrome">
     <div>&sect;9.8 &middot; The insurance value chain</div>
-    <div>11 / 15</div>
+    <div>19 / 31</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">Figure 9.5 &middot; Two customer-facing steps, two back-office steps</div>
@@ -456,18 +950,18 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 11 &middot; Figure 9.5 &middot; The insurance value chain</div>
+    <div>Page 19 &middot; Figure 9.5 &middot; The insurance value chain</div>
     <div>Design &middot; quote-bind-issue &middot; admin &middot; claims</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 12 · Customer-facing insurtechs · Root & Lemonade (light)
+     SLIDE 20 · Customer-facing insurtechs · Root & Lemonade (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="12 Customer-Facing Insurtechs">
+<section class="slide light" data-screen-label="20 Customer-Facing Insurtechs">
   <div class="chrome">
     <div>&sect;9.9 &middot; Customer-facing insurtechs</div>
-    <div>12 / 15</div>
+    <div>20 / 31</div>
   </div>
   <div class="frame" style="padding-top:2.2vh">
     <div class="kicker">Personalization from sensors, biometrics, IoT &amp; machine learning</div>
@@ -493,18 +987,18 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 12 &middot; Root &middot; Lemonade &middot; digital-only insurers</div>
+    <div>Page 20 &middot; Root &middot; Lemonade &middot; digital-only insurers</div>
     <div>Customized &middot; personalized &middot; AI-priced</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 13 · Emerging risks + back office · Cyence & Snapsheet (dark)
+     SLIDE 21 · Emerging risks + back office · Cyence & Snapsheet (dark)
      ============================================================ -->
-<section class="slide dark" data-screen-label="13 Emerging Risks & Back Office">
+<section class="slide dark" data-screen-label="21 Emerging Risks & Back Office">
   <div class="chrome">
     <div>&sect;9.10 &middot; Emerging risks &amp; the back office</div>
-    <div>13 / 15</div>
+    <div>21 / 31</div>
   </div>
   <div class="frame" style="padding-top:2vh">
     <div class="kicker">New risks to underwrite &mdash; and old processes to automate</div>
@@ -530,18 +1024,18 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 13 &middot; Cyence &middot; Snapsheet &middot; back-office automation</div>
+    <div>Page 21 &middot; Cyence &middot; Snapsheet &middot; back-office automation</div>
     <div>Cyber &middot; climate &middot; claims &middot; underwriting &middot; admin</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 14 · Case study: ZhongAn · Table 9.3 (light)
+     SLIDE 22 · Case study: ZhongAn · Table 9.3 (light)
      ============================================================ -->
-<section class="slide light" data-screen-label="14 Case: ZhongAn">
+<section class="slide light" data-screen-label="22 Case: ZhongAn">
   <div class="chrome">
     <div>&sect;9.10 &middot; Case study</div>
-    <div>14 / 15</div>
+    <div>22 / 31</div>
   </div>
   <div class="frame grid-2-7-5" style="padding-top:2.2vh">
     <div style="display:flex; flex-direction:column; gap:1.2vh">
@@ -556,7 +1050,7 @@
         <div class="stat-card"><div class="stat-label">Ecosystem partners</div><div class="stat-nb" style="font-size:2.8vw">200+</div></div>
         <div class="stat-card"><div class="stat-label">Share since IPO &middot; to 2022</div><div class="stat-nb" style="font-size:2.8vw">&minus;70<span class="stat-unit">%</span></div></div>
       </div>
-      <div class="step-desc" style="font-size:max(11px,.84vw); opacity:.75">Pioneered shipping-return insurance, phone screen-crack cover, and real-time flight-delay insurance. Partners include Didi, Xiaomi, Ant Financial, Ctrip. AI optimizes products from partner transaction data.</div>
+      <div class="step-desc" style="font-size:max(11px,.84vw); opacity:.75">Sells through six scenario-based &ldquo;ecosystems&rdquo;: lifestyle consumption, travel, consumer finance, health, auto, and other. Pioneered shipping-return insurance, phone screen-crack cover, and real-time flight-delay insurance. Partners include Didi, Xiaomi, Ant Financial, Ctrip. AI optimizes products from partner transaction data.</div>
     </div>
     <div style="display:flex; flex-direction:column; gap:1vh; padding-top:.4vh">
       <div class="pipeline-label" style="margin-bottom:.2vh">Table 9.3 &middot; Income statement (% of revenues, RMB)</div>
@@ -572,18 +1066,358 @@
     </div>
   </div>
   <div class="foot">
-    <div>Page 14 &middot; Table 9.3 &middot; ZhongAn financial statements</div>
+    <div>Page 22 &middot; Table 9.3 &middot; ZhongAn financial statements</div>
     <div>Source &middot; ZhongAn IPO &amp; annual reports</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 15 · Summary & closing (hero dark)
+     SLIDE 23 · Section divider: Since the textbook 2022-2025 (hero dark)
      ============================================================ -->
-<section class="slide hero dark" data-screen-label="15 Closing">
+<section class="slide hero dark" data-screen-label="23 Update 2022-2025">
+  <div class="chrome">
+    <div>Chapter 09 &middot; Update</div>
+    <div>23 / 31</div>
+  </div>
+  <div class="frame" style="display:grid; gap:2.4vh; align-content:center; min-height:70vh">
+    <div class="kicker">An update beyond the textbook &middot; verified to mid-2026</div>
+    <h1 class="h-hero" style="font-size:5.4vw">Since the textbook: 2022&ndash;2025.</h1>
+    <p class="lead" style="max-width:66vw; font-size:1.2vw">
+      The chapter&rsquo;s data effectively freezes around 2022. Four shifts have reshaped these profit pools since &mdash; real-time rails went mainstream, stablecoins gained legal footing, the insurtech boom turned to winter and then to AI, and regulators finally caught up.
+    </p>
+    <div class="pipeline" data-cols="4" style="margin-top:1vh">
+      <div class="step"><div class="step-nb">01</div><div class="step-title">Real-time rails</div><div class="step-desc">Instant account-to-account payments go mainstream &mdash; FedNow, UPI, Pix, EU mandate.</div></div>
+      <div class="step"><div class="step-nb">02</div><div class="step-title">Stablecoins</div><div class="step-desc">A credible new cross-border layer &mdash; and the first US federal law to govern it.</div></div>
+      <div class="step"><div class="step-nb">03</div><div class="step-title">Winter &rarr; AI</div><div class="step-desc">Insurtech funding collapses ~76%; survivors reach profit; capital rotates to AI.</div></div>
+      <div class="step"><div class="step-nb">04</div><div class="step-title">Agentic &amp; AI-native</div><div class="step-desc">AI agents make payments; GenAI runs underwriting and claims; CBDCs diverge.</div></div>
+    </div>
+    <div class="meta-row" style="margin-top:.6vh">
+      <span>Beyond Chapter 09</span><span>&middot;</span><span>Sources web-verified, mid-2026</span><span>&middot;</span><span>Figures move &mdash; date them</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Update &middot; Since the textbook &middot; 2022&ndash;2025</div>
+    <div>Rails &middot; stablecoins &middot; insurtech &middot; AI &amp; regulation</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 24 · Real-time rails go mainstream (light) · updates §9.1 rails
+     ============================================================ -->
+<section class="slide light" data-screen-label="24 Real-Time Rails">
+  <div class="chrome">
+    <div>Update &middot; Real-time payment rails</div>
+    <div>24 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">The instant, near-free rails the chapter saw coming &mdash; now mainstream</div>
+    <h2 class="h-xl" style="font-size:3.8vw">Real-time, account-to-account payments won.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:66vw; font-size:1vw">
+      The textbook described real-time gross settlement as an upgrade in progress. Since 2022 it has become the default in the world&rsquo;s largest markets &mdash; displacing cards and cash, and now mandated in Europe.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.6vw; margin-top:1.6vh; align-items:start">
+      <div class="stat-card"><div class="stat-label">US &middot; FedNow (Fed)</div><div class="stat-nb" style="font-size:3.4vw">1,500<span class="stat-unit">+ banks</span></div><div class="stat-note" style="font-size:max(11px,.86vw)">Launched Jul 2023; live at 1,500+ institutions across 50 states by late 2025; per-payment cap raised $1M&rarr;$10M (Nov 2025). Still early, scaling fast.</div></div>
+      <div class="stat-card"><div class="stat-label">India &middot; UPI (NPCI)</div><div class="stat-nb" style="font-size:3.4vw">21.6<span class="stat-unit">B txns / mo</span></div><div class="stat-note" style="font-size:max(11px,.86vw)">Record ~21.6B transactions in Dec 2025; ~85% of India&rsquo;s digital-payment volume; the IMF calls it the world&rsquo;s largest real-time system (~49% of global RTP).</div></div>
+      <div class="stat-card"><div class="stat-label">Brazil &middot; Pix (BCB)</div><div class="stat-nb" style="font-size:3.4vw">~47<span class="stat-unit">% of txns</span></div><div class="stat-note" style="font-size:max(11px,.86vw)">~47% of all financial transactions by end-2024; used by 93% of adults / 175M+ people; cash use collapsed as Pix overtook cards.</div></div>
+    </div>
+
+    <div class="callout" style="margin-top:1.6vh; padding:1.1vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>Europe made it compulsory.</strong> The EU Instant Payments Regulation took effect 9 Oct 2025: euro-area banks must send and receive SEPA instant transfers (settled in &lt;10 seconds, 24/7), priced no higher than a standard transfer, with mandatory Verification of Payee. The &ldquo;coming&rdquo; RTGS upgrade is now law.
+      <div class="callout-src">&mdash; Federal Reserve &middot; NPCI &middot; Banco Central do Brasil &middot; ECB, 2023&ndash;2025</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 24 &middot; Real-time rails &middot; FedNow &middot; UPI &middot; Pix &middot; EU IPR</div>
+    <div>Instant &middot; account-to-account &middot; displacing cards &amp; cash</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 25 · Stablecoins & the new cross-border layer (dark) · updates §9.4
+     ============================================================ -->
+<section class="slide dark" data-screen-label="25 Stablecoins">
+  <div class="chrome">
+    <div>Update &middot; Stablecoins &amp; cross-border</div>
+    <div>25 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">Recall Beaver &rarr; Eagle&rsquo;s four routes (slide 15) &mdash; now there is a credible fifth</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Stablecoins entered the mainstream of payments.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:66vw; opacity:.82; font-size:1vw">
+      In 2022 a crypto cross-border transfer was a fringe option. By mid-2026 stablecoins are a ~$315B+ market that settled an estimated $33 trillion on-chain in 2025 (gross) &mdash; and, for the first time, they have legal footing in the US.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.4vw; align-items:start; margin-top:1.4vh">
+      <div class="pipeline-section" style="margin:0">
+        <div class="pipeline-label" style="margin-bottom:.6vh">The networks moved in</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vh 1.1vw">
+          <div class="step"><div class="step-title">PayPal &amp; Ripple</div><div class="step-desc">PayPal&rsquo;s PYUSD launched Aug 2023 (~$3B); Ripple&rsquo;s RLUSD launched Dec 2024 &mdash; updating the chapter&rsquo;s RippleNet reference.</div></div>
+          <div class="step"><div class="step-title">Stripe &middot; Bridge</div><div class="step-desc">Stripe bought stablecoin platform Bridge for $1.1B (closed Feb 2025) &mdash; its largest deal; stablecoin accounts now in 100+ countries.</div></div>
+          <div class="step"><div class="step-title">Visa</div><div class="step-desc">Began USDC settlement for US banks (Dec 2025) over Solana; ~$3.5B annualized run-rate.</div></div>
+          <div class="step"><div class="step-title">Mastercard</div><div class="step-desc">Merchant USDC settlement since Apr 2025, plus stablecoin payouts and acquirer settlement.</div></div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.1vh">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1vw">
+          <div class="stat-card"><div class="stat-label">Stablecoin market cap</div><div class="stat-nb" style="font-size:2.6vw">~$315<span class="stat-unit">B</span></div></div>
+          <div class="stat-card"><div class="stat-label">On-chain volume, 2025</div><div class="stat-nb" style="font-size:2.6vw">~$33<span class="stat-unit">T gross</span></div></div>
+        </div>
+        <div class="callout" style="padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          <strong>The GENIUS Act (signed Jul 2025)</strong> is the first US federal framework for payment stablecoins: 100% reserve backing in cash or short-term Treasuries, monthly public reserve disclosure, and AML compliance. Legitimacy &mdash; not just technology &mdash; is what changed.
+        </div>
+        <div class="step-desc" style="font-size:max(10px,.74vw); opacity:.6">Tether (USDT) ~60%+ of the market; Circle&rsquo;s USDC second. Volume figures are gross and vary by method &mdash; treat as directional.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 25 &middot; Stablecoins &middot; PYUSD &middot; Bridge &middot; Visa/MC &middot; GENIUS Act</div>
+    <div>A credible fifth cross-border route &mdash; now regulated</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 26 · Case-company report cards (light, table) · updates §9.3 / §9.10
+     ============================================================ -->
+<section class="slide light" data-screen-label="26 Report Cards">
+  <div class="chrome">
+    <div>Update &middot; The chapter&rsquo;s companies, marked to mid-2026</div>
+    <div>26 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Report cards &mdash; the case-study names, three years on</div>
+    <h2 class="h-xl" style="font-size:3.4vw">Profit finally arrived &mdash; for the survivors.</h2>
+
+    <table style="width:100%; border-collapse:collapse; font-size:max(11px,.92vw); line-height:1.4; margin-top:1.4vh">
+      <thead>
+        <tr style="border-bottom:1.5px solid rgba(0,0,0,.28); text-align:left">
+          <th style="padding:.9vh .6vw; width:14%; font-weight:700">Company</th>
+          <th style="padding:.9vh .6vw; width:49%; font-weight:600">What happened, 2022&ndash;2025</th>
+          <th style="padding:.9vh .6vw; width:37%; font-weight:600">Status &middot; mid-2026</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.10)">
+          <td style="padding:.85vh .6vw; font-weight:700">Paytm</td>
+          <td style="padding:.85vh .6vw">RBI wound down Paytm Payments Bank (Feb&ndash;Mar 2024); banking licence cancelled Apr 2026.</td>
+          <td style="padding:.85vh .6vw">First profitable year (FY26, PAT +&#8377;552 Cr); stock still ~&minus;48% vs 2021 IPO.</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.10)">
+          <td style="padding:.85vh .6vw; font-weight:700">Ant Group</td>
+          <td style="padding:.85vh .6vw">$984M regulatory fine (Jul 2023); split into independent units (2024); IPO still shelved.</td>
+          <td style="padding:.85vh .6vw">Buyback valued it ~$78B &mdash; roughly 75% below its 2020 IPO peak.</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.10)">
+          <td style="padding:.85vh .6vw; font-weight:700">Wise</td>
+          <td style="padding:.85vh .6vw">Shareholders approved shifting the primary listing from London to the US (Jul 2025).</td>
+          <td style="padding:.85vh .6vw">Profitable while scaling: &gt;$197B volume, 15.6M users (FY25).</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.10)">
+          <td style="padding:.85vh .6vw; font-weight:700">Stripe</td>
+          <td style="padding:.85vh .6vw">$1.9T total payment volume in 2025 (+34%); bought Bridge for $1.1B.</td>
+          <td style="padding:.85vh .6vw">Valued $159B (Feb 2026, +74% YoY); profitable.</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,.10)">
+          <td style="padding:.85vh .6vw; font-weight:700">Adyen</td>
+          <td style="padding:.85vh .6vw">Shares crashed ~39% in a day (Aug 2023) on a growth scare; partial, bumpy recovery.</td>
+          <td style="padding:.85vh .6vw">~&euro;27B market cap; FY25 revenue &euro;2.38B (+18%) &mdash; still below its peak.</td>
+        </tr>
+        <tr>
+          <td style="padding:.85vh .6vw; font-weight:700">ZhongAn</td>
+          <td style="padding:.85vh .6vw">Fourth straight underwriting-profitable year (2024); ZA Bank turned its first profit.</td>
+          <td style="padding:.85vh .6vw">H1 2025 net profit +1,103% YoY &mdash; a profitable, scaled counterexample.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="step-desc" style="margin-top:1vh; font-size:max(11px,.84vw); opacity:.7">Also: Block (Square) bought Afterpay ($29B, 2022) and joined the S&amp;P 500 (Jul 2025), with its BNPL now under regulatory scrutiny. Prices and valuations are ~mid-2026 and will drift.</div>
+  </div>
+  <div class="foot">
+    <div>Page 26 &middot; Report cards &middot; Paytm &middot; Ant &middot; Wise &middot; Stripe &middot; Adyen &middot; ZhongAn</div>
+    <div>Sources web-verified, mid-2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 27 · Insurtech: from winter to AI (dark) · updates §9.7 IPO perf.
+     ============================================================ -->
+<section class="slide dark" data-screen-label="27 Insurtech Winter to AI">
+  <div class="chrome">
+    <div>Update &middot; Insurtech, 2022&ndash;2025</div>
+    <div>27 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">The reckoning after the 2021 boom &mdash; and where the money went</div>
+    <h2 class="h-xl" style="font-size:3.6vw">From funding winter to AI.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:66vw; opacity:.82; font-size:1vw">
+      The slide on IPO performance argued the business model, not the technology, decides success. The years since proved it &mdash; funding froze ~76% from the peak, and only the insurtechs that reached profitability survived.
+    </p>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">Global insurtech VC funding &mdash; from boom to seven-year low (Gallagher Re)</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step"><div class="step-nb">2021</div><div class="step-title">~$17.8B</div><div class="step-desc">All-time peak.</div></div>
+        <div class="step"><div class="step-nb">2022</div><div class="step-title">~$8.0B</div><div class="step-desc">Roughly halved.</div></div>
+        <div class="step"><div class="step-nb">2023</div><div class="step-title">$4.5B</div><div class="step-desc">Down ~44%.</div></div>
+        <div class="step"><div class="step-nb">2024</div><div class="step-title">$4.25B</div><div class="step-desc">Seven-year low; ~&minus;76% from peak.</div></div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.4vw; align-items:start; margin-top:1.4vh">
+      <div class="callout" style="padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Survivors found profit.</strong> Root posted its first profitable full year (2024, ~$31M); Oscar Health its first ever (2024, $25.4M); Hippo its first GAAP-profitable quarter (Q4 2024). Lemonade is still loss-making but turned cash-flow positive in Q4 2025, targeting profit by 2027.
+      </div>
+      <div class="callout" style="padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+        <strong>Capital rotated to AI.</strong> AI-focused insurtechs took ~47% of all 2024 insurtech funding, and by late 2025 a majority of new insurance-AI deployments were generative or agentic &mdash; automating the underwriting and claims the chapter flagged as the core pain points.
+        <div class="callout-src">&mdash; Gallagher Re &middot; company results, 2024&ndash;2025</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 27 &middot; Insurtech funding winter &middot; pivot to profit &amp; AI</div>
+    <div>Root &middot; Oscar &middot; Hippo profitable &middot; Lemonade closing in</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 28 · What's next: agentic commerce, AI-native ops, CBDCs (light)
+     ============================================================ -->
+<section class="slide light" data-screen-label="28 What's Next">
+  <div class="chrome">
+    <div>Update &middot; What&rsquo;s next</div>
+    <div>28 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Where payments and insurance are heading next</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Agents pay, AI underwrites, money goes programmable.</h2>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">Four fronts to watch</div>
+      <div class="pipeline" data-cols="4">
+        <div class="step">
+          <div class="step-nb">agentic commerce</div>
+          <div class="step-title">AI agents pay</div>
+          <div class="step-desc">Stripe + OpenAI &ldquo;Instant Checkout&rdquo; and the Agentic Commerce Protocol (Sep 2025); Google&rsquo;s AP2 with 60+ partners; Visa Intelligent Commerce &amp; Mastercard Agent Pay (Apr 2025); PayPal agentic checkout (Oct 2025).</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">AI-native ops</div>
+          <div class="step-title">GenAI runs the back office</div>
+          <div class="step-desc">Insurer GenAI adoption ~doubled in 2025 (~55% deploying). Lemonade reports AI handling 96% of first loss notices and resolving 55% of claims end-to-end &mdash; the automation thesis, realized.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">BNPL matures</div>
+          <div class="step-title">Public &amp; profitable</div>
+          <div class="step-desc">Klarna IPO&rsquo;d on the NYSE (Sep 2025, ~$15B &mdash; far below its 2021 peak); Affirm posted its first profitable fiscal year (FY25). Regulators are now formalizing BNPL rules.</div>
+        </div>
+        <div class="step">
+          <div class="step-nb">CBDCs diverge</div>
+          <div class="step-title">Programmable money splits</div>
+          <div class="step-desc">China&rsquo;s e-CNY is the largest live CBDC (~$2.3T cumulative); the digital euro advances toward ~2029; the US banned a CBDC (executive order 2025, later codified).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1.8vh; padding:1.1vh 1.4vw; font-size:max(12px,.95vw); line-height:1.5">
+      <strong>The throughline still holds.</strong> Every front above is the same playbook the chapter described &mdash; solve a sharp pain point, then automate the processing &mdash; now supercharged by AI and programmable money. The winners will still be decided by the business model, not the technology.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 28 &middot; Agentic commerce &middot; AI ops &middot; BNPL &middot; CBDCs</div>
+    <div>Sources web-verified, mid-2026 &mdash; figures move</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 29 · Agentic payments: x402 & the machine-money stack (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="29 Agentic Payments">
+  <div class="chrome">
+    <div>Update &middot; Agentic payments (deep dive on slide 28)</div>
+    <div>29 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2vh">
+    <div class="kicker">When the customer is an AI agent &mdash; a new rail for machine-to-machine money</div>
+    <h2 class="h-xl" style="font-size:3.4vw">Agentic payments: x402 and the machine-money stack.</h2>
+    <p class="lead" style="margin-top:.4vh; max-width:70vw; opacity:.82; font-size:1vw">
+      Checkout was built for a human holding a card. Autonomous agents instead need to <em>discover, authorize, and settle</em> payments themselves &mdash; often sub-cent micropayments for APIs, data, and compute, with no one at the keyboard. A new payment rail is forming to make that possible.
+    </p>
+
+    <div class="callout" style="margin-top:1.2vh; padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+      <strong>x402 &middot; the open standard.</strong> Coinbase revived the dormant HTTP <strong>402 &ldquo;Payment Required&rdquo;</strong> status code (May 2025): an agent hits a paywalled endpoint &rarr; the server returns a <strong>402</strong> with a price, token, and chain &rarr; the agent pays in <strong>USDC inside an HTTP header</strong> &rarr; the request is retried and settled on-chain &mdash; <strong>no accounts, API keys, or human checkout</strong>. Now a Linux Foundation standard (Apr 2026) whose members include Visa, Mastercard, Stripe, Google, AWS, Circle, Cloudflare, and Shopify.
+    </div>
+
+    <div class="pipeline-section">
+      <div class="pipeline-label">What the companies are building</div>
+      <div class="pipeline" data-cols="5">
+        <div class="step"><div class="step-nb">checkout</div><div class="step-title">Stripe</div><div class="step-desc">Agentic Commerce Protocol (with OpenAI) powers ChatGPT Instant Checkout; a Shared Payment Token and single-use virtual cards (Issuing) let agents pay within set limits.</div></div>
+        <div class="step"><div class="step-nb">settlement L1</div><div class="step-title">Tempo</div><div class="step-desc">Stripe + Paradigm payments blockchain &mdash; ~100k TPS, ~600ms finality, gas paid in stablecoins; mainnet Mar 2026; its Machine Payments Protocol; backers incl. Visa, Deutsche Bank, OpenAI.</div></div>
+        <div class="step"><div class="step-nb">crypto rail</div><div class="step-title">Coinbase</div><div class="step-desc">Authored x402; AgentKit gives every agent an on-chain wallet; &ldquo;Bazaar&rdquo; lets agents discover and pay x402 services in ~200ms.</div></div>
+        <div class="step"><div class="step-nb">the dollar</div><div class="step-title">Circle</div><div class="step-desc">USDC is the default settlement asset; its Agent Stack adds policy-bound agent wallets and nanopayments as small as $0.000001.</div></div>
+        <div class="step"><div class="step-nb">trust layer</div><div class="step-title">Visa &amp; Mastercard</div><div class="step-desc">Intelligent Commerce / Trusted Agent Protocol and Agent Pay / Agentic Tokens add card-network identity and fraud controls to agent transactions.</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.2vh; font-family:var(--mono); font-size:max(9px,.7vw); letter-spacing:.02em; opacity:.6; line-height:1.5">
+      Four standards converging: <strong>ACP</strong> (commerce checkout) &middot; Google <strong>AP2</strong> (rail-neutral authorization) &middot; <strong>x402</strong> (crypto micropayments) &middot; Stripe/Tempo <strong>MPP</strong> &mdash; with the card networks bridging into all of them. Fast-moving; specs &amp; figures as of mid-2026.
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 29 &middot; Agentic payments &middot; x402 &middot; Stripe &middot; Tempo &middot; Circle</div>
+    <div>Agents discover &middot; authorize &middot; settle &mdash; machine to machine</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 30 · Questions for discussion (dark)
+     ============================================================ -->
+<section class="slide dark" data-screen-label="30 Discussion">
+  <div class="chrome">
+    <div>Chapter 09 &middot; Questions for discussion</div>
+    <div>30 / 31</div>
+  </div>
+  <div class="frame" style="padding-top:2.2vh">
+    <div class="kicker">Take it to the seminar &mdash; payments first, then insurance</div>
+    <h2 class="h-xl" style="font-size:3.6vw">Questions for discussion.</h2>
+
+    <div class="split" style="margin-top:1.6vh; align-items:start; gap:2.6vw">
+      <div>
+        <div class="pipeline-label" style="margin-bottom:.6vh">Payments, money transfer &amp; FX</div>
+        <ol style="margin:0; padding-left:1.4em; font-size:max(11px,.88vw); line-height:1.5; display:grid; gap:.7vh">
+          <li>What are the main pain points facing customers in payments, money transfer, and foreign exchange?</li>
+          <li>How important are payments for banks, and what are the different sources of revenue?</li>
+          <li>What are the payment rails, and how does the large value transfer system differ from the small-payments system?</li>
+          <li>Who are the players in the payments ecosystem, and what role does each play?</li>
+          <li>What are the sources of revenue for payment companies &mdash; and which are fee-based versus risk-based?</li>
+          <li>What has been the strategy for new entrants, and how did they benefit from technological and regulatory change?</li>
+          <li>What are examples of payment pain points and the fintechs that solved them?</li>
+        </ol>
+      </div>
+      <div>
+        <div class="pipeline-label" style="margin-bottom:.6vh">Insurance &amp; insurtech</div>
+        <ol start="8" style="margin:0; padding-left:1.6em; font-size:max(11px,.88vw); line-height:1.5; display:grid; gap:.7vh">
+          <li>What are the different segments of the insurance market, and how can we assess their relative size?</li>
+          <li>What are insurtechs, and what has been their experience disrupting the insurance industry?</li>
+          <li>What are examples of pain points solved by insurtechs &mdash; in customer-facing and back-office businesses?</li>
+        </ol>
+        <div class="callout" style="margin-top:1.4vh; padding:1.1vh 1.4vw; font-size:max(12px,.92vw); line-height:1.5">
+          <strong>The throughline.</strong> Across both industries, the winning move is the same &mdash; solve a sharp customer pain point, then automate the processing behind it. Keep that lens on every example above.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Page 30 &middot; Questions for discussion</div>
+    <div>Payments &middot; rails &middot; players &middot; revenue &middot; insurtech</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 31 · Summary & closing (hero dark)
+     ============================================================ -->
+<section class="slide hero dark" data-screen-label="31 Closing">
   <div class="chrome">
     <div>Chapter 09 &middot; Closing</div>
-    <div>15 / 15</div>
+    <div>31 / 31</div>
   </div>
   <div class="frame" style="display:grid; gap:2vh; align-content:center; min-height:70vh">
     <div class="kicker">Research findings &middot; attacking complex, regulated profit pools</div>
