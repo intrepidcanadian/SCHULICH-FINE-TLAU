@@ -149,7 +149,9 @@ async function generateChapterPDF(browser, chapter) {
   console.log('Launching browser…');
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security'],
+    protocolTimeout: 300000,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security',
+           '--disable-gpu', '--disable-dev-shm-usage', '--use-gl=swiftshader'],
   });
 
   for (const ch of chapters) {
